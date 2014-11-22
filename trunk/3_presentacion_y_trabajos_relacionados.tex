@@ -1,0 +1,131 @@
+\chapter{Presentación y trabajos relacionados}
+
+\section{Presentación}
+\section{Formulación matemática}
+\section{Estado del arte}
+La investigación del estado del arte la realizamos con dos objetivos en mente el primero para analizar las distintas soluciones que existen actualmente para nuestro problema y el segundo para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer nuestra solución.
+
+El problema del tráfico optimizando las luces de los semáforos se puede resolver por muchos metodos como autómata celular, redes neuronales, fuzzy logic, redes de petri, sistema expertos o programación lineal por lo tanto la cantidad de soluciones encontradas fue abundante y variada por esto decidimos enfocarnos en soluciones lo más cercanas a la nuestra posible y en otras que tuvieran alguna particularidad interesante que nos gustaría destacar.
+
+
+\begin{itemize}
+	\begin{item}
+		\bibentry{Sanchez2004}
+		
+		Este trabajo se basa en tres puntos: El uso de algoritmos genéticos para la optimizacion , simulación de autómatas celulares para la funcion de evaluacion del tráfico, y un cluster para realizar ejecuciones en paralelo.
+		El modelo es pequeño con 5 calles de 2 vías que se intersectan.
+		La codificación del cromosoma es una tira de numeros enteros, donde se codifica para cada intersección cual calle esta habilitada en cada ciclo.
+		Usa una estrategia de selección elitista donde los 2 mejores se clonan a la siguiente generacion, y el resto es generado por cruzamiento de 2 puntos, ademas usa mutación variable dependiendo .
+		
+		Para la evaluación se usa el tiempo medio, esto es desde el momento que un vehículo entra en la red hasta que sale. Se utilizo un cluster y programación paralela utilizando MPI 2 con una estrategia master-slave, el master envia los cromosomas a los esclavos que evaluan y devuelven el restultado y luego el master se encarga de generar la siguente poblacion.
+		
+		Se compararon los resultados con una simulacion aleatoria y con una simulacion fija, obtiendo la solucion propuesta mejores resultados en todos los casos evaluados
+		
+		Este mismo grupo realizo trabajos similares expandiendo esta investigacion, estos son:
+	\end{item}
+
+	\begin{item}
+		\bibentry{Sanchez2008}
+Lo interesante de este estudio es que se aplica lo expuesto en el trabajo anterior en un lugar real (Santa Cruz de Tenerife) para validar los resultados.
+Algunas mejoras que se introdujeron fueron que el cromosoma se codifica utilizando como codigo Gray lo que dicen mejora el rendimiento en mutacion y cruzamiento. La poblacion inicial son nueve “soluciones” provistas por la alcaldia de la ciudad. Tanto la estrategia de seleccion como de cruzamiento y mutacion  es similar al anteior trabajo
+
+El modelo se discretizo quedando en 42 semaforos, 26 entradas y 20 salidas.
+Las soluciones provistas por la alcaldia se simularon y se utilizo para comparar con los resultados obtenidos por el algoritmo que en terminos generales logra un aumento del rendimiento de hasta 26%.
+
+	\end{item}
+
+	\begin{item}
+		\bibentry{Sanchez2010}
+Este trabajo es similar al anterior pero se destacan algunos cambios, por ejemplo se testearon 4 diferentes funciones de fitness: Cantidad de vehiculos que llegaron a destino, Tiempo de viaje promedio, Tiempo de ocupacion promedio, velocidad promedio global.
+Tambien agrega medidas correspondientes al gas total emitido por los vehiculos que tiene relacion con la velocidad a la que van.
+El modelo discretizado de la zona de “La almozara” cuenta con 17 semaforos, 7 intersecciones, 16 entradas y 18 salidas.
+Se simulo tanto un caso estandar como casos de alta congestion de trafico, las comparaciones se hacen respecto a las distintas funciones de fitness y los distintos escenarios planteados logrando buenos resultados.
+	
+	\end{item}
+	
+	\begin{item}
+		\bibentry{Sanchez2007}
+En esta tesis se conjugan varios de sus trabajos que ya comentamos, ampliando y profundisando en varios puntos.	
+	\end{item}	
+
+	\begin{item}
+		\bibentry{Penner2002}
+Este trabajo se centra en un modelo de simulacion basado en swarms (enjambres) utilizanado el programa SurJe para el mapa y la simulacion. Luego se optimiza utilizando un algoritmo genetico cuya funcion de fitness es el tiempo promedio de los vehiculos dentro de la red. El cromosoma cuenta con la secuencia y duracion de los semaforos, asi como relacion con los semaforos complementarios, la mutacion tiene en cuenta esto para que no ocurra en una misma interseccion 2 lueces verdes. El cruzamiento se hace entre los distintos semaforos con una probabilidad mas alta si esta en la misma interseccion,
+
+El modelo cuenta con una ruta de 2 vias, con 3 carriles, y 3 intersecciones con 1 ruta de 2 vias y un solo carril.
+Se comparan 3 escenarios distintos obteniendo mejoras significativas con respecto al inicio.
+
+Luego se realiza otro escenario mas complejo de 28 semaforos  y 9 intersecciones logrando buenos rendimientos de hasta 26%.
+	\end{item}	
+	
+	
+	\begin{item}
+		\bibentry{Stolfi2012}
+Este trabajo se basa en el concepto de una ciudad inteligente enfocando en la movilidad inteligente ya que indica que los atascos del trafico provocan no solo perdidas economicas sino tambien contaminacion ambiental.
+
+Para ello propone utilizar un algoritmo inteligente que tomando en cuenta el estado de congestion de las rutas sugiere al usuario cual es la ruta mas rapida a su destino, utilizando un dispositivo en el automovil que se enlazara por wifi con los semaforos (que cuentan con sensores). Por lo tanto el trabajo no se basa en la optimizacion de las señales de los semaforos existentes sino agrega encima de esto un sistema de busqueda de mejor ruta.
+
+Para el modelo utilza una zona  de la ciudad de malaga obtenido desde Open Street Map, cuenta con 8 entradas y 8 salidas , para la simulacion utiliza SUMO. Los vehiculos modelados son : turismo, monovolumen, furgoneta, camion donde se varia la longitud, velocidad y probabilidad que entre en la red de trafico.
+
+Se intenta minimizar los tiempo de viaje de los vehiculos que ciruclan por la red. Para ellos se utiliza un algoritmo genetico cuya estrategia de seleccion concisten en tomar los 2 peores individuos y reemplazandolo por los 2 mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La funcion de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecucion, el tiempo medio utilizado, y el retraso medio. Se prueban varias estrategias de cruzamiento y mutacion. Las ejecuciones tienen un tiempo fijo de duracion.
+
+
+Compara el resultado con una simulacion por defecto realizada con el programa DuaRouter que viene con SUMO donde se generaron 64 itinerarios diferentes, esto se prueba en 3 escenarios diferentes. Las simulaciones se realiza hata con 800 vehiculos,se concluye que al aumentar la cantidad de vehiculos (mas de 400) en el sistema la solucion mejora sustancialmente el resultado base.
+
+	\end{item}	
+	
+	
+	\begin{item}
+		\bibentry{Teo2010}
+Este trabajo presenta un modelo simple con una sola interseccion en donde se intenta optimizar los tiempos de los semaforos para lograr mejor rendimiento.El cromosoma representa los tiempos de la luces verdes, el cruzamiento toma 80 de informacion de un padre y 20 del otro. La funcion de fitness es el largo de las colas generadas. La simulacion tiene un tiempo fijo de 600 segundos por generacion pero no se detalla el tipo que se utilizo. Las conclusiones indican que la optimizacion usando algoritmos geneticos  es buena para el problema del flujo de trafico.	
+	\end{item}	
+
+
+	\begin{item}
+		\bibentry{Montana1996}
+Utiliza un enfoque adaptativo con sensores que analizan el trafico en tiempo real (un sensor para saber cuantos autos pasan y otro para saber que tan larga es la cola) tomando en consideracion los cambios que se producen con respecto al caso promedio y cambiando los tiempos de las señiales en forma acorde.
+La premisa se basa en la inteligencia colectiva en donde agentes individuales realizan tareas simples que al interactuar producen resultados globales.
+
+Se aplica programacion genetica mas especificamente STGP (strongly typed genetic programming [Montana, 1995]) que aprende el arbol de decicion que sera ejecutado por todas las intersecciones cuando decida el cambio de fase. Ademas un algoritmo genetico hibrido busca diferentes contantes que seran usadas en los arboles de decicion, permitiendo una especializacion en las diferentes geometria y flujo de trafico
+
+La medida basica de efectividad en la funcion de evaluacion es el “Delay” , esto es el total de tiempo perdido por causa de las señales de trafico. Se probaron 3 modelos distintos que tienen 4 intersecciones.
+El simulador usado utiliza una version especial de TRAF-NETSIM.
+
+El experimiento arroja buenos resultados en cuando a la preformance de la red comparando con un ciclo fijo, y que presenta buena adaptabilidad en diferentes cisrucnstancias. Marca el hecho de que el modelo es simple y de tamaño pequeño, y que es una incognita como funcionara con problemas mas complejos.
+	
+	\end{item}	
+
+
+	\begin{item}
+		\bibentry{Vogel2000}
+
+La solucion utiliza un enfoque autoadaptable para mejorar el trafico tanto en el corto como el largo plazo a travez de la optimizacion de las senaiales de trafico en las intersecciones de una red de rutas. Al darle dinamismo a cada interseccion se mejora el rendimiento de la red.
+
+Destaca el hecho que dada una configuracion de señalizacion aun siendo optimizada usando simulaciones es dificil que sea la mejor en todas las situaciones o en casos extremos (horas picos). Para solucioonar esto proponen un sistema autoadaptable que toma la inforamacion del trafico actual usando detectores de vechiculos y de espacios.
+
+Utiliza el concepto de fases para representar las distintas posibilidades en la señalizacion de la interseccion, y cuanto tiempo debe permanecer en esa fase. Esto provoca que cuanto mas fases mas cantidad de secuencias son agregadas.
+Utiliza algoritmos evolutivos donde cada individuo representa un sistema de fases junto con sus parametros. usa. El fitness se obtiene simulando ese sistema en un modelo de trafico. Este modelo es relativamente pequeño una interseccion con 4 brazos, cada uno con 3 lineas una de ellas para doblar a la izquierda, la del medio para ir derecho, y la restante para giros a la derecha. La ruta principal tiene el doble de densidad vehicular que la que la cruza.
+
+El simulador utilizado esta basado SIMVAS++, (Technische Universität Dresden, Fakultät für Verkehrswissenschaften (Ringel (1995))
+
+Los resultados indican que la ventaja de usar conocimiento experto para inicilizar parametros es minimo ya que llega muy rapido a resultados similares. Tanto la busqueda de los mejores parametros como en estructuras mas simples el algoritmo se comporta con buenos resultados.
+		
+	\end{item}	
+	
+	\begin{item}
+		\bibentry{Rouphail2000}
+
+Se estudia una pequeña red de trafico con 9 intersecciones con semaforos en la ciudad de Chicago( Usa), contando con parking, rutas de omnibus y paradas asi como con vehiculos.  
+Se toman valores reales en horas pico AM y PM, comprobando que las colas que se generan en la simulacion coinciden con la realidad.
+Usa el programa TRANSYT-7F ( Que permite visualizar mapas y contiene optimizacion de varios algoritmos geneticos.
+% http://mctrans.ce.ufl.edu/mct/?page_id=943 ) y CORSIM  ( simulador pago http://www-mctrans.ce.ufl.edu/featured/TSIS/Version5/corsim.htm )
+Se probaron 12 estrategias distintas en 7F y la mejor fue simulada en CORSIM 100 veces. Se midio el tiempo de demora en la red y el largo de las colas producidas
+La performance de la red aumentó considerablemente usando este metodo	
+	\end{item}	
+
+\end{itemize}
+
+
+\section{Resumen}
+\colorbox{yellow}{
+Como se aprecia analizando el estado del arte nuestraa implementación es mucho más compleja  que los trabajos analizados, estos tienen un alcance mucho menor en cuanto a cantidad de semáforos cantidad de Cruces menos de 30. Nuestro caso contamos con 70 semáforos 10 cruces principales y 40 intercepciones en calles menores.}

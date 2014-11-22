@@ -1,0 +1,124 @@
+\documentclass[a4paper,twoside,11pt]{book}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{color,colortbl}
+\usepackage{url}
+\usepackage{array}
+\usepackage[bookmarks=true, pdftitle={Energy aware scheduling in heterogeneous computing systems}, pdfauthor={Alvaro Acuña, Efrain Arreche}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{bookmark}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[fleqn]{amsmath}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[section]{placeins}
+\usepackage[round,sort&compress]{natbib}
+%\usepackage[round,compress]{natbib}
+%\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{xfrac}
+%\usepackage[titletoc]{appendix}
+\usepackage{appendix}
+\usepackage{bibentry}
+
+%\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+%\definecolor{Gray}{gray}{0.9}
+
+\pagestyle{fancy}
+
+%\hoffset = -1in
+\voffset = -1in
+\topmargin = 30pt
+\textheight = 650pt
+\textwidth = 420pt
+\headwidth = 450pt
+%\marginparwidth = 0pt
+%\marginparsep = 0pt
+\oddsidemargin = 0pt
+\evensidemargin = 0pt
+
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]%
+	{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]%
+	{\fancyplain{}{\bfseries\rightmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]%
+	{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+    \hbox{}%
+    \thispagestyle{empty}%              % Empty header styles
+    \newpage%
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\hyphenation{}
+
+\begin{document}
+
+% tells bibentry to (re)use the bibliographic data from the standard BibTeX setup
+\nobibliography*
+
+% -- title page --
+\include{0_titulo}
+\cleardoublepage
+
+\input{0_resumen}
+\cleardoublepage
+
+% -- table of contents --
+%
+%\setcounter{tocdepth}{4}
+\tableofcontents
+\listoffigures
+\listoftables
+\listofalgorithms
+\cleardoublepage
+
+
+\cleardoublepage
+
+% --- Main Document --- --- --- --- --- --- ---
+%
+\mainmatter
+\setcounter{page}{1}
+\pagenumbering{arabic}
+%
+
+\input{1_introduccion}
+\input{2_marco_teorico}
+\input{3_presentacion_y_trabajos_relacionados}
+\input{4_estrategia_de_resolucion}
+\input{5_analisis_experimental}
+\input{6_conclusiones_y_trabajo_futuro}
+
+
+
+
+% -- bibliography --
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand{\refname}{Referencias}
+%\nocite{*}
+
+\bibliographystyle{abbrvnat}
+\bibliography{index}
+
+
+\end{document}

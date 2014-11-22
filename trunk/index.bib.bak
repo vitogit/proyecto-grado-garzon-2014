@@ -1,0 +1,86 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF8
+
+
+@Article{Montana1996,
+  Title                    = {Evolving Control Laws for a Network of Traffic Signals},
+  Author                   = {David J. Montana and Steven Czerwinski},
+  Year                     = {1996},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{Penner2002,
+  Title                    = {SWARM-BASED TRAFFIC SIMULATION WITH EVOLUTIONARY TRAFFIC LIGHT ADAPTATION},
+  Author                   = {Joanne Penner and Ricardo Hoar and Christian Jacob},
+  Year                     = {2002},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{Rouphail2000,
+  Title                    = {Direct Signal Timing Optimization: Strategy Development and Results},
+  Author                   = {Nagui M. Rouphail and Byungkyu “Brian” Park and Jerome Sacks},
+  Year                     = {2000},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{SANCHEZ2007,
+  Title                    = {Estudio de la Optimizacion del Trafico Rodado Mediante el Ajuste de los Ciclos de Semaforospor Algoritmos Geneticos en Dispositivos de Computacion Paralela Usando Modelizacion
+Discreta: Ejemplos de Aplicacion},
+  Author                   = {SÁNCHEZ},
+  Year                     = {2007},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{SANCHEZ2010,
+  Title                    = {Traffic Signal Optimization in “La Almozara” District in Saragossa Under Congestion Conditions, Using Genetic Algorithms, Traffic Microsimulation, and Cluster Computing},
+  Author                   = {SÁNCHEZ and GALÁN and RUBIO},
+  Year                     = {2010},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{SANCHEZ2008,
+  Title                    = {Applying a Traffic Lights Evolutionary Optimization Technique to a Real Case: “Las Ramblas” Area in Santa Cruz de Tenerife},
+  Author                   = {SÁNCHEZ and GALÁN and RUBIO},
+  Year                     = {2008},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{SANCHEZ2004,
+  Title                    = {Genetic Algorithms and Cellular Automata: A New Architecture for Traffic Light Cycles Optimization},
+  Author                   = {SÁNCHEZ and GALÁN and RUBIO},
+  Year                     = {2004},
+
+  Owner                    = {vito},
+  Timestamp                = {2014.11.22}
+}
+
+@Article{Stolfi2012,
+  Title                    = {Optimizacion del Trafico Rodado en Ciudades Inteligentes},
+  Author                   = {Daniel H. Stolfi},
+  Year                     = {2012},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{Teo2010,
+  Title                    = {Optimization of Traffic Flow Within an Urban Traffic Light Intersection with Genetic Algorithm},
+  Author                   = {K. T. K. Teo and  W. Y. Kow  and Y. K. Chin},
+  Year                     = {2010},
+
+  Timestamp                = {2014.11.22}
+}
+
+@Article{Vogel2000,
+  Title                    = {Evolutionary Algorithms for Optimizing Traffic Signal Operation},
+  Author                   = {Andrea Vogel and Christian Goerick and Werner von Seelen},
+  Year                     = {2000},
+
+  Timestamp                = {2014.11.22}
+}
+

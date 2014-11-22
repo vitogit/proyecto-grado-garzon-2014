@@ -1,0 +1,64 @@
+\chapter{Análisis Experimental}
+En esta seccion describimos los distintos escenarios que vamos a probar y los resultados obtenidos.
+
+\section{Descripción de escenarios}
+
+
+\section{Desarrollo y plataforma de ejecucion }
+Los algoritmos fueron desarrollados usando la librería Malva que fue extendida en el codigo base para soportar la creacion de nuevos hilos de ejecucion para lograr el funcionamiento en paralelo
+
+\section{Ajuste de parametros de algoritmos}
+Buscamos la mejor configuracion inicial de los parametros realizando pruebas experimentales con diferentes combinaciones.  Estos son: el tamanio de la poblacion,  probabilidad de mutacion, probabilidad de cruzamiento, etc.
+Para esto se realizaron 20 ejecuciones independientes para el algoritmo secuencial inicial.
+El criterio de parada se eligio por el numero de generacion…
+
+Para la poblacion se probaron 20, 50, 100 . Los resultado indicaron que 
+Para el cruzamiento 0.5, 0.8, 1
+Para mutacion 0.01, 0.05 y 0.1
+
+La mejor  configuracion obtenida fue:
+Poblacion:120, mutacion:0.01 , cruzamiento: 1
+
+Las graficas muestras el promedio de las 20 ejecuciones para resolver el escenario inicial.
+
+
+\section{Resultados}
+Presentaremos los resultados obtenidos  utilizando los parametros optimos obtenidos para el escenario inicial, el escenario modificado, y la prueba en el cluster.
+
+\subsection{Resultado simulacion caso base}
+\subsection{Resultado Escenario Inicial ( Algoritmo  Secuencial)}
+\subsection{Resultado Escenario Modificado ( Algoritmo  Secuencial)}
+\subsection{Resultado de ejecucion en paralelo. }
+
+\subsection{Comparacion caso base vs Algoritmo Secuencial}
+Analisis comparativo : test parametrico
+H1)  los  resultados  de  mejor  fitness  tienen  una
+distribución normal.
+H2)Existe  una  diferencia  significativa  entre  los  de
+conjuntos  de  muestras  obtenidos  por  el  algoritmo  y  la
+realidad
+
+El  test  de  normalidad  de  Shapiro-Wilks  resultó  ser
+verdadero  en  ambos  casos  con  un  alto  porcentaje  de
+confiabilidad y luego al realizar los test T-student [6] resulto
+tener menos de 0,0001 lo que se considera una diferencia que
+estadísticamente  es  extremadamente  significativa.  Esto
+confirma algo que resulta un tanto evidente ya que al comparar
+el promedio de los mejores fitness con la realidad encontramos
+una diferencia de un 31,8% y un 15% respectivamente y estos
+casos  son  bastante  acotados  ya  que  hay  mucha  cantidad  de
+vehículos con grandes/medias distancias.
+Con  los  resultados  obtenidos  en  las  ejecuciones  para  los
+escenarios  1  y  2  se  obtuvo  un  mejor  fitness  de  661  y  515
+respectivamente, comparado con el tiempo de la configuración
+real que demora 1019 y 690, las soluciones son muy buenas.
+
+
+
+\subsection{Comparacion Algoritmo Secuencial vs Algoritmo Paralelo (Calculo de SpeedUp)}
+
+\subsection{Escabilidad de Algoritmo Paralelo }
+Ejecutar en 4, 8 ,16, 32
+
+\section{Resumen}
+

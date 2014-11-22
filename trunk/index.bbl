@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Montana and Czerwinski(1996)]{Montana1996}
+D.~J. Montana and S.~Czerwinski.
+\newblock Evolving control laws for a network of traffic signals.
+\newblock 1996.
+
+\bibitem[Penner et~al.(2002)Penner, Hoar, and Jacob]{Penner2002}
+J.~Penner, R.~Hoar, and C.~Jacob.
+\newblock Swarm-based traffic simulation with evolutionary traffic light
+  adaptation.
+\newblock 2002.
+
+\bibitem[Rouphail et~al.(2000)Rouphail, Park, and Sacks]{Rouphail2000}
+N.~M. Rouphail, B.~B. Park, and J.~Sacks.
+\newblock Direct signal timing optimization: Strategy development and results.
+\newblock 2000.
+
+\bibitem[SÁNCHEZ(2007)]{Sanchez2007}
+SÁNCHEZ.
+\newblock Estudio de la optimizacion del trafico rodado mediante el ajuste de
+  los ciclos de semaforospor algoritmos geneticos en dispositivos de
+  computacion paralela usando modelizacion discreta: Ejemplos de aplicacion.
+\newblock 2007.
+
+\bibitem[SÁNCHEZ et~al.(2004)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2004}
+SÁNCHEZ, GALÁN, and RUBIO.
+\newblock Genetic algorithms and cellular automata: A new architecture for
+  traffic light cycles optimization.
+\newblock 2004.
+
+\bibitem[SÁNCHEZ et~al.(2008)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2008}
+SÁNCHEZ, GALÁN, and RUBIO.
+\newblock Applying a traffic lights evolutionary optimization technique to a
+  real case: “las ramblas” area in santa cruz de tenerife.
+\newblock 2008.
+
+\bibitem[SÁNCHEZ et~al.(2010)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2010}
+SÁNCHEZ, GALÁN, and RUBIO.
+\newblock Traffic signal optimization in “la almozara” district in
+  saragossa under congestion conditions, using genetic algorithms, traffic
+  microsimulation, and cluster computing.
+\newblock 2010.
+
+\bibitem[Stolfi(2012)]{Stolfi2012}
+D.~H. Stolfi.
+\newblock Optimizacion del trafico rodado en ciudades inteligentes.
+\newblock 2012.
+
+\bibitem[Teo et~al.(2010)Teo, Kow, and Chin]{Teo2010}
+K.~T.~K. Teo, W.~Y. Kow, and Y.~K. Chin.
+\newblock Optimization of traffic flow within an urban traffic light
+  intersection with genetic algorithm.
+\newblock 2010.
+
+\bibitem[Vogel et~al.(2000)Vogel, Goerick, and von Seelen]{Vogel2000}
+A.~Vogel, C.~Goerick, and W.~von Seelen.
+\newblock Evolutionary algorithms for optimizing traffic signal operation.
+\newblock 2000.
+
+\end{thebibliography}

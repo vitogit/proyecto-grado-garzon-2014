@@ -1,0 +1,128 @@
+\chapter{Marco Teórico}
+
+ En este capitulo se aborda el marco teorico necesario para comprender mas facilmente el desarrollo de los capitulos posteriores. Se analiza el problema del trafico en general, los simuladores y los algoritmos a utilizar.
+
+\section{Planificación del trafico}
+
+\section{Algoritmos Evolutivos}
+\subsection{Introduccion}
+\subsection{Algoritmos Evolutivos}
+\subsection{Algoritmos Geneticos}
+\subsection{Algoritmos Genetico Simple (AGS)}
+\subsection{Algoritmos Genetico MultiObjectivo}
+\subsection{Algoritmo Genetico Paralelo}
+\subsection{Maestro-Esclavo}
+\subsection{Resumen}
+
+\section{Por que usar algoritmo geneticos?}
+El problema de sincronización de semáforos es NP-Hard y que
+no existe (hasta el momento) un método determinístico que lo
+resuelva, se buscará mediante algoritmos evolutivos llegar a
+una configuración aceptable minimizando los tiempos de
+espera de los automóviles, mejorando así la configuración
+actual de los semáforos de la región más transitada del corredor
+de Garzón.
+
+
+\section{Simulación y herramientas}
+\subsection{Simuladores de trafico}
+Los simuladores de trafico son programas que simulan el movimiento de vehiculos sobre una red de calles,es una herramienta muy usada en la investigacion de trafico vehicular, asi como estudio de congestiones o analisis de impacto que tendran nuevas infraestructuras.  Las razones para usar una simulacion son varias, entre ellas se encuentra  la rapidez  ya que la simulacion se puede realizar en tiempo mucho mas rapidos que en la realidad, el costo en dinero ya que no estamos afectando el escenario real  y tampoco tenemos que modificar o detener el escenario real para probar nuevos parametros. ADemas nos sirve para poder preever situaciones que podrian darse bajo determinadas circunstancias.
+
+Los simuladore se puedne dividir en microscopicos o macroscopicos según el nivel de detalle de la simulacion. Un simulador macroscopico modela  el trafico vehciular como un fluido. En cambio un simulador microscopico simula el movimiento de cada vehiculo según sus caracteristicas particulares.
+SUMO es uno de los simuladores abiertos mas populares,  es microscopico aunque presenta algunas dificultades a la hora de la configuracion del mapa y el transito que lo hace en base a arhivos XML.
+
+Cuanto mas crece el numero de vehiculos y la complejidad de la red de mapas mas dificil se hace crear la entrada basica que necesita el simulador. Aunque existen diversas herramientas que ayudan a este proceso aun se requiere un trabajo manual para el acondicionado de estos archivos.
+SUMO simula el trafico utilizando archivos XML que representan las rutas, los vehiculos y el trafico. En 
+
+\subsection{Modelo de trafico }
+Esta es la representacion de la circulacion de vehiculos, exiten varios metdos desde 
+Aleatorios: Genera diferentes recorridos que seguiran los vehiculos aleatoriamente
+JTR : basados en probablidaddes en los cruces  es decir cuando un vehciulo llega a un cruce tiene cierta probabilidad de seguir o doblar (JTR – junction turning ratio), 
+Basado en discritctos:  Se especifican districtos(conjunto de calles) y  la cantidad de movimiento vechiular entre ellos en una  matriz
+Basado en Actividad: Se especifica la cantidad de casas , vehiculos y poblacion en un determinado lugar y el modelo genera la densidad de trafico que se producira basado en los tipos de actividades que se realizan comunment como ir al trabajo, hacer las compras, ir a la escuela,  etc
+Definido por el usuario: que permiten determinar la ruta de los vehiculos con mayor detalle.
+
+\subsection{Representaciones}
+
+\subsubsection{Red calles}
+La red de calles se representa como un grafico dirigido en un archivo xml con extension .net.xml . Alli se especifican los nodos, y vertices asi como sus atributos. Tambien se representan los semaforos. Esto  se genera utilizando una herramienta  para convertir un mapa al formato que SUMO utiliza.
+
+\subsubsection{Representacion Trafico}
+En este caso tambien se tuliza un arhicvo xml donde se definen las rutas y los trips. Un trip representa el movimiento de un vehiculo de un punto inicial hacia un punto final (El recorrido se hacen en tiempo de ejecucion utilizando el camino mas corto basado en el trafico). Una ruta es mas complejo que un trip ya que agrega todos los vertices por los que el vehiculo pasara.
+
+SUMO tambien soporta el modelo JTR y basado en discritctos pero se necesitan modulos externos para generarlos.
+
+\subsubsection{Representacion del tiempo}
+El tiempo se representa como una serie de pasos discretos, cada uno durando un segundo. Este valor se puede modifcar aunque es recomendado dejarlo asi para que sea concistente
+
+
+\subsection{Ajustes de archivos de SUMO}
+Pasos y problemas en la generacion y adecuacion del mapa
+
+\subsection{Trafico}
+Elegimos utilizar el flow calle-a-calle que nos permite determinar con mucho detalle el trafico generado entre calles. Ya que contamos con datos relevados en el lugar. Se especifica el lugar de donde sale el vehiculo, donde termina su recorrido, el numero de vehiculos que se emiten o la frecuencia.
+
+\subsubsection{Tipos de vehiculos}
+Se pueden crear diferentes tipos de vehiculos especificando propiedades como largo, velcoidad maxima,  aceleracion, color, etc. TAmbien contamos con algunos por defecto como camiones, buses
+
+\subsubsection{Accidentes}
+El simulador permite representar colisiones y el corte de una calle. Decidimos no utilizar esto pues no queriamos este tipo de variables afectara en la ejecucion de las pruebas.
+
+\subsection{Trabajo de campo realizado}
+Al no contact con datos publicos sobre la configuracion de los semaforos de la zona, realizamos un relevamiento in situ de la siguente forma.
+En los principales cruces realizamos una filmacion de 30 min. Luego analizamos el video realizando el conteo manualmente con la posiblidad de enlenter el video para mayor facilidad.
+Estas medidas nos sirvieron para verificar nuestros modelos basados en los datos del GPS 
+
+La configuracion de los semaforos se realizo yendo por el corredor y cronometrando la duracion del tiempo. Tanto en ida como en venida para coproborar que fueran correctos.
+
+
+
+\subsection{Configuración de la simulación}
+
+\subsubsection{Diseño del mapa}
+El mapa base de la zona lo tomamos de OSM, luego se cotejo su exactitud con Google Maps y Bing Maps.
+Utilizamos la herramienta netconvert para pasarlo a formato que SUMO acepte. 
+Para esto realizamos varios ajustes editando los archivos xml para indicar donde se realizan.
+
+Se generó una especial dificultad en el diseño de un mapa que
+fuese tan fiel como fuese posible a la realidad y que también
+fuese compatible para usar con  Sumo. Se debió recabar datos
+in  situ  ya  que  hasta  la  misma  intendencia  [4]  tenía  errores
+respecto a la realidad, falta de algunos semáforos, etc. Luego al
+pasarlo  al  formato  compatible  con  sumo  se  debieron  corregir
+calles,  cruces  y  todas las  posibles  conexiones de  las  esquinas
+del corredor que debieron ser escritas a mano en un XML.
+
+Poner fotos de un ants (salida directa del netconverte) y luego con los agregados de joins y connections
+
+
+\subsubsection{Vehículos}
+Se manejaron dos tipos de vehículos, autos y ómnibus:
+Las  líneas  de  ómnibus  urbanas  (que  circulan  por  el
+corredor)  incluidas  fueron  la  “G”,  la  “409”  y
+adaptaciones  de  la  “522”  y  “148”  que  se  juntaron  en
+una  línea  sola. Y  las líneas de ómnibus suburbanas en
+el  tramo  elegido  realizan  el  mismo  trayecto  y  les
+llamamos  línea  “A".  Todas  las  líneas  de  ómnibus
+fueron cargadas con las paradas correspondientes y se
+hicieron  variantes  en  los  viajes  dentro  de  una  misma
+línea de manera que no siempre paran en los mismos
+lugares.
+Los  viajes  de  los  autos  son  generados  aleatoriamente
+de modo que no circulen por el corredor (que es para
+los  ómnibus  urbanos)  y  de  forma  que  tengan  mayor
+probabilidad los viajes que comienzan y terminan en el
+borde  de  la  red,  luego  se  seleccionan  los  viajes  de
+manera  que  las  grandes  avenidas  sean  más  recorridas
+que  las  calles  menos  importantes.
+
+\subsubsection{Semáforos en cada cruce}
+Se  tomaron  los  tiempos  de  cada  luz  de  los  semáforos  en
+cada  cruce  y  luego  estos  datos  fueron  cargados  al  simulador
+para comparar con los  resultados  así como también para base
+de nuestro algoritmo evolutivo.
+\subsubsection{Escenarios}
+
+
+\section{Resumen}
+
