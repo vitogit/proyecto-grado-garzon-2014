@@ -1,74 +1,77 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {subsubsection}{Motivaci\IeC {\'o}n y contexto}{1}{section*.5}
-\contentsline {subsubsection}{Objetivos}{1}{section*.6}
-\contentsline {subsubsection}{limitaciones}{1}{section*.7}
+\contentsline {subsubsection}{Objetivos}{2}{section*.6}
+\contentsline {subsubsection}{Limitaciones y alcance}{2}{section*.7}
 \contentsline {subsubsection}{Enfoque}{2}{section*.8}
 \contentsline {subsubsection}{Contribuciones de este trabajo}{2}{section*.9}
 \contentsline {subsubsection}{Contacto con el publico}{2}{section*.10}
 \contentsline {subsubsection}{Estructura del documento}{2}{section*.11}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Planificaci\IeC {\'o}n del trafico}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Problematica}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Corredor Garzon}{3}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Algoritmos Evolutivos}{3}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Introduccion}{3}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Algoritmos Evolutivos}{3}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Algoritmos Geneticos}{3}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Algoritmos Genetico Simple (AGS)}{3}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Algoritmos Genetico MultiObjectivo}{3}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Algoritmo Genetico Paralelo}{3}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Maestro-Esclavo}{3}{subsection.2.2.7}
-\contentsline {subsection}{\numberline {2.2.8}Resumen}{3}{subsection.2.2.8}
-\contentsline {section}{\numberline {2.3}Por que usar algoritmo geneticos?}{3}{section.2.3}
-\contentsline {section}{\numberline {2.4}Simulaci\IeC {\'o}n y herramientas}{3}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Simuladores de trafico}{3}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Modelo de trafico }{4}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Representaciones}{4}{subsection.2.4.3}
-\contentsline {subsubsection}{Red calles}{4}{section*.12}
-\contentsline {subsubsection}{Representacion Trafico}{4}{section*.13}
-\contentsline {subsubsection}{Representacion del tiempo}{5}{section*.14}
-\contentsline {subsection}{\numberline {2.4.4}Ajustes de archivos de SUMO}{5}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Trafico}{5}{subsection.2.4.5}
-\contentsline {subsubsection}{Tipos de vehiculos}{5}{section*.15}
-\contentsline {subsubsection}{Accidentes}{5}{section*.16}
-\contentsline {subsection}{\numberline {2.4.6}Trabajo de campo realizado}{5}{subsection.2.4.6}
-\contentsline {subsection}{\numberline {2.4.7}Configuraci\IeC {\'o}n de la simulaci\IeC {\'o}n}{5}{subsection.2.4.7}
-\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{5}{section*.17}
-\contentsline {subsubsection}{Veh\IeC {\'\i }culos}{6}{section*.18}
-\contentsline {subsubsection}{Sem\IeC {\'a}foros en cada cruce}{6}{section*.19}
-\contentsline {subsubsection}{Escenarios}{6}{section*.20}
-\contentsline {section}{\numberline {2.5}Resumen}{6}{section.2.5}
-\contentsline {chapter}{\numberline {3}Presentaci\IeC {\'o}n y trabajos relacionados}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Presentaci\IeC {\'o}n}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Formulaci\IeC {\'o}n matem\IeC {\'a}tica}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Estado del arte}{7}{section.3.3}
-\contentsline {section}{\numberline {3.4}Resumen}{11}{section.3.4}
-\contentsline {chapter}{\numberline {4}Estrategia de resoluci\IeC {\'o}n}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algoritmo Genetico}{13}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}representacion}{13}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Codificacion}{13}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}inicializacion}{14}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}funcion fitness}{14}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}operadores}{14}{subsection.4.1.5}
-\contentsline {subsubsection}{seleccion}{14}{section*.21}
-\contentsline {subsubsection}{cruzamiento}{14}{section*.22}
-\contentsline {subsubsection}{mutacion}{14}{section*.23}
-\contentsline {subsection}{\numberline {4.1.6}Criterio de parada}{14}{subsection.4.1.6}
-\contentsline {section}{\numberline {4.2}Algoritmo Paralelo}{14}{section.4.2}
-\contentsline {section}{\numberline {4.3}Resumen}{15}{section.4.3}
-\contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{17}{chapter.5}
-\contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n de escenarios}{17}{section.5.1}
-\contentsline {section}{\numberline {5.2}Desarrollo y plataforma de ejecucion }{17}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ajuste de parametros de algoritmos}{17}{section.5.3}
-\contentsline {section}{\numberline {5.4}Resultados}{17}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Resultado simulacion caso base}{18}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Resultado Escenario Inicial ( Algoritmo Secuencial)}{18}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Modificado ( Algoritmo Secuencial)}{18}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Resultado de ejecucion en paralelo. }{18}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Comparacion caso base vs Algoritmo Secuencial}{18}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Comparacion Algoritmo Secuencial vs Algoritmo Paralelo (Calculo de SpeedUp)}{18}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Escabilidad de Algoritmo Paralelo }{18}{subsection.5.4.7}
-\contentsline {section}{\numberline {5.5}Resumen}{18}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusiones}{19}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trabajo futuro}{19}{section.6.2}
-\contentsline {chapter}{Bibliography}{19}{section.6.2}
+\contentsline {subsection}{\numberline {2.2.1}Algoritmos Geneticos}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Algoritmos Genetico Simple (AGS)}{4}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Algoritmos Genetico MultiObjectivo}{5}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Algoritmo Genetico Paralelo}{5}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Maestro-Esclavo}{5}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Resumen}{5}{subsection.2.2.6}
+\contentsline {section}{\numberline {2.3}Por que usar algoritmo geneticos?}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Simulaci\IeC {\'o}n y herramientas}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Simuladores de trafico}{5}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Modelo de trafico }{5}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Representaciones}{6}{subsection.2.4.3}
+\contentsline {subsubsection}{Red calles}{6}{section*.12}
+\contentsline {subsubsection}{Representacion Trafico}{6}{section*.13}
+\contentsline {subsubsection}{Representacion del tiempo}{6}{section*.14}
+\contentsline {subsection}{\numberline {2.4.4}Ajustes de archivos de SUMO}{6}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Trafico}{6}{subsection.2.4.5}
+\contentsline {subsubsection}{Tipos de vehiculos}{6}{section*.15}
+\contentsline {subsubsection}{Accidentes}{6}{section*.16}
+\contentsline {subsection}{\numberline {2.4.6}Trabajo de campo realizado}{7}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.7}Configuraci\IeC {\'o}n de la simulaci\IeC {\'o}n}{7}{subsection.2.4.7}
+\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{7}{section*.17}
+\contentsline {subsubsection}{Veh\IeC {\'\i }culos}{7}{section*.18}
+\contentsline {subsubsection}{Sem\IeC {\'a}foros en cada cruce}{7}{section*.19}
+\contentsline {subsubsection}{Escenarios}{7}{section*.20}
+\contentsline {section}{\numberline {2.5}Resumen}{7}{section.2.5}
+\contentsline {chapter}{\numberline {3}Presentaci\IeC {\'o}n y trabajos relacionados}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Presentaci\IeC {\'o}n}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Formulaci\IeC {\'o}n matem\IeC {\'a}tica}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Estado del arte}{9}{section.3.3}
+\contentsline {section}{\numberline {3.4}Resumen}{13}{section.3.4}
+\contentsline {chapter}{\numberline {4}Estrategia de resoluci\IeC {\'o}n}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algoritmo Genetico}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}representacion}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Codificacion}{15}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}inicializacion}{16}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}funcion fitness}{16}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}operadores}{16}{subsection.4.1.5}
+\contentsline {subsubsection}{seleccion}{16}{section*.21}
+\contentsline {subsubsection}{cruzamiento}{16}{section*.22}
+\contentsline {subsubsection}{mutacion}{16}{section*.23}
+\contentsline {subsection}{\numberline {4.1.6}Criterio de parada}{16}{subsection.4.1.6}
+\contentsline {section}{\numberline {4.2}Algoritmo Paralelo}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resumen}{17}{section.4.3}
+\contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n de escenarios}{19}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Caso base}{19}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Escenario Inicial }{19}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Escenario Alternativo}{19}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Desarrollo y plataforma de ejecucion }{19}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ajuste de parametros de algoritmos}{19}{section.5.3}
+\contentsline {section}{\numberline {5.4}Resultados}{20}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Resultado simulacion caso base}{20}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Resultado Escenario Inicial ( Algoritmo Secuencial)}{20}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Alernativo ( Algoritmo Secuencial)}{20}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Resultado de ejecucion en paralelo. }{20}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Comparacion caso base vs Algoritmo Secuencial}{20}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.6}Comparacion Algoritmo Secuencial vs Algoritmo Paralelo (Calculo de SpeedUp)}{20}{subsection.5.4.6}
+\contentsline {subsection}{\numberline {5.4.7}Escabilidad de Algoritmo Paralelo }{20}{subsection.5.4.7}
+\contentsline {section}{\numberline {5.5}Resumen}{20}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusiones}{21}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{21}{section.6.2}
+\contentsline {chapter}{Bibliography}{21}{section.6.2}

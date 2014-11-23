@@ -3,12 +3,88 @@
  En este capitulo se aborda el marco teorico necesario para comprender mas facilmente el desarrollo de los capitulos posteriores. Se analiza el problema del trafico en general, los simuladores y los algoritmos a utilizar.
 
 \section{Planificación del trafico}
+\subsection{Problematica} 
+\subsection{Corredor Garzon}
+El corredor Garzon esta ubicado en Montevieo Uruguay, fue construido como parte de un plan de movilidad que incluye otros 4 corredores. 
+Presenta un carril exclusivo para ombnibus y preferenciales
+http://www.montevideo.gub.uy/ciudadania/stm-transporte-metropolitano/plan-de-movilidad/corredores
+
+Tiene 6km de largo , extendiendose desde ...  hasta ..
+%http://www.montevideo.gub.uy/sites/default/files/articulo/corredor_garzon.pdf
+
+Agregar mapa
+
+Los problemas de sincronizacion de semaforos fueron admitidos en varias publicaciones.
+
+18 diciembre 2013 - Corredor Garzon lucha contra el tiempo %http://www.elpais.com.uy/informacion/imm-corredor-garzon-tiempos-cambios.html
+Dice que antes de GArzon se demoraba promedio 18 minutos, y al inaugurar el corredor 30 minutos. Despues se mejoro algo para equilibrar los tiempos
+Para el jerarca, eso se dio "con la diferencia de que hoy hay 15 semáforos más y se ganó en seguridad". En concreto, tras la obra, se pasó de tener 5 semáforos a 20. Según Campal, su descoordinación inicial, entre otros aspectos, fue lo que provocó tales demoras, generando malestar en los usuarios.
+invesrion de 60 millones
+
+
+4 agosto 2013 - Garzon desde un omnibus %http://www.elpais.com.uy/informacion/corredor-garzon-visto-bus.html
+
+
+30 julio 2013  - Intendetnta admite errores %http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html
+La intendenta admte errores y dice: no se ha logrado sincronizar los semáforos. Hay un tema con el software,(y) la empresa subcontratada no ha dado los resultados esperados
+
+
+Abril 2013 - Otro Corredor con obras paralizadas por criticas a GArzon
+%http://www.elpais.com.uy/informacion/marcha-atras-en-corredor-agraciada.html
+
+
+
+
 
 \section{Algoritmos Evolutivos}
-\subsection{Introduccion}
-\subsection{Algoritmos Evolutivos}
+Los algoritmos evolutivos son metodos no deterministicos que se inspiran en la evolucion natural de las especies utilizando conceptos como poblacion, cruzamiento, mutacion, seleccion, etc. Estos se utilizan para resolver problemas de optimizacion y busqueda, entre otros. []
+
+
+Este tipo de solucion a demostrado su utilidad en una variedad amplia de problemas complejos.
+
+El algoritmo generico es el siguente
+
+\begin{algorithm}[!ht]
+	\caption{Schema of an evolutionary algorithm.}
+	\label{Alg:diagramEA}
+	\begin{algorithmic} [1]
+		\STATE {\bf initialize}($P$(0))
+		\STATE \texttt{generation} $\leftarrow$ 0
+		\WHILE{not \texttt{stopcriteria}}
+		\STATE {\bf evaluate}($P$(\texttt{generation}))
+		\STATE \texttt{parents} $\leftarrow$ {\bf selection}($P$(\texttt{generation}))
+		\STATE \texttt{offspring} $\leftarrow$ {\bf variation operators}(\texttt{parents})
+		\STATE \texttt{newpop} $\leftarrow$ {\bf replace}(\texttt{offspring}, $P$(\texttt{generation}))
+		\STATE \texttt{generation} ++
+		\STATE $P$(\texttt{generation}) $\leftarrow$ \texttt{newpop}
+		\ENDWHILE
+		\STATE {\bf return} best solution ever found
+	\end{algorithmic}
+\end{algorithm}
+
 \subsection{Algoritmos Geneticos}
+Un algoritmo genetico es un tipo de algoritmo evolutivo, siendo de los mas populares. La formulacion de este fue propuesto por Goldber [].
+
+La idea base es que partiendo de una poblacion inicial de individuos en cada iteracion se seleccionan los mejores en base a algun criterio y estos se utilizan para generar nuevos individuos ya sea por cruzamiento o mutacion. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el numero de iteraciones o cuando ya no se puede mejorar mas la solucion.
+
+Hay que indicar que no es una tecnica exacta pero si logra muy buenas aproximaciones y es muy buena en problemas complejos por su flexibilidad y robustez. 
+
+Los siguentes son los requisitos basicos para tener un algoritmo genetico
+
+Individuo: Representacion genetica del individuo o solucion.
+Poblacion: Un conjunto de individuos
+Funcion de Fitness: Indica que tan buena es la solucion y se usa para seleccionar
+Cruzamiento: Indica el metodo utilizado para combinar soluciones
+Mutacion: Indica el metodo utilizado para modificar un individuo
+Criterio de parada: Indica cuando debe terminar el algoritmo
+
 \subsection{Algoritmos Genetico Simple (AGS)}
+
+The algorithm proceeds as shown in Algorithm~\ref{alg:stochastic_search_framework}.
+
+
+
+
 \subsection{Algoritmos Genetico MultiObjectivo}
 \subsection{Algoritmo Genetico Paralelo}
 \subsection{Maestro-Esclavo}
