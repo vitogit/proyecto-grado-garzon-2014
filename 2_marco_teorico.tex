@@ -37,67 +37,104 @@ Abril 2013 - Otro Corredor con obras paralizadas por criticas a GArzon
 
 
 \section{Algoritmos Evolutivos}
-Los algoritmos evolutivos son metodos no deterministicos que se inspiran en la evolucion natural de las especies utilizando conceptos como poblacion, cruzamiento, mutacion, seleccion, etc. Estos se utilizan para resolver problemas de optimizacion y busqueda, entre otros. []
+Los algoritmos evolutivos son métodos no deterministicos que se inspiran en la evolución natural de las especies utilizando conceptos como población, cruzamiento, mutación, selección, etc. Estos se utilizan para resolver problemas de optimizacion y búsqueda, entre otros. []
 
+Es una tecnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores y basado en un criterio predefinido de maximizacion o minimizacion.
 
-Este tipo de solucion a demostrado su utilidad en una variedad amplia de problemas complejos.
+Este tipo de solución a demostrado su utilidad en una amplia variedad de problemas complejos.
 
-El algoritmo generico es el siguente
-
-\begin{algorithm}[!ht]
-	\caption{Schema of an evolutionary algorithm.}
-	\label{Alg:diagramEA}
-	\begin{algorithmic} [1]
-		\STATE {\bf initialize}($P$(0))
-		\STATE \texttt{generation} $\leftarrow$ 0
-		\WHILE{not \texttt{stopcriteria}}
-		\STATE {\bf evaluate}($P$(\texttt{generation}))
-		\STATE \texttt{parents} $\leftarrow$ {\bf selection}($P$(\texttt{generation}))
-		\STATE \texttt{offspring} $\leftarrow$ {\bf variation operators}(\texttt{parents})
-		\STATE \texttt{newpop} $\leftarrow$ {\bf replace}(\texttt{offspring}, $P$(\texttt{generation}))
-		\STATE \texttt{generation} ++
-		\STATE $P$(\texttt{generation}) $\leftarrow$ \texttt{newpop}
-		\ENDWHILE
-		\STATE {\bf return} best solution ever found
-	\end{algorithmic}
-\end{algorithm}
 
 \subsection{Algoritmos Geneticos}
-Un algoritmo genetico es un tipo de algoritmo evolutivo, siendo de los mas populares. La formulacion de este fue propuesto por Goldber [].
+Un algoritmo genético es un tipo de algoritmo evolutivo, siendo de los mas populares.
 
-La idea base es que partiendo de una poblacion inicial de individuos en cada iteracion se seleccionan los mejores en base a algun criterio y estos se utilizan para generar nuevos individuos ya sea por cruzamiento o mutacion. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el numero de iteraciones o cuando ya no se puede mejorar mas la solucion.
+La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinacion o modificacion. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el numero de iteraciones o cuando ya no se puede mejorar mas la solucion.
 
-Hay que indicar que no es una tecnica exacta pero si logra muy buenas aproximaciones y es muy buena en problemas complejos por su flexibilidad y robustez. 
+Un individuo es una codificación de la solución que resuelve el problema.
+La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo.
+La función de evaluación indica que tan buena o apta es una solución en comparación con las demás.
+En cada iteracion la cual se llama generación se aplican operadores de cruzamiento estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
 
-Los siguentes son los requisitos basicos para tener un algoritmo genetico
+Por tanto se van seleccionando, combinando y cambiando las mejores soluciones en un proceso que va obteniendo mejores soluciones.
+El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzo un numero de generaciones predefinidos o por que la mejora no es tan evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
 
-Individuo: Representacion genetica del individuo o solucion.
-Poblacion: Un conjunto de individuos
-Funcion de Fitness: Indica que tan buena es la solucion y se usa para seleccionar
-Cruzamiento: Indica el metodo utilizado para combinar soluciones
-Mutacion: Indica el metodo utilizado para modificar un individuo
-Criterio de parada: Indica cuando debe terminar el algoritmo
+
+Hay que indicar que no es una técnica exacta pero si logra muy buenas aproximaciones y es muy buena en problemas complejos por su flexibilidad y robustez. 
+
+
+\subsubsection{Representacion de soluciones}
+No podemos trabajar directamente sobre las soluciones, por lo que tenemos que codificarlas en un modelo que nos sirva para poder aplicar el algoritmo.
+La inspiracion biologica se ve en los nombres que adopta esta representacion, llamada Cromosoma que es un vector de genes y cada valor de un gen se llama alelo.
+En general se codifica un vector de numeros binarios o reales de largo fijo, lo que facilita la aplicacion de los operadores.
+
+\subsubsection{Función de Evaluación:} 
+Indica que tan bueno es un individuo para resolver el problema en cuestion con un valor conocido como Fitness. Este se utiliza para seleccionar a los mejores y de esta forma guiar la exploracion hacia la mejor solucion.
+Se deben tener en cuenta las reestricciones del problema para que las soluciones no factibles no sobrevivan.
+En general es donde se consume el mayor tiempo del algoritmo en comparacion con los demas operadores.
+
+\subsubsection{Operador de Seleccion}
+Existen diversos operadores de seleccion , su funcion es que las mejores caracteristicas de los individuos se mantentan en las siguentes generaciones.
+Ruleta:
+Torneo:
+Elitismo:
+
+\subsubsection{Operador de Cruzamiento}
+Su funcion es combinar individuos para lograr mejores soluciones. 
+Existe una taza que se puede modificar para indicar la probabilidad de que se realice el cruzamiento.
+Cruzamiento de un punto:
+Cruzamiento azar
+
+\subsubsection{Operador de Mutacion}
+
+
+\subsubsection{Mutacion:} 
+Indica el metodo utilizado para modificar un individuo, esto se realiza para lograr mas diversidad y no caer en maximos locales. En general aplica una modificacion aleatoria en el cromosoma.
+Tambien hay una taza de probabilidad, en general es baja.
+
+\subsubsection{Reemplazo} 
+Se indica cual es el criterio que debemos tomar para crear una nueva poblacion, ya sea tomando solo los nuevo hijos creados, comparando tambien con los padres o aplicando algun otro criterio.
+
+\subsubsection{Criterio de parada:} 
+Indica cuando debe terminar el algoritmo, puede ser definiendo un numero fijo de generaciones o analizando si la mejora en soluciones se estanco.
 
 \subsection{Algoritmos Genetico Simple (AGS)}
 
-The algorithm proceeds as shown in Algorithm~\ref{alg:stochastic_search_framework}.
+El algoritmo que vamos a utilizar es el simple, propuesto por Godber [] 
+El operador principal es el de cruzamiento y el secundario la mutación.
+
+Su esquema de funcionamiento es el siguiente
+
+
+\begin{algorithm}%[!ht]
+	\caption{Algoritmo Genético Simple}
+	\label{alg:algoritmo_genetico_simple}
+	\begin{algorithmic} [1] 
+		{
+			%\small
+			\STATE {Inicializo( Pob(0))}
+			\STATE \texttt{generacion} = 0
+			\WHILE {\text{No llegue al criterio de parada}}
+			\STATE {Evaluar Pob(generacion)}
+			\STATE {Padres = Seleccionar(Pob(generacion))}
+			\STATE {Hijos = Cruzamiento(Padres) y Mutacion(Padres)}
+			\STATE {NuevaPob = Reemplazar Pob(generacion) con Hijos}
+			\STATE \texttt{generacion}++
+			\ENDWHILE
+			\RETURN Mejor solución
+		}
+	\end{algorithmic}
+\end{algorithm}
 
 
 
 
-\subsection{Algoritmos Genetico MultiObjectivo}
+\subsection{Algoritmos Genetico Multi-objectivo}
+En este caso se busca una solucion que satisfaga de forma simultanea las reestricciones y varios objetivos diferentes.
+
 \subsection{Algoritmo Genetico Paralelo}
 \subsection{Maestro-Esclavo}
 \subsection{Resumen}
 
-\section{Por que usar algoritmo geneticos?}
-El problema de sincronización de semáforos es NP-Hard y que
-no existe (hasta el momento) un método determinístico que lo
-resuelva, se buscará mediante algoritmos evolutivos llegar a
-una configuración aceptable minimizando los tiempos de
-espera de los automóviles, mejorando así la configuración
-actual de los semáforos de la región más transitada del corredor
-de Garzón.
+
 
 
 \section{Simulación y herramientas}
