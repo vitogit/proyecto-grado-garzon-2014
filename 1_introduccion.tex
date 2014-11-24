@@ -1,69 +1,52 @@
 \chapter{Introducción}
-En esta seccion pretende introducir al lector en el contexto en el que se desarrolla este trabajo asi como los objectivos buscados.
+En esta sección pretende introducir al lector en el contexto general donde se desarrolla este trabajo así como los objetivos buscados.
 
 \subsection{Motivación y contexto}
-Con  la  idea  de  agilizar  el  transporte  público  entre  los
-barrios Colon y Sayago por un lado y la Ciudad Vieja, Pocitos
-y Malvín por otro, barrios que son bastante lejanos el uno del
-otro en la ciudad de Montevideo Uruguay, se realiza una obra
-cuya  intención radica  en que la  clase obrera demorará  menos
-tiempo en llegar a su destino.
-Supuestamente se iban a acortar los tiempos del transporte
-público de la hora que llevaba ir de Colón a Ciudad Vieja por
-ejemplo  a  aproximadamente  25  minutos  lo  cual  no  se  pudo
-cumplir  y  aunque  es  exagerada  esa  posible  reducción  de
-tiempo,  si  podría  cumplirse  algo  más  plausible.  En  este
-momento  aun  estando  en  una  calle  cuya  cartelería  permite
-circular a 60 Km/h  [1], se tiene una velocidad promedio de 25
-Km/h (según varios viajes realizados) lo cual tiene muchísimo
-para mejorar.
-La intendencia luego de diversas protestas de la gente que
-vivía en los barrios por los que pasa el corredor de Garzón da
-marcha atrás a proyectos similares como el corredor Agraciada
-Norte[2],  y  General  Flores,  admitiendo  que  en  Garzón  no  se
-había cumplido el objetivo[3].
 
-La  obra  consistió  en  ensanchar  las  calles  de  Garzón,
-manteniendo  las  dos  vías  para  cada  sentido  y  agregando  un
-corredor central exclusivo para los ómnibus Urbanos (que no
-salen de Montevideo), este es el llamado Corredor de Garzón.
-Garzón  maneja  un  conjunto de 6 de  semáforos por  cruce,
-teniendo  un  cruce  cada  300  metros  aproximadamente.  Se
-pretende  mejorar  el  estado  de  la  sincronización  de  los
-semáforos en  una región de Garzón. Junto a esto se intentará
-minimizar los tiempos de espera que se puedan obtener en el
-presente
+Los algoritmos evolutivos han demostrado su utilidad en problemas complejos y particularmente uno de ellos es la sincronización de semáforos. Nuestra intención es desarrollar un algoritmo que logre resolver este problema con buenas métricas.
+Por la flexibilidad inherente de este algoritmo es que no esta destinado a resolver el problema en una zona en particular sino que se podría aplicar a cualquiera.
+
+En este sentido hemos elegido la zona del corredor Garzón que presenta particularidades que la destacan y la hacen interesante desde el punto de vista de la investigación de nuestro algoritmo. Su complejidad viene dado por el largo del tramo, la cantidad de cruces, la complejidad y cantidad de semáforos en cada uno de ellos, las distintas reglas de trafico aplicadas a cada tramo como por ejemplo exclusividad del ómnibus, o distinción para doblar a la izquierda, trafico vehicular y transporte publico, calles no paralelas, entre otros.
+
+Por tanto si probamos que el algoritmo funciona en esta zona tan compleja podemos tener confianza de que se puede usar en otras zonas que no presentan tanta complejidad y obtener buenos resultados.
+
+
+
 \newpage
 
 \subsection{Objetivos}
 
-Estos son los objectivos basicos que nos planteamos al inicio del  proyecto.
+Estos son los objetivos básicos que nos planteamos al inicio del  proyecto.
 
 
 \begin{itemize}
-	\item Estudio del problema del trafico y la sincronizacion de semaforos
-	\item Creacion de un algoritmo evolutivo que resuelva el problema
-	\item Mostrar que los algoritmos evolutivos pueden solucionar problemas complejos en escenarios  reales, siendo una herramienta perfectamente utilizable.
-	\item Aplicar tecnicas de computacion de alto desempeño para aumentar el rendimiento de la solucion.
-	\item Probar la escabilidad de la solucion
+	\item Estudio del problema del trafico y la sincronización de semáforos.
+	\item Recabar información sobre trabajos relacionados en este ámbito.
+	\item Creación de un algoritmo evolutivo que resuelva el problema en la zona del corredor Garzón.
+	\item Confección de el mapa y la configuración relativa a semáforos, trafico y reglas de transito.	
+	\item Demostrar que los algoritmos evolutivos pueden solucionar problemas complejos en escenarios  reales, siendo una herramienta perfectamente utilizable.
+	\item Aplicar técnicas de computación de alto desempeño para aumentar el rendimiento de la solución.
+	\item Probar la escalabilidad de la solución.
 \end{itemize}
 
 \subsection{Limitaciones y alcance}
-La informacion exacta sobre la configuracion de los semaforos y la densidad de trafico no esta disponible publicamente, por tanto el relevamiento de datos hecho en situ tiene fue realizado para un numero determinado de calles y dias.
+La información exacta sobre la configuración de los semáforos y la densidad de trafico no esta disponible públicamente, por tanto el revelamiento de datos hecho in-situ fue realizado para un numero determinado de calles y días.
+
+Lo que se pretende modelar es el trafico vehicular y transporte publico por tanto la simulación de personas y los semáforos peatonales no están incluidos.
 
  
 \subsection{Enfoque}
-Se creara un programa que implemente un algoritmo genetico  que utiliza un simulador de trafico abierto para obtener las metricas a optimizar.
+Se creara un programa que implemente un algoritmo evolutivo  que utiliza un simulador de trafico abierto para obtener las métricas a optimizar.
 
 
 \subsection{Contacto con el publico}
-Cabe destacar que este proyecto se presento en Ingeniera de muestra, siendo bien recibido por el publico. Donde constatamos de primera mano que la problematica es real y nosotros como Ingenieros tenemos las herramientas necesarias para solucionar problemas que afectan directamente a la sociedad.
+Cabe destacar que este proyecto se presento en Ingeniera de muestra, siendo bien recibido por el publico. Donde constatamos de primera mano que la problemática es real y nosotros como Ingenieros tenemos las herramientas necesarias para solucionar problemas que afectan directamente a la sociedad.
 
 \subsection{Estructura del documento}
-El capitulo 2 brinda el marco teorico necesario para poder comprender los siguentes capitulos sobre la imprelmentacion del algoritmo y las simulaciones. Ademas que se da un pantallazo al problema del trafico.
-El capitulo 3 mostramos los trabajo relacionados haciendo incapie en algoritmos geneticos para la sincronizacion de semaforos.
-el capitulo 4 explicamos la estrategia seguida para la resolucion del problema y damos en detalle el disenio de la misma.
-El capitulo 5 cuenta con tablas, graficas e informacion relacionada con el analisis experimental realizado en los distintos escenarios que elegimos.
+El capitulo 2 brinda el marco teórico necesario para poder comprender los siguientes capítulos, se da una introducción sobre los algoritmos evolutivos, el problema del trafico y Garzón particularmente.
+El capitulo 3 mostramos los trabajo relacionados enfocándonos en algoritmos genéticos para la sincronización de semáforos.
+el capitulo 4 explicamos la estrategia seguida para la resolución del problema y damos en detalle el diseño de la misma.
+El capitulo 5 cuenta con tablas, gráficas e información relacionada con el análisis experimental realizado en los distintos escenarios que elegimos.
 El capitulo 6 da las conclusiones finales y el trabajo a futuro que se puede realizar.
 
 
