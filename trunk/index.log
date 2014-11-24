@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  24 NOV 2014 11:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  24 NOV 2014 20:27
 entering extended mode
 **index.tex
 
@@ -1159,88 +1159,118 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [2]
 Cap\'{\i }tulo 2.
-[3
+
+Overfull \hbox (21.49847pt too wide) in paragraph at lines 19--20
+\OT1/cmr/m/n/10.95 los cua-les no es-tan coordinados.[http://www.subrayado.com.
+uy/Site/noticia/23835/expertos-
+ []
+
+
+Underfull \vbox (badness 3954) has occurred while \output is active []
+
+ [3
 
 ]
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
- [4]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 108.
-LaTeX Info: Redefining \. on input line 133.
-LaTeX Info: Redefining \% on input line 133.
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
+
+[4]
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
  [5]
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 121.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
  [6]
-LaTeX Info: Redefining \. on input line 188.
-LaTeX Info: Redefining \% on input line 188.
- [7])
+LaTeX Info: Redefining \. on input line 185.
+LaTeX Info: Redefining \% on input line 185.
+ [7]
+LaTeX Info: Redefining \. on input line 217.
+LaTeX Info: Redefining \% on input line 217.
+ [8]
+Overfull \hbox (15.77718pt too wide) in paragraph at lines 217--218
+[]\OT1/cmr/m/n/10.95 Edicion del ma-pa http://fmachado.dei.uc.pt/wp-content/pap
+ercite-data/pdf/misc13.pdf
+ []
+
+
+Overfull \hbox (131.43169pt too wide) in paragraph at lines 224--234
+\OT1/cmr/m/n/10.95 crear un sis-te-ma cen-tra-li-za-do de sicn-ron-za-cion de s
+e-ma-fo-ros. [http://www.elobservador.com.uy/noticia/292066/imm-
+ []
+
+LaTeX Info: Redefining \. on input line 278.
+LaTeX Info: Redefining \% on input line 278.
+[9]
+Overfull \hbox (80.53804pt too wide) in paragraph at lines 298--301
+[]\OT1/cmr/m/n/10.95 Sumo pre-sen-ta va-rias sa-li-das con in-for-ma-cion in-te
+re-san-te: http://sumo.dlr.de/wiki/Simulation/Output
+ []
+
+)
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\3_presen
 tacion_y_trabajos_relacionados.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [8]
+ [10]
 Cap\'{\i }tulo 3.
-[9
+[11
 
 ]
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
- [10]
+ [12]
 LaTeX Info: Redefining \. on input line 92.
 LaTeX Info: Redefining \% on input line 92.
- [11]
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
- [12])
+ [13]
+LaTeX Info: Redefining \. on input line 122.
+LaTeX Info: Redefining \% on input line 122.
+ [14])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\4_estrat
 egia_de_resolucion.tex"
-Overfull \hbox (1197.77748pt too wide) in paragraph at lines 141--1
+Overfull \hbox (1190.23413pt too wide) in paragraph at lines 143--1
 [][][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--1
+Underfull \hbox (badness 10000) in paragraph at lines 143--1
 
  []
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[13] [14
+[15] [16
 
 ]
 Cap\'{\i }tulo 4.
-[15])
+[17]
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+ [18])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\5_analis
 is_experimental.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [16]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [17] [18
+ [19] [20
 
 ]
 Cap\'{\i }tulo 5.
-[19]
-Overfull \hbox (5.34587pt too wide) in paragraph at lines 69--69
-[]\OT1/cmr/bx/n/12 Comparacion Al-go-rit-mo Se-cuen-cial vs Al-go-rit-mo Pa-ra-
-le-lo (Calcu-
- []
-
-)
+[21]
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+ [22])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\6_conclu
 siones_y_trabajo_futuro.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [20]
+ [23] [24
+
+]
 Cap\'{\i }tulo 6.
 )
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.bb
-l" [21
-
-] [22
+l" [25] [26
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cite.Montana
 1996}) has been already used, duplicate ignored
@@ -1303,7 +1333,7 @@ plicate ignored
 l.61 ...Vogel, Goerick, and von Seelen]{Vogel2000}
                                                   )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
- [23]
+ [27]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
 
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.au
@@ -1322,10 +1352,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 16630 strings out of 493921
- 283008 string characters out of 3144879
+ 16652 strings out of 493921
+ 283226 string characters out of 3144879
  356383 words of memory out of 3000000
- 19538 multiletter control sequences out of 15000+200000
+ 19548 multiletter control sequences out of 15000+200000
  13299 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  41i,13n,43p,10437b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1338,9 +1368,9 @@ am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (35 pages, 233742 bytes).
+Output written on index.pdf (39 pages, 249735 bytes).
 PDF statistics:
- 578 PDF objects out of 1000 (max. 8388607)
- 142 named destinations out of 1000 (max. 500000)
- 505 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 154 named destinations out of 1000 (max. 500000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,11 +1,22 @@
 \chapter{Estrategia de resolución}
 
 
+\section{Framework}
 
-\section{Algoritmo Genetico}
+Malva [http://themalvaproject.github.io/] surge como un fork del proyecto Mallba [http://neo.lcc.uma.es/mallba/easy-mallba/index.html ] . Propone la actualizacion, mejora y realizarla como un proyecto de codigo abierto colaborativo.  Su objectivo es proveer de varios esqueletos de heuristicas de optimizacion que puedan ser utilizados y extendidos de manera facil y eficiente.
+
+Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el metodo utilizado para resolverlo. Por tanto un esqueleto se puede ver como un template generico que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genericas.
+
+Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario debera modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes dle problema particular.
+Los esqueletos provistos o sea los algoritmos soportados son Algoritmos geneticos y CHC.
+
+
+
+
+\section{Algoritmo Genético}
 El algoritmo que vamos a utilizar es el algoritmo simple, este
-sigue  la  propuesta  de  Goldberg  [5].  El  algoritmo  en  galib  se
-llama GASimpleGA, el mismo crea una población inicial y en
+sigue  la  propuesta  de  Goldberg  [].  El  algoritmo  en  Malva  se
+llama NewGA, el mismo crea una población inicial y en
 cada  generación,  genera  una  nueva  población  de  individuos
 seleccionando  de  la  población  anterior  y  realizando
 cruzamiento,  hace  un  reemplazo  total.  El  proceso  se  repite
@@ -13,7 +24,7 @@ hasta  dar  con  algún  tipo  de  criterio  de parada.  La  librería se
 basa en el elitismo, los mejores individuos son llevados hacia
 la siguiente generación.
 
-\subsection{representacion}
+\subsection{Representación}
 Para poder explicar la representación del problema de los
 semáforos del corredor Garzón, es preciso compartir algunas
 definiciones que usaremos a lo largo de la propuesta:
@@ -42,7 +53,7 @@ inicia un cruce, por lo que el tamaño del cromosoma depende
 de  la  cantidad  de  cruces  y  de  la  cantidad  de  fases  que  tiene
 cada cruce, teniendo así la información de todos los cruces.
 
-\subsection{Codificacion} 
+\subsection{Codificación} 
 A continuación se muestra un ejemplo en el cual se mapea un
 cruce representado en el cromosoma y un cruce representado
 en  el  archivo  de  configuración  de  semáforos  que  utiliza  el
@@ -52,15 +63,17 @@ amarilla en el cromosoma y se mantiene el valor real recabado
 y el valor que tiene el cromosoma en el gen de inicio de fase
 se corresponde con el valor de “offset” en el XML.
 Cruce representado en el cromosoma:
-\subsection{inicializacion}
+
+\subsection{Inicialización}
 Para la inicialización de la población se toma como referente
-la configuración obtenida con los datos in situ, luego para casa
+la configuración obtenida con los datos in situ, luego para cada
 cruce  se  hacen  variar  las  duraciones  de  las  fases  de  manera
 aleatoria  entre  un  rango  de  5  segundos  a  60  segundos  (estos
 valores  son  configurables)  y  la  fase  inicial  se  hace  variar
 aleatoriamente entre la cantidad de fases del cruce  (se cuentan
 las luces amarillas).
-\subsection{funcion fitness}
+
+\subsection{Funcion fitness}
 Para evaluar un individuo, lo que se hace es crear un archivo
 XML  de configuración de señalización de tránsito que utiliza
 el  simulador  SUMO  en  base  al  cromosoma  del  individuo,
@@ -68,15 +81,16 @@ luego se ejecuta el simulador con la configuración generada, el
 tiempo de simulación devuelto será el valor de la función de
 fitness.
 
-\subsection{operadores}
-\subsubsection{seleccion}
-\subsubsection{cruzamiento}
+\subsection{Operadores}
+\subsubsection{Selección}
+\subsubsection{Cruzamiento}
 Se  utilizará  cruzamiento  de  un  punto  (1PX),  implementado
 específicamente  para  el  problema,  seleccionando  el  intervalo
 entre 2 cruces como punto de corte, por ejemplo:
 Esto  hace  que  si  un  tramo  del  corredor  es  bueno,  esta
 propiedad se mantenga.
-\subsubsection{mutacion}
+
+\subsubsection{Mutación}
 La  mutación también fue  implementada  específicamente para
 el problema, utilizaremos dos tipos de mutación:
 Mutación de duración de fase: para cada fase de cada cruce se
@@ -97,7 +111,15 @@ probabilidad dada.
  de  las  generaciones  anteriores  contra  el  mejor  valor  de  la
  generación actual. Nosotros vamos a utilizar N con el valor de
  10 y una probabilidad de convergencia de 0.99
- 
+
+
+
+
+\section{Multiobjectivo}
+
 \section{Algoritmo Paralelo}
 Agregar diagrama de maestro esclavo
+
+
+
 \section{Resumen}
