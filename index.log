@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  24 NOV 2014 20:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  25 NOV 2014 15:51
 entering extended mode
 **index.tex
 
@@ -71,6 +71,13 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen105
 \epsfysize=\dimen106
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\epigraph\epigraph.sty"
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip43
+\afterepigraphskip=\skip44
+\epigraphwidth=\skip45
+\epigraphrule=\skip46
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
@@ -95,8 +102,8 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@line=\count92
 \c@ALC@rem=\count93
 \c@ALC@depth=\count94
-\ALC@tlm=\skip43
-\algorithmicindent=\skip44
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
@@ -123,11 +130,11 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen108
 \extrarowheight=\dimen109
 \NC@list=\toks20
-\extratabsurround=\skip45
-\backup@length=\skip46
+\extratabsurround=\skip49
+\backup@length=\skip50
 )
 \everycr=\toks21
-\minrowclearance=\skip47
+\minrowclearance=\skip51
 )
 \rownum=\count95
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
@@ -254,7 +261,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip48
+\Hy@SectionHShift=\skip52
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\bookmark.sty"
 Package: bookmark 2011/12/02 v1.24 PDF bookmarks (HO)
@@ -524,7 +531,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
@@ -574,8 +581,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen122
 \lineht@=\dimen123
 \@envbody=\toks29
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip54
+\multlinetaggap=\skip55
 \mathdisplay@stack=\toks30
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
@@ -587,21 +594,21 @@ Package: amsthm 2009/07/02 v2.20.1
 \thm@headfont=\toks33
 \thm@notefont=\toks34
 \thm@headpunct=\toks35
-\thm@preskip=\skip52
-\thm@postskip=\skip53
-\thm@headsep=\skip54
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
 \dth@everypar=\toks36
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
-\fancy@headwidth=\skip55
-\f@ncyO@elh=\skip56
-\f@ncyO@erh=\skip57
-\f@ncyO@olh=\skip58
-\f@ncyO@orh=\skip59
-\f@ncyO@elf=\skip60
-\f@ncyO@erf=\skip61
-\f@ncyO@olf=\skip62
-\f@ncyO@orf=\skip63
+\fancy@headwidth=\skip59
+\f@ncyO@elh=\skip60
+\f@ncyO@erh=\skip61
+\f@ncyO@olh=\skip62
+\f@ncyO@orh=\skip63
+\f@ncyO@elf=\skip64
+\f@ncyO@erf=\skip65
+\f@ncyO@olf=\skip66
+\f@ncyO@orf=\skip67
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -611,8 +618,8 @@ Package: placeins 2005/04/18  v 2.2
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip64
-\bibsep=\skip65
+\bibhang=\skip68
+\bibsep=\skip69
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count121
 )
@@ -642,8 +649,8 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 \c@r@tfl@t=\count125
-\rotFPtop=\skip66
-\rotFPbot=\skip67
+\rotFPtop=\skip70
+\rotFPbot=\skip71
 \rot@float@box=\box30
 \rot@mess@toks=\toks37
 )
@@ -692,12 +699,12 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \l_tmpb_dim=\dimen134
 \g_tmpa_dim=\dimen135
 \g_tmpb_dim=\dimen136
-\c_zero_skip=\skip68
-\c_max_skip=\skip69
-\l_tmpa_skip=\skip70
-\l_tmpb_skip=\skip71
-\g_tmpa_skip=\skip72
-\g_tmpb_skip=\skip73
+\c_zero_skip=\skip72
+\c_max_skip=\skip73
+\l_tmpa_skip=\skip74
+\l_tmpb_skip=\skip75
+\g_tmpa_skip=\skip76
+\g_tmpb_skip=\skip77
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
@@ -941,7 +948,7 @@ s
 \l__xtemplate_tmp_dim=\dimen162
 \l__xtemplate_tmp_int=\count155
 \l__xtemplate_tmp_muskip=\muskip18
-\l__xtemplate_tmp_skip=\skip74
+\l__xtemplate_tmp_skip=\skip78
 Variant \prop_get:NoNTF already defined; not changing it on line 106
 Variant \prop_get:NoNT already defined; not changing it on line 107
 Variant \prop_get:NoNF already defined; not changing it on line 108
@@ -984,26 +991,26 @@ x"
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 75.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    ... okay on input line 75.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1020,7 +1027,7 @@ LaTeX Font Info:    ... okay on input line 74.
 \everyMPtoPDFconversion=\toks39
 )
 \AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 75.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1029,11 +1036,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1104,14 +1111,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 90.
+(Font)              using `OT1/cmr/bx/n' instead on input line 91.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 90.
+(spanish)                faked small caps on input line 91.
 
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.33044pt.
@@ -1160,9 +1167,9 @@ LaTeX Info: Redefining \% on input line 1.
  [2]
 Cap\'{\i }tulo 2.
 
-Overfull \hbox (21.49847pt too wide) in paragraph at lines 19--20
-\OT1/cmr/m/n/10.95 los cua-les no es-tan coordinados.[http://www.subrayado.com.
-uy/Site/noticia/23835/expertos-
+Overfull \hbox (34.88182pt too wide) in paragraph at lines 19--20
+\OT1/cmr/m/n/10.95 de los cua-les no es-tan coordinados.[http://www.subrayado.c
+om.uy/Site/noticia/23835/expertos-
  []
 
 
@@ -1180,32 +1187,32 @@ LaTeX Info: Redefining \% on input line 112.
  [5]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 121.
-LaTeX Info: Redefining \. on input line 166.
-LaTeX Info: Redefining \% on input line 166.
+LaTeX Info: Redefining \. on input line 167.
+LaTeX Info: Redefining \% on input line 167.
  [6]
-LaTeX Info: Redefining \. on input line 185.
-LaTeX Info: Redefining \% on input line 185.
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
  [7]
-LaTeX Info: Redefining \. on input line 217.
-LaTeX Info: Redefining \% on input line 217.
+LaTeX Info: Redefining \. on input line 218.
+LaTeX Info: Redefining \% on input line 218.
  [8]
-Overfull \hbox (15.77718pt too wide) in paragraph at lines 217--218
+Overfull \hbox (15.77718pt too wide) in paragraph at lines 218--219
 []\OT1/cmr/m/n/10.95 Edicion del ma-pa http://fmachado.dei.uc.pt/wp-content/pap
 ercite-data/pdf/misc13.pdf
  []
 
 
-Overfull \hbox (131.43169pt too wide) in paragraph at lines 224--234
-\OT1/cmr/m/n/10.95 crear un sis-te-ma cen-tra-li-za-do de sicn-ron-za-cion de s
-e-ma-fo-ros. [http://www.elobservador.com.uy/noticia/292066/imm-
+Overfull \hbox (162.79132pt too wide) in paragraph at lines 225--235
+\OT1/cmr/m/n/10.95 preve crear un sis-te-ma cen-tra-li-za-do de sin-cro-ni-za-
+cion de semafo-ros. [http://www.elobservador.com.uy/noticia/292066/imm-
  []
 
-LaTeX Info: Redefining \. on input line 278.
-LaTeX Info: Redefining \% on input line 278.
+LaTeX Info: Redefining \. on input line 279.
+LaTeX Info: Redefining \% on input line 279.
 [9]
-Overfull \hbox (80.53804pt too wide) in paragraph at lines 298--301
-[]\OT1/cmr/m/n/10.95 Sumo pre-sen-ta va-rias sa-li-das con in-for-ma-cion in-te
-re-san-te: http://sumo.dlr.de/wiki/Simulation/Output
+Overfull \hbox (80.53804pt too wide) in paragraph at lines 299--302
+[]\OT1/cmr/m/n/10.95 Sumo pre-sen-ta va-rias sa-li-das con in-for-ma-cion in-t
+ere-san-te: http://sumo.dlr.de/wiki/Simulation/Output
  []
 
 )
@@ -1332,9 +1339,9 @@ plicate ignored
                    \relax 
 l.61 ...Vogel, Goerick, and von Seelen]{Vogel2000}
                                                   )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
  [27]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
 
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.au
 x"
@@ -1343,20 +1350,20 @@ x"
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 124.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 125.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
  ) 
 Here is how much of TeX's memory you used:
- 16652 strings out of 493921
- 283226 string characters out of 3144879
- 356383 words of memory out of 3000000
- 19548 multiletter control sequences out of 15000+200000
- 13299 words of font info for 49 fonts, out of 3000000 for 9000
+ 16706 strings out of 493921
+ 283998 string characters out of 3144879
+ 357525 words of memory out of 3000000
+ 19596 multiletter control sequences out of 15000+200000
+ 14998 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  41i,13n,43p,10437b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -1368,7 +1375,7 @@ am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (39 pages, 249735 bytes).
+Output written on index.pdf (39 pages, 250076 bytes).
 PDF statistics:
  635 PDF objects out of 1000 (max. 8388607)
  154 named destinations out of 1000 (max. 500000)
