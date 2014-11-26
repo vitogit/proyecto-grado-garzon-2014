@@ -1,9 +1,35 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Autoanuario(2014)]{Autoanuario2014}
+Autoanuario.
+\newblock Gráficas y cuadros de valores estadísticos del mercado nacional.
+\newblock \url{http://www.autoanuario.com.uy/index_mercado_graficas.html},
+  2014.
+
+\bibitem[BBVAResearch(2013)]{BBVA2013}
+BBVAResearch.
+\newblock Uruguay situación automotriz.
+\newblock
+  \url{https://www.bbvaresearch.com/wp-content/uploads/2014/05/1303_SitAutomotrizUruguay_2013.pdf},
+  2013.
+
+\bibitem[CEPAL(2003)]{Cepal2003}
+CEPAL.
+\newblock Congestión de tránsito, el problema y cómo enfrentarlo.
+\newblock \url{http://www.cepal.org/publicaciones/xml/9/13059/cue-87.pdf},
+  2003.
+
+\bibitem[INE(2014)]{INE2014}
+INE.
+\newblock Transporte y comunicaciones.
+\newblock
+  \url{http://www.ine.gub.uy/biblioteca/uruguayencifras2014/Uruguay_en_cifras_2014_Cap_11.pdf},
+  2014.
 
 \bibitem[Montana and Czerwinski(1996)]{Montana1996}
 D.~J. Montana and S.~Czerwinski.
@@ -51,6 +77,14 @@ SÁNCHEZ, GALÁN, and RUBIO.
 D.~H. Stolfi.
 \newblock Optimizacion del trafico rodado en ciudades inteligentes.
 \newblock 2012.
+
+\bibitem[Subrayado(2013)]{Subrayado2013}
+Subrayado.
+\newblock Expertos en tránsito: “el colapso está establecido” en
+  montevideo.
+\newblock
+  \url{http://www.subrayado.com.uy/Site/noticia/23835/expertos-en-transito-el-colapso-esta-establecido-en-montevideo},
+  2013.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, and Chin]{Teo2010}
 K.~T.~K. Teo, W.~Y. Kow, and Y.~K. Chin.
