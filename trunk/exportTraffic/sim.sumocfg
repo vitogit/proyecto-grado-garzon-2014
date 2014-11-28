@@ -4,7 +4,6 @@
 <route-files>sim.rou.xml</route-files>
 <additional-files>sim.geometry.xml</additional-files>
 </input-files>
-<netstate-dump>sim.netdmp.xml</netstate-dump>
 <simulation>
 <begin>0</begin>
 <end>3660</end>
