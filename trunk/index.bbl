@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,19 @@ CEPAL.
 \newblock \url{http://www.cepal.org/publicaciones/xml/9/13059/cue-87.pdf},
   2003.
 
+\bibitem[DiFebbraro et~al.(2002)DiFebbraro, Giglio, and Sacco]{DiFebbraro2002}
+DiFebbraro, Giglio, and Sacco.
+\newblock On applying petri nets to determine optimal offsets for coordinated
+  traffic light timings.
+\newblock \emph{Proc. IEEE 5th Int. Conf. Intell. Transportation Syst.}, pages
+  773--778, 2002.
+
+\bibitem[G.~Y.~Lim and Hong(2001)]{Lim2001}
+J.~J.~K. G.~Y.~Lim and Y.~S. Hong.
+\newblock The optimization of traffic signal light using artificial
+  intelligence.
+\newblock \emph{10th IEEE Int. Conf.Fuzzy Syst}, page 1279–1282, 2001.
+
 \bibitem[INE(2014)]{INE2014}
 INE.
 \newblock Transporte y comunicaciones.
@@ -31,10 +44,24 @@ INE.
   \url{http://www.ine.gub.uy/biblioteca/uruguayencifras2014/Uruguay_en_cifras_2014_Cap_11.pdf},
   2014.
 
+\bibitem[López et~al.(1999)López, Hernandez, Hernandez, and
+  Garcia]{Lopez1999}
+S.~López, P.~Hernandez, A.~Hernandez, and M.~Garcia.
+\newblock Artificial neural networks as useful tools for the optimization of
+  the relative offset between two consecutive sets of traffic lights.
+\newblock \emph{Foundations and Tools for Neural Modeling}, page 795–804,
+  1999.
+
 \bibitem[Montana and Czerwinski(1996)]{Montana1996}
 D.~J. Montana and S.~Czerwinski.
 \newblock Evolving control laws for a network of traffic signals.
 \newblock 1996.
+
+\bibitem[Nesmachnow(2002)]{Nesmachnow2002}
+S.~Nesmachnow.
+\newblock Evolución en el diseño y clasificación de algoritmos genéticos
+  paralelos,.
+\newblock 2002.
 
 \bibitem[Penner et~al.(2002)Penner, Hoar, and Jacob]{Penner2002}
 J.~Penner, R.~Hoar, and C.~Jacob.
@@ -54,20 +81,20 @@ SÁNCHEZ.
   computacion paralela usando modelizacion discreta: Ejemplos de aplicacion.
 \newblock 2007.
 
-\bibitem[SÁNCHEZ et~al.(2004)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2004}
-SÁNCHEZ, GALÁN, and RUBIO.
+\bibitem[Sánchez et~al.(2004)Sánchez, Galán, and Rubio]{Sanchez2004}
+J.~Sánchez, M.~Galán, and E.~Rubio.
 \newblock Genetic algorithms and cellular automata: A new architecture for
   traffic light cycles optimization.
 \newblock 2004.
 
-\bibitem[SÁNCHEZ et~al.(2008)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2008}
-SÁNCHEZ, GALÁN, and RUBIO.
+\bibitem[Sánchez et~al.(2008)Sánchez, Galán, and Rubio]{Sanchez2008}
+J.~Sánchez, M.~Galán, and E.~Rubio.
 \newblock Applying a traffic lights evolutionary optimization technique to a
   real case: “las ramblas” area in santa cruz de tenerife.
 \newblock 2008.
 
-\bibitem[SÁNCHEZ et~al.(2010)SÁNCHEZ, GALÁN, and RUBIO]{Sanchez2010}
-SÁNCHEZ, GALÁN, and RUBIO.
+\bibitem[Sánchez et~al.(2010)Sánchez, Galán, and Rubio]{Sanchez2010}
+J.~Sánchez, M.~Galán, and E.~Rubio.
 \newblock Traffic signal optimization in “la almozara” district in
   saragossa under congestion conditions, using genetic algorithms, traffic
   microsimulation, and cluster computing.
