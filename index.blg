@@ -2,7 +2,28 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: index.aux
 A level-1 auxiliary file: 0_titulo.aux
 The style file: abbrvnat.bst
 Database file #1: index.bib
+Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
+while executing---line 1347 of file abbrvnat.bst
+Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
+while executing---line 1347 of file abbrvnat.bst
+Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
+while executing---line 1347 of file abbrvnat.bst
+Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
+while executing---line 1347 of file abbrvnat.bst
+Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
+while executing---line 1429 of file abbrvnat.bst
+Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
+while executing---line 1429 of file abbrvnat.bst
+Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
+while executing---line 1429 of file abbrvnat.bst
+Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
+while executing---line 1429 of file abbrvnat.bst
+Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
+while executing---line 1429 of file abbrvnat.bst
+Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
+while executing---line 1429 of file abbrvnat.bst
 Warning--empty journal in Montana1996
+Warning--empty journal in Nesmachnow2002
 Warning--empty journal in Penner2002
 Warning--empty journal in Rouphail2000
 Warning--empty journal in Sanchez2007
@@ -12,4 +33,4 @@ Warning--empty journal in Sanchez2010
 Warning--empty journal in Stolfi2012
 Warning--empty journal in Teo2010
 Warning--empty journal in Vogel2000
-(There were 10 warnings)
+(There were 10 error messages)

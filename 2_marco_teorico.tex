@@ -143,7 +143,7 @@ Su esquema de funcionamiento es el siguiente
 \subsection{Algoritmos genético multiobjetivo}
 
 
-\subsubsection{Descripción}
+
 En este caso se busca una solución que satisfaga de forma simultanea las restricciones y varios objetivos diferentes.
 
 \subsubsection{Por que elegimos multiobjetivo?}
@@ -154,7 +154,29 @@ SUMO brinda mucha información referente a los viajes, por lo que tenemos varias
 
 
 \subsection{Algoritmo Genético Paralelo}
+Los problemas complejos suelen requerir una alta demanda computacional por lo que aplicar técnicas de paralelización es útil para lograr tiempos de ejecución menores.
+
+Existen varios niveles de paralelización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
+
+En el caso de los algoritmos genéticos gran parte del tiempo se realiza en la etapa de evaluación , cerca de un 90 \% del tiempo[]
+Por esta razón es una forma buena de distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo.
+
+
 \subsection{Maestro-Esclavo}
+
+En este modelo un proceso maestro es el encargado de realizar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos, el esclavo devuelven el resultado y luego el maestro es el encargado de continuar ejecutando los operadores.
+
+De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones mas costosas es distribuida entre varios nodos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/diagrama-master-slave}
+\caption[Modelo Maestro-Esclavo]{Modelo Maestro-Esclavo}
+\label{fig:diagrama-master-slave}
+\end{figure}
+
+
+
 \subsection{Resumen}
 
 
