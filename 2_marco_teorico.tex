@@ -6,7 +6,7 @@
 
 En gran parte del mundo se esta produciendo un crecimiento sostenido del parque automotor lo que ocasiona una serie de problemas que afectan la calidad de vida de las personas relacionados con el agravamiento de las congestiones vehiculares \citep{Cepal2003}.
 
-Este problema tiene un impacto grande en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
+Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
 
 La congestión ocasiona una progresiva merma en la velocidad promedio de circulación, lo que incrementa la duración de los viajes, aumenta el consumo de combustible y la contaminación atmosférica y sonora, lo que repercute directamente en la salud de las personas. 
 Ademas se genera una exigencia en las vías de transito que ocasiona un deterioro mayor de calles y rutas.
@@ -16,9 +16,9 @@ Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual has
 
 Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}
 
-Los expertos indican que la congestión ya esta instalada y la infraestructura vial no acompaso este crecimiento. Ademas se indica que Montevideo es la ciudad con mas semáforos por automóvil en Latinoamerica. Con mas de 620 cruces semaforizados, alguno de los cuales no estan coordinados.\citep{Subrayado2013}
+Los expertos indican que la congestión ya esta instalada y la infraestructura vial no acompaso este crecimiento. Ademas se indica que Montevideo es la ciudad con mas semáforos por automóvil en Latinoamerica. Con mas de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
-Por todo esto relevante el tema de la sincronización de semáforos para agilizar el transito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad asi como la calidad de vida de sus habitantes.
+Por todo esto es relevante el tema de la sincronización de semáforos para agilizar el transito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes.
 
 \subsection{Corredor Garzón}
 El corredor Garzón esta ubicado en Montevideo Uruguay, fue construido como parte de un plan de movilidad que incluye otros 4 corredores. 
@@ -71,8 +71,7 @@ La función de evaluación indica que tan buena o apta es una solución en compa
 En cada iteración la cual se llama generación se aplican operadores de cruzamiento estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
 
 Por tanto se van seleccionando, combinando y cambiando las mejores soluciones en un proceso que va obteniendo mejores soluciones.
-El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzo un numero de generaciones predefinidos o por que la mejora no es tan evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
-
+El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzo un numero de generaciones predefinidos o por que la mejora no es evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
 
 Hay que indicar que no es una técnica exacta pero si logra muy buenas aproximaciones y es muy buena en problemas complejos por su flexibilidad y robustez. 
 
@@ -109,16 +108,13 @@ Se indica cual es el criterio que debemos tomar para crear una nueva población,
 \subsubsection{Criterio de parada} 
 Indica cuando debe terminar el algoritmo, puede ser definiendo un numero fijo de generaciones o analizando si la mejora en soluciones se estanco.
 
-\subsection{Algoritmos Genético Simple}
+\subsection{Funcionamiento}
 
-El algoritmo que vamos a utilizar es el simple, propuesto por Goldberg [] 
-El operador principal es el de cruzamiento y el secundario la mutación.
-
-Su esquema de funcionamiento es el siguiente
+El esquema básico de funcionamiento es el siguiente:
 
 
 \begin{algorithm}%[!ht]
-	\caption{Algoritmo Genético Simple}
+	\caption{Algoritmo Genético}
 	\label{alg:algoritmo_genetico_simple}
 	\begin{algorithmic} [1] 
 		{
@@ -142,12 +138,10 @@ Su esquema de funcionamiento es el siguiente
 
 \subsection{Algoritmos genético multiobjetivo}
 
-
-
 En este caso se busca una solución que satisfaga de forma simultanea las restricciones y varios objetivos diferentes.
 
-\subsubsection{Por que elegimos multiobjetivo?}
-La intendencia apoya el cambio del trafico en la ciudad de Montevideo para que se haga mayor uso del transporte urbano[] y disminuir la cantidad de automóviles circulantes para disminuir el trafico y la contaminación. En este sentido se da prioridad a los ómnibus, por esta razón nuestro algoritmo puede varían los diferentes pesos para dar mas prioridad a la velocidad promedio de ómnibus vs el resto de los vehículos.
+\subsubsection{Por que elegir multiobjetivo en este problema?}
+La intendencia apoya el cambio del trafico en la ciudad de Montevideo para que se haga mayor uso del transporte urbano[] y disminuir la cantidad de automóviles circulantes para disminuir el trafico y la contaminación. En este sentido se da prioridad a los ómnibus, por esta razón el algoritmo a desarrollar podrá variar los diferentes pesos para dar mas prioridad a la velocidad promedio de ómnibus y del resto de los vehículos.
  
 Se busca que la gente prefiera el ómnibus, uno de los factores es la duración del viaje, si se logra mejorar esto se estaría cumpliendo uno de los objetivos de la intendencia
 SUMO brinda mucha información referente a los viajes, por lo que tenemos varias métricas a elegir para nuestro algoritmo. Entre ellas se destacan: Cantidad de vehículos que llegaron a destino, Tiempo de viaje promedio, Tiempo de ocupación promedio, velocidad promedio global, tiempo parado q emite gases. Decidimos usar la velocidad promedio separando entre ómnibus y autos. De esta forma podemos optimizar ambos en el sentido multiobjetivo, o priorizar uno sobre el otro.
@@ -177,133 +171,134 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 
 
 
-\subsection{Resumen}
+\subsection{Algoritmo a desarrollar}
+
+El algoritmo a desarrollar viene con el malva
+
+Los parametros se van a buscar: poblacion, mutacion,cruzamiento
+
+La funcion objectivo es multiobjetivo, tambien se buscara la mejor relacion
+
+Es paralelo en la funcion fitness, creando hilos
+con un enfoque maestro esclavo.
 
 
 
 
 \section{Simulación y herramientas}
 
-\subsection{Simuladores de trafico}
-Los simuladores de trafico son programas que simulan el movimiento de vehículos sobre una red de calles,es una herramienta muy usada en la investigación de trafico vehicular, así como estudio de congestiones o análisis de impacto que tendrán nuevas infraestructuras.  Las razones para usar una simulación son varias, entre ellas se encuentra  la rapidez  ya que la simulación se puede realizar en tiempo mucho mas rápidos que en la realidad, el costo en dinero ya que no estamos afectando el escenario real  y tampoco tenemos que modificar o detener el escenario real para probar nuevos parámetros. Ademas nos sirve para poder prever situaciones que podrían darse bajo determinadas circunstancias.
+\subsection{Simuladores de tráfico}
+Los simuladores de tráfico son programas que simulan el movimiento de vehículos sobre una red de calles, es una herramienta muy usada en la investigación de trafico vehicular, así como estudio de congestiones o análisis de impacto que tendrán nuevas infraestructuras.  Las razones para usar una simulación son varias, entre ellas se encuentra  la rapidez, ya que la simulación se puede realizar en tiempo mucho mas rápidos que en la realidad, el costo en dinero ya que no estamos afectando el escenario real  y tampoco tenemos que modificar o detener el escenario real para probar nuevos parámetros. Ademas nos sirve para poder prever situaciones que podrían darse bajo determinadas circunstancias.
 
 Los simuladores se pueden dividir en microscópicos o macroscópicos según el nivel de detalle de la simulación. Un simulador macroscópico modela  el trafico vehicular como un fluido. En cambio un simulador microscópico simula el movimiento de cada vehículo según sus características particulares.
-SUMO es uno de los simuladores abiertos mas populares,  es microscópico aunque presenta algunas dificultades a la hora de la configuración del mapa y el transito que lo hace en base a archivos XML.
+
+SUMO (Simulated uf)[] es uno de los simuladores abiertos mas populares, es microscópico y utiliza una serie de archivos  XML que representan las rutas, los vehículos y el trafico.  
 
 Cuanto mas crece el numero de vehículos y la complejidad de la red de mapas mas difícil se hace crear la entrada básica que necesita el simulador. Aunque existen diversas herramientas que ayudan a este proceso aun se requiere un trabajo manual para el acondicionado de estos archivos.
-SUMO simula el trafico utilizando archivos XML que representan las rutas, los vehículos y el trafico. En 
+
+En las siguientes secciones se muestra mas en detalle algunas de sus funcionalidades y características.
+
 
 \subsection{Modelo de trafico }
-Esta es la representación de la circulación de vehículos, existen varios métodos desde 
+Esta es la representación de la circulación de vehículos, aquí exponemos algunos de los mas populares. 
+
 Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente
-JTR : basados en probabilidades en los cruces  es decir cuando un vehículo llega a un cruce tiene cierta probabilidad de seguir o doblar (JTR – junction turning ratio), 
-Basado en distritos:  Se especifican distritos(conjunto de calles) y  la cantidad de movimiento vehicular entre ellos en una  matriz
-Basado en Actividad: Se especifica la cantidad de casas , vehículos y población en un determinado lugar y el modelo genera la densidad de trafico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
+
+JTR (junction turning ratio) : basados en probabilidades en los cruces  es decir cuando un vehículo llega a un cruce tiene cierta probabilidad de seguir o doblar.
+ 
+Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
+
+
+Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de trafico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
+
 Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
 
 \subsection{Representaciones}
 
-\subsubsection{Red calles}
-La red de calles se representa como un gráfico dirigido en un archivo xml con extensión .net.xml . Alli se especifican los nodos, y vértices así como sus atributos. También se representan los semáforos. Esto  se genera utilizando una herramienta  para convertir un mapa al formato que SUMO utiliza.
+\subsubsection{Red de calles}
+La red de calles se representa como un grafo dirigido en un archivo xml con extensión .net.xml . Allí se especifican los nodos, y vértices así como sus atributos. También se representan los semáforos. Esto  se genera utilizando una herramienta  para convertir un mapa al formato que SUMO utiliza.
 
 \subsubsection{Representación Trafico}
-En este caso también se utiliza un archivo xml donde se definen las rutas y los trips. Un trip representa el movimiento de un vehículo de un punto inicial hacia un punto final (El recorrido se hacen en tiempo de ejecución utilizando el camino mas corto basado en el trafico). Una ruta es mas complejo que un trip ya que agrega todos los vértices por los que el vehículo pasara.
+En este caso también se utiliza un archivo xml donde se definen las rutas y los recorridos. Un recorrido representa el movimiento de un vehículo de un punto inicial hacia un punto final (El recorrido se hacen en tiempo de ejecución utilizando el camino mas corto basado en el trafico). 
 
-SUMO también soporta el modelo JTR y basado en distritos pero se necesitan módulos externos para generarlos.
 
 \subsubsection{Representación del tiempo}
 El tiempo se representa como una serie de pasos discretos, cada uno durando un segundo. Este valor se puede modificar aunque es recomendado dejarlo así para que sea consistente.
 
-\subsection{Trafico}
-Elegimos utilizar el flow calle-a-calle que nos permite determinar con mucho detalle el trafico generado entre calles. Ya que contamos con datos relevados en el lugar. Se especifica el lugar de donde sale el vehículo, donde termina su recorrido, el numero de vehículos que se emiten o la frecuencia.
 
 \subsubsection{Tipos de vehículos}
-Se pueden crear diferentes tipos de vehículos especificando propiedades como largo, velocidad máxima,  aceleración, color, etc. También contamos con algunos por defecto como camiones, buses
+Se pueden crear diferentes tipos de vehículos especificando propiedades como largo, velocidad máxima,  aceleración, color, etc. También cuenta con vehículos por defecto como buses, camiones o automoviles.
 
-\subsubsection{Accidentes}
-El simulador permite representar colisiones y el corte de una calle. Decidimos no utilizar esto pues no queríamos este tipo de variables afectara en la ejecución de las pruebas.
 
-\subsection{Trabajo de campo realizado}
-Al no contar con datos públicos sobre la configuración de los semáforos de la zona, realizamos un revelamiento in-situ de la siguiente forma.
-En los principales cruces realizamos una filmación de 30 min. Luego analizamos el vídeo realizando el conteo manualmente con la posibilidad de enlentecer el vídeo para mayor facilidad.
-Estas medidas nos sirvieron para verificar nuestros modelos basados en los datos del GPS 
 
-La configuración de los semáforos se realizo yendo por el corredor y cronometrando la duración del tiempo. Tanto en ida como en venida para coproborar que fueran correctos.
+
 
 
 
 \subsection{Configuración de la simulación}
 
-
-Generar un mapa compatible con el simulador de transito mejor al que tenemos del año pasado con los últimos detalles del corredor.
-
-Edicion del mapa http://fmachado.dei.uc.pt/wp-content/papercite-data/pdf/misc13.pdf pequeño articulo sobre sumo, mismas dificultades que tuvimos el año pasado esperemos que las mejoras del netconvert hayan sido buenas sino vamos a estar un buen rato tocando xml
-
-Creación del modelo del trafico
-	Obtención de datos: Tuvimos reuniones con la IMM que con muy buena disposición nos aporto datos relativos a la posición de los ómnibus?
-	Con los datos realizamos un modelo vehicular de la ciudad [poner el mapa] que nos da una noción básica sobre el trafico en ciertos puntos de la ciudad, y la velocidad promedio de circulación.
-	este modelo luego fue validado con revelamiento in-situ de diferentes puntos.
-
-Tener en cuenta los cambios en el corredor:
-	Buscar información publica sobre las luces- no hay- tomar medidas 
-	Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos.  [http://www.elobservador.com.uy/noticia/292066/imm-sincronizara-400-semaforos-para-agilizar-el-transito-capitalino/] 
-	buscar info sobre densidad - no hay- contar
-	Cantidad de luces por semáforo
-	Realizar nuevas mediciones de tiempos de luces
-	Densidad del trafico actual (se puede conseguir o tomar mediciones)
-	bondis: frecencias de bondis
-	de donde sacamos esta info?
-	autos: .py genera aleatorio
-
+En esta sección se realiza un resumen sobre los pasos realizados para tener los elementos necsearios para realizar la simulacion.
 
 \subsubsection{Diseño del mapa}
-El mapa base de la zona lo tomamos de OSM, luego se cotejo su exactitud con Google Maps y Bing Maps.
-Utilizamos la herramienta netconvert para pasarlo a formato que SUMO acepte. 
-Para esto realizamos varios ajustes editando los archivos xml para indicar donde se realizan.
-
-Se generó una especial dificultad en el diseño de un mapa que
-fuese tan fiel como fuese posible a la realidad y que también
-fuese compatible para usar con  Sumo. Se debió recabar datos
-in  situ  ya  que  hasta  la  misma  intendencia  [4]  tenía  errores
-respecto a la realidad, falta de algunos semáforos, etc. Luego al
-pasarlo  al  formato  compatible  con  sumo  se  debieron  corregir
-calles,  cruces  y  todas las  posibles  conexiones de  las  esquinas
-del corredor que debieron ser escritas a mano en un XML.
-
-Poner fotos de un ants (salida directa del netconvert) y luego con los agregados de joins y connections
 
 
-\subsubsection{Vehículos}
-Se manejaron dos tipos de vehículos, autos y ómnibus:
-Las  líneas  de  ómnibus  urbanas  (que  circulan  por  el
-corredor)  incluidas  fueron  la  “G”,  la  “409”  y
-adaptaciones  de  la  “522”  y  “148”  que  se  juntaron  en
-una  línea  sola. Y  las líneas de ómnibus suburbanas en
-el  tramo  elegido  realizan  el  mismo  trayecto  y  les
-llamamos  línea  “A".  Todas  las  líneas  de  ómnibus
+El mapa base de la zona proviene de OSM [], luego se cotejo su exactitud con Google Maps y Bing Maps.
+
+poner mapa base
+
+Se utilizo la herramienta netconvert para convertirlo al formato que SUMO acepta. 
+Para esto se realizaron varios ajustes editando los archivos xml para corregir errores en las calles, cruces y conexiones para que fuese fiel a la realidad y mantuviera la compativilidad con SUMO.
+
+
+agregar foto del mapa de sumo
+
+
+\subsubsection{Trabajo de campo realizado}
+Al no contar con datos públicos sobre la configuración de los semáforos de la zona, realizamos un revelamiento in-situ con las siguientes características.
+
+Se seleccionaron 5 cruces que presentan diferentes características para poder modelar las variantes tanto de cruces con alto trafico, medio y bajo. 
+Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia.
+
+Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
+Se realizaron filmaciones de 30 min en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla excel donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. También discriminamos entre vehículos y ómnibus que recorren Garzón.
+
+AGREGAR FOTO de la planilla
+
+Ademas se realizaron recorridas de punta a punta del corredor a una velocidad constante para verificar los tiempos obtenidos en la simulación para este recorrido.
+
+Para obtener la configuración de los semáforos se realizo un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
+
+agregar foto de la confiruacion semaforil
+
+
+\subsubsection{Creación del modelo del trafico}
+
+Con los datos relevados se creo un modelo vehicular de la ciudad [poner el mapa] que brinda una aproximacion sobre la densidad de trafico y la velocidad promedio de circulación.
+
+Se utilizo la utilida trafficmodeler[] con lo que se logra generar modelos de trafico complejo de manera visual y sencilla. Se opto por un modelo de movilidad entre areas lo que permite una buena granularidad al especificar la densidad de trafico.
+
+AGREGAR FOTO DEL MODELER
+
+Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos.  [http://www.elobservador.com.uy/noticia/292066/imm-sincronizara-400-semaforos-para-agilizar-el-transito-capitalino/] 
+En este caso se agrego la informacion sobre la configuración de los semaforoso de los datos relevados.
+
+Se manejaron dos tipos de vehículos autos y ómnibus cada uno con caracteristicas distintas tanto de tamaño, aceleracion y velocidad maxima.
+
+Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos []
+Estos incluyen las lineas urbanas  “G”,  la  “409” , “522”  y  “148” . Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre "A".  
+Todas  las  líneas  de  ómnibus
 fueron cargadas con las paradas correspondientes y se
 hicieron  variantes  en  los  viajes  dentro  de  una  misma
-línea de manera que no siempre paran en los mismos
-lugares.
-Los  viajes  de  los  autos  son  generados  aleatoriamente
-de modo que no circulen por el corredor (que es para
-los  ómnibus  urbanos)  y  de  forma  que  tengan  mayor
-probabilidad los viajes que comienzan y terminan en el
-borde  de  la  red,  luego  se  seleccionan  los  viajes  de
-manera  que  las  grandes  avenidas  sean  más  recorridas
-que  las  calles  menos  importantes.
+línea para simular el hecho de que no siempre se para en las mismas paradas.
 
-\subsubsection{Semáforos en cada cruce}
-Se  tomaron  los  tiempos  de  cada  luz  de  los  semáforos  en
-cada  cruce  y  luego  estos  datos  fueron  cargados  al  simulador
-para comparar con los  resultados  así como también para base
-de nuestro algoritmo evolutivo.
 
-\subsubsection{Escenarios}
+
+Foto de una esquina con los autitos y bondi esperando
 
 
 
 \section{Herramientas}
+Aquí se muestra información útil sobre las herramientas utilizadas.
 
 \subsection{Open Street Map:} 
 http://www.openstreetmap.org/about  Es un proyecto en donde una comunidad crea mapas libres y editables. Cuenta con cerca de 1.8 millones de usuarios  y  mas de 20.000 que editaron algo en el ultimo mes [http://osmstats.neis-one.org/] por lo que es muy activa. Se utilizan datos de GPS móviles, fotografías satelitales y otras fuentes libres para crear los mapas y editarlos. 
@@ -314,7 +309,7 @@ Es un simulador de trafico gratis y abierto que nos permite modelar redes de cal
 
 
 \subsection{Por que usar SUMO? }
-otras alternativas? REvisar estado del arte?
+otras alternativas? Revisar estado del arte?
 Sumo es gratis
 Nos permite utilizarlo sin interfaz gráfica por linea de comando lo que aumenta sensiblemente la velocidad ed ejecución, y  nos permite visualizar la interfaz gráfica una vez completada la optimización para ver exactamente como se comporta el sistema en la simulación.
 
@@ -328,6 +323,10 @@ Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos
 \subsection{DUaRouter}
  Genera recorridos de vehículos basado en dinámicas definidas por el usuario.
 
+\subsection{trafficmodeler}
+
+
+\subsubsection{Escenarios}
 
 
 \section{Resumen}
