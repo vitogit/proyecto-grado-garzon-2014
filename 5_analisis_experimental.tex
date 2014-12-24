@@ -1,5 +1,5 @@
 \chapter{Análisis Experimental}
-En esta sección describimos los distintos escenarios que vamos a probar y los resultados obtenidos en cada uno de ellos así como comparativas que consideramos relevantes.
+En esta sección se describen los distintos escenarios a probar y los resultados obtenidos en cada uno de ellos así como comparativas relevantes.
 
 \section{Descripción de escenarios}
 
@@ -7,17 +7,16 @@ En esta sección describimos los distintos escenarios que vamos a probar y los r
 Esto representa la situación actual en términos de trafico, red vial y sincronización de semáforos del corredor Garzón. 
 
 \subsection{Escenario Inicial }
-En este caso ejecutamos nuestro algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del trafico.
+En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del trafico.
 
 \subsection{Escenario Alternativo}
-Luego de analizar aquellos puntos que creemos atentan contra el buen funcionamiento del Corredor, agregamos algunas modificaciones al escenario base para intentar mejorarlo. 
-Estos son limitar el numero de cruces en los que se puede doblar a la izquierda, 
+Luego de analizar aquellos puntos que se entienden podrian atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
+Por ejemplo: limitar el numero de cruces en los que se puede doblar a la izquierda, ...
 
 
 
 \section{Desarrollo y Plataforma de ejecución }
 Los algoritmos fueron desarrollados usando la librería Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
-
 
 
 Los escenarios paralelos fueron ejecutados en el cluster fing:
@@ -42,7 +41,7 @@ Descripcion del hardware:
 \end{itemize}
 
 \section{Ajuste de parámetros de algoritmos}
-Buscamos la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  Estos son: el tamaño de la población,  probabilidad de mutación, probabilidad de cruzamiento, etc.
+Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  Estos son: el tamaño de la población,  probabilidad de mutación y de cruzamiento.
 Para esto se realizaron 20 ejecuciones independientes para el algoritmo secuencial inicial.
 El criterio de parada se eligió por el numero de generación.
 
@@ -59,13 +58,13 @@ Las gráficas muestras el promedio de las 20 ejecuciones para resolver el escena
 
 \subsection{Tiempo de simulación}
 
-Cada simulación tiene una duración fijada en base a ajustes previos que realizamos para que al menos 80 % de los vehiculos emitidos al inicio llegaron a su destino con un 90% de confianza (este parametro lo explicamos en ajuste de parametros? hay q poner algo de shapirowilk de confianza).
-Esto nos permite mantener constante el tiempo de ejecución total del algoritmo y saber cuanto demorara su ejecución teniendo en cuenta la población y generaciones configuradas. De esta forma se logra una mayor confianza a la hora de comparar los resultados.
+Cada simulación tiene una duración fijada en base a ajustes previos realizados para que al menos 80 \% de los vehiculos emitidos al inicio llegaron a su destino con un 90\% de confianza (este parametro lo explicamos en ajuste de parametros? hay q poner algo de shapirowilk de confianza).
+Esto  permite mantener constante el tiempo de ejecución total del algoritmo y saber cuanto demorara su ejecución teniendo en cuenta la población y generaciones configuradas. De esta forma se logra una mayor confianza a la hora de comparar los resultados.
 
 
 
 \section{Resultados}
-Presentaremos los resultados obtenidos  utilizando los parámetros óptimos obtenidos para el escenario inicial, el escenario modificado, y la prueba en el cluster.
+Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario inicial, el escenario modificado, y la prueba en el cluster.
 
 \subsection{Resultado simulación caso base}
 \subsection{Resultado Escenario Inicial ( Algoritmo  Secuencial)}

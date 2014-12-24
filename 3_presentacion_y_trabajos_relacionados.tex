@@ -4,18 +4,19 @@
 \section{Formulación matemática}
 
 \section{Por que usar algoritmo genéticos?}
-El problema de sincronización de semáforos es NP-Hard y que
+El problema de sincronización de semáforos es NP-Hard y 
 no existe (hasta el momento) un método determinístico que lo
 resuelva, se buscará mediante algoritmos evolutivos llegar a
 una configuración aceptable minimizando los tiempos de
 espera de los automóviles, mejorando así la configuración
-actual de los semáforos de la región más transitada del corredor
-de Garzón.
+actual de los semáforos del corredor de Garzón.
+
+[no se si esto va aca]
 
 \section{Estado del arte}
-La investigación del estado del arte la realizamos con dos objetivos en mente el primero para analizar las distintas soluciones que existen actualmente para nuestro problema y el segundo para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer nuestra solución.
+La investigación del estado del arte se realizo con dos objetivos en mente el primero analizar las distintas soluciones que existen actualmente para el problema y segundo para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución.
 
-El problema del tráfico optimizando las luces de los semáforos se puede resolver por muchos métodos como autómata celular[], redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, sistema expertos[]? o programación lineal[]? por lo tanto la cantidad de soluciones encontradas fue abundante y variada por esto decidimos enfocarnos en soluciones lo más cercanas a la nuestra posible y en otras que tuvieran alguna particularidad interesante que nos gustaría destacar.
+El problema del tráfico optimizando las luces de los semáforos se puede resolver por muchos métodos como autómata celular[], redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, sistema expertos[]? o programación lineal[]? por lo tanto la cantidad de soluciones encontradas fue abundante y variada por esto se decidió enfocarse en soluciones lo más cercanas a la propuesta y en otras que tuvieran alguna particularidad interesante para destacar.
 
 
 \begin{itemize}
@@ -31,7 +32,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		
 		Se compararon los resultados con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados
 		
-		Este mismo grupo realizo trabajos similares expandiendo esta investigación, estos son:
+		Este mismo grupo realizo trabajos similares expandiendo esta investigación, como los siguientes.
 	\end{item}
 
 	\begin{item}
@@ -99,7 +100,7 @@ La premisa se basa en la inteligencia colectiva en donde agentes individuales re
 Se aplica programación genética mas específicamente STGP (strongly typed genetic programming [Montana, 1995]) que aprende el árbol de decisión que sera ejecutado por todas las intersecciones cuando decida el cambio de fase. Ademas un algoritmo genético híbrido busca diferentes contantes que serán usadas en los arboles de decisión, permitiendo una especialización en las diferentes geometría y flujo de trafico
 
 La medida básica de efectividad en la función de evaluación es el “Delay” , esto es el total de tiempo perdido por causa de las señales de trafico. Se probaron 3 modelos distintos que tienen 4 intersecciones.
-El simulador usado utiliza una versión especial de TRAF-NETSIM.
+El simulador usado utiliza una versión especial de TRAF-NETSIM[].
 
 El experimento arroja buenos resultados en cuando a la performance de la red comparando con un ciclo fijo, y que presenta buena adaptabilidad en diferentes circunstancias. Marca el hecho de que el modelo es simple y de tamaño pequeño, y que es una incógnita como funcionara con problemas mas complejos.
 	
@@ -140,5 +141,5 @@ La performance de la red aumentó considerablemente usando este método
 Existen variedad de soluciones propuestas al problema de la sincronización de semáforos y todas logran buenos resultados en mayor o menor medida.
 
 ... indicar que dentro del estado del arte
-nuestra propuesta es mas compleja, con mas semaforos
+nuestra propuesta es mas compleja, con mas semáforos
 largo, cruces, etc
