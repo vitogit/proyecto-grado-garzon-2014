@@ -1,28 +1,51 @@
 \chapter{Estrategia de resolución}
 
+En este capitulo se presenta el algoritmo desarrollado, su estructura, parámetros y configuración. 
 
 \section{Libreria Malva}
 
-Malva [http://themalvaproject.github.io/] surge como un fork del proyecto Mallba [http://neo.lcc.uma.es/mallba/easy-mallba/index.html ] . Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de heuristicas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+Malva [http://themalvaproject.github.io/] surge como una variante del proyecto Mallba [http://neo.lcc.uma.es/mallba/easy-mallba/index.html ] . Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de heuristicas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como un template genérico que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
-Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes dle problema particular.
-Los esqueletos provistos o sea los algoritmos soportados son Algoritmos genéticos y CHC.
+Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes del problema particular.
+Los esqueletos provistos o sea los algoritmos soportados son Algoritmos genéticos y CHC[].
 
 
+\newpage
+
+\section{Especificación del Algoritmo Genético utilizado}
+Se utiliza el el algoritmo genético proviso por la librería  Malva  llamado NewGA.
+Entre sus características se encuentra que tiene la posibilidad de reemplazar padres por hijos, la selección de los padres se realiza por torneo de 3 individuos, y la selección de hijos por ruleta.
+
+Mas adelante se realizara un ajuste de parámetros para determinar la población, factor de mutación y de cruzamiento usados por el algoritmo.
+
+El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
+
+ 
+\begin{algorithm}[H]
+	\caption{Algoritmo Genético de Malva}
+	\label{alg:algoritmo_genetico_malva}
+	\begin{algorithmic} [1] 
+		{
+			\STATE \texttt{t} = 0
+			\STATE {Inicializo( P(t))}
+			\STATE {Evaluar estructuras en ( P(t))}			
+			\WHILE {\text{No termine}}
+			\STATE \texttt{t}++		
+			\STATE {Seleccionar C(t) de P(t-1)}	
+			\STATE {Recombinar estructuras en C(t) formando C'(t)}				
+			\STATE {Mutar estructuras en C'(t) formando C''(t)}		
+			\STATE {Evaluar estructuras en C''(t)}					
+			\STATE {Reemplazar P(t) de C''(t) y P(t-1)}								
+			\ENDWHILE
+		}
+	\end{algorithmic}
+
+\end{algorithm}
 
 
-\section{Algoritmo Genético}
-El algoritmo que vamos a utilizar es el algoritmo simple, este
-sigue  la  propuesta  de  Goldberg  [].  El  algoritmo  en  Malva  se
-llama NewGA, el mismo crea una población inicial y en
-cada  generación,  genera  una  nueva  población  de  individuos
-seleccionando  de  la  población  anterior  y  realizando
-cruzamiento,  hace  un  reemplazo  total.  El  proceso  se  repite
-hasta  dar  con  algún  tipo  de  criterio  de parada.  La  librería se
-basa en el elitismo, los mejores individuos son llevados hacia
-la siguiente generación.
+ 
 
 \subsection{Representación}
 Para poder explicar la representación del problema de los

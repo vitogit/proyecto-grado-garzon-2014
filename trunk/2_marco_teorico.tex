@@ -53,7 +53,7 @@ Abril 2013 - Otro Corredor con obras paralizadas por criticas a GArzon
 
 
 \section{Algoritmos Evolutivos}
-Los algoritmos evolutivos son métodos no determinísticos que se inspiran en la evolución natural de las especies utilizando conceptos como población, cruzamiento, mutación, selección, etc. Estos se utilizan para resolver problemas de optimización y búsqueda, entre otros. []
+Los algoritmos evolutivos son métodos no determinísticos que se inspiran en la evolución natural de las especies utilizando conceptos como población, cruzamiento, mutación, selección, etc. Estos se utilizan para resolver problemas de optimización y búsqueda, entre otros \citep{Nesmachnow2002}.
 
 Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores y basado en un criterio predefinido para maximizar o minimizar.
 
@@ -61,7 +61,7 @@ Este tipo de solución a demostrado su utilidad en una amplia variedad de proble
 
 
 \subsection{Algoritmos Genéticos}
-Un algoritmo genético es un tipo de algoritmo evolutivo, siendo de los mas populares.
+El algoritmo genético es uno de los mas populares dentro de los algoritmos evolutivos.
 
 La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el numero de iteraciones o cuando ya no se puede mejorar mas la solución.
 
@@ -192,7 +192,7 @@ Los simuladores de tráfico son programas que simulan el movimiento de vehículo
 
 Los simuladores se pueden dividir en microscópicos o macroscópicos según el nivel de detalle de la simulación. Un simulador macroscópico modela  el trafico vehicular como un fluido. En cambio un simulador microscópico simula el movimiento de cada vehículo según sus características particulares.
 
-SUMO (Simulated uf)[] es uno de los simuladores abiertos mas populares, es microscópico y utiliza una serie de archivos  XML que representan las rutas, los vehículos y el trafico.  
+SUMO\citep{SUMO} es uno de los simuladores abiertos mas populares, es microscópico y utiliza una serie de archivos  XML que representan las rutas, los vehículos y el trafico.  
 
 Cuanto mas crece el numero de vehículos y la complejidad de la red de mapas mas difícil se hace crear la entrada básica que necesita el simulador. Aunque existen diversas herramientas que ayudan a este proceso aun se requiere un trabajo manual para el acondicionado de estos archivos.
 
@@ -237,20 +237,32 @@ Se pueden crear diferentes tipos de vehículos especificando propiedades como la
 
 \subsection{Configuración de la simulación}
 
-En esta sección se realiza un resumen sobre los pasos realizados para tener los elementos necsearios para realizar la simulacion.
+En esta sección se realiza un resumen sobre los pasos realizados para tener los elementos necesarios para realizar la simulación.
 
 \subsubsection{Diseño del mapa}
 
 
-El mapa base de la zona proviene de OSM [], luego se cotejo su exactitud con Google Maps y Bing Maps.
+El mapa base de la zona proviene de Open Street Map \citep{OSM}, luego se cotejo su exactitud con Google Maps y Bing Maps.
 
-poner mapa base
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/osm_garzon}
+\caption{Tramo del mapa de Garzon de OSM}
+\label{fig:osm_garzon}
+\end{figure}
+
 
 Se utilizo la herramienta netconvert para convertirlo al formato que SUMO acepta. 
-Para esto se realizaron varios ajustes editando los archivos xml para corregir errores en las calles, cruces y conexiones para que fuese fiel a la realidad y mantuviera la compativilidad con SUMO.
+Para esto se realizaron varios ajustes editando los archivos xml para corregir errores en las calles, cruces y conexiones para que fuese fiel a la realidad y mantuviera la compatibilidad con SUMO.
 
 
-agregar foto del mapa de sumo
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{Figures/mapa_sumo}
+\caption{Mapa cargado en SUMO luego del modelado y procesamiento}
+\label{fig:mapa_sumo}
+\end{figure}
+
 
 
 \subsubsection{Trabajo de campo realizado}
@@ -262,30 +274,42 @@ Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparic
 Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
 Se realizaron filmaciones de 30 min en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla excel donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. También discriminamos entre vehículos y ómnibus que recorren Garzón.
 
-AGREGAR FOTO de la planilla
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/conteo_hoja}
+\caption{Planilla electrónica para el conteo manual en Camino Ariel}
+\label{fig:conteo_hoja}
+\end{figure}
+
 
 Ademas se realizaron recorridas de punta a punta del corredor a una velocidad constante para verificar los tiempos obtenidos en la simulación para este recorrido.
 
 Para obtener la configuración de los semáforos se realizo un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
 
-agregar foto de la confiruacion semaforil
 
-
+\newpage
 \subsubsection{Creación del modelo del trafico}
 
-Con los datos relevados se creo un modelo vehicular de la ciudad [poner el mapa] que brinda una aproximacion sobre la densidad de trafico y la velocidad promedio de circulación.
+Con los datos relevados se creo un modelo vehicular de la ciudad [poner el mapa] que brinda una aproximación sobre la densidad de trafico y la velocidad promedio de circulación.
 
-Se utilizo la utilida trafficmodeler[] con lo que se logra generar modelos de trafico complejo de manera visual y sencilla. Se opto por un modelo de movilidad entre areas lo que permite una buena granularidad al especificar la densidad de trafico.
+Se utilizo el programa Traffic Modeler \citep{TrafficModeler} con lo que se logra generar modelos de trafico complejo de manera visual y sencilla. Se opto por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de trafico.
 
-AGREGAR FOTO DEL MODELER
 
-Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos.  [http://www.elobservador.com.uy/noticia/292066/imm-sincronizara-400-semaforos-para-agilizar-el-transito-capitalino/] 
-En este caso se agrego la informacion sobre la configuración de los semaforoso de los datos relevados.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{Figures/areaflow1}
+\caption{Mapa del TrafficModeler con las áreas de trafico. Círculos del mismo color indican trafico especificado entre esas áreas}
+\label{fig:areaflow1}
+\end{figure}
 
-Se manejaron dos tipos de vehículos autos y ómnibus cada uno con caracteristicas distintas tanto de tamaño, aceleracion y velocidad maxima.
 
-Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos []
-Estos incluyen las lineas urbanas  “G”,  la  “409” , “522”  y  “148” . Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre "A".  
+Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos. \citep{OBS01} 
+En este caso se agrego la información sobre la configuración de los semáforos de los datos relevados.
+
+Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima.
+
+Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia de Montevideo \citep{IMM}
+Estos incluyen las lineas urbanas  'G',  la  '409' , '522'  y  '148' . Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre 'A'.  
 Todas  las  líneas  de  ómnibus
 fueron cargadas con las paradas correspondientes y se
 hicieron  variantes  en  los  viajes  dentro  de  una  misma
@@ -293,7 +317,14 @@ línea para simular el hecho de que no siempre se para en las mismas paradas.
 
 
 
-Foto de una esquina con los autitos y bondi esperando
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/sim1}
+	\caption{Simulacion de trafico en SUMO en el curce entre Bulevar Battle y Ordoñez y el Corredor Garzon.}
+	\label{fig:sim1}
+\end{figure}
+
 
 
 
@@ -301,11 +332,11 @@ Foto de una esquina con los autitos y bondi esperando
 Aquí se muestra información útil sobre las herramientas utilizadas.
 
 \subsection{Open Street Map:} 
-http://www.openstreetmap.org/about  Es un proyecto en donde una comunidad crea mapas libres y editables. Cuenta con cerca de 1.8 millones de usuarios  y  mas de 20.000 que editaron algo en el ultimo mes [http://osmstats.neis-one.org/] por lo que es muy activa. Se utilizan datos de GPS móviles, fotografías satelitales y otras fuentes libres para crear los mapas y editarlos. 
+ Es un proyecto en donde una comunidad crea mapas libres y editables \citep{OSM}. Cuenta con cerca de 1.8 millones de usuarios  y  mas de 20.000 que editaron algo en el ultimo mes \citep{OSMSTATS} por lo que es muy activa. Se utilizan datos de GPS móviles, fotografías satelitales y otras fuentes libres para crear los mapas y editarlos. 
 
 \subsection{SUMO ( Simulation of Urban MObility)}
-%http://sumo.dlr.de/wiki/Main_Page 
-Es un simulador de trafico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Ademas incluye un conjunto de herramientas destinadas  a facilitar la generación de trafico, construcción de mapas, etc. 
+
+Es un simulador de trafico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Ademas incluye un conjunto de herramientas destinadas  a facilitar la generación de trafico, construcción de mapas, etc. 
 
 
 \subsection{Por que usar SUMO? }
@@ -313,21 +344,20 @@ otras alternativas? Revisar estado del arte?
 Sumo es gratis
 Nos permite utilizarlo sin interfaz gráfica por linea de comando lo que aumenta sensiblemente la velocidad ed ejecución, y  nos permite visualizar la interfaz gráfica una vez completada la optimización para ver exactamente como se comporta el sistema en la simulación.
 
-Sumo presenta varias salidas con información interesante: http://sumo.dlr.de/wiki/Simulation/Output 
+Sumo presenta varias salidas con información interesante: \citep{SUMOOUT} 
 La salida obtenemos el tiempo de simulación, la cantidad de emitidos y la cantidad de completados. Buscamos que sea > 80%
 Permite la ejecución tanto por linea de comando como una interfaz gráfica para visualizar
 
 \subsection{NetConvert}
-Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de openStreetMap a archivo XML de red que sumo reconoce.
+Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en archivo XML de red que SUMO reconoce. Este programa viene integrado con SUMO
 
 \subsection{DUaRouter}
- Genera recorridos de vehículos basado en dinámicas definidas por el usuario.
+ Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
 
-\subsection{trafficmodeler}
-
+\subsection{Traffic Modeler}
+Herramienta para la generación de trafico de manera visual y luego transformarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
 
 \subsubsection{Escenarios}
 
 
-\section{Resumen}
 

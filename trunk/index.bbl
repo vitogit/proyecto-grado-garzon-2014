@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -37,6 +37,11 @@ J.~J.~K. G.~Y.~Lim and Y.~S. Hong.
   intelligence.
 \newblock \emph{10th IEEE Int. Conf.Fuzzy Syst}, page 1279–1282, 2001.
 
+\bibitem[IMM()]{IMM}
+IMM.
+\newblock Intendencia municipal de montevideo.
+\newblock \url{http://www.montevideo.gub.uy}.
+
 \bibitem[INE(2014)]{INE2014}
 INE.
 \newblock Transporte y comunicaciones.
@@ -52,6 +57,12 @@ S.~López, P.~Hernandez, A.~Hernandez, and M.~Garcia.
 \newblock \emph{Foundations and Tools for Neural Modeling}, page 795–804,
   1999.
 
+\bibitem[MalvaAlgoritmo()]{MalvaAlgGenetico}
+MalvaAlgoritmo.
+\newblock Algoritmo genetico de malva.
+\newblock
+  \url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}.
+
 \bibitem[Montana and Czerwinski(1996)]{Montana1996}
 D.~J. Montana and S.~Czerwinski.
 \newblock Evolving control laws for a network of traffic signals.
@@ -62,6 +73,28 @@ S.~Nesmachnow.
 \newblock Evolución en el diseño y clasificación de algoritmos genéticos
   paralelos,.
 \newblock 2002.
+
+\bibitem[Observador()]{OBS01}
+Observador.
+\newblock Imm sincronizará 400 semáforos para agilizar el tránsito
+  capitalino.
+\newblock
+  \url{http://www.elobservador.com.uy/noticia/292066/imm-sincronizara-400-semaforos-para-agilizar-el-transito-capitalino/}.
+
+\bibitem[OSM({\natexlab{a}})]{OSM}
+OSM.
+\newblock Open street map.
+\newblock \url{www.openstreetmap.org/}, {\natexlab{a}}.
+
+\bibitem[OSM({\natexlab{b}})]{OSMSTATS}
+OSM.
+\newblock Osm stats.
+\newblock \url{http://osmstats.neis-one.org/}, {\natexlab{b}}.
+
+\bibitem[Papaleontiou()]{TrafficModeler}
+L.~Papaleontiou.
+\newblock Sumo traffic modeler.
+\newblock \url{http://sourceforge.net/projects/trafficmodeler/}.
 
 \bibitem[Penner et~al.(2002)Penner, Hoar, and Jacob]{Penner2002}
 J.~Penner, R.~Hoar, and C.~Jacob.
@@ -112,6 +145,16 @@ Subrayado.
 \newblock
   \url{http://www.subrayado.com.uy/Site/noticia/23835/expertos-en-transito-el-colapso-esta-establecido-en-montevideo},
   2013.
+
+\bibitem[SUMO({\natexlab{a}})]{SUMO}
+SUMO.
+\newblock Simulation of urban mobility.
+\newblock \url{http://sumo.dlr.de/wiki/Main_Page}, {\natexlab{a}}.
+
+\bibitem[SUMO({\natexlab{b}})]{SUMOOUT}
+SUMO.
+\newblock Sumo output.
+\newblock \url{http://sumo.dlr.de/wiki/Simulation/Output}, {\natexlab{b}}.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, and Chin]{Teo2010}
 K.~T.~K. Teo, W.~Y. Kow, and Y.~K. Chin.
