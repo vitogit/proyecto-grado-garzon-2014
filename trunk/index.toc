@@ -68,12 +68,12 @@
 \contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{25}{chapter.5}
 \contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n de escenarios}{25}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Caso base}{25}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Escenario Inicial }{25}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Escenario Evolutivo }{25}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Escenario Alternativo}{25}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{25}{section.5.2}
+\contentsline {section}{\numberline {5.2}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{26}{section.5.2}
 \contentsline {section}{\numberline {5.3}Ajuste de par\IeC {\'a}metros de algoritmos}{26}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Tiempo de simulaci\IeC {\'o}n}{26}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Resultados}{26}{section.5.4}
+\contentsline {subsection}{\numberline {5.3.1}Tiempo de simulaci\IeC {\'o}n}{27}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Resultados}{27}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Resultado simulaci\IeC {\'o}n caso base}{27}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Resultado Escenario Inicial ( Algoritmo Secuencial)}{27}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Alternativo ( Algoritmo Secuencial)}{27}{subsection.5.4.3}
