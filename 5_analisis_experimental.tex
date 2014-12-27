@@ -1,17 +1,31 @@
 \chapter{Análisis Experimental}
-En esta sección se describen los distintos escenarios a probar y los resultados obtenidos en cada uno de ellos así como comparativas relevantes.
+En esta sección se presenta la descripción de los escenarios , la plataforma de ejecución y el análisis experimental.
+
+Este se divide en dos etapas, primero se realiza la configuración parametrica para encontrar la mejor ejecución del algoritmo. Luego se realizan las pruebas donde se comparan los resultados entre los distintos escenarios.
+
 
 \section{Descripción de escenarios}
+En todos los escenarios se utiliza los datos obtenidos del trafico vehicular, configuración de semáforos y frecuencia de los ómnibus. 
 
 \subsection{Caso base}
 Esto representa la situación actual en términos de trafico, red vial y sincronización de semáforos del corredor Garzón. 
 
-\subsection{Escenario Inicial }
+Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Y utilizando las frecuencias de acceso publico en el caso de los ómnibus.
+
+\subsection{Escenario Evolutivo }
 En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del trafico.
 
 \subsection{Escenario Alternativo}
-Luego de analizar aquellos puntos que se entienden podrian atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
-Por ejemplo: limitar el numero de cruces en los que se puede doblar a la izquierda, ...
+Luego de analizar aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
+
+-Limitar cruces a la izquierda
+
+-Eliminar paradas
+
+-Agregar calles paralelas a Garzon
+
+-
+
 
 
 
@@ -19,7 +33,7 @@ Por ejemplo: limitar el numero de cruces en los que se puede doblar a la izquier
 Los algoritmos fueron desarrollados usando la librería Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
 
-Los escenarios paralelos fueron ejecutados en el cluster fing:
+Los escenarios fueron ejecutados en el cluster fing.
 
 Cluster: Es un conjunto de computadoras independientes conectadas para que trabajen integradas como un solo sistema. De esta forma se consigue un alto rendimiento en la ejecución de tareas. 
 
@@ -41,7 +55,64 @@ Descripcion del hardware:
 \end{itemize}
 
 \section{Ajuste de parámetros de algoritmos}
-Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  Estos son: el tamaño de la población,  probabilidad de mutación y de cruzamiento.
+Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  
+
+\begin{itemize}
+	\item Tiempo de simualcion	
+	\item Criterio de parada
+	\item Tamaño de la población
+	\item Probabilidad de mutación
+	\item Probabilidad de cruzamiento
+\end{itemize}
+
+generar 3 juegos de trafico aleatorio, de bajo, medio y alto trafico de ómnibus y autos). Y ajustar los parámetros usando algún script para correr todo eso y generar las tablas. De esta forma el algoritmo queda genérico y no sesgado para un caso particular.
+
+Ademas se realizan 20 pruebas individuales de cada prueba para lograr una mejor confiabilidad estadistica. 
+ 
+\subsection{Tiempo de simulación}
+
+Para tener un mejor control sobre los tiempos totales de ejecucion, se busca encontrar un numero fijo para el tiempo de la simulacion de cada escenario que se ejecutara para cada solucion.
+
+Teniendo en cuenta que cada simulación de los escenarios representan el trafico vehicular durante una hora real y que se valido que en cada escenario mas de los 80 \% de los vehiculos hayan dejado la simulacion, es decir llegado a sus destinos.
+
+Se establece un tiempo de simulacion de 4000 steps que cumple con los criterios establecidos. 
+
+\subsection{Criterio de Parada}
+Se elige como criterio de parada el numero de generación, esto permite estandarizar las pruebas para una mejor comparación.
+
+Para determinar el numero de generación donde parar el algoritmo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
+
+Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1h y 24h y ademas comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
+
+Luego de la realización de las pruebas se elige el numero de 500 generaciones como criterio de parada.
+
+Con un tiempo de ejecución de 3h y como se ve en la gráfica para un conjunto representativo el fitness no varia excesivamente en las ultimas 100 generaciones.
+
+
+INSERTAR GRAFICA
+
+
+\subsection{Tamaño de la población}
+
+Para la elección de la población se tendrán en cuenta 3 elementos. El valor de fitness encontrado, el tiempo de ejecución total y la plataforma de ejecución.
+
+Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos sera 64.
+
+Luego se eligen los valores 32 y 48 subjetivamente para completar el análisis teniendo en cuenta que no son lo suficientemente bajos como 8 u 16. Y así tenemos una distribución mas adecuada.
+
+
+
+el valor de fitness encontrado
+el tiempo de ejecucion total
+
+
+
+
+\subsection{Probabilidad de mutación}
+
+\subsection{Probabilidad de cruzamiento}
+En una primera instancia de realiza 
+
 Para esto se realizaron 20 ejecuciones independientes para el algoritmo secuencial inicial.
 El criterio de parada se eligió por el numero de generación.
 
