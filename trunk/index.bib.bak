@@ -32,6 +32,15 @@
   Timestamp                = {2014.11.25}
 }
 
+@Misc{CHC,
+  Title                    = {CHC Method},
+
+  Author                   = {CHC},
+  HowPublished             = {\url{http://neo.lcc.uma.es/mallba/easy-mallba/html/algorithms.html\#chc}},
+
+  Timestamp                = {2014.12.27}
+}
+
 @Article{DiFebbraro2002,
   Title                    = {On applying Petri nets to determine optimal offsets for coordinated traffic light timings},
   Author                   = {DiFebbraro and Giglio, and Sacco},
@@ -83,6 +92,24 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.11.27}
 }
 
+@Misc{Mallba,
+  Title                    = {Mallba Library},
+
+  Author                   = {Mallba},
+  HowPublished             = {\url{http://neo.lcc.uma.es/mallba/easy-mallba/index.html}},
+
+  Timestamp                = {2014.12.27}
+}
+
+@Misc{Malva,
+  Title                    = {The Malva Project},
+
+  Author                   = {Malva},
+  HowPublished             = {\url{http://themalvaproject.github.io/}},
+
+  Timestamp                = {2014.12.27}
+}
+
 @Misc{Malva,
   Title                    = {The Malva Project},
 
@@ -95,7 +122,7 @@ offset between two consecutive sets of traffic lights},
 @Misc{MalvaAlgGenetico,
   Title                    = {Algoritmo Genetico de Malva},
 
-  Author                   = {Malva},
+  Author                   = {MalvaAlgoritmo},
   HowPublished             = {\url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}},
 
   Timestamp                = {2014.12.24}

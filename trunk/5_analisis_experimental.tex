@@ -67,15 +67,18 @@ Se busca la mejor configuración inicial de los parámetros realizando pruebas e
 
 generar 3 juegos de trafico aleatorio, de bajo, medio y alto trafico de ómnibus y autos). Y ajustar los parámetros usando algún script para correr todo eso y generar las tablas. De esta forma el algoritmo queda genérico y no sesgado para un caso particular.
 
-Ademas se realizan 20 pruebas individuales de cada prueba para lograr una mejor confiabilidad estadistica. 
- 
+Ademas se realizan 20 pruebas individuales de cada prueba para lograr una mejor confiabilidad estadística.
+
+Primero definimos el tiempo de simulación y el criterio de parada, luego una vez establecidos realizamos las pruebas para todas las combinaciones de tasa de cruzamiento y de mutación buscando los mejores valores para optimizar el algoritmo.
+
+
 \subsection{Tiempo de simulación}
 
-Para tener un mejor control sobre los tiempos totales de ejecucion, se busca encontrar un numero fijo para el tiempo de la simulacion de cada escenario que se ejecutara para cada solucion.
+Para tener un mejor control sobre los tiempos totales de ejecución, se busca encontrar un numero fijo para el tiempo de la simulación de cada escenario que se ejecutara para cada solución.
 
-Teniendo en cuenta que cada simulación de los escenarios representan el trafico vehicular durante una hora real y que se valido que en cada escenario mas de los 80 \% de los vehiculos hayan dejado la simulacion, es decir llegado a sus destinos.
+Teniendo en cuenta que cada simulación de los escenarios representan el trafico vehicular durante una hora real y que se valido que en cada escenario mas de los 80 \% de los vehículos hayan dejado la simulación, es decir llegado a sus destinos.
 
-Se establece un tiempo de simulacion de 4000 steps que cumple con los criterios establecidos. 
+Se establece un tiempo de simulación de 4000 steps que cumple con los criterios establecidos. 
 
 \subsection{Criterio de Parada}
 Se elige como criterio de parada el numero de generación, esto permite estandarizar las pruebas para una mejor comparación.
@@ -102,24 +105,27 @@ Luego se eligen los valores 32 y 48 subjetivamente para completar el análisis t
 
 
 
-el valor de fitness encontrado
-el tiempo de ejecucion total
 
 
+\subsection{Probabilidad de mutación y cruzamiento}
+
+Los valores elegidos fueron:
+
+\begin{itemize}
+	\item Probabilidad de cruzamiento (pc):  0.5, 0.8, 1
+	\item Probabilidad de  mutación (pm):  0.01, 0.05, 0.1
+\end{itemize}
+
+Se prueban todas las combinaciones  de cruzamiento y mutación para cada uno de los tres casos de trafico.
+
+En las siguientes figuras se muestran los valores de fitness obtenidos en cada caso.
 
 
-\subsection{Probabilidad de mutación}
+INSERTAR GRAFICA de los 3 casosd de trafico.
 
-\subsection{Probabilidad de cruzamiento}
-En una primera instancia de realiza 
+En estos resultados podemos observar la influencia de estos parametros a la hora de obtener una buena solución.
 
-Para esto se realizaron 20 ejecuciones independientes para el algoritmo secuencial inicial.
-El criterio de parada se eligió por el numero de generación.
-
-Para la población se probaron 32, 64, 128 . Los resultado indicaron que 
-
-Para el cruzamiento 0.5, 0.8, 1
-Para mutación 0.01, 0.05 y 0.1
+La combinacion 0.4 de mutacion y 05 de cruzamiento es la que obtiene mejor rendimiento en los tres casos por lo que la elegimos como parametros del algoritmo.
 
 La mejor  configuración obtenida fue:
 Población:120, mutación:0.01 , cruzamiento: 1
@@ -127,10 +133,8 @@ Población:120, mutación:0.01 , cruzamiento: 1
 Las gráficas muestras el promedio de las 20 ejecuciones para resolver el escenario inicial.
 
 
-\subsection{Tiempo de simulación}
 
-Cada simulación tiene una duración fijada en base a ajustes previos realizados para que al menos 80 \% de los vehiculos emitidos al inicio llegaron a su destino con un 90\% de confianza (este parametro lo explicamos en ajuste de parametros? hay q poner algo de shapirowilk de confianza).
-Esto  permite mantener constante el tiempo de ejecución total del algoritmo y saber cuanto demorara su ejecución teniendo en cuenta la población y generaciones configuradas. De esta forma se logra una mayor confianza a la hora de comparar los resultados.
+
 
 
 
@@ -138,9 +142,19 @@ Esto  permite mantener constante el tiempo de ejecución total del algoritmo y s
 Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario inicial, el escenario modificado, y la prueba en el cluster.
 
 \subsection{Resultado simulación caso base}
-\subsection{Resultado Escenario Inicial ( Algoritmo  Secuencial)}
-\subsection{Resultado Escenario Alternativo ( Algoritmo  Secuencial)}
-\subsection{Resultado de ejecución en paralelo. }
+El caso base se construye a partir del modelo de trafico con los datos tomados in-situ por lo que muestra valores aproximados de la realidad actual.
+
+En este caso tenemos las siguentes metricas
+
+Tiempo de viaje promedio de ida en un vehiculo
+Tiempo de viaje promedio de ida en omnibus por el corredor:
+Velocidad promedio de los vehiculos:
+Velocidad promedio de los omnibus:
+
+Estas metricas seran las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
+
+\subsection{Resultado Escenario Evolutivo}
+\subsection{Resultado Escenario Alternativo}
 
 \subsection{Comparación caso base vs Algoritmo Secuencial}
 Análisis comparativo : test paramétrico
@@ -162,11 +176,27 @@ real que demora 1019 y 690, las soluciones son muy buenas.
 
 
 
-\subsection{Comparación Algoritmo Secuencial vs Algoritmo Paralelo}
-Speedup se define como ...
+\subsection{Comparación Secuencial vs  Paralelo}
 
-\subsection{Escalabilidad de Algoritmo Paralelo }
-Ejecutar en 4, 8 ,16, 32
+El speedup se define como T1/Tp
+T1 es el tiempo de ejecucion en un procesador
+Tp es el tiempo de ejecucion en p procesdores.
+
+
+Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecucion en diferentes numero de procesadores
+
+La escabilidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan mas procesadores.
+
+En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
+
+GRAFICA DE ESCABILIDAD
+
+El comando "time" ejecutado sobre nuestro algoritmo nos brinda el tiempo real de ejecución, así como el tiempo total sumado de todos los procesadores. Por tanto podemos calcular el tiempo del algoritmo secuencial.
+
+En el caso de 8 procesadores, al tener una población de 32 se distribuirán 4 individuos por procesador.
+
+Por tanto cuando tenemos 32 es donde se logra la mejor distribución al no existir "overhead" en la creación y terminación de los hilos.
+
 
 \section{Resumen}
 

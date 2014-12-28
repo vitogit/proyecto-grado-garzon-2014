@@ -15,27 +15,25 @@
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{5}{section*.6}
 \contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{5}{section*.7}
 \contentsline {subsubsection}{Cruzamiento}{5}{section*.8}
-\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{5}{section*.9}
-\contentsline {subsubsection}{Reemplazo}{5}{section*.10}
-\contentsline {subsubsection}{Criterio de parada}{6}{section*.11}
+\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{6}{section*.10}
+\contentsline {subsubsection}{Reemplazo}{6}{section*.12}
+\contentsline {subsubsection}{Criterio de parada}{6}{section*.13}
 \contentsline {subsection}{\numberline {2.1.2}Funcionamiento}{6}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Algoritmos gen\IeC {\'e}tico multiobjetivo}{6}{subsection.2.1.3}
-\contentsline {subsubsection}{Por que elegir multiobjetivo en este problema?}{6}{section*.12}
-\contentsline {subsection}{\numberline {2.1.4}Algoritmo Gen\IeC {\'e}tico Paralelo}{6}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.3}Algoritmos gen\IeC {\'e}tico multiobjetivo}{7}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Algoritmo Gen\IeC {\'e}tico Paralelo}{7}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Maestro-Esclavo}{7}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Algoritmo a desarrollar}{7}{subsection.2.1.6}
-\contentsline {section}{\numberline {2.2}Simulaci\IeC {\'o}n y herramientas}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Simuladores de tr\IeC {\'a}fico}{7}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Simulaci\IeC {\'o}n y herramientas}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Simuladores de tr\IeC {\'a}fico}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Modelo de trafico }{8}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Representaciones}{8}{subsection.2.2.3}
-\contentsline {subsubsection}{Red de calles}{8}{section*.14}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n Trafico}{8}{section*.15}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n del tiempo}{8}{section*.16}
-\contentsline {subsubsection}{Tipos de veh\IeC {\'\i }culos}{9}{section*.17}
+\contentsline {subsubsection}{Red de calles}{8}{section*.15}
+\contentsline {subsubsection}{Representaci\IeC {\'o}n Trafico}{9}{section*.16}
+\contentsline {subsubsection}{Representaci\IeC {\'o}n del tiempo}{9}{section*.17}
+\contentsline {subsubsection}{Tipos de veh\IeC {\'\i }culos}{9}{section*.18}
 \contentsline {subsection}{\numberline {2.2.4}Configuraci\IeC {\'o}n de la simulaci\IeC {\'o}n}{9}{subsection.2.2.4}
-\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{9}{section*.18}
-\contentsline {subsubsection}{Trabajo de campo realizado}{10}{section*.21}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n del modelo del trafico}{12}{section*.23}
+\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{9}{section*.19}
+\contentsline {subsubsection}{Trabajo de campo realizado}{9}{section*.22}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n del modelo del trafico}{12}{section*.24}
 \contentsline {section}{\numberline {2.3}Herramientas}{13}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Open Street Map:}{13}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}SUMO ( Simulation of Urban MObility)}{13}{subsection.2.3.2}
@@ -43,7 +41,7 @@
 \contentsline {subsection}{\numberline {2.3.4}NetConvert}{14}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}DUaRouter}{14}{subsection.2.3.5}
 \contentsline {subsection}{\numberline {2.3.6}Traffic Modeler}{14}{subsection.2.3.6}
-\contentsline {subsubsection}{Escenarios}{14}{section*.26}
+\contentsline {subsubsection}{Escenarios}{14}{section*.27}
 \contentsline {chapter}{\numberline {3}Presentaci\IeC {\'o}n y trabajos relacionados}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Presentaci\IeC {\'o}n}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}Formulaci\IeC {\'o}n matem\IeC {\'a}tica}{15}{section.3.2}
@@ -51,38 +49,34 @@
 \contentsline {section}{\numberline {3.4}Estado del arte}{15}{section.3.4}
 \contentsline {section}{\numberline {3.5}Resumen}{19}{section.3.5}
 \contentsline {chapter}{\numberline {4}Estrategia de resoluci\IeC {\'o}n}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Libreria Malva}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Representaci\IeC {\'o}n}{22}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Codificaci\IeC {\'o}n}{22}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Inicializaci\IeC {\'o}n}{23}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Funci\IeC {\'o}n fitness}{23}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Operadores}{23}{subsection.4.2.5}
-\contentsline {subsubsection}{Selecci\IeC {\'o}n}{23}{section*.27}
-\contentsline {subsubsection}{Cruzamiento}{23}{section*.28}
-\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{23}{section*.29}
-\contentsline {subsection}{\numberline {4.2.6}Criterio de parada}{23}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Multiobjetivo}{24}{section.4.3}
-\contentsline {section}{\numberline {4.4}Algoritmo Paralelo}{24}{section.4.4}
-\contentsline {section}{\numberline {4.5}Resumen}{24}{section.4.5}
-\contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n de escenarios}{25}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Caso base}{25}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Escenario Evolutivo }{25}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Escenario Alternativo}{25}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ajuste de par\IeC {\'a}metros de algoritmos}{26}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Tiempo de simulaci\IeC {\'o}n}{27}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Resultados}{27}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Resultado simulaci\IeC {\'o}n caso base}{27}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Resultado Escenario Inicial ( Algoritmo Secuencial)}{27}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Alternativo ( Algoritmo Secuencial)}{27}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Resultado de ejecuci\IeC {\'o}n en paralelo. }{27}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Comparaci\IeC {\'o}n caso base vs Algoritmo Secuencial}{27}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Comparaci\IeC {\'o}n Algoritmo Secuencial vs Algoritmo Paralelo}{27}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Escalabilidad de Algoritmo Paralelo }{27}{subsection.5.4.7}
-\contentsline {section}{\numberline {5.5}Resumen}{27}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusiones}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trabajo futuro}{29}{section.6.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{29}{section.6.2}
+\contentsline {section}{\numberline {4.1}Arquitectura de la soluci\IeC {\'o}n}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Librer\IeC {\'\i }a Malva}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Representaci\IeC {\'o}n del cromosoma}{23}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Inicializaci\IeC {\'o}n}{24}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Funci\IeC {\'o}n fitness}{25}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Operador de Cruzamiento}{25}{subsection.4.3.4}
+\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{25}{section*.31}
+\contentsline {section}{\numberline {4.4}Resumen}{25}{section.4.4}
+\contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n de escenarios}{27}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Caso base}{27}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Escenario Evolutivo }{27}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Escenario Alternativo}{27}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{28}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ajuste de par\IeC {\'a}metros de algoritmos}{28}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Tiempo de simulaci\IeC {\'o}n}{29}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Criterio de Parada}{29}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{29}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{29}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Resultados}{30}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Resultado simulaci\IeC {\'o}n caso base}{30}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Resultado Escenario Evolutivo}{30}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Alternativo}{30}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Comparaci\IeC {\'o}n caso base vs Algoritmo Secuencial}{30}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Comparaci\IeC {\'o}n Secuencial vs Paralelo}{30}{subsection.5.4.5}
+\contentsline {section}{\numberline {5.5}Resumen}{31}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusiones}{33}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{33}{section.6.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{33}{section.6.2}

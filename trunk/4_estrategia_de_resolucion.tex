@@ -2,23 +2,59 @@
 
 En este capitulo se presenta el algoritmo desarrollado, su estructura, parámetros y configuración. 
 
-\section{Libreria Malva}
+Se comienza explicando la librería Malva utilizada para el desarrollo del algoritmo y la arquitectura especifica que se realizo para resolver el problema.
 
-Malva [http://themalvaproject.github.io/] surge como una variante del proyecto Mallba [http://neo.lcc.uma.es/mallba/easy-mallba/index.html ] . Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de heuristicas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+\section{Arquitectura de la solución}
 
-Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como un template genérico que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
+En el siguiente diagrama muestra la arquitectura propuesta para el problema.
 
-Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes del problema particular.
-Los esqueletos provistos o sea los algoritmos soportados son Algoritmos genéticos y CHC[].
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
+\caption{Arquitectura del algoritmo}
+\label{fig:arquitectura1}
+\end{figure}
+
+
+Malva se utiliza para la implementación del algoritmo, en cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. 
+
+El simulador genera archivos con información sobre la simulación que son usados por el algoritmo para determinar el fitness.
+
+Luego los archivos son procesados por el algoritmo para extraer los datos útiles necesario para la función de fitness.
+
+
+
+
+
+
+
+\section{Librería Malva}
+
+\citep{Malva} surge como una variante del proyecto \citep{Mallba}. Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+
+Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
+
+Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citep{CHC}.
 
 
 \newpage
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el el algoritmo genético proviso por la librería  Malva  llamado NewGA.
-Entre sus características se encuentra que tiene la posibilidad de reemplazar padres por hijos, la selección de los padres se realiza por torneo de 3 individuos, y la selección de hijos por ruleta.
+Se utiliza el algoritmo genético proviso por la librería  Malva  llamado NewGA al cual se le realizan algunas modificaciones para que se ejecute en paralelo.
 
-Mas adelante se realizara un ajuste de parámetros para determinar la población, factor de mutación y de cruzamiento usados por el algoritmo.
+
+Resumen de las características:
+\begin{itemize}
+
+\item Algoritmo paralelo: Utiliza el método maestro esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
+\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso especifico.
+\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos.
+\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento por un punto especifico para nuestro caso así como para la mutación.
+\item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de 3 individuos, y la selección de hijos por el método de ruleta.
+
+\end{itemize}
+
+Mas adelante se realizara el ajuste paramétrico para determinar tanto el tiempo de simulación, criterio de parada y tasas de cruzamiento y mutación optimas para el algoritmo.
 
 El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 
@@ -36,7 +72,8 @@ El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 			\STATE {Seleccionar C(t) de P(t-1)}	
 			\STATE {Recombinar estructuras en C(t) formando C'(t)}				
 			\STATE {Mutar estructuras en C'(t) formando C''(t)}		
-			\STATE {Evaluar estructuras en C''(t)}					
+			\STATE {Evaluar estructuras en C''(t) generando un hilo de ejecucion por cada una}					
+			\STATE {Consolidar valores de la evaluacion}								
 			\STATE {Reemplazar P(t) de C''(t) y P(t-1)}								
 			\ENDWHILE
 		}
@@ -45,104 +82,77 @@ El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 \end{algorithm}
 
 
+
+
  
 
-\subsection{Representación}
-Para poder explicar la representación del problema de los
-semáforos del corredor Garzón, es preciso compartir algunas
-definiciones que usaremos a lo largo de la propuesta:
-Cruce: se define como el lugar de intersección de dos o
-más vías de circulación.
-Fase: es la configuración de las luces de los semáforos
-en un determinado cruce; un cruce tiene hasta 8 fases.
-Por ejemplo una fase de un cruce puede ser
-“rrrrGGrrrrGG” durante 52 segundos. Donde “G” es
-Verde, “r” es Rojo y “y” es Amarillo.  
-Es  importante  que  el  algoritmo  evolutivo  a  implementar  no
-genere soluciones que no sean viables por lo que éste no debe
-de poder modificar la combinación de luces de cada fase y de
+\subsection{Representación del cromosoma}
 
-esta manera no se generarán fases con combinaciones de luces
-equivocadas (podría generar accidentes de tránsito).
-En  pos  de  un  mejor  rendimiento  y  ya  que  en  realidad  no
-modifican  los  tiempos  reales  del  paso  de  los  vehículos,  se
-omitieron  las   fases  que  tienen  luces  amarillas  en  la
-representación del cromosoma.
-El  cromosoma  se  va  a  agrupar  lógicamente  en  cruces,
-definimos el valor de un gen como el tiempo que demora una
-fases  de  un  cruce  (sin  considerar  las  amarilla,  estas  quedan
-fijas con el valor obtenido en la realidad) o la fase con la que
-inicia un cruce, por lo que el tamaño del cromosoma depende
-de  la  cantidad  de  cruces  y  de  la  cantidad  de  fases  que  tiene
-cada cruce, teniendo así la información de todos los cruces.
+Se explican algunas definiciones necesarias para comprender la representación.
 
-\subsection{Codificación} 
-A continuación se muestra un ejemplo en el cual se mapea un
-cruce representado en el cromosoma y un cruce representado
-en  el  archivo  de  configuración  de  semáforos  que  utiliza  el
-simulador SUMO.
-Como se  mencionó anteriormente se omite el valor de la luz
-amarilla en el cromosoma y se mantiene el valor real recabado
-y el valor que tiene el cromosoma en el gen de inicio de fase
-se corresponde con el valor de “offset” en el XML.
-Cruce representado en el cromosoma:
+Cruce: Es el lugar de intersección de dos o mas vías de circulación.
+Fase: Es la configuración de las luces de los semáforos en un determinado cruce.
+
+El  cromosoma  se  va  a  agrupar  lógicamente  en  cruces siendo el valor de cada gen el tiempo que demora una
+fase de un cruce, ademas se agrega para cada cruce un numero que representa en que fase comienza el semáforo. 
+Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como la cantidad de fases de cada uno.
+
+En la representación se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
+ 
+Es  importante que el algoritmo no genere soluciones inviables por lo que no debe modificar la combinación de luces de cada fase evitando combinaciones de luces erróneas. Por tanto tanto la modificación se realizara solo en el valor que indica el comienzo de fase y en los tiempos relacionados.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/cromosoma1}
+\caption{Cromosoma de 2 cruces}
+\label{fig:cromosoma1}
+\end{figure}
+
+En la siguiente figura vemos la representación de los archivos de simulación que nos provee SUMO para el cromosoma anterior, donde vemos como se representan las fases por ejemplo el texto “GGGGrrGGGGrr” demora 52 segundos. “G” es Verde, “r” es Rojo e “y” es Amarillo. El offset indica el inicio de la fase.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{Figures/rep_sumo}
+\caption{Representación de Sumo}
+\label{fig:rep_sumo}
+\end{figure}
+
 
 \subsection{Inicialización}
-Para la inicialización de la población se toma como referente
-la configuración obtenida con los datos in situ, luego para cada
-cruce  se  hacen  variar  las  duraciones  de  las  fases  de  manera
-aleatoria  entre  un  rango  de  5  segundos  a  60  segundos  (estos
-valores  son  configurables)  y  la  fase  inicial  se  hace  variar
-aleatoriamente entre la cantidad de fases del cruce  (se cuentan
-las luces amarillas).
+
+Para la inicialización de la población se toma como referencia
+la configuración obtenida con los datos in-situ, luego para cada
+cruce se hacen variar las duraciones de las fases de manera aleatoria entre un rango de  5 a 60  segundos  (valores configurables)
+Ademas la fase inicial se elige aleatoriamente entre la cantidad de fases del cruce (se cuentan las luces amarillas).
 
 \subsection{Función fitness}
-Para evaluar un individuo, lo que se hace es crear un archivo
-XML  de configuración de señalización de tránsito que utiliza
-el  simulador  SUMO  en  base  al  cromosoma  del  individuo,
-luego se ejecuta el simulador con la configuración generada, el
-tiempo de simulación devuelto será el valor de la función de
-fitness.
+La evaluacion de un individuo se realiza generando un archivo con la configuracion de los semaforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuracion para luego obtener los tiempos necesarios para calcular el fitness.
+Al ser una funcion multiobjetivo los datos que extraemos son la velocidad promedio de los ombnibus y la velocidad promedio del resto de los vehiculos.
 
-\subsection{Operadores}
-\subsubsection{Selección}
-\subsubsection{Cruzamiento}
-Se  utilizará  cruzamiento  de  un  punto  (1PX),  implementado
+Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la funcion.
+
+f = x.vb + y vv
+.
+
+\subsection{Operador de Cruzamiento}
+Se  utilizará cruzamiento  de  un  punto,  implementado
 específicamente  para  el  problema,  seleccionando  el  intervalo
-entre 2 cruces como punto de corte, por ejemplo:
-Esto  hace  que  si  un  tramo  del  corredor  es  bueno,  esta
-propiedad se mantenga.
+entre 2 cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento esta propiedad lo mantendra.
 
-\subsubsection{Mutación}
+
+\subsubsection{Operador de Mutación}
 La  mutación también fue  implementada  específicamente para
 el problema, utilizaremos dos tipos de mutación:
-Mutación de duración de fase: para cada fase de cada cruce se
+\begin{itemize}
+
+\item Mutación de duración de fase: para cada fase de cada cruce se
 hace variar su duración sumando o restando una cantidad dada
 de segundos entre un rango determinado con una probabilidad
 dada.
-Mutación de inicio de cruce: se elige aleatoriamente una fase
+\item Mutación de inicio de cruce: se elige aleatoriamente una fase
 con  la  cual  va  a  arrancar  inicialmente  el  cruce  con  una
 probabilidad dada.
 
-\subsection{Criterio de parada}
- Cantidad  de  generaciones:  Es  la  cantidad  de
- generaciones  con  la  cual  se  toma  el  criterio  de  parar  la
- ejecución del algoritmo, el número de generaciones que vamos
- a usar es x
- Probabilidad  de  convergencia:  La  convergencia  se
- define como la relación entre los N mejores valores de fitness
- de  las  generaciones  anteriores  contra  el  mejor  valor  de  la
- generación actual. Nosotros vamos a utilizar N con el valor de
- x y una probabilidad de convergencia de x
-
-
-
-
-\section{Multiobjetivo}
-
-\section{Algoritmo Paralelo}
-Agregar diagrama de maestro esclavo
-
-
+\end{itemize}
 
 \section{Resumen}
