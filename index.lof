@@ -1,13 +1,18 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Modelo Maestro-Esclavo}}{7}{figure.caption.13}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{9}{figure.caption.19}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{10}{figure.caption.20}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{11}{figure.caption.22}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de trafico. C\IeC {\'\i }rculos del mismo color indican trafico especificado entre esas \IeC {\'a}reas\relax }}{12}{figure.caption.24}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Simulacion de trafico en SUMO en el curce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{13}{figure.caption.25}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Cruzamiento de un punto\relax }}{6}{figure.caption.9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{6}{figure.caption.11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo Maestro-Esclavo}}{7}{figure.caption.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{10}{figure.caption.20}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{10}{figure.caption.23}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{11}{figure.caption.21}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de trafico. C\IeC {\'\i }rculos del mismo color indican trafico especificado entre esas \IeC {\'a}reas\relax }}{12}{figure.caption.25}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Simulacion de trafico en SUMO en el curce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{13}{figure.caption.26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura del algoritmo\relax }}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cromosoma de 2 cruces\relax }}{24}{figure.caption.29}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{24}{figure.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

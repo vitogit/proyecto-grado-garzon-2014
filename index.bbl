@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{31}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,12 @@ CEPAL.
 \newblock \url{http://www.cepal.org/publicaciones/xml/9/13059/cue-87.pdf},
   2003.
 
+\bibitem[CHC()]{CHC}
+CHC.
+\newblock Chc method.
+\newblock
+  \url{http://neo.lcc.uma.es/mallba/easy-mallba/html/algorithms.html\#chc}.
+
 \bibitem[DiFebbraro et~al.(2002)DiFebbraro, Giglio, and Sacco]{DiFebbraro2002}
 DiFebbraro, Giglio, and Sacco.
 \newblock On applying petri nets to determine optimal offsets for coordinated
@@ -42,6 +48,13 @@ IMM.
 \newblock Intendencia municipal de montevideo.
 \newblock \url{http://www.montevideo.gub.uy}.
 
+\bibitem[IMM(2010)]{PlanMovilidad}
+IMM.
+\newblock Plan de movilidad urbana.
+\newblock
+  \url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf},
+  Febrero 2010.
+
 \bibitem[INE(2014)]{INE2014}
 INE.
 \newblock Transporte y comunicaciones.
@@ -56,6 +69,16 @@ S.~López, P.~Hernandez, A.~Hernandez, and M.~Garcia.
   the relative offset between two consecutive sets of traffic lights.
 \newblock \emph{Foundations and Tools for Neural Modeling}, page 795–804,
   1999.
+
+\bibitem[Mallba()]{Mallba}
+Mallba.
+\newblock Mallba library.
+\newblock \url{http://neo.lcc.uma.es/mallba/easy-mallba/index.html}.
+
+\bibitem[Malva()]{Malva}
+Malva.
+\newblock The malva project.
+\newblock \url{http://themalvaproject.github.io/}.
 
 \bibitem[MalvaAlgoritmo()]{MalvaAlgGenetico}
 MalvaAlgoritmo.

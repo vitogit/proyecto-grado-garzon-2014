@@ -88,25 +88,46 @@ En general es donde se consume el mayor tiempo del algoritmo en comparación con
 
 \subsubsection{Operador de Selección}
 Existen diversos operadores de selección , su función es que las mejores características de los individuos se mantengan en las siguientes generaciones.
-Ruleta:
-Torneo:
-Elitismo:
+Los tipos mas populares son:
+
+\begin{itemize}
+	\item Ruleta: También conocida como selección proporcional elige aleatoriamente individuos en la cual la probabilidad de selección es proporcional al valor de fitness.
+	\item Torneo: Se elige aleatoriamente un determinado numero de individuos los cuales compiten entre si.
+	\item Elitismo: Los mejores individuos son mantenidos entre las generaciones.
+\end{itemize}
 
 \subsubsection{Cruzamiento}
 Su función es combinar individuos para lograr mejores soluciones. 
 Existe una taza que se puede modificar para indicar la probabilidad de que se realice el cruzamiento.
-Cruzamiento de un punto:
-Cruzamiento azar
+
+\begin{itemize}
+	\item Cruzamiento de un punto: A partir de dos padres se selecciona un punto al azar de los cromosomas obteniendo dos trozos que se combinan para obtener dos hijos. Se explica en la figura ~\ref{fig:cruzamiento1}
+	\item Cruzamiento multipunto: El método anterior se puede generalizar para obtener mas puntos de corte y mas recombinaciones.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Figures/cruzamiento1}
+\caption{Cruzamiento de un punto}
+\label{fig:cruzamiento1}
+\end{figure}
 
 \subsubsection{Mutación} 
-Indica el método utilizado para modificar un individuo, esto se realiza para lograr mas diversidad y no caer en máximos locales. En general aplica una modificación aleatoria en el cromosoma.
-También hay una taza de probabilidad, en general es baja.
+Indica el método utilizado para modificar un individuo, esto se realiza para lograr mas diversidad y no caer en máximos locales. En general aplica una modificación aleatoria en el cromosoma.También hay una taza de probabilidad, en general es baja. En el caso de un cromosoma binario se aplica la inversión sobre un alelo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\linewidth]{Figures/mutacion1}
+\caption{Mutacion por inversión binaria}
+\label{fig:mutacion1}
+\end{figure}
+
 
 \subsubsection{Reemplazo} 
-Se indica cual es el criterio que debemos tomar para crear una nueva población, ya sea tomando solo los nuevo hijos creados, comparando también con los padres o aplicando algún otro criterio.
+Se indica cual es el criterio que debemos tomar para generar una nueva población, ya sea tomando solo los hijos creados o comparando también con los padres o aplicando algún otro criterio.
 
 \subsubsection{Criterio de parada} 
-Indica cuando debe terminar el algoritmo, puede ser definiendo un numero fijo de generaciones o analizando si la mejora en soluciones se estanco.
+Indica cuando debe terminar el algoritmo, puede ser definiendo un numero fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un numero determinado de generaciones.
 
 \subsection{Funcionamiento}
 
@@ -138,13 +159,8 @@ El esquema básico de funcionamiento es el siguiente:
 
 \subsection{Algoritmos genético multiobjetivo}
 
-En este caso se busca una solución que satisfaga de forma simultanea las restricciones y varios objetivos diferentes.
+En este caso se busca una solución que satisfaga de forma simultanea tanto las restricciones del problema como varios objetivos distintos.
 
-\subsubsection{Por que elegir multiobjetivo en este problema?}
-La intendencia apoya el cambio del trafico en la ciudad de Montevideo para que se haga mayor uso del transporte urbano[] y disminuir la cantidad de automóviles circulantes para disminuir el trafico y la contaminación. En este sentido se da prioridad a los ómnibus, por esta razón el algoritmo a desarrollar podrá variar los diferentes pesos para dar mas prioridad a la velocidad promedio de ómnibus y del resto de los vehículos.
- 
-Se busca que la gente prefiera el ómnibus, uno de los factores es la duración del viaje, si se logra mejorar esto se estaría cumpliendo uno de los objetivos de la intendencia
-SUMO brinda mucha información referente a los viajes, por lo que tenemos varias métricas a elegir para nuestro algoritmo. Entre ellas se destacan: Cantidad de vehículos que llegaron a destino, Tiempo de viaje promedio, Tiempo de ocupación promedio, velocidad promedio global, tiempo parado q emite gases. Decidimos usar la velocidad promedio separando entre ómnibus y autos. De esta forma podemos optimizar ambos en el sentido multiobjetivo, o priorizar uno sobre el otro.
 
 
 \subsection{Algoritmo Genético Paralelo}
@@ -152,8 +168,7 @@ Los problemas complejos suelen requerir una alta demanda computacional por lo qu
 
 Existen varios niveles de paralelización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
 
-En el caso de los algoritmos genéticos gran parte del tiempo se realiza en la etapa de evaluación , cerca de un 90 \% del tiempo[]
-Por esta razón es una forma buena de distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo.
+En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método para distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo.
 
 
 \subsection{Maestro-Esclavo}
@@ -168,20 +183,6 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 \caption[Modelo Maestro-Esclavo]{Modelo Maestro-Esclavo}
 \label{fig:diagrama-master-slave}
 \end{figure}
-
-
-
-\subsection{Algoritmo a desarrollar}
-
-El algoritmo a desarrollar viene con el malva
-
-Los parametros se van a buscar: poblacion, mutacion,cruzamiento
-
-La funcion objectivo es multiobjetivo, tambien se buscara la mejor relacion
-
-Es paralelo en la funcion fitness, creando hilos
-con un enfoque maestro esclavo.
-
 
 
 
