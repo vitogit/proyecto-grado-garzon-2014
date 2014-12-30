@@ -14,7 +14,9 @@
 \usepackage{color,colortbl}
 \usepackage{url}
 \usepackage{array}
-\usepackage[bookmarks=true, pdftitle={Energy aware scheduling in heterogeneous computing systems}, pdfauthor={Alvaro Acuña, Efrain Arreche}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage[bookmarks=true, pdftitle={
+Algoritmos evolutivos en sincronización de semáforos en el Corredor de Garzón 	
+	}, pdfauthor={Alvaro Acuña, Efrain Arreche}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{bookmark}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
@@ -71,6 +73,11 @@
     \thispagestyle{empty}%              % Empty header styles
     \newpage%
     \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+% algoritmos
+\renewcommand{\ALG@name}{Algoritmo}
+\renewcommand{\listalgorithmname}{Índice de \ALG@name s}
+
 \makeatother
 
 \hyphenation{}
@@ -120,10 +127,13 @@
 % -- bibliography --
 \addcontentsline{toc}{chapter}{Bibliografía}
 
-%\nocite{*}
 
+%\nocite{*}
+{
 \bibliographystyle{abbrvnat}
-\bibliography{index}
+\bibliography{index}	
+}
+
 %\renewcommand{\refname}{Referencias}
 
 \end{document}
