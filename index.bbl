@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,13 +47,6 @@ J.~J.~K. G.~Y.~Lim and Y.~S. Hong.
 IMM.
 \newblock Intendencia municipal de montevideo.
 \newblock \url{http://www.montevideo.gub.uy}.
-
-\bibitem[IMM(2010)]{PlanMovilidad}
-IMM.
-\newblock Plan de movilidad urbana.
-\newblock
-  \url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf},
-  Febrero 2010.
 
 \bibitem[INE(2014)]{INE2014}
 INE.
