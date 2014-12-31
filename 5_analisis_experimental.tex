@@ -44,7 +44,7 @@ Se busca la mejor configuración inicial de los parámetros realizando pruebas e
 	\item Probabilidad de cruzamiento
 \end{itemize}
 
-Para la realización de las pruebas se generan tres instancias con densidades de trafico diferentes para realizar las pruebas de configuración. De esta forma el algoritmo queda generico y no sesgado a un caso en particular. Se representa la cantidad de ómnibus y otros vehículos que circulan por la zona de Garzon en un tiempo de una hora. El caso de tráfico medio representa una aproximación de los datos obtenidos in-situ.
+Para la realización de las pruebas se generan tres instancias con densidades de tráfico diferentes para realizar las pruebas de configuración. De esta forma el algoritmo queda generico y no sesgado a un caso en particular. Se representa la cantidad de ómnibus y otros vehículos que circulan por la zona de Garzon en un tiempo de una hora. El caso de tráfico medio representa una aproximación de los datos obtenidos in-situ.
 
 \begin{itemize}
 	\item Tráfico Bajo: 30 ómnibus y 500 vehículos	
@@ -52,13 +52,13 @@ Para la realización de las pruebas se generan tres instancias con densidades de
 	\item Tráfico Alto: 120 ómnibus y 2000 vehículos
 \end{itemize}
 
-En general se realizan 21 pruebas individuales en cada prueba para lograr mejor confiabilidad estadística, 7 para cada una de las densidades de trafico.
+En general se realizan 21 pruebas individuales en cada prueba para lograr mejor confiabilidad estadística, 7 para cada una de las densidades de tráfico.
 
 En este proceso primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
 
 Al estas utilizando un cluster tenemos a nuestra disposición tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
-A saber en las comparaciones del tiempo de ejecución se refiere al tiempo secuencial que es mas confiable al no tener el sesgo dado por la cantidad de procesadores utilizados en la evaluación.
+A saber en las comparaciones del tiempo de ejecución se refiere al tiempo secuencial que es más confiable al no tener el sesgo dado por la cantidad de procesadores utilizados en la evaluación.
 En general para las diversas pruebas se utilizaron entre 16 y 64 procesadores.
 
 
@@ -66,20 +66,20 @@ En general para las diversas pruebas se utilizaron entre 16 y 64 procesadores.
 
 \subsection{Tiempo de simulación}
 
-Para tener un mejor control sobre los tiempos totales de ejecución, se busca encontrar un numero fijo para el tiempo de la simulación de cada escenario que se ejecutara para cada solución.
+Para tener un mejor control sobre los tiempos totales de ejecución, se busca encontrar un número fijo para el tiempo de la simulación de cada escenario que se ejecutara para cada solución.
 
-Teniendo en cuenta que cada simulación de los escenarios representan el trafico vehicular durante una hora real y que se valido que en cada escenario mas de los 80 \% de los vehículos hayan dejado la simulación, es decir llegado a sus destinos.
+Teniendo en cuenta que cada simulación de los escenarios representan el tráfico vehicular durante una hora real y que se valido que en cada escenario más de los 80 \% de los vehículos hayan dejado la simulación, es decir llegado a sus destinos.
 
 Se establece un tiempo de simulación de 4000 steps (medida interna de tiempo del simulador SUMO equivalente a 66 minutos reales) que cumple con los criterios establecidos. 
 
 \subsection{Criterio de Parada}
-Se elige como criterio de parada el numero de generación, esto permite estandarizar las pruebas para una mejor comparación.
+Se elige como criterio de parada el número de generación, esto permite estandarizar las pruebas para una mejor comparación.
 
-Para determinar el numero de generación donde parar el algoritmo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
+Para determinar el número de generación donde parar el algoritmo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
 
-Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1h y 24h y ademas comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
+Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1h y 24h y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
 
-Luego de la realización de las pruebas se elige el numero de 500 generaciones como criterio de parada, como se ve en la siguiente gráfica representativa de las pruebas realizadas se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400.
+Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada, como se ve en la siguiente gráfica representativa de las pruebas realizadas se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400.
 
 
 \begin{figure}[h]
@@ -97,9 +97,9 @@ Para la elección de la población se tendrán en cuenta 3 elementos. El valor d
 
 Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos sera 64.
 
-Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos como 8 u 16 y son valores con los que se obtiene una distribución mas adecuada.
+Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos como 8 u 16 y son valores con los que se obtiene una distribución más adecuada.
 
-La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un numero poblacional sobre otro. Por tanto se elige como numero de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios dias por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
+La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios dias por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
 
 \begin{table}
 	\renewcommand{\arraystretch}{1.2}
@@ -139,7 +139,7 @@ Se prueban todas las combinaciones  de cruzamiento y mutación.
 En las siguientes figuras se muestran los valores de fitness obtenidos en cada caso.
 
 
-INSERTAR GRAFICA de los 3 casosd de trafico.
+INSERTAR GRAFICA de los 3 casosd de tráfico.
 
 En estos resultados podemos observar la influencia de estos parametros a la hora de obtener una buena solución.
 
@@ -155,15 +155,15 @@ Las gráficas muestras el promedio de las 20 ejecuciones para resolver el escena
 
 
 \section{Descripción de escenarios}
-En todos los escenarios se utiliza los datos obtenidos del trafico vehicular, configuración de semáforos y frecuencia de los ómnibus obtenidos. 
+En todos los escenarios se utiliza los datos obtenidos del tráfico vehicular, configuración de semáforos y frecuencia de los ómnibus obtenidos. 
 
 \subsection{Caso base}
-Esto representa la situación actual en términos de trafico, red vial y sincronización de semáforos del corredor Garzón. 
+Esto representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. 
 
 Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Y utilizando las frecuencias de acceso publico en el caso de los ómnibus.
 
 \subsection{Escenario Evolutivo }
-En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del trafico.
+En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del tráfico.
 
 \subsection{Escenario Alternativo}
 Luego de analizar aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
@@ -181,7 +181,7 @@ Luego de analizar aquellos puntos que se entienden podrían atentar contra el bu
 Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario inicial, el escenario modificado, y la prueba en el cluster.
 
 \subsection{Resultado simulación caso base}
-El caso base se construye a partir del modelo de trafico con los datos tomados in-situ por lo que muestra valores aproximados de la realidad actual.
+El caso base se construye a partir del modelo de tráfico con los datos tomados in-situ por lo que muestra valores aproximados de la realidad actual.
 
 En este caso tenemos las siguentes metricas
 
@@ -201,7 +201,7 @@ H1)  los  resultados  de  mejor  fitness  tienen  una distribución normal.
 H2)Existe  una  diferencia  significativa  entre  los  de conjuntos  de  muestras  obtenidos  por  el  algoritmo  y  la realidad.
 
 El  test  de  normalidad  de  Shapiro-Wilks  resultó  ser verdadero  en  ambos  casos  con  un  alto  porcentaje  de
-confiabilidad y luego al realizar los test T-student [] resulto tener menos de 0,0001 lo que se considera una diferencia que
+confiabilidad y luego al realizar los test T-student resulto tener menos de 0,0001 lo que se considera una diferencia que
 estadísticamente  es  significativa.  Esto confirma algo que resulta evidente ya que al comparar
 el promedio de los mejores fitness con la realidad encontramos
 una diferencia de un 31,8% y un 15% respectivamente y estos
@@ -222,9 +222,9 @@ T1 es el tiempo de ejecucion en un procesador
 Tp es el tiempo de ejecucion en p procesdores.
 
 
-Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecucion en diferentes numero de procesadores
+Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecucion en diferentes número de procesadores
 
-La escabilidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan mas procesadores.
+La escabilidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan más procesadores.
 
 En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
 

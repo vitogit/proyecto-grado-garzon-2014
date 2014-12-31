@@ -9,13 +9,13 @@ Los algoritmos evolutivos son métodos no determinísticos que se inspiran en la
 
 Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores basado en un criterio predefinido para maximizar o minimizar.
 
-Este tipo de solución a demostrado su utilidad en una amplia variedad de problemas complejos.
+Este tipo de solución ha demostrado su utilidad en una amplia variedad de problemas complejos.
 
 
 \subsection{Algoritmos Genéticos}
-El algoritmo genético es uno de los mas populares dentro de los algoritmos evolutivos.
+El algoritmo genético es uno de los más populares dentro de los algoritmos evolutivos.
 
-La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el numero de iteraciones o cuando ya no se puede mejorar mas la solución.
+La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución.
 
 Un individuo es una codificación de la solución que resuelve el problema.
 La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo.
@@ -23,7 +23,7 @@ La función de evaluación indica que tan buena o apta es una solución en compa
 En cada iteración la cual se llama generación se aplican operadores de cruzamiento estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
 
 Por tanto se van seleccionando, combinando y cambiando las mejores soluciones en un proceso que va obteniendo mejores soluciones.
-El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzo un numero de generaciones predefinidos o por que la mejora no es evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
+El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzó un número de generaciones predefinidos o por que la mejora no es evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
 
 Hay que indicar que no es una técnica exacta pero si logra muy buenas aproximaciones y es muy buena en problemas complejos por su flexibilidad y robustez. 
 
@@ -40,21 +40,21 @@ En general es donde se consume el mayor tiempo del algoritmo en comparación con
 
 \subsubsection{Operador de Selección}
 Existen diversos operadores de selección , su función es que las mejores características de los individuos se mantengan en las siguientes generaciones.
-Los tipos mas populares son:
+Los tipos más populares son:
 
 \begin{itemize}
 	\item Ruleta: También conocida como selección proporcional elige aleatoriamente individuos en la cual la probabilidad de selección es proporcional al valor de fitness.
-	\item Torneo: Se elige aleatoriamente un determinado numero de individuos los cuales compiten entre si.
+	\item Torneo: Se elige aleatoriamente un determinado número de individuos los cuales compiten entre si.
 	\item Elitismo: Los mejores individuos son mantenidos entre las generaciones.
 \end{itemize}
 
 \subsubsection{Cruzamiento}
 Su función es combinar individuos para lograr mejores soluciones. 
-Existe una taza que se puede modificar para indicar la probabilidad de que se realice el cruzamiento.
+Existe una tasa que se puede modificar para indicar la probabilidad de que se realice el cruzamiento.
 
 \begin{itemize}
 	\item Cruzamiento de un punto: A partir de dos padres se selecciona un punto al azar de los cromosomas obteniendo dos trozos que se combinan para obtener dos hijos. Se explica en la figura ~\ref{fig:cruzamiento1}
-	\item Cruzamiento multipunto: El método anterior se puede generalizar para obtener mas puntos de corte y mas recombinaciones.
+	\item Cruzamiento multipunto: El método anterior se puede generalizar para obtener más puntos de corte y más recombinaciones.
 \end{itemize}
 
 \begin{figure}[h]
@@ -65,7 +65,7 @@ Existe una taza que se puede modificar para indicar la probabilidad de que se re
 \end{figure}
 
 \subsubsection{Mutación} 
-Indica el método utilizado para modificar un individuo, esto se realiza para lograr mas diversidad y no caer en máximos locales. En general aplica una modificación aleatoria en el cromosoma.También hay una taza de probabilidad, en general es baja. En el caso de un cromosoma binario se aplica la inversión sobre un alelo.
+Indica el método utilizado para modificar un individuo, esto se realiza para lograr más diversidad y no caer en máximos locales. En general aplica una modificación aleatoria en el cromosoma.También hay una tasa de probabilidad, en general es baja. En el caso de un cromosoma binario se aplica la inversión sobre un alelo.
 
 \begin{figure}[h]
 \centering
@@ -79,7 +79,7 @@ Indica el método utilizado para modificar un individuo, esto se realiza para lo
 Se indica cual es el criterio que debemos tomar para generar una nueva población, ya sea tomando solo los hijos creados o comparando también con los padres o aplicando algún otro criterio.
 
 \subsubsection{Criterio de parada} 
-Indica cuando debe terminar el algoritmo, puede ser definiendo un numero fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un numero determinado de generaciones.
+Indica cuando debe terminar el algoritmo, puede ser definiendo un número fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones.
 
 \subsection{Funcionamiento}
 
@@ -111,7 +111,7 @@ El esquema básico de funcionamiento es el siguiente:
 
 \subsection{Algoritmos genético multiobjetivo}
 
-En este caso se busca una solución que satisfaga de forma simultanea tanto las restricciones del problema como varios objetivos distintos.
+En este caso se busca una solución que satisfaga de forma simultánea tanto las restricciones del problema como varios objetivos distintos.
 
 
 
@@ -127,7 +127,7 @@ En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la eta
 
 En este modelo un proceso maestro es el encargado de realizar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos, el esclavo devuelven el resultado y luego el maestro es el encargado de continuar ejecutando los operadores.
 
-De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones mas costosas es distribuida entre varios nodos.
+De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios nodos.
 
 \begin{figure}[H]
 \centering

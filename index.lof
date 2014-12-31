@@ -8,8 +8,8 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{10}{figure.caption.20}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{11}{figure.caption.21}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{12}{figure.caption.23}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de trafico. C\IeC {\'\i }rculos del mismo color indican trafico especificado entre esas \IeC {\'a}reas\relax }}{13}{figure.caption.25}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulacion de trafico en SUMO en el curce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{14}{figure.caption.26}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{13}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{14}{figure.caption.26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura del algoritmo\relax }}{23}{figure.caption.28}

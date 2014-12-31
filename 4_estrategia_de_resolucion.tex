@@ -4,6 +4,15 @@ En este capitulo se presenta el algoritmo desarrollado, su estructura, parámetr
 
 Se comienza explicando la librería Malva utilizada para el desarrollo del algoritmo y la arquitectura especifica que se realizo para resolver el problema.
 
+\section{Por que usar algoritmo genéticos?}
+El problema de sincronización de semáforos es NP-Hard y 
+no existe (hasta el momento) un método determinístico que lo
+resuelva, se buscará mediante algoritmos evolutivos llegar a
+una configuración aceptable minimizando los tiempos de
+espera de los automóviles, mejorando así la configuración
+actual de los semáforos del corredor de Garzón.
+
+
 \section{Arquitectura de la solución}
 
 En el siguiente diagrama muestra la arquitectura propuesta para el problema.
@@ -54,7 +63,7 @@ Resumen de las características:
 
 \end{itemize}
 
-Mas adelante se realizara el ajuste paramétrico para determinar tanto el tiempo de simulación, criterio de parada y tasas de cruzamiento y mutación optimas para el algoritmo.
+más adelante se realizara el ajuste paramétrico para determinar tanto el tiempo de simulación, criterio de parada y tasas de cruzamiento y mutación optimas para el algoritmo.
 
 El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 
@@ -90,11 +99,11 @@ El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 
 Se explican algunas definiciones necesarias para comprender la representación.
 
-Cruce: Es el lugar de intersección de dos o mas vías de circulación.
+Cruce: Es el lugar de intersección de dos o más vías de circulación.
 Fase: Es la configuración de las luces de los semáforos en un determinado cruce.
 
 El  cromosoma  se  va  a  agrupar  lógicamente  en  cruces siendo el valor de cada gen el tiempo que demora una
-fase de un cruce, ademas se agrega para cada cruce un numero que representa en que fase comienza el semáforo. 
+fase de un cruce, además se agrega para cada cruce un número que representa en que fase comienza el semáforo. 
 Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como la cantidad de fases de cada uno.
 
 En la representación se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
@@ -123,7 +132,7 @@ En la siguiente figura vemos la representación de los archivos de simulación q
 Para la inicialización de la población se toma como referencia
 la configuración obtenida con los datos in-situ, luego para cada
 cruce se hacen variar las duraciones de las fases de manera aleatoria entre un rango de  5 a 60  segundos  (valores configurables)
-Ademas la fase inicial se elige aleatoriamente entre la cantidad de fases del cruce (se cuentan las luces amarillas).
+además la fase inicial se elige aleatoriamente entre la cantidad de fases del cruce (se cuentan las luces amarillas).
 
 \subsection{Función fitness}
 La evaluacion de un individuo se realiza generando un archivo con la configuracion de los semaforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuracion para luego obtener los tiempos necesarios para calcular el fitness.
