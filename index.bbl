@@ -88,6 +88,12 @@ MalvaAlgoritmo.
 \newblock
   \url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}.
 
+\bibitem[Montana(1995)]{Montana1995}
+D.~J. Montana.
+\newblock Strongly typed genetic programming.
+\newblock \emph{Evolutionary Computation}, 3\penalty0 (2):\penalty0 199--230,
+  1995.
+
 \bibitem[Montana and Czerwinski(1996)]{Montana1996}
 D.~J. Montana and S.~Czerwinski.
 \newblock Evolving control laws for a network of traffic signals.
@@ -137,13 +143,6 @@ A.~K. Rathi.
 N.~M. Rouphail, B.~B. Park, and J.~Sacks.
 \newblock Direct signal timing optimization: Strategy development and results.
 \newblock 2000.
-
-\bibitem[SÁNCHEZ(2007)]{Sanchez2007}
-SÁNCHEZ.
-\newblock Estudio de la optimizacion del trafico rodado mediante el ajuste de
-  los ciclos de semaforospor algoritmos geneticos en dispositivos de
-  computacion paralela usando modelizacion discreta: Ejemplos de aplicacion.
-\newblock 2007.
 
 \bibitem[Sánchez et~al.(2004)Sánchez, Galán, and Rubio]{Sanchez2004}
 J.~Sánchez, M.~Galán, and E.~Rubio.

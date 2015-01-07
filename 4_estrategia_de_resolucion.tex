@@ -135,10 +135,10 @@ cruce se hacen variar las duraciones de las fases de manera aleatoria entre un r
 además la fase inicial se elige aleatoriamente entre la cantidad de fases del cruce (se cuentan las luces amarillas).
 
 \subsection{Función fitness}
-La evaluacion de un individuo se realiza generando un archivo con la configuracion de los semaforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuracion para luego obtener los tiempos necesarios para calcular el fitness.
-Al ser una funcion multiobjetivo los datos que extraemos son la velocidad promedio de los ombnibus y la velocidad promedio del resto de los vehiculos.
+La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
+Al ser una función multiobjetivo los datos que extraemos son la velocidad promedio de los ómnibus y la velocidad promedio del resto de los vehículos.
 
-Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la funcion.
+Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la función.
 
 f = x.vb + y vv
 .
@@ -146,7 +146,7 @@ f = x.vb + y vv
 \subsection{Operador de Cruzamiento}
 Se  utilizará cruzamiento  de  un  punto,  implementado
 específicamente  para  el  problema,  seleccionando  el  intervalo
-entre 2 cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento esta propiedad lo mantendra.
+entre 2 cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento esta propiedad lo mantendrá.
 
 
 \subsubsection{Operador de Mutación}
