@@ -1,7 +1,7 @@
 \chapter{Análisis Experimental}
 En esta sección se presenta la descripción de los escenarios , la plataforma de ejecución y el análisis experimental.
 
-Este se divide en dos etapas, primero se realiza la configuración parametrica para encontrar la mejor ejecución del algoritmo. Luego se realizan las pruebas donde se comparan los resultados entre los distintos escenarios.
+Este se divide en dos etapas, primero se realiza la configuración paramétrica para encontrar la mejor ejecución del algoritmo. Luego se realizan las pruebas donde se comparan los resultados entre los distintos escenarios.
 
 
 
@@ -66,9 +66,9 @@ En general para las diversas pruebas se utilizaron entre 16 y 64 procesadores.
 
 \subsection{Tiempo de simulación}
 
-Para tener un mejor control sobre los tiempos totales de ejecución, se busca encontrar un número fijo para el tiempo de la simulación de cada escenario que se ejecutara para cada solución.
+Para tener un mejor control sobre los tiempos totales de ejecución, se busca encontrar un número fijo para el tiempo de la simulación de cada escenario que se ejecutará para cada solución.
 
-Teniendo en cuenta que cada simulación de los escenarios representan el tráfico vehicular durante una hora real y que se valido que en cada escenario más de los 80 \% de los vehículos hayan dejado la simulación, es decir llegado a sus destinos.
+Teniendo en cuenta que cada simulación de los escenarios representan el tráfico vehicular durante una hora real y que se validó que en cada escenario más de los 80 \% de los vehículos hayan dejado la simulación, es decir llegado a sus destinos.
 
 Se establece un tiempo de simulación de 4000 steps (medida interna de tiempo del simulador SUMO equivalente a 66 minutos reales) que cumple con los criterios establecidos. 
 
@@ -79,7 +79,9 @@ Para determinar el número de generación donde parar el algoritmo se busca un c
 
 Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1h y 24h y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
 
-Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada, como se ve en la siguiente gráfica representativa de las pruebas realizadas se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400.
+Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada, como se ve en la siguiente gráfica representativa de las pruebas realizadas se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 ademas el tiempo de ejecución real esta dentro del margen pautado.
+
+
 
 
 \begin{figure}[h]
@@ -99,7 +101,7 @@ Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores 
 
 Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos como 8 u 16 y son valores con los que se obtiene una distribución más adecuada.
 
-La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios dias por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
+La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios días por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
 
 \begin{table}
 	\renewcommand{\arraystretch}{1.2}
@@ -139,16 +141,8 @@ Se prueban todas las combinaciones  de cruzamiento y mutación.
 En las siguientes figuras se muestran los valores de fitness obtenidos en cada caso.
 
 
-INSERTAR GRAFICA de los 3 casosd de tráfico.
+INSERTAR GRAFICA de los 3 casos de tráfico.
 
-En estos resultados podemos observar la influencia de estos parametros a la hora de obtener una buena solución.
-
-La combinacion 0.4 de mutacion y 05 de cruzamiento es la que obtiene mejor rendimiento en los tres casos por lo que la elegimos como parametros del algoritmo.
-
-La mejor  configuración obtenida fue:
-Población:120, mutación:0.01 , cruzamiento: 1
-
-Las gráficas muestras el promedio de las 20 ejecuciones para resolver el escenario inicial.
 
 
 
@@ -187,7 +181,7 @@ En este caso tenemos las siguentes metricas
 
 Tiempo de viaje promedio de ida en un vehiculo
 Tiempo de viaje promedio de ida en omnibus por el corredor:
-Velocidad promedio de los vehiculos:
+Velocidad promedio de los vehículos:
 Velocidad promedio de los omnibus:
 
 Estas metricas seran las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
@@ -201,17 +195,7 @@ H1)  los  resultados  de  mejor  fitness  tienen  una distribución normal.
 H2)Existe  una  diferencia  significativa  entre  los  de conjuntos  de  muestras  obtenidos  por  el  algoritmo  y  la realidad.
 
 El  test  de  normalidad  de  Shapiro-Wilks  resultó  ser verdadero  en  ambos  casos  con  un  alto  porcentaje  de
-confiabilidad y luego al realizar los test T-student resulto tener menos de 0,0001 lo que se considera una diferencia que
-estadísticamente  es  significativa.  Esto confirma algo que resulta evidente ya que al comparar
-el promedio de los mejores fitness con la realidad encontramos
-una diferencia de un 31,8% y un 15% respectivamente y estos
-casos  son  bastante  acotados  ya  que  hay  mucha  cantidad  de
-vehículos con grandes/medias distancias.
-
-Con  los  resultados  obtenidos  en  las  ejecuciones  para  los
-escenarios  1  y  2  se  obtuvo  un  mejor  fitness  de  661  y  515
-respectivamente, comparado con el tiempo de la configuración
-real que demora 1019 y 690, las soluciones son muy buenas.
+confiabilidad
 
 
 
