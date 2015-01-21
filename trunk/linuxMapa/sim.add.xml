@@ -1,0 +1,142 @@
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <busStop id="G-Ida-Emancipacion" lane="205233404#0_0" startPos="230" endPos="250"/>
+    <busStop id="G-Vuelta-Emancipacion" lane="-205233404#1_0" startPos="160" endPos="180"/>
+
+	<busStop id="G-Ida-DePena" lane="205233404#1_0" startPos="160" endPos="178"/>
+    <busStop id="G-Vuelta-DePena" lane="-205233404#2_0" startPos="160" endPos="178" />
+	
+	<busStop id="G-Ida-Canarias" lane="205233404#3_0" startPos="263" endPos="283"/>
+    <busStop id="G-Vuelta-Canarias" lane="-205233404#4_0" startPos="478" endPos="498" />
+
+	<busStop id="G-Ida-Orticochea" lane="205233404#4_0"  startPos="478" endPos="498"/>
+    <busStop id="G-Vuelta-Orticochea" lane="-205233404#5_0"  startPos="192" endPos="212" />
+	
+	<busStop id="G-Ida-Millan" lane="205233404#6_0"  startPos="164" endPos="184"/>
+    <busStop id="G-Vuelta-Millan" lane="-205233404#8_0"  startPos="354" endPos="374" />
+	
+	<busStop id="G-Ida-Ariel" lane="205233404#8_0"  startPos="353" endPos="373"/>
+    <busStop id="G-Vuelta-Ariel" lane="-205233404#9_0"  startPos="351" endPos="371" />
+	
+	<busStop id="G-Ida-Battle" lane="205233404#9_0"  startPos="353" endPos="373"/>
+    <busStop id="G-Vuelta-Battle" lane="-205233404#11_0"  startPos="380" endPos="400" />
+
+    <busStop id="G-Ida-Santos" lane="205233404#11_0"  startPos="380" endPos="400"/>
+    <busStop id="G-Vuelta-Santos" lane="-205233404#12_0"  startPos="412" endPos="432" />
+
+    <busStop id="G-Ida-Edison" lane="205233404#12_0"  startPos="412" endPos="432"/>
+    <busStop id="G-Vuelta-Edison" lane="-205233404#13_0"  startPos="442" endPos="462" />
+
+    <busStop id="G-Ida-Saravia" lane="205233404#13_0"  startPos="441" endPos="461"/>
+    <busStop id="G-Vuelta-Saravia" lane="-205233404#14_0"  startPos="292" endPos="313" />	
+
+    <busStop id="G-Ida-Casavalle" lane="205233404#14_0"  startPos="292" endPos="313"/>
+    <busStop id="G-Vuelta-Casavalle" lane="-205233404#15_0"  startPos="406" endPos="426" />
+
+    <busStop id="G-Ida-Carve" lane="205233404#15_0"  startPos="406" endPos="426"/>
+    <busStop id="G-Vuelta-Carve" lane="-205233404#16_0"  startPos="178" endPos="198" />
+
+    <busStop id="G-Ida-Vidella" lane="205233404#17_0"  startPos="71" endPos="91"/>
+    <busStop id="G-Vuelta-Vidella" lane="-205233404#18_0"  startPos="120" endPos="140" />
+
+    <busStop id="G-Ida-Besnes" lane="205233404#20_0"  startPos="40" endPos="60"/>
+    <busStop id="G-Vuelta-Besnes" lane="-205233404#20_0"  startPos="40" endPos="60" />	
+
+
+<!-- PARADAS SUBURBANAS-->
+	<busStop  id="S-Ida-Emancipacion" lane="219015146#1_0"  startPos="100" endPos="120"/>
+    <busStop  id="S-Vuelta-Emancipacion" lane="78104894#49_0"  startPos="68" endPos="88" />	
+	
+	
+	<busStop  id="S-Ida-Millan" lane="219015146#11_0"  startPos="100" endPos="120"/>
+    <busStop  id="S-Vuelta-Millan" lane="78104894#40_0"  startPos="68" endPos="88" />	
+	
+	
+    <busStop  id="S-Ida-Edison" lane="219015146#20_0"  startPos="100" endPos="120"/>
+    <busStop  id="S-Vuelta-Edison" lane="78104894#25_0"  startPos="68" endPos="88" />	
+	
+    <busStop  id="S-Ida-Casavalle" lane="219015146#23_0"  startPos="150" endPos="170"/>
+    <busStop  id="S-Vuelta-Casavalle" lane="78104894#18_0"  startPos="118" endPos="138" />	
+	
+    <busStop  id="S-Ida-Vidella" lane="219015146#27_0"  startPos="40" endPos="60"/>
+    <busStop  id="S-Vuelta-Vidella" lane="78104894#12_0"  startPos="40" endPos="60" />	
+
+	
+    <vType id="Bus" length="12.00" maxSpeed="28.00">
+        <carFollowing-Krauss accel="2.60" decel="4.50" sigma="0.00"/>
+    </vType>
+        <route  id="A-ida" edges="219015146#0 219015146#1 219015146#2 219015146#3 219015146#4 219015146#5 219015146#6 219015146#7 219015146#8 219015146#9 219015146#10 219015146#11 219015146#12 219015146#14 219015146#15 219015146#16 219015146#17 219015146#19 219015146#20 219015146#21 219015146#22 219015146#23 219015146#24 219015146#25 219015146#26 219015146#27 219015146#28 219015146#29 219015146#30 219015146#31 219015146#32 219015146#33 219015146#34"/>
+        <route id="A-vuelta" edges="78104894#0 78104894#2 78104894#3 78104894#4 78104894#5 78104894#6 78104894#7 78104894#8 78104894#9 78104894#10 78104894#11 78104894#12 78104894#13 78104894#14 78104894#15 78104894#16 78104894#17 78104894#18 78104894#19 78104894#20 78104894#21 78104894#22 78104894#23 78104894#24 78104894#25 78104894#26 78104894#27 78104894#28 78104894#29 78104894#30 78104894#31 78104894#33 78104894#34 78104894#35 78104894#36 78104894#37 78104894#39 78104894#40 78104894#41 78104894#42 78104894#43 78104894#44 78104894#45 78104894#46 78104894#47 78104894#48 78104894#49 78104894#50"/>
+        <route id="Ariel-ida" edges="-78111878#7 205233404#9 205233404#11 205233404#12 205233404#13 205233404#14 205233404#15 205233404#16 205233404#17 205233404#18 205233404#19 205233404#20 205233404#21"/>
+        <route id="Ariel-vuelta" edges="-205233404#21 -205233404#20 -205233404#19 -205233404#18 -205233404#17 -205233404#16 -205233404#15 -205233404#14 -205233404#13 -205233404#12 -205233404#11 -205233404#9"/>
+        <route id="G-ida" edges="205233404#0 205233404#1 205233404#2 205233404#3 205233404#4 205233404#5 205233404#6 205233404#8 205233404#9 205233404#11 205233404#12 205233404#13 205233404#14 205233404#15 205233404#16 205233404#17 205233404#18 205233404#19 205233404#20 205233404#21"/>
+        <route id="G-vuelta" edges="-205233404#21 -205233404#20 -205233404#19 -205233404#18 -205233404#17 -205233404#16 -205233404#15 -205233404#14 -205233404#13 -205233404#12 -205233404#11 -205233404#9 -205233404#8 -205233404#6 -205233404#5 -205233404#4 -205233404#3 -205233404#2 -205233404#1 -205233404#0"/>
+
+		<route id="409-Ida" edges="205233404#0 205233404#1 205233404#2 205233404#3 -165264989#4"/>
+        <route id="409-Vuelta" edges="165264989#4 -205233404#3 -205233404#2 -205233404#1 -205233404#0"/>
+
+		<flow id="G-ida-flow_1" color="yellow" type="Bus" vehsPerHour="10" route="G-ida"  number="15">
+				<stop busStop="G-Ida-Emancipacion" duration="5"/> 
+				<stop busStop="G-Ida-Canarias" duration="5"/> 		
+				<stop busStop="G-Ida-Ariel" duration="10"/> 		
+				<stop busStop="G-Ida-Battle" duration="10"/> 		
+				<stop busStop="G-Ida-Saravia" duration="5"/> 						
+		</flow>	
+		
+		<flow id="G-ida-flow_2" color="yellow" begin="100" type="Bus" vehsPerHour="5" route="G-ida"  number="15">
+				<stop busStop="G-Ida-DePena" duration="5"/> 
+				<stop busStop="G-Ida-Canarias" duration="5"/> 		
+				<stop busStop="G-Ida-Millan" duration="10"/> 		
+				<stop busStop="G-Ida-Battle" duration="10"/> 		
+				<stop busStop="G-Ida-Vidella" duration="5"/> 						
+		</flow>	
+
+		
+		<flow id="G-vuelta-flow" color="yellow" type="Bus" vehsPerHour="10" route="G-vuelta"  number="10">
+				<stop busStop="G-Vuelta-Saravia" duration="5"/> 		
+				<stop busStop="G-Vuelta-Battle" duration="10"/> 		
+				<stop busStop="G-Vuelta-Ariel" duration="10"/> 		
+				<stop busStop="G-Vuelta-Canarias" duration="5"/> 		
+		</flow>		
+
+		
+		
+		<flow id="A-ida-flow" color="blue" type="Bus"  begin="200" vehsPerHour="8" route="A-ida"  number="8">
+				<stop busStop="S-Ida-Emancipacion" duration="5"/>
+				<stop busStop="S-Ida-Millan" duration="10"/> 		
+				<stop busStop="S-Ida-Edison" duration="5"/> 		
+				<stop busStop="S-Ida-Vidella" duration="5"/> 		
+				
+		</flow>	
+		
+		<flow id="A-vuelta-flow" color="blue" type="Bus"  begin="100" vehsPerHour="8" route="A-vuelta"  number="8">
+				<stop busStop="S-Vuelta-Vidella" duration="5"/> 	
+				<stop busStop="S-Vuelta-Edison" duration="5"/> 		
+				<stop busStop="S-Vuelta-Millan" duration="10"/> 		
+				<stop busStop="S-Vuelta-Emancipacion" duration="5"/>
+		
+		</flow>			
+
+		<flow id="Ariel-ida-flow" color="green" type="Bus" vehsPerHour="10" route="Ariel-ida"  number="10">
+				<stop busStop="G-Ida-Battle" duration="10"/> 		
+				<stop busStop="G-Ida-Saravia" duration="10"/> 		
+				<stop busStop="G-Ida-Vidella" duration="10"/> 			
+		</flow>	
+		
+		<flow id="Ariel-vuelta-flow" color="green" type="Bus" vehsPerHour="8" route="Ariel-vuelta"  number="8">
+				<stop busStop="G-Vuelta-Vidella" duration="10"/> 			
+				<stop busStop="G-Vuelta-Saravia" duration="10"/> 		
+				<stop busStop="G-Vuelta-Battle" duration="10"/> 		
+		</flow>	
+		
+		
+		<flow id="409-ida-flow" color="red" type="Bus"  begin="400" vehsPerHour="4" route="409-Ida"  number="4">
+				<stop busStop="G-Ida-Emancipacion" duration="5"/> 		
+				<stop busStop="G-Ida-DePena" duration="5"/> 		
+		</flow>	
+		
+		<flow id="409-vuelta-flow" color="red" type="Bus" vehsPerHour="4" route="409-Vuelta"  number="4">
+				<stop busStop="G-Vuelta-DePena" duration="5"/> 		
+				
+				<stop busStop="G-Vuelta-Emancipacion" duration="5"/> 		
+		</flow>			
+</additional>
