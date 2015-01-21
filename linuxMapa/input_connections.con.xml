@@ -1,0 +1,540 @@
+<connections>
+
+ 
+<!-- ENTRADA a garzon 
+<connection from="205233411" fromLane="0" to="205233404#0"  toLane="0"/>
+<connection from="-205233404#0" fromLane="0" to="205233405#0"  toLane="0"/>-->
+<connection from="78104894#51" fromLane="0" to="78104894#50"  toLane="0"/>
+<connection from="78104894#51" fromLane="1" to="78104894#50"  toLane="1"/>
+<!-- N -->
+<connection from="205233881" fromLane="0" to="219015146#0"  toLane="0"/>
+<connection from="205233881" fromLane="1" to="219015146#0"  toLane="1"/>
+<!-- Corredor -->
+<connection from="205233879" fromLane="0" to="205233411"  toLane="0"/>
+<connection from="205233411" fromLane="0" to="205233404#0"  toLane="0"/>
+<connection from="-205233404#0" fromLane="0" to="205233405#0"  toLane="0"/>
+<!-- O -->
+<connection from="205233405#0" fromLane="0" to="205233405#1"  toLane="0"/>
+<connection from="205233882" fromLane="0" to="219015146#0"  toLane="0"/>
+<connection from="205233882" fromLane="1" to="219015146#0"  toLane="1"/>
+<connection from="205233407#0" fromLane="0" to="219015146#0"  toLane="0"/>
+<connection from="205233407#0" fromLane="1" to="219015146#0"  toLane="1"/>
+
+<!-- EMANCIPACION -->
+<!-- N -->
+
+<connection from="219015146#1" fromLane="0" to="219015159#6"  toLane="0"/>
+<connection from="219015146#1" fromLane="0" to="219015146#2"  toLane="0"/>
+<connection from="219015146#1" fromLane="1" to="219015146#2"  toLane="1"/>
+
+<!-- O -->
+<connection from="205233404#0" fromLane="0" to="205233404#1"  toLane="0"/>
+<connection from="-205233404#1" fromLane="0" to="-205233404#0"  toLane="0"/>
+
+<!-- E -->
+<connection from="78104894#48" fromLane="0" to="78104894#49"  toLane="0"/>
+<connection from="78104894#48" fromLane="0" to="-219015159#3"  toLane="0"/>
+<connection from="78104894#48" fromLane="1" to="78104894#49"  toLane="1"/>
+
+<!-- D -->
+<connection from="-219015159#6" fromLane="0" to="219015146#2"  toLane="0"/>
+<connection from="-219015159#6" fromLane="0" to="78104894#49"  toLane="1"/>
+<connection from="-219015159#6" fromLane="0" to="-219015159#3"  toLane="0"/>
+<!-- I -->
+<connection from="219015159#3" fromLane="0" to="219015146#2"  toLane="1"/>
+<connection from="219015159#3" fromLane="0" to="78104894#49"  toLane="0"/>
+<connection from="219015159#3" fromLane="0" to="219015159#6"  toLane="0"/>
+
+
+<!-- GENERAL HORNOS COMO ES?-->
+<!-- N NI-->
+<connection from="219015146#2" fromLane="0" to="205233642#0"  toLane="0"/>
+<connection from="219015146#2" fromLane="0" to="219015146#3"  toLane="0"/>
+<connection from="219015146#2" fromLane="1" to="219015146#3"  toLane="1"/>
+<connection from="219015146#2" fromLane="1" to="-241572210#3"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#1" fromLane="0" to="205233404#2"  toLane="0"/>
+<connection from="-205233404#2" fromLane="0" to="-205233404#1"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#47" fromLane="0" to="78104894#48"  toLane="0"/>
+<connection from="78104894#47" fromLane="0" to="-241572210#3"  toLane="0"/>
+<connection from="78104894#47" fromLane="1" to="78104894#48"  toLane="1"/>
+<connection from="78104894#47" fromLane="1" to="205233642#0"  toLane="0"/>
+
+<!-- D -->
+<connection from="-205233642#0" fromLane="0" to="219015146#3"  toLane="1"/>
+<connection from="-205233642#0" fromLane="0" to="78104894#48"  toLane="0"/>
+<connection from="-205233642#0" fromLane="0" to="-241572210#3"  toLane="0"/>
+<!-- I -->
+<connection from="241572210#3" fromLane="0" to="219015146#3"  toLane="0"/>
+<connection from="241572210#3" fromLane="0" to="78104894#48"  toLane="1"/>
+<connection from="241572210#3" fromLane="0" to="205233642#0"  toLane="0"/>
+
+
+<!-- MARIA DE PENA -->
+<!-- N -->
+<connection from="219015146#3" fromLane="0" to="219015149#0"  toLane="0"/>
+<connection from="219015146#3" fromLane="0" to="219015146#4"  toLane="0"/>
+<connection from="219015146#3" fromLane="1" to="219015146#4"  toLane="1"/>
+
+<!-- O OI-->
+<connection from="205233404#2" fromLane="0" to="205233404#3"  toLane="0"/>
+<connection from="-205233404#3" fromLane="0" to="-205233404#2"  toLane="0"/>
+
+<!-- E -->
+<connection from="78104894#45" fromLane="0" to="78104894#46"  toLane="0"/>
+<connection from="78104894#45" fromLane="0" to="-78105546#2"  toLane="0"/>
+<connection from="78104894#45" fromLane="1" to="78104894#46"  toLane="1"/>
+
+<!-- D -->
+<connection from="-219015149#0" fromLane="0" to="219015146#4"  toLane="1"/>
+<connection from="-219015149#0" fromLane="0" to="78104894#46"  toLane="0"/>
+<connection from="-219015149#0" fromLane="0" to="-78105546#2"  toLane="0"/>
+
+<!-- I -->
+<connection from="78105546#2" fromLane="0" to="219015146#4"  toLane="0"/>
+<connection from="78105546#2" fromLane="0" to="78104894#46"  toLane="1"/>
+<connection from="78105546#2" fromLane="0" to="219015149#0"  toLane="0"/>
+
+
+<!-- ISLAS CANARIAS  -->
+<!-- N NI-->
+<connection from="219015146#6" fromLane="0" to="219015147#0"  toLane="0"/>
+<connection from="219015146#6" fromLane="0" to="219015146#7"  toLane="0"/>
+<connection from="219015146#6" fromLane="1" to="219015146#7"  toLane="1"/>
+<connection from="219015146#6" fromLane="1" to="-165264989#4"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#3" fromLane="0" to="205233404#4"  toLane="0"/>
+<connection from="205233404#3" fromLane="0" to="-165264989#4"  toLane="0"/>
+<connection from="-205233404#4" fromLane="0" to="-205233404#3"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#43" fromLane="0" to="78104894#44"  toLane="0"/>
+<connection from="78104894#43" fromLane="0" to="-165264989#4"  toLane="0"/>
+<connection from="78104894#43" fromLane="1" to="219015147#0"  toLane="0"/>
+<connection from="78104894#43" fromLane="1" to="78104894#44"  toLane="1"/>
+
+
+<!-- D -->
+<connection from="-219015147#0" fromLane="0" to="-165264989#4"  toLane="0"/>
+<connection from="-219015147#0" fromLane="0" to="219015146#7"  toLane="1"/>
+<connection from="-219015147#0" fromLane="0" to="78104894#44"  toLane="0"/>
+
+<!-- I -->
+<connection from="165264989#4" fromLane="0" to="219015147#0"  toLane="0"/>
+<connection from="165264989#4" fromLane="0" to="219015146#7"  toLane="0"/>
+<connection from="165264989#4" fromLane="0" to="78104894#44"  toLane="1"/>
+<connection from="165264989#4" fromLane="0" to="-205233404#3"  toLane="0"/>
+
+<!-- ORTICOCHEA  -->
+<!-- N NI-->
+<connection from="219015146#10" fromLane="0" to="219015161#6"  toLane="0"/>
+<connection from="219015146#10" fromLane="0" to="219015146#11"  toLane="0"/>
+<connection from="219015146#10" fromLane="1" to="219015146#11"  toLane="1"/>
+<connection from="219015146#10" fromLane="1" to="-219015161#3"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#4" fromLane="0" to="205233404#5"  toLane="0"/>
+<connection from="-205233404#5" fromLane="0" to="-205233404#4"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#40" fromLane="0" to="78104894#41"  toLane="0"/>
+<connection from="78104894#40" fromLane="0" to="-219015161#3"  toLane="0"/>
+<connection from="78104894#40" fromLane="1" to="78104894#41"  toLane="1"/>
+<connection from="78104894#40" fromLane="1" to="219015161#6"  toLane="0"/>
+
+<!-- D -->
+<connection from="-219015161#6" fromLane="0" to="-219015161#3"  toLane="0"/>
+<connection from="-219015161#6" fromLane="0" to="219015146#11"  toLane="1"/>
+<connection from="-219015161#6" fromLane="0" to="78104894#41"  toLane="0"/>
+
+<!-- I -->
+<connection from="219015161#3" fromLane="0" to="219015161#6"  toLane="0"/>
+<connection from="219015161#3" fromLane="0" to="219015146#11"  toLane="0"/>
+<connection from="219015161#3" fromLane="0" to="78104894#41"  toLane="1"/>
+
+
+<!-- PEATONAL FACU VETERINARIA  -->
+<!-- N NI-->
+<connection from="219015146#11" fromLane="0" to="219015146#12"  toLane="0"/>
+<connection from="219015146#11" fromLane="1" to="219015146#12"  toLane="1"/>
+<!-- O -->
+<connection from="-205233404#6" fromLane="0" to="-205233404#5"  toLane="0"/>
+<connection from="205233404#5" fromLane="0" to="205233404#6"  toLane="0"/>
+<!-- D-->
+<connection from="78104894#39" fromLane="0" to="78104894#40"  toLane="0"/>
+<connection from="78104894#39" fromLane="1" to="78104894#40"  toLane="1"/>
+
+
+<!-- MILLAN -->
+<!-- N NI-->
+<connection from="219015146#12" fromLane="1" to="78117297#10"  toLane="1"/>
+<connection from="219015146#12" fromLane="0" to="219015146#14"  toLane="0"/>
+<connection from="219015146#12" fromLane="1" to="219015146#14"  toLane="1"/>
+<connection from="219015146#12" fromLane="0" to="78108804#6"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#6" fromLane="0" to="205233404#8"  toLane="0"/>
+<connection from="-205233404#8" fromLane="0" to="-205233404#6"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#37" fromLane="0" to="78104894#39"  toLane="0"/>
+<connection from="78104894#37" fromLane="1" to="78108804#6"  toLane="1"/>
+<connection from="78104894#37" fromLane="1" to="78104894#39"  toLane="1"/>
+<connection from="78104894#37" fromLane="0" to="78117297#10"  toLane="0"/>
+
+
+<!-- D -->
+<connection from="78117297#7" fromLane="0" to="78117297#10"  toLane="0"/>
+<connection from="78117297#7" fromLane="0" to="219015146#14"  toLane="0"/>
+<connection from="78117297#7" fromLane="1" to="78104894#39"  toLane="1"/>
+<connection from="78117297#7" fromLane="1" to="78117297#10"  toLane="1"/>
+
+
+<!-- I -->
+<connection from="78108804#3" fromLane="0" to="78104894#39"  toLane="0"/>
+<connection from="78108804#3" fromLane="1" to="219015146#14"  toLane="1"/>
+<connection from="78108804#3" fromLane="0" to="78108804#6"  toLane="0"/>
+<connection from="78108804#3" fromLane="1" to="78108804#6"  toLane="1"/>
+
+
+<!-- ARIEL   -->
+<!-- N -->
+<connection from="219015146#14" fromLane="0" to="78111878#7"  toLane="0"/>
+<connection from="219015146#14" fromLane="0" to="219015146#15"  toLane="0"/>
+<connection from="219015146#14" fromLane="1" to="219015146#15"  toLane="1"/>
+
+<!-- O -->
+<connection from="205233404#8" fromLane="0" to="205233404#9"  toLane="0"/>
+<connection from="-205233404#9" fromLane="0" to="78111878#7"  toLane="0"/>
+<connection from="-205233404#9" fromLane="0" to="-205233404#8"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#34" fromLane="0" to="78104894#35"  toLane="0"/>
+<connection from="78104894#34" fromLane="0" to="-78111878#4"  toLane="0"/>
+<connection from="78104894#34" fromLane="1" to="78104894#35"  toLane="1"/>
+
+<!-- D -->
+<connection from="-78111878#7" fromLane="0" to="219015146#15"  toLane="0"/>
+<connection from="-78111878#7" fromLane="0" to="-78111878#4"  toLane="0"/>
+<connection from="-78111878#7" fromLane="0" to="78104894#35"  toLane="1"/>
+<connection from="-78111878#7" fromLane="0" to="205233404#9"  toLane="0"/>
+
+<!-- I -->
+<connection from="78111878#4" fromLane="0" to="78111878#7"  toLane="0"/>
+<connection from="78111878#4" fromLane="0" to="219015146#15"  toLane="0"/>
+<connection from="78111878#4" fromLane="0" to="78104894#35"  toLane="1"/>
+
+<!-- PROPIOS  -->
+<!-- N NI-->
+<connection from="219015146#17" fromLane="0" to="164088677#0"  toLane="0"/>
+<connection from="219015146#17" fromLane="0" to="219015146#19"  toLane="0"/>
+<connection from="219015146#17" fromLane="1" to="219015146#19"  toLane="1"/>
+<connection from="219015146#17" fromLane="1" to="164103645#2"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#9" fromLane="0" to="205233404#11"  toLane="0"/>
+<connection from="-205233404#11" fromLane="0" to="-205233404#9"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#32" fromLane="0" to="78104894#33"  toLane="0"/>
+<connection from="78104894#32" fromLane="0" to="164103645#2"  toLane="0"/>
+<connection from="78104894#32" fromLane="1" to="78104894#33"  toLane="1"/>
+<connection from="78104894#32" fromLane="1" to="164088677#0"  toLane="1"/>
+
+
+<!-- D -->
+<connection from="176376723#6" fromLane="0" to="164103645#2"  toLane="0"/>
+<connection from="176376723#6" fromLane="1" to="164103645#2"  toLane="1"/>
+<connection from="176376723#6" fromLane="0" to="219015146#19"  toLane="0"/>
+<connection from="176376723#6" fromLane="1" to="78104894#33"  toLane="1"/>
+
+<!-- I -->
+<connection from="164103646#0" fromLane="0" to="164088677#0"  toLane="0"/>
+<connection from="164103646#0" fromLane="1" to="164088677#0"  toLane="1"/>
+<connection from="164103646#0" fromLane="1" to="219015146#19"  toLane="1"/>
+<connection from="164103646#0" fromLane="0" to="78104894#33"  toLane="0"/>
+
+<!-- MAXIMO SANTOS  -->
+<!-- N NI-->
+<connection from="219015146#19" fromLane="0" to="78104488#11"  toLane="0"/>
+<connection from="219015146#19" fromLane="0" to="219015146#20"  toLane="0"/>
+<connection from="219015146#19" fromLane="1" to="219015146#20"  toLane="1"/>
+<connection from="219015146#19" fromLane="1" to="-78104488#8"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#11" fromLane="0" to="205233404#12"  toLane="0"/>
+<connection from="-205233404#12" fromLane="0" to="-205233404#11"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#26" fromLane="0" to="78104894#27"  toLane="0"/>
+<connection from="78104894#26" fromLane="0" to="-78104488#8"  toLane="0"/>
+<connection from="78104894#26" fromLane="1" to="78104894#27"  toLane="1"/>
+<connection from="78104894#26" fromLane="1" to="78104488#11"  toLane="0"/>
+
+
+<!-- D -->
+<connection from="-78104488#11" fromLane="0" to="-78104488#8"  toLane="0"/>
+<connection from="-78104488#11" fromLane="0" to="219015146#20"  toLane="1"/>
+<connection from="-78104488#11" fromLane="0" to="78104894#27"  toLane="0"/>
+
+<!-- I -->
+<connection from="78104488#8" fromLane="0" to="78104488#11"  toLane="0"/>
+<connection from="78104488#8" fromLane="0" to="219015146#20"  toLane="0"/>
+<connection from="78104488#8" fromLane="0" to="78104894#27"  toLane="1"/>
+
+
+
+<!-- CNO EDINSON -->
+<!-- N -->
+<connection from="219015146#21" fromLane="0" to="219015154#0"  toLane="0"/>
+<connection from="219015146#21" fromLane="0" to="219015146#22"  toLane="0"/>
+<connection from="219015146#21" fromLane="1" to="219015146#22"  toLane="1"/>
+
+<!-- O -->
+<connection from="205233404#12" fromLane="0" to="205233404#13"  toLane="0"/>
+<connection from="-205233404#13" fromLane="0" to="-205233404#12"  toLane="0"/>
+
+<!-- E -->
+<connection from="78104894#22" fromLane="0" to="78104894#23"  toLane="0"/>
+<connection from="78104894#22" fromLane="0" to="-78115032#5"  toLane="0"/>
+<connection from="78104894#22" fromLane="1" to="78104894#23"  toLane="1"/>
+
+<!-- D -->
+<connection from="-219015154#0" fromLane="0" to="219015146#22"  toLane="0"/>
+<connection from="-219015154#0" fromLane="0" to="78104894#23"  toLane="1"/>
+<connection from="-219015154#0" fromLane="0" to="-78115032#5"  toLane="0"/>
+<!-- I -->
+<connection from="78115032#5" fromLane="0" to="219015146#22"  toLane="1"/>
+<connection from="78115032#5" fromLane="0" to="78104894#23"  toLane="0"/>
+<connection from="78115032#5" fromLane="0" to="219015154#0"  toLane="0"/>
+
+
+<!-- BVAR APARICIO SARAVIA  -->
+<!-- N NI-->
+<connection from="219015146#22" fromLane="0" to="78109757#7"  toLane="0"/>
+<connection from="219015146#22" fromLane="0" to="219015146#23"  toLane="0"/>
+<connection from="219015146#22" fromLane="1" to="219015146#23"  toLane="1"/>
+<connection from="219015146#22" fromLane="1" to="-78109757#4"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#13" fromLane="0" to="205233404#14"  toLane="0"/>
+<connection from="-205233404#14" fromLane="0" to="-205233404#13"  toLane="0"/>
+
+<!-- E EI -->
+<connection from="78104894#19" fromLane="0" to="78104894#20"  toLane="0"/>
+<connection from="78104894#19" fromLane="0" to="-78109757#4"  toLane="0"/>
+<connection from="78104894#19" fromLane="1" to="78104894#20"  toLane="1"/>
+<connection from="78104894#19" fromLane="1" to="78109757#7"  toLane="0"/>
+
+
+<!-- D -->
+<connection from="-78109757#7" fromLane="0" to="-78109757#4"  toLane="0"/>
+<connection from="-78109757#7" fromLane="0" to="219015146#23"  toLane="1"/>
+<connection from="-78109757#7" fromLane="0" to="78104894#20"  toLane="0"/>
+
+<!-- I -->
+<connection from="78109757#4" fromLane="0" to="78109757#7"  toLane="0"/>
+<connection from="78109757#4" fromLane="0" to="219015146#23"  toLane="0"/>
+<connection from="78109757#4" fromLane="0" to="78104894#20"  toLane="1"/>
+
+
+<!-- CNO CASAVALLE  -->
+<!-- N -->
+<connection from="219015146#23" fromLane="0" to="78105824#6"  toLane="0"/>
+<connection from="219015146#23" fromLane="0" to="219015146#24"  toLane="0"/>
+<connection from="219015146#23" fromLane="1" to="219015146#24"  toLane="1"/>
+
+<!-- O -->
+<connection from="205233404#14" fromLane="0" to="205233404#15"  toLane="0"/>
+<connection from="-205233404#15" fromLane="0" to="78105824#6"  toLane="0"/>
+<connection from="-205233404#15" fromLane="0" to="-205233404#14"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#17" fromLane="0" to="78104894#18"  toLane="0"/>
+<connection from="78104894#17" fromLane="0" to="-78105824#3"  toLane="0"/>
+<connection from="78104894#17" fromLane="1" to="78104894#18"  toLane="1"/>
+
+<!-- D -->
+<connection from="-78105824#6" fromLane="0" to="219015146#24"  toLane="0"/>
+<connection from="-78105824#6" fromLane="0" to="-78105824#3"  toLane="0"/>
+<connection from="-78105824#6" fromLane="0" to="78104894#18"  toLane="0"/>
+<connection from="-78105824#6" fromLane="0" to="205233404#15"  toLane="0"/>
+
+<!-- I -->
+<connection from="78105824#3" fromLane="0" to="78105824#6"  toLane="0"/>
+<connection from="78105824#3" fromLane="0" to="219015146#24"  toLane="0"/>
+<connection from="78105824#3" fromLane="0" to="78104894#18"  toLane="1"/>
+
+
+<!-- CARVE -->
+<!-- N -->
+<connection from="219015146#24" fromLane="0" to="202447937"  toLane="0"/>
+<connection from="219015146#24" fromLane="0" to="219015146#25"  toLane="0"/>
+<connection from="219015146#24" fromLane="1" to="219015146#25"  toLane="1"/>
+
+<!-- O -->
+<connection from="205233404#15" fromLane="0" to="205233404#16"  toLane="0"/>
+<connection from="-205233404#16" fromLane="0" to="-205233404#15"  toLane="0"/>
+
+<!-- E -->
+<connection from="78104894#14" fromLane="0" to="78104894#15"  toLane="0"/>
+<connection from="78104894#14" fromLane="0" to="219015157"  toLane="0"/>
+<connection from="78104894#14" fromLane="1" to="78104894#15"  toLane="1"/>
+
+<!-- D -->
+<connection from="-202447937" fromLane="0" to="219015146#25"  toLane="0"/>
+<connection from="-202447937" fromLane="0" to="78104894#15"  toLane="1"/>
+<connection from="-202447937" fromLane="0" to="219015157"  toLane="0"/>
+<!-- I -->
+<connection from="-219015157" fromLane="0" to="219015146#25"  toLane="1"/>
+<connection from="-219015157" fromLane="0" to="78104894#15"  toLane="0"/>
+<connection from="-219015157" fromLane="0" to="202447937"  toLane="0"/>
+
+
+
+<!-- PLAZA VIDIELLA / LANUS-->
+<!-- N -->
+<connection from="219015146#26" fromLane="0" to="219015146#27"  toLane="0"/>
+<connection from="219015146#26" fromLane="1" to="219015146#27"  toLane="1"/>
+<connection from="219015146#26" fromLane="0" to="78114495"  toLane="0"/>
+
+<!-- O -->
+<connection from="205233404#16" fromLane="0" to="205233404#17"  toLane="0"/>
+<connection from="-205233404#17" fromLane="0" to="78114495"  toLane="0"/>
+<connection from="-205233404#17" fromLane="0" to="-205233404#16"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#12" fromLane="0" to="78104894#13"  toLane="0"/>
+<connection from="78104894#12" fromLane="0" to="-78118235#2"  toLane="0"/>
+<connection from="78104894#12" fromLane="1" to="78104894#13"  toLane="1"/>
+
+
+<!-- D -->
+<connection from="78118235#2" fromLane="0" to="78114495"  toLane="0"/>
+<connection from="78118235#2" fromLane="0" to="219015146#27"  toLane="0"/>
+<connection from="78118235#2" fromLane="0" to="78104894#13"  toLane="1"/>
+
+
+
+<!-- PLAZA VIDIELLA PEATONAL-->
+<!-- N -->
+<connection from="219015146#27" fromLane="0" to="219015146#28"  toLane="0"/>
+<connection from="219015146#27" fromLane="1" to="219015146#28"  toLane="1"/>
+
+
+<!-- O -->
+<connection from="205233404#17" fromLane="0" to="205233404#18"  toLane="0"/>
+<connection from="-205233404#18" fromLane="0" to="-205233404#17"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#11" fromLane="0" to="78104894#12"  toLane="0"/>
+<connection from="78104894#11" fromLane="1" to="78104894#12"  toLane="1"/>
+
+<!-- D 
+<connection from="78118235#2" fromLane="0" to="78120463#1"  toLane="1"/>-->
+
+
+
+<!-- Besnes e irigoyen-->
+ <!-- N -->
+<connection from="219015146#29" fromLane="0" to="219015146#30"  toLane="0"/>
+<connection from="219015146#29" fromLane="0" to="78114813#2"  toLane="0"/>
+<connection from="219015146#29" fromLane="1" to="219015146#30"  toLane="1"/>
+
+
+<!-- O -->
+<connection from="205233404#19" fromLane="0" to="205233404#20"  toLane="0"/>
+<connection from="-205233404#20" fromLane="0" to="-205233404#19"  toLane="0"/>
+
+
+<!-- E -->
+<connection from="78104894#8" fromLane="0" to="78104894#9"  toLane="0"/>
+<connection from="78104894#8" fromLane="1" to="78104894#9"  toLane="1"/>
+
+<!-- D -->
+<connection from="-78114813#2" fromLane="0" to="219015146#30"  toLane="1"/>
+<connection from="-78114813#2" fromLane="0" to="78104894#9"  toLane="1"/>
+
+
+<!-- PLAZA VIDIELLA PEATONAL 2?-->
+<!-- N -->
+<connection from="219015146#30" fromLane="0" to="219015146#31"  toLane="0"/>
+<connection from="219015146#30" fromLane="1" to="219015146#31"  toLane="1"/>
+
+
+<!-- O -->
+<connection from="205233404#20" fromLane="0" to="205233404#21"  toLane="0"/>
+<connection from="-205233404#21" fromLane="0" to="-205233404#20"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#5" fromLane="0" to="78104894#6"  toLane="0"/>
+<connection from="78104894#5" fromLane="1" to="78104894#6"  toLane="1"/>
+
+<!-- D 
+<connection from="78118235#2" fromLane="0" to="78120463#1"  toLane="1"/>-->
+
+
+
+
+<!-- Camino Jose Duran Duran -->
+
+<!-- N -->
+<connection from="219015146#31" fromLane="0" to="219015146#32"  toLane="0"/>
+<connection from="219015146#31" fromLane="1" to="219015146#32"  toLane="1"/>
+<connection from="219015146#31" fromLane="1" to="-78119363#5"  toLane="0"/>
+<connection from="219015146#31" fromLane="0" to="78119363#8"  toLane="0"/>
+
+<!-- O -->
+
+<connection from="205233404#21" fromLane="0" to="205233404#22"  toLane="0"/>
+<connection from="-205233404#22" fromLane="0" to="-205233404#21"  toLane="0"/>
+<!-- E  -->
+<connection from="78104894#3" fromLane="0" to="-78119363#5"  toLane="0"/>
+<connection from="78104894#3" fromLane="0" to="78104894#4"  toLane="0"/>
+<connection from="78104894#3" fromLane="1" to="78104894#4"  toLane="1"/>
+
+<!-- D -->
+<connection from="-78119363#8" fromLane="0" to="-78119363#5"  toLane="0"/>
+<connection from="-78119363#8" fromLane="0" to="219015146#32"  toLane="0"/>
+<connection from="-78119363#8" fromLane="0" to="78104894#4"  toLane="1"/>
+<!-- I -->
+<connection from="78119363#5" fromLane="0" to="219015146#32"  toLane="1"/>
+<connection from="78119363#5" fromLane="0" to="78104894#4"  toLane="0"/>
+<connection from="78119363#5" fromLane="0" to="78119363#8"  toLane="0"/>
+
+<!-- Camino Jose Duran Duran y este?!?-->
+
+<!-- N
+<connection from="219015146#28" fromLane="0" to="219015146#29"  toLane="0"/>
+<connection from="219015146#28" fromLane="1" to="219015146#29"  toLane="1"/>
+<connection from="219015146#28" fromLane="1" to="175174060#2"  toLane="1"/>
+ -->
+<!-- O
+<connection from="205233404#18" fromLane="0" to="205233404#19"  toLane="0"/>
+<connection from="-205233404#19" fromLane="0" to="-205233404#18"  toLane="0"/>
+ -->
+<!-- E 
+<connection from="78104894#10" fromLane="0" to="175174060#2"  toLane="0"/>
+<connection from="78104894#10" fromLane="0" to="78104894#11"  toLane="0"/>
+<connection from="78104894#10" fromLane="1" to="78104894#11"  toLane="1"/>
+ -->
+<!-- FIN DEL CORREDOR -->
+
+<!-- N -->
+<connection from="219015146#33" fromLane="0" to="219015146#34"  toLane="0"/>
+<connection from="219015146#33" fromLane="1" to="219015146#34"  toLane="1"/>
+<connection from="219015146#33" fromLane="1" to="217654232"  toLane="0"/>
+<connection from="219015146#33" fromLane="1" to="217654218#1"  toLane="0"/>
+
+<!-- E  -->
+<connection from="78104894#0" fromLane="0" to="78104894#2"  toLane="0"/>
+<connection from="78104894#0" fromLane="1" to="78104894#2"  toLane="1"/>
+<connection from="78104894#0" fromLane="0" to="217654232"  toLane="0"/>
+<connection from="78104894#0" fromLane="0" to="217654218#1"  toLane="0"/>
+
+
+</connections>
