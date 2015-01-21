@@ -1,0 +1,123 @@
+<connections>
+
+ 
+<!-- ENTRADA a garzon -->
+<delete from="205233411" fromLane="0" to="205233405#0"  toLane="0"/>
+<delete from="-205233404#0" fromLane="0" to="205233404#0"  toLane="0"/>
+<delete from="78104894#51" fromLane="1" to="205233407#0"  toLane="1"/>
+<delete from="78116581#0" fromLane="2" to="205233405#2"  toLane="0"/>
+<delete from="205233405#1" fromLane="0" to="78105309#0"  toLane="0"/>
+<delete from="240219419" fromLane="1" to="205233408"  toLane="1"/>
+<connection from="78104894#51" fromLane="1" to="205233408"  toLane="1"/>
+<connection from="78116581#0" fromLane="0" to="205233407#0"  toLane="0"/>
+<connection from="78116581#0" fromLane="0" to="78105309#0"  toLane="0"/>
+<connection from="240219419" fromLane="1" to="205233407#0"  toLane="1"/>
+
+<!-- EMANCIPACION -->
+<connection from="78104894#48" fromLane="0" to="-219015159#3"  toLane="0"/>
+<connection from="219015159#3" fromLane="0" to="78104894#49"  toLane="0"/>
+<connection from="-219015159#6" fromLane="0" to="78104894#49"  toLane="0"/>
+
+<!-- GENERAL HORNOS COMO ES?-->
+<delete from="78104894#47" fromLane="1" to="205233404#2"  toLane="0"/>
+<connection from="241572210#3" fromLane="0" to="78104894#48"  toLane="0"/>
+<connection from="-205233642#0" fromLane="0" to="78104894#48"  toLane="0"/>
+
+<!-- MARIA DE PENA -->
+<delete from="78104894#45" fromLane="1" to="219015146#4"  toLane="1"/>
+<delete from="-219015149#0" fromLane="1" to="-205233404#2"  toLane="0"/>
+<connection from="78104894#45" fromLane="1" to="78104894#46"  toLane="1"/>
+<connection from="-219015149#0" fromLane="0" to="78104894#46"  toLane="0"/>
+<connection from="-219015149#0" fromLane="0" to="-78105546#2"  toLane="0"/>
+<connection from="78105546#2" fromLane="0" to="78104894#46"  toLane="0"/>
+<connection from="219015146#3" fromLane="1" to="-78105546#2"  toLane="0"/>
+
+<!-- ISLAS CANARIAS  -->
+<delete from="78104894#43" fromLane="1" to="219015146#7"  toLane="1"/>
+<delete from="219015146#6" fromLane="1" to="-165264989#4"  toLane="0"/>
+<delete from="78104894#43" fromLane="1" to="219015147#0"  toLane="0"/>
+<connection from="78104894#43" fromLane="1" to="78104894#44"  toLane="1"/>
+<connection from="-219015147#0" fromLane="0" to="78104894#44"  toLane="0"/>
+<connection from="165264989#4" fromLane="0" to="-205233404#3"  toLane="0"/>
+<connection from="165264989#4" fromLane="0" to="78104894#44"  toLane="0"/>
+
+<!-- ORTICOCHEA  -->
+<delete from="78104894#40" fromLane="1" to="219015146#11"  toLane="1"/>
+<connection from="78104894#40" fromLane="1" to="78104894#41"  toLane="1"/>
+<connection from="219015161#3" fromLane="0" to="78104894#41"  toLane="0"/>
+<connection from="219015146#10" fromLane="0" to="219015161#6"  toLane="0"/>
+<connection from="-219015161#6" fromLane="0" to="78104894#41"  toLane="0"/>
+<!-- PEATONAL FACU VETERINARIA  -->
+<!-- MILLAN -->
+<delete from="78104894#37" fromLane="1" to="219015146#14"  toLane="1"/>
+<connection from="78104894#37" fromLane="1" to="78104894#39"  toLane="1"/>
+<connection from="78108804#3" fromLane="0" to="78104894#39"  toLane="0"/>
+<connection from="78117297#7" fromLane="1" to="78104894#39"  toLane="1"/>
+<!-- ARIEL   -->
+<delete from="78104894#34" fromLane="1" to="219015146#15"  toLane="1"/>
+<delete from="78104894#34" fromLane="1" to="78111878#7"  toLane="0"/>
+<connection from="78104894#34" fromLane="1" to="78104894#35"  toLane="1"/>
+<connection from="78111878#4" fromLane="0" to="78104894#35"  toLane="0"/>
+<connection from="78111878#4" fromLane="0" to="219015146#15"  toLane="0"/>
+<connection from="-78111878#7" fromLane="0" to="78104894#35"  toLane="1"/>
+<!-- PROPIOS  -->
+<delete from="78104894#31" fromLane="1" to="205233404#11"  toLane="0"/>
+<connection from="78104894#31" fromLane="1" to="78104894#33"  toLane="1"/>
+<connection from="176376723#6" fromLane="1" to="78104894#33"  toLane="1"/>
+<connection from="164103646#0" fromLane="0" to="78104894#33"  toLane="0"/>
+
+<!-- MAXIMO SANTOS  -->
+<delete from="78104894#26" fromLane="1" to="219015146#20"  toLane="1"/>
+<connection from="78104894#26" fromLane="1" to="78104894#27"  toLane="1"/>
+<connection from="-78104488#11" fromLane="0" to="78104894#27"  toLane="0"/>
+<connection from="78104488#8" fromLane="0" to="78104894#27"  toLane="0"/>
+
+<!-- CNO EDINSON -->
+<delete from="78104894#22" fromLane="1" to="219015146#22"  toLane="1"/>
+<delete from="78104894#22" fromLane="1" to="219015154#0"  toLane="0"/>
+<connection from="78104894#22" fromLane="1" to="78104894#23"  toLane="1"/>
+<connection from="-219015154#0" fromLane="0" to="78104894#23"  toLane="0"/>
+<connection from="-219015154#0" fromLane="0" to="-78115032#5"  toLane="0"/>
+<connection from="78115032#5" fromLane="0" to="78104894#23"  toLane="0"/>
+
+<!-- BVAR APARICIO SARAVIA  -->
+<delete from="78104894#19" fromLane="1" to="219015146#23"  toLane="1"/>
+<connection from="78104894#19" fromLane="1" to="78104894#20"  toLane="1"/>
+<connection from="-78109757#7" fromLane="0" to="78104894#20"  toLane="0"/>
+<connection from="78109757#4" fromLane="0" to="78104894#20"  toLane="0"/>
+
+<!-- CNO CASAVALLE  -->
+<delete from="78104894#17" fromLane="1" to="219015146#24"  toLane="1"/>
+<connection from="-78105824#6" fromLane="0" to="78104894#18"  toLane="0"/>
+<connection from="78105824#3" fromLane="0" to="78104894#18"  toLane="0"/>
+
+<!-- CARVE -->
+<delete from="78104894#14" fromLane="1" to="219015146#25"  toLane="1"/>
+<delete from="78104894#14" fromLane="1" to="202447937"  toLane="0"/>
+<connection from="78104894#14" fromLane="1" to="78104894#15"  toLane="1"/>
+<connection from="-202447937" fromLane="0" to="78104894#15"  toLane="0"/>
+<connection from="-219015157" fromLane="0" to="78104894#15"  toLane="0"/>
+<!-- PLAZA VIDIELLA / LANUS-->
+<connection from="78118235#2" fromLane="0" to="78104894#13"  toLane="0"/>
+<!-- PLAZA VIDIELLA PEATONAL-->
+<!-- LEZICA-->
+<connection from="78104894#9" fromLane="0" to="175174061#1"  toLane="0"/>
+<connection from="78104894#9" fromLane="0" to="175174060#2"  toLane="0"/>
+<!-- Besnes e irigoyen-->
+<delete from="78104894#8" fromLane="1" to="219015146#30"  toLane="1"/>
+<delete from="78104894#8" fromLane="1" to="78114813#2"  toLane="0"/>
+<connection from="78104894#8" fromLane="1" to="78104894#9"  toLane="1"/>
+<!-- PLAZA VIDIELLA PEATONAL 2?-->
+
+<!-- Camino Jose Duran Duran -->
+<delete from="78104894#3" fromLane="1" to="219015146#32"  toLane="1"/>
+<delete from="78104894#3" fromLane="1" to="78119363#8"  toLane="0"/>
+<connection from="78104894#3" fromLane="1" to="78104894#4"  toLane="1"/>
+<connection from="78119363#5" fromLane="0" to="78104894#4"  toLane="1"/>
+<connection from="-78119363#8" fromLane="0" to="78104894#4"  toLane="1"/>
+<!-- FIN DEL CORREDOR -->
+<connection from="219015146#33" fromLane="1" to="219015146#34"  toLane="1"/>
+<connection from="78104894#0" fromLane="0" to="78104894#2"  toLane="0"/>
+<connection from="78119363#5" fromLane="0" to="78104894#4"  toLane="1"/>
+<connection from="-78119363#8" fromLane="0" to="78104894#4"  toLane="1"/>
+</connections>
