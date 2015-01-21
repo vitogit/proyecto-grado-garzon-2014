@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<input>
+		<net-file value="sim.net.xml"/>
+		<route-files value="sim.rou.xml"/>
+		<additional-files value="semaforos.xml,sim.add.xml"/>
+	</input>
+	<processing> 
+		<time-to-teleport value="-1"/>
+	</processing>  
+</configuration>
