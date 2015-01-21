@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <add>
+<!-- EMANCIPACION -->
+    <tlLogic id="cluster_1894127318_917520037_917579892" type="static" programID="1" offset="2">
+        <phase duration="63" state="GGGrrGGGGrr"/>
+        <phase duration="3" state="yyyrryyyyrr"/>
+        <phase duration="31" state="rrrGgrrrrGg"/>
+        <phase duration="3" state="rrryyrrrryy"/>
+    </tlLogic>
 
     <tlLogic id="1858113996" type="static" programID="1" offset="0">
         <phase duration="31" state="GGrr"/>
@@ -281,16 +288,7 @@
         <phase duration="31" state="GGGrrrGrrGrrrGrr"/>
         <phase duration="6" state="yyyrrryrryrrryrr"/>
     </tlLogic>
-    <tlLogic id="cluster_1894127318_917520037_917579892" type="static" programID="1" offset="0">
-        <phase duration="31" state="GGGrrGGGGrr"/>
-        <phase duration="6" state="yyyrryyyyrr"/>
-        <phase duration="31" state="rrrGGrrrrGg"/>
-        <phase duration="6" state="rrryyrrrryg"/>
-        <phase duration="6" state="rrrrrrrrrrG"/>
-        <phase duration="6" state="rrrrrrrrrry"/>
-        <phase duration="31" state="GGGGrGrrGrr"/>
-        <phase duration="6" state="yyyyryrryrr"/>
-    </tlLogic>
+	
     <tlLogic id="cluster_1894127823_2152053816_2498510490" type="static" programID="1" offset="0">
         <phase duration="31" state="rrGGGgrrrGGGGggr"/>
         <phase duration="6" state="rryyygrrryyyyggr"/>
