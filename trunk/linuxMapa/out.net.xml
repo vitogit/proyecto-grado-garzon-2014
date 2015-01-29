@@ -16638,44 +16638,37 @@
     </tlLogic>	
 <!-- PLAZA VIDIELLA PEATONAL-->
     <tlLogic id="917582946" type="static" programID="0" offset="0">
+        <phase duration="60" state="rGG"/>
+        <phase duration="3" state="ryy"/>
         <phase duration="31" state="Grr"/>
-        <phase duration="6" state="yrr"/>
-        <phase duration="31" state="rGG"/>
-        <phase duration="6" state="ryy"/>
+        <phase duration="3" state="yrr"/>
     </tlLogic>
 	<tlLogic id="2498507881" type="static" programID="0" offset="0">
-        <phase duration="31" state="GG"/>
-        <phase duration="5" state="yy"/>
-        <phase duration="31" state="GG"/>
-        <phase duration="5" state="yy"/>
+        <phase duration="60" state="GG"/>
+        <phase duration="3" state="yy"/>
+        <phase duration="34" state="rr"/>
     </tlLogic>
     <tlLogic id="2498507879" type="static" programID="0" offset="0">
-        <phase duration="31" state="GG"/>
-        <phase duration="6" state="yy"/>
+        <phase duration="60" state="GG"/>
+        <phase duration="3" state="yy"/>
+        <phase duration="34" state="rr"/>
     </tlLogic>
 <!-- LEZICA-->
 <!-- Principal -->
     <tlLogic id="cluster_1858114010_1858114021_1858114027_1858114040" type="static" programID="0" offset="0">
-        <phase duration="31" state="GGgrGGGGr"/>
-        <phase duration="6" state="yygryyyyr"/>
-        <phase duration="6" state="rrGrrrrrr"/>
-        <phase duration="6" state="rryrrrrrr"/>
-        <phase duration="31" state="GGrGGGGGG"/>
-        <phase duration="6" state="yyryyyyyy"/>
+        <phase duration="41" state="GGGrrrrrr"/>
+        <phase duration="2" state="GGyrrrrrr"/>
+        <phase duration="24" state="GGrGGGGGG"/>
+        <phase duration="3" state="GGryyyyyy"/>
     </tlLogic>
 <!-- Izquierda Izquierda -->
 	<tlLogic id="2124169571" type="static" programID="0" offset="0">
-        <phase duration="31" state="GGrrr"/>
-        <phase duration="4" state="yyrrr"/>
-        <phase duration="31" state="rrGGG"/>
-        <phase duration="4" state="rryyy"/>
+        <phase duration="60" state="GGggg"/>
+
     </tlLogic>
 <!-- Izquierda Adelante -->
 	<tlLogic id="1858113996" type="static" programID="0" offset="0">
-        <phase duration="31" state="GGrr"/>
-        <phase duration="6" state="yyrr"/>
-        <phase duration="31" state="rrGG"/>
-        <phase duration="6" state="rryy"/>
+        <phase duration="60" state="ggGG"/>
     </tlLogic>
 <!-- Besnes e irigoyen-->
     <tlLogic id="cluster_1859529851_917495504_917588419" type="static" programID="0" offset="0">
@@ -16687,31 +16680,31 @@
 	
 <!-- PEATONAL -->
     <tlLogic id="2152051745" type="static" programID="0" offset="0">
-        <phase duration="31" state="GG"/>
+        <phase duration="90" state="GG"/>
         <phase duration="6" state="yy"/>
+		<phase duration="31" state="rr"/>
     </tlLogic>
 	<tlLogic id="1859529848" type="static" programID="0" offset="0">
-        <phase duration="31" state="GG"/>
+        <phase duration="90" state="GG"/>
         <phase duration="5" state="yy"/>
-        <phase duration="31" state="GG"/>
-        <phase duration="5" state="yy"/>
+        <phase duration="31" state="rr"/>
     </tlLogic>
 	<tlLogic id="2152051742" type="static" programID="0" offset="0">
-        <phase duration="31" state="GG"/>
+        <phase duration="90" state="GG"/>
         <phase duration="6" state="yy"/>
+		<phase duration="31" state="rr"/>
     </tlLogic>
+
 <!-- Camino Jose Duran Duran -->
+
     <tlLogic id="cluster_1859511351_917423208_917499852" type="static" programID="0" offset="0">
-        <phase duration="31" state="rrrGGGGrrrGGGGGr"/>
-        <phase duration="6" state="rrryyyyrrryyyyyr"/>
-        <phase duration="31" state="GGgrrrrGGgrrrrrr"/>
-        <phase duration="6" state="yygrrrryygrrrrrr"/>
-        <phase duration="6" state="rrGrrrrrrGrrrrrr"/>
-        <phase duration="6" state="rryrrrrrryrrrrrr"/>
-        <phase duration="31" state="GrrGrrGGrrGrrrrG"/>
-        <phase duration="6" state="yrryrryyrryrrrry"/>
+        <phase duration="65" state="rrrGGGGrrrGGGGGG"/>
+        <phase duration="3" state="rrryyyyrrryyyyyy"/>
+        <phase duration="30" state="GGGrrrrGGGrrrrrr"/>
+        <phase duration="3" state="yyyrrrryyyrrrrrr"/>
+
     </tlLogic>
-<!-- FIN DEL CORREDOR -->
+<!-- Calderon -->
     <tlLogic id="cluster_1859511369_2152050448_917381638_917405640" type="static" programID="0" offset="0">
         <phase duration="31" state="GGggrrrGGGG"/>
         <phase duration="6" state="yyggrrryyyy"/>
@@ -16722,6 +16715,9 @@
     </tlLogic>
 
 <!-- Una desp -->
+<!--solo de un lado-->
+<!-- Colman -->
+
     <tlLogic id="cluster_917438725_917484361" type="static" programID="0" offset="0">
         <phase duration="31" state="rrrGGGgrrrGGGg"/>
         <phase duration="6" state="rrryyygrrryyyg"/>
@@ -16733,12 +16729,11 @@
         <phase duration="6" state="rryrrrrrryrrrr"/>
     </tlLogic>
 	
+	
     <tlLogic id="2152050963" type="static" programID="0" offset="0">
         <phase duration="31" state="GG"/>
         <phase duration="6" state="yy"/>
     </tlLogic>
-
-
 
 
     <tlLogic id="2556749116" type="static" programID="0" offset="0">
