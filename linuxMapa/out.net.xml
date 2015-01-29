@@ -16507,7 +16507,7 @@
     <tlLogic id="2498531281" type="static" programID="0" offset="0">
         <phase duration="120" state="GG"/>
         <phase duration="3" state="yy"/>
-        <phase duration="20" state="yy"/>
+        <phase duration="20" state="rr"/>
     </tlLogic>
 	<tlLogic id="2498531282" type="static" programID="0" offset="0">
         <phase duration="120" state="GG"/>
