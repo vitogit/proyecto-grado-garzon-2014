@@ -103,7 +103,7 @@ Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuen
 
 La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios días por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
 
-\begin{table}
+\begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Comparación de fitness para distintas poblaciones}
 	\label{table:parametro_poblacion}
@@ -136,13 +136,58 @@ Los valores elegidos fueron:
 	\item Probabilidad de  mutación (pm):  0.01, 0.05, 0.1
 \end{itemize}
 
-Se prueban todas las combinaciones  de cruzamiento y mutación.
-
-En las siguientes figuras se muestran los valores de fitness obtenidos en cada caso.
+Se realizan tres juegos de trafico diferente (bajo, medio y alto) y se realizan tres pruebas sobre cada uno, luego se ejecutan las nueve combinaciones de cruzamiento y mutación obteniendo el promedio del fitness para cada combinación con su desviación estándar para realizar la tabla.
 
 
-INSERTAR GRAFICA de los 3 casos de tráfico.
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Combinaciones de probabilidad de cruzamiento(pc) y de mutacion (pm)}
+	\label{table:parametro_mutacion_cruzamiento}
+	\centering
+	\begin{tabular}{ccrrcr}
+		\hline
+		{\textbf{Combinación(pc-pm)}} & & 
 
+		{\textbf{Fitness Promedio}} \\
+		\hline
+		0.5 - 0.01 & &  16.09$\pm$0.30\\
+		0.5 - 0.05 & &  15.60$\pm$0.17\\
+		0.5 - 0.1 & &  16.16$\pm$0.42\\
+		0.8 - 0.01 & &  16.04$\pm$0.55\\
+		0.8 - 0.05 & &  15.85$\pm$0.32\\
+		0.8 - 0.1 & &  16.08$\pm$0.34\\
+		1 - 0.01 & &  16.08$\pm$0.45\\
+		1 - 0.05 & &  15.82$\pm$0.34\\
+		1 - 0.1 & &  16.04$\pm$0.25\\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/grafica_mutacion_cruzamiento}
+	\caption{Gráfica con combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
+	\label{fig:grafica_mutacion_cruzamiento}
+\end{figure}
+
+Analizando la tabla y la gráfica se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
+
+Se comprueba que todas las muestras siguen la distribución normal  para poder aplicar el test de Student.
+
+Siendo las hipótesis de la prueba ( u1 el promedio del 
+grupo 1 y u2 el del grupo 2)
+H0 : u1 = u2  
+H1: u1 <> u
+
+Si hacemos una comparación entre la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada por tanto existe evidencia estadística significativa de que las muestras son diferentes. Por tanto existe una mejora entre elegir una combinación u otra. 
+
+
+Para elegir la mejor opción  se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios.
+
+En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
+
+  
 
 
 

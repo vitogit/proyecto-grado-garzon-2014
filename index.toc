@@ -63,19 +63,19 @@
 \contentsline {subsection}{\numberline {6.2.1}Tiempo de simulaci\IeC {\'o}n}{32}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Criterio de Parada}{33}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{33}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{34}{subsection.6.2.4}
-\contentsline {section}{\numberline {6.3}Descripci\IeC {\'o}n de escenarios}{34}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Caso base}{34}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Escenario Evolutivo }{34}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Escenario Alternativo}{35}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Resultados}{35}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Resultado simulaci\IeC {\'o}n caso base}{35}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Resultado Escenario Evolutivo}{35}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Resultado Escenario Alternativo}{35}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Comparaci\IeC {\'o}n caso base vs Algoritmo Secuencial}{35}{subsection.6.4.4}
-\contentsline {subsection}{\numberline {6.4.5}Comparaci\IeC {\'o}n Secuencial vs Paralelo}{35}{subsection.6.4.5}
-\contentsline {section}{\numberline {6.5}Resumen}{36}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{37}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusiones}{37}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabajo futuro}{37}{section.7.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{37}{section.7.2}
+\contentsline {subsection}{\numberline {6.2.4}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{35}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Descripci\IeC {\'o}n de escenarios}{36}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Caso base}{36}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Escenario Evolutivo }{36}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Escenario Alternativo}{36}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Resultados}{37}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Resultado simulaci\IeC {\'o}n caso base}{37}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Resultado Escenario Evolutivo}{37}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Resultado Escenario Alternativo}{37}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Comparaci\IeC {\'o}n caso base vs Algoritmo Secuencial}{37}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.5}Comparaci\IeC {\'o}n Secuencial vs Paralelo}{37}{subsection.6.4.5}
+\contentsline {section}{\numberline {6.5}Resumen}{37}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusiones}{39}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabajo futuro}{39}{section.7.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{section.7.2}
