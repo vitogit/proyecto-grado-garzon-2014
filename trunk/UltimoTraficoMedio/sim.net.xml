@@ -22,7 +22,7 @@
 </configuration>
 -->
 
-<net version="0.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+<net version="0.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
     <location netOffset="-569357.93,3857139.85" convBoundary="0.00,0.00,3044.75,6614.85" origBoundary="-56.241567,-34.854127,-56.208380,-34.794515" projParameter="+proj=utm +zone=21 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
 
