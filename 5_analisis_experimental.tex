@@ -44,7 +44,8 @@ Se busca la mejor configuración inicial de los parámetros realizando pruebas e
 	\item Probabilidad de cruzamiento
 \end{itemize}
 
-Para la realización de las pruebas se generan tres instancias con densidades de tráfico diferentes para realizar las pruebas de configuración. De esta forma el algoritmo queda generico y no sesgado a un caso en particular. Se representa la cantidad de ómnibus y otros vehículos que circulan por la zona de Garzon en un tiempo de una hora. El caso de tráfico medio representa una aproximación de los datos obtenidos in-situ.
+Para la realización de las pruebas se generan tres instancias con densidades de tráfico diferentes para realizar las pruebas de configuración. En este caso no se utilizan datos recabados de la realidad como  el trafico especifico de las calles y el recorrido de las lineas de omnibus. De esta forma el algoritmo queda genérico y no sesgado a un caso en particular.
+
 
 \begin{itemize}
 	\item Tráfico Bajo: 30 ómnibus y 500 vehículos	
@@ -52,14 +53,15 @@ Para la realización de las pruebas se generan tres instancias con densidades de
 	\item Tráfico Alto: 120 ómnibus y 2000 vehículos
 \end{itemize}
 
-En general se realizan 21 pruebas individuales en cada prueba para lograr mejor confiabilidad estadística, 7 para cada una de las densidades de tráfico.
+
+
+En general se realizan entre 9 y 21 pruebas individuales en cada prueba para lograr mejor confiabilidad estadística usando los tres instancias de trafico generado.
 
 En este proceso primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
-
 Al estas utilizando un cluster tenemos a nuestra disposición tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
 A saber en las comparaciones del tiempo de ejecución se refiere al tiempo secuencial que es más confiable al no tener el sesgo dado por la cantidad de procesadores utilizados en la evaluación.
-En general para las diversas pruebas se utilizaron entre 16 y 64 procesadores.
+En general para las diversas pruebas se utilizaron entre 4 y 32 procesadores.
 
 
 
@@ -139,30 +141,33 @@ Los valores elegidos fueron:
 Se realizan tres juegos de trafico diferente (bajo, medio y alto) y se realizan tres pruebas sobre cada uno, luego se ejecutan las nueve combinaciones de cruzamiento y mutación obteniendo el promedio del fitness para cada combinación con su desviación estándar para realizar la tabla.
 
 
-\begin{table}[h]
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Combinaciones de probabilidad de cruzamiento(pc) y de mutacion (pm)}
-	\label{table:parametro_mutacion_cruzamiento}
-	\centering
-	\begin{tabular}{ccrrcr}
-		\hline
-		{\textbf{Combinación(pc-pm)}} & & 
-
-		{\textbf{Fitness Promedio}} \\
-		\hline
-		0.5 - 0.01 & &  16.09$\pm$0.30\\
-		0.5 - 0.05 & &  15.60$\pm$0.17\\
-		0.5 - 0.1 & &  16.16$\pm$0.42\\
-		0.8 - 0.01 & &  16.04$\pm$0.55\\
-		0.8 - 0.05 & &  15.85$\pm$0.32\\
-		0.8 - 0.1 & &  16.08$\pm$0.34\\
-		1 - 0.01 & &  16.08$\pm$0.45\\
-		1 - 0.05 & &  15.82$\pm$0.34\\
-		1 - 0.1 & &  16.04$\pm$0.25\\
-		\hline
-	\end{tabular}
-\end{table}
-
+ 
+ \begin{table}[h]
+ 	\renewcommand{\arraystretch}{1.2}
+ 	\caption{Combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
+ 	\label{table:parametro_mutacion_cruzamiento}
+ 	\centering
+ 	\begin{tabular}{p{1cm}p{1cm}p{3.5cm} }
+ 		\hline
+ 		$p_C$& 
+ 		$p_M$ & 
+ 		Fitness promedio  $\pm$ desviación estándar\\ 
+ 		\hline
+ 		0.5 & 0.01  &  16.09$\pm$0.30\\
+ 		0.5 & 0.05 &  15.60$\pm$0.17\\
+ 		0.5 & 0.1  &  16.16$\pm$0.42\\
+ 		0.8 & 0.01  &  16.04$\pm$0.55\\
+ 		0.8 & 0.05  &  15.85$\pm$0.32\\
+ 		0.8 & 0.1  &  16.08$\pm$0.34\\
+ 		1 & 0.01 &  16.08$\pm$0.45\\
+ 		1 & 0.05 &  15.82$\pm$0.34\\
+ 		1 & 0.1 &  16.04$\pm$0.25\\
+ 		\hline
+ 	\end{tabular}
+ \end{table}
+ 
+ 
+ 
 
 \begin{figure}[h]
 	\centering
@@ -180,26 +185,30 @@ grupo 1 y u2 el del grupo 2)
 H0 : u1 = u2  
 H1: u1 <> u
 
-Si hacemos una comparación entre la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada por tanto existe evidencia estadística significativa de que las muestras son diferentes. Por tanto existe una mejora entre elegir una combinación u otra. 
+Si hacemos una comparación entre la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05) para la ejecución del algoritmo.
 
-
-Para elegir la mejor opción  se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios.
+Para comprobar si es la mejor opción  se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios.
 
 En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
 
-  
-
-
-
-
 
 \section{Descripción de escenarios}
-En todos los escenarios se utiliza los datos obtenidos del tráfico vehicular, configuración de semáforos y frecuencia de los ómnibus obtenidos. 
+En todos los escenarios se utiliza los datos del tráfico vehicular, configuración de semáforos y frecuencia de los ómnibus obtenidos. 
 
 \subsection{Caso base}
 Esto representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. 
 
 Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Y utilizando las frecuencias de acceso publico en el caso de los ómnibus.
+
+Se realizo un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la linea durante todo el día para una semana en particular. De esta forma se constato que para de las lineas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
+
+Esto permitió calibrar el caso base modificando aspectos de la simulación relacionados con los ómnibus haciéndolo mas preciso.
+
+Sobre este escenario se realizaran tres instancias de trafico : bajo, medio y alto.
+El caso medio representa los datos obtenidos, el bajo es aplicando una disminución del 50\% de vehículos y disminuyendo el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas bajando y subiendo del ómnibus. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
+El caso de alto trafico se realiza un aumento del 50 \% de los vehículos y se aumenta el tiempo de espera en la parada de los ómnibus.
+
+El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores 
 
 \subsection{Escenario Evolutivo }
 En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del tráfico.
@@ -220,16 +229,13 @@ Luego de analizar aquellos puntos que se entienden podrían atentar contra el bu
 Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario inicial, el escenario modificado, y la prueba en el cluster.
 
 \subsection{Resultado simulación caso base}
-El caso base se construye a partir del modelo de tráfico con los datos tomados in-situ por lo que muestra valores aproximados de la realidad actual.
 
-En este caso tenemos las siguentes metricas
+En la tabla se pueden ver las métricas obtenidas para los diferentes instancias de trafico simulado.
 
-Tiempo de viaje promedio de ida en un vehiculo
-Tiempo de viaje promedio de ida en omnibus por el corredor:
-Velocidad promedio de los vehículos:
-Velocidad promedio de los omnibus:
 
-Estas metricas seran las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
+
+
+Estas métricas serán las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
 
 \subsection{Resultado Escenario Evolutivo}
 \subsection{Resultado Escenario Alternativo}
