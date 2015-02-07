@@ -5,6 +5,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\IeC {\'o}n de fitness para distintas poblaciones\relax }}{34}{table.caption.33}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{34}{table.caption.34}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\IeC {\'o}n de fitness para distintas poblaciones\relax }}{34}{table.caption.34}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{34}{table.caption.35}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Resultados caso base, velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) \relax }}{37}{table.caption.37}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Resultados Algoritmo, velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) \relax }}{37}{table.caption.38}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Analisis de speedup \relax }}{38}{table.caption.39}
 \addvspace {10\p@ }
