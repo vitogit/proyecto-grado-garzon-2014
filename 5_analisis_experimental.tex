@@ -59,7 +59,7 @@ En general se realizan entre 9 y 21 pruebas individuales en cada prueba para log
 
 En este proceso primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
-Al estas utilizando un cluster tenemos a nuestra disposición tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
+Al estar utilizando un cluster tenemos a nuestra disposición tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
 A saber en las comparaciones del tiempo de ejecución se refiere al tiempo secuencial que es más confiable al no tener el sesgo dado por la cantidad de procesadores utilizados en la evaluación.
 En general para las diversas pruebas se utilizaron entre 4 y 32 procesadores.
 
@@ -138,7 +138,7 @@ Los valores elegidos fueron:
 	\item Probabilidad de  mutación (pm):  0.01, 0.05, 0.1
 \end{itemize}
 
-Se realizan tres juegos de trafico diferente (bajo, medio y alto) y se realizan tres pruebas sobre cada uno, luego se ejecutan las nueve combinaciones de cruzamiento y mutación obteniendo el promedio del fitness para cada combinación con su desviación estándar para realizar la tabla.
+Se realizan tres juegos de trafico diferente (bajo, medio y alto) y se realizan tres pruebas sobre cada uno, luego se ejecutan las nueve combinaciones de cruzamiento y mutación obteniendo el promedio del fitness para cada combinación con su desviación estándar.
 
 
  
@@ -180,10 +180,9 @@ Analizando la tabla y la gráfica se puede apreciar claramente que para una prob
 
 Se comprueba que todas las muestras siguen la distribución normal  para poder aplicar el test de Student.
 
-Siendo las hipótesis de la prueba ( u1 el promedio del 
-grupo 1 y u2 el del grupo 2)
-H0 : u1 = u2  
-H1: u1 <> u
+Siendo las hipótesis de la prueba ( u1 el promedio del  grupo 1 y u2 el del grupo 2) \newline
+H0: u1  = u2  \newline
+H1: u1 != u2 \newline
 
 Si hacemos una comparación entre la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05) para la ejecución del algoritmo.
 
@@ -208,13 +207,26 @@ Sobre este escenario se realizaran tres instancias de trafico : bajo, medio y al
 El caso medio representa los datos obtenidos, el bajo es aplicando una disminución del 50\% de vehículos y disminuyendo el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas bajando y subiendo del ómnibus. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
 El caso de alto trafico se realiza un aumento del 50 \% de los vehículos y se aumenta el tiempo de espera en la parada de los ómnibus.
 
-El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores 
+El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
+
+Alto Trafico: Cerca de 2800 vehiculos en la simulacion y 70 omnibuses. \newline
+Trafico Medio: Cerca de 2000 vehiculos y 70 omnbibueses \newline
+Trafico Bajo: Cerca de 1000 vehiculos y 70 omnibuses
+ 
 
 \subsection{Escenario Evolutivo }
 En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del tráfico.
 
+En este caso se realizan 21 ejecuciones independientes sobre cada instancia de trafico.
+
+
 \subsection{Escenario Alternativo}
-Luego de analizar aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
+
+Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se realiza solo a modo de ejemplo un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no afecta la situación actual de la realidad, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
+
+Analizando aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
+
+El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de las muchas alternativas que se pueden generar y probar con la simulación si se logran mejoras. Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
 
 -Limitar cruces a la izquierda
 
@@ -232,23 +244,68 @@ Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  par
 
 En la tabla se pueden ver las métricas obtenidas para los diferentes instancias de trafico simulado.
 
-
-
-
 Estas métricas serán las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
 
+ 
+ \begin{table}[h]
+ 	\renewcommand{\arraystretch}{1.2}
+ 	\caption{Resultados caso base, velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) }
+ 	\label{table:resultado_caso_base}
+ 	\centering
+ 	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm} }
+ 		\hline
+ 		&
+ 		$vbp(km/h)$& 
+ 		$vvp(km/h)$ & 
+ 		Fitness \\ 
+ 		\hline
+ 		Trafico Bajo & 15.89  & 32.45& 13.42\\
+ 		Trafico Medio & 14.59  & 28.81& 12.05\\
+ 		Trafico Alto & 14.31  & 26.36& 11.30\\
+
+ 		\hline
+ 	\end{tabular}
+ \end{table}
+
+
 \subsection{Resultado Escenario Evolutivo}
+
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Resultados Algoritmo, velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) }
+	\label{table:resultado_caso_algoritmo}
+	\centering
+	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+		\hline
+		&
+		$vbp(km/h)$& 
+		$vvp(km/h)$ & 
+		Fitness &
+		Mejora(\%)
+		\\ 
+		\hline
+		Trafico Bajo & 17.92  & 34.30& 14.50$\pm$0.14 & 8\\
+		Trafico Medio & 16.95  & 33.29& 13.95$\pm$0.15 & 15.70\\
+		Trafico Alto & 16.51  & 32.90& 13.72$\pm$0.17 & 21.40\\
+		
+		\hline
+	\end{tabular}
+\end{table}
+
+SE aplica el criterio de significancia estadistaica para validar los resultados. Para cada uno de los casos se comprueba de que existe evidencia estadistica que se mejoran los resultados al utilizar el algoritmo.
+
+(agregar formular)
+
+Esto significa que un viaje en omnibus del principio al fin del corredor (6.5km) duraba 27min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situacion de trafico alto. En el caso de un viaje en auto la duracion era de 14.8min y luego del algoritmo 11.8min.
+
+Al analizar la tabla se ve que los resultados del algoritmo para trafico alto son aun mejores que el trafico bajo en el caso base. 
+
+
+
+
+
 \subsection{Resultado Escenario Alternativo}
-
-\subsection{Comparación caso base vs Algoritmo Secuencial}
-Análisis comparativo : test paramétrico
-H1)  los  resultados  de  mejor  fitness  tienen  una distribución normal.
-H2)Existe  una  diferencia  significativa  entre  los  de conjuntos  de  muestras  obtenidos  por  el  algoritmo  y  la realidad.
-
-El  test  de  normalidad  de  Shapiro-Wilks  resultó  ser verdadero  en  ambos  casos  con  un  alto  porcentaje  de
-confiabilidad
-
-
 
 \subsection{Comparación Secuencial vs  Paralelo}
 
@@ -263,6 +320,28 @@ La escabilidad de un algoritmo define su capacidad para aumentar su rendimiento 
 
 En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
 
+
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Analisis de speedup }
+	\label{table:analisis_speedup}
+	\centering
+	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm} }
+		\hline
+
+		Procesadores& 
+		Tiempo(m) & 
+		Speedup 
+		\\ 
+		\hline
+		1  & 11399 & 1\\
+		4  & 1936 & 5.8 \\
+		8  & 1491 & 7.6 \\
+		16  & 803 & 14.1 \\
+		\hline
+	\end{tabular}
+\end{table}
 GRAFICA DE ESCABILIDAD
 
 El comando "time" ejecutado sobre nuestro algoritmo nos brinda el tiempo real de ejecución, así como el tiempo total sumado de todos los procesadores. Por tanto podemos calcular el tiempo del algoritmo secuencial.

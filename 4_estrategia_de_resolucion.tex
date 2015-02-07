@@ -136,14 +136,19 @@ además la fase inicial se elige aleatoriamente entre la cantidad de fases del c
 
 \subsection{Función fitness}
 La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
-Al ser una función multiobjetivo los datos que extraemos son la velocidad promedio de los ómnibus y la velocidad promedio del resto de los vehículos.
+Al ser una función multiobjetivo los datos que extraemos son la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv).
 
 Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la función.
 
-f = x.vb + y vv
 
 
-\subsection{Operador de Cruzamiento}
+        \begin{equation}
+        \label{eq:funcion_fitness}
+        f = x.vpb + y.vpv
+        \end{equation}
+
+\subsection{Operadores}
+\subsubsection{Operador de Cruzamiento}
 Se  utilizará cruzamiento  de  un  punto,  implementado
 específicamente  para  el  problema,  seleccionando  el  intervalo
 entre 2 cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento esta propiedad lo mantendrá.
@@ -164,4 +169,3 @@ probabilidad dada.
 
 \end{itemize}
 
-\section{Resumen}
