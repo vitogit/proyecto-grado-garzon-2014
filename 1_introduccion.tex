@@ -3,7 +3,7 @@
 
 En esta sección se pretende introducir al lector en el contexto general donde se desarrolla este trabajo así como los objetivos buscados.
 
-\subsection{Motivación y contexto}
+\section{Motivación y contexto}
 
 Los algoritmos evolutivos han demostrado su utilidad en problemas complejos y particularmente uno de ellos es la sincronización de semáforos. Se busca desarrollar un algoritmo que logre resolver este problema con buenas métricas.
 Por la flexibilidad inherente de este algoritmo es que no está destinado a resolver el problema en una zona en particular sino que se podría aplicar en forma general.
@@ -16,7 +16,7 @@ Por tanto al probar que el algoritmo funciona en esta zona tan compleja se puede
 
 \newpage
 
-\subsection{Objetivos}
+\section{Objetivos}
 
 Estos son los objetivos básicos que se plantearon al inicio del  proyecto.
 
@@ -31,7 +31,7 @@ Estos son los objetivos básicos que se plantearon al inicio del  proyecto.
 \end{itemize}
 
  
-\subsection{Enfoque}
+\section{Enfoque}
 
 Desde un primero momento se intento dotar al proyecto de una buena aproximación de la realidad, en tal sentido se realizaron reuniones con el Ing. Juan Pablo Berta del Servicio de Ingeniería de Tránsito de la Intendencia de Montevideo en Agosto del  2014 y con el Ing. Daniel Muniz del departamento de Informática de la Intendencia en Setiembre de 2014 para conocer la situación del trafico capitalino, aprender de su experiencia y obtener datos que nos fueran útiles para el proyecto.
 
@@ -42,7 +42,7 @@ Se creará un programa que implemente un algoritmo evolutivo multiobjetivo que u
 
 Dada la complejidad del problema el programa sera paralelo y se utilizara la plataforma Cluster fing para poder aumentar el tiempo real de procesamiento. además se intentara luego de estudiado los resultados buscar escenarios alternativos para mejorar los tiempos de viaje en el Corredor.
 
-\subsection{Limitaciones y alcance}
+\section{Limitaciones y alcance}
 
 La zona modelada comprende todo el tramo de el Corredor Garzón y dos caminos paralelos a ambos lados que dada la configuración de las calles las cuales corren en diagonal fue un proceso complejo.
 El revelamiento de datos hecho in-situ fue realizado para un número determinado de calles ( se evalúa Garzón y 5 cruces representativos) para tener una aproximación útil no pretende ser un estudio detallado sobre el trafico en la zona.
@@ -50,15 +50,21 @@ El revelamiento de datos hecho in-situ fue realizado para un número determinado
 Como lo que se pretende modelar es el tráfico vehicular y transporte publico por tanto la simulación de peatones no están incluidos.
 
 
-\subsection{Aportes}
+\section{Aportes}
 
-Este proyecto se encuentra publicado en la pagina web:...
+\begin{itemize}
+	\item Se desarrollo el sitio web (??) donde los interesados podrán acceder para encontrar información sobre el proyecto y los resultados.
+	\item Se realizó un \emph{paper} en idioma ingles de 10 paginas con el objetivo de presentarlo en conferencias internacionales.
+	\item El proyecto fue presentado en Ingeniera demuestra 2014, siendo bien recibido por el publico. Constatando de primera mano que la problemática es real y llegando a la conclusión que los Ingenieros tienen las herramientas necesarias para solucionar problemas que afectan directamente a la sociedad.
 
-además se desarrollo un informe resumido que fue presentado en... 
+\end{itemize}
 
-Cabe destacar que este proyecto se presentó en Ingeniera demuestra 2014, siendo bien recibido por el publico. Constatando de primera mano que la problemática es real y llegando a la conclusión que los Ingenieros tienen las herramientas necesarias para solucionar problemas que afectan directamente a la sociedad.
 
-\subsection{Estructura del documento}
+
+
+
+
+\section{Estructura del documento}
 En el capítulo 2 se hace un repaso sobre que es un algoritmo genético y los conceptos relacionados.
 El capitulo 3 brinda el marco teórico donde se da una introducción al problema del tráfico y el corredor Garzón particularmente, además se presenta el simulador de trafico y otras herramientas utilizadas.
 En el capitulo 4 se muestran los trabajo relacionados enfocando en algoritmos genéticos para la sincronización de semáforos.

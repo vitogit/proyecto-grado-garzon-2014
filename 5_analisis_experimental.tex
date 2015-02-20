@@ -4,13 +4,8 @@ En esta sección se presenta la descripción de los escenarios , la plataforma d
 Este se divide en dos etapas, primero se realiza la configuración paramétrica para encontrar la mejor ejecución del algoritmo. Luego se realizan las pruebas donde se comparan los resultados entre los distintos escenarios.
 
 
-
-
-
-
 \section{Desarrollo y Plataforma de ejecución }
-Los algoritmos fueron desarrollados usando la librería Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
-
+Los algoritmos fueron desarrollados usando la biblioteca Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
 Los escenarios fueron ejecutados en el cluster fing.
 
@@ -64,6 +59,10 @@ A saber en las comparaciones del tiempo de ejecución se refiere al tiempo secue
 En general para las diversas pruebas se utilizaron entre 4 y 32 procesadores.
 
 
+
+\subsection{Pesos de la función fitness}
+
+Para las siguientes pruebas la función fitness (\ref{eq:funcion_fitness}) tendrá los pesos x = y = 1. Esto da pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. Mas adelante se realizaran experimentos con otras variantes de los pesos.
 
 
 \subsection{Tiempo de simulación}
@@ -191,6 +190,7 @@ Para comprobar si es la mejor opción  se toman las dos combinaciones con el mej
 En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
 
 
+
 \section{Descripción de escenarios}
 En todos los escenarios se utiliza los datos del tráfico vehicular, configuración de semáforos y frecuencia de los ómnibus obtenidos. 
 
@@ -238,14 +238,11 @@ El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de l
 
 
 \section{Resultados}
-Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario inicial, el escenario modificado, y la prueba en el cluster.
+Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario base, el escenario alternativo, y la prueba en el cluster.
 
 \subsection{Resultado simulación caso base}
 
 En la tabla se pueden ver las métricas obtenidas para los diferentes instancias de trafico simulado.
-
-Estas métricas serán las que utilizaremos para comparar con los resultados luego de aplicar el algoritmo.
-
  
  \begin{table}[h]
  	\renewcommand{\arraystretch}{1.2}
@@ -293,11 +290,22 @@ Estas métricas serán las que utilizaremos para comparar con los resultados lue
 	\end{tabular}
 \end{table}
 
-SE aplica el criterio de significancia estadistaica para validar los resultados. Para cada uno de los casos se comprueba de que existe evidencia estadistica que se mejoran los resultados al utilizar el algoritmo.
+Se realizaron 21 ejecuciones independientes para cada tipo de trafico comprobando que siguieran una distribución normal.
 
-(agregar formular)
+Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados, que dice que el
+algoritmo A es mejor que el algoritmo B si los resultados de A y B cumplen:
 
-Esto significa que un viaje en omnibus del principio al fin del corredor (6.5km) duraba 27min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situacion de trafico alto. En el caso de un viaje en auto la duracion era de 14.8min y luego del algoritmo 11.8min.
+
+\begin{equation}
+\label{eq:funcion_significancia}
+\left |f_{avg}(A) - f_{avg}(B)  \right | > max(std(f_A),std(f_B))
+\end{equation}
+
+En este caso A representa el algoritmo y B el caso base. Esto indica que la diferencia del resultado promedio del caso base restado al resultado del caso base debe ser mayor a la máxima desviación.
+Esto se cumple para todos los casos, por lo que podemos afirmar que existe evidencia estadística para decir que los resultados del algoritmo son mejores al del caso base.
+
+
+Esto significa que un viaje en ómnibus del principio al fin del corredor (6.5km) duraba 27min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situación de trafico alto. En el caso de un viaje en auto la duración era de 14.8min y luego del algoritmo 11.8min.
 
 Al analizar la tabla se ve que los resultados del algoritmo para trafico alto son aun mejores que el trafico bajo en el caso base. 
 
@@ -349,6 +357,36 @@ El comando "time" ejecutado sobre nuestro algoritmo nos brinda el tiempo real de
 En el caso de 8 procesadores, al tener una población de 32 se distribuirán 4 individuos por procesador.
 
 Por tanto cuando tenemos 32 es donde se logra la mejor distribución al no existir "overhead" en la creación y terminación de los hilos.
+
+
+\subsection{Variación de la función de fitness}
+
+La función fitness (\ref{eq:funcion_fitness}) utilizada para las pruebas tenia pesos x = y = 1 lo que representaba que se le daba un balance equitativo a ómnibus y vehículos.
+
+Por un cruce de Garzón pasan cada hora:
+70 ómnibus , si aproximamos con 23 personas= 1610 personas por hora
+800 autos, si aproximamos  2 personas por vehículo nos da 1600 personas por hora.
+Una cantidad similar  pasan por el cruce en ambos medios de transporte por lo que no existe una tendencia a favor de una sobre la otra, se podría aproximar que 50\% eligen el ómnibus y 50\% el auto.
+
+
+
+Estos pesos pueden ser cambiados en función de lo que se necesite por lo que vamos a realizar pruebas con dos funciones de fitness diferentes sobre el escenario con trafico medio y comparar los valores de velocidades medias para cada tipo de vehículo.
+
+
+\subsubsection{Prioridad ómnibus}
+El primer caso se le dará mas prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice mas el transporte colectivo (ref??). Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
+
+Por tanto vamos a experimentar con una nueva función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
+
+(TABLAS Y COMPARACIÓN)
+
+\subsubsection{Prioridad otros vehículos}
+
+En este caso, le damos 70\% del peso a los vehiculos y 30\% a los omnibus.
+
+(RESULTADOS?)
+
+Se podrian seguir variando los pesos hasta lograr una misma velocidad para omnibus y otrosvehiculos??
 
 
 \section{Resumen}
