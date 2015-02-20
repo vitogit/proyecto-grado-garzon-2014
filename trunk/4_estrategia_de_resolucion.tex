@@ -2,7 +2,7 @@
 
 En este capitulo se presenta el algoritmo desarrollado, su estructura, parámetros y configuración. 
 
-Se comienza explicando la librería Malva utilizada para el desarrollo del algoritmo y la arquitectura especifica que se realizo para resolver el problema.
+Se comienza explicando la biblioteca Malva utilizada para el desarrollo del algoritmo y la arquitectura especifica que se realizo para resolver el problema.
 
 \section{Por que usar algoritmo genéticos?}
 El problema de sincronización de semáforos es NP-Hard y 
@@ -37,7 +37,7 @@ Luego los archivos son procesados por el algoritmo para extraer los datos útile
 
 
 
-\section{Librería Malva}
+\section{Biblioteca Malva}
 
 \citep{Malva} surge como una variante del proyecto \citep{Mallba}. Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
@@ -46,10 +46,40 @@ Los esqueletos se basan en separar dos conceptos: El problema concreto que se qu
 Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citep{CHC}.
 
 
+
+\section{Herramientas}
+Aquí se muestra información útil sobre las herramientas utilizadas.
+
+\subsection{Open Street Map:} 
+Es un proyecto en donde una comunidad crea mapas libres y editables \citep{OSM}. Cuenta con cerca de 1.8 millones de usuarios  y  más de 20.000 que editaron algo en el ultimo mes \citep{OSMSTATS} por lo que es muy activa. Se utilizan datos de GPS móviles, fotografías satelitales y otras fuentes libres para crear los mapas y editarlos. 
+
+\subsection{SUMO ( Simulation of Urban MObility)}
+
+Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. además incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico, construcción de mapas, etc. 
+
+
+\subsection{Por que usar SUMO? }
+otras alternativas? Revisar estado del arte?
+Sumo es gratis
+Nos permite utilizarlo sin interfaz gráfica por linea de comando lo que aumenta sensiblemente la velocidad ed ejecución, y  nos permite visualizar la interfaz gráfica una vez completada la optimización para ver exactamente como se comporta el sistema en la simulación.
+
+Sumo presenta varias salidas con información interesante: \citep{SUMOOUT} 
+La salida obtenemos el tiempo de simulación, la cantidad de emitidos y la cantidad de completados. Buscamos que sea > 80%
+Permite la ejecución tanto por linea de comando como una interfaz gráfica para visualizar
+
+\subsection{NetConvert}
+Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en archivo XML de red que SUMO reconoce. Este programa viene integrado con SUMO
+
+\subsection{DUaRouter}
+Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
+
+\subsection{Traffic Modeler}
+Herramienta para la generación de tráfico de manera visual y luego transformarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
+
 \newpage
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético proviso por la librería  Malva  llamado NewGA al cual se le realizan algunas modificaciones para que se ejecute en paralelo.
+Se utiliza el algoritmo genético proviso por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para que se ejecute en paralelo.
 
 
 Resumen de las características:
@@ -138,7 +168,7 @@ además la fase inicial se elige aleatoriamente entre la cantidad de fases del c
 La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
 Al ser una función multiobjetivo los datos que extraemos son la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv).
 
-Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la función.
+Esta es la formula de fitness donde x e y indica el peso que le podemos especificar a la función. 
 
 
 
@@ -146,6 +176,7 @@ Esta es la formula de fitness donde x e y indica el peso que le podemos especifi
         \label{eq:funcion_fitness}
         f = x.vpb + y.vpv
         \end{equation}
+        
 
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
