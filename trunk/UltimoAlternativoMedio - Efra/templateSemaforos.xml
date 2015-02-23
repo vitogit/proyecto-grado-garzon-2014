@@ -10,7 +10,7 @@
 
     </tlLogic>
 <!-- ENTRADA a garzon -->
-    <tlLogic id="cluster_2152065420_2152065565" type="static" programID="1" phaseno="0">
+    <tlLogic id="cluster_2152065420_2152065565" type="static" programID="1" offset="0">
         <phase duration="31" state="GGGrrrrr"/>
         <phase duration="3" state="yyyrrrrr"/>
         <phase duration="16" state="rrrggGGG"/>
