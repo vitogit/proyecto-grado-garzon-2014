@@ -9,10 +9,12 @@
 \end{center}
 ~\\[0.2cm]
 \textbf{\large 
-El proyecto propone el estudio de la sincronización de semáforos como problema de optimización multiobjetivo, y el diseño e implementación de un algoritmo evolutivo para resolver el problema con alta eficacia numérica y desempeño computacional en un escenario real utilizando simulaciones del tráfico. \newline \newline
-Se toma como aplicación la sincronización de semáforos del “Corredor de Garzón” (Montevideo, Uruguay) dado que la cantidad de cruces, calles, tráfico y cantidad de semáforos lo hace un problema interesante desde el punto de vista de su complejidad.además es real y admitido por las autoridades responsables los problemas en este sentido por lo que todavía hay espacio para la mejora de los tiempos promedio de los viajes.  \newline \newline
-El problema de sincronización de semáforos es NP-difícil y no existe (hasta el momento) un método determinístico que lo resuelva, se buscará mediante un algoritmo evolutivo llegar a una configuración aceptable de los semáforos minimizando los tiempos de espera de los vehículos y mejorando de esta manera la calidad del tráfico.
-Buscamos demostrar que estas técnicas son aplicables a escenarios reales y que deberían considerarse en el abanico de posibilidades disponibles. } 	
+El proyecto propone el estudio de la sincronización de semáforos como problema de optimización multiobjetivo, y el diseño e implementación de un algoritmo evolutivo para resolverlo con alta eficacia numérica y desempeño computacional. \newline \newline
+Se toma como aplicación la sincronización de semáforos del “Corredor de Garzón” (Montevideo, Uruguay) dado que la cantidad de cruces, calles, tráfico y cantidad de semáforos lo hace un problema interesante desde el punto de vista de su complejidad. Además es admitido por las autoridades responsables los problemas en este sentido por lo que todavía hay espacio para la mejora de los tiempos promedio de los viajes.  \newline \newline
+El problema de sincronización de semáforos es NP-difícil y no existe (hasta el momento) un método determinístico que lo resuelva, se buscará mediante un algoritmo evolutivo llegar a una configuración aceptable de los semáforos maximizando la velocidad media tanto de ómnibuses como de otros vehículos.
+El enfoque seguido es la obtención de datos reales relacionados a la red vial, trafico y configuración de semáforos y utilizar el simulador de trafico SUMO para generar los datos requeridos por el algoritmo.
+El análisis experimental consiste en comparar los resultados del algoritmo con los datos obtenidos in-situ. Los resultados muestran que el algoritmo logra  una mejora de hasta 21 \% en la velocidad media de los vehículos.
+ } 	
 	~\\[1.0cm]
     \textbf{\large Palabras clave: Algoritmo Evolutivo, Sincronizacion semáforos, escenario real, Cluster}
 

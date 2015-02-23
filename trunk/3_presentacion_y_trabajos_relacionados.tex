@@ -16,9 +16,9 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		Este trabajo se basa en tres puntos: El uso de algoritmos genéticos para la optimización , simulación de autómatas celulares para la función de evaluación del tráfico, y un cluster para realizar ejecuciones en paralelo.
 		El modelo es pequeño con 5 calles de 2 vías que se intersectan.
 		La codificación del cromosoma es una tira de números enteros, donde se codifica para cada intersección cual calle está habilitada en cada ciclo.
-		Usa una estrategia de selección elitista donde los 2 mejores se clonan a la siguiente generación, y el resto es generado por cruzamiento de 2 puntos.
+		Usa una estrategia de selección elitista donde los dos mejores se clonan a la siguiente generación, y el resto es generado por cruzamiento de dos puntos.
 		
-		Para la evaluación se usa el tiempo medio, esto es desde el momento que un vehículo entra en la red hasta que sale. Se utilizo un cluster y programación paralela utilizando MPI2[] con una estrategia master-slave, el master envía los cromosomas a los esclavos que evalúan y devuelven el resultado y luego el master se encarga de generar la siguiente población.
+		Para la evaluación se usa el tiempo medio, esto es desde el momento que un vehículo entra en la red hasta que sale. Se utilizo un cluster y programación paralela con una estrategia master-slave, el master envía los cromosomas a los esclavos que evalúan y devuelven el resultado y luego el master se encarga de generar la siguiente población.
 		
 		Se compararon los resultados con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados
 		

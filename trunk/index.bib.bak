@@ -90,12 +90,13 @@
   Timestamp                = {2014.12.23}
 }
 
-@Misc{PlanMovilidad,
+@Misc{PlanMovilidad2,
   Title                    = {Plan de Movilidad Urbana},
 
   Author                   = {IMM},
   HowPublished             = {\url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf}},
   Month                    = {Febrero},
+  Note                     = {Disponible online, consultado febrero 2015},
   Year                     = {2010},
 
   Timestamp                = {2014.12.27}
@@ -338,6 +339,13 @@ Discreta: Ejemplos de Aplicacion},
   Timestamp                = {2014.11.22}
 }
 
+@Misc{ConteoTrafico,
+  Title                    = {Traffic volume counts},
+  HowPublished             = {\url{http://www.ctre.iastate.edu/pubs/traffichandbook/3trafficcounts.pdf}},
+
+  Timestamp                = {2015.02.07}
+}
+
 @Misc{CORSIM,
   Title                    = {CORSIM},
   HowPublished             = {\url{http://www-mctrans.ce.ufl.edu/featured/TSIS/Version5/corsim.htm}},
@@ -357,9 +365,5 @@ Discreta: Ejemplos de Aplicacion},
   HowPublished             = {\url{http://mctrans.ce.ufl.edu/mct/?page_id=943}},
 
   Timestamp                = {2014.12.31}
-}
-
-@Misc{,
-  Timestamp                = {2015.02.07}
 }
 

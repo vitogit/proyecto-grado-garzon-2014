@@ -1,16 +1,144 @@
 \chapter{Estrategia de resolución}
 
-En este capitulo se presenta el algoritmo desarrollado, su estructura, parámetros y configuración. 
+En este capitulo se explica el proceso llevado a cabo para desarrollar la solucion. Se presenta el modelado basico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulacion y el algoritmo genetico utilizado con su estructura, parámetros y configuración. 
 
-Se comienza explicando la biblioteca Malva utilizada para el desarrollo del algoritmo y la arquitectura especifica que se realizo para resolver el problema.
+Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquitectura desarrollada.
 
-\section{Por que usar algoritmo genéticos?}
-El problema de sincronización de semáforos es NP-Hard y 
-no existe (hasta el momento) un método determinístico que lo
-resuelva, se buscará mediante algoritmos evolutivos llegar a
-una configuración aceptable minimizando los tiempos de
-espera de los automóviles, mejorando así la configuración
-actual de los semáforos del corredor de Garzón.
+
+
+\section{Modelado del problema }
+
+Para solucionar el problema se usaran simulaciones de la realidad, por tanto es importante contar con un modelo detallado y fidedigno.
+A continuacion se detallan los puntos destacados del modelo.
+
+
+
+
+\subsection{Representaciones}
+
+\subsubsection{Red de calles}
+La red de calles se representa como un grafo dirigido en un archivo xml con extensión .net.xml . Allí se especifican los nodos, y vértices así como sus atributos. También se representan los semáforos. Esto  se genera utilizando una herramienta  para convertir un mapa al formato que SUMO utiliza.
+
+\subsubsection{Representación tráfico}
+En este caso también se utiliza un archivo xml donde se definen las rutas y los recorridos. Un recorrido representa el movimiento de un vehículo de un punto inicial hacia un punto final (El recorrido se hacen en tiempo de ejecución utilizando el camino más corto basado en el tráfico). 
+
+
+\subsubsection{Representación del tiempo}
+El tiempo se representa como una serie de pasos discretos, cada uno durando un segundo. Este valor se puede modificar aunque es recomendado dejarlo así para que sea consistente.
+
+
+\subsubsection{Tipos de vehículos}
+Se pueden crear diferentes tipos de vehículos especificando propiedades como largo, velocidad máxima,  aceleración, color, etc. También cuenta con vehículos por defecto como buses, camiones o automóviles.
+
+\subsection{Configuración de la simulación}
+
+En esta sección se realiza un resumen sobre los pasos realizados para tener los elementos necesarios para realizar la simulación.
+
+\subsubsection{Diseño del mapa}
+
+
+El mapa base de la zona proviene de Open Street Map \citep{OSM}, luego se cotejó su exactitud con Google Maps y Bing Maps.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/osm_garzon}
+	\caption{Tramo del mapa de Garzon de OSM}
+	\label{fig:osm_garzon}
+\end{figure}
+
+
+Se utilizó la herramienta netconvert para convertirlo al formato que SUMO acepta. 
+Para esto se realizaron varios ajustes editando los archivos xml para corregir errores en las calles, cruces y conexiones para que fuese fiel a la realidad y mantuviera la compatibilidad con SUMO.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figures/mapa_sumo}
+	\caption{Mapa cargado en SUMO luego del modelado y procesamiento}
+	\label{fig:mapa_sumo}
+\end{figure}
+
+
+
+\section{Trabajo de campo}
+Al no contar con datos públicos sobre la densidad de trafico en la zona, realizamos un revelamiento in-situ con las siguientes características.
+
+Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehiculos circulantes.
+Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia.
+
+Se siguen las recomendaciones de los textos consultados al respecto \citep{ConteoTrafico}. Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
+Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla electrónica donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. También discriminamos entre vehículos y ómnibus que recorren Garzón.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/conteo_hoja}
+	\caption{Ejemplo de planilla electrónica para el conteo manual en Camino Ariel}
+	\label{fig:conteo_hoja}
+\end{figure}
+
+(TABLA CON RESULTADOS DE TRAFICO)
+
+Además se realizaron recorridas de punta a punta del corredor a una velocidad constante para verificar los tiempos obtenidos en la simulación para este recorrido.
+
+Para obtener la configuración de los semáforos se realizo un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
+
+
+\newpage
+\subsubsection{Creación del modelo del tráfico}
+Esta es la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
+
+Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente
+
+JTR (junction turning ratio) : basados en probabilidades en los cruces  es decir cuando un vehículo llega a un cruce tiene cierta probabilidad de seguir o doblar.
+
+Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
+
+
+Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
+
+Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
+
+
+
+Con los datos relevados se creo un modelo vehicular de la ciudad [poner el mapa] que brinda una aproximación sobre la densidad de tráfico y la velocidad promedio de circulación.
+
+Se utilizó el programa Traffic Modeler \citep{TrafficModeler} con lo que se logra generar modelos de tráfico complejo de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Figures/areaflow1}
+	\caption{Mapa del TrafficModeler con las áreas de tráfico. Círculos del mismo color indican tráfico especificado entre esas áreas}
+	\label{fig:areaflow1}
+\end{figure}
+
+
+Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos. \citep{OBS01} 
+En este caso se agregó la información sobre la configuración de los semáforos de los datos relevados.
+
+Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima.
+
+Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municpal de Montevideo \citep{IMM}
+Estos incluyen las lineas urbanas  'G', '409' ,'2', 'd5'  y  '148' . 
+
+Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
+
+La ubicación y lineas de cada parada se obtuvo de \citep{sigMontevideo}, existen 14 paradas para lineas urbanas por el corredor para el recorrido de ida y las mismas para la vuelta.
+Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas.
+
+También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora mas. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
+
+Para establecer la velocidad media de los ómnibus se realizo un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingenieria de Transito.
+Estos datos cuentan con la posicion GPS, la velocidad instantanea y la referencia al omnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/sim1}
+	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzon.}
+	\label{fig:sim1}
+\end{figure}
 
 
 \section{Arquitectura de la solución}

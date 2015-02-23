@@ -12,8 +12,12 @@ Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry Di
 while executing---line 1347 of file abbrvnat.bst
 Warning--to sort, need author or key in TRANSYT-7F
 Warning--to sort, need author or key in CORSIM
+Warning--to sort, need author or key in ConteoTrafico
+Warning--to sort, need author or key in sigMontevideo
 Warning--empty year in CORSIM
+Warning--empty year in ConteoTrafico
 Warning--empty year in TRANSYT-7F
+Warning--empty year in sigMontevideo
 Warning--empty year in CHC
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
 while executing---line 1429 of file abbrvnat.bst
