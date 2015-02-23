@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,9 +10,18 @@ Corsim.
 \newblock
   \url{http://www-mctrans.ce.ufl.edu/featured/TSIS/Version5/corsim.htm}.
 
+\bibitem[Con()]{ConteoTrafico}
+Traffic volume counts.
+\newblock
+  \url{http://www.ctre.iastate.edu/pubs/traffichandbook/3trafficcounts.pdf}.
+
 \bibitem[TRA()]{TRANSYT-7F}
 Transyt-7f.
 \newblock \url{http://mctrans.ce.ufl.edu/mct/?page_id=943}.
+
+\bibitem[sig()]{sigMontevideo}
+Sistema de información geográfica montevideo.
+\newblock \url{http://sig.montevideo.gub.uy}.
 
 \bibitem[Autoanuario(2014)]{Autoanuario2014}
 Autoanuario.
@@ -46,6 +55,20 @@ DiFebbraro, Giglio, and Sacco.
 \newblock \emph{Proc. IEEE 5th Int. Conf. Intell. Transportation Syst.}, pages
   773--778, 2002.
 
+\bibitem[ElPais(2013)]{olivera2013}
+ElPais.
+\newblock Garzón: Olivera admitió errores.
+\newblock
+  \url{http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html
+  }, 2013.
+
+\bibitem[ElPais(2015)]{olivera2015}
+ElPais.
+\newblock Ana olivera: "no hay justificación, nos equivocamos con garzón".
+\newblock
+  \url{http://www.elpais.com.uy/informacion/ana-olivera-no-justificacion-corredor.html},
+  2015.
+
 \bibitem[G.~Y.~Lim and Hong(2001)]{Lim2001}
 J.~J.~K. G.~Y.~Lim and Y.~S. Hong.
 \newblock The optimization of traffic signal light using artificial
@@ -56,6 +79,14 @@ J.~J.~K. G.~Y.~Lim and Y.~S. Hong.
 IMM.
 \newblock Intendencia municipal de montevideo.
 \newblock \url{http://www.montevideo.gub.uy}.
+
+\bibitem[IMM(2010)]{PlanMovilidad}
+IMM.
+\newblock Plan de movilidad urbana.
+\newblock
+  \url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf},
+  Febrero 2010.
+\newblock Disponible online, consultado febrero 2015.
 
 \bibitem[INE(2014)]{INE2014}
 INE.

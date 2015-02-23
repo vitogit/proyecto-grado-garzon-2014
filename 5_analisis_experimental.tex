@@ -265,7 +265,7 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
  \end{table}
 
 
-\subsection{Resultado Escenario Evolutivo}
+\subsection{Aplicación del algoritmo}
 
 
 \begin{table}[h]
@@ -314,6 +314,79 @@ Al analizar la tabla se ve que los resultados del algoritmo para trafico alto so
 
 
 \subsection{Resultado Escenario Alternativo}
+Los cambios propuestos incluyen eliminacion de paradas, eliminacion de pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a garzon o nuevas reglas en los cruces como existen en otros paises.
+
+
+
+
+\subsubsection{Eliminacion de paradas}
+Se consideraron dos paradas a elininar que cumplieran con algunas caracteristicas, no fueran cercana a una calle principal y que existiera otra parada cercana. Por lo que la eliminacion de la parada no afecte en demasia a la gente en un translado mayor.
+En este caso se selecciono la parada en la calle Ariel y Casavalle.
+
+
+
+\subsubsection{Eliminacion de pasajes peatonanesl}
+Hay tres pasajes peatonales en el corredor con semaforos que detienen el trafico, al eliminarlos se aumenta la velocidad media. Otra opcion en vez de eliminarlos es implementar el pasaje peatonal por encima del corredor por que se eliminaria el semaforo.
+
+\subsubsection{Alternar paradas}
+
+La linea G es la que recorre a garzon de punta a punta, si se dividen los omnibus en una mitad que se detenga en las paradas pares y la otra mitad en las impares se reduce el numero de paradas que hace un omnibus, pero no se resiente en demasia el servicio ya que se cubren las mismas paradas, y la disminucion de la frecuencia en una parada se contrarrestra con el aumento de velocidad.
+
+Esto se justifica pues uno de los problemas del omnibus es su baja aceleracion por lo que cada vez que frena en un semaforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un omnibus tiene que hacer se mejora la velocidad promedio.
+este cambio es el que mas auementa la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
+
+
+
+En la siguiente tabla se detallan los cambios realizado con la mejora asociada, comparando los valores para el trafico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el trafico bajo y alto.
+
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Valores del escenario alternativo con su velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) comparando el fitness para el trafico medio }
+	\label{table:resultado_alternativo}
+	\centering
+	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+		\hline
+		&
+		$vbp(km/h)$& 
+		$vvp(km/h)$ & 
+		Fitness &
+		Mejora(\%)
+		\\ 
+		\hline
+		Base & 14.59  & 28.81& 12.05 & -\\
+		Eliminar Paradas & 15.44  & 29.03& 12.35 & 2.4\\
+		Eliminar Peatonales  & 16.02  & 29.32& 12.59 & 4.4\\
+		Paradas alternadas  & 19.17  & 28.88& 13.34 & 10.7\\		
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Mejoras obtenidas en el escenario alternativo para distintos tráficos }
+	\label{table:mejoras_trafico_alternativo}
+	\centering
+	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+		\hline
+		&
+		$vbp(km/h)$& 
+		$vvp(km/h)$ & 
+		Fitness &
+		Mejora(\%)
+		\\ 
+		\hline
+
+		Trafico Bajo & 20.98  & 32.89 & 14.96 & 11.4\\
+		Trafico Medio  & 19.17  & 28.88& 13.34 & 10.7\\	
+		Trafico Alto  & 19.99  & 27.06& 13.07 & 15.6\\		
+		\hline
+	\end{tabular}
+\end{table}
+
 
 \subsection{Comparación Secuencial vs  Paralelo}
 
@@ -374,11 +447,11 @@ Estos pesos pueden ser cambiados en función de lo que se necesite por lo que va
 
 
 \subsubsection{Prioridad ómnibus}
-El primer caso se le dará mas prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice mas el transporte colectivo (ref??). Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
+El primer caso se le dará mas prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice mas el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
 
 Por tanto vamos a experimentar con una nueva función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
-(TABLAS Y COMPARACIÓN)
+(TABLAS Y COMPARACIÓN) 
 
 \subsubsection{Prioridad otros vehículos}
 
