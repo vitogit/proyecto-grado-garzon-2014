@@ -1,6 +1,6 @@
 \chapter{Estrategia de resolución}
 
-En este capitulo se explica el proceso llevado a cabo para desarrollar la solucion. Se presenta el modelado basico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulacion y el algoritmo genetico utilizado con su estructura, parámetros y configuración. 
+En este capitulo se explica el proceso llevado a cabo para desarrollar la solución. Se presenta el modelado básico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. 
 
 Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquitectura desarrollada.
 
@@ -9,7 +9,7 @@ Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquite
 \section{Modelado del problema }
 
 Para solucionar el problema se usaran simulaciones de la realidad, por tanto es importante contar con un modelo detallado y fidedigno.
-A continuacion se detallan los puntos destacados del modelo.
+A continuación se detallan los puntos destacados del modelo.
 
 
 
@@ -128,8 +128,8 @@ Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  mi
 
 También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora mas. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
-Para establecer la velocidad media de los ómnibus se realizo un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingenieria de Transito.
-Estos datos cuentan con la posicion GPS, la velocidad instantanea y la referencia al omnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
+Para establecer la velocidad media de los ómnibus se realizo un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Transito.
+Estos datos cuentan con la posición GPS, la velocidad instantánea y la referencia al ómnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
 
 
@@ -295,7 +295,7 @@ además la fase inicial se elige aleatoriamente entre la cantidad de fases del c
 \subsection{Función fitness}
 La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
 
-Se empleara una funcion multiobjetivo usando combinacion lineal de la velocidad de los omnibus y del resto de los vehiculos, ya que es un metodo sencillo y adecuado cuando son menos de tres objetivos. El fitness se calcula como una suma ponderada, con los pesos fijados a priori.
+Se empleara una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando son menos de tres objetivos. El fitness se calcula como una suma ponderada, con los pesos fijados a priori.
 
         \begin{equation}
         \label{eq:funcion_fitness_generica}
