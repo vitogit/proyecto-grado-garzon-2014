@@ -7,7 +7,7 @@ Este se divide en dos etapas, primero se realiza la configuración paramétrica 
 \section{Desarrollo y Plataforma de ejecución }
 Los algoritmos fueron desarrollados usando la biblioteca Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
-Los escenarios fueron ejecutados en el cluster fing.
+Los escenarios fueron ejecutados en el cluster Fing.
 
 Cluster: Es un conjunto de computadoras independientes conectadas para que trabajen integradas como un solo sistema. De esta forma se consigue un alto rendimiento en la ejecución de tareas. 
 
@@ -39,7 +39,7 @@ Se busca la mejor configuración inicial de los parámetros realizando pruebas e
 	\item Probabilidad de cruzamiento
 \end{itemize}
 
-Para la realización de las pruebas se generan tres instancias con densidades de tráfico diferentes para realizar las pruebas de configuración. En este caso no se utilizan datos recabados de la realidad como  el trafico especifico de las calles y el recorrido de las lineas de omnibus. De esta forma el algoritmo queda genérico y no sesgado a un caso en particular.
+Para la realización de las pruebas se generan tres instancias con densidades de tráfico diferentes para realizar las pruebas de configuración. En este caso no se utilizan datos recabados de la realidad como  el trafico especifico de las calles y el recorrido de las lineas de ómnibus. De esta forma el algoritmo queda genérico y no sesgado a un caso en particular.
 
 
 \begin{itemize}
@@ -209,9 +209,9 @@ El caso de alto trafico se realiza un aumento del 50 \% de los vehículos y se a
 
 El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
 
-Alto Trafico: Cerca de 2800 vehiculos en la simulacion y 70 omnibuses. \newline
-Trafico Medio: Cerca de 2000 vehiculos y 70 omnbibueses \newline
-Trafico Bajo: Cerca de 1000 vehiculos y 70 omnibuses
+Alto Trafico: Cerca de 2800 vehículos en la simulación y 70 ómnibuses. \newline
+Trafico Medio: Cerca de 2000 vehículos y 70 ómnibuses \newline
+Trafico Bajo: Cerca de 1000 vehículos y 70 ómnibuses
  
 
 \subsection{Escenario Evolutivo }
@@ -232,7 +232,7 @@ El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de l
 
 -Eliminar paradas
 
--Agregar calles paralelas a Garzon
+-Agregar calles paralelas a Garzón
 
 -
 
@@ -314,26 +314,26 @@ Al analizar la tabla se ve que los resultados del algoritmo para trafico alto so
 
 
 \subsection{Resultado Escenario Alternativo}
-Los cambios propuestos incluyen eliminacion de paradas, eliminacion de pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a garzon o nuevas reglas en los cruces como existen en otros paises.
+Los cambios propuestos incluyen eliminación de paradas, eliminación de pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
 
 
 
 
-\subsubsection{Eliminacion de paradas}
-Se consideraron dos paradas a elininar que cumplieran con algunas caracteristicas, no fueran cercana a una calle principal y que existiera otra parada cercana. Por lo que la eliminacion de la parada no afecte en demasia a la gente en un translado mayor.
+\subsubsection{Eliminación de paradas}
+Se consideraron dos paradas a eliminar que cumplieran con algunas características, no fueran cercana a una calle principal y que existiera otra parada cercana. Por lo que la eliminación de la parada no afecte en demasía a la gente en un traslado mayor.
 En este caso se selecciono la parada en la calle Ariel y Casavalle.
 
 
 
-\subsubsection{Eliminacion de pasajes peatonanesl}
-Hay tres pasajes peatonales en el corredor con semaforos que detienen el trafico, al eliminarlos se aumenta la velocidad media. Otra opcion en vez de eliminarlos es implementar el pasaje peatonal por encima del corredor por que se eliminaria el semaforo.
+\subsubsection{Eliminación de pasajes peatonales}
+Hay tres pasajes peatonales en el corredor con semáforos que detienen el trafico, al eliminarlos se aumenta la velocidad media. Otra opción en vez de eliminarlos es implementar el pasaje peatonal por encima del corredor por que se eliminaría el semáforo.
 
 \subsubsection{Alternar paradas}
 
-La linea G es la que recorre a garzon de punta a punta, si se dividen los omnibus en una mitad que se detenga en las paradas pares y la otra mitad en las impares se reduce el numero de paradas que hace un omnibus, pero no se resiente en demasia el servicio ya que se cubren las mismas paradas, y la disminucion de la frecuencia en una parada se contrarrestra con el aumento de velocidad.
+La linea G es la que recorre a Garzón de punta a punta, si se dividen los ómnibus en una mitad que se detenga en las paradas pares y la otra mitad en las impares se reduce el numero de paradas que hace un ómnibus, pero no se resiente en demasía el servicio ya que se cubren las mismas paradas, y la disminución de la frecuencia en una parada se contrarresta con el aumento de velocidad.
 
-Esto se justifica pues uno de los problemas del omnibus es su baja aceleracion por lo que cada vez que frena en un semaforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un omnibus tiene que hacer se mejora la velocidad promedio.
-este cambio es el que mas auementa la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
+Esto se justifica pues uno de los problemas del ómnibus es su baja aceleración por lo que cada vez que frena en un semáforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un ómnibus tiene que hacer se mejora la velocidad promedio.
+este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
 
 
 
@@ -391,13 +391,13 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 \subsection{Comparación Secuencial vs  Paralelo}
 
 El speedup se define como T1/Tp
-T1 es el tiempo de ejecucion en un procesador
-Tp es el tiempo de ejecucion en p procesdores.
+T1 es el tiempo de ejecución en un procesador
+Tp es el tiempo de ejecucion en p procesadores.
 
 
-Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecucion en diferentes número de procesadores
+Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecución en diferentes número de procesadores
 
-La escabilidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan más procesadores.
+La escalabalidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan más procesadores.
 
 En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
 
@@ -455,12 +455,12 @@ Por tanto vamos a experimentar con una nueva función fitness con un peso de 70\
 
 \subsubsection{Prioridad otros vehículos}
 
-En este caso, le damos 70\% del peso a los vehiculos y 30\% a los omnibus.
+En este caso, le damos 70\% del peso a los vehículos y 30\% a los ómnibus.
 
 (RESULTADOS?)
 
-Se podrian seguir variando los pesos hasta lograr una misma velocidad para omnibus y otrosvehiculos??
+Se podrían seguir variando los pesos hasta lograr una misma velocidad para ómnibus y otros vehículos??
 
 
-\section{Resumen}
+
 
