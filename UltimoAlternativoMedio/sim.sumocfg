@@ -1,0 +1,11 @@
+<configuration>
+<input-files>
+<net-file>sim.net.xml</net-file>
+<route-files>sim.rou.xml</route-files>
+<additional-files value="semaforos.xml,sim.add.xml"/>
+</input-files>
+<simulation>
+<begin>0</begin>
+<end>3660</end>
+</simulation>
+</configuration>
