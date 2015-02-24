@@ -228,13 +228,6 @@ Analizando aquellos puntos que se entienden podrían atentar contra el buen func
 
 El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de las muchas alternativas que se pueden generar y probar con la simulación si se logran mejoras. Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
 
--Limitar cruces a la izquierda
-
--Eliminar paradas
-
--Agregar calles paralelas a Garzón
-
--
 
 
 \section{Resultados}
@@ -333,8 +326,12 @@ Hay tres pasajes peatonales en el corredor con semáforos que detienen el trafic
 La linea G es la que recorre a Garzón de punta a punta, si se dividen los ómnibus en una mitad que se detenga en las paradas pares y la otra mitad en las impares se reduce el numero de paradas que hace un ómnibus, pero no se resiente en demasía el servicio ya que se cubren las mismas paradas, y la disminución de la frecuencia en una parada se contrarresta con el aumento de velocidad.
 
 Esto se justifica pues uno de los problemas del ómnibus es su baja aceleración por lo que cada vez que frena en un semáforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un ómnibus tiene que hacer se mejora la velocidad promedio.
-este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
+Este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
 
+\subsubsection{Cambio básico de semáforos}
+(explique efrain)
+
+Lo interesante del resultado obtenido de esta modificación es que aumenta la velocidad promedio de los vehículos y disminuye la de los ómnibus. Aunque igualmente aumenta el fitness. 
 
 
 En la siguiente tabla se detallan los cambios realizado con la mejora asociada, comparando los valores para el trafico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el trafico bajo y alto.
@@ -357,7 +354,8 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 		Base & 14.59  & 28.81& 12.05 & -\\
 		Eliminar Paradas & 15.44  & 29.03& 12.35 & 2.4\\
 		Eliminar Peatonales  & 16.02  & 29.32& 12.59 & 4.4\\
-		Paradas alternadas  & 19.17  & 28.88& 13.34 & 10.7\\		
+		Paradas alternadas  & 19.17  & 28.88& 13.34 & 10.7\\	
+		Cambio reglas  & 18.50  & 29.70& 13.39 & 11.1\\				
 		\hline
 	\end{tabular}
 \end{table}
@@ -376,19 +374,19 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 		$vbp(km/h)$& 
 		$vvp(km/h)$ & 
 		Fitness &
-		Mejora(\%)
+		Mejora fitness(\%)
 		\\ 
 		\hline
 
-		Trafico Bajo & 20.98  & 32.89 & 14.96 & 11.4\\
-		Trafico Medio  & 19.17  & 28.88& 13.34 & 10.7\\	
-		Trafico Alto  & 19.99  & 27.06& 13.07 & 15.6\\		
+		Trafico Bajo & 20.72  & 33.18 & 14.97 & 11.5\\
+		Trafico Medio & 18.50  & 29.70& 13.39 & 11.1 \\
+		Trafico Alto  & 18.60  & 27.17& 12.7 & 12.6\\		
 		\hline
 	\end{tabular}
 \end{table}
 
 
-\subsection{Comparación Secuencial vs  Paralelo}
+\subsection{Eficiencia computacional}
 
 El speedup se define como T1/Tp
 T1 es el tiempo de ejecución en un procesador
@@ -443,7 +441,7 @@ Una cantidad similar  pasan por el cruce en ambos medios de transporte por lo qu
 
 
 
-Estos pesos pueden ser cambiados en función de lo que se necesite por lo que vamos a realizar pruebas con dos funciones de fitness diferentes sobre el escenario con trafico medio y comparar los valores de velocidades medias para cada tipo de vehículo.
+Estos pesos pueden ser cambiados en función de lo que se necesite por lo que se realizaran pruebas con dos funciones de fitness diferentes sobre el escenario con trafico medio y comparar las velocidades para cada tipo de vehículo.
 
 
 \subsubsection{Prioridad ómnibus}
@@ -451,15 +449,45 @@ El primer caso se le dará mas prioridad a los ómnibus, esto se sostiene en el 
 
 Por tanto vamos a experimentar con una nueva función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
-(TABLAS Y COMPARACIÓN) 
 
 \subsubsection{Prioridad otros vehículos}
 
 En este caso, le damos 70\% del peso a los vehículos y 30\% a los ómnibus.
 
-(RESULTADOS?)
 
-Se podrían seguir variando los pesos hasta lograr una misma velocidad para ómnibus y otros vehículos??
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Modificacio de los pesos para omnibus(pb) y para otros vehiculos(pv) en la funcion fitness. Analizando}
+	\label{table:analisis_fitness}
+	\centering
+	\begin{tabular}{p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm} }
+		\hline
+		
+		pb-pv& 
+		vpb & 
+		vpv &
+		fitness &
+		variación \newline vpb &
+		variación \newline vpv &
+		variación \newline fitnesss
+		\\ 
+		\hline
+		50-50  & 16.95 & 33.29 & 13.95  &- & - & -\\		
+		70-30  & 17.29 & 33.08 & 12.24  & +2.0 & -0.6 & -13.9\\		
+		30-70  & 16.65 & 33.75 & 15.90 & -1.8 & +1.3 & +13.9\\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar mas prioridad a los ómnibuses se produce como cabía esperar un aumento en su velocidad promedio y una baja en la velocidad promedio del resto de los vehículos.
+
+En este caso la variación de la velocidad no es destacado pero si lo suficientemente apreciable para tener cierta libertad al plantear distintos objetivos que tiendan a favorecer a un tipo u otro de vehículos.
+
+
+
+
 
 
 

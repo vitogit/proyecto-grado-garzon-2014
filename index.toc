@@ -70,14 +70,13 @@
 \contentsline {subsection}{\numberline {5.4.1}Resultado simulaci\IeC {\'o}n caso base}{35}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Aplicaci\IeC {\'o}n del algoritmo}{35}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Resultado Escenario Alternativo}{36}{subsection.5.4.3}
-\contentsline {subsubsection}{Eliminacion de paradas}{36}{section*.37}
-\contentsline {subsubsection}{Eliminacion de pasajes peatonanesl}{36}{section*.38}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{36}{section*.37}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{36}{section*.38}
 \contentsline {subsubsection}{Alternar paradas}{36}{section*.39}
-\contentsline {subsection}{\numberline {5.4.4}Comparaci\IeC {\'o}n Secuencial vs Paralelo}{36}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.4}Eficiencia computacional}{37}{subsection.5.4.4}
 \contentsline {subsection}{\numberline {5.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{37}{subsection.5.4.5}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{37}{section*.42}
-\contentsline {subsubsection}{Prioridad otros veh\IeC {\'\i }culos}{38}{section*.43}
-\contentsline {section}{\numberline {5.5}Resumen}{38}{section.5.5}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{38}{section*.43}
+\contentsline {subsubsection}{Prioridad otros veh\IeC {\'\i }culos}{38}{section*.44}
 \contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{39}{chapter.6}
 \contentsline {section}{\numberline {6.1}Conclusiones}{39}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trabajo futuro}{39}{section.6.2}

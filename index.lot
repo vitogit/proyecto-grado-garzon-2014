@@ -8,6 +8,8 @@
 \contentsline {table}{\numberline {5.2}{\ignorespaces Combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{33}{table.caption.33}
 \contentsline {table}{\numberline {5.3}{\ignorespaces Resultados caso base, velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) \relax }}{35}{table.caption.35}
 \contentsline {table}{\numberline {5.4}{\ignorespaces Resultados Algoritmo, velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) \relax }}{35}{table.caption.36}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Valores del escenario alternativo con su velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) comparando el fitness \relax }}{37}{table.caption.40}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Analisis de speedup \relax }}{37}{table.caption.41}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Valores del escenario alternativo con su velocidad promedio bus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) comparando el fitness para el trafico medio \relax }}{36}{table.caption.40}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Mejoras obtenidas en el escenario alternativo para distintos tr\IeC {\'a}ficos \relax }}{37}{table.caption.41}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Analisis de speedup \relax }}{37}{table.caption.42}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Modificacio de los pesos para omnibus(pb) y para otros vehiculos(pv) en la funcion fitness. Analizando\relax }}{38}{table.caption.45}
 \addvspace {10\p@ }
