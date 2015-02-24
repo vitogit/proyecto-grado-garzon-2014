@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  23 FEB 2015 01:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  23 FEB 2015 20:59
 entering extended mode
 **index.tex
 
@@ -990,10 +990,6 @@ x"
 .aux")
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
-
-
-LaTeX Warning: Label `table:resultado_caso_algoritmo' multiply defined.
-
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
@@ -1164,8 +1160,8 @@ Cap\'{\i }tulo 1.
 
 
 ]
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
  [2])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\2_marco_
 teorico.tex"
@@ -1185,14 +1181,14 @@ LaTeX Info: Redefining \% on input line 80.
 [6]
 LaTeX Info: Redefining \. on input line 113.
 LaTeX Info: Redefining \% on input line 113.
- [7] <Figures/cruzamiento1.jpg, id=297, 815.045pt x 288.07625pt>
+ [7] <Figures/cruzamiento1.jpg, id=301, 815.045pt x 288.07625pt>
 File: Figures/cruzamiento1.jpg Graphic file (type jpg)
 
 <use Figures/cruzamiento1.jpg>
 Package pdftex.def Info: Figures/cruzamiento1.jpg used on input line 118.
 (pdftex.def)             Requested size: 420.0pt x 148.44662pt.
 
-<Figures/mutacion1.jpg, id=298, 810.02625pt x 167.62625pt>
+<Figures/mutacion1.jpg, id=302, 810.02625pt x 167.62625pt>
 File: Figures/mutacion1.jpg Graphic file (type jpg)
 
 <use Figures/mutacion1.jpg>
@@ -1205,7 +1201,7 @@ LaTeX Info: Redefining \% on input line 163.
  [8 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/cruzamiento1.jpg> <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-
 garzon-2014/Figures/mutacion1.jpg>]
-<Figures/diagrama-master-slave.png, id=308, 630.355pt x 266.9975pt>
+<Figures/diagrama-master-slave.png, id=312, 630.355pt x 266.9975pt>
 File: Figures/diagrama-master-slave.png Graphic file (type png)
 
 <use Figures/diagrama-master-slave.png>
@@ -1245,14 +1241,14 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 4.
-[17] <Figures/osm_garzon.jpg, id=416, 522.95375pt x 563.10374pt>
+[17] <Figures/osm_garzon.jpg, id=420, 522.95375pt x 563.10374pt>
 File: Figures/osm_garzon.jpg Graphic file (type jpg)
 
 <use Figures/osm_garzon.jpg>
 Package pdftex.def Info: Figures/osm_garzon.jpg used on input line 44.
 (pdftex.def)             Requested size: 293.99872pt x 316.57323pt.
 
-<Figures/mapa_sumo.jpg, id=417, 360.34625pt x 617.30624pt>
+<Figures/mapa_sumo.jpg, id=421, 360.34625pt x 617.30624pt>
 File: Figures/mapa_sumo.jpg Graphic file (type jpg)
 
 <use Figures/mapa_sumo.jpg>
@@ -1262,7 +1258,7 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
  [18 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/osm_garzon.jpg>]
-<Figures/conteo_hoja.jpg, id=425, 673.51625pt x 516.93124pt>
+<Figures/conteo_hoja.jpg, id=429, 673.51625pt x 516.93124pt>
 File: Figures/conteo_hoja.jpg Graphic file (type jpg)
 
 <use Figures/conteo_hoja.jpg>
@@ -1279,7 +1275,7 @@ LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
  [20 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/conteo_hoja.jpg>]
-<Figures/areaflow1.jpg, id=437, 291.0875pt x 599.23875pt>
+<Figures/areaflow1.jpg, id=441, 291.0875pt x 599.23875pt>
 File: Figures/areaflow1.jpg Graphic file (type jpg)
 
 <use Figures/areaflow1.jpg>
@@ -1295,14 +1291,14 @@ LaTeX Info: Redefining \. on input line 130.
 LaTeX Info: Redefining \% on input line 130.
 
 [22 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/areaflow1.jpg>] <Figures/sim1.jpg, id=454, 425.59pt x 433.62pt>
+es/areaflow1.jpg>] <Figures/sim1.jpg, id=458, 425.59pt x 433.62pt>
 File: Figures/sim1.jpg Graphic file (type jpg)
 
 <use Figures/sim1.jpg>
 Package pdftex.def Info: Figures/sim1.jpg used on input line 138.
 (pdftex.def)             Requested size: 293.99872pt x 299.56203pt.
 
-<Figures/arquitectura1.jpg, id=455, 536.0025pt x 390.45876pt>
+<Figures/arquitectura1.jpg, id=459, 536.0025pt x 390.45876pt>
 File: Figures/arquitectura1.jpg Graphic file (type jpg)
 
 <use Figures/arquitectura1.jpg>
@@ -1325,14 +1321,14 @@ LaTeX Info: Redefining \% on input line 207.
 LaTeX Info: Redefining \. on input line 268.
 LaTeX Info: Redefining \% on input line 268.
  [26]
-<Figures/cromosoma1.jpg, id=504, 417.56pt x 215.80624pt>
+<Figures/cromosoma1.jpg, id=508, 417.56pt x 215.80624pt>
 File: Figures/cromosoma1.jpg Graphic file (type jpg)
 
 <use Figures/cromosoma1.jpg>
 Package pdftex.def Info: Figures/cromosoma1.jpg used on input line 273.
 (pdftex.def)             Requested size: 293.99872pt x 151.95572pt.
 
-<Figures/rep_sumo.jpg, id=505, 672.5125pt x 298.11375pt>
+<Figures/rep_sumo.jpg, id=509, 672.5125pt x 298.11375pt>
 File: Figures/rep_sumo.jpg Graphic file (type jpg)
 
 <use Figures/rep_sumo.jpg>
@@ -1354,7 +1350,7 @@ Cap\'{\i }tulo 5.
 ]
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
- [30] <Figures/criterio_parada.png, id=531, 433.62pt x 289.08pt>
+ [30] <Figures/criterio_parada.png, id=535, 433.62pt x 289.08pt>
 File: Figures/criterio_parada.png Graphic file (type png)
 
 <use Figures/criterio_parada.png>
@@ -1367,7 +1363,7 @@ res/criterio_parada.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/grafica_mutacion_cruzamiento.jpg, id=539, 635.37375pt x 403.5075pt>
+<Figures/grafica_mutacion_cruzamiento.jpg, id=543, 635.37375pt x 403.5075pt>
 File: Figures/grafica_mutacion_cruzamiento.jpg Graphic file (type jpg)
 
 <use Figures/grafica_mutacion_cruzamiento.jpg>
@@ -1396,24 +1392,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-LaTeX Info: Redefining \. on input line 237.
-LaTeX Info: Redefining \% on input line 237.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
 [34]
-LaTeX Info: Redefining \. on input line 310.
-LaTeX Info: Redefining \% on input line 310.
+LaTeX Info: Redefining \. on input line 311.
+LaTeX Info: Redefining \% on input line 311.
  [35]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
+LaTeX Info: Redefining \. on input line 391.
+LaTeX Info: Redefining \% on input line 391.
 [36]
-LaTeX Info: Redefining \. on input line 426.
-LaTeX Info: Redefining \% on input line 426.
- [37])
+LaTeX Info: Redefining \. on input line 444.
+LaTeX Info: Redefining \% on input line 444.
+ [37]
+Overfull \hbox (62.33852pt too wide) in paragraph at lines 459--476
+ [][] 
+ []
+
+)
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\6_conclu
 siones_y_trabajo_futuro.tex"
 LaTeX Info: Redefining \. on input line 1.
@@ -1559,16 +1557,13 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 135.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 16995 strings out of 493921
- 289235 string characters out of 3144879
- 365231 words of memory out of 3000000
- 19796 multiletter control sequences out of 15000+200000
+ 16997 strings out of 493921
+ 289330 string characters out of 3144879
+ 365599 words of memory out of 3000000
+ 19797 multiletter control sequences out of 15000+200000
  16937 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  41i,13n,43p,10416b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1587,9 +1582,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (55 pages, 1330044 bytes).
+Output written on index.pdf (55 pages, 1331246 bytes).
 PDF statistics:
- 930 PDF objects out of 1000 (max. 8388607)
- 225 named destinations out of 1000 (max. 500000)
- 570 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 931 PDF objects out of 1000 (max. 8388607)
+ 226 named destinations out of 1000 (max. 500000)
+ 562 words of extra memory for PDF output out of 10000 (max. 10000000)
 
