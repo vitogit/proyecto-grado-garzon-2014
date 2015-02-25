@@ -28,7 +28,7 @@ Descripcion del hardware:
 	\item UPS APC Smart RT 8000VA.
 \end{itemize}
 
-\section{Ajuste de parámetros de algoritmos}
+\section{Ajuste paramétrico}
 Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  
 
 \begin{itemize}
@@ -214,10 +214,10 @@ Trafico Medio: Cerca de 2000 vehículos y 70 ómnibuses \newline
 Trafico Bajo: Cerca de 1000 vehículos y 70 ómnibuses
  
 
-\subsection{Escenario Evolutivo }
-En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del tráfico.
+%\subsection{Escenario Evolutivo }
+%En este caso se ejecuta el algoritmo evolutivo sobre el caso base para obtener una nueva sincronización de semáforos optimizada que repercutirá en la calidad del tráfico.
 
-En este caso se realizan 21 ejecuciones independientes sobre cada instancia de trafico.
+%En este caso se realizan 21 ejecuciones independientes sobre cada instancia de trafico.
 
 
 \subsection{Escenario Alternativo}
@@ -231,7 +231,8 @@ El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de l
 
 
 \section{Resultados}
-Presentaremos los resultados obtenidos  utilizando los parámetros óptimos  para el escenario base, el escenario alternativo, y la prueba en el cluster.
+Presentaremos los resultados tanto de los escenarios base y alternativo así como un análisis de variación de la función fitness y un estudio de la eficiencia computacional.
+
 
 \subsection{Resultado simulación caso base}
 
@@ -239,7 +240,7 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
  
  \begin{table}[h]
  	\renewcommand{\arraystretch}{1.2}
- 	\caption{Resultados caso base, velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) }
+ 	\caption{Resultados del caso base mostrando la velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) para los distintos tipos de trafico}
  	\label{table:resultado_caso_base}
  	\centering
  	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm} }
@@ -263,7 +264,7 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Resultados Algoritmo, velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) }
+	\caption{Resultados luego de ejecutado el algoritmo mostrando velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) para los distintos tipos de trafico }
 	\label{table:resultado_caso_algoritmo}
 	\centering
 	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
@@ -298,7 +299,7 @@ En este caso A representa el algoritmo y B el caso base. Esto indica que la dife
 Esto se cumple para todos los casos, por lo que podemos afirmar que existe evidencia estadística para decir que los resultados del algoritmo son mejores al del caso base.
 
 
-Esto significa que un viaje en ómnibus del principio al fin del corredor (6.5km) duraba 27min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situación de trafico alto. En el caso de un viaje en auto la duración era de 14.8min y luego del algoritmo 11.8min.
+Esto significa que un viaje en ómnibus del principio al fin del corredor (6.5km) duraba 27,7min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situación de trafico alto. En el caso de un viaje en auto la duración era de 14.8min y luego del algoritmo 11.8min.
 
 Al analizar la tabla se ve que los resultados del algoritmo para trafico alto son aun mejores que el trafico bajo en el caso base. 
 
@@ -337,7 +338,7 @@ Lo interesante del resultado obtenido de esta modificación es que aumenta la ve
 En la siguiente tabla se detallan los cambios realizado con la mejora asociada, comparando los valores para el trafico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el trafico bajo y alto.
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Valores del escenario alternativo con su velocidad promedio bus (vpb) y velocidad promedio vehículos(vpv) comparando el fitness para el trafico medio }
 	\label{table:resultado_alternativo}
@@ -363,9 +364,9 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Mejoras obtenidas en el escenario alternativo para distintos tráficos }
+	\caption{Mejoras obtenidas en el escenario alternativo para distintos tipos de tráficos }
 	\label{table:mejoras_trafico_alternativo}
 	\centering
 	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
@@ -385,9 +386,36 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 	\end{tabular}
 \end{table}
 
+\subsection{Aplicando el algoritmo sobre el escenario alternativo}
 
+Al aplicar el algoritmo sobre el escenario alternativo conseguimos una mejora del 28.7 \%. 
+Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,6 minutos. Y un auto de demorar 14,5 minutos a 11.5 minutos. 
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo para el trafico medio. Comparando con el caso base.}
+	\label{table:mejoras_trafico_alternativo_algoritmo}
+	\centering
+	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+		\hline
+		&
+		$vbp(km/h)$& 
+		$vvp(km/h)$ & 
+		Fitness &
+		Mejora fitness(\%)
+		\\ 
+		\hline
+		
+		Trafico Medio Base & 14.59  & 28.81 & 12.05 & - \\
+		Trafico Medio & 22.10$\pm$0.34  & 33.73$\pm$0.07 & 15.51$\pm$0.09 & 28.7 \\
+	
+		\hline
+	\end{tabular}
+\end{table}
 \subsection{Eficiencia computacional}
 
+ 		
+ 		
 El speedup se define como T1/Tp
 T1 es el tiempo de ejecución en un procesador
 Tp es el tiempo de ejecucion en p procesadores.
@@ -401,9 +429,9 @@ En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
 
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Analisis de speedup }
+	\caption{Análisis de speedup }
 	\label{table:analisis_speedup}
 	\centering
 	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm} }
