@@ -78,8 +78,8 @@
 \contentsline {subsection}{\numberline {5.4.4}Aplicando el algoritmo sobre el escenario alternativo}{39}{subsection.5.4.4}
 \contentsline {subsection}{\numberline {5.4.5}Eficiencia computacional}{39}{subsection.5.4.5}
 \contentsline {subsection}{\numberline {5.4.6}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{40}{subsection.5.4.6}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{40}{section*.45}
-\contentsline {subsubsection}{Prioridad otros veh\IeC {\'\i }culos}{40}{section*.46}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{41}{section*.45}
+\contentsline {subsubsection}{Prioridad otros veh\IeC {\'\i }culos}{41}{section*.46}
 \contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{43}{chapter.6}
 \contentsline {section}{\numberline {6.1}Conclusiones}{43}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trabajo futuro}{43}{section.6.2}
