@@ -388,7 +388,7 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 
 \subsection{Aplicando el algoritmo sobre el escenario alternativo}
 
-Al aplicar el algoritmo sobre el escenario alternativo conseguimos una mejora del 28.7 \%. 
+Al aplicar el algoritmo sobre el escenario alternativo con trafico medio conseguimos una mejora del 28.7 \%. 
 Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,6 minutos. Y un auto de demorar 14,5 minutos a 11.5 minutos. 
 
 \begin{table}[H]
@@ -407,55 +407,82 @@ Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 
 		\hline
 		
 		Trafico Medio Base & 14.59  & 28.81 & 12.05 & - \\
-		Trafico Medio & 22.10$\pm$0.34  & 33.73$\pm$0.07 & 15.51$\pm$0.09 & 28.7 \\
+		Trafico Medio & 22.00$\pm$0.29  & 33.94$\pm$0.19 & 15.54$\pm$0.09 & 28.7 \\
 	
 		\hline
 	\end{tabular}
 \end{table}
 \subsection{Eficiencia computacional}
 
+Se realiza un estudio de la eficiencia computacional del algoritmo para analizar los tiempos de ejecucion cuando se usan varios procesadores y como se comporta su capacidad de paralelismo.
+
+Se evalúan nueves ejecuciones del algoritmo tres con trafico bajo, tres con trafico medio y tres con trafico alto. Para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de procesadores.
+
+Las pruebas fueron realizadas sobre el node40 del Cluster Fing que tiene las siguientes características:
+
+\begin{itemize}
+	\item Modelo: HP Proliant DL585
+	\item Procesador: AMD Opteron 6272 2.09GHz
+	\item Memoria: 48GB
+	\item Cores utilizados: 32
+\end{itemize}
+
+ 
+ 
+			
  		
- 		
-El speedup se define como T1/Tp
-T1 es el tiempo de ejecución en un procesador
-Tp es el tiempo de ejecucion en p procesadores.
+El speedup(S) mide la mejora de rendimiento de una aplicacion al aumentar la cantidad de procesadores comparando con el rendimiento al usar un solo procesador.
+        \begin{equation}
+        \label{eq:funcion_speedup}
+        S = \frac{T_1}{T_N}
+        \end{equation}
+Donde ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores.
+\newline
 
-
-Vamos a comprobar la utilidad de tener un algoritmo paralelo comparando el tiempo de ejecución en diferentes número de procesadores
-
-La escalabalidad de un algoritmo define su capacidad para aumentar su rendimiento a medida que se agregan más procesadores.
-
-En este caso comparamos el algoritmo ejecutado en 1, 8, 16, 32 procesadores.
-
-
+La eficiencia computacional (E) corresponde al valor normalizado del speedup (entre 0 y 1) respecto a la cantidad de procesadores. Los valores cercanos a uno indican una alta eficiencia computacional.
+        \begin{equation}
+        \label{eq:funcion_eficiencia}
+        E = \frac{T_1}{N*T_N} = \frac{S}{N}
+        \end{equation}
+        
+        
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Análisis de speedup }
+	\caption{Análisis de eficiencia computacional comparando los tiempos de ejecución en serial y paralelo en minutos. }
 	\label{table:analisis_speedup}
 	\centering
-	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm} }
+	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm} }
 		\hline
 
-		Procesadores& 
-		Tiempo(m) & 
-		Speedup 
+		Instancia& 
+		Serial(m) & 
+		Paralelo(m) &
+		Speedup &
+		Eficiencia
 		\\ 
 		\hline
-		1  & 11399 & 1\\
-		4  & 1936 & 5.8 \\
-		8  & 1491 & 7.6 \\
-		16  & 803 & 14.1 \\
+		bajo1  & 1572 & 59 & 26.64 & 0.83\\
+		bajo2  & 1571 & 59 & 26.62 & 0.83\\
+		bajo3  & 1183 & 44 & 26.88 & 0.84\\
+		
+		medio1  & 3002 & 119 & 25.22 & 0.78\\
+		medio2  & 2195 & 82 & 26.76 & 0.83\\
+		medio3  & 3007 & 120 & 25.05 & 0.78\\
+		
+		alto1  & 1572 & 59 & 26.6 & 0.83\\
+		alto2  & 1572 & 59 & 26.6 & 0.83\\
+		alto3  & 1572 & 59 & 26.6 & 0.83\\
+
+		
+												
 		\hline
 	\end{tabular}
 \end{table}
-GRAFICA DE ESCABILIDAD
 
-El comando "time" ejecutado sobre nuestro algoritmo nos brinda el tiempo real de ejecución, así como el tiempo total sumado de todos los procesadores. Por tanto podemos calcular el tiempo del algoritmo secuencial.
 
-En el caso de 8 procesadores, al tener una población de 32 se distribuirán 4 individuos por procesador.
+El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un buen valor promedio del speedup (26)  y la eficiencia (0.8).
 
-Por tanto cuando tenemos 32 es donde se logra la mejor distribución al no existir "overhead" en la creación y terminación de los hilos.
 
 
 \subsection{Variación de la función de fitness}
