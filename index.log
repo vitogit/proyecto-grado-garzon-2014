@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  3 MAR 2015 17:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  4 MAR 2015 01:25
 entering extended mode
 **index.tex
 
@@ -1175,72 +1175,64 @@ Cap\'{\i }tulo 2.
 Underfull \vbox (badness 2368) has occurred while \output is active []
 
  [5]
-Overfull \hbox (104.98941pt too wide) in paragraph at lines 39--41
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+
+[6]
+Overfull \hbox (104.98941pt too wide) in paragraph at lines 54--56
 []\OT1/cmr/m/n/10.95 Presenta un ca-rril ex-clu-si-vo pa-ra omni-bus y pre-fe-
 ren-cia-les http://www.montevideo.gub.uy/ciudadania/stm-
  []
 
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
-[6]
-LaTeX Info: Redefining \. on input line 100.
-LaTeX Info: Redefining \% on input line 100.
- [7] <Figures/cruzamiento1.jpg, id=309, 815.045pt x 288.07625pt>
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[7]
+LaTeX Info: Redefining \. on input line 136.
+LaTeX Info: Redefining \% on input line 136.
+ [8] <Figures/cruzamiento1.jpg, id=316, 815.045pt x 288.07625pt>
 File: Figures/cruzamiento1.jpg Graphic file (type jpg)
 
 <use Figures/cruzamiento1.jpg>
-Package pdftex.def Info: Figures/cruzamiento1.jpg used on input line 126.
+Package pdftex.def Info: Figures/cruzamiento1.jpg used on input line 141.
 (pdftex.def)             Requested size: 420.0pt x 148.44662pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Figures/mutacion1.jpg, id=310, 810.02625pt x 167.62625pt>
+<Figures/mutacion1.jpg, id=317, 810.02625pt x 167.62625pt>
 File: Figures/mutacion1.jpg Graphic file (type jpg)
 
 <use Figures/mutacion1.jpg>
-Package pdftex.def Info: Figures/mutacion1.jpg used on input line 136.
+Package pdftex.def Info: Figures/mutacion1.jpg used on input line 151.
 (pdftex.def)             Requested size: 420.0pt x 86.91548pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 147.
-LaTeX Info: Redefining \% on input line 147.
-[8]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 154.
-
-Underfull \vbox (badness 1852) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 203.
-LaTeX Info: Redefining \% on input line 203.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
  [9 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/cruzamiento1.jpg> <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-
 garzon-2014/Figures/mutacion1.jpg>]
-<Figures/diagrama-master-slave.png, id=339, 630.355pt x 266.9975pt>
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 169.
+
+<Figures/diagrama-master-slave.png, id=327, 630.355pt x 266.9975pt>
 File: Figures/diagrama-master-slave.png Graphic file (type png)
 
 <use Figures/diagrama-master-slave.png>
 Package pdftex.def Info: Figures/diagrama-master-slave.png used on input line 2
-19.
+34.
 (pdftex.def)             Requested size: 293.99872pt x 124.52734pt.
-LaTeX Info: Redefining \. on input line 232.
-LaTeX Info: Redefining \% on input line 232.
- [10 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+LaTeX Info: Redefining \. on input line 238.
+LaTeX Info: Redefining \% on input line 238.
+ [10]
+LaTeX Info: Redefining \. on input line 267.
+LaTeX Info: Redefining \% on input line 267.
+ [11 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/diagrama-master-slave.png>]
-LaTeX Info: Redefining \. on input line 270.
-LaTeX Info: Redefining \% on input line 270.
- [11]
 LaTeX Info: Redefining \. on input line 304.
 LaTeX Info: Redefining \% on input line 304.
 
 [12]
-LaTeX Info: Redefining \. on input line 335.
-LaTeX Info: Redefining \% on input line 335.
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
  [13]
-LaTeX Info: Redefining \. on input line 368.
-LaTeX Info: Redefining \% on input line 368.
+LaTeX Info: Redefining \. on input line 364.
+LaTeX Info: Redefining \% on input line 364.
  [14])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\4_estrat
 egia_de_resolucion.tex"
@@ -1250,14 +1242,14 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 3.
-[17] <Figures/osm_garzon.jpg, id=426, 522.95375pt x 563.10374pt>
+[17] <Figures/osm_garzon.jpg, id=427, 522.95375pt x 563.10374pt>
 File: Figures/osm_garzon.jpg Graphic file (type jpg)
 
 <use Figures/osm_garzon.jpg>
 Package pdftex.def Info: Figures/osm_garzon.jpg used on input line 44.
 (pdftex.def)             Requested size: 293.99872pt x 316.57323pt.
 
-<Figures/mapa_sumo.jpg, id=427, 360.34625pt x 617.30624pt>
+<Figures/mapa_sumo.jpg, id=428, 360.34625pt x 617.30624pt>
 File: Figures/mapa_sumo.jpg Graphic file (type jpg)
 
 <use Figures/mapa_sumo.jpg>
@@ -1267,7 +1259,7 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
  [18 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/osm_garzon.jpg>]
-<Figures/conteo_hoja.jpg, id=436, 673.51625pt x 516.93124pt>
+<Figures/conteo_hoja.jpg, id=437, 673.51625pt x 516.93124pt>
 File: Figures/conteo_hoja.jpg Graphic file (type jpg)
 
 <use Figures/conteo_hoja.jpg>
@@ -1284,7 +1276,7 @@ LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
  [20 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/conteo_hoja.jpg>]
-<Figures/areaflow1.jpg, id=448, 291.0875pt x 599.23875pt>
+<Figures/areaflow1.jpg, id=449, 291.0875pt x 599.23875pt>
 File: Figures/areaflow1.jpg Graphic file (type jpg)
 
 <use Figures/areaflow1.jpg>
@@ -1300,14 +1292,14 @@ LaTeX Info: Redefining \. on input line 130.
 LaTeX Info: Redefining \% on input line 130.
 
 [22 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/areaflow1.jpg>] <Figures/sim1.jpg, id=465, 425.59pt x 433.62pt>
+es/areaflow1.jpg>] <Figures/sim1.jpg, id=466, 425.59pt x 433.62pt>
 File: Figures/sim1.jpg Graphic file (type jpg)
 
 <use Figures/sim1.jpg>
 Package pdftex.def Info: Figures/sim1.jpg used on input line 138.
 (pdftex.def)             Requested size: 293.99872pt x 299.56203pt.
 
-<Figures/arquitectura1.jpg, id=466, 536.0025pt x 390.45876pt>
+<Figures/arquitectura1.jpg, id=467, 536.0025pt x 390.45876pt>
 File: Figures/arquitectura1.jpg Graphic file (type jpg)
 
 <use Figures/arquitectura1.jpg>
@@ -1330,14 +1322,14 @@ LaTeX Info: Redefining \% on input line 207.
 LaTeX Info: Redefining \. on input line 268.
 LaTeX Info: Redefining \% on input line 268.
  [26]
-<Figures/cromosoma1.jpg, id=512, 417.56pt x 215.80624pt>
+<Figures/cromosoma1.jpg, id=513, 417.56pt x 215.80624pt>
 File: Figures/cromosoma1.jpg Graphic file (type jpg)
 
 <use Figures/cromosoma1.jpg>
 Package pdftex.def Info: Figures/cromosoma1.jpg used on input line 273.
 (pdftex.def)             Requested size: 293.99872pt x 151.95572pt.
 
-<Figures/rep_sumo.jpg, id=513, 672.5125pt x 298.11375pt>
+<Figures/rep_sumo.jpg, id=514, 672.5125pt x 298.11375pt>
 File: Figures/rep_sumo.jpg Graphic file (type jpg)
 
 <use Figures/rep_sumo.jpg>
@@ -1359,7 +1351,7 @@ Cap\'{\i }tulo 4.
 ]
 LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
- [30] <Figures/criterio_parada.png, id=539, 433.62pt x 289.08pt>
+ [30] <Figures/criterio_parada.png, id=540, 433.62pt x 289.08pt>
 File: Figures/criterio_parada.png Graphic file (type png)
 
 <use Figures/criterio_parada.png>
@@ -1372,7 +1364,7 @@ res/criterio_parada.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/grafica_mutacion_cruzamiento.jpg, id=547, 635.37375pt x 403.5075pt>
+<Figures/grafica_mutacion_cruzamiento.jpg, id=548, 635.37375pt x 403.5075pt>
 File: Figures/grafica_mutacion_cruzamiento.jpg Graphic file (type jpg)
 
 <use Figures/grafica_mutacion_cruzamiento.jpg>
@@ -1398,60 +1390,69 @@ res/grafica_mutacion_cruzamiento.jpg>]
 LaTeX Info: Redefining \. on input line 232.
 LaTeX Info: Redefining \% on input line 232.
  [34]
-LaTeX Info: Redefining \. on input line 302.
-LaTeX Info: Redefining \% on input line 302.
+LaTeX Info: Redefining \. on input line 297.
+LaTeX Info: Redefining \% on input line 297.
  [35]
-LaTeX Info: Redefining \. on input line 360.
-LaTeX Info: Redefining \% on input line 360.
+LaTeX Info: Redefining \. on input line 356.
+LaTeX Info: Redefining \% on input line 356.
  [36]
-Underfull \hbox (badness 10000) in paragraph at lines 375--377
+Underfull \hbox (badness 10000) in paragraph at lines 371--373
 []|\OT1/cmr/m/n/10.95 Mejora
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--405
-[]|\OT1/cmr/m/n/10.95 Mejora
- []
-
-LaTeX Info: Redefining \. on input line 424.
-LaTeX Info: Redefining \% on input line 424.
+LaTeX Info: Redefining \. on input line 418.
+LaTeX Info: Redefining \% on input line 418.
 [37]
-Overfull \hbox (8.77477pt too wide) in paragraph at lines 454--454
+Overfull \hbox (8.77477pt too wide) in paragraph at lines 448--448
 []|\OT1/cmr/m/n/10.95 variacion 
  []
 
 
-Overfull \hbox (8.77477pt too wide) in paragraph at lines 455--455
+Overfull \hbox (8.77477pt too wide) in paragraph at lines 449--449
 []|\OT1/cmr/m/n/10.95 variacion 
  []
 
 
-Overfull \hbox (8.77477pt too wide) in paragraph at lines 456--458
+Overfull \hbox (8.77477pt too wide) in paragraph at lines 450--452
 []|\OT1/cmr/m/n/10.95 variacion 
  []
 
 
-Overfull \hbox (8.27805pt too wide) in paragraph at lines 447--467
+Overfull \hbox (8.27805pt too wide) in paragraph at lines 441--461
  [][] 
  []
 
-LaTeX Info: Redefining \. on input line 485.
-LaTeX Info: Redefining \% on input line 485.
+LaTeX Info: Redefining \. on input line 478.
+LaTeX Info: Redefining \% on input line 478.
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 502--505
+Underfull \hbox (badness 10000) in paragraph at lines 496--499
 
  []
+
+<Figures/speedup1.jpg, id=590, 484.81125pt x 292.09125pt>
+File: Figures/speedup1.jpg Graphic file (type jpg)
+
+<use Figures/speedup1.jpg>
+Package pdftex.def Info: Figures/speedup1.jpg used on input line 546.
+(pdftex.def)             Requested size: 293.99872pt x 177.13692pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\6_conclu
 siones_y_trabajo_futuro.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [39] [40
+ [39]
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [40 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/speedup1.jpg>]
+Cap\'{\i }tulo 5.
+) [41
 
 ]
-Cap\'{\i }tulo 5.
-) [41]
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.bb
 l"
 LaTeX Info: Redefining \. on input line 1.
@@ -1600,10 +1601,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 17007 strings out of 493921
- 289271 string characters out of 3144879
- 367397 words of memory out of 3000000
- 19803 multiletter control sequences out of 15000+200000
+ 17015 strings out of 493921
+ 289428 string characters out of 3144879
+ 368493 words of memory out of 3000000
+ 19809 multiletter control sequences out of 15000+200000
  16937 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  41i,13n,43p,10416b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1622,9 +1623,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (57 pages, 1341220 bytes).
+Output written on index.pdf (57 pages, 1391819 bytes).
 PDF statistics:
- 953 PDF objects out of 1000 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
- 570 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 234 named destinations out of 1000 (max. 500000)
+ 575 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -105,16 +105,16 @@ La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen 
 	\centering
 	\begin{tabular}{ccrrcr}
 		\hline
-		\multirow{2}{*}{\textbf{Población}} & & 
+	   \multirow{2}{*}{\textbf{Población}}& & 
 		\multicolumn{2}{c}{\textbf{Fitness}} \\
 		\cline{3-4}
-		& & \multicolumn{1}{c}{mejor} 
-		& \multicolumn{1}{c}{promedio} 
-		& \multicolumn{1}{c}{tiempo de ejecución(m)} \\
+		& & {mejor} 
+		& {promedio} 
+		& \textbf{Tiempo de ejecución (m)} \\
 		\hline
-		32 & & \textbf{17.28} & 16.37$\pm$0.5 & 4853\\
-		48 & & \textbf{16.19} & 15.84$\pm$0.3 & 6772\\
-		64 & & \textbf{17.27} & 16.46$\pm$0.6 & 10184\\
+		32 & & {17.28} & 16.37$\pm$0.5 & 4853\\
+		48 & & {16.19} & 15.84$\pm$0.3 & 6772\\
+		64 & & {17.27} & 16.46$\pm$0.6 & 10184\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -260,24 +260,20 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
 
 
 \begin{table}[h]
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Resultados luego de ejecutado el algoritmo mostrando velocidad promedio ómnibus (vpb) y velocidad promedio vehículos(vpv) para los distintos tipos de tráfico }
+	\renewcommand{\arraystretch}{1.2}	
+		\centering
+	\caption{Resultados luego de ejecutado el algoritmo mostrando velocidad promedio ómnibus (vpb) y  de otros vehículos(vpv) para los distintos tipos de tráfico }
 	\label{table:resultado_caso_algoritmo}
-	\centering
-	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
-		\hline
-		&
+	\begin{tabular}{cccccccc}
+		\hline 
+		Tráfico& 
 		$vbp(km/h)$& 
-		$vvp(km/h)$ & 
-		Fitness &
-		Mejora(\%)
-		\\ 
-		\hline
-		Tráfico Bajo & 17.92$\pm$0.18  & 34.30$\pm$0.40& 14.50$\pm$0.14 & 8\\
-		Tráfico Medio & 16.95$\pm$0.32  & 33.29$\pm$0.29& 13.95$\pm$0.15 & 15.70\\
-		Tráfico Alto & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 21.40\\
-		
-		\hline
+		$vpv(km/h)$&
+		\multicolumn{2}{c}{Fitness}&  & 
+		\multicolumn{2}{c}{Mejora fitness (\%)}\\  \cline{4-5} \cline{7-8}&     &     & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} &  & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} \\ \hline
+		Bajo & 17.92$\pm$0.18 & 34.30$\pm$0.40 & 14.50$\pm$0.14 & 14.88 & & 8.04 & 10.8  \\
+		Medio& 16.95$\pm$0.32 & 33.29$\pm$0.29 & 13.95$\pm$0.15 & 14.19 & & 15.70& 17.7\\ 
+		Alto & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 14.04 & & 21.40& 24.2\\		    
 	\end{tabular}
 \end{table}
 
@@ -389,28 +385,26 @@ Al comparar los resultados obtenidos se aprecia claramente que cuanto mas densid
 
 Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,8 minutos y un auto de demorar 14,5 minutos a 11.5 minutos con una densidad de trafico media. 
 
-\begin{table}[H]
+
+
+\begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando contra el caso base de la mejora en las velocidades de omnibus(vpb), otros veihculos(vpv) y el fitness con cada tipo de trafico}
+	\caption{Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando las velocidades de ómnibus(vpb), otros vehículos(vpv) y el fitness con cada tipo de trafico contra el caso base o realidad actual.}
 	\label{table:mejoras_trafico_alternativo_algoritmo}
 	\centering
-	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
-		\hline
-		&
+	\begin{tabular}{cccccccc}
+		\hline 
+		Tráfico& 
 		$vbp(km/h)$& 
-		$vvp(km/h)$ & 
-		Fitness &
-		Mejora fitness(\%)
-		\\ 
-		\hline
-		
-		Tráfico Bajo & 23.15$\pm$0.36  & 34.43$\pm$0.33 & 15.99$\pm$0.08 & 19.1 \\
-		Tráfico Medio & 21.83$\pm$0.50  & 33.89$\pm$0.22 & 15.47$\pm$0.09 & 28.3 \\
-		Tráfico Alto & 21.46$\pm$0.54  & 33.41$\pm$0.38 & 15.24$\pm$0.19 & 34.8 \\
-		\hline
+		$vpv(km/h)$&
+		\multicolumn{2}{c}{Fitness}&  & 
+		\multicolumn{2}{c}{Mejora fitness (\%)}\\  \cline{4-5} \cline{7-8}&     &     & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} &  & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} \\ \hline
+
+		Bajo & 23.15$\pm$0.36 & 34.43$\pm$0.33 & 15.99$\pm$0.08 & 16.10 & & 19.1& 19.90 \\
+		Medio & 21.83$\pm$0.50  & 33.89$\pm$0.22 & 15.47$\pm$0.09& 15.65 & & 28.3 & 29.87\\
+		Alto & 21.46$\pm$0.54  & 33.41$\pm$0.38 & 15.24$\pm$0.19& 15.50 & & 34.8 & 37.10\\			    
 	\end{tabular}
 \end{table}
-
 
 
 \subsection{Variación de la función de fitness}

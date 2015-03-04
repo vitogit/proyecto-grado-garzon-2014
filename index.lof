@@ -3,7 +3,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Cruzamiento de un punto\relax }}{9}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{9}{figure.caption.11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo Maestro-Esclavo}}{10}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo Maestro-Esclavo}}{11}{figure.caption.14}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{18}{figure.caption.20}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{19}{figure.caption.21}
@@ -16,4 +16,5 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{31}{figure.caption.31}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{33}{figure.caption.34}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{40}{figure.caption.48}
 \addvspace {10\p@ }
