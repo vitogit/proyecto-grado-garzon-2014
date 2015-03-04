@@ -10,15 +10,9 @@ Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for ent
 while executing---line 1347 of file abbrvnat.bst
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
 while executing---line 1347 of file abbrvnat.bst
-Warning--to sort, need author or key in TRANSYT-7F
-Warning--to sort, need author or key in CORSIM
-Warning--to sort, need author or key in ConteoTrafico
-Warning--to sort, need author or key in sigMontevideo
+Warning--empty year in CHC
 Warning--empty year in CORSIM
 Warning--empty year in ConteoTrafico
-Warning--empty year in TRANSYT-7F
-Warning--empty year in sigMontevideo
-Warning--empty year in CHC
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
 while executing---line 1429 of file abbrvnat.bst
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
@@ -43,6 +37,7 @@ Warning--empty year in OSMSTATS
 Warning--empty year in TrafficModeler
 Warning--empty journal in Penner2002
 Warning--empty journal in Rouphail2000
+Warning--empty year in sigMontevideo
 Warning--empty journal in Sanchez2004
 Warning--empty journal in Sanchez2008
 Warning--empty journal in Sanchez2010
@@ -50,5 +45,6 @@ Warning--empty journal in Stolfi2012
 Warning--empty year in SUMO
 Warning--empty year in SUMOOUT
 Warning--empty journal in Teo2010
+Warning--empty year in TRANSYT-7F
 Warning--empty journal in Vogel2000
 (There were 10 error messages)
