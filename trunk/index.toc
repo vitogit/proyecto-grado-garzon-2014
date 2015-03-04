@@ -9,25 +9,25 @@
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema del tr\IeC {\'a}nsito vehicular}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Corredor Garz\IeC {\'o}n}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Descripci\IeC {\'o}n}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Conceptos clave de un Corredor}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Descripci\IeC {\'o}n del corredor de Garzon}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\IeC {\textquestiondown }Es el Corredor de Garzon un BRT?}{6}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Algoritmos Evolutivos}{7}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Algoritmos Gen\IeC {\'e}ticos}{7}{subsection.2.3.1}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n de soluciones}{7}{section*.5}
+\contentsline {subsubsection}{Representaci\IeC {\'o}n de soluciones}{8}{section*.5}
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{8}{section*.6}
 \contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{8}{section*.7}
-\contentsline {subsubsection}{Cruzamiento}{8}{section*.8}
-\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{8}{section*.10}
-\contentsline {subsubsection}{Reemplazo}{8}{section*.12}
-\contentsline {subsubsection}{Criterio de parada}{9}{section*.13}
-\contentsline {subsection}{\numberline {2.3.2}Funcionamiento}{9}{subsection.2.3.2}
+\contentsline {subsubsection}{Cruzamiento}{9}{section*.8}
+\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{9}{section*.10}
+\contentsline {subsubsection}{Reemplazo}{9}{section*.12}
+\contentsline {subsubsection}{Criterio de parada}{10}{section*.13}
+\contentsline {subsection}{\numberline {2.3.2}Funcionamiento}{10}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Algoritmos gen\IeC {\'e}tico multiobjetivo}{10}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Algoritmo Gen\IeC {\'e}tico Paralelo}{10}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Maestro-Esclavo}{10}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Simulaci\IeC {\'o}n}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Simuladores de tr\IeC {\'a}fico}{10}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Simulaci\IeC {\'o}n}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Simuladores de tr\IeC {\'a}fico}{11}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Trabajos relacionados}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Resumen}{14}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.1}Resumen}{15}{subsection.2.5.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Modelado del problema }{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Representaciones}{17}{subsection.3.1.1}
