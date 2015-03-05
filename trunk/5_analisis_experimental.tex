@@ -63,9 +63,9 @@ Para las siguientes pruebas la función fitness del algoritmo (\ref{eq:funcion_f
 
 
 \subsection{Tiempo de simulación}
-Esto se refiere al tiempo que representa una simulación usando SUMO,  es un parametro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
+Esto se refiere al tiempo que representa una simulación usando SUMO,  es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este numero representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y valido que en cada escenario mas del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este numero representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario mas del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
 
 
 \subsection{Criterio de Parada}
@@ -75,7 +75,10 @@ Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de 
 
 Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
 
-Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada, como se ve en la siguiente gráfica representativa de las pruebas realizadas se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 ademas el tiempo de ejecución real esta dentro del margen pautado.
+Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
+
+Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
+En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 ademas el tiempo de ejecución real esta dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
 
 
 
@@ -96,6 +99,8 @@ Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores 
 
 Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos y son valores con los que se obtiene una distribución más adecuada.
 
+Se realizan 10 ejecuciones del algoritmo por cada tipo de tráfico y luego se obtiene el promedio de esos valores.
+
 La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios días por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
 
 \begin{table}[h]
@@ -103,21 +108,22 @@ La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen 
 	\caption{Comparación de fitness para distintas poblaciones}
 	\label{table:parametro_poblacion}
 	\centering
-	\begin{tabular}{ccrrcr}
+	\begin{tabular}{ccrrcp{2cm}}
 		\hline
-	   \multirow{2}{*}{\textbf{Población}}& & 
+	    \multirow{2}{*}{\textbf{Población}}& & 
 		\multicolumn{2}{c}{\textbf{Fitness}} \\
 		\cline{3-4}
 		& & {mejor} 
 		& {promedio} 
-		& \textbf{Tiempo de ejecución (m)} \\
+		& \textbf{Tiempo ejecución serial (m)} \\
 		\hline
-		32 & & {17.28} & 16.37$\pm$0.5 & 4853\\
-		48 & & {16.19} & 15.84$\pm$0.3 & 6772\\
-		64 & & {17.27} & 16.46$\pm$0.6 & 10184\\
+		32 & & {17.28} & 16.37$\pm$0.5 & 10184$\pm$526\\
+		48 & & {16.19} & 15.84$\pm$0.3 & 6772$\pm$256\\
+		64 & & {17.27} & 16.46$\pm$0.6 & 4853$\pm$155\\
 		\hline
 	\end{tabular}
 \end{table}
+
 
 
 
@@ -228,7 +234,7 @@ Entre los cambios estudiados se encuentran: eliminación de paradas y pasajes pe
 
 
 \section{Resultados}
-Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la evoluciona del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Ademas se realizan estudios sobre cambios en la funcion de fitness del algoritmo y un breve análisis de la eficiencia computacional.
+Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la evoluciona del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Ademas se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Valores numéricos del caso base}
@@ -381,15 +387,15 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 
 \subsection{Resultados numéricos de la evaluación sobre el escenario alternativo}
 
-Al comparar los resultados obtenidos se aprecia claramente que cuanto mas densidad de trafico mayor es el porcentaje de mejora. Ademas un resultado interesante es que las diferencias entre los valores de los distintos tipos de trafico se redujo.
+Al comparar los resultados obtenidos se aprecia claramente que cuanto mas densidad de tráfico mayor es el porcentaje de mejora. Ademas un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
-Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,8 minutos y un auto de demorar 14,5 minutos a 11.5 minutos con una densidad de trafico media. 
+Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,8 minutos y un auto de demorar 14,5 minutos a 11.5 minutos con una densidad de tráfico media. 
 
 
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando las velocidades de ómnibus(vpb), otros vehículos(vpv) y el fitness con cada tipo de trafico contra el caso base o realidad actual.}
+	\caption{Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando las velocidades de ómnibus(vpb), otros vehículos(vpv) y el fitness con cada tipo de tráfico contra el caso base o realidad actual.}
 	\label{table:mejoras_trafico_alternativo_algoritmo}
 	\centering
 	\begin{tabular}{cccccccc}
@@ -548,4 +554,4 @@ El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución c
 	\label{fig:speedup1}
 \end{figure}
 
-En la gráfica se observa como a medida que aumenta el trafico disminuye el speedup esto sucede por que esta influenciado por los accesos al disco duro, al tener mas autos circulando en la simulación se tiene que leer y escribir mas información en los archivos lo que aumenta el tiempo de ejecución del algoritmo, aunque como se ve esto no tiene un gran impacto.
+En la gráfica se observa como a medida que aumenta el tráfico disminuye el speedup esto sucede por que esta influenciado por los accesos al disco duro, al tener mas autos circulando en la simulación se tiene que leer y escribir mas información en los archivos lo que aumenta el tiempo de ejecución del algoritmo, aunque como se ve esto no tiene un gran impacto.

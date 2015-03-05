@@ -61,9 +61,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Pesos de la funci\IeC {\'o}n fitness}{30}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Tiempo de simulaci\IeC {\'o}n}{31}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Criterio de Parada}{31}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{31}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{32}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{32}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de escenarios}{33}{section.4.3}
+\contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de escenarios}{34}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Caso base o Realidad actual del corredor}{34}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Escenario Alternativo}{34}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Resultados}{35}{section.4.4}
@@ -78,7 +78,7 @@
 \contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{37}{subsection.4.4.5}
 \contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{38}{section*.44}
 \contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{38}{section*.45}
-\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{38}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{39}{subsection.4.4.6}
 \contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Conclusiones}{41}{section.5.1}
 \contentsline {section}{\numberline {5.2}Trabajo futuro}{41}{section.5.2}
