@@ -162,16 +162,6 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.12.27}
 }
 
-@Misc{Malv,
-  Title                    = {The Malva Project},
-
-  Author                   = {Malva},
-  HowPublished             = {\url{http://themalvaproject.github.io/}},
-  Note                     = {Disponible online, consultado julio 2014},
-
-  Timestamp                = {2014.12.27}
-}
-
 @Misc{Malva,
   Title                    = {The Malva Project},
 
@@ -185,7 +175,7 @@ offset between two consecutive sets of traffic lights},
 @Misc{MalvaAlgGenetico,
   Title                    = {Algoritmo Genetico de Malva},
 
-  Author                   = {MalvaAlgoritmo},
+  Author                   = {{Malva Algoritmo}},
   HowPublished             = {\url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}},
   Note                     = {Disponible online, consultado julio 2014},
 

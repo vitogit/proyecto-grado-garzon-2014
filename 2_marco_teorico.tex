@@ -18,7 +18,7 @@ Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desd
 
 Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. además se indica que Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica. Con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
-Por todo esto es relevante el tema de la sincronización de semáforos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes.
+Esto lleva a las autoridades a buscar nuevas soluciones, en el caso de Montevideo se trata del plan de movilidad urbana \citep{PlanMovilidad} que tiene como objetivo mejorar la eficiencia del transporte publico y democratizar el acceso al mismo. Uno de sus puntos principales es el desarrollo de corredores de tránsito para mejorar la movilidad. En la siguiente sección se darán detalles sobre corredores y en particular el Corredor de Garzón.
 
 \section{Corredor Garzón}
 COMPLETAR
@@ -78,7 +78,18 @@ Abril 2013 - Otro Corredor con obras paralizadas por criticas a GArzon
 %http://www.elpais.com.uy/informacion/marcha-atras-en-corredor-agraciada.html
 
 
+\section{Sincronización de semáforos}
+--Esto va en Garzon, cuando decimos que tiene problemas:
+Por todo esto es relevante el tema de la sincronización de semáforos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes.
 
+
+Un buen funcionamiento de los semáforos es fundamental para asegurar que el trafico se mueva con eficiencia y a la vez aporte seguridad a los peatones. 
+Existen diversos métodos para lograr la coordinación necesaria que van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle.
+
+Cabe destacar que cuanto mayor cantidad de semáforos para sincronizar mayor es la dificultad a la hora de encontrar una solución eficiente. Por este motivo se considera a este prolijea como NP-Dificil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
+
+
+Existen diversas métodos para solucionar este problema, uno de los mas desarrollados y efectivos son los algoritmos evolutivos los cuales son usados en este trabajo y serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
@@ -236,6 +247,8 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 	\label{fig:diagrama-master-slave}
 \end{figure}
 
+\subsection{Resumen}
+Los algoritmos evolutivos han demostrado su eficiencia en la resolución de gran cantidad de problemas de optimización. Si nos enfocamos en la resolución del problema de sincronización de semáforos existen algunas opciones para ayudar en su resolución, entre las que se encuentra la simulación microscópica o macroscópica del tráfico los cuales serán explicados en la siguiente sección.
 
 
 \section{Simulación}
