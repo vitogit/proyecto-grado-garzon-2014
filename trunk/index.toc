@@ -8,26 +8,27 @@
 \contentsline {section}{\numberline {1.6}Estructura del documento}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema del tr\IeC {\'a}nsito vehicular}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Corredor Garz\IeC {\'o}n}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Descripci\IeC {\'o}n del corredor de Garzon}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}\IeC {\textquestiondown }Es el Corredor de Garzon un BRT?}{6}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Algoritmos Evolutivos}{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Algoritmos Gen\IeC {\'e}ticos}{7}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.2}Corredores Urbanos de trafico}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Corredor de Garzon}{6}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Sincronizaci\IeC {\'o}n de sem\IeC {\'a}foros}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Algoritmos Evolutivos}{8}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Algoritmos Gen\IeC {\'e}ticos}{8}{subsection.2.4.1}
 \contentsline {subsubsection}{Representaci\IeC {\'o}n de soluciones}{8}{section*.5}
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{8}{section*.6}
-\contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{8}{section*.7}
+\contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{9}{section*.7}
 \contentsline {subsubsection}{Cruzamiento}{9}{section*.8}
 \contentsline {subsubsection}{Mutaci\IeC {\'o}n}{9}{section*.10}
-\contentsline {subsubsection}{Reemplazo}{9}{section*.12}
+\contentsline {subsubsection}{Reemplazo}{10}{section*.12}
 \contentsline {subsubsection}{Criterio de parada}{10}{section*.13}
-\contentsline {subsection}{\numberline {2.3.2}Funcionamiento}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Algoritmos gen\IeC {\'e}tico multiobjetivo}{10}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Algoritmo Gen\IeC {\'e}tico Paralelo}{10}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Maestro-Esclavo}{10}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Simulaci\IeC {\'o}n}{11}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Simuladores de tr\IeC {\'a}fico}{11}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Trabajos relacionados}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Resumen}{15}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.4.2}Funcionamiento}{10}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Algoritmos gen\IeC {\'e}tico multiobjetivo}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Algoritmo Gen\IeC {\'e}tico Paralelo}{10}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Maestro-Esclavo}{11}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}Resumen}{11}{subsection.2.4.6}
+\contentsline {section}{\numberline {2.5}Simulaci\IeC {\'o}n}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Simuladores de tr\IeC {\'a}fico}{11}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Trabajos relacionados}{12}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Resumen}{15}{subsection.2.6.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Modelado del problema }{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Representaciones}{17}{subsection.3.1.1}
@@ -38,7 +39,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Configuraci\IeC {\'o}n de la simulaci\IeC {\'o}n}{18}{subsection.3.1.2}
 \contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{18}{section*.19}
 \contentsline {section}{\numberline {3.2}Trabajo de campo}{19}{section.3.2}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n del modelo del tr\IeC {\'a}fico}{21}{section*.23}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n del modelo del tr\IeC {\'a}fico}{21}{section*.24}
 \contentsline {section}{\numberline {3.3}Arquitectura de la soluci\IeC {\'o}n}{23}{section.3.3}
 \contentsline {section}{\numberline {3.4}Biblioteca Malva}{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Herramientas}{24}{section.3.5}
@@ -53,8 +54,8 @@
 \contentsline {subsection}{\numberline {3.6.2}Inicializaci\IeC {\'o}n}{27}{subsection.3.6.2}
 \contentsline {subsection}{\numberline {3.6.3}Funci\IeC {\'o}n fitness}{28}{subsection.3.6.3}
 \contentsline {subsection}{\numberline {3.6.4}Operadores}{28}{subsection.3.6.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{28}{section*.29}
-\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{28}{section*.30}
+\contentsline {subsubsection}{Operador de Cruzamiento}{28}{section*.30}
+\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{28}{section*.31}
 \contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis Experimental}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}Ajuste param\IeC {\'e}trico}{30}{section.4.2}
@@ -70,16 +71,18 @@
 \contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{35}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{35}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{36}{subsection.4.4.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{36}{section*.37}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{36}{section*.38}
-\contentsline {subsubsection}{Alternar paradas}{36}{section*.39}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{36}{section*.40}
-\contentsline {subsection}{\numberline {4.4.4}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{37}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{37}{subsection.4.4.5}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{38}{section*.44}
-\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{38}{section*.45}
-\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{39}{subsection.4.4.6}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusiones}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{41}{section.5.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{42}{section.5.2}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{36}{section*.38}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{36}{section*.39}
+\contentsline {subsubsection}{Alternar paradas}{36}{section*.40}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{37}{section*.42}
+\contentsline {subsubsection}{Resumen}{38}{section*.43}
+\contentsline {subsection}{\numberline {4.4.4}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{38}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{38}{subsection.4.4.5}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{39}{section*.47}
+\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{39}{section*.48}
+\contentsline {subsubsection}{Resultados}{39}{section*.49}
+\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{40}{subsection.4.4.6}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusiones}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{43}{section.5.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{44}{section.5.2}
