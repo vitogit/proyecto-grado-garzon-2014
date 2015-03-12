@@ -2,19 +2,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Cruzamiento de un punto\relax }}{9}{figure.caption.9}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{10}{figure.caption.11}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo Maestro-Esclavo}}{11}{figure.caption.14}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{18}{figure.caption.20}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{19}{figure.caption.21}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{20}{figure.caption.22}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{22}{figure.caption.24}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{23}{figure.caption.25}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Arquitectura del algoritmo\relax }}{24}{figure.caption.26}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Cromosoma de 2 cruces\relax }}{27}{figure.caption.27}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{22}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{23}{figure.caption.26}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Arquitectura del algoritmo\relax }}{24}{figure.caption.27}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Cromosoma de 2 cruces\relax }}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{27}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{31}{figure.caption.31}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{33}{figure.caption.34}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{40}{figure.caption.48}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{33}{figure.caption.35}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas, Gris: Parada Eliminada, Azul:Para el G de Coectc y G de Cutcsa, Rojo: Para G de Coectc, violeta: solo G de Cutcsa.- Imagen original extraida de montevideo.gub.uy\relax }}{37}{figure.caption.41}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{42}{figure.caption.52}
 \addvspace {10\p@ }

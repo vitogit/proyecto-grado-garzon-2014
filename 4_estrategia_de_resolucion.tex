@@ -61,13 +61,13 @@ Para esto se realizaron varios ajustes editando los archivos xml para corregir e
 
 
 \section{Trabajo de campo}
-Al no contar con datos públicos sobre la densidad de trafico en la zona, realizamos un revelamiento in-situ con las siguientes características.
+Se cuentan con los datos públicos sobre la cantidad de  ómnibuses y sus frecuencias pero no se tienen datos sobre la densidad de trafico vehicular en la zona, por esto se realiza un revelamiento in-situ con las siguientes características.
 
 Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehiculos circulantes.
-Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia.
+Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia. 
 
 Se siguen las recomendaciones de los textos consultados al respecto \citep{ConteoTrafico}. Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
-Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla electrónica donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. También discriminamos entre vehículos y ómnibus que recorren Garzón.
+Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla electrónica donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. 
 
 \begin{figure}[H]
 	\centering
@@ -76,9 +76,36 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 	\label{fig:conteo_hoja}
 \end{figure}
 
-(TABLA CON RESULTADOS DE TRAFICO)
 
-Además se realizaron recorridas de punta a punta del corredor a una velocidad constante para verificar los tiempos obtenidos en la simulación para este recorrido.
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Resumen del revelamiento del trafico en la zona del corredor Garzón. Se muestra la cantidad de vehículos  y la orientación hacia donde circulan. }
+	\label{table:resumen_trafico}
+	\centering
+	\begin{tabular}{lcccc}
+		\hline
+		Intersección&
+		Sur-Garzon& 
+		Norte-Garzon & 
+		Oeste &
+		Este 
+		\\ 
+		\hline
+		Camino Colman  & 410 & 390 & 0 & 230\\		
+		Plaza Vidiella  & 400 & 444 & 292 & 0\\		
+		Aparicio Saravia  & 390 & 450 & 40 & 90\\		
+		Battle y Ordoñez  & 510 & 390 & 470 & 300 \\	
+		Camino Ariel  & 436 & 226 & 177 & 203 \\													
+		\hline
+		
+		
+		\hline
+	\end{tabular}
+\end{table}
+
+
+Además se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto para verificar los tiempos obtenidos en la simulación.
 
 Para obtener la configuración de los semáforos se realizo un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
 
