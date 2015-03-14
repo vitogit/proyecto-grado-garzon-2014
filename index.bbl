@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -50,12 +50,23 @@ CORSIM.
   November 2002.
 \newblock Disponible online, consultado noviembre 2014.
 
+\bibitem[Deb(2001)]{Deb2001}
+K.~Deb.
+\newblock Multiobjective optimization using evolutionary algorithms.
+\newblock 2001.
+
 \bibitem[DiFebbraro et~al.(2002)DiFebbraro, Giglio, y Sacco]{DiFebbraro2002}
 DiFebbraro, Giglio, y Sacco.
 \newblock On applying petri nets to determine optimal offsets for coordinated
   traffic light timings.
 \newblock \emph{Proc. IEEE 5th Int. Conf. Intell. Transportation Syst.}, pages
   773--778, 2002.
+
+\bibitem[E.~Alba(2002)]{Alba2002}
+M.~T. E.~Alba.
+\newblock Parallelism and evolutionary algorithms.
+\newblock \emph{IEEE Transactions on Evolutionary Computation, IEEE Press,
+  6(5):443-462}, 2002.
 
 \bibitem[ElPais(2013)]{olivera2013}
 ElPais.
@@ -86,6 +97,11 @@ J.~J.~K. G.~Y.~Lim y Y.~S. Hong.
 \newblock The optimization of traffic signal light using artificial
   intelligence.
 \newblock \emph{10th IEEE Int. Conf.Fuzzy Syst}, page 1279–1282, 2001.
+
+\bibitem[Goldberg(1989)]{Goldberg1989}
+D.~Goldberg.
+\newblock Genetic algorithms in search, optimization and machine learning.
+\newblock 1989.
 
 \bibitem[IMM()]{IMM}
 IMM.
@@ -142,6 +158,11 @@ Malva.
 \newblock
   \url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}.
 \newblock Disponible online, consultado julio 2014.
+
+\bibitem[Mitchell(1996)]{Mitchell1996}
+M.~Mitchell.
+\newblock An introduction to genetic algorithms.
+\newblock 1996.
 
 \bibitem[Montana(1995)]{Montana1995}
 D.~J. Montana.
