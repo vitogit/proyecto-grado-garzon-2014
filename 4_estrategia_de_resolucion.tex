@@ -8,55 +8,51 @@ Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquite
 
 \section{Modelado del problema }
 
-Para solucionar el problema se usaran simulaciones de la realidad, por tanto es importante contar con un modelo detallado y fidedigno.
-A continuación se detallan los puntos destacados del modelo.
+Para solucionar el problema se usaran simulaciones de la realidad, por tanto es importante contar con un modelo detallado y fidedigno. A continuación se da información sobre el simulador a utilizar, las herramientas necesarias y el proceso seguido para generar el modelo. 
+
+\subsection{Simulador SUMO ( Simulation of Urban MObility)}
+
+Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
+
+Entre las razones para elegir este simulador se encuentra que es de código abierto sin costo comercial, con una detallada documentación y buen ritmo de actualizaciones. Puede ser ejecutado tanto en linux como windows. Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución y con la interfaz que sirve para mostrar exactamente como se comporta el trafico.
+
+
+Tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el trafico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
+
+Algunas otras herramientas relacionadas a la simulación:
+
+\begin{itemize}
+	
+	\item  NetConvert: Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en archivo XML de red que SUMO reconoce. Este programa viene integrado con SUMO.
+	\item DUaRouter: Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
+	\item Traffic Modeler: Herramienta para la generación de tráfico de manera visual y luego exportarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
+	
+	
+\end{itemize}
 
 
 
 
-\subsection{Representaciones}
+\subsection{Proceso del modelado}
 
-\subsubsection{Red de calles}
-La red de calles se representa como un grafo dirigido en un archivo xml con extensión .net.xml . Allí se especifican los nodos, y vértices así como sus atributos. También se representan los semáforos. Esto  se genera utilizando una herramienta  para convertir un mapa al formato que SUMO utiliza.
-
-\subsubsection{Representación tráfico}
-En este caso también se utiliza un archivo xml donde se definen las rutas y los recorridos. Un recorrido representa el movimiento de un vehículo de un punto inicial hacia un punto final (El recorrido se hacen en tiempo de ejecución utilizando el camino más corto basado en el tráfico). 
-
-
-\subsubsection{Representación del tiempo}
-El tiempo se representa como una serie de pasos discretos, cada uno durando un segundo. Este valor se puede modificar aunque es recomendado dejarlo así para que sea consistente.
-
-
-\subsubsection{Tipos de vehículos}
-Se pueden crear diferentes tipos de vehículos especificando propiedades como largo, velocidad máxima,  aceleración, color, etc. También cuenta con vehículos por defecto como buses, camiones o automóviles.
-
-\subsection{Configuración de la simulación}
-
-En esta sección se realiza un resumen sobre los pasos realizados para tener los elementos necesarios para realizar la simulación.
+Se describen los pasos realizados para tener los elementos necesarios para realizar la simulación.
 
 \subsubsection{Diseño del mapa}
 
+El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Luego para cotejar su exactitud se comparo con otros servicios como Google Maps y Bing Maps.
 
-El mapa base de la zona proviene de Open Street Map \citep{OSM}, luego se cotejó su exactitud con Google Maps y Bing Maps.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/osm_garzon}
-	\caption{Tramo del mapa de Garzon de OSM}
-	\label{fig:osm_garzon}
-\end{figure}
-
-
-Se utilizó la herramienta netconvert para convertirlo al formato que SUMO acepta. 
-Para esto se realizaron varios ajustes editando los archivos xml para corregir errores en las calles, cruces y conexiones para que fuese fiel a la realidad y mantuviera la compatibilidad con SUMO.
-
+Se exporta el mapa al editor JOSM para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzon desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Ademas se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figures/mapa_sumo}
-	\caption{Mapa cargado en SUMO luego del modelado y procesamiento}
-	\label{fig:mapa_sumo}
+	\includegraphics[width=0.7\linewidth]{Figures/mapa_osm_sumo}
+	\caption{A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.}
+	\label{fig:mapa_osm_sumo}
 \end{figure}
+
+Luego se utilizó la herramienta Netconvert para transformarlo al formato que SUMO acepta y se realizaron varios ajustes editando los archivos generados para corregir errores en las calles, cruces y conexiones. De esta manera se obtuvo un mapa fiel a la realidad y compatible con el simulador.
+
+
 
 
 
@@ -111,25 +107,20 @@ Para obtener la configuración de los semáforos se realizo un recorrido en bici
 
 
 \newpage
-\subsubsection{Creación del modelo del tráfico}
-Esta es la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
+\subsubsection{Modelo del tráfico}
+Una vez que tenemos el mapa compatible con el simulador y los datos relevados de la realidad necesitamos agregar el trafico en la simulacion.
 
-Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente
-
-JTR (junction turning ratio) : basados en probabilidades en los cruces  es decir cuando un vehículo llega a un cruce tiene cierta probabilidad de seguir o doblar.
-
-Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
-
-
-Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
-
-Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
+Existen varios modelos disponibles para la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
+\begin{itemize}
+	\item Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente
+	\item Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
+	\item Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
+	\item Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
+\end{itemize}
 
 
 
-Con los datos relevados se creo un modelo vehicular de la ciudad [poner el mapa] que brinda una aproximación sobre la densidad de tráfico y la velocidad promedio de circulación.
-
-Se utilizó el programa Traffic Modeler \citep{TrafficModeler} con lo que se logra generar modelos de tráfico complejo de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.
+Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.
 
 
 \begin{figure}[H]
@@ -140,13 +131,10 @@ Se utilizó el programa Traffic Modeler \citep{TrafficModeler} con lo que se log
 \end{figure}
 
 
-Actualmente no se cuenta con información publica relativa a la configuración de los semáforos en la ciudad, aunque cabe destacar que en el futuro se prevé crear un sistema centralizado de sincronización de semáforos. \citep{OBS01} 
-En este caso se agregó la información sobre la configuración de los semáforos de los datos relevados.
-
 Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima.
 
 Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municpal de Montevideo \citep{IMM}
-Estos incluyen las lineas urbanas  'G', '409' ,'2', 'd5'  y  '148' . 
+Estos incluyen las lineas urbanas  'G', '409' ,'2', 'd5'  y  '148'. 
 
 Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
 
@@ -155,10 +143,16 @@ Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  mi
 
 También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora mas. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
-Para establecer la velocidad media de los ómnibus se realizo un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Transito.
+Para establecer la velocidad media de los ómnibus se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Transito.
 Estos datos cuentan con la posición GPS, la velocidad instantánea y la referencia al ómnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
+Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:
 
+\begin{itemize}
+	\item Semáforos: Cuenta con la información detallada de la duración de los semáforos, el comienzo de su fase y la ubicación del mismo respecto al mapa base.
+	\item Rutas de vehículos: Se indica la ruta de cada vehículo que recorrerá el mapa.
+	\item Recorrido de ómnibus: Indica las rutas de los ómnibus, la frecuencia, la ubicación de las paradas, en cuales se detiene y cuanto demora.
+\end{itemize}
 
 \begin{figure}[h]
 	\centering
@@ -168,93 +162,58 @@ Estos datos cuentan con la posición GPS, la velocidad instantánea y la referen
 \end{figure}
 
 
+
+
 \section{Arquitectura de la solución}
 
-En el siguiente diagrama muestra la arquitectura propuesta para el problema.
+En el siguiente diagrama se muestra la arquitectura propuesta para el problema.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
-\caption{Arquitectura del algoritmo}
+\caption{Arquitectura de la función de fitness}
 \label{fig:arquitectura1}
 \end{figure}
 
+La biblioteca Malva se utiliza para la implementación del algoritmo, en cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. 
 
-Malva se utiliza para la implementación del algoritmo, en cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. 
+En el primer paso el algoritmo genera la población inicial, estos individuos representan una configuración de semáforos para el Corredor con el tiempo de duración de las luces y las fases. Esta población se genera realizando algunas variaciones de los valores reales obtenidos.
 
-El simulador genera archivos con información sobre la simulación que son usados por el algoritmo para determinar el fitness.
-
-Luego los archivos son procesados por el algoritmo para extraer los datos útiles necesario para la función de fitness.
-
-
-
-
-
+Luego por cada individuo se genera un archivo compatible con el simulador que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador para cada individuo. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo, estos tienen la información necesaria para calcular el fitness de cada individuo como la velocidad media de ómnibus y otros vehículos.
 
 
 \section{Biblioteca Malva}
 
-\citep{Malva} surge como una variante del proyecto \citep{Mallba}. Propone la actualización, mejora y desarrollarlo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+\citep{Malva} surge como una variante del proyecto \citep{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
-Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas. que incluyen todos los aspectos internos del esqueleto y on independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citep{CHC}.
+Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas que incluyen todos los aspectos internos del esqueleto y son independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citep{CHC}.
 
 
-
-\section{Herramientas}
-Aquí se muestra información útil sobre las herramientas utilizadas.
-
-\subsection{Open Street Map} 
-Es un proyecto en donde una comunidad crea mapas libres y editables \citep{OSM}. Cuenta con cerca de 1.8 millones de usuarios  y  más de 20.000 que editaron algo en el ultimo mes \citep{OSMSTATS} por lo que es muy activa. Se utilizan datos de GPS móviles, fotografías satelitales y otras fuentes libres para crear los mapas y editarlos. 
-
-\subsection{SUMO ( Simulation of Urban MObility)}
-
-Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. además incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico, construcción de mapas, etc. 
-
-
-\subsection{Por que usar SUMO? }
-otras alternativas? Revisar estado del arte?
-Sumo es gratis
-Nos permite utilizarlo sin interfaz gráfica por linea de comando lo que aumenta sensiblemente la velocidad ed ejecución, y  nos permite visualizar la interfaz gráfica una vez completada la optimización para ver exactamente como se comporta el sistema en la simulación.
-
-Sumo presenta varias salidas con información interesante: \citep{SUMOOUT} 
-La salida obtenemos el tiempo de simulación, la cantidad de emitidos y la cantidad de completados. Buscamos que sea > 80%
-Permite la ejecución tanto por linea de comando como una interfaz gráfica para visualizar
-
-\subsection{NetConvert}
-Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en archivo XML de red que SUMO reconoce. Este programa viene integrado con SUMO
-
-\subsection{DUaRouter}
-Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
-
-\subsection{Traffic Modeler}
-Herramienta para la generación de tráfico de manera visual y luego transformarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
 
 \newpage
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético proviso por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para que se ejecute en paralelo.
+Se utiliza el algoritmo genético proviso por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo.
 
 
-Resumen de las características:
+A continuación se realiza un resumen de sus características:
 \begin{itemize}
 
-\item Algoritmo paralelo: Utiliza el método maestro esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
+\item Algoritmo paralelo: Utiliza el método maestro-esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
 \item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso especifico.
-\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos.
-\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento por un punto especifico para nuestro caso así como para la mutación.
-\item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de 3 individuos, y la selección de hijos por el método de ruleta.
+\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos y sus fases.
+\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto especifico para el problema al igual que para la mutación.
+\item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
 
 \end{itemize}
 
-más adelante se realizara el ajuste paramétrico para determinar tanto el tiempo de simulación, criterio de parada y tasas de cruzamiento y mutación optimas para el algoritmo.
 
-El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
-
+El siguiente esquema muestra el algoritmo utilizado. 
  
 \begin{algorithm}[H]
-	\caption{Algoritmo Genético de Malva}
+	\caption{Algoritmo Genético de Malva. }
 	\label{alg:algoritmo_genetico_malva}
 	\begin{algorithmic} [1] 
 		{
@@ -282,18 +241,20 @@ El siguiente esquema muestra el algoritmo utilizado. \citep{MalvaAlgGenetico}
 
 \subsection{Representación del cromosoma}
 
-Se explican algunas definiciones necesarias para comprender la representación.
+Definimos los siguientes conceptos:
+\begin{itemize}
+	\item Cruce: Es el lugar de intersección de dos o más vías de circulación.
+	\item Fase: Es la configuración de las luces de los semáforos en un determinado cruce.
+\end{itemize}
 
-Cruce: Es el lugar de intersección de dos o más vías de circulación.
-Fase: Es la configuración de las luces de los semáforos en un determinado cruce.
 
 El  cromosoma  se  va  a  agrupar  lógicamente  en  cruces siendo el valor de cada gen el tiempo que demora una
-fase de un cruce, además se agrega para cada cruce un número que representa en que fase comienza el semáforo. 
-Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como la cantidad de fases de cada uno.
+fase de un cruce, además se agrega para cada cruce un número que representa en que fase comenzará el semáforo. 
+Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como de la cantidad de fases de cada uno.
 
 En la representación se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
  
-Es  importante que el algoritmo no genere soluciones inviables por lo que no debe modificar la combinación de luces de cada fase evitando combinaciones de luces erróneas. Por tanto tanto la modificación se realizara solo en el valor que indica el comienzo de fase y en los tiempos relacionados.
+Es  importante que el algoritmo no genere soluciones inviables por lo que no debe modificar la combinación de luces de cada fase para evitar combinaciones de luces erróneas. Por tanto la modificación se realizará solo en el valor que indica el comienzo de fase y en los tiempos relacionados.
 
 \begin{figure}[h]
 \centering
@@ -302,7 +263,7 @@ Es  importante que el algoritmo no genere soluciones inviables por lo que no deb
 \label{fig:cromosoma1}
 \end{figure}
 
-En la siguiente figura vemos la representación de los archivos de simulación que nos provee SUMO para el cromosoma anterior, donde vemos como se representan las fases por ejemplo el texto “GGGGrrGGGGrr” demora 52 segundos. “G” es Verde, “r” es Rojo e “y” es Amarillo. El offset indica el inicio de la fase.
+En la siguiente figura vemos el archivo con la configuración de semáforos que utiliza el simulador para el cromosoma anterior, donde vemos como se representan las fases. Por ejemplo el texto "GGGGrrGGGGrr" demora 52 segundos. "G" indica la luz verde, "r" la roja, "y" el Amarillo. El offset indica el inicio de la fase.
 
 \begin{figure}[h]
 \centering
@@ -312,12 +273,12 @@ En la siguiente figura vemos la representación de los archivos de simulación q
 \end{figure}
 
 
-\subsection{Inicialización}
+
+\subsection{Población inicial}
 
 Para la inicialización de la población se toma como referencia
 la configuración obtenida con los datos in-situ, luego para cada
-cruce se hacen variar las duraciones de las fases de manera aleatoria entre un rango de  5 a 60  segundos  (valores configurables)
-además la fase inicial se elige aleatoriamente entre la cantidad de fases del cruce (se cuentan las luces amarillas).
+cruce se hacen variar las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Se elige la fase inicial aleatoriamente entre la cantidad de fases del cruce.
 
 \subsection{Función fitness}
 La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
@@ -331,7 +292,7 @@ Se empleara una función multiobjetivo usando combinación lineal de la velocida
 
 En nuestro caso tenemos como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv).
 
-Esta es la formula de fitness donde x e y indica el peso que le vamos a especificar a la función. 
+Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le vamos a especificar a la función. 
 
         \begin{equation}
         \label{eq:funcion_fitness}
@@ -342,23 +303,34 @@ En una primera instancia se establece x = y = 1 mas adelante se experimentara co
 
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
-Se  utilizará cruzamiento  de  un  punto,  implementado
-específicamente  para  el  problema,  seleccionando  el  intervalo
-entre 2 cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento esta propiedad lo mantendrá.
+Se  utilizará cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento se intentara mantener esta propiedad.
+
+En la siguiente figura los padres cuentan con tres cruces, se elige un punto de corte aleatoriamente entre dos cruces y se generan los hijos que son una combinación de los padres.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{Figures/alg_cruzamiento}
+	\caption{Visualización del cruzamiento entre individuos.}
+	\label{fig:op_cruzamiento}
+\end{figure}
+
 
 
 \subsubsection{Operador de Mutación}
-La  mutación también fue  implementada  específicamente para
-el problema, utilizaremos dos tipos de mutación:
+Se implementaron dos tipos de mutación:
 \begin{itemize}
 
 \item Mutación de duración de fase: para cada fase de cada cruce se
 hace variar su duración sumando o restando una cantidad dada
 de segundos entre un rango determinado con una probabilidad
 dada.
-\item Mutación de inicio de cruce: se elige aleatoriamente una fase
-con  la  cual  va  a  arrancar  inicialmente  el  cruce  con  una
-probabilidad dada.
+\item Mutación de inicio de fase: se elige aleatoriamente una fase
+con la cual va a comenzar inicialmente el cruce con una probabilidad dada.
 
 \end{itemize}
 
+\subsubsection{Operador de selección y reemplazo}
+Se  utilizan los provistos por el algoritmo newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta. La política de reemplazo indica que tanto padres como hijos pueden ser parte de la siguiente generación, por lo que existe reemplazo de padres por hijos.
+
+\subsubsection{Parámetros del algoritmo}
+Los parámetros específicos del algoritmo se establecen en la siguiente sección, donde se realiza un análisis experimental para encontrar los mas adecuados. Estos parámetros son: numero de generaciones, tamaño de población, probabilidad de cruzamiento y de mutación.
