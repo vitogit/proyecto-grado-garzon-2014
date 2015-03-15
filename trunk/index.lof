@@ -8,17 +8,18 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{12}{figure.caption.14}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Modelo Maestro-Esclavo}}{14}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tramo del mapa de Garzon de OSM\relax }}{22}{figure.caption.23}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa cargado en SUMO luego del modelado y procesamiento\relax }}{23}{figure.caption.24}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{24}{figure.caption.25}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{26}{figure.caption.28}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{27}{figure.caption.29}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Arquitectura del algoritmo\relax }}{28}{figure.caption.30}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Cromosoma de 2 cruces\relax }}{31}{figure.caption.31}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{23}{figure.caption.20}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{26}{figure.caption.24}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Cromosoma de 2 cruces\relax }}{29}{figure.caption.26}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{29}{figure.caption.27}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{30}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{35}{figure.caption.35}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{figure.caption.38}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas, Gris: Parada Eliminada, Azul:Para el G de Coectc y G de Cutcsa, Rojo: Para G de Coectc, violeta: solo G de Cutcsa.- Imagen original extraida de montevideo.gub.uy\relax }}{41}{figure.caption.44}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{46}{figure.caption.55}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{35}{figure.caption.33}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{figure.caption.36}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes para \IeC {\'o}mnibus y otros veh\IeC {\'\i }culos en el recorrido completo del corredor Garz\IeC {\'o}n para los diferentes tipos de trafico.\relax }}{40}{figure.caption.39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas, Gris: Parada Eliminada, Azul:Para el G de Coectc y G de Cutcsa, Rojo: Para G de Coectc, violeta: solo G de Cutcsa.- Imagen original extra\IeC {\'\i }da de montevideo.gub.uy\relax }}{41}{figure.caption.43}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{46}{figure.caption.54}
 \addvspace {10\p@ }

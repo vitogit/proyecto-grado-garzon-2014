@@ -1,7 +1,7 @@
 \chapter{Análisis Experimental}
-En esta sección se presenta la descripción de los escenarios , la plataforma de ejecución y el análisis experimental.
+En esta sección se presenta la descripción de los escenarios, la plataforma de ejecución y el análisis experimental.
 
-Este se divide en dos etapas, primero se realiza la configuración paramétrica para encontrar el mejor rendimiento del algoritmo. Luego se realizan las pruebas donde se muestran los resultados y comparaciones.
+Este se divide en dos etapas, primero se realiza la configuración paramétrica para encontrar el mejor rendimiento del algoritmo y luego se realizan las pruebas donde se muestran los resultados y comparaciones.
 
 
 \section{Desarrollo y Plataforma de ejecución }
@@ -30,7 +30,7 @@ Descripcion del hardware:
 
 \section{Ajuste paramétrico}
 Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones.  
-Los elementos que se ajustaran seran los siguientes:
+Los elementos que se ajustaran serán los siguientes:
 
 \begin{itemize}
 	\item Tiempo de simulación	
@@ -289,6 +289,7 @@ Por tanto se puede aplicar el criterio de significancia estadística para valida
 algoritmo A es mejor que el algoritmo B si los resultados de A y B cumplen:
 
 
+
 \begin{equation}
 \label{eq:funcion_significancia}
 \left |f_{avg}(A) - f_{avg}(B)  \right | > max(std(f_A),std(f_B))
@@ -297,17 +298,20 @@ algoritmo A es mejor que el algoritmo B si los resultados de A y B cumplen:
 En este caso A representa el algoritmo y B el caso base. Esto indica que la diferencia del resultado promedio del caso base restado al resultado del caso base debe ser mayor a la máxima desviación.
 Esto se cumple para todos los casos, por lo que podemos afirmar que existe evidencia estadística para decir que los resultados del algoritmo son mejores al del caso base.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/duracion_viajes}
+	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de trafico.}
+	\label{fig:duracion_viajes}
+\end{figure}
 
-Esto significa que un viaje en ómnibus del principio al fin del corredor (6.5km) duraba 27,7min en el caso base y luego del algoritmo se mejora hasta 23.5min en una situación de tráfico alto. En el caso de un viaje en auto la duración era de 14.8min y luego del algoritmo 11.8min.
-
-Al analizar la tabla se ve que los resultados del algoritmo para tráfico alto son aun mejores que el tráfico bajo en el caso base. 
-
-
+Como se aprecia en el gráfico el algoritmo mejora la duración de los viajes tanto de ómnibus como de otros vehículos en los tres tipos de trafico estudiados. Como cabía esperar aumenta la duración del viaje al aumentar el trafico, aunque un resultado interesante es que la duración original de los viajes cuando el trafico es bajo es casi igual a la duración de los viajes con trafico alto luego de ejecutar el algoritmo.
+Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m. 
 
 
 
 \subsection{Detalles del escenario alternativo}
-Los cambios propuestos incluyen eliminación de paradas, semaforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
+Los cambios propuestos incluyen eliminación de paradas, semáforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
 
 
 
@@ -319,32 +323,36 @@ En este caso se selecciono la parada en la calle Ariel y Casavalle.
 
 
 \subsubsection{Eliminación de pasajes peatonales}
-Hay tres pasajes peatonales en el corredor con semáforos que detienen el tráfico, dos de ellos solo manejan una esquina (sin pulsador en funcionamiento) donde en el escenario alternativo se implemento solamente mediante un "Pare" en la calle transveral al corredor y el otro es netamente peatonal frente a la Facultad de Agronomía que fue totalmente eliminado. Una opción que mantiene los pasajes peatonales asi como también los resultados obtenidos en el escenario alternativo sería implementar el pasaje peatonal por encima del corredor. Al eliminar los pasajes peatonales se aumenta la velocidad media de todo el transporte.
+Hay tres pasajes peatonales en el corredor con semáforos que detienen el tráfico, dos de ellos solo manejan una esquina (sin pulsador en funcionamiento) donde en el escenario alternativo se implemento solamente mediante un "Pare" en la calle transversal al corredor y el otro es netamente peatonal frente a la Facultad de Agronomía que fue totalmente eliminado. Una opción que mantiene los pasajes peatonales así como también los resultados obtenidos en el escenario alternativo sería implementar el pasaje peatonal por encima del corredor. Al eliminar los pasajes peatonales se aumenta la velocidad media de todo el transporte.
 
 \subsubsection{Alternar paradas}
 
 Uno de los problemas del ómnibus es su baja aceleración por lo que cada vez que este frena en un semáforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un ómnibus tiene que hacer se mejora la velocidad promedio.
-La linea G es la que recorre a Garzón de punta a punta, esta línea es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartiendo las ganancias del corredor o mediante algun metodo para equiparar el pasaje transportado. Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos (como en la actualidad) Si se reduce el numero de paradas que hace un ómnibus, aumentará su velocidad promedio y al cubrir las paradas entre las dos empresas no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+La linea G es la que recorre a Garzón de punta a punta, esta línea es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
 
-Este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/paradas_alternativas}
-	\caption{Gráfico de paradas alternativas, Gris: Parada Eliminada, Azul:Para el G de Coectc y G de Cutcsa, Rojo: Para G de Coectc, violeta: solo G de Cutcsa.- Imagen original extraida de montevideo.gub.uy}
+	\caption{Gráfico de paradas alternativas. Gris: Parada Eliminada. Azul: linea G de Coectc y de Cutcsa. Rojo: linea G de Coectc. Violeta: G de Cutcsa. - Imagen original extraída de montevideo.gub.uy}
 	\label{fig:paradas_alternadas}
 \end{figure}
 
+Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos (como en la actualidad) Si se reduce el numero de paradas que hace un ómnibus, aumentará su velocidad promedio y al cubrir las paradas entre las dos empresas no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+
+Este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
+
+
+
 \subsubsection{Cambio básico de semáforos}
-Al hacer el relevamiento de los datos notamos que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema, el carril que hay que detener es el de la izquierda del ómnibus cuando una linea dobla a la izquierda pero no los dos carriles al mismo tiempo.
+Al hacer el revelamiento de los datos se encontró que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema, el carril que hay que detener es el de la izquierda del ómnibus cuando una linea dobla a la izquierda pero no los dos carriles al mismo tiempo.
 
-No sabemos si esto se debió a un error en la programación o si por un tema de costos resulta mas económico o fácil manejar los dos semáforos de los carriles paralelos juntos, pero al suceder en varias intersecciones y para los dos lados mejora en alguna medida a los autos que circulan por los dos carriles.
+No se tiene conocimiento si esto corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Al suceder en varias intersecciones y para los dos lados se mejora la velocidad promedio de los autos que circulan por los dos carriles.
 
-Para el escenario alternativo se realizo el cambio explicado en las intersecciones de:
+Este cambio se aplico en las siguientes intersecciones:
 \begin{itemize}
-	\item Islas Canarias, dobla línea 409 hacia la izquierda, orientado a Colon
-	\item Ariel, doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino 
-	\item Cno Casavalle, dobla línea 174 hacia la izquierda, orientado a Paso Molino 
+	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colon.
+	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino 
+	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino 
 \end{itemize}
 
 \subsubsection{Resumen}

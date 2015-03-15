@@ -29,31 +29,22 @@
 \contentsline {subsection}{\numberline {2.6.1}Resumen}{18}{subsection.2.6.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Modelado del problema }{21}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Representaciones}{21}{subsection.3.1.1}
-\contentsline {subsubsection}{Red de calles}{21}{section*.18}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n tr\IeC {\'a}fico}{21}{section*.19}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n del tiempo}{21}{section*.20}
-\contentsline {subsubsection}{Tipos de veh\IeC {\'\i }culos}{22}{section*.21}
-\contentsline {subsection}{\numberline {3.1.2}Configuraci\IeC {\'o}n de la simulaci\IeC {\'o}n}{22}{subsection.3.1.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{22}{section*.22}
+\contentsline {subsection}{\numberline {3.1.1}Simulador SUMO ( Simulation of Urban MObility)}{21}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Proceso del modelado}{22}{subsection.3.1.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{22}{section*.18}
 \contentsline {section}{\numberline {3.2}Trabajo de campo}{23}{section.3.2}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n del modelo del tr\IeC {\'a}fico}{25}{section*.27}
-\contentsline {section}{\numberline {3.3}Arquitectura de la soluci\IeC {\'o}n}{27}{section.3.3}
-\contentsline {section}{\numberline {3.4}Biblioteca Malva}{28}{section.3.4}
-\contentsline {section}{\numberline {3.5}Herramientas}{28}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Open Street Map}{29}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}SUMO ( Simulation of Urban MObility)}{29}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Por que usar SUMO? }{29}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}NetConvert}{29}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}DUaRouter}{29}{subsection.3.5.5}
-\contentsline {subsection}{\numberline {3.5.6}Traffic Modeler}{29}{subsection.3.5.6}
-\contentsline {section}{\numberline {3.6}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{30}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Representaci\IeC {\'o}n del cromosoma}{30}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Inicializaci\IeC {\'o}n}{31}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Funci\IeC {\'o}n fitness}{32}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Operadores}{32}{subsection.3.6.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{32}{section*.33}
-\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{32}{section*.34}
+\contentsline {subsubsection}{Modelo del tr\IeC {\'a}fico}{24}{section*.22}
+\contentsline {section}{\numberline {3.3}Arquitectura de la soluci\IeC {\'o}n}{26}{section.3.3}
+\contentsline {section}{\numberline {3.4}Biblioteca Malva}{27}{section.3.4}
+\contentsline {section}{\numberline {3.5}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{28}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Representaci\IeC {\'o}n del cromosoma}{28}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Poblaci\IeC {\'o}n inicial}{29}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Funci\IeC {\'o}n fitness}{30}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Operadores}{30}{subsection.3.5.4}
+\contentsline {subsubsection}{Operador de Cruzamiento}{30}{section*.28}
+\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{31}{section*.30}
+\contentsline {subsubsection}{Operador de selecci\IeC {\'o}n y reemplazo}{31}{section*.31}
+\contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{31}{section*.32}
 \contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis Experimental}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Desarrollo y Plataforma de ejecuci\IeC {\'o}n }{33}{section.4.1}
 \contentsline {section}{\numberline {4.2}Ajuste param\IeC {\'e}trico}{34}{section.4.2}
@@ -69,17 +60,17 @@
 \contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{39}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{39}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{40}{subsection.4.4.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{40}{section*.41}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{40}{section*.42}
-\contentsline {subsubsection}{Alternar paradas}{40}{section*.43}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{41}{section*.45}
-\contentsline {subsubsection}{Resumen}{42}{section*.46}
-\contentsline {subsection}{\numberline {4.4.4}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{42}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{42}{subsection.4.4.5}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{43}{section*.50}
-\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{43}{section*.51}
-\contentsline {subsubsection}{Resultados}{43}{section*.52}
-\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{44}{subsection.4.4.6}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{40}{section*.40}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{40}{section*.41}
+\contentsline {subsubsection}{Alternar paradas}{41}{section*.42}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{42}{section*.44}
+\contentsline {subsubsection}{Resumen}{42}{section*.45}
+\contentsline {subsection}{\numberline {4.4.4}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{43}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{43}{subsection.4.4.5}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{43}{section*.49}
+\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{44}{section*.50}
+\contentsline {subsubsection}{Resultados}{44}{section*.51}
+\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{45}{subsection.4.4.6}
 \contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}Conclusiones}{47}{section.5.1}
 \contentsline {section}{\numberline {5.2}Trabajo futuro}{47}{section.5.2}
