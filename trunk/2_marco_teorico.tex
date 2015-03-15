@@ -1,6 +1,6 @@
 \chapter{Marco Teórico}
 
- En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y como se buscan soluciones como por ejemplo con la construcción de Corredores exclusivos para el transporte publico. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de trafico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras variantes y opciones.
+ En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y como se buscan soluciones como por ejemplo con la construcción de Corredores exclusivos para el transporte publico. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras variantes y opciones.
 
 \section{Problema del tránsito vehicular}
 
@@ -18,15 +18,15 @@ Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desd
 
 Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. además se indica que Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica. Con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
-El crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte publico cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los Metros pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de transito rápido).\citep{BRT_Dial} 
+El crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte publico cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los Metros pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido).\citep{BRT_Dial} 
 
 En el caso de Montevideo para solucionar este problema se esta implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte publico y democratizar el acceso al mismo. El sistema de transporte esta inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará mas información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
 
 
 
-\section{Corredores Urbanos de trafico}
+\section{Corredores Urbanos de tráfico}
 
-El corredor urbano de trafico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los autobuses y los carriles para el resto del tráfico y esta es la principal diferencia con un concepto similar llamado "carril de solo bus". Los carriles de solo bus se separan por líneas horizontales que son pintadas en la calle indicando que solo pueden circular autobuses por ese medio y los corredores segregados una separación en cemento que imposibilita el cambio de carriles. Los carriles de solo bus suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo mas allá de ser muy difícil de controlar que no se invada el carril, al hacer los carriles de solo bus sobre la derecha, es necesario que el transporte privado invada el carril al doblar a la derecha y que taxis lo invadan para levantar pasajeros por estar al lado de la vereda.  
+El corredor urbano de tráfico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los autobuses y los carriles para el resto del tráfico y esta es la principal diferencia con un concepto similar llamado "carril de solo bus". Los carriles de solo bus se separan por líneas horizontales que son pintadas en la calle indicando que solo pueden circular autobuses por ese medio y los corredores segregados una separación en cemento que imposibilita el cambio de carriles. Los carriles de solo bus suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo mas allá de ser muy difícil de controlar que no se invada el carril, al hacer los carriles de solo bus sobre la derecha, es necesario que el transporte privado invada el carril al doblar a la derecha y que taxis lo invadan para levantar pasajeros por estar al lado de la vereda.  
 
 Los corredores segregados a nivel (sin hacer viaductos) cruzan las intersecciones mediante semáforos, lo que puede reducir mucho la capacidad del sistema. Las corredores segregados a distinto nivel evitan esos conflictos al construirse de forma que los carriles del autobús quedan completamente separados del resto del tráfico. 
 
@@ -98,7 +98,7 @@ Abril 2013 - Otro Corredor con obras paralizadas por criticas a GArzon
 Por todo esto es relevante el tema de la sincronización de semáforos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes.
 
 
-Un buen funcionamiento de los semáforos es fundamental para asegurar que el trafico se mueva con eficiencia y a la vez aporte seguridad a los peatones. 
+Un buen funcionamiento de los semáforos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones. 
 Existen diversos métodos para lograr la coordinación necesaria que van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle.
 
 Cabe destacar que cuanto mayor cantidad de semáforos para sincronizar mayor es la dificultad a la hora de encontrar una solución eficiente. Por este motivo se considera a este prolijea como NP-Dificil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
@@ -332,7 +332,7 @@ Cuanto más crece el número de vehículos y la complejidad de la red de mapas m
 
 \section{Trabajos relacionados}
 
-La investigación del estado del arte se realizo con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema y segundo encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución.
+La investigación del estado del arte se realizó con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema y segundo encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución.
 
 El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos como  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, etc; por lo tanto la cantidad de soluciones encontradas fue abundante y variada, por esto se decidió enfocarse en soluciones cercanas a la propuesta y en otras que tuvieran alguna particularidad interesante para destacar.
 
@@ -350,7 +350,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		
 		Se compararon los resultados con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados.
 		
-		Este mismo grupo realizo trabajos similares expandiendo esta investigación, que se presentan a continuación.
+		Este mismo grupo realizó trabajos similares expandiendo esta investigación, que se presentan a continuación.
 	\end{item}
 	
 	\begin{item}
@@ -401,7 +401,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 	
 	\begin{item}
 		\bibentry{Teo2010}
-		Este trabajo presenta un modelo simple con una sola intersección en donde se intenta optimizar los tiempos de los semáforos para lograr mejorar rendimiento del trafico. El cromosoma representa los tiempos de la luces verdes mientras que la función de fitness es el largo de las colas generadas. Un aspecto interesante es que la simulación tiene un tiempo fijo de 600 segundos por generación pero no se detalla el tipo de simulación utilizada. Las conclusiones indican que la optimización usando algoritmos genéticos  es buena para el problema del flujo de tráfico.	
+		Este trabajo presenta un modelo simple con una sola intersección en donde se intenta optimizar los tiempos de los semáforos para lograr mejorar rendimiento del tráfico. El cromosoma representa los tiempos de la luces verdes mientras que la función de fitness es el largo de las colas generadas. Un aspecto interesante es que la simulación tiene un tiempo fijo de 600 segundos por generación pero no se detalla el tipo de simulación utilizada. Las conclusiones indican que la optimización usando algoritmos genéticos  es buena para el problema del flujo de tráfico.	
 	\end{item}	
 	
 	
@@ -436,7 +436,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 	\begin{item}
 		\bibentry{Rouphail2000}
 		
-		Se estudia una pequeña red de tráfico de nueve intersecciones con semáforos en la ciudad de Chicago, contando con trafico de vehículos, parking, rutas de ómnibus y paradas.  
+		Se estudia una pequeña red de tráfico de nueve intersecciones con semáforos en la ciudad de Chicago, contando con tráfico de vehículos, parking, rutas de ómnibus y paradas.  
 		Se toman valores reales en horas pico, comprobando que las colas que se generan en la simulación coinciden con la realidad.
 		Usa el programa \citep{TRANSYT-7F} que permite visualizar mapas y contiene optimización de varios algoritmos genéticos y \citep{CORSIM}  un simulador de tráfico comercial.
 		Se probaron 12 estrategias distintas de resolución midiendo el tiempo de demora en la red y el largo de las colas producidas. Los resultados indican que la performance de la red aumentó considerablemente usando este método.	
@@ -454,7 +454,7 @@ El siguiente trabajo de \citet{Sanchez2008} expande lo anterior y lo utiliza en 
 
 Se destaca de \citet{Sanchez2010} las pruebas de diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiro la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
 
-Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el trafico en una ciudad indicando a los vehículos la mejor ruta por lo que se podría tomar como un elemento en trabajos futuros.
+Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta por lo que se podría tomar como un elemento en trabajos futuros.
 
 Tanto los trabajos de \citet{Teo2010} como \citet{Stolfi2012} plantean la simulación con un tiempo fijo lo que se utilizó en el proyecto.
 
