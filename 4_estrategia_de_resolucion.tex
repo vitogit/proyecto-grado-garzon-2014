@@ -14,10 +14,10 @@ Para solucionar el problema se usaran simulaciones de la realidad, por tanto es 
 
 Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
-Entre las razones para elegir este simulador se encuentra que es de código abierto sin costo comercial, con una detallada documentación y buen ritmo de actualizaciones. Puede ser ejecutado tanto en linux como windows. Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución y con la interfaz que sirve para mostrar exactamente como se comporta el trafico.
+Entre las razones para elegir este simulador se encuentra que es de código abierto sin costo comercial, con una detallada documentación y buen ritmo de actualizaciones. Puede ser ejecutado tanto en linux como windows. Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución y con la interfaz que sirve para mostrar exactamente como se comporta el tráfico.
 
 
-Tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el trafico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
+Tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
 
 Algunas otras herramientas relacionadas a la simulación:
 
@@ -57,7 +57,7 @@ Luego se utilizó la herramienta Netconvert para transformarlo al formato que SU
 
 
 \section{Trabajo de campo}
-Se cuentan con los datos públicos sobre la cantidad de  ómnibuses y sus frecuencias pero no se tienen datos sobre la densidad de trafico vehicular en la zona, por esto se realiza un revelamiento in-situ con las siguientes características.
+Se cuentan con los datos públicos sobre la cantidad de  ómnibus y sus frecuencias pero no se tienen datos sobre la densidad de tráfico vehicular en la zona, por esto se realiza un revelamiento in-situ con las siguientes características.
 
 Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehiculos circulantes.
 Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia. 
@@ -76,7 +76,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Resumen del revelamiento del trafico en la zona del corredor Garzón. Se muestra la cantidad de vehículos  y la orientación hacia donde circulan. }
+	\caption{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículos  y la orientación hacia donde circulan. }
 	\label{table:resumen_trafico}
 	\centering
 	\begin{tabular}{lcccc}
@@ -103,12 +103,12 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 Además se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto para verificar los tiempos obtenidos en la simulación.
 
-Para obtener la configuración de los semáforos se realizo un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
+Para obtener la configuración de los semáforos se realizó un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
 
 
 \newpage
 \subsubsection{Modelo del tráfico}
-Una vez que tenemos el mapa compatible con el simulador y los datos relevados de la realidad necesitamos agregar el trafico en la simulacion.
+Una vez que tenemos el mapa compatible con el simulador y los datos relevados de la realidad necesitamos agregar el tráfico en la simulacion.
 
 Existen varios modelos disponibles para la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
 \begin{itemize}
@@ -143,7 +143,7 @@ Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  mi
 
 También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora mas. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
-Para establecer la velocidad media de los ómnibus se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Transito.
+Para establecer la velocidad media de los ómnibus se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito.
 Estos datos cuentan con la posición GPS, la velocidad instantánea y la referencia al ómnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
 Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:

@@ -199,7 +199,7 @@ Esto representa la situación actual en términos de tráfico, red vial y sincro
 
 Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos que son de acceso publico.
 
-Se realizo un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la linea durante todo el día para una semana en particular. De esta forma se constato que para de las lineas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
+Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la linea durante todo el día para una semana en particular. De esta forma se constato que para de las lineas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
 
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
@@ -210,9 +210,12 @@ El caso de tráfico alto se aumenta 50 \%  los vehículos y el tiempo de espera 
 El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
 En resumen tenemos los siguientes escenarios de tráfico:
 
-Tráfico Alto:  2800 vehículos en la simulación y 70 ómnibuses. \newline
-Tráfico Medio: 2000 vehículos y 70 ómnibuses \newline
-Tráfico Bajo:  1000 vehículos y 70 ómnibuses
+\begin{itemize}
+\item Tráfico Alto:  2800 vehículos en la simulación y 70 ómnibus. 
+\item Tráfico Medio: 2000 vehículos y 70 ómnibus.
+\item Tráfico Bajo:  1000 vehículos y 70 ómnibus.
+\end{itemize}
+
  
 
 %\subsection{Escenario Evolutivo }
@@ -301,11 +304,11 @@ Esto se cumple para todos los casos, por lo que podemos afirmar que existe evide
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/duracion_viajes}
-	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de trafico.}
+	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico.}
 	\label{fig:duracion_viajes}
 \end{figure}
 
-Como se aprecia en el gráfico el algoritmo mejora la duración de los viajes tanto de ómnibus como de otros vehículos en los tres tipos de trafico estudiados. Como cabía esperar aumenta la duración del viaje al aumentar el trafico, aunque un resultado interesante es que la duración original de los viajes cuando el trafico es bajo es casi igual a la duración de los viajes con trafico alto luego de ejecutar el algoritmo.
+Como se aprecia en el gráfico el algoritmo mejora la duración de los viajes tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Como cabía esperar aumenta la duración del viaje al aumentar el tráfico, aunque un resultado interesante es que la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el algoritmo.
 Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m. 
 
 
@@ -439,7 +442,7 @@ Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 
 
 \subsection{Variación de la función de fitness}
 
-La función fitness (\ref{eq:funcion_fitness}) utilizaba los pesos x = y = 1 lo que representa un balance equitativo  para ómnibuses y vehículos.
+La función fitness (\ref{eq:funcion_fitness}) utilizaba los pesos x = y = 1 lo que representa un balance equitativo  para ómnibus y vehículos.
 
 %Por un cruce de Garzón pasan cada hora:
 %70 ómnibus , si aproximamos con 23 personas= 1610 personas por hora
@@ -461,12 +464,12 @@ En este caso, le damos 70\% del peso a los vehículos y 30\% a los ómnibus. Es 
 
 \subsubsection{Resultados}
 
-La siguiente tabla compara las velocidades promedio de ómnibuses y vehículos para los tres tipos de pesos que se probaron y por cada tipo de trafico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con mas prioridad para los ómnibuses y el 30-70 mas prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de omnibues (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de trafico.
+La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con mas prioridad para los ómnibus y el 30-70 mas prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de omnibues (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
 
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Modificación de los pesos para ómnibus (pb) y para otros vehículos (pv) en la función fitness. Analizando las variaciones en la velocidad promedio de ómnibuses (vpb),  otros vehículos (vpv) y fitness. }
+	\caption{Modificación de los pesos para ómnibus (pb) y para otros vehículos (pv) en la función fitness. Analizando las variaciones en la velocidad promedio de ómnibus (vpb),  otros vehículos (vpv) y fitness. }
 	\label{table:analisis_fitness}
 	\centering
 	\begin{tabular}{p{1cm}p{1.2cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.2cm}p{1.2cm}p{1.2cm} }
@@ -504,9 +507,9 @@ La siguiente tabla compara las velocidades promedio de ómnibuses y vehículos p
 \end{table}
 
 
-Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar mas prioridad a los ómnibuses se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el trafico es bajo este cambio casi no aumenta la velocidad de los ómnibuses, una explicación posible de este comportamiento es que ya se llego a un limite máximo y no se puede mejorar mas.
+Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar mas prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus, una explicación posible de este comportamiento es que ya se llego a un limite máximo y no se puede mejorar mas.
 
-Al dar mas prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibuses la cual es muy evidente en el caso de trafico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de trafico que se estudie.
+Al dar mas prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibus la cual es muy evidente en el caso de tráfico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de tráfico que se estudie.
 
 En general las variaciones en las velocidades no son grandes pero suficientemente apreciable para tener cierta libertad al plantear distintos objetivos que tiendan a favorecer un tipo u otro de vehículos.
 

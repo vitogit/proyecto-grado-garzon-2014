@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {1.6}Estructura del documento}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema del tr\IeC {\'a}nsito vehicular}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Corredores Urbanos de trafico}{6}{section.2.2}
+\contentsline {section}{\numberline {2.2}Corredores Urbanos de tr\IeC {\'a}fico}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Corredor de Garz\IeC {\'o}n}{7}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Sincronizaci\IeC {\'o}n de sem\IeC {\'a}foros}{8}{section.2.3}
 \contentsline {section}{\numberline {2.4}Algoritmos Evolutivos}{9}{section.2.4}
@@ -61,7 +61,7 @@
 \contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{39}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{40}{subsection.4.4.3}
 \contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{40}{section*.40}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{40}{section*.41}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{41}{section*.41}
 \contentsline {subsubsection}{Alternar paradas}{41}{section*.42}
 \contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{42}{section*.44}
 \contentsline {subsubsection}{Resumen}{42}{section*.45}

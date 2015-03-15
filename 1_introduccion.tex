@@ -24,7 +24,7 @@ Estos son los objetivos básicos que se plantearon al inicio del  proyecto.
 	\item Estudio del problema del tráfico y la sincronización de semáforos.
 	\item Revelamiento de información sobre trabajos relacionados en este ámbito.
 	\item Creación de un algoritmo evolutivo paralelo que resuelva el problema en la zona del corredor Garzón.
-	\item Creación de un mapa y  configuración relativa a semáforos, tráfico y reglas de transito que sea precisa y obtenida de la realidad actual.	
+	\item Creación de un mapa y  configuración relativa a semáforos, tráfico y reglas de tránsito que sea precisa y obtenida de la realidad actual.	
 	\item Aplicar técnicas de computación de alto desempeño para aumentar el rendimiento de la solución.
 
 \end{itemize}
@@ -32,19 +32,19 @@ Estos son los objetivos básicos que se plantearon al inicio del  proyecto.
  
 \section{Enfoque}
 
-Desde un primero momento se intento dotar al proyecto de una buena aproximación de la realidad, en tal sentido se realizaron reuniones con el Ing. Juan Pablo Berta del Servicio de Ingeniería de Tránsito de la Intendencia de Montevideo en Agosto del  2014 y con el Ing. Daniel Muniz del departamento de Informática de la Intendencia en Setiembre de 2014 para conocer la situación del trafico capitalino, aprender de su experiencia y obtener datos que nos fueran útiles para el proyecto.
+Desde un primero momento se intento dotar al proyecto de una buena aproximación de la realidad, en tal sentido se realizaron reuniones con el Ing. Juan Pablo Berta del Servicio de Ingeniería de Tránsito de la Intendencia de Montevideo en Agosto del  2014 y con el Ing. Daniel Muniz del departamento de Informática de la Intendencia en Setiembre de 2014 para conocer la situación del tráfico capitalino, aprender de su experiencia y obtener datos que nos fueran útiles para el proyecto.
 
 
 Buscando una aproximación aun mas precisa se realizaron trabajos de campo para determinar la configuración de los semáforos, la densidad de tráfico y el tiempo de recorrida. El mapa y la frecuencia de ómnibus son de acceso publico así como el simulador utilizado.
 
 Se creará un programa que implemente un algoritmo evolutivo multiobjetivo que utiliza un simulador de tráfico para obtener las métricas a optimizar. Se busca obtener una nueva configuración de semáforos que en las simulaciones se comporte mejor que la situación actual basándonos en la velocidad promedio de ómnibus y del resto de los vehículos.
 
-Dada la complejidad del problema el algoritmo será paralelo y se utilizara la plataforma Cluster fing para poder acelerar el tiempo real de procesamiento. Además se realizara un escenario alternativo con modificaciones de la realidad actual con el objetivo de mejorar las métricas.
+Dada la complejidad del problema el algoritmo será paralelo y se utilizara la plataforma Cluster fing para poder acelerar el tiempo real de procesamiento. Además se realizará un escenario alternativo con modificaciones de la realidad actual con el objetivo de mejorar las métricas.
 
 \section{Limitaciones y alcance}
 
 La zona modelada comprende todo el tramo de el Corredor Garzón y dos caminos paralelos a ambos lados, que dada la configuración de las calles las cuales corren en diagonal fue un proceso complejo.
-El revelamiento de trafico hecho in-situ fue realizado para un número determinado de calles que contiene a Garzón y cinco cruces representativos. Se busca una aproximación útil y no un estudio detallado sobre el trafico en la zona.
+El revelamiento de tráfico hecho in-situ fue realizado para un número determinado de calles que contiene a Garzón y cinco cruces representativos. Se busca una aproximación útil y no un estudio detallado sobre el tráfico en la zona.
 
 Como lo que se pretende modelar es el tráfico vehicular y transporte publico no se realiza una simulación de peatones.
 
@@ -64,7 +64,7 @@ Como lo que se pretende modelar es el tráfico vehicular y transporte publico no
 
 
 \section{Estructura del documento}
-En el siguiente capitulo se hace un repaso sobre fundamentos teóricos necesarios para comprender el resto del trabajo. Se da información sobre corredores y en concreto el Corredor Garzón, así como un repaso breve sobre algoritmos evolutivos y simuladores de trafico. Ademas se muestran los trabajo relacionados enfocando en algoritmos genéticos para la sincronización de semáforos.
+En el siguiente capitulo se hace un repaso sobre fundamentos teóricos necesarios para comprender el resto del trabajo. Se da información sobre corredores y en concreto el Corredor Garzón, así como un repaso breve sobre algoritmos evolutivos y simuladores de tráfico. Ademas se muestran los trabajo relacionados enfocando en algoritmos genéticos para la sincronización de semáforos.
 En el capítulo 3 se explica como se modela el problema y la arquitectura diseñada  para resolverlo. Luego se comenta el trabajo de campo realizado para obtener datos de la realidad utilizados en la solución. Ademas se detalla el algoritmo genético utilizado así como la biblioteca y herramientas usadas.
 El capítulo 4 cuenta con la descripción de los escenarios, los resultados de la evaluación del algoritmo y las comparaciones realizadas. En este caso tenemos el escenario que representa la situación actual y también un escenario alternativo con modificaciones los cuales se evalúan con el algoritmo. Ademas se realizan pruebas para comprender como varia el algoritmo al modificar su función de fitness y se realiza un breve análisis de la eficiencia computacional del algoritmo.
 El capítulo 5 da las conclusiones finales y el trabajo a futuro que se puede realizar.

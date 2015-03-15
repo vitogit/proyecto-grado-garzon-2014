@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  15 MAR 2015 03:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  15 MAR 2015 03:48
 entering extended mode
 **index.tex
 
@@ -1425,224 +1425,224 @@ LaTeX Info: Redefining \. on input line 194.
 LaTeX Info: Redefining \% on input line 194.
  [37 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/grafica_mutacion_cruzamiento.jpg>]
-LaTeX Info: Redefining \. on input line 231.
-LaTeX Info: Redefining \% on input line 231.
+LaTeX Info: Redefining \. on input line 234.
+LaTeX Info: Redefining \% on input line 234.
  [38]
-LaTeX Info: Redefining \. on input line 300.
-LaTeX Info: Redefining \% on input line 300.
+LaTeX Info: Redefining \. on input line 299.
+LaTeX Info: Redefining \% on input line 299.
  [39]
-<Figures/duracion_viajes.jpg, id=627, 477.785pt x 282.05376pt>
+<Figures/duracion_viajes.jpg, id=626, 477.785pt x 282.05376pt>
 File: Figures/duracion_viajes.jpg Graphic file (type jpg)
 
 <use Figures/duracion_viajes.jpg>
-Package pdftex.def Info: Figures/duracion_viajes.jpg used on input line 303.
+Package pdftex.def Info: Figures/duracion_viajes.jpg used on input line 306.
 (pdftex.def)             Requested size: 293.99872pt x 173.55885pt.
-LaTeX Info: Redefining \. on input line 327.
-LaTeX Info: Redefining \% on input line 327.
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
  [40 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/duracion_viajes.jpg>]
-<Figures/paradas_alternativas.jpg, id=634, 499.8675pt x 492.33937pt>
+<Figures/paradas_alternativas.jpg, id=633, 499.8675pt x 492.33937pt>
 File: Figures/paradas_alternativas.jpg Graphic file (type jpg)
 
 <use Figures/paradas_alternativas.jpg>
 Package pdftex.def Info: Figures/paradas_alternativas.jpg used on input line 33
-5.
+8.
 (pdftex.def)             Requested size: 293.99872pt x 289.58371pt.
-LaTeX Info: Redefining \. on input line 343.
-LaTeX Info: Redefining \% on input line 343.
+LaTeX Info: Redefining \. on input line 344.
+LaTeX Info: Redefining \% on input line 344.
  [41 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/paradas_alternativas.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
 []|\OT1/cmr/m/n/10.95 Mejora
  []
 
-LaTeX Info: Redefining \. on input line 411.
-LaTeX Info: Redefining \% on input line 411.
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
 [42]
-LaTeX Info: Redefining \. on input line 461.
-LaTeX Info: Redefining \% on input line 461.
+LaTeX Info: Redefining \. on input line 464.
+LaTeX Info: Redefining \% on input line 464.
  [43]
-Overfull \hbox (4.73186pt too wide) in paragraph at lines 474--474
+Overfull \hbox (4.73186pt too wide) in paragraph at lines 477--477
 []|\OT1/cmr/m/n/10.95 Trafico| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--475
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
 []|\OT1/cmr/m/n/10.95 pb($ $%)
  []
 
 
-Overfull \hbox (3.26933pt too wide) in paragraph at lines 479--479
+Overfull \hbox (3.26933pt too wide) in paragraph at lines 482--482
 \OT1/cmr/m/n/10.95 vpb($ $%)| 
  []
 
 
-Overfull \hbox (2.661pt too wide) in paragraph at lines 480--480
+Overfull \hbox (2.661pt too wide) in paragraph at lines 483--483
 \OT1/cmr/m/n/10.95 vpv($ $%)| 
  []
 
 
-Overfull \hbox (19.57266pt too wide) in paragraph at lines 481--483
+Overfull \hbox (19.57266pt too wide) in paragraph at lines 484--486
 \OT1/cmr/m/n/10.95 fitnesss($ $%)| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 484--484
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 487--487
 []|\OT1/cmr/m/n/10.95 17.92$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.18| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 484--484
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 487--487
 []|\OT1/cmr/m/n/10.95 34.30$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.40| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 484--484
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 487--487
 []|\OT1/cmr/m/n/10.95 14.50$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 485--485
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 488--488
 []|\OT1/cmr/m/n/10.95 17.93$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.23| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 485--485
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 488--488
 []|\OT1/cmr/m/n/10.95 34.06$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.17| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 485--485
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 488--488
 []|\OT1/cmr/m/n/10.95 12.65$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.11| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 486--486
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
 []|\OT1/cmr/m/n/10.95 17.55$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.23| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 486--486
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
 []|\OT1/cmr/m/n/10.95 34.71$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.21| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 486--486
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
 []|\OT1/cmr/m/n/10.95 16.42$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.10| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 492--492
 []|\OT1/cmr/m/n/10.95 16.95$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.32| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 492--492
 []|\OT1/cmr/m/n/10.95 33.29$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.29| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 489--489
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 492--492
 []|\OT1/cmr/m/n/10.95 13.95$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.15| 
  []
 
 
-Overfull \hbox (1.05147pt too wide) in paragraph at lines 490--490
+Overfull \hbox (1.05147pt too wide) in paragraph at lines 493--493
 []|\OT1/cmr/m/n/10.95 Medio| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 490--490
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 493--493
 []|\OT1/cmr/m/n/10.95 17.29$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.27| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 490--490
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 493--493
 []|\OT1/cmr/m/n/10.95 33.08$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 490--490
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 493--493
 []|\OT1/cmr/m/n/10.95 12.24$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.12| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 491--491
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
 []|\OT1/cmr/m/n/10.95 16.71$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.42| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 491--491
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
 []|\OT1/cmr/m/n/10.95 33.79$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.31| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 491--491
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
 []|\OT1/cmr/m/n/10.95 15.92$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.11| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 16.51$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.60| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 32.90$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.25| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 494--494
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 13.72$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.17| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
 []|\OT1/cmr/m/n/10.95 16.72$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
 []|\OT1/cmr/m/n/10.95 32.79$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.26| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
 []|\OT1/cmr/m/n/10.95 13.75$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.07| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
 []|\OT1/cmr/m/n/10.95 15.48$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.42| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
 []|\OT1/cmr/m/n/10.95 33.20$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.25| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
 []|\OT1/cmr/m/n/10.95 15.49$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.16| 
  []
 
 
 Underfull \vbox (badness 1394) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 517.
-LaTeX Info: Redefining \% on input line 517.
+LaTeX Info: Redefining \. on input line 520.
+LaTeX Info: Redefining \% on input line 520.
  [44]
-Underfull \hbox (badness 10000) in paragraph at lines 537--540
+Underfull \hbox (badness 10000) in paragraph at lines 540--543
 
  []
 
-LaTeX Info: Redefining \. on input line 584.
-LaTeX Info: Redefining \% on input line 584.
+LaTeX Info: Redefining \. on input line 587.
+LaTeX Info: Redefining \% on input line 587.
 [45] <Figures/speedup1.jpg, id=667, 484.81125pt x 292.09125pt>
 File: Figures/speedup1.jpg Graphic file (type jpg)
 
 <use Figures/speedup1.jpg>
-Package pdftex.def Info: Figures/speedup1.jpg used on input line 587.
+Package pdftex.def Info: Figures/speedup1.jpg used on input line 590.
 (pdftex.def)             Requested size: 293.99872pt x 177.13692pt.
 )
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\6_conclu
@@ -1825,7 +1825,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (63 pages, 1796524 bytes).
+Output written on index.pdf (63 pages, 1796751 bytes).
 PDF statistics:
  1012 PDF objects out of 1200 (max. 8388607)
  257 named destinations out of 1000 (max. 500000)
