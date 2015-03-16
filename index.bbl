@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -72,8 +72,8 @@ M.~T. E.~Alba.
 ElPais.
 \newblock Garzón: Olivera admitió errores.
 \newblock
-  \url{http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html
-  }, 2013.
+  \url{http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html},
+  2013.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[ElPais(2015)]{olivera2015}
@@ -152,13 +152,6 @@ Malva.
 \newblock \url{http://themalvaproject.github.io/}.
 \newblock Disponible online, consultado julio 2014.
 
-\bibitem[{Malva Algoritmo}()]{MalvaAlgGenetico}
-{Malva Algoritmo}.
-\newblock Algoritmo genetico de malva.
-\newblock
-  \url{https://github.com/themalvaproject/malva/wiki/Algorithms:-Genetic-Algorithm}.
-\newblock Disponible online, consultado julio 2014.
-
 \bibitem[Mitchell(1996)]{Mitchell1996}
 M.~Mitchell.
 \newblock An introduction to genetic algorithms.
@@ -181,24 +174,10 @@ S.~Nesmachnow.
   paralelos,.
 \newblock 2002.
 
-\bibitem[Observador()]{OBS01}
-Observador.
-\newblock Imm sincronizará 400 semáforos para agilizar el tránsito
-  capitalino.
-\newblock
-  \url{http://www.elobservador.com.uy/noticia/292066/imm-sincronizara-400-semaforos-para-agilizar-el-transito-capitalino/}.
-\newblock Disponible online, consultado febrero 2015.
-
 \bibitem[OSM()]{OSM}
 OSM.
 \newblock Open street map.
 \newblock \url{www.openstreetmap.org/}.
-\newblock Disponible online, consultado agosto 2014.
-
-\bibitem[{OSM Stats}()]{OSMSTATS}
-{OSM Stats}.
-\newblock Osm stats.
-\newblock \url{http://osmstats.neis-one.org/}.
 \newblock Disponible online, consultado agosto 2014.
 
 \bibitem[Papaleontiou()]{TrafficModeler}
@@ -267,12 +246,6 @@ Subrayado.
 SUMO.
 \newblock Simulation of urban mobility.
 \newblock \url{http://sumo.dlr.de/wiki/Main_Page}.
-\newblock Disponible online, consultado agosto 2014.
-
-\bibitem[{SUMO Simulation Output}()]{SUMOOUT}
-{SUMO Simulation Output}.
-\newblock Sumo output.
-\newblock \url{http://sumo.dlr.de/wiki/Simulation/Output}.
 \newblock Disponible online, consultado agosto 2014.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, y Chin]{Teo2010}

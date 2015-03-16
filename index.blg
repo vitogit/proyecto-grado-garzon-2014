@@ -29,13 +29,10 @@ Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a com
 while executing---line 1429 of file abbrvnat.bst
 Warning--empty year in Mallba
 Warning--empty year in Malva
-Warning--empty year in MalvaAlgGenetico
 Warning--empty journal in Mitchell1996
 Warning--empty journal in Montana1996
 Warning--empty journal in Nesmachnow2002
-Warning--empty year in OBS01
 Warning--empty year in OSM
-Warning--empty year in OSMSTATS
 Warning--empty year in TrafficModeler
 Warning--empty journal in Penner2002
 Warning--empty journal in Rouphail2000
@@ -45,7 +42,6 @@ Warning--empty journal in Sanchez2008
 Warning--empty journal in Sanchez2010
 Warning--empty journal in Stolfi2012
 Warning--empty year in SUMO
-Warning--empty year in SUMOOUT
 Warning--empty journal in Teo2010
 Warning--empty year in TRANSYT-7F
 Warning--empty journal in Vogel2000
