@@ -30,6 +30,12 @@ Algunas otras herramientas relacionadas a la simulación:
 	
 \end{itemize}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/sim1}
+	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzon.}
+	\label{fig:sim1}
+\end{figure}
 
 
 
@@ -41,7 +47,7 @@ Se describen los pasos realizados para tener los elementos necesarios para reali
 
 El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Luego para cotejar su exactitud se comparo con otros servicios como Google Maps y Bing Maps.
 
-Se exporta el mapa al editor JOSM para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzon desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Ademas se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
+Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Ademas se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
 
 \begin{figure}[H]
 	\centering
@@ -123,9 +129,9 @@ Existen varios modelos disponibles para la representación de la circulación de
 Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.4\linewidth]{Figures/areaflow1}
+	\includegraphics[width=0.3\linewidth]{Figures/areaflow1}
 	\caption{Mapa del TrafficModeler con las áreas de tráfico. Círculos del mismo color indican tráfico especificado entre esas áreas}
 	\label{fig:areaflow1}
 \end{figure}
@@ -154,12 +160,6 @@ Para introducir estos datos en el simulador se utilizan tres archivos de configu
 	\item Recorrido de ómnibus: Indica las rutas de los ómnibus, la frecuencia, la ubicación de las paradas, en cuales se detiene y cuanto demora.
 \end{itemize}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/sim1}
-	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzon.}
-	\label{fig:sim1}
-\end{figure}
 
 
 

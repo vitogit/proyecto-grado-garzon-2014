@@ -1,29 +1,23 @@
 \chapter{Conclusiones y trabajo futuro}
 
 \section{Conclusiones}
-Todos los objetivos planteados al principio del trabajo fueron cumplidos; se encontró información útil al realizar la investigación sobre los trabajos relacionados que ayudo a mejorar la solución presentada. 
-Al estudiar el problema del tráfico se constato que realmente afecta la vida de las personas y la búsqueda de nuevas soluciones pueden mejorar su calidad de vida.
-Uno de los trabajos mas tediosos es la confección del mapa y los datos relacionados con la simulación ya que se intento en todo momento acercarse a la realidad y para ellos se puso énfasis en la recolección de datos en el lugar, la validación de los resultados, preguntar a expertos, etc.
-
-
-
+Los objetivos planteados al principio del trabajo fueron cumplidos.
+Se encontró información útil al realizar la investigación sobre los trabajos relacionados que ayudó a mejorar la solución presentada. 
+Al estudiar el problema del tráfico se constato que realmente afecta a la población y al desarrollo de las ciudades por tanto es imprescindible la búsqueda de nuevas soluciones. A nivel de nuestro país no se constato soluciones similares por lo que este trabajo es un aporte interesante que demuestra que existe tanto las herramientas como el conocimiento necesario para realizarlo.
  
-A pesar de que el problema de sincronización de semáforos es un problema difícil de abordar, los resultados obtenidos
-muestran la capacidad de los algoritmos genéticos para resolver problemas de este tipo, obteniendo resultados muy buenos. 
+Las simulaciones demostraron su valor al dar la flexibilidad de probar distintas variantes de forma sencilla y poder crear un escenario alternativo con modificaciones agregadas que logra una mejora del 11 \% en el valor de fitness.
+ 
+A pesar de que el problema de sincronización de semáforos es un problema difícil de abordar, los resultados obtenidos muestran la capacidad de los algoritmos genéticos para resolver problemas de este tipo, obteniendo resultados muy  satisfactorios.En general el algoritmo logra una mejora de hasta  24.2 \% (21.40 \% en promedio) de el valor de fitness comparando con la realidad actual, mientras el escenario alternativo obtiene una mejora de hasta 37.1 \% (34.7\% en promedio) en el valor de fitness.
 
-%El enfoque multiobjetivo aún siendo básico dio buenos resultados en el sentido de priorizar un tipo de tráfico u otro.
+El enfoque multiobjetivo aún siendo básico dio la flexibilidad para analizar las diferentes velocidades medias de ómnibus y otros vehículos, lo que permitió realizar comparaciones independientes que dotaron al trabajo de un nivel de detalle mayor.
 
-El desarrollo de algoritmos con capacidad de paralelización son fundamentales sobre  todo en problemas complejos que requieren mucho poder de computo como el que se abordo.El algoritmo presentado obtuvo casi un speedup lineal.
-
-Algo a destacar es que el algoritmo puede ser aplicado a otros lugares con solo cambiar los datos de entrada: mapa, tráfico, configuración de los semáforos y recorrido de ómnibus.
-
-Las simulaciones demostraron su valor al dar la flexibilidad de probar distintas variantes de forma sencilla y poder crear un escenario alternativo con mejoras agregadas con las que se logran mejoras del 11 \%
-
-Los resultados de aplicar el algoritmo fueron muy satisfactorios logrando disminuir el tiempo de viaje en ómnibus por el corredor de 26,7 minutos a 23.5m aplicando solo el algoritmo y hasta 17,6m al aplicarlo sobre el escenario alternativo.
-
+El desarrollo de algoritmos con capacidad de paralelización son fundamentales sobre  todo en problemas complejos que requieren mucho poder de computo como el que se abordo. El algoritmo obtuvo buenas métricas de speedup sin las cuales hubiera sido muy difícil generar la cantidad de pruebas presentadas.
 
 \section{Trabajo futuro}
 
-La elaboración de los mapas para la simulación donde se incluye cambios en las rutas para que sean reconocidas por el simulador, agregado de la configuración de semáforos, agregado de las lineas y paradas de ómnibus puede ser un proceso lento y tedioso, por tanto para un futuro se podría sugerir la realización de herramientas que automaticen o agilicen este trabajo.
+La elaboración de los mapas para la simulación requiere modificaciones para que sean reconocidos por el simulador, en algunos casos se tuvo que realizar manualmente ya que las herramientas no brindaban la granularidad necesaria.
+Ademas el agregado de la configuración de semáforos, de las lineas y paradas de ómnibus puede ser un proceso lento y propenso a errores, por tanto para un futuro se sugiere la creación o búsqueda de herramientas que automaticen o agilicen este trabajo.
+
+El algoritmo puede ser aplicado a otros lugares con solo cambiar los datos de entrada: mapa, tráfico, configuración de los semáforos y recorrido de ómnibus. Dado el alcance del trabajo solo se enfoco en la zona del Corredor Garzón pero seria interesante aplicarlo en otros escenarios para determinar su rendimiento.
 
 Los trabajos de  \citet{Montana1996} y \citet{Vogel2000}  proponen la adaptabilidad del algoritmo en tiempo real, aunque esto requiere del agregado de sensores a la red puede ser un método de mejora importante sobre todo en zonas de gran densidad de tráfico.
