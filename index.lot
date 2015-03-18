@@ -2,15 +2,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Resumen del revelamiento del tr\IeC {\'a}fico en la zona del corredor Garz\IeC {\'o}n. Se muestra la cantidad de veh\IeC {\'\i }culos y la orientaci\IeC {\'o}n hacia donde circulan. \relax }}{24}{table.caption.22}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Resumen del revelamiento del tr\IeC {\'a}fico en la zona del corredor Garz\IeC {\'o}n. Se muestra la cantidad de veh\IeC {\'\i }culos y la orientaci\IeC {\'o}n hacia donde circulan. \relax }}{24}{table.caption.23}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Comparaci\IeC {\'o}n de fitness para distintas poblaciones\relax }}{36}{table.caption.34}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{table.caption.35}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Resultados del caso base mostrando la velocidad promedio \IeC {\'o}mnibus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) para los distintos tipos de tr\IeC {\'a}fico\relax }}{39}{table.caption.37}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Resultados luego de ejecutado el algoritmo mostrando velocidad promedio \IeC {\'o}mnibus (vpb) y de otros veh\IeC {\'\i }culos(vpv) para los distintos tipos de tr\IeC {\'a}fico \relax }}{39}{table.caption.38}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Valores del escenario alternativo con su velocidad promedio \IeC {\'o}mnibus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) comparando el fitness para el tr\IeC {\'a}fico medio \relax }}{42}{table.caption.46}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Mejoras obtenidas para las velocidades promedio de los omnibus(vpb) y de otros vehiculos (vpv) en el escenario alternativo para distintos tipos de tr\IeC {\'a}ficos \relax }}{43}{table.caption.47}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando las velocidades de \IeC {\'o}mnibus(vpb), otros veh\IeC {\'\i }culos(vpv) y el fitness con cada tipo de tr\IeC {\'a}fico contra el caso base o realidad actual.\relax }}{43}{table.caption.48}
-\contentsline {table}{\numberline {4.8}{\ignorespaces Modificaci\IeC {\'o}n de los pesos para \IeC {\'o}mnibus (pb) y para otros veh\IeC {\'\i }culos (pv) en la funci\IeC {\'o}n fitness. Analizando las variaciones en la velocidad promedio de \IeC {\'o}mnibus (vpb), otros veh\IeC {\'\i }culos (vpv) y fitness. \relax }}{44}{table.caption.52}
-\contentsline {table}{\numberline {4.9}{\ignorespaces An\IeC {\'a}lisis de eficiencia computacional comparando los tiempos de ejecuci\IeC {\'o}n en serial y paralelo en minutos. \relax }}{45}{table.caption.53}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Comparaci\IeC {\'o}n de fitness para distintas poblaciones\relax }}{36}{table.caption.36}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{table.caption.37}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Resultados del caso base mostrando la velocidad promedio \IeC {\'o}mnibus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) para los distintos tipos de tr\IeC {\'a}fico\relax }}{39}{table.caption.39}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Resultados luego de ejecutado el algoritmo mostrando velocidad promedio \IeC {\'o}mnibus (vpb) y de otros veh\IeC {\'\i }culos(vpv) para los distintos tipos de tr\IeC {\'a}fico \relax }}{39}{table.caption.40}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Valores del escenario alternativo con su velocidad promedio \IeC {\'o}mnibus (vpb) y velocidad promedio veh\IeC {\'\i }culos(vpv) comparando el fitness para el tr\IeC {\'a}fico medio \relax }}{42}{table.caption.48}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Mejoras obtenidas para las velocidades promedio de los omnibus(vpb) y de otros vehiculos (vpv) en el escenario alternativo para distintos tipos de tr\IeC {\'a}ficos \relax }}{43}{table.caption.49}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Mejoras obtenidas al aplicar el algoritmo sobre el escenario alternativo. Comparando las velocidades de \IeC {\'o}mnibus(vpb), otros veh\IeC {\'\i }culos(vpv) y el fitness con cada tipo de tr\IeC {\'a}fico contra el caso base o realidad actual.\relax }}{43}{table.caption.50}
+\contentsline {table}{\numberline {4.8}{\ignorespaces Modificaci\IeC {\'o}n de los pesos para \IeC {\'o}mnibus (pb) y para otros veh\IeC {\'\i }culos (pv) en la funci\IeC {\'o}n fitness. Analizando las variaciones en la velocidad promedio de \IeC {\'o}mnibus (vpb), otros veh\IeC {\'\i }culos (vpv) y fitness. \relax }}{44}{table.caption.54}
+\contentsline {table}{\numberline {4.9}{\ignorespaces An\IeC {\'a}lisis de eficiencia computacional comparando los tiempos de ejecuci\IeC {\'o}n en serial y paralelo en minutos. \relax }}{45}{table.caption.55}
 \addvspace {10\p@ }
