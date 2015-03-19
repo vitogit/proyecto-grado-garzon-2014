@@ -1,50 +1,53 @@
 \chapter{Marco Teórico}
 
- En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y como se buscan soluciones como por ejemplo con la construcción de Corredores exclusivos para el transporte publico. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras variantes y opciones.
+ En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y soluciones como la construcción de corredores exclusivos para el transporte publico. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
 
 \section{Problema del tránsito vehicular}
 
-En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor lo que ocasiona una serie de problemas que afectan la calidad de vida de las personas relacionados con el agravamiento de las congestiones vehiculares \citep{Cepal2003}.
+En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, esto ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas.  \citep{Cepal2003}.
 
 Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
 
-La congestión ocasiona una progresiva merma en la velocidad promedio de circulación, lo que incrementa la duración de los viajes, aumenta el consumo de combustible y la contaminación atmosférica y sonora, lo que repercute directamente en la salud de las personas. 
-además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
+La congestión ocasiona una progresiva merma de la velocidad promedio de circulación. Esto provoca un incremento en la duración de los viajes y un aumento del consumo de combustible, de la contaminación atmosférica y de la sonora. Esto repercute directamente en la salud de las personas, además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
 
-Uruguay no escapa a este fenómeno en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014} 
+Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}.
 Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020. \citep{BBVA2013}
 
 Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}
 
-Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. además se indica que Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica. Con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
+Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
-El crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte publico cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los Metros pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido).\citep{BRT_Dial} 
+En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte publico cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
 
 En el caso de Montevideo para solucionar este problema se esta implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte publico y democratizar el acceso al mismo. El sistema de transporte esta inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará mas información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
 
 
 
-\section{Corredores Urbanos de tráfico}
+\section{Corredores urbanos de tráfico}
 
-El corredor urbano de tráfico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los autobuses y los carriles para el resto del tráfico y esta es la principal diferencia con un concepto similar llamado "carril de solo bus". Los carriles de solo bus se separan por líneas horizontales que son pintadas en la calle indicando que solo pueden circular ómnibus por ese medio. Los carriles de solo bus suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo si bien es muy difícil de controlar que no se invada el carril, al hacer los carriles de solo bus sobre la derecha, es necesario que el transporte privado invada el carril al doblar a la derecha y que taxis lo invadan para levantar pasajeros por estar al lado de la vereda, al hacer los corredores alineados al medio del traffico se evitan todos esos problemas.  
+El corredor urbano de tráfico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los ómnibus y los carriles para el resto del tráfico. 
+Esta es la principal diferencia con un concepto similar llamado \emph{carril de solo bus} en donde se separan por líneas horizontales pintadas en la calle indicando que solo pueden circular ómnibus. Los carriles de \emph{solo bus} suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo el carril \emph{solo bus} esta sobre la derecha, por lo que los vehículos privados lo invaden al virar a la derecha y lo mismo los taxis para levantar pasajeros. Al hacer los corredores alineados en el medio del trafico se evitan esos problemas.  
 
 Las ciudades de países en vías de desarrollo deben estudiar si pueden instalar corredores pues son fundamentales para conseguir mayores velocidades en el sistema. Pero hay muchas posibilidades y no todas pueden ser aplicables por el contexto zonal, cultural o de inversión necesaria.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/costo_transporte}
-	\caption{Gráfica de costos de transporte en función de la gente transportada, BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extraída de \citep{ITDP}		
+	\includegraphics[width=0.5\linewidth]{Figures/costo_transporte}
+	\caption{Gráfica de costos de transporte en función de la gente transportada. En el eje horizontal esta la cantidad de pasajeros por hora, en el vertical el costo en millones de dolares por kilómetro.  BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extraída de \citep{ITDP}		
 	}
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
 
-Bus Rapid Transit (BRT) es una solución innovadora, de alta capacidad y de menor costo para el transporte público que puede alcanzar el rendimiento y los beneficios de modos ferroviarios con un costo significativamente menor. Se trata de un sistema integrado de transporte basado en autobuses para el transporte de los pasajeros a sus destinos de manera rápida y eficiente. Al mismo tiempo ofrece la flexibilidad necesaria para satisfacer una variedad de condiciones locales. Los elementos del sistema de BRT pueden ser fácilmente personalizados a las necesidades de la comunidad e incorporan tecnologías de última generación de bajo costo que atraen a más pasajeros y en última instancia ayudan a reducir la congestión de tráfico en general.
+Bus Rapid Transit (BRT) es una solución innovadora, de alta capacidad y de menor costo para el transporte público que puede alcanzar el rendimiento y los beneficios de modos ferroviarios con un costo significativamente menor. Se trata de un sistema integrado de movilidad basado en ómnibus para el transporte de los pasajeros a sus destinos de manera rápida y eficiente. Al mismo tiempo ofrece la flexibilidad necesaria para satisfacer una variedad de condiciones locales. Los elementos del sistema de BRT pueden ser fácilmente personalizados a las necesidades de la comunidad e incorporan tecnologías de última generación de bajo costo que atraen a más pasajeros y en última instancia ayudan a reducir la congestión de tráfico en general.
 
-Un BRT contiene características similares a un tren ligero o el sistema de metro por ese motivo es mucho más confiable, conveniente y más rápido que los servicios regulares de ómnibus. Con las características adecuadas, el BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de autobús, como estar atrapado en el tráfico y hacer cola para pagar a bordo. 
+Un BRT contiene características similares a un tren ligero o el sistema de metro por ese motivo es mucho más confiable, conveniente y más rápido que los servicios regulares de ómnibus. Con las características adecuadas, el BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de ómnibus, como estar atrapado en el tráfico y hacer cola para pagar a bordo. 
 
 
 	
-\subsection{Corredor de Garzón}	
+\section{Corredor de Garzón}	
+
+
+Fue construido como parte de el plan de movilidad urbana que incluye otros corredores en la ciudad de Montevideo. \citep{PlanMovilidad}. Tomando en cuenta sus extremos conecta los barrios de Colon con Paso Molino. Tiene una extensión de 6.5km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán que conecta con una autopista (Ruta 5) y Bulevar Battle y Ordoñez la cual tiene una gran densidad de trafico. Es importante aclarar que no es solo una conexión de extremo a extremo ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
 
 \begin{figure}[H]
 	\centering
@@ -53,63 +56,79 @@ Un BRT contiene características similares a un tren ligero o el sistema de metr
 	}
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
-Fue construido como parte de un plan de movilidad que incluye otros 4 corredores de la ciudad. Tomando en cuenta de un extremo al otro conecta Colon con Paso Molino y teniendo 6.5km de largo, atraviesa muchas calles importantes como por ejemplo Millán que lleva a una autopista (Ruta 5). Es importante aclarar que no es solo una conexión de extremo a extremo ya que barrios como Sayago y otros constan de una gran cantidad de habitantes y el corredor de Garzón es la principal opción de movilidad.
-El corredor consiste básicamente en 3 calles paralelas e independientes; donde 2 de ellas son de dos carriles de una sola mano y entre medio de estas se encuentra una calle doble vía con un carril para cada vía que es exclusivamente usado por ómnibus urbanos en el dia y urbanos y suburbanos por la noche.
+
+Como se aprecia en la figura \ref{fig:perfil_garzon} el corredor consiste básicamente de tres calles paralelas e independientes; dos de ellas con dos carriles de una sola mano y entre medio de estas se encuentra una calle doble vía con un carril para cada vía que es exclusivamente usado por ómnibus urbanos durante el día y también por suburbanos en la noche.
+
+
+Basándonos en el standard antes mencionado, el Corredor de Garzón cumple con la definición de BRT por los siguientes puntos:
+\begin{itemize}
+	\item Largo mínimo del corredor. 3 km de corredor exclusivo 
+	\item Vía de ómnibus dedicada. Al tener un 90\% de segregación física dentro del corredor.
+	\item Alineación de la vía del ómnibus. Por estar constituido por dos carriles centrales para el ómnibus en medio de los carriles de otros vehículos.
+	\item Tratamiento de intersecciones. Por prohibir algunos virajes a la izquierda y el carril de ómnibus tener prioridad en la mayoría de las intersecciones.
+\end{itemize}
+
+
+Analizando las recomendaciones del standard hay algunas que no están totalmente aplicadas al corredor, entre ellas destacamos:
+
+\begin{itemize}
+	\item Cobrar el boleto fuera del ómnibus. Uno de los factores mas importantes para mejorar la experiencia del usuario así como también la velocidad en zonas de mucha carga es que hayan al menos algunas estaciones (no solo paradas de ómnibus) donde el boleto se cobre al entrar a la estación o se cargue la tarjeta en su defecto.
+	\item Servicios expresos o limitados. Una forma de mejorar las velocidades de operación consiste en crear lineas que no se detengan en todas las paradas, sobre todo salteen las de menor demanda así se podría mejorar la velocidad y poner mas ómnibus en la calle.
+	\item Carril extra para adelantarse en paradas. En sistemas de gran porte es crítico para poder manejar los servicios expresos, en sistemas de baja demanda es de igual manera una buena inversión y en el caso del corredor de Garzón podría permitir que los servicios suburbanos fueran todo el día por el corredor mejorando así el transporte público y privado.
+	\item Distancia entre paradas e intersecciones. Según el standard, la mínima distancia entre la intersección y la parada es de 26m pero idealmente deberían ser 40m para evitar retrasos. En el Corredor de Garzón las paradas están sobre las intersecciones y hay varias donde se detiene mas de una línea de ómnibus. Esto puede ocasionar problemas porque mientras uno o dos ómnibus ya realizaron la parada y esperan por el semáforo, los demás que lleguen generaran una fila aguardando por detenerse en la parada para levantar a los pasajeros y posiblemente luego, cuando lleguen al cruce no tendrían la luz verde.
+	\item Tener estaciones centrales o conexión entre paradas. Que la parada no se encuentre en el centro de los dos carriles de ómnibus, hace que sea una construcción mas cara (hay que hacer dos paradas) y el hecho de que no haya una conexión física por la cual el pasajero pueda cambiar de recorrido de un lado al otro sin tener que cruzar la calle, lo hace menos eficiente y más inseguro.
+	\item Distancia entre estaciones.  Las paradas deberían de estar a una distancia de entre 300m y 800m, siendo 450m el óptimo tanto para el pasajero como el transporte.
+	\item Puertas de los ómnibus. Tener dos puertas anchas o más de tres puertas comunes. Que los pasajeros puedan entrar y salir por todas ellas permite un mayor flujo y volumen de gente transportada.
+	\item Semáforos. Un corredor debe de funcionar al igual que una autopista en el sentido de que una vez que se entra debería ser posible mantener la velocidad máxima sin tener que detenerse seguido, por lo que no deberían de haber semáforos cerca uno de otro, de haberlos la sincronización será la clave para minimizar los tiempos de espera.
+	\item Calles paralelas. Tener calles paralelas es de vital importancia para un corredor ya que una de las formas de minimizar los tiempos de espera es prohibir los giros a la izquierda, y una calle paralela provee la facilidad de poder realizarlo.
+	\item Giro a la derecha con luz roja. Actualmente en muchos países se encuentra reglamentada una ley que permite a los conductores doblar a la derecha con luz roja ya que la misma (a menos que se especifique) es tomada como un cartel de pare \emph{solamente} para doblar a la derecha. Esta ley en donde esta aprobada acorta los tiempos de luz verde de las transversales mejorando así la velocidad promedio en los corredores o calles importantes.
+	\item Mejor calidad de estaciones. Que las paradas sean a prueba del clima, con puertas corredizas que abren cuando hay un ómnibus (para que nadie caiga al corredor), con información al pasajero en tiempo real, etc. No harían al corredor mas rápido pero si mas seguro, cómodo y confiable.
+\end{itemize}
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/busway_configuration}
-	\caption{Perfil propuesto para Av. Garzón desde San Quintín a Camino Colman - Imagen original extraída de \citep{PlanMovilidad}
+	\caption{Perfil propuesto para el corredor Garzón desde San Quintín a Camino Colman - Imagen original extraída de \citep{PlanMovilidad}
 	}
-	\label{fig:Perfil propuesto de Corredor de Garzon}
+	\label{fig:perfil_garzon}
 \end{figure}
 
-Basándonos en el standard antes mencionado, el Corredor de Garzón cumple con la definición de BRT por los siguientes puntos:
-\begin{itemize}
-	\item Mínimo de corredor. 3 km de corredor exclusivo 
-	\item Vía Dedicada de Ómnibus. Al tener un 90\% de segregación física dentro del corredor.
-	\item Alineación de la vía del ómnibus. Por estar constituido por dos carriles centrales para el ómnibus en medio de los carriles de autos.
-	\item Tratamiento de intersecciones.Por prohibir algunos virajes a la izquierda y el carril de ómnibus tener prioridad en la mayoría de las intersecciones.
-\end{itemize}
+Desde su construcción el corredor a recibido críticas debido a que su principal objetivo que era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio que existía antes de realizar el corredor para el transporte público \citep{olivera2015}.
 
 
-Recomendaciones del standard no aplicadas totalmente al corredor:
-\begin{itemize}
-	\item Cobrar el boleto en el ómnibus. Uno de los factores mas importantes para mejorar la experiencia del usuario así como también la velocidad en zonas de mucha carga es que hayan al menos algunas estaciones (no solo paradas de ómnibus) donde el boleto se cobre al entrar a la estación o se cargue la tarjeta en su defecto.
-	\item Servicios Expresos o limitados. Una forma mejorar las velocidades de operación consiste en crear lineas que no paren en todas las paradas, sobre todo salteen las de menor demanda así se podría mejorar la velocidad y poner mas ómnibus en la calle.
-	\item Carril extra para adelantarse en paradas. En sistemas de gran porte es crítico para poder manejar los servicios expresos, en sistemas de baja demanda es de igual manera una buena inversión y en el caso del corredor de Garzón podría permitir que los servicios suburbanos fueran todo el día por el corredor mejorando así el transporte público y privado.
-	\item Distancia entre paradas e intersecciones. Según el standard, el mínimo de la distancia entre la intersección y la parada debería de ser 26m pero idealmente deberían de ser 40m para evitar retrasos. En el Corredor de Garzón las paradas están en las intersecciones, y hay muchas paradas donde para mas de una línea de ómnibus y esto puede ocasionar problemas, porque mientras uno o dos ómnibus ya realizaron la parada y esperan el semáforo, los demas podrían estar esperando su turno de levantar pasajeros y posiblemente no lleguen a ese semaforo verde y tengan que esperar.
-	\item Tener Estaciones centrales o conexión entre paradas. Que la parada no sea en el centro de los dos carriles de ómnibus, hace que sea una construcción mas cara (hay que hacer dos paradas) y el hecho de que no haya una conexión física por la cual el pasajero pueda cambiar de recorrido de un lado al otro sin tener que cruzar la calle, lo hace menos eficiente y mas inseguro.
-	\item Distancia entre estaciones. Según el standard la distancia que optimiza a un corredor para el pasajero y el transporte es de 450m. Por lo que las paradas deberían de estar entre 0,3km y 0,8km.
-	\item Puertas de los ómnibus. Tener 2 puertas anchas o 3 o mas puertas y que los pasajeros puedan entrar y salir por todas permite un mayor flujo y mayor volumen de la gente transportada.
-	\item Semáforos. Un corredor debe de funcionar al igual que una autopista en el sentido de que una vez que se entra debería ser posible mantener la velocidad máxima sin tener que parar seguido por lo que no deberían de haber semáforos cerca uno del otro, de haberlos la sincronización será la clave para minimizar los tiempos de espera.
-	\item Calles paralelas. Tener calles paralelas es de vital importancia para un corredor ya que una de las formas de minimizar los tiempos de espera es prohibir los giros a la izquierda, y una calle paralela provee la facilidad de poder realizarlo.
-	\item Giro a la derecha con luz roja. Actualmente en muchos países se encuentra reglamentada una ley que permite a los conductores doblar a la derecha con luz roja ya que la misma (a menos que se especifique) es tomada como un cartel de Pare SOLAMENTE para doblar a la derecha. Esta ley (en donde esta aprobada) acorta los tiempos de luz verde de las transversales mejorando así la velocidad promedio en los corredores o calles importantes.
-	\item Mejor calidad de estaciones. Que las paradas sean a prueba del clima, con puertas corredizas que abren cuando hay un ómnibus (para que nadie caiga al corredor), con información al pasajero en tiempo real,etc. No harían al corredor mas rápido pero si mas seguro y cómodo y confiable.
-\end{itemize}
-
-
-Desde su construcción el corredor a recibido críticas debido a que su principal objetivo era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio antes de realizar el corredor (sólo para el transporte público) \citep{olivera2015}.
-
-
-Las autoridades han admitido que se han cometido errores y se apunta a que no se ha logrado sincronizar los semáforos.\citep{olivera2013}. Un buen funcionamiento de los semáforos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones, en la siguiente sección se tratará este tema. 
+Las autoridades han admitido que se han cometido errores y se apunta a que no se ha logrado sincronizar los semáforos.\citep{olivera2013}. Un buen funcionamiento de los mismos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones. A continuación se tratará este tema. 
 
 
 \section{Sincronización de semáforos}
-Es importante el tema de la sincronización de semáforos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes.
 
 
-Existen diversos métodos para lograr la coordinación necesaria que van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle.
+Los métodos para la sincronización de semáforos son de los mas efectivos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes. 
 
-Cabe destacar que cuanto mayor cantidad de semáforos para sincronizar mayor es la dificultad a la hora de encontrar una solución eficiente. Por este motivo se considera a este prolijea como NP-Dificil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
+Existen tres parámetros importantes a tener en cuenta que determinaran el comportamiento del sistema, estos son la duración de una fase, los ciclos de las luces y los valores de \emph{offset}. Estos serán explicados a continuación.
 
-Existen diversos métodos para solucionar este problema, uno de los mas desarrollados y efectivos son los algoritmos evolutivos los cuales son usados en este trabajo y serán explicados a continuación.
+
+\begin{itemize}
+ 	\item Duración de fase: Se refiere a la duración en que una configuración especifica de luces esta activa en una intersección. Un conjunto de ellas estará en verde y otras en rojo determinando quien cruza en ese momento. La elección correcta de este parámetro es fundamental, las calles con una densidad de transito mayor tendrían que tener mas tiempo para cruzar. Destacar que realizar la optimización individual de estos cruces no tiene por que llevar a una solución optima en la red, ya que se pueden producir cambios en el flujo que afecten a las demás. Por esta razón hay que tener un enfoque global al realizar una solución.
+ 	
+ 	\item Duración del ciclo: Un ciclo representa un conjunto de fases, en general su duración es la suma de las duraciones de las fases. Como indica su nombre el ciclo se repetirá una vez se completa. La duración puede incrementarse o decrementarse para permitir mayor cantidad de repeticiones de las fases. Otro punto a considerar sobre todo en intersecciones complejas es el orden en el cual las fases son ejecutadas.
+ 	
+ 	\item Offset: Indica el comienzo de una fase permitiendo que diferentes intersecciones comiencen su ciclo en diferentes momentos, esto es muy importante para sincronizar un flujo de trafico en lo que se conoce como \emph{linea verde}, en donde los vehículos logran pasar todas las intersecciones sin detenerse.
+\end{itemize}
+
+Estos parámetros pueden ser utilizados a la hora de sincronizar los semáforos de una zona, teniendo en cuenta implementar la optimizan de manera global. También hay que tener en cuenta el desarrollo de soluciones seguras siendo lo mas básico que no existan intersecciones donde ambos flujos crucen a la misma vez.
+
+Existen diversos métodos para lograr la coordinación necesaria que van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle. Pudiendo clasificarse como estrategias de tiempo fijo, o de tiempo dinámico auto-ajustable.
+
+Se considera a este problema en la categoría de NP-difícil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
+
+Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Uno de los mas desarrollados y efectivos son los algoritmos evolutivos los cuales son usados en este trabajo y serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
 Uno de los puntos fundamentales del presente trabajo son los algoritmos evolutivos en particular los algoritmos genéticos por lo que se dedica esta sección para  brindar un repaso por los conceptos y definiciones necesarias para comprender el desarrollo posterior de la solución.
 
-Se dará un repaso general sin entrar en detalles, en el caso que el lector quiera profundizar se recomienda los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996}
+Se dará un repaso general, en el caso que el lector quiera profundizar sobre el tema se recomienda los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996}.
 
 Los algoritmos evolutivos son métodos no determinísticos que se inspiran en la evolución natural de las especies utilizando conceptos como población, cruzamiento, mutación, selección, etc. Estos se utilizan para resolver problemas de optimización y búsqueda, entre otros \citep{Nesmachnow2002}.
 
@@ -256,11 +275,11 @@ El esquema básico de funcionamiento es el siguiente:
 
 \subsection{Algoritmos genético multiobjetivo}
 
-Los problemas de optimización multiobjetivo trabajan sobre un espacio multidemensional de funciones y no tienen una única solución por esto el significado de optimo cambia. Una solución es un optimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas las soluciones de Pareto son consideras igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los optimos de Pareto se les llama frente de Pareto.
+Los problemas de optimización multiobjetivo trabajan sobre un espacio multidemensional de funciones y no tienen una única solución por esto el significado de optimo cambia. Una solución es un optimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas las soluciones de Pareto son consideras igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
 
 Existen algoritmos evolutivos para resolver el problema de la optimización multiobjetivo estos son los llamados MOEA por sus siglas en ingles \emph{ MultiObjetive Evolutionary Algorithm}. Para un análisis mas detallado se recomienda el trabajo de \citet{Deb2001}.
 
-Lo que buscan es aproximarse al frente de Pareto y lograr mostrar una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decicion de cual elegir.
+Lo que buscan es aproximarse al frente de Pareto y lograr mostrar una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir.
 
 
 \begin{algorithm}%[!ht]
@@ -285,7 +304,7 @@ Lo que buscan es aproximarse al frente de Pareto y lograr mostrar una gama de di
 	\end{algorithmic}
 \end{algorithm}
 
-Hay dos operadores propios de los MOEA estos son el operador de diversidad y el operador de asignación de fitness. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
+Hay dos operadores propios de los MOEA, estos son el operador de diversidad y el operador de asignación de fitness. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
 
 Se pueden clasificar por el método de asignación de fitness en:
 \begin{itemize}
@@ -296,14 +315,14 @@ Se pueden clasificar por el método de asignación de fitness en:
 
 
 \subsection{Algoritmo Evolutivo Paralelo}
-Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda mas eficiente aun sin hardware paralelo, facilidad en la cooperación con otros métodos de búsqueda y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
+Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda mas eficiente aun sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
 
 
-Existen varios niveles de paralelización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
+Existen varios niveles de paralización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
 
 En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método para distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
 
-Un modelo muy utilizado es el Maestro-Esclavo. El proceso maestro es el encargado de realizar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos, el esclavo devuelven el resultado y luego el maestro es el encargado de continuar ejecutando los operadores.
+Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar ejecutando los operadores.
 
 De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios nodos.
 
@@ -318,15 +337,20 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 Los algoritmos evolutivos han demostrado su eficiencia en la resolución de gran cantidad de problemas de optimización.  Si nos enfocamos en el problema de la sincronización de semáforos existen herramientas utilizadas para su resolución, entre las que se encuentra los simuladores de tráfico los cuales serán explicados en la siguiente sección.
 
 
-\section{Simuladores de tráfico}
+\section{Simulación de tráfico}
 
-Los simuladores de tráfico son programas que simulan el movimiento de vehículos sobre una red de calles. Son usados en la investigación de tráfico vehicular, estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como es la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo pues no es necesario cambiar la infraestructura para probar nuevos escenarios y sirve para prever situaciones que podrían darse bajo determinadas circunstancias.
+Los simuladores de tráfico son programas que simulan el movimiento de trafico sobre una red, cabe destacar que esta puede ser tanto terrestre, marítima o aérea. Son usados en proyectos de investigación , estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como es la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo pues no es necesario cambiar la infraestructura para probar nuevos escenarios y es útil para prever situaciones que podrían darse bajo determinadas circunstancias.
 
-Los simuladores se pueden dividir en microscópicos o macroscópicos según el nivel de detalle de la simulación. Un simulador macroscópico modela  el tráfico vehicular como un fluido. En cambio un simulador microscópico simula el movimiento de cada vehículo según sus características particulares.
+Los simuladores se pueden dividir en macroscópicos o microscópicos según el nivel de detalle de la simulación. Un simulador macroscópico modela  el tráfico como un fluido. En cambio un simulador microscópico simula el movimiento de cada vehículo según sus características particulares.
 
-Cuanto más crece el número de vehículos y la complejidad de la red de mapas más difícil se hace crear la entrada que necesita el simulador. Aunque existen diversas herramientas que ayudan a este proceso aún se requiere un trabajo manual para el acondicionado de estos archivos.
-
-\citet{SUMO} es uno de los simuladores abiertos más populares. Es microscópico y utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.  
+En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripción de varios simuladores entre los que se encuentran:
+\begin{itemize}
+	\item \citep{SUMO}: Simulador abierto, portable, microscópico diseñado para soportar grandes redes de transito. Es de los mas populares, utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.
+	\item QuadStone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de transito y transporte.
+	\item Aimsun: Paquete de simulación que integra varios tipos de modelos de transporte, por ejemplo herramientas para el trafico estático y un simulador microscópico
+	\item Trafficware SimTraffic: Es un simulador que forma parte del paquete Trafficware's Syncro Studio, que cuenta con una herramienta para la sincronización de semáforos.
+	\item CORSIM TRAFVU: Parte del paquete TSIS CORSIM, presenta las animaciones y los gráficos estáticos para las redes de trafico utilizando CORSIM como entrada.
+\end{itemize}
 
 
 \section{Trabajos relacionados}
@@ -386,7 +410,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		\bibentry{Stolfi2012}
 		Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indica que los atascos del tráfico provocan tanto perdidas económicas como también contaminación ambiental.
 		
-		Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlazara por wifi con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
+		Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlazara por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
 		
 		Para el modelo utiliza una zona  de la ciudad de Málaga, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varia la longitud, velocidad y probabilidad que entre en la red de tráfico.
 		
