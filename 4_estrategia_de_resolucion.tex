@@ -33,7 +33,7 @@ Algunas otras herramientas relacionadas a la simulación:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/sim1}
-	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzon.}
+	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzón.}
 	\label{fig:sim1}
 \end{figure}
 
@@ -47,7 +47,7 @@ Se describen los pasos realizados para tener los elementos necesarios para reali
 
 El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Luego para cotejar su exactitud se comparo con otros servicios como Google Maps y Bing Maps.
 
-Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Ademas se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
+Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Además se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
 
 \begin{figure}[H]
 	\centering
@@ -88,8 +88,8 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 	\begin{tabular}{lcccc}
 		\hline
 		Intersección&
-		Sur-Garzon& 
-		Norte-Garzon & 
+		Sur-Garzón& 
+		Norte-Garzón & 
 		Oeste &
 		Este 
 		\\ 
@@ -147,7 +147,7 @@ Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generaliza
 La ubicación y lineas de cada parada se obtuvo de \citep{sigMontevideo}, existen 14 paradas para lineas urbanas por el corredor para el recorrido de ida y las mismas para la vuelta.
 Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas.
 
-También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora mas. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
+También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
 Para establecer la velocidad media de los ómnibus se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito.
 Estos datos cuentan con la posición GPS, la velocidad instantánea y la referencia al ómnibus para un conjunto de lineas seleccionadas tomadas en un periodo de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
@@ -318,7 +318,7 @@ Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le va
         f = x.vpb + y.vpv
         \end{equation}
         
-En una primera instancia se establece x = y = 1 mas adelante se experimentara con otros pesos.
+En una primera instancia se establece x = y = 1 más adelante se experimentara con otros pesos.
 
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
@@ -352,4 +352,4 @@ con la cual va a comenzar inicialmente el cruce con una probabilidad dada.
 Se  utilizan los provistos por el algoritmo newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta. La política de reemplazo indica que tanto padres como hijos pueden ser parte de la siguiente generación, por lo que existe reemplazo de padres por hijos.
 
 \subsubsection{Parámetros del algoritmo}
-Los parámetros específicos del algoritmo se establecen en la siguiente sección, donde se realiza un análisis experimental para encontrar los mas adecuados. Estos parámetros son: numero de generaciones, tamaño de población, probabilidad de cruzamiento y de mutación.
+Los parámetros específicos del algoritmo se establecen en la siguiente sección, donde se realiza un análisis experimental para encontrar los más adecuados. Estos parámetros son: numero de generaciones, tamaño de población, probabilidad de cruzamiento y de mutación.
