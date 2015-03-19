@@ -53,19 +53,19 @@ Los tres escenarios de tráfico son los siguientes:
 En el ajuste paramétrico primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
 Al estar utilizando un cluster tenemos disponible tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
-Cuando se realicen comparaciones en los tiempos de ejecución se utilizara el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el numero de procesadores no es relevante. Si lo sera cuando realicemos el análisis de eficiencia computacional que sera estudiando mas adelante.
+Cuando se realicen comparaciones en los tiempos de ejecución se utilizara el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el numero de procesadores no es relevante. Si lo sera cuando realicemos el análisis de eficiencia computacional que sera estudiando más adelante.
 
 
 
 \subsection{Pesos de la función fitness}
 
-Para las siguientes pruebas la función fitness del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos x = y = 1. Esto da pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. Mas adelante se realizaran experimentos con otras variantes.
+Para las siguientes pruebas la función fitness del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos x = y = 1. Esto da pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. más adelante se realizarán experimentos con otras variantes.
 
 
 \subsection{Tiempo de simulación}
 Esto se refiere al tiempo que representa una simulación usando SUMO,  es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este numero representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario mas del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este numero representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
 
 
 \subsection{Criterio de parada}
@@ -78,7 +78,7 @@ Para esto se decide que por un lado la ejecución del algoritmo deberá estar co
 Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
 
 Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
-En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 ademas el tiempo de ejecución real esta dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
+En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 además el tiempo de ejecución real esta dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
 
 
 
@@ -203,7 +203,7 @@ Se realizó un estudio sobre datos proporcionados por la IMM que contenían el p
 
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
-Sobre este escenario geográfico se realizaran tres escenarios de tráfico : bajo, medio y alto.
+Sobre este escenario geográfico se realizarán tres escenarios de tráfico : bajo, medio y alto.
 El caso medio representa los datos obtenidos, el bajo es disminuyendo el 50\% de vehículos y  el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte publico. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
 El caso de tráfico alto se aumenta 50 \%  los vehículos y el tiempo de espera en la parada de los ómnibus.
 
@@ -237,7 +237,7 @@ Entre los cambios estudiados se encuentran: eliminación de paradas y pasajes pe
 
 
 \section{Resultados}
-Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la evoluciona del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Ademas se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
+Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la evoluciona del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Valores numéricos del caso base}
@@ -343,7 +343,7 @@ La linea G es la que recorre a Garzón de punta a punta, esta línea es cubierta
 
 Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos (como en la actualidad) Si se reduce el numero de paradas que hace un ómnibus, aumentará su velocidad promedio y al cubrir las paradas entre las dos empresas no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
 
-Este cambio es el que mas aumenta la velocidad media y tal vez es uno de los mas sencillos de implementar en la realidad.
+Este cambio es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
 
 
 
@@ -393,7 +393,7 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Mejoras obtenidas para las velocidades promedio de los omnibus(vpb) y de otros vehiculos (vpv) en el escenario alternativo para distintos tipos de tráficos }
+	\caption{Mejoras obtenidas para las velocidades promedio de los ómnibus(vpb) y de otros vehiculos (vpv) en el escenario alternativo para distintos tipos de tráficos }
 	\label{table:mejoras_trafico_alternativo}
 	\centering
 	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
@@ -415,7 +415,7 @@ En la siguiente tabla se detallan los cambios realizado con la mejora asociada, 
 
 \subsection{Resultados de la evaluación sobre el escenario alternativo}
 
-Al comparar los resultados obtenidos se aprecia claramente que cuanto mas densidad de tráfico mayor es el porcentaje de mejora. Ademas un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
+Al comparar los resultados obtenidos se aprecia claramente que cuanto más densidad de tráfico mayor es el porcentaje de mejora. Además un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
 Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,8 minutos y un auto de demorar 14,5 minutos a 11.5 minutos con una densidad de tráfico media. 
 
@@ -451,11 +451,11 @@ La función fitness (\ref{eq:funcion_fitness}) utilizaba los pesos x = y = 1 lo 
 %800 autos, si aproximamos  2 personas por vehículo nos da 1600 personas por hora.
 %Una cantidad similar  pasan por el cruce en ambos medios de transporte por lo que no existe una tendencia a favor de una sobre la otra, se podría aproximar que 50\% eligen el ómnibus y 50\% el auto.
 
-Estos pesos pueden ser variados en función de lo que se necesite, por lo que se realizaran pruebas con dos tipos de pesos para comparar como varían las velocidades cuando se da mas peso a un tipo de vehículo sobre el otro.
+Estos pesos pueden ser variados en función de lo que se necesite, por lo que se realizarán pruebas con dos tipos de pesos para comparar como varían las velocidades cuando se da más peso a un tipo de vehículo sobre el otro.
 
 
 \subsubsection{Prioridad ómnibus}
-En este caso se le dará mas prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice mas el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
+En este caso se le dará más prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
 
 Por tanto vamos a experimentar cambiando los pesos de la función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
@@ -466,7 +466,7 @@ En este caso, le damos 70\% del peso a los vehículos y 30\% a los ómnibus. Es 
 
 \subsubsection{Resultados}
 
-La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con mas prioridad para los ómnibus y el 30-70 mas prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de omnibues (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
+La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de omnibues (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
 
 
 \begin{table}[H]
@@ -509,9 +509,9 @@ La siguiente tabla compara las velocidades promedio de ómnibus y vehículos par
 \end{table}
 
 
-Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar mas prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus, una explicación posible de este comportamiento es que ya se llego a un limite máximo y no se puede mejorar mas.
+Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar más prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus, una explicación posible de este comportamiento es que ya se llego a un limite máximo y no se puede mejorar más.
 
-Al dar mas prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibus la cual es muy evidente en el caso de tráfico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de tráfico que se estudie.
+Al dar más prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibus la cual es muy evidente en el caso de tráfico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de tráfico que se estudie.
 
 En general las variaciones en las velocidades no son grandes pero suficientemente apreciable para tener cierta libertad al plantear distintos objetivos que tiendan a favorecer un tipo u otro de vehículos.
 
@@ -594,4 +594,4 @@ El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución c
 	\label{fig:speedup1}
 \end{figure}
 
-En la gráfica se observa como a medida que aumenta el tráfico disminuye el speedup esto sucede por que esta influenciado por los accesos al disco duro, al tener mas autos circulando en la simulación se tiene que leer y escribir mas información en los archivos lo que aumenta el tiempo de ejecución del algoritmo, aunque como se ve esto no tiene un gran impacto.
+En la gráfica se observa como a medida que aumenta el tráfico disminuye el speedup esto sucede por que está influenciado por los accesos al disco duro, al tener más autos circulando en la simulación se tiene que leer y escribir más información en los archivos lo que aumenta el tiempo de ejecución del algoritmo, aunque como se ve esto no tiene un gran impacto.
