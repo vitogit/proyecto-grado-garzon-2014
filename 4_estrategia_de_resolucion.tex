@@ -10,7 +10,7 @@ Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquite
 
 Para solucionar el problema se usaran simulaciones de la realidad, por tanto es importante contar con un modelo detallado y fidedigno. A continuación se da información sobre el simulador a utilizar, las herramientas necesarias y el proceso seguido para generar el modelo. 
 
-\subsection{Simulador SUMO ( Simulation of Urban MObility)}
+\subsection{Simulador SUMO (Simulation of Urban MObility)}
 
 Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
@@ -62,7 +62,7 @@ Luego se utilizó la herramienta Netconvert para transformarlo al formato que SU
 
 
 
-\section{Trabajo de campo}
+\subsubsection{Trabajo de campo}
 Se cuentan con los datos públicos sobre la cantidad de  ómnibus y sus frecuencias pero no se tienen datos sobre la densidad de tráfico vehicular en la zona, por esto se realiza un revelamiento in-situ con las siguientes características.
 
 Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehiculos circulantes.
@@ -163,32 +163,31 @@ Para introducir estos datos en el simulador se utilizan tres archivos de configu
 
 
 
-
 \section{Arquitectura de la solución}
 
-En el siguiente diagrama se muestra la arquitectura propuesta para el problema.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
-\caption{Arquitectura de la función de fitness}
-\label{fig:arquitectura1}
-\end{figure}
+En la figura \ref{fig:arquitectura1} se muestra la arquitectura propuesta para el problema.
 
 La biblioteca Malva se utiliza para la implementación del algoritmo, en cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. 
 
 En el primer paso el algoritmo genera la población inicial, estos individuos representan una configuración de semáforos para el Corredor con el tiempo de duración de las luces y las fases. Esta población se genera realizando algunas variaciones de los valores reales obtenidos.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
+	\caption{Arquitectura de la función de fitness}
+	\label{fig:arquitectura1}
+\end{figure}
 
 Luego por cada individuo se genera un archivo compatible con el simulador que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador para cada individuo. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo, estos tienen la información necesaria para calcular el fitness de cada individuo como la velocidad media de ómnibus y otros vehículos.
 
 
 \section{Biblioteca Malva}
 
-\citep{Malva} surge como una variante del proyecto \citep{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+\citet{Malva} surge como una variante del proyecto \citet{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
-Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas que incluyen todos los aspectos internos del esqueleto y son independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citep{CHC}.
+Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas que incluyen todos los aspectos internos del esqueleto y son independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citet{CHC}.
 
 
 
@@ -270,7 +269,12 @@ Es  importante que el algoritmo no genere soluciones inviables por lo que no deb
 	\label{fig:rep_sumo}
 \end{figure}
 
-En la figura \ref{fig:rep_sumo} vemos el archivo con la configuración de semáforos que utiliza el simulador para el cromosoma anterior, donde se representan las fases. Por ejemplo el estado \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos. \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El offset indica el inicio de la fase. En la figura \ref{fig:sem_numerados} se numeran los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde a un color en particular. Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
+En la figura \ref{fig:rep_sumo} vemos el archivo con la configuración de semáforos que utiliza el simulador para el cromosoma anterior, donde se representan las fases. Por ejemplo el estado \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos. \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El offset indica el inicio de la fase. 
+
+En la figura \ref{fig:sem_numerados} se numeran los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde a un color en particular. 
+\newpage
+
+Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
 \begin{itemize}
 \item GGGG se corresponde a 1, 2, 3 y 4. 
 \item rrr a 5, 6 y 7. 
@@ -330,7 +334,7 @@ En la siguiente figura los padres cuentan con tres cruces, se elige un punto de 
 \end{figure}
 
 
-
+\newpage
 \subsubsection{Operador de Mutación}
 Se implementaron dos tipos de mutación:
 \begin{itemize}

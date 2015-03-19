@@ -1,27 +1,28 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Gr\IeC {\'a}fica de costos de transporte en funci\IeC {\'o}n de la gente transportada, BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extra\IeC {\'\i }da de \citep {ITDP} \relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Perfil propuesto para Av. Garz\IeC {\'o}n desde San Quint\IeC {\'\i }n a Camino Colman - Imagen original extra\IeC {\'\i }da de \citep {PlanMovilidad} \relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces La evoluci\IeC {\'o}n se produce al mejorar el fitness de la poblaci\IeC {\'o}n a lo largo de las generaciones.\relax }}{11}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Representaci\IeC {\'o}n binaria de un cromosoma.\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Cruzamiento de un punto\relax }}{12}{figure.caption.13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{13}{figure.caption.15}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Modelo Maestro-Esclavo}}{15}{figure.caption.18}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Gr\IeC {\'a}fica de costos de transporte en funci\IeC {\'o}n de la gente transportada. En el eje horizontal esta la cantidad de pasajeros por hora, en el vertical el costo en millones de dolares por kil\IeC {\'o}metro. BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extra\IeC {\'\i }da de \citep {ITDP} \relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Localizaci\IeC {\'o}n del Corredor de Garz\IeC {\'o}n en Montevideo - Imagen original extra\IeC {\'\i }da de www.montevideo.gub.uy \relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Perfil propuesto para el corredor Garz\IeC {\'o}n desde San Quint\IeC {\'\i }n a Camino Colman - Imagen original extra\IeC {\'\i }da de \citep {PlanMovilidad} \relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces La evoluci\IeC {\'o}n se produce al mejorar el fitness de la poblaci\IeC {\'o}n a lo largo de las generaciones.\relax }}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Representaci\IeC {\'o}n binaria de un cromosoma.\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Cruzamiento de un punto\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Modelo Maestro-Esclavo}}{15}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{22}{figure.caption.19}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.\relax }}{23}{figure.caption.21}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{24}{figure.caption.22}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{25}{figure.caption.25}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{27}{figure.caption.26}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Cromosoma de 2 cruces\relax }}{29}{figure.caption.27}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{29}{figure.caption.28}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce. Cada numero se corresponde a una letra en la secuencia de \emph {state} del archivo de configuraci\IeC {\'o}n del simulador SUMO.\relax }}{30}{figure.caption.29}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{31}{figure.caption.31}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garzon.\relax }}{22}{figure.caption.20}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.\relax }}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{24}{figure.caption.24}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{25}{figure.caption.27}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Cromosoma de 2 cruces\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{29}{figure.caption.30}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce. Cada numero se corresponde a una letra en la secuencia de \emph {state} del archivo de configuraci\IeC {\'o}n del simulador SUMO.\relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{31}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{35}{figure.caption.35}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{figure.caption.38}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes para \IeC {\'o}mnibus y otros veh\IeC {\'\i }culos en el recorrido completo del corredor Garz\IeC {\'o}n para los diferentes tipos de tr\IeC {\'a}fico.\relax }}{40}{figure.caption.41}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas. Gris: Parada Eliminada. Azul: linea G de Coectc y de Cutcsa. Rojo: linea G de Coectc. Violeta: G de Cutcsa. - Imagen original extra\IeC {\'\i }da de montevideo.gub.uy\relax }}{41}{figure.caption.45}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{46}{figure.caption.56}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{35}{figure.caption.37}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{37}{figure.caption.40}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes para \IeC {\'o}mnibus y otros veh\IeC {\'\i }culos en el recorrido completo del corredor Garz\IeC {\'o}n para los diferentes tipos de tr\IeC {\'a}fico.\relax }}{40}{figure.caption.43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas. Gris: Parada Eliminada. Azul: linea G de Coectc y de Cutcsa. Rojo: linea G de Coectc. Violeta: G de Cutcsa. - Imagen original extra\IeC {\'\i }da de montevideo.gub.uy\relax }}{41}{figure.caption.47}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparaci\IeC {\'o}n de los speedup promedios para cada tipo de tr\IeC {\'a}fico.\relax }}{46}{figure.caption.58}
 \addvspace {10\p@ }
