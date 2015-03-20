@@ -11,7 +11,7 @@ Los escenarios fueron ejecutados en el cluster Fing.
 
 Cluster: Es un conjunto de computadoras independientes conectadas para que trabajen integradas como un solo sistema. De esta forma se consigue un alto rendimiento en la ejecución de tareas. 
 
-Cluster Fing: Es una infraestructura de alto desempeño, que brinda soporte en la resolución de problemas complejos que demandan un gran poder de computo.
+Cluster Fing: Es una infraestructura de alto desempeño, que brinda soporte en la resolución de problemas complejos que demandan un gran poder de cómputo.
 
 Descripcion del hardware: 
 \begin{itemize}
@@ -40,7 +40,7 @@ Los elementos que se ajustaran serán los siguientes:
 	\item Probabilidad de cruzamiento
 \end{itemize}
 
-Para la realización de las pruebas se generan tres escenarios de tráfico diferentes para realizar las pruebas de configuración. En este caso no se utilizan datos recabados de la realidad como el tráfico especifico de las calles y el recorrido de las lineas de ómnibus. Esto para no sesgar el algoritmo a un caso en particular.
+Para la realización de las pruebas se generan tres escenarios de tráfico diferentes para realizar las pruebas de configuración. En este caso no se utilizan datos recabados de la realidad como el tráfico especifico de las calles y el recorrido de las líneas de ómnibus. Esto para no sesgar el algoritmo a un caso en particular.
 Los tres escenarios de tráfico son los siguientes:
 
 \begin{itemize}
@@ -53,7 +53,7 @@ Los tres escenarios de tráfico son los siguientes:
 En el ajuste paramétrico primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
 Al estar utilizando un cluster tenemos disponible tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
-Cuando se realicen comparaciones en los tiempos de ejecución se utilizara el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el numero de procesadores no es relevante. Si lo sera cuando realicemos el análisis de eficiencia computacional que sera estudiando más adelante.
+Cuando se realicen comparaciones en los tiempos de ejecución se utilizara el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el número de procesadores no es relevante. Si lo será cuando realicemos el análisis de eficiencia computacional que será estudiando más adelante.
 
 
 
@@ -65,7 +65,7 @@ Para las siguientes pruebas la función fitness del algoritmo (\ref{eq:funcion_f
 \subsection{Tiempo de simulación}
 Esto se refiere al tiempo que representa una simulación usando SUMO,  es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este numero representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este número representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
 
 
 \subsection{Criterio de parada}
@@ -95,7 +95,7 @@ En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes
 
 Para la elección de la población se tendrán en cuenta 3 elementos. El valor de fitness encontrado, el tiempo de ejecución total y la plataforma de ejecución.
 
-Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos sera 64.
+Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos será 64.
 
 Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos y son valores con los que se obtiene una distribución más adecuada.
 
@@ -199,7 +199,7 @@ Esto representa la situación actual en términos de tráfico, red vial y sincro
 
 Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos que son de acceso público.
 
-Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la linea durante todo el día para una semana en particular. De esta forma se constato que para de las lineas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
+Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constato que para de las líneas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
 
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
@@ -230,14 +230,14 @@ Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se
 
 Analizando aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
 
-El objetivo no es demostrar que esta sera la mejor alternativa sino dar una de las muchas alternativas que se pueden generar y probar con la simulación si se logran mejoras. Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
+El objetivo no es demostrar que esta será la mejor alternativa sino dar una de las muchas alternativas que se pueden generar y probar con la simulación si se logran mejoras. Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
 
 Entre los cambios estudiados se encuentran: eliminación de paradas y pasajes peatonales, alternar paradas y modificación de reglas de semáforos.
 
 
 
 \section{Resultados}
-Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la evoluciona del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
+Se muestran los resultados obtenidos tanto de la simulación de la realidad, como de la aplicación del algoritmo sobre el mismo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Valores numéricos del caso base}
@@ -321,48 +321,48 @@ Los cambios propuestos incluyen eliminación de paradas, semáforos, pasajes pea
 
 
 \subsubsection{Eliminación de paradas}
-Se consideraron dos paradas a eliminar que cumplieran con algunas características, no fueran cercana a una calle principal y que existiera otra parada cercana. Por lo que la eliminación de la parada no afecte en demasía a la gente en un traslado mayor.
-En este caso se selecciono la parada en la calle Ariel y Casavalle.
+Se consideraron dos paradas a eliminar que cumplieran con algunas características: no fueran cercana a una calle principal, que existiera otra parada cercana y que la eliminación de la parada no afecte en demasía a la gente en un traslado mayor.
+En este caso se seleccionó la parada en la calle Ariel y Casavalle.
 
 
 
 \subsubsection{Eliminación de pasajes peatonales}
-Hay tres pasajes peatonales en el corredor con semáforos que detienen el tráfico, dos de ellos solo manejan una esquina (sin pulsador en funcionamiento) donde en el escenario alternativo se implemento solamente mediante un "Pare" en la calle transversal al corredor y el otro es netamente peatonal frente a la Facultad de Agronomía que fue totalmente eliminado. Una opción que mantiene los pasajes peatonales así como también los resultados obtenidos en el escenario alternativo sería implementar el pasaje peatonal por encima del corredor. Al eliminar los pasajes peatonales se aumenta la velocidad media de todo el transporte.
+Hay tres pasajes peatonales en el corredor con semáforos que detienen el tráfico, dos de ellos solo manejan una esquina (sin pulsador en funcionamiento) donde en el escenario alternativo se implementó solamente mediante un \emph{pare} en la calle transversal al corredor y el otro es netamente peatonal frente a la Facultad de Agronomía que fue totalmente eliminado. Una opción que mantiene los pasajes peatonales así como también los resultados obtenidos en el escenario alternativo sería implementar el pasaje peatonal por encima del corredor. Al eliminar los pasajes peatonales se aumenta la velocidad media de todo el transporte.
 
 \subsubsection{Alternar paradas}
 
 Uno de los problemas del ómnibus es su baja aceleración por lo que cada vez que este frena en un semáforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un ómnibus tiene que hacer se mejora la velocidad promedio.
-La linea G es la que recorre a Garzón de punta a punta, esta línea es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
+La línea G es la que recorre a Garzón de punta a punta, esta línea es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/paradas_alternativas}
-	\caption{Gráfico de paradas alternativas. Gris: Parada Eliminada. Azul: linea G de Coectc y de Cutcsa. Rojo: linea G de Coectc. Violeta: G de Cutcsa. - Imagen original extraída de montevideo.gub.uy}
+	\caption{Gráfico de paradas alternativas. Gris: Parada Eliminada. Azul: línea G de Coectc y de Cutcsa. Rojo: línea G de Coectc. Violeta: G de Cutcsa. - Imagen original extraída de montevideo.gub.uy}
 	\label{fig:paradas_alternadas}
 \end{figure}
 
-Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos (como en la actualidad) Si se reduce el numero de paradas que hace un ómnibus, aumentará su velocidad promedio y al cubrir las paradas entre las dos empresas no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos (como en la actualidad) Si se reduce el número de paradas que hace un ómnibus, aumentará su velocidad promedio y al cubrir las paradas entre las dos empresas no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
 
 Este cambio es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
 
 
 
 \subsubsection{Cambio básico de semáforos}
-Al hacer el revelamiento de los datos se encontró que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema, el carril que hay que detener es el de la izquierda del ómnibus cuando una linea dobla a la izquierda pero no los dos carriles al mismo tiempo.
+Al hacer el relevamiento de los datos se encontró que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema, el carril que hay que detener es el de la izquierda del ómnibus cuando una línea dobla a la izquierda pero no los dos carriles al mismo tiempo.
 
 No se tiene conocimiento si esto corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Al suceder en varias intersecciones y para los dos lados se mejora la velocidad promedio de los autos que circulan por los dos carriles.
 
 Este cambio se aplico en las siguientes intersecciones:
 \begin{itemize}
-	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colon.
-	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino 
-	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino 
+	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colón.
+	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino. 
+	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino. 
 \end{itemize}
 
 \subsubsection{Resumen}
 Lo interesante del resultado obtenido de esta modificación es que aumenta la velocidad promedio de los vehículos y disminuye la de los ómnibus. Aunque igualmente aumenta el fitness. 
 
-En la siguiente tabla se detallan los cambios realizado con la mejora asociada, comparando los valores para el tráfico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el tráfico bajo y alto.
+En la siguiente tabla se detallan los cambios realizados con la mejora asociada, comparando los valores para el tráfico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el tráfico bajo y alto.
 
 
 \begin{table}[H]
@@ -455,7 +455,7 @@ Estos pesos pueden ser variados en función de lo que se necesite, por lo que se
 
 
 \subsubsection{Prioridad ómnibus}
-En este caso se le dará más prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus relativo al del auto por el corredor las personas que utilizan auto para sus viajes opten por el transporte colectivo.
+En este caso se le dará más prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus en relación al del auto por el corredor, las personas que utilizan auto para sus viajes opten por el transporte colectivo.
 
 Por tanto vamos a experimentar cambiando los pesos de la función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
@@ -466,7 +466,7 @@ En este caso, le damos 70\% del peso a los vehículos y 30\% a los ómnibus. Es 
 
 \subsubsection{Resultados}
 
-La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de omnibues (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
+La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de ómnibus (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
 
 
 \begin{table}[H]
@@ -520,7 +520,7 @@ En general las variaciones en las velocidades no son grandes pero suficientement
 
 Se realiza un estudio de la eficiencia computacional del algoritmo para analizar los tiempos de ejecución cuando se usan varios procesadores y como se comporta su capacidad de paralelismo.
 
-Se evalúan nueves ejecuciones del algoritmo; tres con con cada tipo de tráfico: alto, medio y bajo. Para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de procesadores.
+Se evalúan nueve ejecuciones del algoritmo; tres con con cada tipo de tráfico: alto, medio y bajo. Para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de procesadores.
 
 Las pruebas fueron realizadas sobre el node40 del Cluster Fing que tiene las siguientes características:
 
