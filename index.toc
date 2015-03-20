@@ -54,8 +54,8 @@
 \contentsline {subsection}{\numberline {4.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{36}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{36}{subsection.4.2.5}
 \contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de escenarios}{38}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Caso base o Realidad actual del corredor}{38}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Escenario Alternativo}{38}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}Caso base o realidad actual del corredor}{38}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Escenario alternativo}{38}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Resultados}{39}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{39}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{39}{subsection.4.4.2}

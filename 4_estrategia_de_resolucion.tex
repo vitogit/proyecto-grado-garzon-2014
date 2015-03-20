@@ -12,7 +12,7 @@ Para solucionar el problema se usaran simulaciones de la realidad, por tanto es 
 
 \subsection{Simulador SUMO (Simulation of Urban MObility)}
 
-Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte publico, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
+Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explicita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
 Entre las razones para elegir este simulador se encuentra que es de código abierto sin costo comercial, con una detallada documentación y buen ritmo de actualizaciones. Puede ser ejecutado tanto en linux como windows. Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución y con la interfaz que sirve para mostrar exactamente como se comporta el tráfico.
 
@@ -114,7 +114,7 @@ Para obtener la configuración de los semáforos se realizó un recorrido en bic
 
 \newpage
 \subsubsection{Modelo del tráfico}
-Una vez que tenemos el mapa compatible con el simulador y los datos relevados de la realidad necesitamos agregar el tráfico en la simulacion.
+Una vez que se tiene el mapa compatible con el simulador y los datos relevados de la realidad se agrega el tráfico a la simulación.
 
 Existen varios modelos disponibles para la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
 \begin{itemize}
@@ -123,7 +123,6 @@ Existen varios modelos disponibles para la representación de la circulación de
 	\item Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
 	\item Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
 \end{itemize}
-
 
 
 Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.

@@ -1,6 +1,6 @@
 \chapter{Marco Teórico}
 
- En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y soluciones como la construcción de corredores exclusivos para el transporte publico. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
+ En este capitulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y soluciones como la construcción de corredores exclusivos para el transporte público. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
 
 \section{Problema del tránsito vehicular}
 
@@ -8,7 +8,7 @@ En gran parte del mundo se está produciendo un crecimiento sostenido del parque
 
 Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
 
-La congestión ocasiona una progresiva merma de la velocidad promedio de circulación. Esto provoca un incremento en la duración de los viajes y un aumento del consumo de combustible, de la contaminación atmosférica y de la sonora. Esto repercute directamente en la salud de las personas, además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
+La congestión ocasiona una progresiva merma de la velocidad promedio de circulación. Esto provoca un incremento en la duración de los viajes y del consumo de combustible. Esto repercute en la contaminación atmosférica y sonora que directamente la salud de las personas, además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
 
 Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}.
 Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020. \citep{BBVA2013}
@@ -17,9 +17,9 @@ Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desd
 
 Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
-En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte publico cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
+En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte público cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
 
-En el caso de Montevideo para solucionar este problema se esta implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte publico y democratizar el acceso al mismo. El sistema de transporte esta inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará más información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
+En el caso de Montevideo para solucionar este problema se esta implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte público y democratizar el acceso al mismo. El sistema de transporte esta inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará más información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
 
 
 
@@ -47,7 +47,7 @@ Un BRT contiene características similares a un tren ligero o el sistema de metr
 \section{Corredor de Garzón}	
 
 
-Fue construido como parte de el plan de movilidad urbana que incluye otros corredores en la ciudad de Montevideo. \citep{PlanMovilidad}. Tomando en cuenta sus extremos conecta los barrios de Colon con Paso Molino. Tiene una extensión de 6.5km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán que conecta con una autopista (Ruta 5) y Bulevar Battle y Ordoñez la cual tiene una gran densidad de trafico. Es importante aclarar que no es solo una conexión de extremo a extremo ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
+Fue construido como parte del plan de movilidad urbana que incluye otros corredores en la ciudad de Montevideo. \citep{PlanMovilidad}. Tomando en cuenta sus extremos conecta los barrios de Colón con Paso Molino. Tiene una extensión de 6.5km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán que conecta con una autopista (Ruta 5) y Bulevar Battle y Ordoñez la cual tiene una gran densidad de trafico. Es importante aclarar que no es solo una conexión de extremo a extremo ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
 
 \begin{figure}[H]
 	\centering
@@ -94,7 +94,7 @@ Analizando las recomendaciones del standard hay algunas que no están totalmente
 	\label{fig:perfil_garzon}
 \end{figure}
 
-Desde su construcción el corredor a recibido críticas debido a que su principal objetivo que era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio que existía antes de realizar el corredor para el transporte público \citep{olivera2015}.
+Desde su construcción el corredor ah recibido críticas debido a que su principal objetivo que era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio que existía antes de realizar el corredor para el transporte público \citep{olivera2015}.
 
 
 Las autoridades han admitido que se han cometido errores y se apunta a que no se ha logrado sincronizar los semáforos.\citep{olivera2013}. Un buen funcionamiento de los mismos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones. A continuación se tratará este tema. 
@@ -315,7 +315,7 @@ Se pueden clasificar por el método de asignación de fitness en:
 
 
 \subsection{Algoritmo Evolutivo Paralelo}
-Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aun sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
+Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
 
 
 Existen varios niveles de paralización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
@@ -412,7 +412,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		
 		Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlazara por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
 		
-		Para el modelo utiliza una zona  de la ciudad de Málaga, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varia la longitud, velocidad y probabilidad que entre en la red de tráfico.
+		Para el modelo utiliza una zona  de la ciudad de Málaga, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varía la longitud, velocidad y probabilidad que entre en la red de tráfico.
 		
 		Se intenta minimizar los tiempo de viaje de los vehículos que circulan por la red. Para ellos se utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los dos peores individuos reemplazándolos por los dos mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución, el tiempo medio utilizado y el retraso medio. Se prueban varias estrategias de cruzamiento y mutación. Las ejecuciones tienen un tiempo fijo de duración.
 		
@@ -484,7 +484,7 @@ Tanto los trabajos de \citet{Teo2010} como \citet{Stolfi2012} plantean la simula
 \citet{Montana1996} y \citet{Vogel2000}  proponen algoritmos que se adapten en tiempo real por lo que se destacan como posibles trabajos a futuro.
 Es digno de mención que todos los trabajos consultados lograron mejoras significativas en sus resultados.
 
-En conclusión el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivo aun más el desarrollo del trabajo presentado.
+En conclusión el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivo aún más el desarrollo del trabajo presentado.
 
 
 
