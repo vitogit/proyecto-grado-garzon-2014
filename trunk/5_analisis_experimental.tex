@@ -194,17 +194,17 @@ En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  l
 \section{Descripción de escenarios}
 En esta sección se presentan los escenarios que serán evaluados, el primero es el escenario base que representa la realidad actual y el segundo un escenario alternativo que contiene modificaciones con el objetivo de mejorar la realidad.
 
-\subsection{Caso base o Realidad actual del corredor}
+\subsection{Caso base o realidad actual del corredor}
 Esto representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. El objetivo es obtener datos precisos para realizar una simulación de la realidad y poder obtener datos para comparar con los resultados del algoritmo. 
 
-Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos que son de acceso publico.
+Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos que son de acceso público.
 
 Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la linea durante todo el día para una semana en particular. De esta forma se constato que para de las lineas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
 
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
 Sobre este escenario geográfico se realizarán tres escenarios de tráfico : bajo, medio y alto.
-El caso medio representa los datos obtenidos, el bajo es disminuyendo el 50\% de vehículos y  el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte publico. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
+El caso medio representa los datos obtenidos, el bajo es disminuyendo el 50\% de vehículos y  el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
 El caso de tráfico alto se aumenta 50 \%  los vehículos y el tiempo de espera en la parada de los ómnibus.
 
 El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
@@ -224,7 +224,7 @@ En resumen tenemos los siguientes escenarios de tráfico:
 %En este caso se realizan 20 ejecuciones independientes sobre cada instancia de tráfico.
 
 
-\subsection{Escenario Alternativo}
+\subsection{Escenario alternativo}
 
 Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se realiza solo a modo de ejemplo un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no afecta la situación actual de la realidad, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
 

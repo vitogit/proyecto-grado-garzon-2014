@@ -62,7 +62,7 @@ Este trabajo se basa en el concepto de una ciudad inteligente enfocando en la mo
 
 Para ello utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlazara por wifi con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
 
-Para el modelo utiliza una zona  de la ciudad de Málaga obtenido desde \citep{OSM}, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citep{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta, camión donde se varia la longitud, velocidad y probabilidad que entre en la red de tráfico.
+Para el modelo utiliza una zona  de la ciudad de Málaga obtenido desde \citep{OSM}, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citep{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta, camión donde se varía la longitud, velocidad y probabilidad que entre en la red de tráfico.
 
 Se intenta minimizar los tiempo de viaje de los vehículos que circulan por la red. Para ellos se utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los 2 peores individuos y reemplazándolo por los 2 mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución, el tiempo medio utilizado, y el retraso medio. Se prueban varias estrategias de cruzamiento y mutación. Las ejecuciones tienen un tiempo fijo de duración.
 
@@ -135,4 +135,4 @@ Tanto los trabajos de \citep{Teo2010} como \citep{Stolfi2012} plantean la simula
 Tanto \citep{Montana1996} como \citep{Vogel2000}  proponen algoritmos que se adapten en tiempo real por lo que se destacan como posibles trabajos a futuro.
 Es digno de mención que todos los trabajos destacan una mejora en el rendimiento al utilizar algoritmos genéticos. 
 
-En conclusión el estudio de los trabajos relacionados permitió conocer más en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivo aun más el desarrollo del trabajo presentado.
+En conclusión el estudio de los trabajos relacionados permitió conocer más en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivo aún más el desarrollo del trabajo presentado.
