@@ -83,7 +83,7 @@ Este trabajo presenta un modelo simple con una sola intersección en donde se in
 Esta propuesta utiliza un enfoque adaptativo con sensores que analizan el tráfico en tiempo real (un sensor para saber cuantos autos pasan y otro para saber que tan larga es la cola) tomando en consideración los cambios que se producen con respecto al caso promedio y cambiando los tiempos de las señales en forma acorde.
 La premisa se basa en la inteligencia colectiva en donde agentes individuales realizan tareas simples que al interactuar producen resultados globales.
 
-Se aplica programación genética más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que sera ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los arboles de decisión mejorando el flujo de tráfico.
+Se aplica programación genética más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los arboles de decisión mejorando el flujo de tráfico.
 
 La medida básica de efectividad en la función de evaluación es el “Delay”, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron 3 modelos distintos que tienen 4 intersecciones con una versión especial del simulador  TRAF-NETSIM \citep{TRAF-NETSIM}
 
@@ -100,7 +100,7 @@ La solución utiliza un enfoque auto-adaptable para mejorar el tráfico tanto en
 Destaca el hecho que dada una configuración de semáforos aún siendo optimizada usando simulaciones es difícil que sea la mejor en todas las situaciones o en casos extremos (horas picos). Para solucionar esto proponen un sistema auto-adaptable que toma la información del tráfico actual usando detectores de vehículos y espacios.
 
 Utiliza el concepto de fases para representar las distintas posibilidades en la señalización de la intersección, y cuanto tiempo debe permanecer en esa fase. Esto provoca que cuanto más fases más cantidad de secuencias son agregadas.
-Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases mientras el fitness se obtiene simulando ese sistema en un modelo de tráfico. Este modelo es relativamente pequeño con una intersección con 4 brazos, cada uno con 3 lineas donde la ruta principal tiene el doble de densidad vehicular. El simulador utilizado está basado en SIMVAS++.
+Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases mientras el fitness se obtiene simulando ese sistema en un modelo de tráfico. Este modelo es relativamente pequeño con una intersección con 4 brazos, cada uno con 3 líneas donde la ruta principal tiene el doble de densidad vehicular. El simulador utilizado está basado en SIMVAS++.
 
 Los resultados indican que la ventaja de usar conocimiento experto para configurar los parámetros iniciales es mínimo ya que llega muy rápido a resultados similares. Tanto la búsqueda de los mejores parámetros como en estructuras más simples el algoritmo se comporta con buenos resultados.
 		
