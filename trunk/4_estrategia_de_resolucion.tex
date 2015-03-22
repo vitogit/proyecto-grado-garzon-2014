@@ -1,8 +1,17 @@
 \chapter{Estrategia de resolución}
 
-En este capítulo se explica el proceso llevado a cabo para desarrollar la solución. Se presenta el modelado básico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. 
+En este capítulo se explica el proceso llevado a cabo para desarrollar la solución. Se presenta el modelado básico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. Se detalla la biblioteca utilizada para el desarrollo del algoritmo genético y la arquitectura propuesta.
 
-Se detalla la biblioteca utilizada para el desarrollo del algoritmo y la arquitectura desarrollada.
+La metodología se basa en cuatro puntos que serán tratados a continuación estos son:
+
+\begin{itemize}
+	\item Modelado del problema.
+	\item Algoritmo genético multiobjetivo y paralelo.
+	\item Simulador de trafico.
+	\item Cluster Fing para la ejecución del algoritmo. 
+\end{itemize}
+
+
 
 
 
@@ -65,7 +74,7 @@ Luego se utilizó la herramienta Netconvert para transformarlo al formato que SU
 \subsubsection{Trabajo de campo}
 Se cuentan con los datos públicos sobre la cantidad de  ómnibus y sus frecuencias pero no se tienen datos sobre la densidad de tráfico vehicular en la zona, por esto se realiza un revelamiento in-situ con las siguientes características.
 
-Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehiculos circulantes.
+Se seleccionaron cinco cruces que presentan diferentes características para poder modelar variantes en la cantidad de vehículos circulantes.
 Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia. 
 
 Se siguen las recomendaciones de los textos consultados al respecto \citep{ConteoTrafico}. Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
@@ -193,23 +202,28 @@ Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqu
 \newpage
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo.
+Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo, con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideran complejos y que insumirán una gran carga de recursos computacionales.
 
+Se utiliza el método maestro-esclavo donde el maestro se encarga de la mayoría de las funciones:
 
-A continuación se realiza un resumen de sus características:
 \begin{itemize}
+\item Inicialización de la población.
+\item Distribuir la evaluación de los individuos hacia los esclavos creando un hilo por cada esclavo	.
+\item Obtener de los esclavos los valores obtenidos de fitness.
+\item Selección de los mejores individuos.
+\item Aplicación de operadores de cruzamiento y mutación.
+\item Reemplazo y generación de la siguiente población.
+\end{itemize}
 
-\item Algoritmo paralelo: Utiliza el método maestro-esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
-\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso especifico.
-\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos y sus fases.
-\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto especifico para el problema al igual que para la mutación.
-\item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
-
+Mientras los esclavos se encargan solamente de lo siguiente:
+\begin{itemize}
+	\item Obtener el individuo enviado por el maestro.
+	\item Ejecutar la evaluación del individuo que corresponde a ejecutar el simulador y obtener los datos de salida.
 \end{itemize}
 
 
 El siguiente esquema muestra el algoritmo utilizado. 
- 
+
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
 	\label{alg:algoritmo_genetico_malva}
@@ -229,8 +243,21 @@ El siguiente esquema muestra el algoritmo utilizado.
 			\ENDWHILE
 		}
 	\end{algorithmic}
-
+	
 \end{algorithm}
+
+A continuación se realiza un resumen de las características del algoritmo implementado, que en la siguiente sección serán tratados en mayor detalle:
+\begin{itemize}
+
+\item Algoritmo paralelo: Utiliza el método maestro-esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
+\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso especifico.
+\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos y sus fases.
+\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto especifico para el problema al igual que para la mutación.
+\item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
+
+\end{itemize}
+
+
 
 
 

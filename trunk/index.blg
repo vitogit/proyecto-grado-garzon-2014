@@ -25,6 +25,7 @@ while executing---line 1429 of file abbrvnat.bst
 Warning--empty journal in Goldberg1989
 Warning--empty year in IMM
 Warning--empty year in JOSM
+Warning--empty journal in Koza1992
 Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
 while executing---line 1429 of file abbrvnat.bst
 Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
@@ -37,6 +38,7 @@ Warning--empty journal in Nesmachnow2002
 Warning--empty year in OSM
 Warning--empty year in TrafficModeler
 Warning--empty journal in Penner2002
+Warning--empty journal in Ingo1971
 Warning--empty journal in Rouphail2000
 Warning--empty year in sigMontevideo
 Warning--empty journal in Sanchez2004

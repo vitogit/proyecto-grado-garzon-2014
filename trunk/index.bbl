@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -143,6 +143,12 @@ INE.
 \newblock Josm (java openstreetmap editor).
 \newblock \url{https://josm.openstreetmap.de/}.
 
+\bibitem[Koza(1992)]{Koza1992}
+J.~Koza.
+\newblock Genetic programming: On the programming of computers by means of
+  natural selection.
+\newblock 1992.
+
 \bibitem[López et~al.(1999)López, Hernandez, Hernandez, y Garcia]{Lopez1999}
 S.~López, P.~Hernandez, A.~Hernandez, y M.~Garcia.
 \newblock Artificial neural networks as useful tools for the optimization of
@@ -207,6 +213,12 @@ A.~K. Rathi.
 \newblock Urban network traffic simulation:traf-netsim program.
 \newblock \emph{Journal of Transportation Engineering}, 116\penalty0
   (6):\penalty0 734--743, November-December 1990.
+
+\bibitem[Rechenberg(1971)]{Ingo1971}
+I.~Rechenberg.
+\newblock Evolutionsstrategie - optimierung technischer systeme nach prinzipien
+  der biologischen evolution.
+\newblock 1971.
 
 \bibitem[Rouphail et~al.(2000)Rouphail, Park, y Sacks]{Rouphail2000}
 N.~M. Rouphail, B.~B. Park, y J.~Sacks.
