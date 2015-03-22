@@ -65,17 +65,13 @@ Para las siguientes pruebas la función fitness del algoritmo (\ref{eq:funcion_f
 \subsection{Tiempo de simulación}
 Esto se refiere al tiempo que representa una simulación usando SUMO,  es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador SUMO). Este número representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos hayan completado la simulación, es decir llegado a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos, pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
 
 
 \subsection{Criterio de parada}
-Se elige como criterio de parada el número de generación, esto permite estandarizar las pruebas para una mejor comparación.
+Se elige como criterio de parada el número de generación, esto permite estandarizar las pruebas para una mejor comparación.Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
 
-Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
-
-Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones.
-
-Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
+Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones. Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
 
 Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
 En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 además el tiempo de ejecución real esta dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
@@ -97,9 +93,7 @@ Para la elección de la población se tendrán en cuenta 3 elementos. El valor d
 
 Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos será 64.
 
-Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos y son valores con los que se obtiene una distribución más adecuada.
-
-Se realizan 10 ejecuciones del algoritmo por cada tipo de tráfico y luego se obtiene el promedio de esos valores.
+Luego se eligen los valores 32 y 48 para completar el análisis teniendo en cuenta que no son lo suficientemente bajos y son valores con los que se obtiene una distribución más adecuada. Se realizan 10 ejecuciones del algoritmo por cada tipo de tráfico y luego se obtuvo el promedio de esos valores.
 
 La siguiente tabla muestra los resultados obtenidos, como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige como número de población 32 teniendo en cuenta el tiempo de ejecución secuencial del algoritmo que como se aprecia es el menor. Se elige esta métrica por que aunque al ejecutar en paralelo el tiempo real que se puede obtener utilizando la máxima cantidad de procesadores para cada población son similares también se tiene en cuenta la disponibilidad y utilización de recursos que insume en el cluster fing. Por ejemplo obtener 64 procesadores para utilizar por un proceso en el cluster es algo que puede demorar varios días por la cantidad de otros procesos que también están funcionando en la plataforma y como se ve la ganancia que tenemos es mínima.
 
@@ -139,9 +133,8 @@ Los valores elegidos fueron:
 
 Se prueban las nueve combinaciones posibles de cruzamiento y mutación, para cada una se realizan 3 ejecuciones para el escenario con tráfico bajo, 3 con tráfico medio y 3 con tráfico alto.
 
-
  
- \begin{table}[h]
+ \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
  	\caption{Combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
  	\label{table:parametro_mutacion_cruzamiento}
@@ -165,17 +158,15 @@ Se prueban las nueve combinaciones posibles de cruzamiento y mutación, para cad
  	\end{tabular}
  \end{table}
  
- 
- 
+Analizando la tabla y la gráfica se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/grafica_mutacion_cruzamiento}
 	\caption{Gráfica con combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
 	\label{fig:grafica_mutacion_cruzamiento}
 \end{figure}
 
-Analizando la tabla y la gráfica se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
 
 Se comprueba que todas las muestras siguen la distribución normal  para poder aplicar el test de Student.
 
@@ -242,9 +233,9 @@ Se muestran los resultados obtenidos tanto de la simulación de la realidad, com
 
 \subsection{Valores numéricos del caso base}
 
-En la tabla se pueden ver las métricas obtenidas para los diferentes instancias de tráfico simulado.
+En la tabla se pueden ver las métricas obtenidas para los diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia la velocidad promedio de los ómnibus ronda los 15km/h y la velocidad de los otros vehículos disminuye notoriamente al aumentar el tráfico.
  
- \begin{table}[h]
+ \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
  	\caption{Resultados del caso base mostrando la velocidad promedio ómnibus (vpb) y velocidad promedio vehículos(vpv) para los distintos tipos de tráfico}
  	\label{table:resultado_caso_base}
@@ -267,8 +258,10 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
 
 \subsection{Resultados numéricos de la evaluación }
 
+Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Ademas la velocidad media de los vehículos se mantiene en un rango mucho mas ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el fitness son de de hasta 24\%. A continuación se realizara el análisis estadístico para comprobar la mejora.
 
-\begin{table}[h]
+
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}	
 		\centering
 	\caption{Resultados luego de ejecutado el algoritmo mostrando velocidad promedio ómnibus (vpb) y  de otros vehículos(vpv) para los distintos tipos de tráfico }
@@ -299,19 +292,21 @@ algoritmo A es mejor que el algoritmo B si los resultados de A y B cumplen:
 \left |f_{avg}(A) - f_{avg}(B)  \right | > max(std(f_A),std(f_B))
 \end{equation}
 
-En este caso A representa el algoritmo y B el caso base. Esto indica que la diferencia del resultado promedio del caso base restado al resultado del caso base debe ser mayor a la máxima desviación.
+En este caso A representa el algoritmo y B el caso base. Esto indica que la diferencia del resultado promedio del algoritmo restado al resultado del caso base debe ser mayor a la máxima desviación.
 Esto se cumple para todos los casos, por lo que podemos afirmar que existe evidencia estadística para decir que los resultados del algoritmo son mejores al del caso base.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/duracion_viajes}
 	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico.}
 	\label{fig:duracion_viajes}
 \end{figure}
 
-Como se aprecia en el gráfico el algoritmo mejora la duración de los viajes tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Como cabía esperar aumenta la duración del viaje al aumentar el tráfico, aunque un resultado interesante es que la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el algoritmo.
-Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m. 
+Como cabía esperar aumenta la duración del viaje al aumentar el tráfico, aunque un resultado interesante es que la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el algoritmo.
+Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m.
 
+ 
+\newpage
 
 
 \subsection{Detalles del escenario alternativo}
@@ -359,10 +354,9 @@ Este cambio se aplico en las siguientes intersecciones:
 	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino. 
 \end{itemize}
 
-\subsubsection{Resumen}
-Lo interesante del resultado obtenido de esta modificación es que aumenta la velocidad promedio de los vehículos y disminuye la de los ómnibus. Aunque igualmente aumenta el fitness. 
+\subsubsection{Valores numéricos al aplicar los cambios}
 
-En la siguiente tabla se detallan los cambios realizados con la mejora asociada, comparando los valores para el tráfico medio. Estos cambios son acumulativos, por lo que se hacen uno después del otro . Luego se detallan los resultados obtenidos para el tráfico bajo y alto.
+Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta se basa en el trafico medio ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Estos cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que el que logra una mayor diferencia es la creación de paradas alternadas.
 
 
 \begin{table}[H]
@@ -388,8 +382,7 @@ En la siguiente tabla se detallan los cambios realizados con la mejora asociada,
 	\end{tabular}
 \end{table}
 
-
-
+Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se ve en la tabla \ref{table:mejoras_trafico_alternativo} se obtienen mejores rendimientos en todos los tipos de trafico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
@@ -413,11 +406,17 @@ En la siguiente tabla se detallan los cambios realizados con la mejora asociada,
 	\end{tabular}
 \end{table}
 
+Una vez que tenemos este escenario alternativo se procede a aplicarle el algoritmo cuyo resultado veremos a continuación.
+
+
 \subsection{Resultados de la evaluación sobre el escenario alternativo}
+
+El escenario alternativo supuso una mejora sustancial en comparación con el caso base con una mejora de alrededor 11\%, ahora vamos a aplicar el algoritmo para determinar si todavía se puede mejorar al modificar la configuración de los semáforos.
+
+Los resultados obtenidos en la tabla \ref{table:mejoras_trafico_alternativo_algoritmo} claramente mejoran el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de trafico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
 
 Al comparar los resultados obtenidos se aprecia claramente que cuanto más densidad de tráfico mayor es el porcentaje de mejora. Además un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
-Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 minutos a 17,8 minutos y un auto de demorar 14,5 minutos a 11.5 minutos con una densidad de tráfico media. 
 
 
 
@@ -441,6 +440,14 @@ Esto significa que el recorrido de un ómnibus por Garzón pasa de demorar 26,7 
 	\end{tabular}
 \end{table}
 
+En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la comparación en la duración de los viajes. Se produce una gran reducción en la duración de los viajes para todos los tráficos para el caso de los ómnibus mientras para los vehículos la mayor diferencia ocurre cuando el trafico es alto.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/duracio_viajes_alternativo}
+	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico. Al aplicar el algoritmo sobre el escenario alternativo.}
+	\label{fig:duracion_viajes_alernativo}
+\end{figure}
 
 \subsection{Variación de la función de fitness}
 
@@ -585,12 +592,12 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 \end{table}
 
 
-El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del speedup de 25.7  y  eficiencia promedio de 0.8, lo que podemos considerar como buenas métricas.
+El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del speedup de 25.7  y  eficiencia promedio de 0.8, lo cual puede considerarse como buenas métricas.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/speedup1}
-	\caption{Comparación de los speedup promedios para cada tipo de tráfico.}
+	\caption{Comparación de los speedup promedios para cada tipo de tráfico. Se representa el caso serial que corresponde al speedup=1 para fines de comparación.}
 	\label{fig:speedup1}
 \end{figure}
 

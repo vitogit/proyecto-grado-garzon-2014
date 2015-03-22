@@ -15,6 +15,15 @@ Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual has
 
 Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figures/ventas_autos}
+	\caption{Evolución en la venta de automóviles por año. El valor mas bajo corresponde al año 2003, y el mas alto 2013. Imagen extraída de \citet{Autoanuario2014}.	
+	}
+	\label{fig:ventas_autos}
+\end{figure}
+
+
 Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
 En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte público cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
@@ -101,11 +110,21 @@ Las autoridades han admitido que se han cometido errores y se apunta a que no se
 
 
 \section{Sincronización de semáforos}
+El problema de la optimización del tráfico se refiere a los métodos cuyo objetivo es mejorar el flujo de vehículos en una red vial. Estos se pueden clasificar en dos categorías: influir en el comportamiento de los conductores (configuración de semáforos, señalización, etc) o modificaciones en las rutas (agregado de un nuevo carril, ensanchar calles, etc). 
+Estos últimos pueden producir mejoras drásticas pero requieren una inversión monetaria y espacio físico que muchas veces no esta disponible. Por esta razón los métodos destinados a influir en el comportamiento de los conductores se presentan como una mejor o única opción.
 
+En este sentido los métodos para la sincronización de semáforos son de los más efectivos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes. 
 
-Los métodos para la sincronización de semáforos son de los más efectivos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes. 
+La fase se refiere a una configuración especifica de luces de semáforos en una intersección, que permiten el movimiento de ciertos flujos de tráfico. Como se ve en la figura \ref{fig:fases} cada intersección puede tener diferente número de fases y también distintas duraciones. Estas suelen ser configuradas y establecidas manualmente por técnicos especializados basados en su experiencia, aunque en ciertas ocasiones se utilizan simulaciones para obtenerlas. 
 
-Existen tres parámetros importantes a tener en cuenta que determinaran el comportamiento del sistema, estos son la duración de una fase, los ciclos de las luces y los valores de \emph{offset}. Estos serán explicados a continuación.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/fases1}
+	\caption{Distintas fases para dos cruces en una red de tránsito}
+	\label{fig:fases}
+\end{figure}
+
+Existen tres parámetros importantes a tener en cuenta que determinaran el comportamiento del sistema, estos son la duración de fase, los ciclos de las luces y los valores de \emph{offset}. Estos serán explicados a continuación.
 
 
 \begin{itemize}
@@ -116,36 +135,46 @@ Existen tres parámetros importantes a tener en cuenta que determinaran el compo
  	\item Offset: Indica el comienzo de una fase permitiendo que diferentes intersecciones comiencen su ciclo en diferentes momentos, esto es muy importante para sincronizar un flujo de tráfico en lo que se conoce como \emph{línea verde}, en donde los vehículos logran pasar todas las intersecciones sin detenerse.
 \end{itemize}
 
-Estos parámetros pueden ser utilizados a la hora de sincronizar los semáforos de una zona, teniendo en cuenta implementar la optimizan de manera global. También hay que tener en cuenta el desarrollo de soluciones seguras siendo lo más básico que no existan intersecciones donde ambos flujos crucen a la misma vez.
+Estos parámetros pueden ser utilizados a la hora de sincronizar los semáforos de una zona, buscando una optimización global de la red. También hay que tener en cuenta el desarrollo de soluciones seguras siendo lo más básico que no existan intersecciones donde ambos flujos crucen a la misma vez.
 
 Existen diversos métodos para lograr la coordinación necesaria que van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle. Pudiendo clasificarse como estrategias de tiempo fijo, o de tiempo dinámico auto-ajustable.
 
 Se considera a este problema en la categoría de NP-difícil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
 
-Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Uno de los más desarrollados y efectivos son los algoritmos evolutivos los cuales son usados en este trabajo y serán explicados a continuación.
+Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Entre los mas desarrollados y efectivos están los algoritmos evolutivos en particular los algoritmos genéticos que serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
-Uno de los puntos fundamentales del presente trabajo son los algoritmos evolutivos en particular los algoritmos genéticos por lo que se dedica esta sección para  brindar un repaso por los conceptos y definiciones necesarias para comprender el desarrollo posterior de la solución.
+Los algoritmos evolutivos son un conjunto de técnicas heurísticas para la resolución de problemas complejos que se inspiran en la evolución natural, trabajan sobre una población de individuos que representan una solución y utilizan mecanismos de selección, reproducción y diversidad para lograr su objetivo. 
+Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores basado en un criterio predefinido a maximizar o minimizar.
 
-Se dará un repaso general, en el caso que el lector quiera profundizar sobre el tema se recomienda los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996}.
+Se pueden destacar cuatro etapas en la ejecucion del algoritmo evolutivo. Estos son:
 
-Los algoritmos evolutivos son métodos no determinísticos que se inspiran en la evolución natural de las especies utilizando conceptos como población, cruzamiento, mutación, selección, etc. Estos se utilizan para resolver problemas de optimización y búsqueda, entre otros \citep{Nesmachnow2002}.
+\begin{itemize}
+	\item Evaluación: Para cada individuo de la población se determina un valor de aptitud (fitness) en relación a su capacidad para resolver el problema. 
+	\item Selección: Proceso en donde se eligen cuales son los individuos que sobrevivirán a la siguiente generación y sobre los cuales se aplicaran los operadores.
+	\item Operaciones: Se aplican tanto combinaciones entre individuos (cruzamiento), como operadores de diversidad(mutación). Esto genera nuevos individuos en la población.
+	\item Reemplazo: Se produce el recambio generacional, sustituyendo a la antigua población por una nueva que podría tener sobrevivientes de la anterior o solamente nuevos individuados generados en la etapa anterior.
+\end{itemize}
 
-Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores basado en un criterio predefinido para maximizar o minimizar.
+Se han desarrollado varias lineas de investigación diferenciadas que aplican estas técnicas, alguna de ellas se describen a continuación:
 
-Este tipo de solución ha demostrado su utilidad en una amplia variedad de problemas complejos.
+\begin{itemize}
+
+	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniera. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Aunque modelos mas recientes agregan otro tipo de mecanismos.
+	\item Programación genética: Intenta generar un programa de computación para resolver una tarea especifica. Cada individuo puede ser un programa que es representado en forma de árbol, de esta manera la combinación entre individuos se realiza de forma más sencilla. La función de aptitud se refiere a que tan cerca de resolver la tarea se encuentra el individuo.\citep{Koza1992}
+	\item Algoritmos Genéticos: El mas popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán mas detalles sobre los mismos.
+\end{itemize}
+
+
 
 
 \subsection{Algoritmos Genéticos}
-El algoritmo genético es uno de los más populares dentro de los algoritmos evolutivos.
 
-La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución.
+La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los mismo.
 
-Un individuo es una codificación de la solución que resuelve el problema.
-La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo.
-La función de evaluación o fitness indica que tan buena o apta es una solución en comparación con las demás.
-En cada iteración la cual se llama generación se aplican operadores de cruzamiento, estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
+Un individuo es una codificación de la solución que resuelve el problema. La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo. La función de evaluación o fitness indica que tan buena o apta es una solución en comparación con las demás.
+En cada iteración la cual se conoce como generación se aplican operadores de cruzamiento, estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
 
 
 \begin{figure}[H]
@@ -224,12 +253,12 @@ Se podría reemplazar todos los padres por los hijos, o seleccionar cuales reemp
 \subsubsection{Criterio de parada} 
 Indica cuando debe terminar el algoritmo, puede ser definiendo un número fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones entre otros criterios. El objetivo será encontrar un compromiso entre un buen resultado y un tiempo acorde de ejecución, ya que el algoritmo no arrojara un valor exacto sino una buena aproximación. 
 
-\subsection{Funcionamiento}
+\subsubsection{Funcionamiento}
 
 El esquema básico de funcionamiento es el siguiente:
 
 
-\begin{algorithm}%[!ht]
+\begin{algorithm}[H]
 	\caption{Algoritmo Genético}
 	\label{alg:algoritmo_genetico_simple}
 	\begin{algorithmic} [1] 
@@ -334,23 +363,46 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 \end{figure}
 
 \subsection{Resumen}
-Los algoritmos evolutivos han demostrado su eficiencia en la resolución de gran cantidad de problemas de optimización.  Si nos enfocamos en el problema de la sincronización de semáforos existen herramientas utilizadas para su resolución, entre las que se encuentra los simuladores de tráfico los cuales serán explicados en la siguiente sección.
+Los algoritmos genéticos han demostrado su eficiencia en la resolución de gran cantidad de problemas de optimización.  Si nos enfocamos en la sincronización de semáforos existen herramientas utilizadas para su resolución, entre las que se encuentra los simuladores de tráfico, los cuales serán explicados en la siguiente sección.
 
 
 \section{Simulación de tráfico}
 
 Los simuladores de tráfico son programas que simulan el movimiento del flujo vehicular sobre una red, cabe destacar que esta puede ser tanto terrestre, marítima o aérea. Son usados en proyectos de investigación , estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como es la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo pues no es necesario cambiar la infraestructura para probar nuevos escenarios y es útil para prever situaciones que podrían darse bajo determinadas circunstancias.
 
-Los simuladores se pueden dividir en macroscópicos o microscópicos según el nivel de detalle de la simulación. Un simulador macroscópico modela  el tráfico como un fluido. En cambio un simulador microscópico simula el movimiento de cada vehículo según sus características particulares.
+Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y microscópicos. En algunos casos se considera una tercera categoría híbrida de estas dos llamada mesoscópicos.
+
+\begin{itemize}
+	\item Macroscópicos: El tráfico es modelado como un fluido continuo y es descrito de manera agregada usando características como la velocidad o densidad del flujo.
+	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, esto permite crear una distribución heterogénea del comportamientos de vehículos.
+	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle.Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
+\end{itemize}
+
+En general se considera que las simulaciones microscópicas se acercan mas a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicos pues aunque no poseen tanto detalle si son mas rápidas y en determinadas circunstancias podrían ser una mejor opción.
 
 En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripción de varios simuladores entre los que se encuentran:
 \begin{itemize}
-	\item \citep{SUMO}: Simulador abierto, portable, microscópico diseñado para soportar grandes redes de tránsito. Es de los más populares, utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.
+	\item \citet{SUMO}: Simulador abierto, portable, microscópico diseñado para soportar grandes redes de tránsito. Es de los más populares, utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.
 	\item QuadStone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de tránsito y transporte.
 	\item Aimsun: Paquete de simulación que integra varios tipos de modelos de transporte, por ejemplo herramientas para el tráfico estático y un simulador microscópico
-	\item Trafficware SimTraffic: Es un simulador que forma parte del paquete Trafficware's Syncro Studio, que cuenta con una herramienta para la sincronización de semáforos.
-	\item CORSIM TRAFVU: Parte del paquete TSIS CORSIM, presenta las animaciones y los gráficos estáticos para las redes de tráfico utilizando CORSIM como entrada.
+	\item Trafficware SimTraffic: Es un simulador que forma parte del paquete \emph{Trafficware's Syncro Studio}, que cuenta con una herramienta para la sincronización de semáforos.
+	\item Corsim Trafvu: Parte del paquete \emph{Tsis Corsim}, presenta las animaciones y los gráficos estáticos para las redes de tráfico utilizando \emph{Corsim} como entrada.
 \end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/simuladores}
+	\caption[]{Algunos simuladores de tráfico. (A) Sumo, (B) QuadStone Paramics, (C) Aimsun, (D) Trafficware SimTraffic}
+	\label{fig:simuladores}
+\end{figure}
+
+Los simuladores requieren la creación de una \emph{red de transito}, en general se refiere a las propiedades que tendrán los caminos, por ejemplo cantidad de carriles, limite de velocidad, ubicación, largo, conexiones entre las mismas, etc. Algunos simuladores obtienen esta entrada usando archivos de texto, lo cual puede ser un proceso lento y propenso a errores, otros pueden importar redes de diversas fuentes como \citet{OSM}.
+
+También necesitan conocer las\emph{ rutas seguidas por los vehículos}. Los simuladores pueden tomar esta información de manera explicita indicando para cada vehículo la ruta seguida o utilizar otros métodos dinámicos indicando solo los puntos de inicio y final del recorrido cuya ruta será generada en tiempo de simulación. Esto puede ser un proceso verdaderamente complejo por tal razón muchos simuladores poseen herramientas destinadas a facilitar esta tarea.
+
+Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya que es fundamental a la hora de sacar conclusiones. En general la información básica sera la velocidad y tiempos de recorrido. Aunque también puede contener mas detalle como: duración de detenciones, densidad de tráfico, uso de combustible o cantidad de emisiones contaminantes.  
+ 
 
 
 \section{Trabajos relacionados}
