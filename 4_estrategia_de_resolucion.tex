@@ -54,9 +54,9 @@ Se describen los pasos realizados para tener los elementos necesarios para reali
 
 \subsubsection{Diseño del mapa}
 
-El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Al notar ciertas diferencias como calles de una sola mano que estaban como doble vias y algunos cruces de garzon como lezica con lo visto in situ, por lo que se cotejo la exactitud comparo con otros servicios como Google Maps y Bing Maps.
+El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Al notar que calles de una sola mano estaban como doble vías y algunos cruces de Garzón como Lezica, diferían con lo visto in situ, se cotejo la exactitud comparando con otros servicios como Google Maps y Bing Maps que al poseer tambien fotos actualizadas del lugar se podía discernir y recordar de como eran las calles realmente.
 
-Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto. Además se eliminaron elementos del mapa que no eran necesarios para nuestro modelo. 
+Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto ya que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una calle a la otra, chequeando que quede una doble mano o dos calles de una mano sola y luego se borraron manualmente todas las demas calles.
 
 \begin{figure}[H]
 	\centering
@@ -65,10 +65,7 @@ Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
-Luego se utilizó la herramienta Netconvert para transformarlo al formato que SUMO acepta y se realizaron varios ajustes editando los archivos generados para corregir errores en las calles, cruces y conexiones. De esta manera se obtuvo un mapa fiel a la realidad y compatible con el simulador.
-
-
-
+Luego se utilizó la herramienta Netconvert para transformarlo al formato que SUMO acepta, Netconvert no reconoce un monton de datos aportados por el formato OSM como los numeros de casas, las vias del tren, las vías de peatones,los caminos, las paradas, los separadores que tiene el corredor de las vias de autos etc.pero NetConvert no esta hecho para reconocer corredores por lo que mezclaba y superponia el corredor con las vias de los autos, por lo que lo primero que hubo que hacer es separar aproximadamente 1 metro las calles para que NetConvert interpretara que no era posible cambiar entre la via de los autos y del ómnibus (como la realidad)y se realizaron varios ajustes editando los archivos generados para corregir errores en las calles, cruces y conexiones. De esta manera se obtuvo un mapa fiel a la realidad y compatible con el simulador.
 
 
 \subsubsection{Trabajo de campo}
