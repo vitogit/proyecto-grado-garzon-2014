@@ -78,7 +78,7 @@ Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/mapa_osm_sumo}
-	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.}
+	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO. El corredor Garzón esta en el centro de cada imagen.}
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
@@ -148,7 +148,8 @@ Existen varios modelos disponibles para la representación de la circulación de
 \end{itemize}
 
 
-Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico.
+Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico. Esto genera el recorrido del viaje para cada vehículo, estos se mantienen constantes en las distintas ejecuciones del algoritmo. Lo que cambia son las velocidades desarrolladas por cada uno ya que dependiendo de la configuración de los semáforos logrará mayores o menores velocidades.
+
 
 
 \begin{figure}[h]
@@ -234,7 +235,7 @@ Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqu
 
 
 
-\newpage
+
 
 \section{Especificación del Algoritmo Genético utilizado}
 Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo, con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideran complejos y que insumirán una gran carga de recursos computacionales.
@@ -351,7 +352,7 @@ cruce se hacen variar las duraciones de las fases de manera aleatoria entre un r
 \subsection{Función fitness}
 
 
-La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
+La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los datos necesarios para calcular el fitness.
 
 Se empleará una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando son menos de tres objetivos. El fitness se calcula como una suma ponderada, con los pesos fijados a priori.
 
@@ -360,7 +361,7 @@ Se empleará una función multiobjetivo usando combinación lineal de la velocid
 		F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
         \end{equation}
 
-En nuestro caso tenemos como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv).
+Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es mas adecuada para realizar las comparaciones con la realidad. Por ejemplo cantidad de vehículos que completan su viaje, duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de la comparación.
 
 Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le vamos a especificar a la función. 
 

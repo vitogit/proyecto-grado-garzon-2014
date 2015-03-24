@@ -1,9 +1,14 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alba(1997)]{Alba1997}
+T.~Alba.
+\newblock Propuesta para la implementación de algoritmos evolutivos.
+\newblock \url{http://neo.lcc.uma.es/TutorialEA/semEC/main.html}, 1997.
 
 \bibitem[Autoanuario(2014)]{Autoanuario2014}
 Autoanuario.
@@ -218,6 +223,11 @@ L.~Papaleontiou.
 \newblock Sumo traffic modeler.
 \newblock \url{http://sourceforge.net/projects/trafficmodeler/}.
 \newblock Disponible online, consultado diciembre 2014.
+
+\bibitem[Paradiseo(2010)]{Paradiseo}
+Paradiseo.
+\newblock Paradiseo.
+\newblock \url{http://paradiseo.gforge.inria.fr/}, 2010.
 
 \bibitem[Penner et~al.(2002)Penner, Hoar, y Jacob]{Penner2002}
 J.~Penner, R.~Hoar, y C.~Jacob.

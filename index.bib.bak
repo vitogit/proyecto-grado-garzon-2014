@@ -2,6 +2,16 @@
 % Encoding: UTF8
 
 
+@Misc{Alba1997,
+  Title                    = {Propuesta para la implementación de algoritmos evolutivos.},
+
+  Author                   = {Alba, Troya},
+  HowPublished             = {\url{http://neo.lcc.uma.es/TutorialEA/semEC/main.html}},
+  Year                     = {1997},
+
+  Timestamp                = {2015.03.24}
+}
+
 @Misc{Autoanuario2014,
   Title                    = {Gráficas y Cuadros de Valores Estadísticos del Mercado Nacional},
 
@@ -363,6 +373,16 @@ offset between two consecutive sets of traffic lights},
   Note                     = {Disponible online, consultado diciembre 2014},
 
   Timestamp                = {2014.12.23}
+}
+
+@Misc{Paradiseo,
+  Title                    = {Paradiseo},
+
+  Author                   = {Paradiseo},
+  HowPublished             = {\url{http://paradiseo.gforge.inria.fr/}},
+  Year                     = {2010},
+
+  Timestamp                = {2015.03.23}
 }
 
 @Article{Penner2002,
