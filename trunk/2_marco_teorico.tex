@@ -343,7 +343,7 @@ Se pueden clasificar por el método de asignación de fitness en:
 
 
 
-\subsection{Algoritmo Evolutivo Paralelo}
+\subsection{Algoritmo evolutivo paralelo}
 Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
 
 
@@ -362,8 +362,33 @@ De este modo aumenta la eficiencia computacional del algoritmo ya que una de las
 	\label{fig:diagrama-master-slave}
 \end{figure}
 
-\subsection{Resumen}
-Los algoritmos genéticos han demostrado su eficiencia en la resolución de gran cantidad de problemas de optimización.  Si nos enfocamos en la sincronización de semáforos existen herramientas utilizadas para su resolución, entre las que se encuentra los simuladores de tráfico, los cuales serán explicados en la siguiente sección.
+\subsection{Implementacion y Frameworks}
+
+A la hora de implementar un algoritmo genético es importante tener en cuenta ciertos aspectos que dotaran a la solución de una mayor flexibilidad, eficiencia y robustez.
+
+El paradigma de orientación a objetos aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque hay que tener en cuenta que esto puede ocasionar perdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
+
+En el trabajo de \citep{Alba1997} se indican con mas detalles los elementos importantes de una implementacion, entre ellas destacamos: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientado a objetos pues permite su extensión en forma sencilla.
+
+Por estas razones se han desarrollado \emph{frameworks} para trabajar en la resolución de problemas utilizando algoritmos evolutivos y otras técnicas heurísticas. Estos encapsulan de manera transparente al usuario los aspectos antes mencionados lo que permite un desarrollo mas rápido, sencillo y seguro.
+
+Existe una gran variedad de \emph{frameworks}, a continuación se describen algunos de los mas populares junto con sus principales características.
+
+\begin{itemize}
+	\item JMetal: Es un \emph{framework} orientado a objetos basado en java para la optimización de problemas multiobjetivo utilizando metatarsianas. Su arquitectura permite tanto experimentar con técnicas provistas o desarrolladas por el usuario. Entre sus características destacan que al ser en Java puede ser usado tanto en sistemas Windows como Linux. Posee una amplia variedad de algoritmos multiobjetivo listos para usar, y también algoritmos paralelos. Está en constante desarrollo y posee una documentación detallada.\citep{Jmetal}
+	
+	\item Galib: Es una librería escrita en c++ que incluye objetos y herramientas útiles para la resolución de problemas usando algoritmos genéticos. Es gratuita y de código abierto, pudiendo ser ejecutada tanto en Linux como en Windows. No tiene un desarrollo sostenido siendo su última actualización en el año 2000, esto no quita que todavía se siga usando por su sencillez y flexibilidad. \citep{Galib}
+	
+	\item Paradiseo: Es un \emph{framework} orientado a objetos que utiliza C++. Su objetivo es el diseño de metaheurísticas tanto paralelas como distribuidas. Cuenta tanto con algoritmos evolutivos, búsquedas locales y optimización basado en enjambres. Funciona tanto en plataformas Windows como Linux y posee varios módulos destinados a extender sus funcionalidades. Tiene una buena documentación y su ultima versión data del año 2012. \citet{Paradiseo}
+	
+	\item Open Beagle: Es un \emph{framework} en C++ utilizando algoritmos evolutivos. Brinda un entorno de alto nivel para trabajar con distintas técnicas, soportando programación evolutiva, algoritmos genéticos y estrategias evolutivas. Su arquitectura permite utilizar los principios de la programación orientada a objetos para lograr un código recusable y eficiente. Sus características apuntan a brindar un entorno amigable, eficiente, multi-plataforma y gratuito. \citep{OpenBeagle}
+	
+	\item Mallba: Es una biblioteca escrita en c++ que brinda esqueletos de algoritmos para la resolución de problemas de optimización tanto exactos, heurísticos como híbridos. Maneja el paralelismo de forma simple para el usuario. Posee una arquitectura flexible y extensible lo que permite agregar nuevos esqueletos de forma simple. No cuenta con documentación extensa pero si con varios ejemplos completos de implementaciones de los algoritmos. Funciona tanto en ambiente Linux como Windows, pero se dejó de actualizar en el año 2002 por lo que es posible que no funcione correctamente en entornos mas modernos. \citep{Mallba}
+	
+	\item Malva: Surge como un derivado de la biblioteca Mallba con modificaciones para ser ejecutado en ambientes actuales, por lo que cuenta con las mismas características aunque al estar en fase de desarrollo soporta solo algunos algoritmos entre ellos algoritmos genéticos. \citep{Malva}
+\end{itemize}
+
+Los \emph{frameworks} son una herramienta importante a la hora de desarrollar un algoritmo evolutivo. Si nos enfocamos en la sincronización de semáforos también serán necesarias otras utilidades entre las que se encuentra los simuladores de tráfico, los cuales serán explicados en la siguiente sección.
 
 
 \section{Simulación de tráfico}

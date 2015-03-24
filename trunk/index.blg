@@ -2,6 +2,7 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: index.aux
 A level-1 auxiliary file: 0_titulo.aux
 The style file: abbrvnat.bst
 Database file #1: index.bib
+Warning--I didn't find a database entry for "Alba1997"
 Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
 while executing---line 1347 of file abbrvnat.bst
 Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001

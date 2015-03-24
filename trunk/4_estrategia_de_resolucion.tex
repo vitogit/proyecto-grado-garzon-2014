@@ -7,7 +7,7 @@ La metodología se basa en cuatro puntos que serán tratados a continuación est
 \begin{itemize}
 	\item Modelado del problema.
 	\item Algoritmo genético multiobjetivo y paralelo.
-	\item Simulador de trafico.
+	\item Simulador de tráfico.
 	\item Cluster Fing para la ejecución del algoritmo. 
 \end{itemize}
 
@@ -21,9 +21,26 @@ Para solucionar el problema se usarán simulaciones de la realidad, por tanto es
 
 \subsection{Simulador SUMO (Simulation of Urban MObility)}
 
-Es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explícita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
+Como se explicó en el marco teórico SUMO es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explícita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
-Entre las razones para elegir este simulador se encuentra que es de código abierto sin costo comercial, con una detallada documentación y buen ritmo de actualizaciones. Puede ser ejecutado tanto en linux como windows. Permite las opciones de ejecutarse sin interfaz gráfica utilizando la línea de comando lo que aumenta sensiblemente la velocidad de ejecución y con la interfaz que sirve para mostrar exactamente como se comporta el tráfico.
+Dado que existe un amplio abanico de posibilidades a la hora de elegir un simulador se realizo un análisis relacionado a las posibilidades y objetivos del proyecto, a continuación se detallan las razones que sustentan la elección de SUMO como el simulador utilizado:
+
+\begin{itemize}
+	\item Portable: SUMO puede ser ejecutado tanto en Windows como en Linux, esto es importante dado que son las plataformas en las que se desarrolla el proyecto, ademas el Cluster Fing utiliza el sistema operativo CentOs Linux) y era un requisito que pudiera ser ejecutado en este ambiente.
+	
+	\item Tipos de ejecución: Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución, ademas esto es fundamental a la hora de realizar la arquitectura necesaria ya que el programa tiene que tener la posibilidad de ejecutar el simulador de manera directa. Por otro lado también tiene la opción de mostrar la interfaz gráfica lo cual es indispensable a la hora de visualizar la simulación sobre todo en los primeros momentos del desarrollo en los cuales se realizan ajustes y pruebas.
+	
+	\item Gratis y abierto: SUMO es de código abierto y sin costo, el cual es un factor importante para un proyecto de investigación como el que se quiere desarrollar. 
+	
+	\item Documentación y mantenimiento: Cuenta con una detallada documentación lo cual hace mas fácil su utilización, así como una comunidad muy activa que responden dudas en foros lo que es útil a la hora de buscar soporte si ocurriera algún problema o se detectara un error. También cuenta con un desarrollo activo lo cual es importante pues se realizan correcciones y actualizaciones frecuentemente.
+	
+	\item Configuración simple: Tiene un sistema sencillo para configurar las simulaciones basada en archivos XML, de esta forma se pueden modificar la configuración de los semáforos, las propiedades de los vehículos, las rutas que estos siguen entre otras opciones. Ademas tiene herramientas para poder utilizar mapas importados de servicios como \citet{OSM}.
+	
+	\item Información de salida: SUMO tiene la opción de generar una amplia gama de datos producidos por la simulación entre los que se encuentran la velocidad de los vehículos y el largo del recorrido que son requeridas por la solución propuesta. 
+	
+	\item Eficiente: Soporta redes de transito muy grandes y esta diseñado para ejecutar simulaciones a gran velocidad \citep{sumo2014}. Lo cual es una característica deseable por la complejidad del problema a solucionar.
+	
+\end{itemize}
 
 
 Tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
@@ -39,7 +56,7 @@ Algunas otras herramientas relacionadas a la simulación:
 	
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/sim1}
 	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzón.}
@@ -100,7 +117,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 		Este 
 		\\ 
 		\hline
-		Camino Colman  & 410 & 390 & 0 & 230\\		
+		Camino Colman  & 410 & 390 & 140 & 230\\		
 		Plaza Vidiella  & 400 & 444 & 292 & 0\\		
 		Aparicio Saravia  & 390 & 450 & 40 & 90\\		
 		Battle y Ordoñez  & 510 & 390 & 470 & 300 \\	
@@ -186,9 +203,26 @@ En el primer paso el algoritmo genera la población inicial, estos individuos re
 Luego por cada individuo se genera un archivo compatible con el simulador que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador para cada individuo. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo, estos tienen la información necesaria para calcular el fitness de cada individuo como la velocidad media de ómnibus y otros vehículos.
 
 
-\section{Biblioteca Malva}
+\section{Implementación: Biblioteca Malva}
 
-\citet{Malva} surge como una variante del proyecto \citet{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+Dada la complejidad del problema se tuvo en cuenta desde un primer momento la utilización de un \emph{framework}, de esta forma se podría lograr una ejecución eficiente y una implementación robusta pero flexible. 
+
+Como se detalló en el marco teórico existen varias opciones de \emph{frameworks} disponibles. Por las particularidades del problema existen ciertos requerimientos a la hora de seleccionar  uno para su resolución, entre los que se destacan:
+
+\begin{itemize}
+	\item Abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no se tengan costos económicos asociados. Ademas es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
+	\item Algoritmo genético: El framework debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
+	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume es fundamental la opción de ejecución en paralelo. Sino cuenta con funcionalidad nativa al menos que tenga la posibilidad de modificar el código principal para agregarlo.
+	\item Plataforma: Es requerido que se pueda ejecutar en el Cluster Fing (CentOs - Linux), en Windows y otros sistemas Linux, ya que son las plataformas en donde se desarrollará el trabajo.
+	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionara sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación , ejemplos de código, etc.
+	\item Lenguaje: Es deseable que esté desarrollado en c++ o java por la experiencia que se cuenta en estos lenguajes. 
+	\item Multiobjetivo: Es deseable aunque no requerido que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aun siendo multiobjetivo es sencilla.	
+\end{itemize} 
+
+Luego de analizar todos estos puntos se selecciona la biblioteca Malva para la implementación del algoritmo. A continuación se detalla su funcionamiento y características.
+
+
+Como se explico anteriormente \citet{Malva} surge como una variante del proyecto \citet{Mallba}.Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
