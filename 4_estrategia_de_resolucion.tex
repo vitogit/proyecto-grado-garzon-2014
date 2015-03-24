@@ -71,14 +71,14 @@ Se describen los pasos realizados para tener los elementos necesarios para reali
 
 \subsubsection{Diseño del mapa}
 
-El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Al notar que calles de una sola mano estaban como doble vías y algunos cruces de Garzón como Lezica, diferían con lo visto in situ, se cotejo la exactitud comparando con otros servicios como Google Maps y Bing Maps que al poseer tambien fotos actualizadas del lugar se podía discernir y recordar de como eran las calles realmente.
+El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Al notar que calles de una sola mano estaban como doble vías y algunos cruces de Garzón como Lezica, diferían con lo visto in situ, se cotejo la exactitud comparando con otros servicios como Google Maps y Bing Maps que al poseer también fotos actualizadas del lugar se podía discernir y recordar de como eran las calles realmente.
 
-Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto ya que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una calle a la otra, chequeando que quede una doble mano o dos calles de una mano sola y luego se borraron manualmente todas las demas calles.
+Se exporta el mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado. Como se ve en el mapa no existen calles paralelas reales por lo que fue una tarea dificultosa en este aspecto ya que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una calle a la otra, chequeando que quede una doble mano o dos calles de una mano sola y luego se borraron manualmente todas las demás calles.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/mapa_osm_sumo}
-	\caption{A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.}
+	\includegraphics[width=0.9\linewidth]{Figures/mapa_osm_sumo}
+	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.}
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
@@ -96,7 +96,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/conteo_hoja}
+	\includegraphics[width=0.9\linewidth]{Figures/conteo_hoja}
 	\caption{Ejemplo de planilla electrónica para el conteo manual en Camino Ariel}
 	\label{fig:conteo_hoja}
 \end{figure}
@@ -105,7 +105,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículos  y la orientación hacia donde circulan. }
+	\caption{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículo y la orientación hacia donde circulan.}
 	\label{table:resumen_trafico}
 	\centering
 	\begin{tabular}{lcccc}
@@ -143,8 +143,8 @@ Existen varios modelos disponibles para la representación de la circulación de
 \begin{itemize}
 	\item Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente
 	\item Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
-	\item Basado en Actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
-	\item Definido por el usuario: que permiten determinar la ruta de los vehículos con mayor detalle.
+	\item Basado en actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
+	\item Definido por el usuario: permiten determinar la ruta de los vehículos con mayor detalle.
 \end{itemize}
 
 
@@ -159,20 +159,20 @@ Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para ge
 \end{figure}
 
 
-Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima.
+Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima. No se especifican otros tipos de vehículos como motos o camiones ya que el trabajo se enfoca en los dos primeros tipos.
 
 Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municpal de Montevideo \citep{IMM}
 Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'. 
 
-Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y las generalizamos con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
+Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
 
 La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}, existen 14 paradas para líneas urbanas por el corredor para el recorrido de ida y las mismas para la vuelta.
 Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas.
 
 También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
-Para establecer la velocidad media de los ómnibus se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito.
-Estos datos cuentan con la posición GPS, la velocidad instantánea y la referencia al ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. Luego de procesar los datos se obtuvo una velocidad media de 14.5 km/h lo que permite ajustar mejor el modelo. 
+Se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito. Estos datos cuentan con la posición exacta en coordenadas geográficas, la velocidad instantánea y la referencia del ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. 
+Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Y algunos \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las lineas seleccionadas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
 Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:
 
@@ -202,6 +202,10 @@ En el primer paso el algoritmo genera la población inicial, estos individuos re
 
 Luego por cada individuo se genera un archivo compatible con el simulador que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador para cada individuo. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo, estos tienen la información necesaria para calcular el fitness de cada individuo como la velocidad media de ómnibus y otros vehículos.
 
+El algoritmo se detiene al alcanzar un numero de generaciones determinado en ese momento se crea un archivo que tiene la mejor configuración de semáforos encontrada.
+
+
+
 
 \section{Implementación: Biblioteca Malva}
 
@@ -222,7 +226,7 @@ Como se detalló en el marco teórico existen varias opciones de \emph{framework
 Luego de analizar todos estos puntos se selecciona la biblioteca Malva para la implementación del algoritmo. A continuación se detalla su funcionamiento y características.
 
 
-Como se explico anteriormente \citet{Malva} surge como una variante del proyecto \citet{Mallba}.Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+Como se explico anteriormente \citet{Malva} surge como una variante del proyecto \citet{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
@@ -288,25 +292,13 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 \end{itemize}
 
-
-
-
-
-
- 
-
 \subsection{Representación del cromosoma}
 
-Definimos los siguientes conceptos:
-\begin{itemize}
-	\item Cruce: Es el lugar de intersección de dos o más vías de circulación.
-	\item Fase: Es la configuración de las luces de los semáforos en un determinado cruce.
-\end{itemize}
+Como se explico en el marco teórico el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros, entre ellos la duración de fase, de ciclo y el \emph{offset}. Dependiendo de cuales se elijan tendrán que tener su representación en el cromosoma.
 
-
-El  cromosoma  se  va  a  agrupar  lógicamente  en  cruces siendo el valor de cada gen el tiempo que demora una
-fase de un cruce, además se agrega para cada cruce un número que representa en que fase comenzará el semáforo. 
-Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como de la cantidad de fases de cada uno.
+Para la solución propuesta se contempla tanto la fase como el \emph{offset}. El cromosoma se va a  agrupar  lógicamente en cruces siendo el valor de cada gen el tiempo que demora una
+fase de un cruce y se agrega para cada cruce el \emph{offset}. Se utiliza un vector de números naturales por claridad en el desarrollo y facilidad a la hora de aplicar los operadores.
+Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como de la cantidad de fases de cada uno. Esto significa que se busca realizar la optimización en forma global para todo el sistema y no individualmente para cada cruce. Esto es fundamental pues se busca mejorar la velocidad promedio del Corredor Garzón pero que esto no afecte al resto de las calles de la zona.
 
 En la representación se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
  
@@ -329,7 +321,7 @@ Es  importante que el algoritmo no genere soluciones inviables por lo que no deb
 En la figura \ref{fig:rep_sumo} vemos el archivo con la configuración de semáforos que utiliza el simulador para el cromosoma anterior, donde se representan las fases. Por ejemplo el estado \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos. \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El offset indica el inicio de la fase. 
 
 En la figura \ref{fig:sem_numerados} se numeran los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde a un color en particular. 
-\newpage
+
 
 Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
 \begin{itemize}
@@ -357,6 +349,8 @@ la configuración obtenida con los datos in-situ, luego para cada
 cruce se hacen variar las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Se elige la fase inicial aleatoriamente entre la cantidad de fases del cruce.
 
 \subsection{Función fitness}
+
+
 La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para luego obtener los tiempos necesarios para calcular el fitness.
 
 Se empleará una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando son menos de tres objetivos. El fitness se calcula como una suma ponderada, con los pesos fijados a priori.
@@ -377,6 +371,8 @@ Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le va
         
 En una primera instancia se establece x = y = 1 más adelante se experimentará con otros pesos.
 
+Al apuntar a optimizar la velocidad promedio de los vehículos hay q tener en cuenta que es en toda la red, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como aquellos que realizan los cruces. Esto es fundamental ya que si se optimiza individualmente una calle podría traer problemas de congestión en las demás que cruzan.
+
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
 Se  utilizará cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento se intentará mantener esta propiedad.
@@ -396,14 +392,14 @@ En la siguiente figura los padres cuentan con tres cruces, se elige un punto de 
 Se implementaron dos tipos de mutación:
 \begin{itemize}
 
-\item Mutación de duración de fase: para cada fase de cada cruce se
-hace variar su duración sumando o restando una cantidad dada
-de segundos entre un rango determinado con una probabilidad
-dada.
-\item Mutación de inicio de fase: se elige aleatoriamente una fase
-con la cual va a comenzar inicialmente el cruce con una probabilidad dada.
+\item Mutación de duración de fase: para cada fase de cada cruce se hace variar su duración sumando o restando una cantidad dada de segundos entre un rango determinado con una probabilidad dada. Teniendo en cuenta de que el valor obtenido este dentro de un rango para que no se produzcan casos irreales como un cruce de menos de 5 segundos.
 
+\item Mutación del \emph{offset}: Se elige aleatoriamente una fase con la cual va a comenzar inicialmente el cruce con una probabilidad dada.
 \end{itemize}
+
+
+
+
 
 \subsubsection{Operador de selección y reemplazo}
 Se  utilizan los provistos por el algoritmo newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta. La política de reemplazo indica que tanto padres como hijos pueden ser parte de la siguiente generación, por lo que existe reemplazo de padres por hijos.

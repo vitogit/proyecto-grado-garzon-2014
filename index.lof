@@ -6,23 +6,23 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Localizaci\IeC {\'o}n del Corredor de Garz\IeC {\'o}n en Montevideo - Imagen original extra\IeC {\'\i }da de www.montevideo.gub.uy \relax }}{8}{figure.caption.7}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Perfil propuesto para el corredor Garz\IeC {\'o}n desde San Quint\IeC {\'\i }n a Camino Colman - Imagen original extra\IeC {\'\i }da de \citep {PlanMovilidad} \relax }}{10}{figure.caption.8}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Distintas fases para dos cruces en una red de tr\IeC {\'a}nsito\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces La evoluci\IeC {\'o}n se produce al mejorar el fitness de la poblaci\IeC {\'o}n a lo largo de las generaciones.\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces La evoluci\IeC {\'o}n se produce al mejorar el fitness de la poblaci\IeC {\'o}n a lo largo de las generaciones.\relax }}{14}{figure.caption.10}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Representaci\IeC {\'o}n binaria de un cromosoma.\relax }}{14}{figure.caption.12}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Cruzamiento de un punto\relax }}{15}{figure.caption.16}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{15}{figure.caption.18}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Modelo Maestro-Esclavo}}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Mutacion por inversi\IeC {\'o}n binaria\relax }}{16}{figure.caption.18}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Modelo Maestro-Esclavo}}{18}{figure.caption.22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Simulacion de tr\IeC {\'a}fico en SUMO en el cruce entre Bulevar Battle y Ordo\IeC {\~n}ez y el Corredor Garz\IeC {\'o}n.\relax }}{29}{figure.caption.24}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A la izquierda el mapa extraido de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.\relax }}{30}{figure.caption.26}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A la izquierda el mapa extra\IeC {\'\i }do de OSM, a la derecha el mapa procesado listo para ser usado en SUMO.\relax }}{30}{figure.caption.26}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual en Camino Ariel\relax }}{31}{figure.caption.28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{32}{figure.caption.31}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{34}{figure.caption.32}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Cromosoma de 2 cruces\relax }}{37}{figure.caption.33}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{38}{figure.caption.34}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce. Cada n\IeC {\'u}mero se corresponde a una letra en la secuencia de \emph {state} del archivo de configuraci\IeC {\'o}n del simulador SUMO.\relax }}{39}{figure.caption.35}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{40}{figure.caption.37}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa del TrafficModeler con las \IeC {\'a}reas de tr\IeC {\'a}fico. C\IeC {\'\i }rculos del mismo color indican tr\IeC {\'a}fico especificado entre esas \IeC {\'a}reas\relax }}{33}{figure.caption.31}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{35}{figure.caption.32}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Cromosoma de 2 cruces\relax }}{38}{figure.caption.33}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{39}{figure.caption.34}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce. Cada n\IeC {\'u}mero se corresponde a una letra en la secuencia de \emph {state} del archivo de configuraci\IeC {\'o}n del simulador SUMO.\relax }}{40}{figure.caption.35}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{41}{figure.caption.37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{45}{figure.caption.41}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.\relax }}{46}{figure.caption.41}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento(pc) y de mutaci\IeC {\'o}n (pm)\relax }}{47}{figure.caption.44}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes para \IeC {\'o}mnibus y otros veh\IeC {\'\i }culos en el recorrido completo del corredor Garz\IeC {\'o}n para los diferentes tipos de tr\IeC {\'a}fico.\relax }}{50}{figure.caption.47}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Gr\IeC {\'a}fico de paradas alternativas. Gris: Parada Eliminada. Azul: l\IeC {\'\i }nea G de Coectc y de Cutcsa. Rojo: l\IeC {\'\i }nea G de Coectc. Violeta: G de Cutcsa. - Imagen original extra\IeC {\'\i }da de montevideo.gub.uy\relax }}{52}{figure.caption.51}

@@ -325,6 +325,16 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.12.23}
 }
 
+@Misc{OpenBeagle,
+  Title                    = {{Open Beagle}},
+
+  Author                   = {{Open Beagle}},
+  HowPublished             = {\url{https://code.google.com/p/beagle/}},
+  Year                     = {2012},
+
+  Timestamp                = {2015.03.23}
+}
+
 @Misc{OSM,
   Title                    = {Open Street Map},
 
