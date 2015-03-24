@@ -36,12 +36,12 @@
 \contentsline {subsubsection}{Modelo del tr\IeC {\'a}fico}{33}{section*.30}
 \contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{34}{section.3.2}
 \contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n: Biblioteca Malva}{35}{section.3.3}
-\contentsline {section}{\numberline {3.4}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{37}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Representaci\IeC {\'o}n del cromosoma}{38}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Poblaci\IeC {\'o}n inicial}{40}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.4}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{36}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Representaci\IeC {\'o}n del cromosoma}{37}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Poblaci\IeC {\'o}n inicial}{39}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Funci\IeC {\'o}n fitness}{40}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Operadores}{41}{subsection.3.4.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{41}{section*.36}
+\contentsline {subsection}{\numberline {3.4.4}Operadores}{40}{subsection.3.4.4}
+\contentsline {subsubsection}{Operador de Cruzamiento}{40}{section*.36}
 \contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{42}{section*.38}
 \contentsline {subsubsection}{Operador de selecci\IeC {\'o}n y reemplazo}{42}{section*.39}
 \contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{42}{section*.40}
