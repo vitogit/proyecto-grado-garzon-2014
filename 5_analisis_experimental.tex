@@ -13,7 +13,7 @@ Cluster: Es un conjunto de computadoras independientes conectadas para que traba
 
 Cluster Fing: Es una infraestructura de alto desempeño, que brinda soporte en la resolución de problemas complejos que demandan un gran poder de cómputo.
 
-Descripcion del hardware: 
+Descripción del \emph{hardware}: 
 \begin{itemize}
 	\item 9 servidores de cómputo
 	\subitem Quad core Xeon E5430, 2x6 MB caché, 2.66GHz, 1.333 MHz FSB.
@@ -74,7 +74,7 @@ Se elige como criterio de parada el número de generación, esto permite estanda
 Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de fitness no tiene una gran variación en las ultimas 100 generaciones. Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
 
 Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
-En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 además el tiempo de ejecución real esta dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
+En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes variaciones luego de la generación 400 además el tiempo de ejecución real está dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
 
 
 
@@ -131,7 +131,7 @@ Los valores elegidos fueron:
 	\item Probabilidad de  mutación (pm):  0.01, 0.05, 0.1
 \end{itemize}
 
-Se prueban las nueve combinaciones posibles de cruzamiento y mutación, para cada una se realizan 3 ejecuciones para el escenario con tráfico bajo, 3 con tráfico medio y 3 con tráfico alto.
+Se prueban las nueve combinaciones posibles de cruzamiento y mutación, para cada una se realizan tres ejecuciones para el escenario con tráfico bajo, tres con tráfico medio y tres con tráfico alto.
 
  
  \begin{table}[H]
@@ -195,7 +195,7 @@ Se realizó un estudio sobre datos proporcionados por la IMM que contenían el p
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
 Sobre este escenario geográfico se realizarán tres escenarios de tráfico : bajo, medio y alto.
-El caso medio representa los datos obtenidos, el bajo es disminuyendo el 50\% de vehículos y  el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
+El caso medio representa los datos obtenidos, el bajo es disminuyendo el 50\% de vehículos y el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad.
 El caso de tráfico alto se aumenta 50 \%  los vehículos y el tiempo de espera en la parada de los ómnibus.
 
 El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
@@ -217,7 +217,7 @@ En resumen tenemos los siguientes escenarios de tráfico:
 
 \subsection{Escenario alternativo}
 
-Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se realiza solo a modo de ejemplo un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no afecta la situación actual de la realidad, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
+Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se realiza un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no afecta la situación actual de la realidad, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
 
 Analizando aquellos puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. 
 
@@ -254,11 +254,13 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
  		\hline
  	\end{tabular}
  \end{table}
+ 
+ En este caso no se representa la desviación standard ya que los resultados de la simulación del caso base son constantes pues siempre se está probando los mismos recorridos de los vehículos y la configuración de los semáforos no cambia. Cuando se aplicamos el algoritmo, por cada ejecución, obtenemos un valor diferente de velocidad y fitness ya que tienen distintas configuraciones de semáforos, por eso se muestra la desviación standard en ese caso.
 
 
 \subsection{Resultados numéricos de la evaluación }
 
-Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Ademas la velocidad media de los vehículos se mantiene en un rango mucho mas ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el fitness son de de hasta 24\%. A continuación se realizara el análisis estadístico para comprobar la mejora.
+Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Ademas la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el fitness son de de hasta 24\%. A continuación se realizará el análisis estadístico para comprobar la mejora.
 
 
 \begin{table}[H]
@@ -283,9 +285,7 @@ Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora 
 Se realizaron 20 ejecuciones independientes para cada tipo de tráfico comprobando que siguieran una distribución normal.
 
 Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados, que dice que el
-algoritmo A es mejor que el algoritmo B si los resultados de A y B cumplen:
-
-
+algoritmo A es mejor que B si los resultados de A y B cumplen:
 
 \begin{equation}
 \label{eq:funcion_significancia}
@@ -356,7 +356,7 @@ Este cambio se aplico en las siguientes intersecciones:
 
 \subsubsection{Valores numéricos al aplicar los cambios}
 
-Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta se basa en el trafico medio ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Estos cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que el que logra una mayor diferencia es la creación de paradas alternadas.
+Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta se basa en el tráfico medio ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Estos cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que el que logra una mayor diferencia es la creación de paradas alternadas.
 
 
 \begin{table}[H]
@@ -382,7 +382,7 @@ Para determinar cuales son los cambios que logran mejores rendimientos se elabor
 	\end{tabular}
 \end{table}
 
-Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se ve en la tabla \ref{table:mejoras_trafico_alternativo} se obtienen mejores rendimientos en todos los tipos de trafico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
+Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se ve en la tabla \ref{table:mejoras_trafico_alternativo} se obtienen mejores rendimientos en todos los tipos de tráfico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
@@ -413,7 +413,7 @@ Una vez que tenemos este escenario alternativo se procede a aplicarle el algorit
 
 El escenario alternativo supuso una mejora sustancial en comparación con el caso base con una mejora de alrededor 11\%, ahora vamos a aplicar el algoritmo para determinar si todavía se puede mejorar al modificar la configuración de los semáforos.
 
-Los resultados obtenidos en la tabla \ref{table:mejoras_trafico_alternativo_algoritmo} claramente mejoran el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de trafico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
+Los resultados obtenidos en la tabla \ref{table:mejoras_trafico_alternativo_algoritmo} claramente mejoran el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
 
 Al comparar los resultados obtenidos se aprecia claramente que cuanto más densidad de tráfico mayor es el porcentaje de mejora. Además un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
@@ -440,7 +440,7 @@ Al comparar los resultados obtenidos se aprecia claramente que cuanto más densi
 	\end{tabular}
 \end{table}
 
-En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la comparación en la duración de los viajes. Se produce una gran reducción en la duración de los viajes para todos los tráficos para el caso de los ómnibus mientras para los vehículos la mayor diferencia ocurre cuando el trafico es alto.
+En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la comparación en la duración de los viajes. Se produce una gran reducción en la duración de los viajes para todos los tráficos para el caso de los ómnibus mientras para los vehículos la mayor diferencia ocurre cuando el tráfico es alto.
 
 \begin{figure}[H]
 	\centering
@@ -448,6 +448,8 @@ En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la compara
 	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico. Al aplicar el algoritmo sobre el escenario alternativo.}
 	\label{fig:duracion_viajes_alernativo}
 \end{figure}
+
+Otra vez podemos aplicar el criterio de significancia estadística( \ref{eq:funcion_significancia}) para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del alternativo.
 
 \subsection{Variación de la función de fitness}
 
@@ -483,7 +485,7 @@ La siguiente tabla compara las velocidades promedio de ómnibus y vehículos par
 	\centering
 	\begin{tabular}{p{1cm}p{1.2cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.2cm}p{1.2cm}p{1.2cm} }
 		\hline
-		Trafico &
+		Tráfico &
 		pb(\%) pv (\%)& 
 		vpb & 
 		vpv &

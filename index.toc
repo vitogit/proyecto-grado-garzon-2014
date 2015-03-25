@@ -58,20 +58,20 @@
 \contentsline {subsection}{\numberline {4.3.2}Escenario alternativo}{49}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Resultados}{49}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{49}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{49}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{51}{subsection.4.4.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{51}{section*.48}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{51}{section*.49}
-\contentsline {subsubsection}{Alternar paradas}{51}{section*.50}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{52}{section*.52}
-\contentsline {subsubsection}{Valores num\IeC {\'e}ricos al aplicar los cambios}{53}{section*.53}
-\contentsline {subsection}{\numberline {4.4.4}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{53}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{54}{subsection.4.4.5}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{55}{section*.58}
-\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{55}{section*.59}
-\contentsline {subsubsection}{Resultados}{55}{section*.60}
-\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{56}{subsection.4.4.6}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusiones}{59}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{59}{section.5.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{60}{section.5.2}
+\contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{50}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{52}{subsection.4.4.3}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{52}{section*.48}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{52}{section*.49}
+\contentsline {subsubsection}{Alternar paradas}{52}{section*.50}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{53}{section*.52}
+\contentsline {subsubsection}{Valores num\IeC {\'e}ricos al aplicar los cambios}{54}{section*.53}
+\contentsline {subsection}{\numberline {4.4.4}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{54}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{56}{subsection.4.4.5}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{56}{section*.58}
+\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{56}{section*.59}
+\contentsline {subsubsection}{Resultados}{56}{section*.60}
+\contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{57}{subsection.4.4.6}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{61}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusiones}{61}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{61}{section.5.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{62}{section.5.2}

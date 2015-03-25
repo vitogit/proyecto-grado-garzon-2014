@@ -23,27 +23,27 @@ Para solucionar el problema se usarán simulaciones de la realidad, por tanto es
 
 Como se explicó en el marco teórico SUMO es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explícita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
-Dado que existe un amplio abanico de posibilidades a la hora de elegir un simulador se realizo un análisis relacionado a las posibilidades y objetivos del proyecto, a continuación se detallan las razones que sustentan la elección de SUMO como el simulador utilizado:
+Dado que existe un amplio abanico de posibilidades a la hora de elegir un simulador se realizó un análisis relacionado a las posibilidades y objetivos del proyecto, a continuación se detallan las razones que sustentan la elección de SUMO como el simulador utilizado:
 
 \begin{itemize}
-	\item Portable: SUMO puede ser ejecutado tanto en Windows como en Linux, esto es importante dado que son las plataformas en las que se desarrolla el proyecto, ademas el Cluster Fing utiliza el sistema operativo CentOs Linux) y era un requisito que pudiera ser ejecutado en este ambiente.
+	\item Portable: SUMO puede ser ejecutado tanto en Windows como en Linux, esto es importante dado que son las plataformas en las que se desarrolla el proyecto, además el Cluster Fing utiliza el sistema operativo CentOs Linux) y era un requisito que pudiera ser ejecutado en este ambiente.
 	
-	\item Tipos de ejecución: Permite las opciones de ejecutarse sin interfaz gráfica utilizando la linea de comando lo que aumenta sensiblemente la velocidad de ejecución, ademas esto es fundamental a la hora de realizar la arquitectura necesaria ya que el programa tiene que tener la posibilidad de ejecutar el simulador de manera directa. Por otro lado también tiene la opción de mostrar la interfaz gráfica lo cual es indispensable a la hora de visualizar la simulación sobre todo en los primeros momentos del desarrollo en los cuales se realizan ajustes y pruebas.
+	\item Tipos de ejecución: Permite las opciones de ejecutarse sin interfaz gráfica utilizando la línea de comando lo que aumenta sensiblemente la velocidad de ejecución, además esto es fundamental a la hora de realizar la arquitectura necesaria ya que el programa tiene que tener la posibilidad de ejecutar el simulador de manera directa. Por otro lado también tiene la opción de mostrar la interfaz gráfica lo cual es indispensable a la hora de visualizar la simulación sobre todo en los primeros momentos del desarrollo en los cuales se realizan ajustes y pruebas.
 	
 	\item Gratis y abierto: SUMO es de código abierto y sin costo, el cual es un factor importante para un proyecto de investigación como el que se quiere desarrollar. 
 	
-	\item Documentación y mantenimiento: Cuenta con una detallada documentación lo cual hace mas fácil su utilización, así como una comunidad muy activa que responden dudas en foros lo que es útil a la hora de buscar soporte si ocurriera algún problema o se detectara un error. También cuenta con un desarrollo activo lo cual es importante pues se realizan correcciones y actualizaciones frecuentemente.
+	\item Documentación y mantenimiento: Cuenta con una detallada documentación lo cual hace más fácil su utilización, así como una comunidad muy activa que responden dudas en foros lo que es útil a la hora de buscar soporte si ocurriera algún problema o se detectara un error. También cuenta con un desarrollo activo lo cual es importante pues se realizan correcciones y actualizaciones frecuentemente.
 	
 	\item Configuración simple: Tiene un sistema sencillo para configurar las simulaciones basada en archivos XML, de esta forma se pueden modificar la configuración de los semáforos, las propiedades de los vehículos, las rutas que estos siguen entre otras opciones. Ademas tiene herramientas para poder utilizar mapas importados de servicios como \citet{OSM}.
 	
 	\item Información de salida: SUMO tiene la opción de generar una amplia gama de datos producidos por la simulación entre los que se encuentran la velocidad de los vehículos y el largo del recorrido que son requeridas por la solución propuesta. 
 	
-	\item Eficiente: Soporta redes de transito muy grandes y esta diseñado para ejecutar simulaciones a gran velocidad \citep{sumo2014}. Lo cual es una característica deseable por la complejidad del problema a solucionar.
+	\item Eficiente: Soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad \citep{sumo2014}. Lo cual es una característica deseable por la complejidad del problema a solucionar.
 	
 \end{itemize}
 
 
-Tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
+SUMO tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
 
 Algunas otras herramientas relacionadas a la simulación:
 
@@ -78,7 +78,7 @@ Al notar que habían calles de una sola mano que estaban representadas en Open S
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/mapa_osm_sumo}
-	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO. El corredor Garzón esta en el centro de cada imagen.}
+	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO. El corredor Garzón está en el centro de cada imagen.}
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
@@ -166,7 +166,7 @@ Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para ge
 
 Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima. No se especifican otros tipos de vehículos como motos o camiones ya que el trabajo se enfoca en los dos primeros tipos.
 
-Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municpal de Montevideo \citep{IMM}
+Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municipal de Montevideo \citep{IMM}
 Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'. 
 
 Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
@@ -207,7 +207,7 @@ En el primer paso el algoritmo genera la población inicial, estos individuos re
 
 Luego por cada individuo se genera un archivo compatible con el simulador que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador para cada individuo. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo, estos tienen la información necesaria para calcular el fitness de cada individuo como la velocidad media de ómnibus y otros vehículos.
 
-El algoritmo se detiene al alcanzar un numero de generaciones determinado en ese momento se crea un archivo que tiene la mejor configuración de semáforos encontrada.
+El algoritmo se detiene al alcanzar un número de generaciones determinado en ese momento se crea un archivo que tiene la mejor configuración de semáforos encontrada.
 
 
 
@@ -225,7 +225,7 @@ Como se detalló en el marco teórico existen varias opciones de \emph{framework
 	\item Plataforma: Es requerido que se pueda ejecutar en el Cluster Fing (CentOs - Linux), en Windows y otros sistemas Linux, ya que son las plataformas en donde se desarrollará el trabajo.
 	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionara sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación , ejemplos de código, etc.
 	\item Lenguaje: Es deseable que esté desarrollado en c++ o java por la experiencia que se cuenta en estos lenguajes. 
-	\item Multiobjetivo: Es deseable aunque no requerido que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aun siendo multiobjetivo es sencilla.	
+	\item Multiobjetivo: Es deseable aunque no requerido que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aún siendo multiobjetivo es sencilla.	
 \end{itemize} 
 
 Luego de analizar todos estos puntos se selecciona la biblioteca Malva para la implementación del algoritmo. A continuación se detalla su funcionamiento y características.
@@ -336,10 +336,6 @@ Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
 \item rrr a 12, 13 y 14. 
 \end{itemize}
   
-
-
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/semaforos_numerado}
@@ -365,7 +361,7 @@ Se empleará una función multiobjetivo usando combinación lineal de la velocid
 		F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
         \end{equation}
 
-Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es mas adecuada para realizar las comparaciones con la realidad. Por ejemplo cantidad de vehículos que completan su viaje, duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de la comparación.
+Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es más adecuada para realizar las comparaciones con la realidad. Por ejemplo cantidad de vehículos que completan su viaje, duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de la comparación.
 
 Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le vamos a especificar a la función. 
 
@@ -401,10 +397,6 @@ Se implementaron dos tipos de mutación:
 
 \item Mutación del \emph{offset}: Se elige aleatoriamente una fase con la cual va a comenzar inicialmente el cruce con una probabilidad dada.
 \end{itemize}
-
-
-
-
 
 \subsubsection{Operador de selección y reemplazo}
 Se  utilizan los provistos por el algoritmo newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta. La política de reemplazo indica que tanto padres como hijos pueden ser parte de la siguiente generación, por lo que existe reemplazo de padres por hijos.

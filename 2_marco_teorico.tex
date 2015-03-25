@@ -18,7 +18,7 @@ Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desd
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/ventas_autos}
-	\caption{Evolución en la venta de automóviles por año. El valor mas bajo corresponde al año 2003, y el mas alto 2013. Imagen extraída de \citet{Autoanuario2014}.	
+	\caption{Evolución en la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de \citet{Autoanuario2014}.	
 	}
 	\label{fig:ventas_autos}
 \end{figure}
@@ -42,7 +42,7 @@ Las ciudades de países en vías de desarrollo deben estudiar si pueden instalar
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Figures/costo_transporte}
-	\caption{Gráfica de costos de transporte en función de la gente transportada. En el eje horizontal esta la cantidad de pasajeros por hora, en el vertical el costo en millones de dólares por kilómetro.  BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extraída de \citep{ITDP}		
+	\caption{Gráfica de costos de transporte en función de la gente transportada. En el eje horizontal: cantidad de pasajeros por hora. Eje vertical: costo en millones de dólares por kilómetro.  BRT (Bus Rapid Transit), LRT(Light Rail Train)- Imagen original extraída de \citep{ITDP}		
 	}
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
@@ -111,7 +111,7 @@ Las autoridades han admitido que se han cometido errores y se apunta a que no se
 
 \section{Sincronización de semáforos}
 El problema de la optimización del tráfico se refiere a los métodos cuyo objetivo es mejorar el flujo de vehículos en una red vial. Estos se pueden clasificar en dos categorías: influir en el comportamiento de los conductores (configuración de semáforos, señalización, etc) o modificaciones en las rutas (agregado de un nuevo carril, ensanchar calles, etc). 
-Estos últimos pueden producir mejoras drásticas pero requieren una inversión monetaria y espacio físico que muchas veces no esta disponible. Por esta razón los métodos destinados a influir en el comportamiento de los conductores se presentan como una mejor o única opción.
+Estos últimos pueden producir mejoras drásticas pero requieren una inversión monetaria y espacio físico que muchas veces no está disponible. Por esta razón los métodos destinados a influir en el comportamiento de los conductores se presentan como una mejor o única opción.
 
 En este sentido los métodos para la sincronización de semáforos son de los más efectivos para agilizar el tránsito y no generar congestiones, aumentando la velocidad promedio de los viajes y mejorando las perspectivas de desarrollo de la ciudad así como la calidad de vida de sus habitantes. 
 
@@ -132,7 +132,7 @@ Existen tres parámetros importantes a tener en cuenta que determinaran el compo
  	
  	\item Duración del ciclo: Un ciclo representa un conjunto de fases, en general su duración es la suma de las duraciones de las fases. Como indica su nombre el ciclo se repetirá una vez se completa. La duración puede incrementarse o decrementarse para permitir mayor cantidad de repeticiones de las fases. Otro punto a considerar sobre todo en intersecciones complejas es el orden en el cual las fases son ejecutadas.
  	
- 	\item Offset: Indica el comienzo de una fase permitiendo que diferentes intersecciones comiencen su ciclo en diferentes momentos, esto es muy importante para sincronizar un flujo de tráfico en lo que se conoce como \emph{línea verde}, en donde los vehículos logran pasar todas las intersecciones sin detenerse.
+ 	\item \emph{Offset}: Indica el comienzo de una fase permitiendo que diferentes intersecciones comiencen su ciclo en diferentes momentos, esto es muy importante para sincronizar un flujo de tráfico en lo que se conoce como \emph{línea verde}, en donde los vehículos logran pasar todas las intersecciones sin detenerse.
 \end{itemize}
 
 Estos parámetros pueden ser utilizados a la hora de sincronizar los semáforos de una zona, buscando una optimización global de la red. También hay que tener en cuenta el desarrollo de soluciones seguras siendo lo más básico que no existan intersecciones donde ambos flujos crucen a la misma vez.
@@ -141,14 +141,14 @@ Existen diversos métodos para lograr la coordinación necesaria que van desde s
 
 Se considera a este problema en la categoría de NP-difícil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
 
-Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Entre los mas desarrollados y efectivos están los algoritmos evolutivos en particular los algoritmos genéticos que serán explicados a continuación.
+Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Entre los más desarrollados y efectivos están los algoritmos evolutivos en particular los algoritmos genéticos que serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
 Los algoritmos evolutivos son un conjunto de técnicas heurísticas para la resolución de problemas complejos que se inspiran en la evolución natural, trabajan sobre una población de individuos que representan una solución y utilizan mecanismos de selección, reproducción y diversidad para lograr su objetivo. 
 Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores basado en un criterio predefinido a maximizar o minimizar.
 
-Se pueden destacar cuatro etapas en la ejecucion del algoritmo evolutivo. Estos son:
+Se pueden destacar cuatro etapas en la ejecución del algoritmo evolutivo. Estos son:
 
 \begin{itemize}
 	\item Evaluación: Para cada individuo de la población se determina un valor de aptitud (fitness) en relación a su capacidad para resolver el problema. 
@@ -161,9 +161,9 @@ Se han desarrollado varias lineas de investigación diferenciadas que aplican es
 
 \begin{itemize}
 
-	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniera. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Aunque modelos mas recientes agregan otro tipo de mecanismos.
+	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniera. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Aunque modelos más recientes agregan otro tipo de mecanismos.
 	\item Programación genética: Intenta generar un programa de computación para resolver una tarea especifica. Cada individuo puede ser un programa que es representado en forma de árbol, de esta manera la combinación entre individuos se realiza de forma más sencilla. La función de aptitud se refiere a que tan cerca de resolver la tarea se encuentra el individuo.\citep{Koza1992}
-	\item Algoritmos Genéticos: El mas popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán mas detalles sobre los mismos.
+	\item Algoritmos Genéticos: El más popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán más detalles sobre los mismos.
 \end{itemize}
 
 
@@ -368,11 +368,11 @@ A la hora de implementar un algoritmo genético es importante tener en cuenta ci
 
 El paradigma de orientación a objetos aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque hay que tener en cuenta que esto puede ocasionar perdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
 
-En el trabajo de \citet{Alba1997} se indican con mas detalles los elementos importantes de una implementacion, entre ellas se destacan: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientado a objetos pues permite su extensión en forma sencilla.
+En el trabajo de \citet{Alba1997} se indican con más detalles los elementos importantes de una implementacion, entre ellas se destacan: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientado a objetos pues permite su extensión en forma sencilla.
 
-Por estas razones se han desarrollado \emph{frameworks} para trabajar en la resolución de problemas utilizando algoritmos evolutivos y otras técnicas heurísticas. Estos encapsulan de manera transparente al usuario los aspectos antes mencionados lo que permite un desarrollo mas rápido, sencillo y seguro.
+Por estas razones se han desarrollado \emph{frameworks} para trabajar en la resolución de problemas utilizando algoritmos evolutivos y otras técnicas heurísticas. Estos encapsulan de manera transparente al usuario los aspectos antes mencionados lo que permite un desarrollo más rápido, sencillo y seguro.
 
-Existe una gran variedad de \emph{frameworks}, a continuación se describen algunos de los mas populares junto con sus principales características.
+Existe una gran variedad de \emph{frameworks}, a continuación se describen algunos de los más populares junto con sus principales características.
 
 \begin{itemize}
 	\item JMetal: Es un \emph{framework} orientado a objetos basado en java para la optimización de problemas multiobjetivo utilizando metatarsianas. Su arquitectura permite tanto experimentar con técnicas provistas o desarrolladas por el usuario. Entre sus características destacan que al ser en Java puede ser usado tanto en sistemas Windows como Linux. Posee una amplia variedad de algoritmos multiobjetivo listos para usar, y también algoritmos paralelos. Está en constante desarrollo y posee una documentación detallada.\citep{Jmetal}
@@ -383,7 +383,7 @@ Existe una gran variedad de \emph{frameworks}, a continuación se describen algu
 	
 	\item Open Beagle: Es un \emph{framework} en C++ utilizando algoritmos evolutivos. Brinda un entorno de alto nivel para trabajar con distintas técnicas, soportando programación evolutiva, algoritmos genéticos y estrategias evolutivas. Su arquitectura permite utilizar los principios de la programación orientada a objetos para lograr un código recusable y eficiente. Sus características apuntan a brindar un entorno amigable, eficiente, multi-plataforma y gratuito. \citep{OpenBeagle}
 	
-	\item Mallba: Es una biblioteca escrita en c++ que brinda esqueletos de algoritmos para la resolución de problemas de optimización tanto exactos, heurísticos como híbridos. Maneja el paralelismo de forma simple para el usuario. Posee una arquitectura flexible y extensible lo que permite agregar nuevos esqueletos de forma simple. No cuenta con documentación extensa pero si con varios ejemplos completos de implementaciones de los algoritmos. Funciona tanto en ambiente Linux como Windows, pero se dejó de actualizar en el año 2002 por lo que es posible que no funcione correctamente en entornos mas modernos. \citep{Mallba}
+	\item Mallba: Es una biblioteca escrita en c++ que brinda esqueletos de algoritmos para la resolución de problemas de optimización tanto exactos, heurísticos como híbridos. Maneja el paralelismo de forma simple para el usuario. Posee una arquitectura flexible y extensible lo que permite agregar nuevos esqueletos de forma simple. No cuenta con documentación extensa pero si con varios ejemplos completos de implementaciones de los algoritmos. Funciona tanto en ambiente Linux como Windows, pero se dejó de actualizar en el año 2002 por lo que es posible que no funcione correctamente en entornos más modernos. \citep{Mallba}
 	
 	\item Malva: Surge como un derivado de la biblioteca Mallba con modificaciones para ser ejecutado en ambientes actuales, por lo que cuenta con las mismas características aunque al estar en fase de desarrollo soporta solo algunos algoritmos entre ellos algoritmos genéticos. \citep{Malva}
 \end{itemize}
@@ -403,7 +403,7 @@ Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y m
 	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle.Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
 \end{itemize}
 
-En general se considera que las simulaciones microscópicas se acercan mas a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicos pues aunque no poseen tanto detalle si son mas rápidas y en determinadas circunstancias podrían ser una mejor opción.
+En general se considera que las simulaciones microscópicas se acercan más a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicos pues aunque no poseen tanto detalle si son más rápidas y en determinadas circunstancias podrían ser una mejor opción.
 
 En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripción de varios simuladores entre los que se encuentran:
 \begin{itemize}
@@ -422,11 +422,11 @@ En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripci�
 	\label{fig:simuladores}
 \end{figure}
 
-Los simuladores requieren la creación de una \emph{red de transito}, en general se refiere a las propiedades que tendrán los caminos, por ejemplo cantidad de carriles, limite de velocidad, ubicación, largo, conexiones entre las mismas, etc. Algunos simuladores obtienen esta entrada usando archivos de texto, lo cual puede ser un proceso lento y propenso a errores, otros pueden importar redes de diversas fuentes como \citet{OSM}.
+Los simuladores requieren la creación de una \emph{red de tránsito}, en general se refiere a las propiedades que tendrán los caminos, por ejemplo cantidad de carriles, limite de velocidad, ubicación, largo, conexiones entre las mismas, etc. Algunos simuladores obtienen esta entrada usando archivos de texto, lo cual puede ser un proceso lento y propenso a errores, otros pueden importar redes de diversas fuentes como \citet{OSM}.
 
 También necesitan conocer las\emph{ rutas seguidas por los vehículos}. Los simuladores pueden tomar esta información de manera explicita indicando para cada vehículo la ruta seguida o utilizar otros métodos dinámicos indicando solo los puntos de inicio y final del recorrido cuya ruta será generada en tiempo de simulación. Esto puede ser un proceso verdaderamente complejo por tal razón muchos simuladores poseen herramientas destinadas a facilitar esta tarea.
 
-Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya que es fundamental a la hora de sacar conclusiones. En general la información básica sera la velocidad y tiempos de recorrido. Aunque también puede contener mas detalle como: duración de detenciones, densidad de tráfico, uso de combustible o cantidad de emisiones contaminantes.  
+Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya que es fundamental a la hora de sacar conclusiones. En general la información básica sera la velocidad y tiempos de recorrido. Aunque también puede contener más detalle como: duración de detenciones, densidad de tráfico, uso de combustible o cantidad de emisiones contaminantes.  
  
 
 
@@ -512,7 +512,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 		
 		Se aplica programación genética más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los arboles de decisión mejorando el flujo de tráfico.
 		
-		La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron tres modelos distintos de cuatro intersecciones con una versión especial del simulador  TRAF-NETSIM \citep{TRAF-NETSIM}
+		La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron tres modelos distintos de cuatro intersecciones con una versión especial del simulador TRAF-NETSIM \citep{TRAF-NETSIM}
 		
 		El experimento arroja buenos resultados en cuando a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Aunque se marca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionara con problemas más complejos.
 		
