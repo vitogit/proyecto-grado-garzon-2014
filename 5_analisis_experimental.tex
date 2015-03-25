@@ -53,6 +53,7 @@ Los tres escenarios de tráfico son los siguientes:
 En el ajuste paramétrico primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para optimizar el algoritmo.
 
 Al estar utilizando un cluster tenemos disponible tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
+
 Cuando se realicen comparaciones en los tiempos de ejecución se utilizara el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el número de procesadores no es relevante. Si lo será cuando realicemos el análisis de eficiencia computacional que será estudiando más adelante.
 
 
@@ -80,7 +81,7 @@ En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{Figures/criterio_parada}
+\includegraphics[width=0.8\linewidth]{Figures/criterio_parada}
 \caption{Resumen representativo de ejecuciones del algoritmo para establecer el criterio de parada.}
 \label{fig:criterio_parada}
 \end{figure}
@@ -162,7 +163,7 @@ Analizando la tabla y la gráfica se puede apreciar claramente que para una prob
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Figures/grafica_mutacion_cruzamiento}
+	\includegraphics[width=0.8\linewidth]{Figures/grafica_mutacion_cruzamiento}
 	\caption{Gráfica con combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
 	\label{fig:grafica_mutacion_cruzamiento}
 \end{figure}
@@ -297,17 +298,13 @@ Esto se cumple para todos los casos, por lo que podemos afirmar que existe evide
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Figures/duracion_viajes}
+	\includegraphics[width=0.8\linewidth]{Figures/duracion_viajes}
 	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico.}
 	\label{fig:duracion_viajes}
 \end{figure}
 
 Como cabía esperar aumenta la duración del viaje al aumentar el tráfico, aunque un resultado interesante es que la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el algoritmo.
 Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m.
-
- 
-\newpage
-
 
 \subsection{Detalles del escenario alternativo}
 Los cambios propuestos incluyen eliminación de paradas, semáforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas. Como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
@@ -331,7 +328,7 @@ La línea G es la que recorre a Garzón de punta a punta, esta línea es cubiert
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/paradas_alternativas}
+	\includegraphics[width=0.8\linewidth]{Figures/paradas_alternativas}
 	\caption{Gráfico de paradas alternativas. Gris: Parada Eliminada. Azul: línea G de Coectc y de Cutcsa. Rojo: línea G de Coectc. Violeta: G de Cutcsa. - Imagen original extraída de montevideo.gub.uy}
 	\label{fig:paradas_alternadas}
 \end{figure}
@@ -444,7 +441,7 @@ En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la compara
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Figures/duracio_viajes_alternativo}
+	\includegraphics[width=0.8\linewidth]{Figures/duracio_viajes_alternativo}
 	\caption{Comparación de la duración en minutos de los viajes para ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico. Al aplicar el algoritmo sobre el escenario alternativo.}
 	\label{fig:duracion_viajes_alernativo}
 \end{figure}
@@ -596,9 +593,9 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 
 El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del speedup de 25.7  y  eficiencia promedio de 0.8, lo cual puede considerarse como buenas métricas.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Figures/speedup1}
+	\includegraphics[width=0.8\linewidth]{Figures/speedup1}
 	\caption{Comparación de los speedup promedios para cada tipo de tráfico. Se representa el caso serial que corresponde al speedup=1 para fines de comparación.}
 	\label{fig:speedup1}
 \end{figure}
