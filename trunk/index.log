@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  24 MAR 2015 19:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  25 MAR 2015 00:13
 entering extended mode
 **index.tex
 
@@ -1194,158 +1194,161 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 2.
-<Figures/ventas_autos.jpg, id=319, 467.7475pt x 427.5975pt>
+<Figures/ventas_autos.jpg, id=321, 467.7475pt x 427.5975pt>
 File: Figures/ventas_autos.jpg Graphic file (type jpg)
 
 <use Figures/ventas_autos.jpg>
-Package pdftex.def Info: Figures/ventas_autos.jpg used on input line 20.
+Package pdftex.def Info: Figures/ventas_autos.jpg used on input line 15.
 (pdftex.def)             Requested size: 377.99744pt x 345.56912pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
- [6 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/ventas_autos.jpg>] <Figures/costo_transporte.jpg, id=344, 655.69969pt x 679.
-03688pt>
+[6 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figure
+s/ventas_autos.jpg>]
+<Figures/costo_transporte.jpg, id=344, 655.69969pt x 679.03688pt>
 File: Figures/costo_transporte.jpg Graphic file (type jpg)
 
 <use Figures/costo_transporte.jpg>
-Package pdftex.def Info: Figures/costo_transporte.jpg used on input line 44.
+Package pdftex.def Info: Figures/costo_transporte.jpg used on input line 33.
 (pdftex.def)             Requested size: 210.0pt x 217.47238pt.
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
  [7 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/costo_transporte.jpg>]
 <Figures/Mapa_Garzon_0.jpg, id=356, 2020.54875pt x 1472.50125pt>
 File: Figures/Mapa_Garzon_0.jpg Graphic file (type jpg)
 
 <use Figures/Mapa_Garzon_0.jpg>
-Package pdftex.def Info: Figures/Mapa_Garzon_0.jpg used on input line 63.
+Package pdftex.def Info: Figures/Mapa_Garzon_0.jpg used on input line 52.
 (pdftex.def)             Requested size: 377.99744pt x 275.46419pt.
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
  [8 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/Mapa_Garzon_0.jpg>]
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \. on input line 83.
+LaTeX Info: Redefining \% on input line 83.
  [9]
 <Figures/busway_configuration.jpg, id=366, 980.91469pt x 290.58563pt>
 File: Figures/busway_configuration.jpg Graphic file (type jpg)
 
 <use Figures/busway_configuration.jpg>
-Package pdftex.def Info: Figures/busway_configuration.jpg used on input line 10
-0.
+Package pdftex.def Info: Figures/busway_configuration.jpg used on input line 89
+.
 (pdftex.def)             Requested size: 377.99744pt x 111.97557pt.
-LaTeX Info: Redefining \. on input line 115.
-LaTeX Info: Redefining \% on input line 115.
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
  [10 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/busway_configuration.jpg>]
 <Figures/fases1.jpg, id=382, 489.83pt x 301.125pt>
 File: Figures/fases1.jpg Graphic file (type jpg)
  <use Figures/fases1.jpg>
-Package pdftex.def Info: Figures/fases1.jpg used on input line 122.
+Package pdftex.def Info: Figures/fases1.jpg used on input line 111.
 (pdftex.def)             Requested size: 336.00128pt x 206.56343pt.
-LaTeX Info: Redefining \. on input line 135.
-LaTeX Info: Redefining \% on input line 135.
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
 
 [11 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/fases1.jpg>]
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 155.
+LaTeX Info: Redefining \% on input line 155.
  [12]
-<Figures/fitness_generaciones.png, id=399, 433.62pt x 292.09125pt>
+<Figures/fitness_generaciones.png, id=400, 433.62pt x 292.09125pt>
 File: Figures/fitness_generaciones.png Graphic file (type png)
 
 <use Figures/fitness_generaciones.png>
-Package pdftex.def Info: Figures/fitness_generaciones.png used on input line 18
-2.
+Package pdftex.def Info: Figures/fitness_generaciones.png used on input line 16
+7.
 (pdftex.def)             Requested size: 284.52756pt x 191.67102pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 186.
-LaTeX Info: Redefining \% on input line 186.
- [13]
-<Figures/rep_binaria.png, id=410, 376.40625pt x 155.58125pt>
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [13 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/fitness_generaciones.png>]
+<Figures/rep_binaria.png, id=411, 376.40625pt x 155.58125pt>
 File: Figures/rep_binaria.png Graphic file (type png)
 
 <use Figures/rep_binaria.png>
-Package pdftex.def Info: Figures/rep_binaria.png used on input line 202.
+Package pdftex.def Info: Figures/rep_binaria.png used on input line 184.
 (pdftex.def)             Requested size: 227.62204pt x 94.08539pt.
-LaTeX Info: Redefining \. on input line 212.
-LaTeX Info: Redefining \% on input line 212.
+LaTeX Info: Redefining \. on input line 211.
+LaTeX Info: Redefining \% on input line 211.
  [14 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/fitness_generaciones.png> <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyec
-to-grado-garzon-2014/Figures/rep_binaria.png>]
-<Figures/cruzamiento1.jpg, id=420, 815.045pt x 288.07625pt>
+res/rep_binaria.png>]
+<Figures/cruzamiento1.jpg, id=422, 815.045pt x 288.07625pt>
 File: Figures/cruzamiento1.jpg Graphic file (type jpg)
 
 <use Figures/cruzamiento1.jpg>
-Package pdftex.def Info: Figures/cruzamiento1.jpg used on input line 234.
+Package pdftex.def Info: Figures/cruzamiento1.jpg used on input line 216.
 (pdftex.def)             Requested size: 420.0pt x 148.44662pt.
 
-<Figures/mutacion1.jpg, id=421, 810.02625pt x 167.62625pt>
+<Figures/mutacion1.jpg, id=423, 810.02625pt x 167.62625pt>
 File: Figures/mutacion1.jpg Graphic file (type jpg)
 
 <use Figures/mutacion1.jpg>
-Package pdftex.def Info: Figures/mutacion1.jpg used on input line 243.
+Package pdftex.def Info: Figures/mutacion1.jpg used on input line 225.
 (pdftex.def)             Requested size: 420.0pt x 86.91548pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 252.
-LaTeX Info: Redefining \% on input line 252.
-[15 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/cruzamiento1.jpg>]
+LaTeX Info: Redefining \. on input line 237.
+LaTeX Info: Redefining \% on input line 237.
+ [15 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/cruzamiento1.jpg> <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado
+-garzon-2014/Figures/mutacion1.jpg>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 262.
-LaTeX Info: Redefining \. on input line 308.
-LaTeX Info: Redefining \% on input line 308.
- [16 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/mutacion1.jpg>]
-LaTeX Info: Redefining \. on input line 353.
-LaTeX Info: Redefining \% on input line 353.
- [17]
-<Figures/diagrama-master-slave.png, id=472, 630.355pt x 266.9975pt>
+put line 244.
+LaTeX Info: Redefining \. on input line 324.
+LaTeX Info: Redefining \% on input line 324.
+ [16]
+<Figures/diagrama-master-slave.png, id=454, 630.355pt x 266.9975pt>
 File: Figures/diagrama-master-slave.png Graphic file (type png)
 
 <use Figures/diagrama-master-slave.png>
 Package pdftex.def Info: Figures/diagrama-master-slave.png used on input line 3
-60.
+37.
 (pdftex.def)             Requested size: 377.99744pt x 160.10602pt.
-LaTeX Info: Redefining \. on input line 379.
-LaTeX Info: Redefining \% on input line 379.
- [18 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/diagrama-master-slave.png>]
-LaTeX Info: Redefining \. on input line 397.
-LaTeX Info: Redefining \% on input line 397.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 341.
+LaTeX Info: Redefining \% on input line 341.
+ [17]
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
+
+[18 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
+es/diagrama-master-slave.png>]
+LaTeX Info: Redefining \. on input line 380.
+LaTeX Info: Redefining \% on input line 380.
  [19]
 <Figures/simuladores.jpg, id=504, 961.5925pt x 712.6625pt>
 File: Figures/simuladores.jpg Graphic file (type jpg)
 
 <use Figures/simuladores.jpg>
-Package pdftex.def Info: Figures/simuladores.jpg used on input line 420.
+Package pdftex.def Info: Figures/simuladores.jpg used on input line 397.
 (pdftex.def)             Requested size: 377.99744pt x 280.14474pt.
-LaTeX Info: Redefining \. on input line 424.
-LaTeX Info: Redefining \% on input line 424.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 401.
+LaTeX Info: Redefining \% on input line 401.
  [20]
-LaTeX Info: Redefining \. on input line 438.
-LaTeX Info: Redefining \% on input line 438.
- [21 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/simuladores.jpg>]
-LaTeX Info: Redefining \. on input line 472.
-LaTeX Info: Redefining \% on input line 472.
+LaTeX Info: Redefining \. on input line 413.
+LaTeX Info: Redefining \% on input line 413.
+
+[21 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
+es/simuladores.jpg>]
+LaTeX Info: Redefining \. on input line 447.
+LaTeX Info: Redefining \% on input line 447.
  [22]
-LaTeX Info: Redefining \. on input line 506.
-LaTeX Info: Redefining \% on input line 506.
+LaTeX Info: Redefining \. on input line 481.
+LaTeX Info: Redefining \% on input line 481.
  [23]
-LaTeX Info: Redefining \. on input line 533.
-LaTeX Info: Redefining \% on input line 533.
+LaTeX Info: Redefining \. on input line 508.
+LaTeX Info: Redefining \% on input line 508.
  [24])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\4_estrat
 egia_de_resolucion.tex"
@@ -1363,77 +1366,86 @@ Package pdftex.def Info: Figures/sim1.jpg used on input line 61.
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
 
-[28] <Figures/mapa_osm_sumo.jpg, id=604, 720.6925pt x 617.30624pt>
+[28]
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+ [29 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/sim1.jpg>]
+<Figures/mapa_osm_sumo.jpg, id=610, 720.6925pt x 617.30624pt>
 File: Figures/mapa_osm_sumo.jpg Graphic file (type jpg)
 
 <use Figures/mapa_osm_sumo.jpg>
-Package pdftex.def Info: Figures/mapa_osm_sumo.jpg used on input line 80.
+Package pdftex.def Info: Figures/mapa_osm_sumo.jpg used on input line 83.
 (pdftex.def)             Requested size: 377.99744pt x 323.77037pt.
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
- [29 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/sim1.jpg>]
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
  [30 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/mapa_osm_sumo.jpg>]
-<Figures/conteo_hoja.jpg, id=619, 673.51625pt x 516.93124pt>
+<Figures/conteo_hoja.jpg, id=617, 673.51625pt x 516.93124pt>
 File: Figures/conteo_hoja.jpg Graphic file (type jpg)
 
 <use Figures/conteo_hoja.jpg>
-Package pdftex.def Info: Figures/conteo_hoja.jpg used on input line 99.
+Package pdftex.def Info: Figures/conteo_hoja.jpg used on input line 108.
 (pdftex.def)             Requested size: 377.99744pt x 290.11842pt.
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
- [31 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/conteo_hoja.jpg>]
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
- [32]
-<Figures/areaflow1.jpg, id=630, 291.0875pt x 599.23875pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
+[31 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
+es/conteo_hoja.jpg>] <Figures/areaflow1.jpg, id=626, 291.0875pt x 599.23875pt>
 File: Figures/areaflow1.jpg Graphic file (type jpg)
 
 <use Figures/areaflow1.jpg>
-Package pdftex.def Info: Figures/areaflow1.jpg used on input line 157.
-(pdftex.def)             Requested size: 126.00128pt x 259.38664pt.
-LaTeX Info: Redefining \. on input line 164.
-LaTeX Info: Redefining \% on input line 164.
+Package pdftex.def Info: Figures/areaflow1.jpg used on input line 166.
+(pdftex.def)             Requested size: 167.99744pt x 345.84886pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
+[32]
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
  [33 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/areaflow1.jpg>]
-<Figures/arquitectura1.jpg, id=639, 536.0025pt x 390.45876pt>
+<Figures/arquitectura1.jpg, id=641, 536.0025pt x 390.45876pt>
 File: Figures/arquitectura1.jpg Graphic file (type jpg)
 
 <use Figures/arquitectura1.jpg>
-Package pdftex.def Info: Figures/arquitectura1.jpg used on input line 199.
+Package pdftex.def Info: Figures/arquitectura1.jpg used on input line 208.
 (pdftex.def)             Requested size: 293.99872pt x 214.16313pt.
-LaTeX Info: Redefining \. on input line 203.
-LaTeX Info: Redefining \% on input line 203.
- [34]
-LaTeX Info: Redefining \. on input line 222.
-LaTeX Info: Redefining \% on input line 222.
- [35 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+LaTeX Info: Redefining \. on input line 214.
+LaTeX Info: Redefining \% on input line 214.
+ [34 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/arquitectura1.jpg>]
-LaTeX Info: Redefining \. on input line 252.
-LaTeX Info: Redefining \% on input line 252.
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+ [35]
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 293.
+LaTeX Info: Redefining \% on input line 293.
  [36]
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
- [37]
-<Figures/cromosoma1.jpg, id=675, 417.56pt x 215.80624pt>
+<Figures/cromosoma1.jpg, id=658, 417.56pt x 215.80624pt>
 File: Figures/cromosoma1.jpg Graphic file (type jpg)
 
 <use Figures/cromosoma1.jpg>
-Package pdftex.def Info: Figures/cromosoma1.jpg used on input line 308.
+Package pdftex.def Info: Figures/cromosoma1.jpg used on input line 317.
 (pdftex.def)             Requested size: 293.99872pt x 151.95572pt.
-
+LaTeX Info: Redefining \. on input line 320.
+LaTeX Info: Redefining \% on input line 320.
+ [37]
 <Figures/rep_sumo2.jpg, id=676, 672.5125pt x 298.11375pt>
 File: Figures/rep_sumo2.jpg Graphic file (type jpg)
 
 <use Figures/rep_sumo2.jpg>
-Package pdftex.def Info: Figures/rep_sumo2.jpg used on input line 317.
+Package pdftex.def Info: Figures/rep_sumo2.jpg used on input line 326.
 (pdftex.def)             Requested size: 420.0pt x 186.17961pt.
-LaTeX Info: Redefining \. on input line 323.
-LaTeX Info: Redefining \% on input line 323.
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
  [38 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/cromosoma1.jpg> <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-g
 arzon-2014/Figures/rep_sumo2.jpg>]
@@ -1441,340 +1453,322 @@ arzon-2014/Figures/rep_sumo2.jpg>]
 File: Figures/semaforos_numerado.jpg Graphic file (type jpg)
 
 <use Figures/semaforos_numerado.jpg>
-Package pdftex.def Info: Figures/semaforos_numerado.jpg used on input line 337.
+Package pdftex.def Info: Figures/semaforos_numerado.jpg used on input line 346.
 
 (pdftex.def)             Requested size: 293.99872pt x 246.85902pt.
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 370.
+LaTeX Info: Redefining \% on input line 370.
  [39 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/semaforos_numerado.jpg>]
-<Figures/alg_cruzamiento.png, id=688, 553.06625pt x 493.845pt>
+<Figures/alg_cruzamiento.png, id=693, 553.06625pt x 493.845pt>
 File: Figures/alg_cruzamiento.png Graphic file (type png)
 
 <use Figures/alg_cruzamiento.png>
-Package pdftex.def Info: Figures/alg_cruzamiento.png used on input line 381.
+Package pdftex.def Info: Figures/alg_cruzamiento.png used on input line 390.
 (pdftex.def)             Requested size: 227.62204pt x 203.24637pt.
-
-Underfull \vbox (badness 5637) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 385.
-LaTeX Info: Redefining \% on input line 385.
- [40]
-LaTeX Info: Redefining \. on input line 387.
-LaTeX Info: Redefining \% on input line 387.
-
-[41 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/alg_cruzamiento.png>])
+LaTeX Info: Redefining \. on input line 396.
+LaTeX Info: Redefining \% on input line 396.
+ [40 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/alg_cruzamiento.png>])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\5_analis
 is_experimental.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [42]
-Cap\'{\i }tulo 4.
-[43
+ [41] [42
 
 ]
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
+Cap\'{\i }tulo 4.
+[43]
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
  [44] <Figures/criterio_parada.png, id=722, 433.62pt x 289.08pt>
 File: Figures/criterio_parada.png Graphic file (type png)
 
 <use Figures/criterio_parada.png>
-Package pdftex.def Info: Figures/criterio_parada.png used on input line 83.
-(pdftex.def)             Requested size: 377.99744pt x 252.00923pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 119.
-LaTeX Info: Redefining \% on input line 119.
-[45]
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
- [46 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+Package pdftex.def Info: Figures/criterio_parada.png used on input line 84.
+(pdftex.def)             Requested size: 336.00128pt x 224.01262pt.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+ [45 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/criterio_parada.png>]
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
+ [46]
 <Figures/grafica_mutacion_cruzamiento.jpg, id=733, 635.37375pt x 403.5075pt>
 File: Figures/grafica_mutacion_cruzamiento.jpg Graphic file (type jpg)
 
 <use Figures/grafica_mutacion_cruzamiento.jpg>
 Package pdftex.def Info: Figures/grafica_mutacion_cruzamiento.jpg used on input
- line 165.
-(pdftex.def)             Requested size: 377.99744pt x 240.06224pt.
+ line 166.
+(pdftex.def)             Requested size: 336.00128pt x 213.39001pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
-LaTeX Info: Redefining \. on input line 178.
-LaTeX Info: Redefining \% on input line 178.
+LaTeX Info: Redefining \. on input line 179.
+LaTeX Info: Redefining \% on input line 179.
 [47 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/grafica_mutacion_cruzamiento.jpg>]
-LaTeX Info: Redefining \. on input line 221.
-LaTeX Info: Redefining \% on input line 221.
+LaTeX Info: Redefining \. on input line 222.
+LaTeX Info: Redefining \% on input line 222.
  [48]
-LaTeX Info: Redefining \. on input line 264.
-LaTeX Info: Redefining \% on input line 264.
+LaTeX Info: Redefining \. on input line 265.
+LaTeX Info: Redefining \% on input line 265.
  [49]
 <Figures/duracion_viajes.jpg, id=748, 477.785pt x 282.05376pt>
 File: Figures/duracion_viajes.jpg Graphic file (type jpg)
 
 <use Figures/duracion_viajes.jpg>
-Package pdftex.def Info: Figures/duracion_viajes.jpg used on input line 300.
-(pdftex.def)             Requested size: 377.99744pt x 223.14279pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 304.
-LaTeX Info: Redefining \% on input line 304.
- [50]
-LaTeX Info: Redefining \. on input line 309.
-LaTeX Info: Redefining \% on input line 309.
-
-[51 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/duracion_viajes.jpg>]
-<Figures/paradas_alternativas.jpg, id=758, 499.8675pt x 492.33937pt>
+Package pdftex.def Info: Figures/duracion_viajes.jpg used on input line 301.
+(pdftex.def)             Requested size: 336.00128pt x 198.35298pt.
+LaTeX Info: Redefining \. on input line 308.
+LaTeX Info: Redefining \% on input line 308.
+ [50 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/duracion_viajes.jpg>]
+<Figures/paradas_alternativas.jpg, id=754, 499.8675pt x 492.33937pt>
 File: Figures/paradas_alternativas.jpg Graphic file (type jpg)
 
 <use Figures/paradas_alternativas.jpg>
 Package pdftex.def Info: Figures/paradas_alternativas.jpg used on input line 33
-4.
-(pdftex.def)             Requested size: 293.99872pt x 289.58371pt.
+1.
+(pdftex.def)             Requested size: 336.00128pt x 330.95496pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 338.
-LaTeX Info: Redefining \% on input line 338.
- [52]
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 335.
+LaTeX Info: Redefining \% on input line 335.
+ [51]
+LaTeX Info: Redefining \. on input line 346.
+LaTeX Info: Redefining \% on input line 346.
 
-[53 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
+[52 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/paradas_alternativas.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 398--400
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
 []|\OT1/cmr/m/n/10.95 Mejora
  []
 
-LaTeX Info: Redefining \. on input line 417.
-LaTeX Info: Redefining \% on input line 417.
-[54]
-<Figures/duracio_viajes_alternativo.jpg, id=780, 463.7325pt x 278.03876pt>
+LaTeX Info: Redefining \. on input line 412.
+LaTeX Info: Redefining \% on input line 412.
+[53]
+<Figures/duracio_viajes_alternativo.jpg, id=776, 463.7325pt x 278.03876pt>
 File: Figures/duracio_viajes_alternativo.jpg Graphic file (type jpg)
 
 <use Figures/duracio_viajes_alternativo.jpg>
 Package pdftex.def Info: Figures/duracio_viajes_alternativo.jpg used on input l
-ine 447.
-(pdftex.def)             Requested size: 377.99744pt x 226.63988pt.
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
- [55 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+ine 444.
+(pdftex.def)             Requested size: 336.00128pt x 201.4605pt.
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
+ [54 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/duracio_viajes_alternativo.jpg>]
-Overfull \hbox (4.73186pt too wide) in paragraph at lines 488--488
-[]|\OT1/cmr/m/n/10.95 Trafico| 
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/10.95 Trafi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--489
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
 []|\OT1/cmr/m/n/10.95 pb($ $%)
  []
 
 
-Overfull \hbox (3.26933pt too wide) in paragraph at lines 493--493
+Overfull \hbox (3.26933pt too wide) in paragraph at lines 490--490
 \OT1/cmr/m/n/10.95 vpb($ $%)| 
  []
 
 
-Overfull \hbox (2.661pt too wide) in paragraph at lines 494--494
+Overfull \hbox (2.661pt too wide) in paragraph at lines 491--491
 \OT1/cmr/m/n/10.95 vpv($ $%)| 
  []
 
 
-Overfull \hbox (19.57266pt too wide) in paragraph at lines 495--497
+Overfull \hbox (19.57266pt too wide) in paragraph at lines 492--494
 \OT1/cmr/m/n/10.95 fitnesss($ $%)| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
 []|\OT1/cmr/m/n/10.95 17.92$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.18| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
 []|\OT1/cmr/m/n/10.95 34.30$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.40| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 498--498
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 495--495
 []|\OT1/cmr/m/n/10.95 14.50$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
 []|\OT1/cmr/m/n/10.95 17.93$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.23| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
 []|\OT1/cmr/m/n/10.95 34.06$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.17| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 499--499
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 496--496
 []|\OT1/cmr/m/n/10.95 12.65$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.11| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 17.55$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.23| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 34.71$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.21| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 497--497
 []|\OT1/cmr/m/n/10.95 16.42$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.10| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 503--503
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
 []|\OT1/cmr/m/n/10.95 16.95$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.32| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 503--503
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
 []|\OT1/cmr/m/n/10.95 33.29$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.29| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 503--503
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 500--500
 []|\OT1/cmr/m/n/10.95 13.95$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.15| 
  []
 
 
-Overfull \hbox (1.05147pt too wide) in paragraph at lines 504--504
+Overfull \hbox (1.05147pt too wide) in paragraph at lines 501--501
 []|\OT1/cmr/m/n/10.95 Medio| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 504--504
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 501--501
 []|\OT1/cmr/m/n/10.95 17.29$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.27| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 504--504
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 501--501
 []|\OT1/cmr/m/n/10.95 33.08$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 504--504
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 501--501
 []|\OT1/cmr/m/n/10.95 12.24$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.12| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 502--502
 []|\OT1/cmr/m/n/10.95 16.71$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.42| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 502--502
 []|\OT1/cmr/m/n/10.95 33.79$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.31| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 502--502
 []|\OT1/cmr/m/n/10.95 15.92$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.11| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 508--508
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
 []|\OT1/cmr/m/n/10.95 16.51$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.60| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 508--508
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
 []|\OT1/cmr/m/n/10.95 32.90$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.25| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 508--508
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 505--505
 []|\OT1/cmr/m/n/10.95 13.72$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.17| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 509--509
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 506--506
 []|\OT1/cmr/m/n/10.95 16.72$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.14| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 509--509
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 506--506
 []|\OT1/cmr/m/n/10.95 32.79$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.26| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 509--509
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 506--506
 []|\OT1/cmr/m/n/10.95 13.75$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.07| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 510--510
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 507--507
 []|\OT1/cmr/m/n/10.95 15.48$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.42| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 510--510
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 507--507
 []|\OT1/cmr/m/n/10.95 33.20$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.25| 
  []
 
 
-Overfull \hbox (1.71004pt too wide) in paragraph at lines 510--510
+Overfull \hbox (1.71004pt too wide) in paragraph at lines 507--507
 []|\OT1/cmr/m/n/10.95 15.49$\OMS/cmsy/m/n/10.95 $\OT1/cmr/m/n/10.95 0.16| 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 519.
-LaTeX Info: Redefining \% on input line 519.
- [56]
-LaTeX Info: Redefining \. on input line 548.
-LaTeX Info: Redefining \% on input line 548.
+LaTeX Info: Redefining \. on input line 516.
+LaTeX Info: Redefining \% on input line 516.
+ [55]
+LaTeX Info: Redefining \. on input line 545.
+LaTeX Info: Redefining \% on input line 545.
 
-[57]
-Underfull \hbox (badness 10000) in paragraph at lines 551--554
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 548--551
 
  []
 
-<Figures/speedup1.jpg, id=801, 484.81125pt x 292.09125pt>
+<Figures/speedup1.jpg, id=797, 484.81125pt x 292.09125pt>
 File: Figures/speedup1.jpg Graphic file (type jpg)
 
 <use Figures/speedup1.jpg>
-Package pdftex.def Info: Figures/speedup1.jpg used on input line 601.
-(pdftex.def)             Requested size: 377.99744pt x 227.75002pt.
+Package pdftex.def Info: Figures/speedup1.jpg used on input line 598.
+(pdftex.def)             Requested size: 293.99872pt x 177.13692pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)
+LaTeX Info: Redefining \. on input line 602.
+LaTeX Info: Redefining \% on input line 602.
+ [57])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\6_conclu
 siones_y_trabajo_futuro.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [58]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [59 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/speedup1.jpg>] [60
-
-]
+ [58 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/speedup1.jpg>]
 Cap\'{\i }tulo 5.
-[61])
+[59
+
+])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.bb
 l"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [62]
+ [60]
 Underfull \hbox (badness 10000) in paragraph at lines 36--41
 []\OT1/cmr/m/n/10.95 CHC.  Chc met-hod.  [][]$\OT1/cmtt/m/n/10.95 http : / / ne
 o . lcc . uma . es / mallba / easy-[]mallba / html /$
@@ -1786,7 +1780,7 @@ $\OT1/cmtt/m/n/10.95 elpais . com . uy / informacion / ana-[]olivera-[]no-[]jus
 tificacion-[]corredor . html$[][]\OT1/cmr/m/n/10.95 ,
  []
 
-[63
+[61
 
 ]
 Underfull \hbox (badness 5711) in paragraph at lines 137--143
@@ -1802,7 +1796,7 @@ l.199 ...[Montana y Czerwinski(1996)]{Montana1996}
                                                   
 LaTeX Info: Redefining \. on input line 209.
 LaTeX Info: Redefining \% on input line 209.
- [64]
+ [62]
 Underfull \hbox (badness 1997) in paragraph at lines 222--226
 []\OT1/cmr/m/n/10.95 L. Pa-pa-leon-tiou.  Su-mo traf-fic mo-de-ler.  [][]$\OT1/
 cmtt/m/n/10.95 http : / / sourceforge . net / projects /$
@@ -1869,7 +1863,7 @@ l.305 ...eo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
                                                   
 LaTeX Info: Redefining \. on input line 316.
 LaTeX Info: Redefining \% on input line 316.
- [65]pdfTeX warning (ext4): destination with the same identifier (name{cite.Vog
+ [63]pdfTeX warning (ext4): destination with the same identifier (name{cite.Vog
 el2000}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1878,7 +1872,7 @@ l.317 ...)Vogel, Goerick, y von Seelen]{Vogel2000}
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
 LaTeX Info: Redefining \. on input line 138.
 LaTeX Info: Redefining \% on input line 138.
- [66]
+ [64]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
 
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\index.au
@@ -1900,9 +1894,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
  ) 
 Here is how much of TeX's memory you used:
- 17172 strings out of 493921
- 292763 string characters out of 3144879
- 375198 words of memory out of 3000000
+ 17170 strings out of 493921
+ 292749 string characters out of 3144879
+ 375201 words of memory out of 3000000
  19903 multiletter control sequences out of 15000+200000
  16937 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1922,9 +1916,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (78 pages, 3121780 bytes).
+Output written on index.pdf (76 pages, 3121824 bytes).
 PDF statistics:
- 1159 PDF objects out of 1200 (max. 8388607)
- 285 named destinations out of 1000 (max. 500000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 283 named destinations out of 1000 (max. 500000)
  555 words of extra memory for PDF output out of 10000 (max. 10000000)
 

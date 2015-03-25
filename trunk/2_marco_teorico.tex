@@ -1,19 +1,14 @@
 \chapter{Marco Teórico}
-
- En este capítulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y soluciones como la construcción de corredores exclusivos para el transporte público. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
-
+En este capítulo se aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y soluciones como la construcción de corredores exclusivos para el transporte público. En este contexto se detalla el Corredor de Garzón tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
 \section{Problema del tránsito vehicular}
 
-En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, esto ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas.  \citep{Cepal2003}.
-
-Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
+En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, esto ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas.  \citep{Cepal2003}.Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación. Esto provoca un incremento en la duración de los viajes y del consumo de combustible. Esto repercute en la contaminación atmosférica y sonora que directamente la salud de las personas, además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
 
-Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}.
-Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020. \citep{BBVA2013}
+Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}. Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020. \citep{BBVA2013} Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}
 
-Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}
+Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
 \begin{figure}[H]
 	\centering
@@ -23,17 +18,11 @@ Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desd
 	\label{fig:ventas_autos}
 \end{figure}
 
-
-Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
-
 En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte público cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
 
 En el caso de Montevideo para solucionar este problema se está implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte público y democratizar el acceso al mismo. El sistema de transporte está inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará más información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
 
-
-
 \section{Corredores urbanos de tráfico}
-
 El corredor urbano de tráfico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los ómnibus y los carriles para el resto del tráfico. 
 Esta es la principal diferencia con un concepto similar llamado \emph{carril de sólo bus} en donde se separan por líneas horizontales pintadas en la calle indicando que sólo pueden circular ómnibus. Los carriles de \emph{sólo bus} suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo el carril \emph{sólo bus} está sobre la derecha, por lo que los vehículos privados lo invaden al virar a la derecha y lo mismo los taxis para levantar pasajeros. Al hacer los corredores alineados en el medio del tráfico se evitan esos problemas.  
 
@@ -166,11 +155,7 @@ Se han desarrollado varias lineas de investigación diferenciadas que aplican es
 	\item Algoritmos Genéticos: El más popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán más detalles sobre los mismos.
 \end{itemize}
 
-
-
-
 \subsection{Algoritmos Genéticos}
-
 La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los mismo.
 
 Un individuo es una codificación de la solución que resuelve el problema. La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo. La función de evaluación o fitness indica que tan buena o apta es una solución en comparación con las demás.
@@ -184,13 +169,10 @@ En cada iteración la cual se conoce como generación se aplican operadores de c
 	\label{fig:fitness_generaciones}
 \end{figure}
 
-
-
 Por tanto se van seleccionando, combinando y cambiando las mejores soluciones en un proceso que va obteniendo mejores soluciones.
 El criterio de parada nos indica cuando termina este proceso, ya sea por que se alcanzó un número de generaciones predefinidos o por que la mejora no es evidente. Al final se devuelve la mejor solución encontrada en todo el proceso.
 
 Hay que indicar que no es una técnica exacta pero logra muy buenas aproximaciones, además es muy buena en problemas complejos por su flexibilidad y robustez. 
-
 
 \subsubsection{Representación de soluciones}
 No podemos trabajar directamente sobre las soluciones, por lo que tenemos que codificarlas en un modelo que nos sirva para poder aplicar el algoritmo.
@@ -346,14 +328,9 @@ Se pueden clasificar por el método de asignación de fitness en:
 \subsection{Algoritmo evolutivo paralelo}
 Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
 
+Existen varios niveles de paralización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método para distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
 
-Existen varios niveles de paralización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}
-
-En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método para distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
-
-Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar ejecutando los operadores.
-
-De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios nodos.
+Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios nodos.
 
 \begin{figure}[H]
 	\centering
@@ -428,8 +405,6 @@ También necesitan conocer las\emph{ rutas seguidas por los vehículos}. Los sim
 
 Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya que es fundamental a la hora de sacar conclusiones. En general la información básica sera la velocidad y tiempos de recorrido. Aunque también puede contener más detalle como: duración de detenciones, densidad de tráfico, uso de combustible o cantidad de emisiones contaminantes.  
  
-
-
 \section{Trabajos relacionados}
 
 La investigación del estado del arte se realizó con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema y segundo encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución.
