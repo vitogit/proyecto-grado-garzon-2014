@@ -20,7 +20,7 @@ Los expertos indican que la congestión ya está instalada y la infraestructura 
 
 En un contexto global el crecimiento en la circulación de automóviles provoca que baje el nivel de aceptación del transporte público cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por sistemas de transporte costosos como los \emph{metros} pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
 
-En el caso de Montevideo para solucionar este problema se está implementando el plan de movilidad urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte público y democratizar el acceso al mismo. El sistema de transporte está inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará más información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
+En el caso de Montevideo para solucionar este problema se está implementando el Plan de Movilidad Urbana \citep{PlanMovilidad} con el objetivo de mejorar la eficiencia del transporte público y democratizar el acceso al mismo. El sistema de transporte está inspirado en un BRT con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se dará más información sobre los BRT, corredores urbanos y en particular el Corredor de Garzón.
 
 \section{Corredores urbanos de tráfico}
 El corredor urbano de tráfico o también llamado corredor segregado se caracteriza por una separación física entre el carril de circulación de los ómnibus y los carriles para el resto del tráfico. 
@@ -45,7 +45,7 @@ Un BRT contiene características similares a un tren ligero o el sistema de metr
 \section{Corredor de Garzón}	
 
 
-Fue construido como parte del plan de movilidad urbana que incluye otros corredores en la ciudad de Montevideo. \citep{PlanMovilidad}. Tomando en cuenta sus extremos conecta los barrios de Colón con Paso Molino. Tiene una extensión de 6.5km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán que conecta con una autopista (Ruta 5) y Bulevar Batlle y Ordoñez la cual tiene una gran densidad de tráfico. Es importante aclarar que no es sólo una conexión de extremo a extremo ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
+Fue construido como parte del Plan de Movilidad Urbana que incluye otros corredores en la ciudad de Montevideo. \citep{PlanMovilidad}. Tomando en cuenta sus extremos conecta los barrios de Colón con Paso Molino. Tiene una extensión de 6.5km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán que conecta con una autopista (Ruta 5) y Bulevar Batlle y Ordoñez la cual tiene una gran densidad de tráfico. Es importante aclarar que no es sólo una conexión de extremo a extremo ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
 
 \begin{figure}[H]
 	\centering
@@ -92,10 +92,10 @@ Analizando las recomendaciones del standard hay algunas que no están totalmente
 	\label{fig:perfil_garzon}
 \end{figure}
 
-Desde su construcción el corredor ah recibido críticas debido a que su principal objetivo que era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio que existía antes de realizar el corredor para el transporte público \citep{olivera2015}.
+Desde su construcción el corredor ha recibido críticas debido a que su principal objetivo que era agilizar el transporte público no fue cumplido, luego de intentos de mejoras al respecto se ha vuelto a la velocidad promedio que existía antes de realizar el corredor para el transporte público \citep{olivera2015}.
 
 
-Las autoridades han admitido que se han cometido errores y se apunta a que no se ha logrado sincronizar los semáforos.\citep{olivera2013}. Un buen funcionamiento de los mismos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones. A continuación se tratará este tema. 
+Las autoridades admitieron que se han cometido errores y que no se ha logrado sincronizar los semáforos \citep{olivera2013}. Un buen funcionamiento de los mismos es fundamental para asegurar que el tráfico se mueva con eficiencia y a la vez aporte seguridad a los peatones. A continuación se tratará este tema. 
 
 
 \section{Sincronización de semáforos}
@@ -113,11 +113,11 @@ La fase se refiere a una configuración especifica de luces de semáforos en una
 	\label{fig:fases}
 \end{figure}
 
-Existen tres parámetros importantes a tener en cuenta que determinaran el comportamiento del sistema, estos son la duración de fase, los ciclos de las luces y los valores de \emph{offset}. Estos serán explicados a continuación.
+Existen tres parámetros importantes a tener en cuenta que determinarán el comportamiento del sistema: la duración de fase, los ciclos de las luces y los valores de \emph{offset}. Estos serán explicados a continuación.
 
 
 \begin{itemize}
- 	\item Duración de fase: Se refiere a la duración en que una configuración especifica de luces esta activa en una intersección. Un conjunto de ellas estará en verde y otras en rojo determinando quien cruza en ese momento. La elección correcta de este parámetro es fundamental, las calles con una densidad de tránsito mayor tendrían que tener más tiempo para cruzar. Destacar que realizar la optimización individual de estos cruces no tiene por que llevar a una solución optima en la red, ya que se pueden producir cambios en el flujo que afecten a las demás. Por esta razón hay que tener un enfoque global al realizar una solución.
+ 	\item Duración de fase: Se refiere a la duración en que una configuración especifica de luces esta activa en una intersección. Un conjunto de ellas estará en verde y otras en rojo determinando quien cruza en ese momento. La elección correcta de este parámetro es fundamental, las calles con una densidad de tránsito mayor tendrían que tener más tiempo para cruzar. Realizar la optimización individual de estos cruces no tiene por qué llevar a una solución óptima en la red, ya que se pueden producir cambios en el flujo que afecten a las demás. Por esta razón se debe tener un enfoque global al buscar la solución.
  	
  	\item Duración del ciclo: Un ciclo representa un conjunto de fases, en general su duración es la suma de las duraciones de las fases. Como indica su nombre el ciclo se repetirá una vez se completa. La duración puede incrementarse o decrementarse para permitir mayor cantidad de repeticiones de las fases. Otro punto a considerar sobre todo en intersecciones complejas es el orden en el cual las fases son ejecutadas.
  	
@@ -146,12 +146,12 @@ Se pueden destacar cuatro etapas en la ejecución del algoritmo evolutivo. Estos
 	\item Reemplazo: Se produce el recambio generacional, sustituyendo a la antigua población por una nueva que podría tener sobrevivientes de la anterior o solamente nuevos individuados generados en la etapa anterior.
 \end{itemize}
 
-Se han desarrollado varias lineas de investigación diferenciadas que aplican estas técnicas, alguna de ellas se describen a continuación:
+Se han desarrollado varias líneas de investigación diferenciadas que aplican estas técnicas, alguna de ellas se describen a continuación:
 
 \begin{itemize}
 
 	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniera. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Aunque modelos más recientes agregan otro tipo de mecanismos.
-	\item Programación genética: Intenta generar un programa de computación para resolver una tarea especifica. Cada individuo puede ser un programa que es representado en forma de árbol, de esta manera la combinación entre individuos se realiza de forma más sencilla. La función de aptitud se refiere a que tan cerca de resolver la tarea se encuentra el individuo.\citep{Koza1992}
+	\item Programación genética: Intenta generar un programa de computación para resolver una tarea específica. Cada individuo puede ser un programa que es representado en forma de árbol, de esta manera la combinación entre individuos se realiza de forma más sencilla. La función de aptitud se refiere a que tan cerca de resolver la tarea se encuentra el individuo.\citep{Koza1992}
 	\item Algoritmos Genéticos: El más popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán más detalles sobre los mismos.
 \end{itemize}
 
@@ -188,7 +188,7 @@ En general se codifica un vector de números binarios o reales de largo fijo, lo
 
 
 \subsubsection{Función de Evaluación} 
-Indica que tan bueno es un individuo para resolver el problema en cuestión con un valor conocido como Fitness. Este se utiliza para seleccionar a los mejores y de esta forma guiar la exploración hacia la mejor solución.
+Indica qué tan bueno es un individuo para resolver el problema en cuestión con un valor conocido como Fitness. Este se utiliza para seleccionar a los mejores y de esta forma guiar la exploración hacia la mejor solución.
 Se deben tener en cuenta las restricciones del problema para que las soluciones no factibles no sobrevivan.
 En general es donde se consume el mayor tiempo del algoritmo en comparación con los demás operadores.
 
@@ -198,7 +198,7 @@ Los tipos más populares son:
 
 \begin{itemize}
 	\item Ruleta: También conocida como selección proporcional elige aleatoriamente individuos en la cual la probabilidad de selección es proporcional al valor de fitness.
-	\item Torneo: Se elige aleatoriamente un determinado número de individuos los cuales compiten entre si usando su valor de fitness.
+	\item Torneo: Se elige aleatoriamente un determinado número de individuos los cuales compiten entre sí usando su valor de fitness.
 	\item Rango: Se ordenan los individuos por fitness y se seleccionan los mejores.
 \end{itemize}
 
@@ -233,7 +233,7 @@ Luego de que se aplica el cruzamiento se insertan nuevos individuos que aumentan
 Se podría reemplazar todos los padres por los hijos, o seleccionar cuales reemplazar, entre otros criterios.
 
 \subsubsection{Criterio de parada} 
-Indica cuando debe terminar el algoritmo, puede ser definiendo un número fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones entre otros criterios. El objetivo será encontrar un compromiso entre un buen resultado y un tiempo acorde de ejecución, ya que el algoritmo no arrojara un valor exacto sino una buena aproximación. 
+Indica cuando debe terminar el algoritmo, puede ser definiendo un número fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones entre otros criterios. El objetivo será encontrar un compromiso entre un buen resultado y un tiempo acorde de ejecución, ya que el algoritmo no arrojará un valor exacto sino una buena aproximación. 
 
 \subsubsection{Funcionamiento}
 
@@ -286,7 +286,7 @@ El esquema básico de funcionamiento es el siguiente:
 
 \subsection{Algoritmos genético multiobjetivo}
 
-Los problemas de optimización multiobjetivo trabajan sobre un espacio multidemensional de funciones y no tienen una única solución por esto el significado de optimo cambia. Una solución es un optimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas las soluciones de Pareto son consideras igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
+Los problemas de optimización multiobjetivo trabajan sobre un espacio multidemensional de funciones y no tienen una única solución por esto el significado de óptimo cambia. Una solución es un óptimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas estas soluciones son consideras igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
 
 Existen algoritmos evolutivos para resolver el problema de la optimización multiobjetivo estos son los llamados MOEA por sus siglas en ingles \emph{ MultiObjetive Evolutionary Algorithm}. Para un análisis más detallado se recomienda el trabajo de \citet{Deb2001}.
 
@@ -341,9 +341,9 @@ Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el e
 
 \subsection{Implementacion y Frameworks}
 
-A la hora de implementar un algoritmo genético es importante tener en cuenta ciertos aspectos que dotaran a la solución de una mayor flexibilidad, eficiencia y robustez.
+A la hora de implementar un algoritmo genético es importante tener en cuenta ciertos aspectos que dotarán a la solución de una mayor flexibilidad, eficiencia y robustez.
 
-El paradigma de orientación a objetos aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque hay que tener en cuenta que esto puede ocasionar perdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
+El paradigma de orientación a objetos aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque hay que tener en cuenta que esto puede ocasionar pérdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
 
 En el trabajo de \citet{Alba1997} se indican con más detalles los elementos importantes de una implementacion, entre ellas se destacan: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientado a objetos pues permite su extensión en forma sencilla.
 
@@ -376,7 +376,7 @@ Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y m
 
 \begin{itemize}
 	\item Macroscópicos: El tráfico es modelado como un fluido continuo y es descrito de manera agregada usando características como la velocidad o densidad del flujo.
-	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, esto permite crear una distribución heterogénea del comportamientos de vehículos.
+	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, esto permite crear una distribución heterogénea del comportamiento de los vehículos.
 	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle.Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
 \end{itemize}
 
@@ -460,7 +460,7 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 	
 	\begin{item}
 		\bibentry{Stolfi2012}
-		Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indica que los atascos del tráfico provocan tanto perdidas económicas como también contaminación ambiental.
+		Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indica que los atascos del tráfico provocan tanto pérdidas económicas como también contaminación ambiental.
 		
 		Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlazara por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
 		
@@ -482,14 +482,14 @@ El problema del tráfico optimizando las luces de los semáforos se puede resolv
 	
 	\begin{item}
 		\bibentry{Montana1996}
-		Esta propuesta utiliza un enfoque adaptativo con sensores que analizan el tráfico en tiempo real. Un sensor para saber cuantos autos pasan y otro para saber que tan larga es la cola. Considera los cambios que se producen con respecto al caso promedio y cambia los tiempos de las señales en forma acorde.
+		Esta propuesta utiliza un enfoque adaptativo con sensores que analizan el tráfico en tiempo real. Un sensor para saber cuantos autos pasan y otro para saber qué tan larga es la cola. Considera los cambios que se producen con respecto al caso promedio y cambia los tiempos de las señales en forma acorde.
 		La premisa se basa en la inteligencia colectiva en donde agentes individuales realizan tareas simples que al interactuar producen resultados globales.
 		
-		Se aplica programación genética más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los arboles de decisión mejorando el flujo de tráfico.
+		Se aplica programación genética más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los árboles de decisión mejorando el flujo de tráfico.
 		
 		La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron tres modelos distintos de cuatro intersecciones con una versión especial del simulador TRAF-NETSIM \citep{TRAF-NETSIM}
 		
-		El experimento arroja buenos resultados en cuando a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Aunque se marca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionara con problemas más complejos.
+		El experimento arroja buenos resultados en cuando a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Aunque se marca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionará con problemas más complejos.
 		
 	\end{item}	
 	
@@ -527,7 +527,7 @@ El trabajo de \citet{Sanchez2004} posee algunos puntos de contacto como es la ej
 
 El siguiente trabajo de \citet{Sanchez2008} expande lo anterior y lo utiliza en un caso real en Santa Cruz de Tenerife siendo de una complejidad similar a Garzón en términos de cantidad de cruces y semáforos. Los resultados obtenidos son muy positivos obteniendo mejoras de hasta 26\%.
 
-Se destaca de \citet{Sanchez2010} las pruebas de diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiro la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
+Se destaca de \citet{Sanchez2010} las pruebas de diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiró la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
 
 Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta por lo que se podría tomar como un elemento en trabajos futuros.
 

@@ -1,10 +1,10 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n y contexto}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}Objetivos}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Enfoque}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Limitaciones y alcance}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Aportes}{3}{section.1.5}
+\contentsline {section}{\numberline {1.5}Aportes}{2}{section.1.5}
 \contentsline {section}{\numberline {1.6}Estructura del documento}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema del tr\IeC {\'a}nsito vehicular}{5}{section.2.1}
