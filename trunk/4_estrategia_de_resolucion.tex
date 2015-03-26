@@ -34,7 +34,7 @@ Dado que existe un amplio abanico de posibilidades a la hora de elegir un simula
 	
 	\item Documentación y mantenimiento: Cuenta con una detallada documentación lo cual hace más fácil su utilización, así como una comunidad muy activa que responden dudas en foros lo que es útil a la hora de buscar soporte si ocurriera algún problema o se detectara un error. También cuenta con un desarrollo activo lo cual es importante pues se realizan correcciones y actualizaciones frecuentemente.
 	
-	\item Configuración simple: Tiene un sistema sencillo para configurar las simulaciones basada en archivos XML, de esta forma se pueden modificar la configuración de los semáforos, las propiedades de los vehículos, las rutas que estos siguen entre otras opciones. Ademas tiene herramientas para poder utilizar mapas importados de servicios como \citet{OSM}.
+	\item Configuración simple: Tiene un sistema sencillo para configurar las simulaciones basada en archivos XML, de esta forma se pueden modificar la configuración de los semáforos, las propiedades de los vehículos, las rutas que estos siguen entre otras opciones. Además tiene herramientas para poder utilizar mapas importados de servicios como \citet{OSM}.
 	
 	\item Información de salida: SUMO tiene la opción de generar una amplia gama de datos producidos por la simulación entre los que se encuentran la velocidad de los vehículos y el largo del recorrido que son requeridas por la solución propuesta. 
 	
@@ -87,7 +87,7 @@ Al notar que habían calles de una sola mano que estaban representadas en Open S
 
 Se utilizó la herramienta Netconvert para transformar el formato OSM al formato XML que SUMO maneja, Netconvert no reconoce muchos de los datos aportados por el formato OSM como los números de las casas, las vías del tren, las vías de peatones, los caminos, las plazas, las paradas, los separadores que tiene el corredor de las vías de autos, entre muchos otros. Pero lo mas importante es que no funciona correctamente para reconocer corredores por lo que mezclaba y superponía el corredor central con las vías de los autos, esto seguramente por no reconocer los separadores físicos que tiene el corredor. 
 
-Primero se filtraron y borraron todos los datos que no eran reconocidos por NetConvert mediante la eliminación de elementos por etiquetas que permite el jOSM. Luego se separaron aproximadamente un metro las calles de él corredor central. Si bien esto logró que NetConvert interpretara que no era posible cambiar entre la vía de los autos y la del corredor de ómnibus, también genero un error ya que cada cruce de la realidad era tratado como tres cruces distintos (uno por cada calle del corredor).
+Primero se filtraron y borraron todos los datos que no eran reconocidos por NetConvert mediante la eliminación de elementos por etiquetas que permite el jOSM. Luego se separaron aproximadamente un metro las calles de él corredor central. Si bien esto logró que NetConvert interpretara que no era posible cambiar entre la vía de los autos y la del corredor de ómnibus, también generó un error ya que cada cruce de la realidad era tratado como tres cruces distintos (uno por cada calle del corredor).
 
 Finalmente se realizaron varios ajustes confeccionando manualmente archivos xml para que lo generado por el NetConvert corrigiera todos los errores que genera por defecto. Los distintos cruces con múltiples semáforos antes mencionado se maneja con la unión de nodos y la falta de las prohibiciones de los virajes a la izquierda que presentaba se corrigió con un archivo de las conexiones posibles.
 
@@ -182,7 +182,7 @@ Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  mi
 También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
 Se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito. Estos datos cuentan con la posición exacta en coordenadas geográficas, la velocidad instantánea y la referencia del ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. 
-Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Y algunos \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las lineas seleccionadas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
+Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Y algunos \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las líneas seleccionadas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
 Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:
 
@@ -224,19 +224,19 @@ Dada la complejidad del problema se tuvo en cuenta desde un primer momento la ut
 Como se detalló en el marco teórico existen varias opciones de \emph{frameworks} disponibles. Por las particularidades del problema existen ciertos requerimientos a la hora de seleccionar  uno para su resolución, entre los que se destacan:
 
 \begin{itemize}
-	\item Abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no se tengan costos económicos asociados. Ademas es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
+	\item Abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no se tengan costos económicos asociados. Además es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
 	\item Algoritmo genético: El framework debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
-	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume es fundamental la opción de ejecución en paralelo. Sino cuenta con funcionalidad nativa al menos que tenga la posibilidad de modificar el código principal para agregarlo.
+	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume es fundamental la opción de ejecución en paralelo. Si no cuenta con funcionalidad nativa al menos que tenga la posibilidad de modificar el código principal para agregarlo.
 	\item Plataforma: Es requerido que se pueda ejecutar en el Cluster Fing (CentOs - Linux), en Windows y otros sistemas Linux, ya que son las plataformas en donde se desarrollará el trabajo.
-	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionara sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación , ejemplos de código, etc.
+	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación , ejemplos de código, etc.
 	\item Lenguaje: Es deseable que esté desarrollado en c++ o java por la experiencia que se cuenta en estos lenguajes. 
-	\item Multiobjetivo: Es deseable aunque no requerido que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aún siendo multiobjetivo es sencilla.	
+	\item Multiobjetivo: Es deseable (aunque no requerido) que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aún siendo multiobjetivo es sencilla.	
 \end{itemize} 
 
 Luego de analizar todos estos puntos se selecciona la biblioteca Malva para la implementación del algoritmo. A continuación se detalla su funcionamiento y características.
 
 
-Como se explico anteriormente \citet{Malva} surge como una variante del proyecto \citet{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
+Como se explicó anteriormente \citet{Malva} surge como una variante del proyecto \citet{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de  heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente.
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
@@ -295,16 +295,16 @@ A continuación se realiza un resumen de las características del algoritmo impl
 \begin{itemize}
 
 \item Algoritmo paralelo: Utiliza el método maestro-esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
-\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso especifico.
+\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso específico.
 \item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos y sus fases.
-\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto especifico para el problema al igual que para la mutación.
+\item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto específico para el problema al igual que para la mutación.
 \item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
 
 \end{itemize}
 
 \subsection{Representación del cromosoma}
 
-Como se explico en el marco teórico el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros, entre ellos la duración de fase, de ciclo y el \emph{offset}. Dependiendo de cuales se elijan tendrán que tener su representación en el cromosoma.
+Como se explicó en el marco teórico el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros, entre ellos la duración de fase, de ciclo y el \emph{offset}. Dependiendo de cuales se elijan tendrán que tener su representación en el cromosoma.
 
 Para la solución propuesta se contempla tanto la fase como el \emph{offset}. El cromosoma se va a  agrupar  lógicamente en cruces siendo el valor de cada gen el tiempo que demora una
 fase de un cruce y se agrega para cada cruce el \emph{offset}. Se utiliza un vector de números naturales por claridad en el desarrollo y facilidad a la hora de aplicar los operadores.

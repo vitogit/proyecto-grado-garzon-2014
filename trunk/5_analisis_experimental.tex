@@ -90,7 +90,7 @@ En la siguiente gráfica se aprecia como el valor de fitness no presenta grandes
 
 \subsection{Tamaño de la población}
 
-Para la elección de la población se tendrán en cuenta 3 elementos. El valor de fitness encontrado, el tiempo de ejecución total y la plataforma de ejecución.
+Para la elección de la población se tendrán en cuenta tres elementos: el valor de fitness encontrado, el tiempo de ejecución total y la plataforma de ejecución.
 
 Dado que estamos ejecutando en el cluster y la máxima cantidad de procesadores que se pueden utilizar son 64 en un mismo nodo y teniendo en cuenta que la mejor distribución del trabajo es un elemento de población por procesador, se tiene que la máxima cantidad de población que estudiaremos será 64.
 
@@ -191,7 +191,7 @@ Esto representa la situación actual en términos de tráfico, red vial y sincro
 
 Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos que son de acceso público.
 
-Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constato que para de las líneas de ómnibus que pasan por Garzón la  velocidad promedio de los ómnibus es de 14.5km/h.
+Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que pasan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h.
 
 Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
 
@@ -256,12 +256,12 @@ En la tabla se pueden ver las métricas obtenidas para los diferentes instancias
  	\end{tabular}
  \end{table}
  
- En este caso no se representa la desviación standard ya que los resultados de la simulación del caso base son constantes pues siempre se está probando los mismos recorridos de los vehículos y la configuración de los semáforos no cambia. Cuando se aplicamos el algoritmo, por cada ejecución, obtenemos un valor diferente de velocidad y fitness ya que tienen distintas configuraciones de semáforos, por eso se muestra la desviación standard en ese caso.
+ En este caso no se representa la desviación standard ya que los resultados de la simulación del caso base son constantes pues siempre se está probando los mismos recorridos de los vehículos y la configuración de los semáforos no cambia. Cuando se aplica el algoritmo, por cada ejecución, obtenemos un valor diferente de velocidad y fitness ya que tienen distintas configuraciones de semáforos, por eso se muestra la desviación standard en ese caso.
 
 
 \subsection{Resultados numéricos de la evaluación }
 
-Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Ademas la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el fitness son de de hasta 24\%. A continuación se realizará el análisis estadístico para comprobar la mejora.
+Como se aprecia en la tabla \ref{table:resultado_caso_base} el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el fitness son de de hasta 24\%. A continuación se realizará el análisis estadístico para comprobar la mejora.
 
 
 \begin{table}[H]
@@ -344,7 +344,7 @@ Al hacer el relevamiento de los datos se encontró que en todas las interseccion
 
 No se tiene conocimiento si esto corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Al suceder en varias intersecciones y para los dos lados se mejora la velocidad promedio de los autos que circulan por los dos carriles.
 
-Este cambio se aplico en las siguientes intersecciones:
+Este cambio se aplicó en las siguientes intersecciones:
 \begin{itemize}
 	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colón.
 	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino. 
@@ -461,7 +461,7 @@ Estos pesos pueden ser variados en función de lo que se necesite, por lo que se
 
 
 \subsubsection{Prioridad ómnibus}
-En este caso se le dará más prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su plan de movilidad urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus en relación al del auto por el corredor, las personas que utilizan auto para sus viajes opten por el transporte colectivo.
+En este caso se le dará más prioridad a los ómnibus, esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus en relación al del auto por el corredor, las personas que utilizan auto para sus viajes opten por el transporte colectivo.
 
 Por tanto vamos a experimentar cambiando los pesos de la función fitness con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
@@ -515,7 +515,7 @@ La siguiente tabla compara las velocidades promedio de ómnibus y vehículos par
 \end{table}
 
 
-Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar más prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus, una explicación posible de este comportamiento es que ya se llego a un limite máximo y no se puede mejorar más.
+Los resultados indican que al variar los pesos de la función fitness las velocidades promedio de los vehículos se ve afectada. En el caso de dar más prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus, una explicación posible de este comportamiento es que ya se llegó a un limite máximo y no se puede mejorar más.
 
 Al dar más prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibus la cual es muy evidente en el caso de tráfico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de tráfico que se estudie.
 
