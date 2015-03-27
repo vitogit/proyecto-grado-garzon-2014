@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  25 MAR 2015 22:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  26 MAR 2015 21:22
 entering extended mode
 **index.tex
 
@@ -1242,17 +1242,17 @@ File: Figures/busway_configuration.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/busway_configuration.jpg used on input line 89
 .
 (pdftex.def)             Requested size: 377.99744pt x 111.97557pt.
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
  [10 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/busway_configuration.jpg>]
 <Figures/fases1.jpg, id=382, 489.83pt x 301.125pt>
 File: Figures/fases1.jpg Graphic file (type jpg)
  <use Figures/fases1.jpg>
-Package pdftex.def Info: Figures/fases1.jpg used on input line 111.
+Package pdftex.def Info: Figures/fases1.jpg used on input line 110.
 (pdftex.def)             Requested size: 336.00128pt x 206.56343pt.
-LaTeX Info: Redefining \. on input line 125.
-LaTeX Info: Redefining \% on input line 125.
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
 
 [11 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
 es/fases1.jpg>]
@@ -1266,8 +1266,8 @@ File: Figures/fitness_generaciones.png Graphic file (type png)
 Package pdftex.def Info: Figures/fitness_generaciones.png used on input line 16
 7.
 (pdftex.def)             Requested size: 284.52756pt x 191.67102pt.
-LaTeX Info: Redefining \. on input line 175.
-LaTeX Info: Redefining \% on input line 175.
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
  [13 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/fitness_generaciones.png>]
 <Figures/rep_binaria.png, id=411, 376.40625pt x 155.58125pt>
@@ -1896,7 +1896,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
 Here is how much of TeX's memory you used:
  17170 strings out of 493921
  292749 string characters out of 3144879
- 375201 words of memory out of 3000000
+ 376201 words of memory out of 3000000
  19903 multiletter control sequences out of 15000+200000
  16937 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1916,7 +1916,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (76 pages, 3121755 bytes).
+Output written on index.pdf (76 pages, 3121659 bytes).
 PDF statistics:
  1151 PDF objects out of 1200 (max. 8388607)
  283 named destinations out of 1000 (max. 500000)
