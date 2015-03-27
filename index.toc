@@ -10,15 +10,15 @@
 \contentsline {section}{\numberline {2.1}Problema del tr\IeC {\'a}nsito vehicular}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Corredores urbanos de tr\IeC {\'a}fico}{6}{section.2.2}
 \contentsline {section}{\numberline {2.3}Corredor Garz\IeC {\'o}n}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Sincronizaci\IeC {\'o}n de sem\IeC {\'a}foros}{10}{section.2.4}
+\contentsline {section}{\numberline {2.4}Sincronizaci\IeC {\'o}n de sem\IeC {\'a}foros}{11}{section.2.4}
 \contentsline {section}{\numberline {2.5}Algoritmos Evolutivos}{12}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Algoritmos Gen\IeC {\'e}ticos}{13}{subsection.2.5.1}
 \contentsline {subsubsection}{Representaci\IeC {\'o}n de soluciones}{14}{section*.11}
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{14}{section*.13}
-\contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{14}{section*.14}
-\contentsline {subsubsection}{Cruzamiento}{14}{section*.15}
+\contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{15}{section*.14}
+\contentsline {subsubsection}{Cruzamiento}{15}{section*.15}
 \contentsline {subsubsection}{Mutaci\IeC {\'o}n}{15}{section*.17}
-\contentsline {subsubsection}{Reemplazo}{15}{section*.19}
+\contentsline {subsubsection}{Reemplazo}{16}{section*.19}
 \contentsline {subsubsection}{Criterio de parada}{16}{section*.20}
 \contentsline {subsubsection}{Funcionamiento}{16}{section*.21}
 \contentsline {subsection}{\numberline {2.5.2}Algoritmos gen\IeC {\'e}tico multiobjetivo}{16}{subsection.2.5.2}
@@ -69,7 +69,7 @@
 \contentsline {subsection}{\numberline {4.4.5}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de fitness}{55}{subsection.4.4.5}
 \contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{55}{section*.58}
 \contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{55}{section*.59}
-\contentsline {subsubsection}{Resultados}{55}{section*.60}
+\contentsline {subsubsection}{Resultados}{56}{section*.60}
 \contentsline {subsection}{\numberline {4.4.6}Eficiencia computacional}{56}{subsection.4.4.6}
 \contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}
 \contentsline {section}{\numberline {5.1}Conclusiones}{59}{section.5.1}

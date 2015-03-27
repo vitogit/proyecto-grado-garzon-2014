@@ -2,7 +2,7 @@
 
 En este capítulo se explica el proceso llevado a cabo para desarrollar la solución. Se presenta el modelado básico del problema que consiste en un mapa de la zona con todos los datos necesarios para realizar la simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. Se detalla la biblioteca utilizada para el desarrollo del algoritmo genético y la arquitectura propuesta.
 
-La metodología se basa en cuatro puntos que serán tratados a continuación estos son:
+La metodología se basa en cuatro puntos que serán tratados a continuación, estos son:
 
 \begin{itemize}
 	\item Modelado del problema.
@@ -21,12 +21,12 @@ Para solucionar el problema se usarán simulaciones de la realidad, por tanto es
 
 \subsection{Simulador SUMO (Simulation of Urban MObility)}
 
-Como se explicó en el marco teórico SUMO es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos \citep{SUMO}. Sigue un modelo microscópico ya que realiza la simulación individual explícita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
+Como se explicó en el marco teórico SUMO es un simulador de tráfico gratis y abierto que nos permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos. Sigue un modelo microscópico ya que realiza la simulación individual explícita de cada elemento. Incluye un conjunto de herramientas destinadas  a facilitar la generación de tráfico y la construcción de mapas. 
 
 Dado que existe un amplio abanico de posibilidades a la hora de elegir un simulador se realizó un análisis relacionado a las posibilidades y objetivos del proyecto, a continuación se detallan las razones que sustentan la elección de SUMO como el simulador utilizado:
 
 \begin{itemize}
-	\item Portable: SUMO puede ser ejecutado tanto en Windows como en Linux, esto es importante dado que son las plataformas en las que se desarrolla el proyecto, además el Cluster Fing utiliza el sistema operativo CentOs Linux) y era un requisito que pudiera ser ejecutado en este ambiente.
+	\item Portable: SUMO puede ser ejecutado tanto en Windows como en Linux, esto es importante dado que son las plataformas en las que se desarrolla el proyecto, además el Cluster Fing utiliza el sistema operativo CentOs (Linux) y era un requisito que pudiera ser ejecutado en este ambiente.
 	
 	\item Tipos de ejecución: Permite las opciones de ejecutarse sin interfaz gráfica utilizando la línea de comando lo que aumenta sensiblemente la velocidad de ejecución, además esto es fundamental a la hora de realizar la arquitectura necesaria ya que el programa tiene que tener la posibilidad de ejecutar el simulador de manera directa. Por otro lado también tiene la opción de mostrar la interfaz gráfica lo cual es indispensable a la hora de visualizar la simulación sobre todo en los primeros momentos del desarrollo en los cuales se realizan ajustes y pruebas.
 	
@@ -45,11 +45,11 @@ Dado que existe un amplio abanico de posibilidades a la hora de elegir un simula
 
 SUMO tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Y archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
 
-Algunas otras herramientas relacionadas a la simulación:
+Ademas se utilizaron otras herramientas relacionadas a la simulación:
 
 \begin{itemize}
 	
-	\item  NetConvert: Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en archivo XML de red que SUMO reconoce. Este programa viene integrado con SUMO.
+	\item  NetConvert: Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en un archivo XML que SUMO reconoce. Este programa viene integrado con SUMO.
 	\item DUaRouter: Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
 	\item Traffic Modeler: Herramienta para la generación de tráfico de manera visual y luego exportarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
 	
@@ -67,16 +67,16 @@ Algunas otras herramientas relacionadas a la simulación:
 
 \subsection{Proceso del modelado}
 
-Se describen los pasos realizados para tener los elementos necesarios para realizar la simulación.
+Se describen los pasos realizados para tener los elementos necesarios para ejecutar la simulación.
 
 \subsubsection{Diseño del mapa}
 
 El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Se importa la zona de interés del mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. 
 
 El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado.
-Como se ve en el mapa no existen calles paralelas reales por lo que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una de las calles paralelas a otra, chequeando que cada paralela se constituya por una calle doble mano o dos calles de una sola mano y luego se borraron manualmente todas las demás calles.
+Como se ve en el mapa de la figura \ref{fig:mapa_osm_sumo}, no existen calles paralelas reales por lo que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una de las calles paralelas a otra, chequeando que cada paralela se constituya por una calle doble mano o dos calles de una sola mano y luego se borraron manualmente todas las demás calles.
 
-Al notar que habían calles de una sola mano que estaban representadas en Open Street Map como doble vías y algunos cruces de Garzón como Lezica, diferían con lo visto in situ, se modificaron los datos importados. Se utilizaron otros servicios como Google Maps y Bing Maps como consulta ya que al poseer mapas y fotos actualizadas del lugar se podía discernir y recordar de como eran exactamente las calles en la actualidad. Como el paso previo fue la eliminación de las calles que no fueran las paralelas, no se podían subir los cambios realizados (porque desaparecerían calles que realmente existen) y por este motivo no se pudo ayudar a la comunidad actualizando el mapa de OSM.
+Al notar que habían calles de una sola mano que estaban representadas en Open Street Map como doble vías y algunos cruces de Garzón como Lezica, diferían con lo visto in situ, se modificaron los datos importados. Se utilizaron otros servicios como Google Maps y Bing Maps como consulta ya que al poseer mapas y fotos actualizadas del lugar se podía discernir y recordar como eran exactamente las calles en la actualidad. Como el paso previo fue la eliminación de las calles que no fueran las paralelas, no se podían subir los cambios realizados (porque desaparecerían calles que realmente existen) y por este motivo no se pudo ayudar a la comunidad actualizando el mapa de OSM.
 
 \begin{figure}[H]
 	\centering
@@ -85,9 +85,10 @@ Al notar que habían calles de una sola mano que estaban representadas en Open S
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
-Se utilizó la herramienta Netconvert para transformar el formato OSM al formato XML que SUMO maneja, Netconvert no reconoce muchos de los datos aportados por el formato OSM como los números de las casas, las vías del tren, las vías de peatones, los caminos, las plazas, las paradas, los separadores que tiene el corredor de las vías de autos, entre muchos otros. Pero lo mas importante es que no funciona correctamente para reconocer corredores por lo que mezclaba y superponía el corredor central con las vías de los autos, esto seguramente por no reconocer los separadores físicos que tiene el corredor. 
+Se utilizó la herramienta Netconvert para transformar el formato OSM al formato XML que SUMO maneja, Netconvert no reconoce muchos de los datos aportados por el formato OSM como los números de las casas, las vías del tren, las vías de peatones, los caminos, las plazas, las paradas, los separadores que tiene el corredor de las vías de autos, entre muchos otros. Pero lo mas importante es que no funciona correctamente para reconocer corredores, por lo que mezclaba y superponía el corredor central con las vías de los autos, esto seguramente por no reconocer los separadores físicos que tiene el corredor. 
 
-Primero se filtraron y borraron todos los datos que no eran reconocidos por NetConvert mediante la eliminación de elementos por etiquetas que permite el jOSM. Luego se separaron aproximadamente un metro las calles de él corredor central. Si bien esto logró que NetConvert interpretara que no era posible cambiar entre la vía de los autos y la del corredor de ómnibus, también generó un error ya que cada cruce de la realidad era tratado como tres cruces distintos (uno por cada calle del corredor).
+Primero se filtraron y borraron todos los datos que no eran reconocidos por NetConvert mediante la eliminación de elementos por etiquetas que permite el 
+JOSM. Luego se separaron aproximadamente un metro las calles de él corredor central. Si bien esto logró que NetConvert interpretara que no era posible cambiar entre la vía de los autos y la del corredor de ómnibus, también generó un error ya que cada cruce de la realidad era tratado como tres cruces distintos (uno por cada calle del corredor).
 
 Finalmente se realizaron varios ajustes confeccionando manualmente archivos xml para que lo generado por el NetConvert corrigiera todos los errores que genera por defecto. Los distintos cruces con múltiples semáforos antes mencionado se maneja con la unión de nodos y la falta de las prohibiciones de los virajes a la izquierda que presentaba se corrigió con un archivo de las conexiones posibles.
 
@@ -101,7 +102,7 @@ Se seleccionaron cinco cruces que presentan diferentes características para pod
 Estos son: Camino Ariel, Battle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia. 
 
 Se siguen las recomendaciones de los textos consultados al respecto \citep{ConteoTrafico}. Se eligió el día miércoles, que estuviera soleado y entre las 15 y 17 horas para no tener los sesgos que se producen los fines de semana o días de lluvia.
-Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla electrónica donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. 
+Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para realizar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad. Luego se completa una planilla electrónica (figura \ref{fig:conteo_hoja}) donde se tiene la información de vehículos que recorren Garzón, la calle que cruza y los que doblan. 
 
 \begin{figure}[H]
 	\centering
@@ -112,7 +113,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículo y la orientación hacia donde circulan.}
 	\label{table:resumen_trafico}
@@ -138,10 +139,11 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 	\end{tabular}
 \end{table}
 
+En la tabla \ref{table:resumen_trafico} se muestra la cantidad de vehículos en los distintos cruces, hay que tener en cuenta que solo se contabilizan autos, no se tienen en cuenta otro tipo de vehículos.
 
-Además se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto para verificar los tiempos obtenidos en la simulación.
+Además se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto para verificar los tiempos obtenidos de la simulaciones.
 
-Para obtener la configuración de los semáforos se realizó un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
+Para la configuración de los semáforos se realizó un recorrido en bicicleta por el corredor cronometrando la duración del tiempo en cada esquina de cada semáforo. Tanto de ida como de vuelta para corroborar que fueran correctos. Estos tiempos fueron verificados por los vídeos obtenidos.
 
 
 
@@ -157,7 +159,7 @@ Existen varios modelos disponibles para la representación de la circulación de
 \end{itemize}
 
 
-Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico. Esto genera el recorrido del viaje para cada vehículo, estos se mantienen constantes en las distintas ejecuciones del algoritmo. Lo que cambia son las velocidades desarrolladas por cada uno ya que dependiendo de la configuración de los semáforos logrará mayores o menores velocidades.
+Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico. Esto genera el recorrido del viaje para cada vehículo, los mismos se mantienen constantes en las distintas ejecuciones del algoritmo. Lo que cambia son las velocidades desarrolladas por cada uno ya que dependiendo de la configuración de los semáforos logrará mayores o menores velocidades.
 
 
 
@@ -176,13 +178,13 @@ Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'.
 
 Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
 
-La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}, existen 14 paradas para líneas urbanas por el corredor para el recorrido de ida y las mismas para la vuelta.
+La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}, existen 14 paradas de líneas urbanas por el corredor para el recorrido de ida y la misma cantidad para la vuelta.
 Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas.
 
-También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
+También se tuvo en cuenta para la simulación, el tiempo que demora un ómnibus al detenerse en una parada, y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
 Se realizó un estudio basado en datos de GPS proporcionados por la IMM luego de reuniones con Ingeniería de Tránsito. Estos datos cuentan con la posición exacta en coordenadas geográficas, la velocidad instantánea y la referencia del ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. 
-Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Y algunos \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las líneas seleccionadas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
+Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Y \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las líneas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
 Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:
 
@@ -219,7 +221,7 @@ El algoritmo se detiene al alcanzar un número de generaciones determinado en es
 
 \section{Implementación: Biblioteca Malva}
 
-Dada la complejidad del problema se tuvo en cuenta desde un primer momento la utilización de un \emph{framework}, de esta forma se podría lograr una ejecución eficiente y una implementación robusta pero flexible. 
+Dada la complejidad del problema se tuvo en cuenta desde un inicio la utilización de un \emph{framework}, de esta forma se podría lograr una ejecución eficiente y una implementación robusta pero flexible. 
 
 Como se detalló en el marco teórico existen varias opciones de \emph{frameworks} disponibles. Por las particularidades del problema existen ciertos requerimientos a la hora de seleccionar  uno para su resolución, entre los que se destacan:
 
@@ -228,8 +230,8 @@ Como se detalló en el marco teórico existen varias opciones de \emph{framework
 	\item Algoritmo genético: El framework debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
 	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume es fundamental la opción de ejecución en paralelo. Si no cuenta con funcionalidad nativa al menos que tenga la posibilidad de modificar el código principal para agregarlo.
 	\item Plataforma: Es requerido que se pueda ejecutar en el Cluster Fing (CentOs - Linux), en Windows y otros sistemas Linux, ya que son las plataformas en donde se desarrollará el trabajo.
-	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación , ejemplos de código, etc.
-	\item Lenguaje: Es deseable que esté desarrollado en c++ o java por la experiencia que se cuenta en estos lenguajes. 
+	\item Confiabilidad: Es deseable que sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará sin demasiados problemas de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación, ejemplos de código, etc.
+	\item Lenguaje: Es deseable que esté desarrollado en C++ o Java por la experiencia que se cuenta en estos lenguajes. 
 	\item Multiobjetivo: Es deseable (aunque no requerido) que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aún siendo multiobjetivo es sencilla.	
 \end{itemize} 
 
@@ -240,21 +242,21 @@ Como se explicó anteriormente \citet{Malva} surge como una variante del proyect
 
 Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una plantilla genérica que se instancia para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
-Utiliza el lenguaje c++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas que incluyen todos los aspectos internos del esqueleto y son independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citet{CHC}.
+Utiliza el lenguaje C++ dado su alto nivel, modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que son las que el usuario deberá modificar para adaptarlo a su problema y las provistas que incluyen todos los aspectos internos del esqueleto y son independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y \citet{CHC}.
 
 
 
 
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo, con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideran complejos y que insumirán una gran carga de recursos computacionales.
+Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA al cual se le realizan algunas modificaciones para lograr su ejecución en paralelo, con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideran complejos e insumirán una gran carga de recursos computacionales.
 
 Se utiliza el método maestro-esclavo donde el maestro se encarga de la mayoría de las funciones:
 
 \begin{itemize}
 \item Inicialización de la población.
 \item Distribuir la evaluación de los individuos hacia los esclavos creando un hilo por cada esclavo	.
-\item Obtener de los esclavos los valores obtenidos de fitness.
+\item Obtener de los esclavos los valores de fitness.
 \item Selección de los mejores individuos.
 \item Aplicación de operadores de cruzamiento y mutación.
 \item Reemplazo y generación de la siguiente población.
@@ -296,7 +298,7 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 \item Algoritmo paralelo: Utiliza el método maestro-esclavo para que en cada iteración el maestro genere un hilo para cada ejecución  de la función fitness y luego espere a la terminación de todos los hilos para consolidar los datos. 
 \item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como de ómnibus teniendo cada uno un peso específico.
-\item Representación del cromosoma: Es un vector de números reales que representan los tiempos de los semáforos y sus fases.
+\item Representación del cromosoma: Es un vector de números naturales que representan los tiempos de los semáforos y sus fases.
 \item Cruzamiento y mutación: Se utiliza una variante del cruzamiento de un punto específico para el problema al igual que para la mutación.
 \item Selección y reemplazo: Reemplaza padres por hijos, la selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
 
@@ -306,9 +308,9 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 Como se explicó en el marco teórico el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros, entre ellos la duración de fase, de ciclo y el \emph{offset}. Dependiendo de cuales se elijan tendrán que tener su representación en el cromosoma.
 
-Para la solución propuesta se contempla tanto la fase como el \emph{offset}. El cromosoma se va a  agrupar  lógicamente en cruces siendo el valor de cada gen el tiempo que demora una
-fase de un cruce y se agrega para cada cruce el \emph{offset}. Se utiliza un vector de números naturales por claridad en el desarrollo y facilidad a la hora de aplicar los operadores.
-Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como de la cantidad de fases de cada uno. Esto significa que se busca realizar la optimización en forma global para todo el sistema y no individualmente para cada cruce. Esto es fundamental pues se busca mejorar la velocidad promedio del Corredor Garzón pero que esto no afecte al resto de las calles de la zona.
+Para la solución propuesta se contempla tanto la fase como el \emph{offset}. El cromosoma se va a  agrupar  lógicamente en cruces, siendo el valor de cada gen el tiempo que demora una
+fase de un cruce y además se agrega para cada cruce el \emph{offset}. Se utiliza un vector de números naturales por claridad en el desarrollo y facilidad a la hora de aplicar los operadores.
+Por tanto el tamaño del cromosoma depende tanto de la cantidad de cruces como de la cantidad de fases de cada uno. Esto significa que se busca realizar la optimización en forma global para todo el sistema y no individualmente para cada cruce. Lo que es fundamental pues se busca mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
 
 En la representación se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
  
@@ -332,7 +334,7 @@ En la figura \ref{fig:rep_sumo} vemos el archivo con la configuración de semáf
 
 En la figura \ref{fig:sem_numerados} se numeran los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde a un color en particular. 
 
-
+\newpage
 Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
 \begin{itemize}
 \item GGGG se corresponde a 1, 2, 3 y 4. 
@@ -366,9 +368,9 @@ Se empleará una función multiobjetivo usando combinación lineal de la velocid
 		F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
         \end{equation}
 
-Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es más adecuada para realizar las comparaciones con la realidad. Por ejemplo cantidad de vehículos que completan su viaje, duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de la comparación.
+Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es más adecuada para realizar las comparaciones con la realidad. Por ejemplo la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de comparar.
 
-Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le vamos a especificar a la función. 
+Esta es la formula de fitness utilizada donde \emph{x} e \emph{y} indica el peso que le vamos a especificar a la función. 
 
         \begin{equation}
         \label{eq:funcion_fitness}
@@ -377,7 +379,7 @@ Esta es la formula de fitness donde \emph{x} e \emph{y} indica el peso que le va
         
 En una primera instancia se establece x = y = 1 más adelante se experimentará con otros pesos.
 
-Al apuntar a optimizar la velocidad promedio de los vehículos hay q tener en cuenta que es en toda la red, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como aquellos que realizan los cruces. Esto es fundamental ya que si se optimiza individualmente una calle podría traer problemas de congestión en las demás que cruzan.
+Al apuntar a optimizar la velocidad promedio de los vehículos hay q tener en cuenta que es en toda la red, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como aquellos que realizan los cruces. Esto es fundamental ya que si se optimiza individualmente una calle podría traer problemas de congestión en otras zonas.
 
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
@@ -393,7 +395,7 @@ En la siguiente figura los padres cuentan con tres cruces, se elige un punto de 
 \end{figure}
 
 
-\newpage
+
 \subsubsection{Operador de Mutación}
 Se implementaron dos tipos de mutación:
 \begin{itemize}

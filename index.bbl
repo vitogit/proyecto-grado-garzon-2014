@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -307,6 +307,14 @@ K.~T.~K. Teo, W.~Y. Kow, y Y.~K. Chin.
 \newblock Optimization of traffic flow within an urban traffic light
   intersection with genetic algorithm.
 \newblock 2010.
+
+\bibitem[{The Institute for Transportation and Development Policy
+  (ITDP)}(2014)]{brt_standar}
+{The Institute for Transportation and Development Policy (ITDP)}.
+\newblock The brt standard, 2014 edition.
+\newblock
+  \url{https://www.itdp.org/wp-content/uploads/2014/07/BRT-Standard-2014.pdf},
+  2014.
 
 \bibitem[TRANSYT-7F()]{TRANSYT-7F}
 TRANSYT-7F.
