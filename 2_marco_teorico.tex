@@ -24,7 +24,9 @@ En el caso de Montevideo para solucionar este problema se está implementando el
 
 \section{Corredores urbanos de tráfico}
 El corredor urbano de tráfico, también llamado corredor segregado, se caracteriza por una separación física entre el carril de circulación de los ómnibus y los carriles para el resto del tráfico. 
-Esta es la principal diferencia con un concepto similar llamado \emph{carril de sólo bus} en donde se separan por líneas horizontales pintadas en la calle indicando que sólo pueden circular ómnibus. Los carriles de \emph{sólo bus} suelen fracasar por falta de control que evite que el tráfico los invada. En el caso de Montevideo el carril \emph{sólo bus} está sobre la derecha, por lo que los vehículos privados lo invaden al virar a la derecha y lo mismo los taxis para levantar pasajeros. Al hacer los corredores alineados en el medio del tráfico se evitan esos problemas.  
+Esta es la principal diferencia con un concepto similar llamado \emph{carril de sólo bus} en donde se separan por líneas horizontales pintadas en la calle indicando que sólo pueden circular ómnibus. Los carriles de \emph{sólo bus} suelen fracasar por falta de control que evite que el tráfico los invada. 
+
+En el caso de Montevideo el carril \emph{sólo bus} está sobre la derecha, por lo que los vehículos privados lo invaden al virar a la derecha y lo mismo los taxis para levantar pasajeros. Al hacer los corredores alineados en el medio del tráfico se evitan esos problemas.  
 
 Las ciudades de países en vías de desarrollo deben estudiar si pueden instalar corredores pues son fundamentales para conseguir mayores velocidades en el sistema. Pero hay muchas posibilidades y no todas pueden ser aplicables por el contexto zonal, cultural o de inversión necesaria.
 
@@ -40,12 +42,14 @@ Bus Rapid Transit (BRT) es una solución innovadora, de alta capacidad y de meno
 
 Un BRT contiene características similares a un tren ligero o el sistema de metro por lo que es mucho más confiable, conveniente y más rápido que los servicios regulares de ómnibus. Con las características adecuadas, el BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de ómnibus, como estar atrapado en el tráfico y hacer cola para pagar a bordo. 
 
-Para crear una definición común de BRT y calificar los sistemas existentes alrededor del mundo evaluando su funcionamiento basado en las mejores practicas internacionales existe el standard BRT creado por \citet{brt_standar}. Sus objetivos son brindar una mejor experiencia a los pasajeros, con un costo económico acorde e impacto ambiental positivo. El standard cuenta con un método para calcular el puntaje del corredor y determinar su nivel de calidad. 
+Para crear una definición común de BRT y calificar los sistemas existentes alrededor del mundo,  evaluando su funcionamiento basado en las mejores practicas internacionales existe el standard BRT creado por \citet{brt_standar}. Su principal objetivo es brindar una mejor experiencia a los pasajeros, con un costo económico acorde e impacto ambiental positivo. El standard cuenta con un método para calcular el puntaje del corredor y determinar su nivel de calidad. 
+
+
 
 A continuación se presenta una breve lista de características de un BRT:
 
 \begin{itemize}
-	\item Carriles exclusivos para el ómnibus la mayor parte del tiempo, con un alineamiento central del carril. Con un largo mínimo de 3km.
+	\item Carriles exclusivos para ómnibus, la mayor parte del tiempo, con un alineamiento central del carril y con un largo mínimo de 3km.
 	\item Paradas con plataformas a la altura del ómnibus.
 	\item Compra de pasajes fuera del ómnibus.
 	\item Uso de ómnibus de gran capacidad para transportar una gran cantidad de personas.
@@ -68,7 +72,7 @@ Fue construido como parte del Plan de Movilidad Urbana que incluye otros corredo
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
 
-Como se aprecia en la figura \ref{fig:perfil_garzon} el corredor consiste básicamente de tres calles paralelas e independientes; dos de ellas con dos carriles de una sola mano y entre medio de éstas se encuentra una calle doble vía con un carril para cada vía que es exclusivamente usado por ómnibus urbanos durante el día y también por suburbanos en la noche.
+Como se aprecia en la figura \ref{fig:perfil_garzon}, el corredor consiste básicamente de tres calles paralelas e independientes; dos de ellas con dos carriles de una sola mano y entre medio de éstas se encuentra una calle doble vía con un carril para cada vía que es exclusivamente usado por ómnibus urbanos durante el día y también por suburbanos en la noche.
 
 
 Basándonos en el standard antes mencionado, el Corredor de Garzón cumple con la definición de BRT por los siguientes puntos:
@@ -141,20 +145,18 @@ Estos parámetros pueden ser utilizados a la hora de sincronizar los semáforos 
 
 Los métodos para lograr la coordinación necesaria van desde simples mecanismos de reloj a sistemas computarizados que se ajustan en tiempo real con ayuda de sensores en la calle, pudiendo clasificarse como estrategias de tiempo fijo, o de tiempo dinámico auto-ajustable.
 
-Se considera a este problema como NP-difícil, es decir que no existe hasta el momento un método determinístico que lo resuelva.
-
-Existen diversos métodos computacionales para solucionar este problema alguno de los cuales se encuentran en la sección de trabajos relacionados. Entre los más desarrollados y efectivos están los algoritmos evolutivos en particular los algoritmos genéticos que serán explicados a continuación.
+Se considera a este problema como NP-difícil, por lo que los métodos exactos solo son útiles en instancias de tamaño reducido. Por esta razón se suelen utilizar diferentes métodos heurísticos, alguno de los cuales se encuentran en la sección de trabajos relacionados. Entre los más desarrollados y efectivos están los algoritmos evolutivos en particular los algoritmos genéticos que serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
-Los algoritmos evolutivos son un conjunto de técnicas heurísticas para la resolución de problemas complejos que se inspiran en la evolución natural, trabajan sobre una población de individuos que representan una solución y utilizan mecanismos de selección, reproducción y diversidad para lograr su objetivo. 
+Los algoritmos evolutivos son un conjunto de técnicas heurísticas para la resolución de problemas complejos que se inspiran en la evolución natural. Estos trabajan sobre una población de individuos que representan una solución y utilizan mecanismos de selección, reproducción y diversidad para lograr su objetivo. 
 Es una técnica iterativa que busca en cada paso mejorar las soluciones por medio de operadores basado en un criterio predefinido a maximizar o minimizar.
 
 Se pueden destacar cuatro etapas en la ejecución del algoritmo evolutivo. Estos son:
 
 \begin{itemize}
 	\item Evaluación: Para cada individuo de la población se determina un valor de aptitud (fitness) en relación a su capacidad para resolver el problema. 
-	\item Selección: Proceso en donde se eligen cuales son los individuos que sobrevivirán a la siguiente generación y sobre los cuales se aplicaran los operadores.
+	\item Selección: Proceso en donde se eligen cuales son los individuos que sobrevivirán a la siguiente generación y sobre los cuales se aplicarán los operadores.
 	\item Operaciones: Se aplican tanto combinaciones entre individuos (cruzamiento), como operadores de diversidad(mutación). Esto genera nuevos individuos en la población.
 	\item Reemplazo: Se produce el recambio generacional, sustituyendo a la antigua población por una nueva que podría tener sobrevivientes de la anterior o solamente nuevos individuados generados en la etapa anterior.
 \end{itemize}
@@ -163,7 +165,7 @@ Se han desarrollado varias líneas de investigación diferenciadas que aplican e
 
 \begin{itemize}
 
-	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniera. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Aunque modelos más recientes agregan otro tipo de mecanismos.
+	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, comenzó como un método de optimización utilizando individuos compuestos por números reales en problemas relacionados al diseño de ingeniería. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Sin embargo modelos más recientes agregan otro tipo de mecanismos.
 	\item Programación genética: Intenta generar un programa de computación para resolver una tarea específica. Cada individuo puede ser un programa que es representado en forma de árbol, de esta manera la combinación entre individuos se realiza de forma más sencilla. La función de aptitud se refiere a que tan cerca de resolver la tarea se encuentra el individuo.\citep{Koza1992}
 	\item Algoritmos Genéticos: El más popular de los algoritmos evolutivos, aplicado para resolver problemas de optimización. El operador de cruzamiento es el principal motor evolutivo siendo el de mutación el secundario. En la siguiente sección se darán más detalles sobre los mismos.
 \end{itemize}
@@ -172,7 +174,7 @@ Se han desarrollado varias líneas de investigación diferenciadas que aplican e
 La idea base es que partiendo de una población inicial de individuos se seleccionan los mejores en base a su aptitud respecto a solucionar el problema y estos se utilizan para generar nuevos individuos ya sea por combinación o modificación. Por tanto en cada paso obtenemos mejores soluciones hasta detenernos usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los mismo.
 
 Un individuo es una codificación de la solución que resuelve el problema. La población inicial puede generarse aleatoriamente o basándose en algún conocimiento previo. La función de evaluación o fitness indica que tan buena o apta es una solución en comparación con las demás.
-En cada iteración la cual se conoce como generación se aplican operadores de cruzamiento, estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
+En cada iteración, la cual se conoce como generación, se aplican operadores de cruzamiento. Estos son formas de combinar a los individuos para obtener otros que potencialmente sean una mejor solución y también cambios aleatorios sobre los individuos llamado mutación.
 
 
 \begin{figure}[H]
@@ -188,8 +190,10 @@ El criterio de parada nos indica cuando termina este proceso, ya sea por que se 
 Hay que indicar que no es una técnica exacta pero logra muy buenas aproximaciones, además se aplica en problemas complejos por su flexibilidad y robustez. 
 
 \subsubsection{Representación de soluciones}
-No podemos trabajar directamente sobre las soluciones, por lo que tenemos que codificarlas en un modelo que nos sirva para poder aplicar el algoritmo.
+Dado que no se puede trabajar directamente sobre las soluciones, estas se codificaron en un modelo donde es posible aplicar el algoritmo.
+
 La inspiración biológica se ve en los nombres que adopta esta representación, llamada Cromosoma que es un vector de genes y cada valor de un gen se llama alelo.
+
 En general se codifica un vector de números binarios o reales de largo fijo, lo que facilita la aplicación de los operadores.
 
 \begin{figure}[H]
@@ -206,18 +210,16 @@ Se deben tener en cuenta las restricciones del problema para que las soluciones 
 En general es donde se consume el mayor tiempo del algoritmo en comparación con los demás operadores.
 
 \subsubsection{Operador de Selección}
-Existen diversos operadores de selección , su función es que las mejores características de los individuos se mantengan en las siguientes generaciones.
-Los tipos más populares son:
-
+Existen diversos operadores de selección cuya función es mantener las mejores características de los individuos en las siguientes generaciones. Entre ellos se encuentran:
 \begin{itemize}
-	\item Ruleta: También conocida como selección proporcional elige aleatoriamente individuos en la cual la probabilidad de selección es proporcional al valor de fitness.
+	\item Ruleta: También conocida como selección proporcional, elige aleatoriamente individuos donde la probabilidad de selección es proporcional al valor de fitness.
 	\item Torneo: Se elige aleatoriamente un determinado número de individuos los cuales compiten entre sí usando su valor de fitness.
 	\item Rango: Se ordenan los individuos por fitness y se seleccionan los mejores.
 \end{itemize}
 
 \subsubsection{Cruzamiento}
 Su función es combinar individuos con el objetivo de preservar las mejores características y así lograr mejores soluciones. 
-Existe una tasa que se puede modificar para indicar la probabilidad de que se realice el cruzamiento.
+Existe una tasa que se puede modificar para indicar la probabilidad de que se realice el cruzamiento. En general se pueden clasificar en:
 
 \begin{itemize}
 	\item Cruzamiento de un punto: A partir de dos padres se selecciona un punto al azar de los cromosomas obteniendo dos trozos que se combinan para obtener dos hijos. Se explica en la figura ~\ref{fig:cruzamiento1}
@@ -242,13 +244,13 @@ Indica el método utilizado para modificar un individuo, esto se realiza para lo
 
 
 \subsubsection{Reemplazo} 
-Luego de que se aplica el cruzamiento se insertan nuevos individuos que aumentan la población original por tanto este operador indica cual es el criterio que debemos tomar para crear una nueva población con una cantidad de individuos igual a la original.
+Luego de que se aplica el cruzamiento se insertan nuevos individuos que aumentan la población original. Por lo tanto este operador indica cual es el criterio que debemos tomar para crear una nueva población con una cantidad de individuos igual a la original.
 Se podría reemplazar todos los padres por los hijos, o seleccionar cuales reemplazar, entre otros criterios.
 
 \subsubsection{Criterio de parada} 
 Indica cuando debe terminar el algoritmo, puede ser definiendo un número fijo de generaciones o analizando si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones entre otros criterios. El objetivo será encontrar un compromiso entre un buen resultado y un tiempo acorde de ejecución, ya que el algoritmo no arrojará un valor exacto sino una buena aproximación. 
 
-\subsubsection{Funcionamiento}
+\subsubsection{Esquema del algoritmo}
 
 El esquema básico de funcionamiento es el siguiente:
 
@@ -299,11 +301,11 @@ El esquema básico de funcionamiento es el siguiente:
 
 \subsection{Algoritmos genético multiobjetivo}
 
-Los problemas de optimización multiobjetivo trabajan sobre un espacio multidemensional de funciones y no tienen una única solución por esto el significado de óptimo cambia. Una solución es un óptimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas estas soluciones son consideras igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
+Los problemas de optimización multiobjetivo trabajan sobre un espacio multidimensional de funciones y no tienen una única solución por esto el significado de óptimo cambia. Una solución es un óptimo de Pareto si ninguna de las funciones objetivos puede mejorar su valor sin degradar otro de los valores objetivos. Todas estas soluciones son consideradas igualmente buenas ya que los vectores no se pueden ordenar completamente. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
 
-Existen algoritmos evolutivos para resolver el problema de la optimización multiobjetivo, estos son los llamados MOEA por sus siglas en ingles \emph{ MultiObjetive Evolutionary Algorithm}. Para un análisis más detallado se recomienda el trabajo de \citet{Deb2001}.
+Existen algoritmos evolutivos para resolver el problema de la optimización multiobjetivo, estos son los llamados MOEA por sus siglas en ingles \emph{ MultiObjetive Evolutionary Algorithm}. Para un análisis más detallado de los mismos se recomienda el trabajo de \citet{Deb2001}.
 
-Lo que buscan es aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir.
+Su objetivo es aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir.
 
 
 \begin{algorithm}%[!ht]
@@ -339,9 +341,9 @@ Se pueden clasificar por el método de asignación de fitness en:
 
 
 \subsection{Algoritmo evolutivo paralelo}
-Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores, pero no es el único objetivo que se puede conseguir, entre otros tenemos:  encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
+Los problemas complejos suelen requerir una alta demanda computacional por lo que paralelizar el algoritmo evolutivo es útil para lograr tiempos de ejecución menores. Pero este no es el único objetivo que se puede conseguir, entre otros existen: encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio. \citep{Alba2002}. 
 
-Existen varios niveles de paralización ya sea a nivel global enfocándonos en paralizar la función fitness, a nivel de la población, o a nivel del individuo. \citep{Nesmachnow2002}. En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método para distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
+En el caso de los algoritmos genéticos gran parte del tiempo se ocupa en la etapa de evaluación, por esta razón es un buen método distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
 
 Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios nodos.
 
@@ -352,50 +354,48 @@ Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el e
 	\label{fig:diagrama-master-slave}
 \end{figure}
 
-\subsection{Implementacion y Frameworks}
+\subsection{Implementación y Frameworks}
 
-A la hora de implementar un algoritmo genético es importante tener en cuenta ciertos aspectos que dotarán a la solución de una mayor flexibilidad, eficiencia y robustez.
+A la hora de implementar un algoritmo genético es importante tener en cuenta ciertos aspectos que dotarán a la solución de una mayor flexibilidad, eficiencia y robustez. En general se recomienda usar el paradigma de orientación a objetos ya que aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque esto puede ocasionar pérdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
 
-El paradigma de orientación a objetos aporta múltiples ventajas entre las que se encuentra: reusabilidad del código, abstracción de problemas, modularidad y legibilidad. Aunque esto puede ocasionar pérdidas de eficiencia computacional por lo que hay que balancear estos aspectos.
-
-En el trabajo de \citet{Alba1997} se indican con más detalles los elementos importantes de una implementacion, entre ellas se destacan: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientado a objetos pues permite su extensión en forma sencilla.
+En el trabajo de \citet{Alba1997} se indican con más detalle los elementos importantes de una implementación, entre ellas se destacan: no utilizar tamaño fijo para las poblaciones pues afectan la flexibilidad, evitar las múltiples evaluaciones sobre una misma solución, dar al usuario la posibilidad de extender las funcionalidades de manera modular, al implementar bibliotecas genéricas usar lenguajes orientados a objetos pues permite su extensión en forma sencilla.
 
 Por estas razones se han desarrollado \emph{frameworks} para trabajar en la resolución de problemas utilizando algoritmos evolutivos y otras técnicas heurísticas. Estos encapsulan de manera transparente al usuario los aspectos antes mencionados lo que permite un desarrollo más rápido, sencillo y seguro.
 
 Existe una gran variedad de \emph{frameworks}, a continuación se describen algunos de los más populares junto con sus principales características.
 
 \begin{itemize}
-	\item JMetal: Es un \emph{framework} orientado a objetos basado en java para la optimización de problemas multiobjetivo utilizando metaheurísticas. Su arquitectura permite tanto experimentar con técnicas provistas o desarrolladas por el usuario. Entre sus características destacan que al ser en Java puede ser usado tanto en sistemas Windows como Linux. Posee una amplia variedad de algoritmos multiobjetivo listos para usar, y también algoritmos paralelos. Está en constante desarrollo y posee una documentación detallada. \citep{Jmetal}
+	\item JMetal: Es un \emph{framework} orientado a objetos basado en java para la optimización de problemas multiobjetivo utilizando metaheurísticas. Su arquitectura permite experimentar con técnicas embebidas y también desarrolladas por el usuario. Entre sus características destacan que al ser en Java puede ser usado tanto en sistemas Windows como Linux. Posee una amplia variedad de algoritmos multiobjetivo listos para usar, y también algoritmos paralelos. Está en constante desarrollo y posee una documentación detallada. \citep{Jmetal}
 	
 	\item Galib: Es una librería escrita en C++ que incluye objetos y herramientas útiles para la resolución de problemas usando algoritmos genéticos. Es gratuita y de código abierto, pudiendo ser ejecutada tanto en Linux como en Windows. No tiene un desarrollo sostenido siendo su última actualización en el año 2000, esto no quita que todavía se siga usando por su sencillez y flexibilidad. \citep{Galib}
 	
-	\item Paradiseo: Es un \emph{framework} orientado a objetos que utiliza C++. Su objetivo es el diseño de metaheurísticas tanto paralelas como distribuidas. Cuenta tanto con algoritmos evolutivos, búsquedas locales y optimización basado en enjambres. Funciona tanto en plataformas Windows como Linux y posee varios módulos destinados a extender sus funcionalidades. Tiene una buena documentación y su ultima versión data del año 2012. \citet{Paradiseo}
+	\item Paradiseo: Es un \emph{framework} orientado a objetos que utiliza C++. Su objetivo es el diseño de metaheurísticas tanto paralelas como distribuidas. Cuenta con algoritmos evolutivos, búsquedas locales y optimización basado en enjambres. Funciona tanto en plataformas Windows como Linux y posee varios módulos destinados a extender sus funcionalidades. Tiene una buena documentación y su ultima versión data del año 2012. \citet{Paradiseo}
 	
 	\item Open Beagle: Es un \emph{framework} en C++ utilizando algoritmos evolutivos. Brinda un entorno de alto nivel para trabajar con distintas técnicas, soportando programación evolutiva, algoritmos genéticos y estrategias evolutivas. Su arquitectura permite utilizar los principios de la programación orientada a objetos para lograr un código recusable y eficiente. Sus características apuntan a brindar un entorno amigable, eficiente, multi-plataforma y gratuito. \citep{OpenBeagle}
 	
-	\item Mallba: Es una biblioteca escrita en C++ que brinda esqueletos de algoritmos para la resolución de problemas de optimización tanto exactos, heurísticos como híbridos. Maneja el paralelismo de forma simple para el usuario. Posee una arquitectura flexible y extensible lo que permite agregar nuevos esqueletos de forma simple. No cuenta con documentación extensa pero si con varios ejemplos completos de implementaciones de los algoritmos. Funciona tanto en ambiente Linux como Windows, pero se dejó de actualizar en el año 2002 por lo que es posible que no funcione correctamente en entornos más modernos. \citep{Mallba}
+	\item Mallba: Es una biblioteca escrita en C++ que brinda esqueletos de algoritmos para la resolución de problemas de optimización exactos, heurísticos como híbridos. Maneja el paralelismo de forma simple para el usuario. Posee una arquitectura flexible y extensible lo que permite agregar nuevos esqueletos de forma simple. No cuenta con documentación extensa pero si con varios ejemplos completos de implementaciones de los algoritmos. Funciona tanto en ambiente Linux como Windows, pero se dejó de actualizar en el año 2002 por lo que es posible que no funcione correctamente en entornos más modernos. \citep{Mallba}
 	
 	\item Malva: Surge como un derivado de la biblioteca Mallba con modificaciones para ser ejecutado en ambientes actuales, por lo que cuenta con las mismas características aunque al estar en fase de desarrollo soporta solo algunos algoritmos entre ellos algoritmos genéticos. \citep{Malva}
 \end{itemize}
 
-Los \emph{frameworks} son una herramienta importante a la hora de desarrollar un algoritmo evolutivo. Si nos enfocamos en la sincronización de semáforos también serán necesarias otras utilidades entre las que se encuentra los simuladores de tráfico, los cuales serán explicados en la siguiente sección.
+Los \emph{frameworks} son una herramienta importante a la hora de desarrollar un algoritmo evolutivo. Al enfocarse en la sincronización de semáforos también serán necesarias otras utilidades entre las que se encuentra los simuladores de tráfico, los cuales serán explicados en la siguiente sección.
 
 
 \section{Simulación de tráfico}
 
-Los simuladores de tráfico son programas que simulan el movimiento del flujo vehicular sobre una red, cabe destacar que esta puede ser tanto terrestre, marítima o aérea. Son usados en proyectos de investigación , estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como es la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo, pues no es necesario cambiar la infraestructura para probar nuevos escenarios y es útil para prever situaciones que podrían darse bajo determinadas circunstancias.
+Los simuladores de tráfico son programas que simulan el movimiento del flujo vehicular sobre una red, cabe destacar que esta puede ser tanto terrestre, marítima o aérea. Son usados en proyectos de investigación, estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como ser la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo, pues no es necesario cambiar la infraestructura para probar nuevos escenarios y es útil para prever situaciones que podrían darse bajo determinadas circunstancias.
 
 Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y microscópicos. En algunos casos se considera una tercera categoría híbrida de estas dos llamada mesoscópicos.
 
 \begin{itemize}
 	\item Macroscópicos: El tráfico es modelado como un fluido continuo y es descrito de manera agregada usando características como la velocidad o densidad del flujo.
-	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, esto permite crear una distribución heterogénea del comportamiento de los vehículos.
-	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle.Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
+	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, lo que permite crear una distribución heterogénea del comportamiento de los vehículos.
+	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle. Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
 \end{itemize}
 
-En general se considera que las simulaciones microscópicas se acercan más a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicos pues aunque no poseen tanto detalle si son más rápidas y en determinadas circunstancias podrían ser una mejor opción.
+En general se considera que las simulaciones microscópicas se acercan más a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicas pues aunque no poseen tanto detalle si son más rápidas y en determinadas circunstancias podrían ser una mejor opción.
 
-En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripción de varios simuladores entre los que se encuentran:
+En el trabajo de \citet{review_trafico} se pueden encontrar detalles y descripciones de varios simuladores entre los que se encuentran:
 \begin{itemize}
 	\item \citet{SUMO}: Simulador abierto, portable, microscópico diseñado para soportar grandes redes de tránsito. Es de los más populares, utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.
 	\item QuadStone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de tránsito y transporte.
@@ -412,7 +412,7 @@ En el trabajo de \citet{review_trafico} se puede encontrar detalles y descripci�
 	\label{fig:simuladores}
 \end{figure}
 
-Los simuladores requieren la creación de una \emph{red de tránsito}, en general se refiere a las propiedades que tendrán los caminos, por ejemplo cantidad de carriles, limite de velocidad, ubicación, largo, conexiones entre las mismas, etc. Algunos simuladores obtienen esta entrada usando archivos de texto, lo cual puede ser un proceso lento y propenso a errores, otros pueden importar redes de diversas fuentes como \citet{OSM}.
+Los simuladores requieren la creación de una \emph{red de tránsito}. En general se refiere a las propiedades que tendrán los caminos, por ejemplo cantidad de carriles, limite de velocidad, ubicación, largo, conexiones entre las mismas, etc. Algunos simuladores obtienen esta entrada usando archivos de texto, lo cual puede ser un proceso lento y propenso a errores, otros pueden importar redes de diversas fuentes como \citet{OSM}.
 
 También necesitan conocer las\emph{ rutas seguidas por los vehículos}. Los simuladores pueden tomar esta información de manera explicita indicando para cada vehículo la ruta seguida o utilizar otros métodos dinámicos indicando solo los puntos de inicio y final del recorrido cuya ruta será generada en tiempo de simulación. Esto puede ser un proceso verdaderamente complejo por tal razón muchos simuladores poseen herramientas destinadas a facilitar esta tarea.
 
@@ -434,7 +434,7 @@ El modelo es pequeño con 5 calles de 2 vías que se intersectan.
 La codificación del cromosoma es un vector de números enteros, donde se codifica para cada intersección cual calle está habilitada en cada ciclo.
 Usa una estrategia de selección elitista donde los dos mejores individuos se clonan a la siguiente generación y el resto es generado por cruzamiento de dos puntos.
 
-Para la evaluación se utiliza el tiempo que transcurre desde el momento que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo, el maestro envía los cromosomas a los esclavos que evalúan y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
+Para la evaluación se utiliza el tiempo que transcurre desde el momento que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos que evalúan y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
 Se compararon los resultados con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados.
 	
 Este mismo grupo realizó trabajos similares expandiendo esta investigación, que se presentan a continuación.
@@ -453,7 +453,7 @@ Las soluciones provistas por la alcaldía se simularon y compararon con los resu
 \begin{item}
 \bibentry{Sanchez2010}
 
-Este trabajo es similar al anterior pero se destacan algunos cambios, por ejemplo se probaron cuatro funciones de fitness diferentes, ellas fueron: cantidad de vehículos que llegaron a destino, tiempo de viaje promedio, tiempo de ocupación promedio y velocidad promedio global.
+Este trabajo es similar al anterior pero se destacan algunos cambios. Por ejemplo se probaron cuatro funciones de fitness diferentes, ellas fueron: cantidad de vehículos que llegaron a destino, tiempo de viaje promedio, tiempo de ocupación promedio y velocidad promedio global.
 
 También agrega medidas correspondientes al gas total emitido por los vehículos que tiene relación con la velocidad a la que circulan.
 El modelo discretizado de la zona de \emph{La Almozara} cuenta con 17 semáforos, 7 intersecciones, 16 entradas y 18 salidas.
@@ -475,13 +475,13 @@ Luego se realiza otro escenario más complejo de 28 semáforos y 9 interseccione
 \begin{item}
 \bibentry{Stolfi2012}
 
-Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indica que los atascos del tráfico provocan tanto pérdidas económicas como también contaminación ambiental.
+Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indicando que los atascos del tráfico provocan tanto pérdidas económicas como también contaminación ambiental.
 
-Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlaza por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino agrega encima de esto un sistema de búsqueda de mejor ruta.
+Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlaza por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino que agrega además de esto un sistema de búsqueda de mejor ruta.
 
-Para el modelo utiliza una zona  de la ciudad de Málaga, cuenta con 8 entradas y 8 salidas, para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varía la longitud, velocidad y probabilidad que entre en la red de tráfico.
+Para el modelo utiliza una zona  de la ciudad de Málaga que cuenta con ocho entradas y ocho salidas. Para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varía la longitud, velocidad y probabilidad que entre en la red de tráfico.
 
-Se intenta minimizar los tiempo de viaje de los vehículos que circulan por la red. Para ellos se utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los dos peores individuos reemplazándolos por los dos mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución, el tiempo medio utilizado y el retraso medio. Se prueban varias estrategias de cruzamiento y mutación. Las ejecuciones tienen un tiempo fijo de duración.
+Se intenta minimizar los tiempo de viaje de los vehículos que circulan por la red. Para ello se utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los dos peores individuos reemplazándolos por los dos mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución, el tiempo medio utilizado y el retraso medio. Se prueban varias estrategias de cruzamiento y mutación. Las ejecuciones tienen un tiempo fijo de duración.
 
 Compara el resultado con una simulación donde se generaron 64 itinerarios diferentes. Las simulaciones se realiza hasta con 800 vehículos, concluyendo que al aumentar la cantidad de vehículos (más de 400) en el sistema, la solución mejora sustancialmente el resultado base.
 
@@ -506,7 +506,7 @@ Se aplica programación genética, más específicamente STGP (strongly typed ge
 
 La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron tres modelos distintos de cuatro intersecciones con una versión especial del simulador TRAF-NETSIM \citep{TRAF-NETSIM}.
 
-El experimento arroja buenos resultados en cuanto a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Aunque se marca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionará con problemas más complejos.
+El experimento arroja buenos resultados en cuanto a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Sin embargo se recalca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionará con problemas más complejos.
 
 \end{item}	
 
@@ -519,7 +519,7 @@ La solución utiliza un enfoque auto-adaptable para mejorar el tráfico tanto en
 Destaca el hecho que dada una configuración de semáforos aún siendo optimizada usando simulaciones es difícil que sea la mejor en todas las situaciones o en casos extremos (horas picos). Para solucionar esto proponen un sistema auto-adaptable que toma la información del tráfico actual usando detectores de vehículos y espacios.
 
 Utiliza el concepto de fases para representar las distintas posibilidades en la señalización de la intersección y cuanto tiempo debe permanecer en esa fase. 
-Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases mientras el fitness se obtiene simulando ese sistema en un modelo de tráfico. Este es relativamente pequeño con una intersección con cuatro brazos, cada uno con tres líneas donde la ruta principal tiene el doble de densidad vehicular. 
+Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases mientras el \emph{fitness} se obtiene simulando ese sistema en un modelo de tráfico. Este es relativamente pequeño con una intersección con cuatro brazos, cada uno con tres líneas donde la ruta principal tiene el doble de densidad vehicular. 
 
 Los resultados indican que la ventaja de usar conocimiento experto para configurar los parámetros iniciales es mínimo ya que llega muy rápido a resultados similares. Tanto la búsqueda de los mejores parámetros como en estructuras más simples el algoritmo se comporta con buenos resultados.
 
@@ -544,11 +544,11 @@ El trabajo de \citet{Sanchez2004} posee algunos puntos de contacto como es la ej
 
 El siguiente trabajo de \citet{Sanchez2008} expande lo anterior y lo utiliza en un caso real en Santa Cruz de Tenerife siendo de una complejidad similar a Garzón en términos de cantidad de cruces y semáforos. Los resultados obtenidos son muy positivos obteniendo mejoras de hasta 26\%.
 
-Se destaca de \citet{Sanchez2010} las pruebas de diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiró la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
+Se destaca de \citet{Sanchez2010} las pruebas de diferentes funciones de \emph{fitness} teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiró la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el presente proyecto.
 
-Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta por lo que se podría tomar como un elemento en trabajos futuros.
+Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta, por lo que se podría tomar como un elemento en trabajos futuros.
 
-Tanto los trabajos de \citet{Teo2010} como \citet{Stolfi2012} plantean la simulación con un tiempo fijo lo que se utilizó en el proyecto.
+Tanto los trabajos de \citet{Teo2010} como \citet{Stolfi2012} plantean la simulación con un tiempo fijo lo que se utilizó en este proyecto.
 
 \citet{Montana1996} y \citet{Vogel2000}  proponen algoritmos que se adapten en tiempo real, por lo que se destacan como posibles trabajos a futuro.
 Es digno de mención que todos los trabajos consultados lograron mejoras significativas en sus resultados.
