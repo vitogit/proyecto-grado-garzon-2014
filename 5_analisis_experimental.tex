@@ -37,13 +37,13 @@ Para las siguientes pruebas la función \emph{fitness} del algoritmo (\ref{eq:fu
 \subsection{Tiempo de simulación}
 El tiempo de simulación refiere a la duración de una simulación usando SUMO. Es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras el tiempo real de ejecución depende de la plataforma y de la cantidad de vehículos, pero se encuentra entre los 5 a 20 segundos. Se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras que el tiempo real de ejecución depende de la plataforma computacional utilizada y de la cantidad de vehículos considerados en el escenario. En las simulaciones realizadas en el marco de este proyecto se encuentra entre los 5 y 20 segundos. En el análisis experimental se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
 
 
 \subsection{Criterio de parada}
-Se elige como criterio de parada el número de generación, lo cual permite estandarizar las pruebas para una mejor comparación. Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de ejecución apropiado que no sea excesivo.
+Se elige como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de ejecución que no sea excesivo.
 
-Para esto se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de \emph{fitness} no tiene una gran variación en las ultimas 100 generaciones. Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
+Se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de \emph{fitness} no tiene una gran variación en las ultimas 100 generaciones. Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
 
 Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
 En la siguiente gráfica se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real está dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
@@ -96,7 +96,7 @@ La tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos; como 
 
 \subsection{Probabilidad de mutación y cruzamiento}
 
-Para configurar la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes  del  algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
+Para configurar la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
