@@ -5,14 +5,16 @@ Esta sección presenta la evaluación experimental del Algoritmo Evolutivo multi
 \section{Plataforma de ejecución y Desarrollo}
 Los algoritmos fueron desarrollados usando la biblioteca Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
-El análisis experimental fue realizado en la infraestructura Cluster Fing (sitio web: http://www.fing.edu.uy/cluster), en un procesador AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 cores, corriendo el sistema operativo CentOS Linux 5.2.
+El análisis experimental fue realizado en la infraestructura Cluster Fing (sitio web: http://www.fing.edu.uy/cluster), en un procesador AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 cores, corriendo el sistema operativo CentOS Linux 6.5.
+
+Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual de procesadores libres y para la mayoría de las pruebas el número de procesadores no es relevante. Si lo será cuando se realice el análisis de eficiencia computacional que se estudiará más adelante.
 
 
 \section{Ajuste paramétrico}
-Se busca la mejor configuración inicial de los parámetros realizando pruebas experimentales con diferentes combinaciones. Los elementos que se ajustaran serán los siguientes: el tiempo de simulación, el criterio de parada, el tamaño de la población y la probabilidad de mutación y cruzamiento.
+En vez de utilizar valores fijos para los parámetros, se realiza un análisis para determinar el mejor valor para cada parámetro usado en el algoritmo evolutivo propuesto. Los parámetros que se ajustaran serán los siguientes: el tiempo de simulación, el criterio de parada, el tamaño de la población y la probabilidad de mutación y cruzamiento.
 
-Para estas pruebas se generan tres escenarios de tráfico diferentes. En este caso no se utilizan datos recabados de la realidad, como el tráfico vehicular o la frecuencia de los ómnibus, para no sesgar el algoritmo a un caso en particular
-Los tres escenarios de tráfico son los siguientes:
+Se generan tres escenarios de tráfico diferentes, que serán utilizados en el ajuste de cada parámetro. En este caso no se utilizan datos recabados de la realidad, como el tráfico vehicular o la frecuencia de los ómnibus, para no sesgar el algoritmo a un caso en particular.
+A continuación se presenta la cantidad de vehículos para cada uno de los tres escenarios de tráfico propuestos:
 
 \begin{itemize}
 	\item Tráfico Bajo: 30 ómnibus y 500 vehículos	
@@ -21,17 +23,19 @@ Los tres escenarios de tráfico son los siguientes:
 \end{itemize}
 
 
-En el ajuste paramétrico primero se define el tiempo de simulación y el criterio de parada, luego de establecidos se realizan las pruebas para todas las combinaciones de tasa de cruzamiento y mutación buscando los mejores valores para ajustar el algoritmo.
+En el ajuste paramétrico primero se define el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los mejores valores para ajustar el algoritmo.
 
 Al estar utilizando un cluster tenemos disponible tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. 
 
-Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. Las diferentes ejecuciones fueron realizadas sobre el Cluster utilizando entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual  de procesadores libres y para estas pruebas el número de procesadores no es relevante. Si lo será cuando se realice el análisis de eficiencia computacional que se estudiará más adelante.
+Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 
 
-\subsection{Pesos de la función fitness}
 
-Para las siguientes pruebas la función \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{x = y = 1}. Esto da pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
+
+\subsection{Pesos de la función de fitness}
+
+Para las siguientes pruebas la función \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{x = y = 1}. Estos valores dan pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
 
 
 \subsection{Tiempo de simulación}
