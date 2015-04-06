@@ -2,6 +2,19 @@
 % Encoding: UTF8
 
 
+@Article{Alba2006,
+  Title                    = {{{MALLBA}: A library of skeletons for combinatorial optimisation}},
+  Author                   = {Alba, E. and Almeida, F. and Blesa, M. and Cotta, C. and Diaz, M. and Dorta, I. and Gabarr{\'o}, J. and Gonz{\'a}lez, J. and Le{\'o}n, C. and Moreno, L. and Petit, J. and Roda, J. and Rojas, A. and Xhafa, F.},
+  Journal                  = {Parallel Computing},
+  Year                     = {2006},
+  Number                   = {5-6},
+  Pages                    = {415--440},
+  Volume                   = {32},
+
+  Owner                    = {santiago},
+  Timestamp                = {2012.11.26}
+}
+
 @Misc{Alba1997,
   Title                    = {Propuesta para la implementación de algoritmos evolutivos.},
 
@@ -467,7 +480,7 @@ Discreta: Ejemplos de Aplicacion},
 }
 
 @Article{Stolfi2012,
-  Title                    = {Optimizacion del Trafico Rodado en Ciudades Inteligentes},
+  Title                    = {Optimización del Tráfico Rodado en Ciudades Inteligentes},
   Author                   = {Daniel H. Stolfi},
   Year                     = {2012},
 
