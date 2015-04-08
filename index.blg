@@ -10,7 +10,6 @@ Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for ent
 while executing---line 1347 of file abbrvnat.bst
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
 while executing---line 1347 of file abbrvnat.bst
-Warning--empty year in CHC
 Warning--empty year in CORSIM
 Warning--empty journal in Deb2001
 Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
@@ -34,7 +33,6 @@ Warning--empty year in Mallba
 Warning--empty year in Malva
 Warning--empty journal in Mitchell1996
 Warning--empty journal in Montana1996
-Warning--empty journal in Nesmachnow2002
 Warning--empty year in OSM
 Warning--empty year in TrafficModeler
 Warning--empty journal in Penner2002
