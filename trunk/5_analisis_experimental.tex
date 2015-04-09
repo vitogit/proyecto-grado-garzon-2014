@@ -2,10 +2,11 @@
 Esta sección presenta la evaluación experimental del Algoritmo Evolutivo multiobjetivo propuesto para resolver el problema de sincronización de semáforos del corredor Garzón. Inicialmente se presenta una descripción de los escenarios utilizados en la evaluación experimental y la plataforma de ejecución en la que se llevo a acabo la experimentación. A continuación se detalla el análisis experimental, que se divide en dos etapas: primero se analiza la configuración paramétrica para encontrar una mejor calidad de resultados y luego se realizan los experimentos de validación para los que se reportan los resultados numéricos.
 
 
-\section{Plataforma de ejecución y Desarrollo}
-Los algoritmos fueron desarrollados usando la biblioteca Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
-El análisis experimental fue realizado en la infraestructura Cluster Fing (sitio web: http://www.fing.edu.uy/cluster), en un procesador AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 cores, corriendo el sistema operativo CentOS Linux 6.5.
+\section{Plataforma de ejecución y Desarrollo}
+Como se explico en la seccion anterioir se utiliza el algoritmo genetico provisto por la biblioteca Malva que fue extendida en el código base para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
+
+Dada la complejidad del problema el análisis experimental  se realiza en la plataforma Cluster Fing (sitio web: http://www.fing.edu.uy/cluster) para poder acelerar el tiempo real de procesamiento al ejecutar el algoritmo en paralelo distribuyendo la carga en varios núcleos. Específicamente fue utilizado un procesador AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, corriendo el sistema operativo CentOS Linux 6.5.
 
 Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 procesadores ya que por la naturaleza de recursos compartidos no siempre se tiene una cantidad igual de procesadores libres y para la mayoría de las pruebas el número de procesadores no es relevante. Si lo será cuando se realice el análisis de eficiencia computacional que se estudiará más adelante.
 
@@ -25,7 +26,7 @@ A continuación se presenta la cantidad de vehículos para cada uno de los tres 
 
 En el ajuste paramétrico primero se define el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los mejores valores para ajustar el algoritmo.
 
-Al estar utilizando un cluster tenemos disponible tanto la métrica del tiempo real que llevo la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
+La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que duró la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 
 

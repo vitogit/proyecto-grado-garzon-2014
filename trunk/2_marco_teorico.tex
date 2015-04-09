@@ -330,11 +330,8 @@ Existen algoritmos evolutivos para resolver el problema de la optimización mult
 
 Hay dos operadores propios de los MOEA, estos son el operador de diversidad y el operador de asignación de fitness. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
 
-Los MOEA se pueden clasificar por el método de asignación de fitness en:
-\begin{itemize}
-	\item No basado en Pareto: Utilizan métodos sencillos de asignación de fitness. Son adecuados cuando el problema tiene no más de tres funciones objetivo. Un mecanismo popular es la combinación lineal de los objetivos.
-	\item Basado en Pareto: Utiliza explícitamente la dominancia de Pareto al asignar el fitness.
-\end{itemize}
+Los MOEA se pueden clasificar por el método de asignación de fitness. Por un lado los que no son basado en Pareto, que utilizan métodos sencillos de asignación de fitness y son adecuados cuando el problema tiene no más de tres funciones objetivo. Por ejemplo un mecanismo popular es la combinación lineal de los objetivos. Por otro lado los que son basado en Pareto utilizan explícitamente la dominancia de Pareto al asignar el fitness.
+
 
 
 
@@ -381,17 +378,12 @@ Los \emph{frameworks} son una herramienta importante a la hora de desarrollar un
 
 Los simuladores de tráfico son programas que simulan el movimiento del flujo vehicular sobre una red, cabe destacar que esta puede ser tanto terrestre, marítima o aérea. Son usados en proyectos de investigación, estudio de congestiones y análisis de impacto de obras.  Existen varias razones para optar por esta herramienta, como ser la rapidez en la obtención de resultados ya que la simulación se puede realizar en tiempos mucho más rápidos que en la realidad, el costo, pues no es necesario cambiar la infraestructura para probar nuevos escenarios y es útil para prever situaciones que podrían darse bajo determinadas circunstancias.
 
-Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y microscópicos. En algunos casos se considera una tercera categoría híbrida de estas dos llamada mesoscópicos.
+Los simuladores se pueden dividir en dos grandes categorías, macroscópicos y microscópicos. En algunos casos se considera una tercera categoría híbrida de estas dos llamada mesoscópicos. En los simuladores \emph{macroscópicos} el tráfico es modelado como un fluido continuo y es descrito de manera agregada usando características como la velocidad o densidad del flujo. Mientras en los simuladores \emph{microscópicos} el tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, lo que permite crear una distribución heterogénea del comportamiento de los vehículos. En general los simuladores \emph{Mesoscópicos} representan a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle. Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
 
-\begin{itemize}
-	\item Macroscópicos: El tráfico es modelado como un fluido continuo y es descrito de manera agregada usando características como la velocidad o densidad del flujo.
-	\item Microscópicos: El tráfico se considera compuesto de partículas discretas. Cada una es actualizada según las propiedades de la red en ese momento, como limites de velocidad, vehículos cercanos y caminos a seguir. Utilizan un modelo de decisiones del conductor, lo que permite crear una distribución heterogénea del comportamiento de los vehículos.
-	\item Mesoscópicos: En general representa a los individuos con alto nivel de detalle pero sus interacciones y actividades con un bajo nivel de detalle. Por ejemplo agrupando vehículos en paquetes que se mueven por una red, considerándolos como una sola entidad.
-\end{itemize}
 
-En general se considera que las simulaciones microscópicas se acercan más a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicas pues aunque no poseen tanto detalle si son más rápidas y en determinadas circunstancias podrían ser una mejor opción.
+Se considera que las simulaciones microscópicas se aproximan más a la realidad y que obtienen un nivel de granularidad mayor. Esto puede ser útil cuando se asignan propiedades sobre cada vehículo y se quiere observar el comportamiento cuando estas cambian. Esto no implica que se dejen de usar simulaciones macroscópicas pues aunque no poseen tanto detalle si son más rápidas y en determinadas circunstancias podrían ser una mejor opción.
 
-En el trabajo de \citet{review_trafico} se pueden encontrar detalles y descripciones de varios simuladores entre los que se encuentran:
+En la actualidad existe una gran variedad de simuladores disponibles, que se encuentran en las diferentes categorías que fueron mencionadas anteriormente. A continuación se presenta una breve descripción de alguno de los simuladores descritos en el trabajo de \citet{review_trafico} que presenta una lista detallada de simuladores de tráficos.
 \begin{itemize}
 	\item \citet{SUMO}: Simulador abierto, portable, microscópico diseñado para soportar grandes redes de tránsito. Es de los más populares, utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico.
 	\item QuadStone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de tránsito y transporte.

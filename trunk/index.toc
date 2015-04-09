@@ -16,12 +16,12 @@
 \contentsline {subsubsection}{Representaci\IeC {\'o}n de soluciones}{14}{section*.11}
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{14}{section*.13}
 \contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{15}{section*.14}
-\contentsline {subsubsection}{Cruzamiento}{15}{section*.15}
-\contentsline {subsubsection}{Mutaci\IeC {\'o}n}{15}{section*.17}
-\contentsline {subsubsection}{Reemplazo}{16}{section*.19}
+\contentsline {subsubsection}{Operador de cruzamiento}{15}{section*.15}
+\contentsline {subsubsection}{Operador de mutaci\IeC {\'o}n}{16}{section*.17}
+\contentsline {subsubsection}{Operador de reemplazo}{16}{section*.19}
 \contentsline {subsubsection}{Criterio de parada}{16}{section*.20}
 \contentsline {subsubsection}{Esquema del algoritmo}{16}{section*.21}
-\contentsline {subsection}{\numberline {2.5.2}Algoritmos gen\IeC {\'e}tico multiobjetivo}{16}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Algoritmos gen\IeC {\'e}tico multiobjetivo}{17}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Algoritmo evolutivo paralelo}{17}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Implementaci\IeC {\'o}n y Frameworks}{18}{subsection.2.5.4}
 \contentsline {section}{\numberline {2.6}Simulaci\IeC {\'o}n de tr\IeC {\'a}fico}{19}{section.2.6}
@@ -62,14 +62,14 @@
 \contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{50}{subsection.4.4.3}
 \contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{50}{section*.48}
 \contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{50}{section*.49}
-\contentsline {subsubsection}{Alternar paradas}{51}{section*.50}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{52}{section*.52}
+\contentsline {subsubsection}{Alternar paradas}{50}{section*.50}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{51}{section*.52}
 \contentsline {subsection}{\numberline {4.4.4}Valores num\IeC {\'e}ricos al aplicar los cambios}{52}{subsection.4.4.4}
 \contentsline {subsection}{\numberline {4.4.5}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{53}{subsection.4.4.5}
 \contentsline {subsection}{\numberline {4.4.6}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de \emph {fitness}}{54}{subsection.4.4.6}
 \contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{54}{section*.57}
 \contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{54}{section*.58}
-\contentsline {subsubsection}{Resultados}{55}{section*.59}
+\contentsline {subsubsection}{Resultados}{54}{section*.59}
 \contentsline {subsection}{\numberline {4.4.7}Eficiencia computacional}{55}{subsection.4.4.7}
 \contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}
 \contentsline {section}{\numberline {5.1}Conclusiones}{59}{section.5.1}
