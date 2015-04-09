@@ -37,16 +37,9 @@ Dado que existe un amplio abanico de posibilidades a la hora de elegir un simula
 
 SUMO tiene un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. También genera archivos de salida con información interesante como el tiempo de simulación, la cantidad de vehículos, sus velocidades, duración del viaje, emisiones de gases contaminantes, etc. 
 
-Ademas se utilizaron otras herramientas relacionadas a la simulación:
+Dada la complejidad del problema a enfrentar, se utilizaron otras herramientas útiles para que ciertas tareas fueran realizadas de manera más eficiente y con menos errores. \emph{NetConvert} viene integrado con SUMO y fue utilizado para la generación de la red vial a partir del mapa obtenido de Open Street Map, transformándolo al formato que SUMO reconoce. Otra herramienta integrada con SUMO es \emph{DUaRouter} que permite generar recorridos de vehículos basado en dinámicas definidas por el usuario. \emph{Traffic Modeler} creado por \citet{TrafficModeler}, es útil para la generación de tráfico de manera visual y puede ser exportado para que sea reconocido por SUMO. 
+	
 
-\begin{itemize}
-	
-	\item  NetConvert: Utilizado para la generación de la red a partir de un mapa. Por ejemplo podemos transformar un mapa de Open Street Map en un archivo XML que SUMO reconoce. Este programa viene integrado con SUMO.
-	\item DUaRouter: Genera recorridos de vehículos basado en dinámicas definidas por el usuario. Esta utilidad viene integrada con SUMO.
-	\item Traffic Modeler: Herramienta para la generación de tráfico de manera visual y luego exportarlo para que sea reconocido por SUMO. \citep{TrafficModeler}
-	
-	
-\end{itemize}
 
 \begin{figure}[H]
 	\centering
@@ -142,14 +135,7 @@ Para la configuración de los semáforos se realizó un recorrido en bicicleta p
 \subsubsection{Modelo del tráfico}
 Una vez que se tiene el mapa compatible con el simulador y los datos relevados de la realidad, se agrega el tráfico a la simulación.
 
-Existen varios modelos disponibles para la representación de la circulación de vehículos, aquí exponemos algunos de los más populares. 
-\begin{itemize}
-	\item Aleatorios: Genera diferentes recorridos que seguirán los vehículos aleatoriamente.
-	\item Basado en áreas:  Se especifican áreas como un conjunto de calles y se realizan recorridos entre ellas.
-	\item Basado en actividad: Se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela,  etc
-	\item Definido por el usuario: permiten determinar la ruta de los vehículos con mayor detalle.
-\end{itemize}
-
+Existen varios modelos disponibles para representar la circulación de los vehículos. El modelo \emph{aleatorio} genera diferentes recorridos que seguirán los vehículos aleatoriamente. En el modelo \emph{basado en áreas} se especifican diferentes áreas que indican los lugares en donde el tráfico se origina y donde finaliza. Otro modelo mas complejo es el \emph{basado en actividad} donde se especifica la cantidad de casas, vehículos y población en un determinado lugar y el modelo genera la densidad de tráfico que se producirá basado en los tipos de actividades que se realizan comúnmente como ir al trabajo, hacer las compras, ir a la escuela, etc. Otro modelo muy utilizado sobre todo en escenarios de tamaño reducido es el \emph{definido por el usuario} que permiten determinar la ruta de cada vehículo con mayor detalle.
 
 Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas lo que permite una buena granularidad al especificar la densidad de tráfico. Esto genera el recorrido del viaje para cada vehículo, los mismos se mantienen constantes en las distintas ejecuciones del algoritmo. La variación se da en las velocidades desarrolladas por cada uno, ya que dependiendo de la configuración de los semáforos logrará mayores o menores velocidades.
 
@@ -165,29 +151,14 @@ Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para ge
 
 Se manejaron dos tipos de vehículos autos y ómnibus cada uno con características distintas tanto de tamaño, aceleración y velocidad máxima. No se especifican otros tipos de vehículos como motos o camiones ya que el trabajo se enfoca en los dos primeros tipos.
 
-Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municipal de Montevideo \citep{IMM}
-Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'. 
+Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municipal de Montevideo \citep{IMM}. Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'. Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
 
-Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
-
-La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}. Existen 14 paradas de líneas urbanas por el corredor para el recorrido de ida y la misma cantidad para la vuelta.
-Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas.
-
-También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
+La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}. Existen 14 paradas de líneas urbanas por el corredor para el recorrido de ida y la misma cantidad para la vuelta. Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas. También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
 Se realizó un estudio basado en datos de GPS proporcionados por la IMM. Estos datos cuentan con la posición exacta en coordenadas geográficas, la velocidad instantánea y la referencia del ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. 
 Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Además se desarrollaron \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las líneas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 
 
-Para introducir estos datos en el simulador se utilizan tres archivos de configuración en formato xml que son tomados como entrada, estos son:
-
-\begin{itemize}
-	\item Semáforos: Cuenta con la información detallada de la duración de los semáforos, el comienzo de su fase y la ubicación del mismo respecto al mapa base.
-	\item Rutas de vehículos: Se indica la ruta de cada vehículo que recorrerá el mapa.
-	\item Recorrido de ómnibus: Indica las rutas de los ómnibus, la frecuencia, la ubicación de las paradas, en cuales se detiene y cuanto demora.
-\end{itemize}
-
-
-
+Para configurar la simulación se utilizan como entrada tres archivos de configuración en formato XML que son reconocidos por el simulador SUMO. El primero es el archivo de \emph{configuración de los semáforos} donde se detalla su duración, el comienzo de fase y la ubicación de los mismos en el mapa base. El segundo es el archivo con la \emph{ruta de los vehículos} que contiene el recorrido de cada vehículo. Finalmente el archivo con el \emph{recorrido de los ómnibus} que indica el recorrido de los mismos, su frecuencia, la ubicación de las paradas, en cuales se detienen y cuanto demoran en la parada.
 
 \section{Arquitectura de la solución}
 
@@ -238,29 +209,16 @@ Utiliza el lenguaje C++ dado su alto nivel, modularidad y flexibilidad. Los esqu
 
 
 
+\section{Modelo de paralelismo e implementación}
+
+Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideraron complejos y que utilizarían gran cantidad de recursos computaciones. Para este propósito se utilizó como código base el algoritmo genético provisto por la biblioteca Malva llamado NewGA. A dicho código se le realizaron algunas modificaciones para lograr su ejecución en paralelo, específicamente se modificó la forma en que se evalúan los individuos generando un hilo de ejecución por cada individuo y distribuyendo la evaluación.
+ 
+ Se utilizó el método maestro-esclavo donde el proceso maestro se encarga de la mayoría de las etapas del algoritmo. El maestro primero inicializa la población y se encarga de distribuir la evaluación de los individuos hacia los esclavos creando un hilo por cada esclavo. Luego espera a que las evaluaciones terminen para obtener los valores de \emph{fitness} de los esclavos. Una vez obtenidos, selecciona a los mejores individuos y le aplica los operadores de cruzamiento y mutación. Para finalizar aplica el operador de reemplazo para generar la siguiente población. Mientras los esclavos se encargan solamente obtener el individuo enviado por el maestro y de ejecutar la evaluación del individuo, que corresponde a ejecutar el simulador y obtener los datos de salida.
+ 
+ En la sección de análisis experimental se realiza un estudio de la eficiencia computacional del algoritmo genético paralelo, para conocer comparar los tiempos de ejecución entre la versión paralela y en serie.
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA. A dicho algoritmo se le realizan algunas modificaciones para lograr su ejecución en paralelo, con el objetivo de reducir los tiempos de ejecución del algoritmo ya que los escenarios planteados se consideran complejos e insumirán una gran carga de recursos computacionales.
-
-Se utiliza el método maestro-esclavo donde el maestro se encarga de la mayoría de las funciones:
-
-\begin{itemize}
-\item Inicializar de la población.
-\item Distribuir la evaluación de los individuos hacia los esclavos creando un hilo por cada esclavo	.
-\item Obtener los valores de \emph{fitness} de los esclavos.
-\item Seleccionar de los mejores individuos.
-\item Aplicar operadores de cruzamiento y mutación.
-\item Reemplazar y generar la siguiente población.
-\end{itemize}
-
-Mientras los esclavos se encargan solamente de lo siguiente:
-\begin{itemize}
-	\item Obtener el individuo enviado por el maestro.
-	\item Ejecutar la evaluación del individuo que corresponde a ejecutar el simulador y obtener los datos de salida.
-\end{itemize}
-
-
-El siguiente esquema muestra el algoritmo utilizado. 
+Se utiliza el algoritmo genético provisto por la biblioteca  Malva  llamado NewGA con las modificaciones detalladas en la sección anterior. El siguiente esquema muestra el algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
