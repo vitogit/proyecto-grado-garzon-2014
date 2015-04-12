@@ -5,10 +5,26 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Alba(1997)]{Alba1997}
-T.~Alba.
-\newblock Propuesta para la implementación de algoritmos evolutivos.
+\bibitem[Alba y Cotta(1997)]{Alba1997}
+E.~Alba y C.~Cotta.
+\newblock On-line tutorial on evolutionary computation.
 \newblock \url{http://neo.lcc.uma.es/TutorialEA/semEC/main.html}, 1997.
+
+\bibitem[Alba y Tomassini(2002)]{Alba2002}
+E.~Alba y M.~Tomassini.
+\newblock Parallelism and evolutionary algorithms.
+\newblock \emph{Evolutionary Computation, IEEE Transactions on}, 6\penalty0
+  (5):\penalty0 443--462, 2002.
+
+\bibitem[Alba et~al.(2006)Alba, Almeida, Blesa, Cotta, Diaz, Dorta,
+  Gabarr{\'o}, Gonz{\'a}lez, Le{\'o}n, Moreno, Petit, Roda, Rojas, y
+  Xhafa]{Mallba}
+E.~Alba, F.~Almeida, M.~Blesa, C.~Cotta, M.~Diaz, I.~Dorta, J.~Gabarr{\'o},
+  J.~Gonz{\'a}lez, C.~Le{\'o}n, L.~Moreno, J.~Petit, J.~Roda, A.~Rojas, y
+  F.~Xhafa.
+\newblock {{MALLBA}: A library of skeletons for combinatorial optimisation}.
+\newblock \emph{Parallel Computing}, 32\penalty0 (5-6):\penalty0 415--440,
+  2006.
 
 \bibitem[Autoanuario(2014)]{Autoanuario2014}
 Autoanuario.
@@ -17,69 +33,52 @@ Autoanuario.
   2014.
 \newblock Disponible online, consultado noviembre 2014.
 
-\bibitem[BBVAResearch(2013)]{BBVA2013}
-BBVAResearch.
+\bibitem[{BBVA Research}(2013)]{BBVA2013}
+{BBVA Research}.
 \newblock Uruguay situación automotriz.
 \newblock
   \url{https://www.bbvaresearch.com/wp-content/uploads/2014/05/1303_SitAutomotrizUruguay_2013.pdf},
   2013.
 \newblock Disponible online, consultado noviembre 2014.
 
-\bibitem[CEPAL(2003)]{Cepal2003}
-CEPAL.
-\newblock Congestión de tránsito, el problema y cómo enfrentarlo.
-\newblock \url{http://www.cepal.org/publicaciones/xml/9/13059/cue-87.pdf},
-  2003.
-\newblock Disponible online, consultado noviembre 2014.
-
-\bibitem[CORSIM()]{CORSIM}
-CORSIM.
-\newblock Corsim.
-\newblock
-  \url{http://www-mctrans.ce.ufl.edu/featured/TSIS/Version5/corsim.htm}.
-\newblock Disponible online, consultado agosto 2014.
-
-\bibitem[{CTRE}(2002)]{ConteoTrafico}
-{CTRE}.
-\newblock Handbook of simplified practice for traffic studies : Traffic volume
-  counts.
-\newblock
-  \url{http://www.ctre.iastate.edu/pubs/traffichandbook/3trafficcounts.pdf},
-  November 2002.
-\newblock Disponible online, consultado noviembre 2014.
+\bibitem[Bull(2003)]{Cepal2003}
+A.~Bull.
+\newblock \emph{Congesti{\'o}n de tr{\'a}nsito: el problema y c{\'o}mo
+  enfrentarlo}.
+\newblock Number~87. United Nations Publications, 2003.
 
 \bibitem[Deb(2001)]{Deb2001}
 K.~Deb.
-\newblock Multiobjective optimization using evolutionary algorithms.
-\newblock 2001.
+\newblock \emph{{Multi-objective optimization using evolutionary algorithms}},
+  volume~16.
+\newblock John Wiley \& Sons, 2001.
 
-\bibitem[DiFebbraro et~al.(2002)DiFebbraro, Giglio, y Sacco]{DiFebbraro2002}
-DiFebbraro, Giglio, y Sacco.
+\bibitem[Di~Febbraro et~al.(2002)Di~Febbraro, Giglio, y Sacco]{DiFebbraro2002}
+A.~Di~Febbraro, D.~Giglio, y N.~Sacco.
 \newblock On applying petri nets to determine optimal offsets for coordinated
   traffic light timings.
-\newblock \emph{Proc. IEEE 5th Int. Conf. Intell. Transportation Syst.}, pages
-  773--778, 2002.
+\newblock In \emph{Intelligent Transportation Systems, 2002. Proceedings. The
+  IEEE 5th International Conference on}, pages 773--778. IEEE, 2002.
 
-\bibitem[E.~Alba(2002)]{Alba2002}
-M.~T. E.~Alba.
-\newblock Parallelism and evolutionary algorithms.
-\newblock \emph{IEEE Transactions on Evolutionary Computation, IEEE Press,
-  6(5):443-462}, 2002.
+\bibitem[Eigen(1973)]{Ingo1971}
+M.~Eigen.
+\newblock \emph{Ingo Rechenberg Evolutionsstrategie Optimierung technischer
+  Systeme nach Prinzipien der biologishen Evolution}.
+\newblock mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag,
+  Struttgart-Bad Cannstatt, 1973.
 
-\bibitem[ElPais(2013)]{olivera2013}
-ElPais.
-\newblock Garzón: Olivera admitió errores.
-\newblock
-  \url{http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html},
-  2013.
-\newblock Disponible online, consultado febrero 2015.
-
-\bibitem[ElPais(2015)]{olivera2015}
-ElPais.
+\bibitem[{El Pais}(2015)]{olivera2015}
+{El Pais}.
 \newblock Ana olivera: "no hay justificación, nos equivocamos con garzón".
 \newblock
   \url{http://www.elpais.com.uy/informacion/ana-olivera-no-justificacion-corredor.html},
   2015.
+\newblock Disponible online, consultado febrero 2015.
+
+\bibitem[{El País}(2013)]{olivera2013}
+{El País}.
+\newblock {\enquote{Garzón: Olivera admitió errores}}.
+\newblock El Pais, 30 Julio 2013.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[Eshelman(1991)]{CHC}
@@ -93,31 +92,23 @@ L.~Eshelman.
 l.~R. Eugenio~Bañobre.
 \newblock Los brt en corredores segregados como sistema óptimo de transporte
   urbano.
-\newblock \url{http://dialnet.unirioja.es/servlet/articulo?codigo=3119987},
-  2009.
-\newblock Disponible online, consultado febrero 2015.
-
-\bibitem[G.~Kotusevski(2009)]{review_trafico}
-K.~H. G.~Kotusevski.
-\newblock A review of traffic simulation software.
-\newblock 2009.
-
-\bibitem[G.~Y.~Lim y Hong(2001)]{Lim2001}
-J.~J.~K. G.~Y.~Lim y Y.~S. Hong.
-\newblock The optimization of traffic signal light using artificial
-  intelligence.
-\newblock \emph{10th IEEE Int. Conf.Fuzzy Syst}, page 1279–1282, 2001.
-
-\bibitem[Galib(1999)]{Galib}
-Galib.
-\newblock Galib.
-\newblock \url{http://lancet.mit.edu/ga/}, 1999.
-\newblock Disponible online, consultado marzo 2015.
+\newblock In \emph{Administrando en entornos inciertos = managing in uncertain
+  environment}, 2009.
 
 \bibitem[Goldberg(1989)]{Goldberg1989}
-D.~Goldberg.
-\newblock Genetic algorithms in search, optimization and machine learning.
-\newblock 1989.
+D.~E. Goldberg.
+\newblock \emph{{Genetic Algorithms in Search, Optimization, and Machine
+  Learning}}.
+\newblock Addison-Wesley Professional, 1 edition, Jan. 1989.
+\newblock ISBN 0201157675.
+\newblock URL
+  \url{http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20\&path=ASIN/0201157675}.
+
+\bibitem[Halati et~al.(1997)Halati, Lieu, y Walker]{CORSIM}
+A.~Halati, H.~Lieu, y S.~Walker.
+\newblock Corsim-corridor traffic simulation model.
+\newblock In \emph{Traffic congestion and traffic safety in the 21st century:
+  Challenges, innovations, and opportunities}, 1997.
 
 \bibitem[IMM()]{IMM}
 IMM.
@@ -149,6 +140,12 @@ INE.
   Junio 2007.
 \newblock Disponible online, consultado febrero 2015.
 
+\bibitem[Jacob(2002)]{Penner2002}
+J.~P. R. H.~C. Jacob.
+\newblock Swarm-based traffic simulation with evolutionary traffic light
+  adaptation.
+\newblock 2002.
+
 \bibitem[JMetal(2015)]{Jmetal}
 JMetal.
 \newblock Jmetal.
@@ -160,24 +157,42 @@ JMetal.
 \newblock Josm (java openstreetmap editor).
 \newblock \url{https://josm.openstreetmap.de/}.
 
-\bibitem[Koza(1992)]{Koza1992}
-J.~Koza.
-\newblock Genetic programming: On the programming of computers by means of
-  natural selection.
-\newblock 1992.
+\bibitem[Kotushevski y Hawick(2009)]{review_trafico}
+G.~Kotushevski y K.~A. Hawick.
+\newblock A review of traffic simulation software.
+\newblock Technical Report CSTN-095, Computer Science, Massey University,
+  Albany, North Shore 102-904, Auckland, New Zealand, 2009.
+\newblock URL \url{http://www.massey.ac.nz/~kahawick/cstn/095/cstn-095.pdf}.
 
-\bibitem[López et~al.(1999)López, Hernandez, Hernandez, y Garcia]{Lopez1999}
-S.~López, P.~Hernandez, A.~Hernandez, y M.~Garcia.
+\bibitem[Koza(1992)]{Koza1992}
+J.~R. Koza.
+\newblock \emph{Genetic Programming: On the Programming of Computers by Means
+  of Natural Selection (Complex Adaptive Systems)}.
+\newblock A Bradford Book, 1 edition, 12 1992.
+\newblock ISBN 9780262111706.
+
+\bibitem[Krajzewicz et~al.(2002)Krajzewicz, Hertkorn, R{\"o}ssel, y
+  Wagner]{SUMO}
+D.~Krajzewicz, G.~Hertkorn, C.~R{\"o}ssel, y P.~Wagner.
+\newblock Sumo (simulation of urban mobility).
+\newblock In \emph{Proc. of the 4th middle east symposium on simulation and
+  modelling}, pages 183--187, 2002.
+
+\bibitem[Lim et~al.(2001)Lim, Kang, y Hong]{Lim2001}
+G.~Lim, J.~Kang, y Y.~Hong.
+\newblock The optimization of traffic signal light using artificial
+  intelligence.
+\newblock In \emph{Fuzzy Systems, 2001. The 10th IEEE International Conference
+  on}, volume~3, pages 1279--1282. IEEE, 2001.
+
+\bibitem[López et~al.(1999)López, Hernández, Hernández, y
+  García]{Lopez1999}
+S.~López, P.~Hernández, A.~Hernández, y M.~García.
 \newblock Artificial neural networks as useful tools for the optimization of
   the relative offset between two consecutive sets of traffic lights.
-\newblock \emph{Foundations and Tools for Neural Modeling}, page 795–804,
-  1999.
-
-\bibitem[Mallba()]{Mallba}
-Mallba.
-\newblock Mallba library.
-\newblock \url{http://neo.lcc.uma.es/mallba/easy-mallba/index.html}.
-\newblock Disponible online, consultado julio 2014.
+\newblock In J.~Mira y J.~V. Sánchez-Andrés, editors, \emph{IWANN (2)},
+  volume 1607 of \emph{Lecture Notes in Computer Science}, pages 795--804.
+  Springer, 1999.
 
 \bibitem[Malva()]{Malva}
 Malva.
@@ -185,10 +200,12 @@ Malva.
 \newblock \url{http://themalvaproject.github.io/}.
 \newblock Disponible online, consultado julio 2014.
 
-\bibitem[Mitchell(1996)]{Mitchell1996}
+\bibitem[Mitchell(1998)]{Mitchell1996}
 M.~Mitchell.
-\newblock An introduction to genetic algorithms.
-\newblock 1996.
+\newblock \emph{An Introduction to Genetic Algorithms (Complex Adaptive
+  Systems)}.
+\newblock A Bradford Book, reprint edition, 2 1998.
+\newblock ISBN 9780262631853.
 
 \bibitem[Montana(1995)]{Montana1995}
 D.~J. Montana.
@@ -199,7 +216,8 @@ D.~J. Montana.
 \bibitem[Montana y Czerwinski(1996)]{Montana1996}
 D.~J. Montana y S.~Czerwinski.
 \newblock Evolving control laws for a network of traffic signals.
-\newblock 1996.
+\newblock In \emph{Proceedings of the First Annual Conference on Genetic
+  Programming}, pages 333--338. MIT Press, 1996.
 
 \bibitem[{Open Beagle}(2012)]{OpenBeagle}
 {Open Beagle}.
@@ -223,28 +241,40 @@ Paradiseo.
 \newblock Paradiseo.
 \newblock \url{http://paradiseo.gforge.inria.fr/}, 2010.
 
-\bibitem[Penner et~al.(2002)Penner, Hoar, y Jacob]{Penner2002}
-J.~Penner, R.~Hoar, y C.~Jacob.
-\newblock Swarm-based traffic simulation with evolutionary traffic light
-  adaptation.
-\newblock 2002.
-
 \bibitem[Rathi(1990)]{TRAF-NETSIM}
 A.~K. Rathi.
 \newblock Urban network traffic simulation:traf-netsim program.
 \newblock \emph{Journal of Transportation Engineering}, 116\penalty0
   (6):\penalty0 734--743, November-December 1990.
 
-\bibitem[Rechenberg(1971)]{Ingo1971}
-I.~Rechenberg.
-\newblock Evolutionsstrategie - optimierung technischer systeme nach prinzipien
-  der biologischen evolution.
-\newblock 1971.
-
 \bibitem[Rouphail et~al.(2000)Rouphail, Park, y Sacks]{Rouphail2000}
 N.~M. Rouphail, B.~B. Park, y J.~Sacks.
 \newblock Direct signal timing optimization: Strategy development and results.
-\newblock 2000.
+\newblock In \emph{In XI Pan American Conference in Traffic and Transportation
+  Engineering}. Citeseer, 2000.
+
+\bibitem[S{\'a}nchez et~al.(2008)S{\'a}nchez, Gal{\'a}n, y Rubio]{Sanchez2008}
+J.~S{\'a}nchez, M.~Gal{\'a}n, y E.~Rubio.
+\newblock Applying a traffic lights evolutionary optimization technique to a
+  real case: {“Las Ramblas” area in Santa Cruz de Tenerife}.
+\newblock \emph{Evolutionary Computation, IEEE Transactions on}, 12\penalty0
+  (1):\penalty0 25--40, 2008.
+
+\bibitem[Sanchez et~al.(2004)Sanchez, Galan, y Rubio]{Sanchez2004}
+J.~J. Sanchez, M.~Galan, y E.~Rubio.
+\newblock Genetic algorithms and cellular automata: a new architecture for
+  traffic light cycles optimization.
+\newblock In \emph{Evolutionary Computation, 2004. CEC2004. Congress on},
+  volume~2, pages 1668--1674. IEEE, 2004.
+
+\bibitem[S{\'a}nchez-Medina et~al.(2010)S{\'a}nchez-Medina, Gal{\'a}n-Moreno, y
+  Rubio-Royo]{Sanchez2010}
+J.~J. S{\'a}nchez-Medina, M.~J. Gal{\'a}n-Moreno, y E.~Rubio-Royo.
+\newblock Traffic signal optimization in {“La Almozara” district in
+  Saragossa} under congestion conditions, using genetic algorithms, traffic
+  microsimulation, and cluster computing.
+\newblock \emph{Intelligent Transportation Systems, IEEE Transactions on},
+  11\penalty0 (1):\penalty0 132--141, 2010.
 
 \bibitem[{SIG IMM}()]{sigMontevideo}
 {SIG IMM}.
@@ -252,29 +282,15 @@ N.~M. Rouphail, B.~B. Park, y J.~Sacks.
 \newblock \url{http://sig.montevideo.gub.uy}.
 \newblock Disponible online, consultado agosto 2014.
 
-\bibitem[Sánchez et~al.(2004)Sánchez, Galán, y Rubio]{Sanchez2004}
-J.~Sánchez, M.~Galán, y E.~Rubio.
-\newblock Genetic algorithms and cellular automata: A new architecture for
-  traffic light cycles optimization.
-\newblock 2004.
-
-\bibitem[Sánchez et~al.(2008)Sánchez, Galán, y Rubio]{Sanchez2008}
-J.~Sánchez, M.~Galán, y E.~Rubio.
-\newblock Applying a traffic lights evolutionary optimization technique to a
-  real case: {“Las Ramblas” Area in Santa Cruz de Tenerife}.
-\newblock 2008.
-
-\bibitem[Sánchez et~al.(2010)Sánchez, Galán, y Rubio]{Sanchez2010}
-J.~Sánchez, M.~Galán, y E.~Rubio.
-\newblock Traffic signal optimization in {“La Almozara” District in
-  Saragossa} under congestion conditions, using genetic algorithms, traffic
-  microsimulation, and cluster computing.
-\newblock 2010.
+\bibitem[Smith y McIntyre(2002)]{ConteoTrafico}
+D.~Smith y J.~McIntyre.
+\newblock Handbook of simplified practice for traffic studies.
+\newblock Technical report, 2002.
 
 \bibitem[Stolfi(2012)]{Stolfi2012}
 D.~H. Stolfi.
 \newblock Optimización del tráfico rodado en ciudades inteligentes.
-\newblock 2012.
+\newblock Master's thesis, Universidad de Málaga, 2012.
 
 \bibitem[Subrayado(2013)]{Subrayado2013}
 Subrayado.
@@ -285,22 +301,18 @@ Subrayado.
   2013.
 \newblock Disponible online, consultado noviembre 2014.
 
-\bibitem[SUMO()]{SUMO}
-SUMO.
-\newblock Simulation of urban mobility.
-\newblock \url{http://sumo.dlr.de/wiki/Main_Page}.
-\newblock Disponible online, consultado agosto 2014.
-
 \bibitem[{Sumo Features}(2014)]{sumo2014}
 {Sumo Features}.
 \newblock {Sumo Features}.
 \newblock \url{http://sumo.dlr.de/daily/userdoc/Sumo_at_a_Glance.html}, 2014.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
-K.~T.~K. Teo, W.~Y. Kow, y Y.~K. Chin.
+K.~T.~K. Teo, W.~Y. Kow, y Y.~Chin.
 \newblock Optimization of traffic flow within an urban traffic light
   intersection with genetic algorithm.
-\newblock 2010.
+\newblock In \emph{Computational Intelligence, Modelling and Simulation
+  (CIMSiM), 2010 Second International Conference on}, pages 172--177. IEEE,
+  2010.
 
 \bibitem[{The Institute for Transportation and Development Policy
   (ITDP)}(2014)]{brt_standar}
@@ -310,15 +322,22 @@ K.~T.~K. Teo, W.~Y. Kow, y Y.~K. Chin.
   \url{https://www.itdp.org/wp-content/uploads/2014/07/BRT-Standard-2014.pdf},
   2014.
 
-\bibitem[TRANSYT-7F()]{TRANSYT-7F}
-TRANSYT-7F.
-\newblock Transyt-7f.
-\newblock \url{http://mctrans.ce.ufl.edu/mct/?page_id=943}.
-\newblock Disponible online, consultado agosto 2014.
-
-\bibitem[Vogel et~al.(2000)Vogel, Goerick, y von Seelen]{Vogel2000}
-A.~Vogel, C.~Goerick, y W.~von Seelen.
+\bibitem[Vogel et~al.(2000)Vogel, Goerick, y Von~Seelen]{Vogel2000}
+A.~Vogel, C.~Goerick, y W.~Von~Seelen.
 \newblock Evolutionary algorithms for optimizing traffic signal operation.
-\newblock 2000.
+\newblock In \emph{Proceedings of the European symposium on intelligent
+  techniques (ESIT)}, pages 83--91. Citeseer, 2000.
+
+\bibitem[Wall(1996)]{Galib}
+M.~Wall.
+\newblock Galib: A c++ library of genetic algorithm components.
+\newblock \emph{Mechanical Engineering Department, Massachusetts Institute of
+  Technology}, 87:\penalty0 54, 1996.
+
+\bibitem[Wallace et~al.(1984)Wallace, Courage, Reaves, Schoene, y
+  Euler]{TRANSYT-7F}
+C.~E. Wallace, K.~Courage, D.~Reaves, G.~Schoene, y G.~Euler.
+\newblock Transyt-7f user's manual.
+\newblock Technical report, 1984.
 
 \end{thebibliography}
