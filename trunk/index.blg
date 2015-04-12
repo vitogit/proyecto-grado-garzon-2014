@@ -2,49 +2,14 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: index.aux
 A level-1 auxiliary file: 0_titulo.aux
 The style file: abbrvnat.bst
 Database file #1: index.bib
-Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
-while executing---line 1347 of file abbrvnat.bst
-Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
-while executing---line 1347 of file abbrvnat.bst
-Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
-while executing---line 1347 of file abbrvnat.bst
-Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
-while executing---line 1347 of file abbrvnat.bst
-Warning--empty year in CORSIM
-Warning--empty journal in Deb2001
-Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
-while executing---line 1429 of file abbrvnat.bst
-Name 2 in "DiFebbraro and Giglio, and Sacco" has a comma at the end for entry DiFebbraro2002
-while executing---line 1429 of file abbrvnat.bst
-Warning--empty journal in review_trafico
-Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
-while executing---line 1429 of file abbrvnat.bst
-Name 1 in "G. Y. Lim, J. J. Kang, and Y. S. Hong" has a comma at the end for entry Lim2001
-while executing---line 1429 of file abbrvnat.bst
-Warning--empty journal in Goldberg1989
+Warning--there's a number but no series in Cepal2003
 Warning--empty year in IMM
+Warning--empty journal in Penner2002
 Warning--empty year in JOSM
-Warning--empty journal in Koza1992
-Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
-while executing---line 1429 of file abbrvnat.bst
-Name 3 in "S. López and P. Hernandez and A. Hernandez, and M. Garcia" has a comma at the end for entry Lopez1999
-while executing---line 1429 of file abbrvnat.bst
-Warning--empty year in Mallba
 Warning--empty year in Malva
-Warning--empty journal in Mitchell1996
-Warning--empty journal in Montana1996
 Warning--empty year in OSM
 Warning--empty year in TrafficModeler
-Warning--empty journal in Penner2002
-Warning--empty journal in Ingo1971
-Warning--empty journal in Rouphail2000
 Warning--empty year in sigMontevideo
-Warning--empty journal in Sanchez2004
-Warning--empty journal in Sanchez2008
-Warning--empty journal in Sanchez2010
-Warning--empty journal in Stolfi2012
-Warning--empty year in SUMO
-Warning--empty journal in Teo2010
-Warning--empty year in TRANSYT-7F
-Warning--empty journal in Vogel2000
-(There were 10 error messages)
+Warning--empty institution in ConteoTrafico
+Warning--empty institution in TRANSYT-7F
+(There were 10 warnings)

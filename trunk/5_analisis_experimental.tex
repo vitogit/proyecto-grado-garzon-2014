@@ -12,7 +12,7 @@ Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 proce
 
 
 \section{Ajuste paramétrico}
-En vez de utilizar valores fijos para los parámetros, se realiza un análisis para determinar el mejor valor para cada parámetro usado en el algoritmo evolutivo propuesto. Los parámetros que se ajustaran serán los siguientes: el tiempo de simulación, el criterio de parada, el tamaño de la población y la probabilidad de mutación y cruzamiento.
+En vez de utilizar valores fijos para los parámetros, se realiza un análisis para determinar el mejor valor para cada parámetro usado en el algoritmo evolutivo propuesto. Esto tiene como objetivo obtener una mejor calidad de resultados. Los parámetros que se ajustan son el \emph{tiempo de simulación} que se refiere al parámetro del simulador SUMO para determinar la duración de la simulación. Luego el parámetro de \emph{criterio de parada} indica el método usado para detener el algoritmo y el \emph{tamaño de la población} que representa la cantidad de individuos que tiene la población utilizada en el algoritmo evolutivo. Finalmente se ajustan los parámetros de la \emph{probabilidad de mutación y la probabilidad de cruzamiento}. Todos estos parámetros serán tratados en detalle en las siguientes subsecciones.
 
 Se generan tres escenarios de tráfico diferentes, que serán utilizados en el ajuste de cada parámetro. En este caso no se utilizan datos recabados de la realidad, como el tráfico vehicular o la frecuencia de los ómnibus, para no sesgar el algoritmo a un caso en particular.
 A continuación se presenta la cantidad de vehículos para cada uno de los tres escenarios de tráfico propuestos:
@@ -26,11 +26,7 @@ A continuación se presenta la cantidad de vehículos para cada uno de los tres 
 
 En el ajuste paramétrico primero se define el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los mejores valores para ajustar el algoritmo.
 
-La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que duró la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
-
-
-
-
+La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 \subsection{Pesos de la función de fitness}
 
@@ -157,7 +153,7 @@ En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  l
 
 
 \section{Descripción de escenarios}
-En esta sección se presentan los escenarios que serán evaluados, el primero es el escenario base que representa la realidad actual y el segundo un escenario alternativo que contiene modificaciones con el objetivo de mejorar la realidad.
+En esta sección se presentan los escenarios que serán evaluados, el primero es el escenario base que representa la realidad actual y el segundo un escenario alternativo que contiene modificaciones con el objetivo de obtener mejores métricas que el escenario base.
 
 \subsection{Caso base o realidad actual del corredor}
 El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. El objetivo es realizar una simulación para recabar mas información (velocidad promedio de vehículos y ómnibus) que sirva para comparar con los resultados del algoritmo utilizando los datos obtenidos in-situ (configuración de semáforos, cantidad de vehículos, etc). 

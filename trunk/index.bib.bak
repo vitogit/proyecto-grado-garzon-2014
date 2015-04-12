@@ -2,7 +2,7 @@
 % Encoding: UTF8
 
 
-@Article{Alba2006,
+@Article{Mallba,
   Title                    = {{{MALLBA}: A library of skeletons for combinatorial optimisation}},
   Author                   = {Alba, E. and Almeida, F. and Blesa, M. and Cotta, C. and Diaz, M. and Dorta, I. and Gabarr{\'o}, J. and Gonz{\'a}lez, J. and Le{\'o}n, C. and Moreno, L. and Petit, J. and Roda, J. and Rojas, A. and Xhafa, F.},
   Journal                  = {Parallel Computing},
@@ -11,18 +11,30 @@
   Pages                    = {415--440},
   Volume                   = {32},
 
-  Owner                    = {santiago},
   Timestamp                = {2012.11.26}
 }
 
 @Misc{Alba1997,
-  Title                    = {Propuesta para la implementación de algoritmos evolutivos.},
+  Title                    = {On-Line Tutorial on Evolutionary Computation},
 
-  Author                   = {Alba, Troya},
+  Author                   = {Alba, Enrique and Cotta, Carlos},
   HowPublished             = {\url{http://neo.lcc.uma.es/TutorialEA/semEC/main.html}},
   Year                     = {1997},
 
   Timestamp                = {2015.03.24}
+}
+
+@Article{Alba2002,
+  Title                    = {Parallelism and evolutionary algorithms},
+  Author                   = {Alba, Enrique and Tomassini, Marco},
+  Journal                  = {Evolutionary Computation, IEEE Transactions on},
+  Year                     = {2002},
+  Number                   = {5},
+  Pages                    = {443--462},
+  Volume                   = {6},
+
+  Publisher                = {IEEE},
+  Timestamp                = {2015.04.11}
 }
 
 @Misc{Autoanuario2014,
@@ -39,7 +51,7 @@
 @Misc{BBVA2013,
   Title                    = {Uruguay Situación Automotriz},
 
-  Author                   = {BBVAResearch},
+  Author                   = {{BBVA Research}},
   HowPublished             = {\url{https://www.bbvaresearch.com/wp-content/uploads/2014/05/1303_SitAutomotrizUruguay_2013.pdf}},
   Note                     = {Disponible online, consultado noviembre 2014},
   Year                     = {2013},
@@ -47,80 +59,46 @@
   Timestamp                = {2014.11.25}
 }
 
-@Misc{Cepal2003,
-  Title                    = {Congestión de Tránsito, el problema y cómo enfrentarlo},
-
-  Author                   = {CEPAL},
-  HowPublished             = {\url{http://www.cepal.org/publicaciones/xml/9/13059/cue-87.pdf}},
-  Note                     = {Disponible online, consultado noviembre 2014},
+@Book{Cepal2003,
+  Title                    = {Congesti{\'o}n de tr{\'a}nsito: el problema y c{\'o}mo enfrentarlo},
+  Author                   = {Bull, Alberto},
+  Publisher                = {United Nations Publications},
   Year                     = {2003},
-
-  Timestamp                = {2014.11.25}
+  Number                   = {87}
 }
 
-@Misc{CHC,
-  Title                    = {CHC Method},
-
-  Author                   = {CHC},
-  HowPublished             = {\url{http://neo.lcc.uma.es/mallba/easy-mallba/html/algorithms.html\#chc}},
-  Note                     = {Disponible online, consultado noviembre 2014},
-
-  Timestamp                = {2014.12.27}
-}
-
-@Misc{CORSIM,
-  Title                    = {CORSIM},
-
-  Author                   = {CORSIM},
-  HowPublished             = {\url{http://www-mctrans.ce.ufl.edu/featured/TSIS/Version5/corsim.htm}},
-  Note                     = {Disponible online, consultado agosto 2014},
-
-  Timestamp                = {2014.12.31}
-}
-
-@Misc{ConteoTrafico,
-  Title                    = {Handbook of Simplified Practice for Traffic Studies : Traffic volume counts},
-
-  Author                   = {{CTRE}},
-  HowPublished             = {\url{http://www.ctre.iastate.edu/pubs/traffichandbook/3trafficcounts.pdf}},
-  Month                    = {November},
-  Note                     = {Disponible online, consultado noviembre 2014},
-  Year                     = {2002},
-
-  Timestamp                = {2015.02.07}
-}
-
-@Article{Deb2001,
-  Title                    = {Multiobjective optimization using evolutionary algorithms},
+@Book{Deb2001,
+  Title                    = {{Multi-objective optimization using evolutionary algorithms}},
   Author                   = {Kalyanmoy Deb},
+  Publisher                = {John Wiley \& Sons},
   Year                     = {2001},
+  Volume                   = {16},
 
   Timestamp                = {2015.03.13}
 }
 
-@Article{DiFebbraro2002,
+@InProceedings{DiFebbraro2002,
   Title                    = {On applying Petri nets to determine optimal offsets for coordinated traffic light timings},
-  Author                   = {DiFebbraro and Giglio, and Sacco},
-  Journal                  = {Proc. IEEE 5th Int. Conf. Intell. Transportation Syst.},
+  Author                   = {Di Febbraro, A and Giglio, D and Sacco, N},
+  Booktitle                = {Intelligent Transportation Systems, 2002. Proceedings. The IEEE 5th International Conference on},
   Year                     = {2002},
-  Pages                    = {773-778},
+  Organization             = {IEEE},
+  Pages                    = {773--778},
 
-  Timestamp                = {2014.11.27}
+  Timestamp                = {2015.04.11}
 }
 
-@Article{Alba2002,
-  Title                    = {Parallelism and Evolutionary Algorithms},
-  Author                   = {E. Alba, M. Tomassini},
-  Journal                  = {IEEE Transactions on Evolutionary Computation, IEEE Press, 6(5):443-462},
-  Year                     = {2002},
-
-  Timestamp                = {2015.03.13}
+@Book{Ingo1971,
+  Title                    = {Ingo Rechenberg Evolutionsstrategie Optimierung technischer Systeme nach Prinzipien der biologishen Evolution},
+  Author                   = {Eigen, Manfred},
+  Publisher                = {mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag, Struttgart-Bad Cannstatt},
+  Year                     = {1973}
 }
 
 @Misc{Olivera2015,
   Title                    = {Ana Olivera: "No hay justificación, nos equivocamos con Garzón"},
 
-  Author                   = {ElPais},
+  Author                   = {{El Pais}},
   HowPublished             = {\url{http://www.elpais.com.uy/informacion/ana-olivera-no-justificacion-corredor.html}},
   Note                     = {Disponible online, consultado febrero 2015},
   Year                     = {2015},
@@ -129,67 +107,64 @@
 }
 
 @Misc{Olivera2013,
-  Title                    = {Garzón: Olivera admitió errores},
+  Title                    = {{\enquote{Garzón: Olivera admitió errores}}},
 
-  Author                   = {ElPais},
-  HowPublished             = {\url{http://www.elpais.com.uy/informacion/garzon-olivera-admitio-errores.html}},
+  Author                   = {{El País}},
+  HowPublished             = {El Pais},
+  Month                    = {30 Julio},
   Note                     = {Disponible online, consultado febrero 2015},
   Year                     = {2013},
 
   Timestamp                = {2014.12.23}
 }
 
-@Misc{BRT_Dial,
-  Title                    = {Los BRT en corredores segregados como sistema óptimo de transporte urbano},
+@InProceedings{CHC,
+  Title                    = {{The {CHC} adaptive search algorithm: how to have safe search when engaging in nontraditional genetic recombination}},
+  Author                   = {Eshelman, L.},
+  Booktitle                = {{Foundations of Genetics Algorithms}},
+  Year                     = {1991},
+  Pages                    = {265--283},
+  Publisher                = {Morgan Kaufmann Publishers, Inc.},
 
+  Timestamp                = {2012.11.26}
+}
+
+@InProceedings{BRT_Dial,
+  Title                    = {Los BRT en corredores segregados como sistema óptimo de transporte urbano},
   Author                   = {Eugenio Bañobre , Álvaro Romero},
-  HowPublished             = {\url{http://dialnet.unirioja.es/servlet/articulo?codigo=3119987}},
-  Note                     = {Disponible online, consultado febrero 2015},
+  Booktitle                = {Administrando en entornos inciertos = managing in uncertain environment},
   Year                     = {2009},
 
+  HowPublished             = {\url{http://dialnet.unirioja.es/servlet/articulo?codigo=3119987}},
   Timestamp                = {2015.03.12}
 }
 
-@Article{review_trafico,
-  Title                    = {A Review of Traffic Simulation Software},
-  Author                   = {G. Kotusevski, K.A. Hawick},
-  Year                     = {2009},
-
-  Timestamp                = {2015.03.19}
-}
-
-@Article{Lim2001,
-  Title                    = {The optimization of traffic signal light using artificial intelligence},
-  Author                   = {G. Y. Lim, J. J. Kang, and Y. S. Hong},
-  Journal                  = {10th IEEE Int. Conf.Fuzzy Syst},
-  Year                     = {2001},
-  Pages                    = {1279–1282},
-
-  Timestamp                = {2014.11.27}
-}
-
-@Misc{Galib,
-  Title                    = {Galib},
-
-  Author                   = {Galib},
-  HowPublished             = {\url{http://lancet.mit.edu/ga/}},
-  Note                     = {Disponible online, consultado marzo 2015},
-  Year                     = {1999},
-
-  Timestamp                = {2015.03.23}
-}
-
-@Article{Goldberg1989,
-  Title                    = {Genetic Algorithms in Search, Optimization and Machine Learning},
-  Author                   = {David Goldberg},
+@Book{Goldberg1989,
+  Title                    = {{Genetic Algorithms in Search, Optimization, and Machine Learning}},
+  Author                   = {Goldberg, David E.},
+  Publisher                = {Addison-Wesley Professional},
   Year                     = {1989},
+  Edition                  = {1},
+  Month                    = jan,
+  Day                      = {11},
+  HowPublished             = {Hardcover},
+  ISBN                     = {0201157675},
+  Keywords                 = {algorithms, genetic, learning, machine, optimization, search},
+  Posted-at                = {2012-10-21 14:02:52},
+  Priority                 = {2},
+  Timestamp                = {2015.04.11},
+  Url                      = {http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20\&path=ASIN/0201157675}
+}
 
-  Timestamp                = {2015.03.13}
+@InProceedings{CORSIM,
+  Title                    = {CORSIM-corridor traffic simulation model},
+  Author                   = {Halati, Abolhassan and Lieu, Henry and Walker, Susan},
+  Booktitle                = {Traffic congestion and traffic safety in the 21st century: Challenges, innovations, and opportunities},
+  Year                     = {1997}
 }
 
 @Misc{IMM,
   Title                    = {Intendencia Municipal de Montevideo},
-
   Author                   = {IMM},
   HowPublished             = {\url{http://www.montevideo.gub.uy}},
   Note                     = {Disponible online, consultado febrero 2015},
@@ -199,92 +174,115 @@
 
 @Misc{PlanMovilidad,
   Title                    = {Plan de Movilidad Urbana},
-
   Author                   = {IMM},
   HowPublished             = {\url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf}},
   Month                    = {Febrero},
   Note                     = {Disponible online, consultado febrero 2015},
   Year                     = {2010},
-
   Timestamp                = {2014.12.27}
 }
 
 @Misc{INE2014,
   Title                    = {Transporte y comunicaciones},
-
   Author                   = {INE},
   HowPublished             = {\url{http://www.ine.gub.uy/biblioteca/uruguayencifras2014/Uruguay_en_cifras_2014_Cap_11.pdf}},
   Note                     = {Disponible online, consultado enero 2015},
   Year                     = {2014},
-
   Timestamp                = {2014.11.25}
 }
 
 @Misc{ITDP,
   Title                    = {Bus Rapid Transit Planning Guide},
-
   Author                   = {{Institute for Transportation \& Development Policy (ITDP)}},
   HowPublished             = {\url{http://www.nbrti.org/docs/pdf/ITDP BRT Planning Guide.pdf}},
   Month                    = {Junio},
   Note                     = {Disponible online, consultado febrero 2015},
   Year                     = {2007},
-
   Timestamp                = {2015.03.12}
+}
+
+@Article{Penner2002,
+  Title                    = {Swarm-based traffic simulation with evolutionary traffic light adaptation},
+  Author                   = {Jacob, Joanne Penner Ricardo Hoar Christian},
+  Year                     = {2002}
 }
 
 @Misc{Jmetal,
   Title                    = {JMetal},
-
   Author                   = {JMetal},
   HowPublished             = {\url{http://jmetal.sourceforge.net/}},
   Note                     = {Disponible online, consultado marzo 2015},
   Year                     = {2015},
-
   Timestamp                = {2015.03.23}
 }
 
 @Misc{JOSM,
   Title                    = {JOSM (Java OpenStreetMap Editor)},
-
   Author                   = {{JOSM (Java OpenStreetMap Editor)}},
   HowPublished             = {\url{https://josm.openstreetmap.de/}},
-
   Timestamp                = {2015.03.16}
 }
 
-@Article{Koza1992,
-  Title                    = {Genetic Programming: On the Programming of Computers by Means of Natural Selection},
-  Author                   = {J. Koza},
+@TechReport{review_trafico,
+  Title                    = {A Review of Traffic Simulation Software},
+  Author                   = {G. Kotushevski and K. A. Hawick},
+  Institution              = {Computer Science, Massey University},
+  Year                     = {2009},
+  Address                  = {Albany, North Shore 102-904, Auckland, New Zealand},
+  Number                   = {CSTN-095},
+  Keywords                 = {traffic simulation; vehicular traffic; software review; metrics; algorithm},
+  Timestamp                = {2009.09.06},
+  Url                      = {http://www.massey.ac.nz/~kahawick/cstn/095/cstn-095.pdf}
+}
+
+@Book{Koza1992,
+  Title                    = {Genetic Programming: On the Programming of Computers by Means of Natural Selection (Complex Adaptive Systems)},
+  Author                   = {John R. Koza},
+  Publisher                = {A Bradford Book},
   Year                     = {1992},
+  Edition                  = {1},
+  Month                    = {12},
 
-  Timestamp                = {2015.03.21}
+  ISBN                     = {9780262111706},
+  Timestamp                = {2015.04.11},
+  Totalpages               = {840}
 }
 
-@Article{Lopez1999,
-  Title                    = {Artificial
-neural networks as useful tools for the optimization of the relative
-offset between two consecutive sets of traffic lights},
-  Author                   = {S. López and P. Hernandez and A. Hernandez, and M. Garcia},
-  Journal                  = {Foundations and Tools for Neural Modeling},
+@InProceedings{SUMO,
+  Title                    = {Sumo (simulation of urban mobility)},
+  Author                   = {Krajzewicz, Daniel and Hertkorn, Georg and R{\"o}ssel, C and Wagner, P},
+  Booktitle                = {Proc. of the 4th middle east symposium on simulation and modelling},
+  Year                     = {2002},
+  Pages                    = {183--187}
+}
+
+@InProceedings{Lim2001,
+  Title                    = {The optimization of traffic signal light using artificial intelligence},
+  Author                   = {Lim, GiYoung and Kang, JeongJin and Hong, YouSik},
+  Booktitle                = {Fuzzy Systems, 2001. The 10th IEEE International Conference on},
+  Year                     = {2001},
+  Organization             = {IEEE},
+  Pages                    = {1279--1282},
+  Volume                   = {3},
+  Timestamp                = {2015.04.11}
+}
+
+@InProceedings{Lopez1999,
+  Title                    = {Artificial Neural Networks as Useful Tools for the Optimization of the Relative Offset between Two Consecutive Sets of Traffic Lights.},
+  Author                   = {López, Secundino and Hernández, Pedro and Hernández, Alejandro and García, Marco},
+  Booktitle                = {IWANN (2)},
   Year                     = {1999},
-  Pages                    = {795–804},
-
-  Timestamp                = {2014.11.27}
-}
-
-@Misc{Mallba,
-  Title                    = {Mallba Library},
-
-  Author                   = {Mallba},
-  HowPublished             = {\url{http://neo.lcc.uma.es/mallba/easy-mallba/index.html}},
-  Note                     = {Disponible online, consultado julio 2014},
-
-  Timestamp                = {2014.12.27}
+  Editor                   = {Mira, José and Sánchez-Andrés, Juan Vincente},
+  Pages                    = {795-804},
+  Publisher                = {Springer},
+  Series                   = {Lecture Notes in Computer Science},
+  Volume                   = {1607},
+  Date                     = {2009-09-26},
+  Timestamp                = {2009-09-29T11:36:24.000+0200}
 }
 
 @Misc{Malva,
   Title                    = {The Malva Project},
-
   Author                   = {Malva},
   HowPublished             = {\url{http://themalvaproject.github.io/}},
   Note                     = {Disponible online, consultado julio 2014},
@@ -302,12 +300,17 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.12.24}
 }
 
-@Article{Mitchell1996,
-  Title                    = {An Introduction to Genetic Algorithms},
+@Book{Mitchell1996,
+  Title                    = {An Introduction to Genetic Algorithms (Complex Adaptive Systems)},
   Author                   = {Melanie Mitchell},
-  Year                     = {1996},
+  Publisher                = {A Bradford Book},
+  Year                     = {1998},
+  Edition                  = {Reprint},
+  Month                    = {2},
 
-  Timestamp                = {2015.03.13}
+  ISBN                     = {9780262631853},
+  Timestamp                = {2015.04.11},
+  Totalpages               = {221}
 }
 
 @Article{Montana1995,
@@ -322,20 +325,20 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.12.31}
 }
 
-@Article{Montana1996,
-  Title                    = {Evolving Control Laws for a Network of Traffic Signals},
-  Author                   = {David J. Montana and Steven Czerwinski},
+@InProceedings{Montana1996,
+  Title                    = {Evolving control laws for a network of traffic signals},
+  Author                   = {Montana, David J and Czerwinski, Steven},
+  Booktitle                = {Proceedings of the First Annual Conference on Genetic Programming},
   Year                     = {1996},
-
-  Timestamp                = {2014.11.22}
+  Organization             = {MIT Press},
+  Pages                    = {333--338}
 }
 
-@Article{Nesmachnow2002,
-  Title                    = {Evolución en el diseño y clasificación de Algoritmos Genéticos Paralelos,},
-  Author                   = {Sergio Nesmachnow},
-  Year                     = {2002},
-
-  Timestamp                = {2014.11.27}
+@InProceedings{Nesmachnow2002,
+  Title                    = {Evoluci{\'o}n en el dise{\~n}o y la clasificaci{\'o}n de Algoritmos Gen{\'e}ticos Paralelos},
+  Author                   = {Nesmachnow, Sergio},
+  Booktitle                = {XXVIII Conferencia Latinoamericana de Inform{\'a}tica. Montevideo, Uruguay},
+  Year                     = {2002}
 }
 
 @Misc{Obs01,
@@ -398,14 +401,6 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2015.03.23}
 }
 
-@Article{Penner2002,
-  Title                    = {SWARM-BASED TRAFFIC SIMULATION WITH EVOLUTIONARY TRAFFIC LIGHT ADAPTATION},
-  Author                   = {Joanne Penner and Ricardo Hoar and Christian Jacob},
-  Year                     = {2002},
-
-  Timestamp                = {2014.11.22}
-}
-
 @Article{TRAF-NETSIM,
   Title                    = {Urban Network Traffic Simulation:TRAF-NETSIM Program},
   Author                   = {Ajay K. Rathi},
@@ -420,53 +415,54 @@ offset between two consecutive sets of traffic lights},
   Timestamp                = {2014.12.31}
 }
 
-@Article{Ingo1971,
-  Title                    = {Evolutionsstrategie - Optimierung technischer Systeme nach Prinzipien der biologischen Evolution},
-  Author                   = {Ingo Rechenberg},
-  Year                     = {1971},
-
-  Timestamp                = {2015.03.21}
-}
-
-@Article{Rouphail2000,
-  Title                    = {Direct Signal Timing Optimization: Strategy Development and Results},
-  Author                   = {Nagui M. Rouphail and Byungkyu “Brian” Park and Jerome Sacks},
+@InProceedings{Rouphail2000,
+  Title                    = {Direct signal timing optimization: Strategy development and results},
+  Author                   = {Rouphail, Nagui M and Park, Byungkyu Brian and Sacks, Jerome},
+  Booktitle                = {In XI Pan American Conference in Traffic and Transportation Engineering},
   Year                     = {2000},
-
-  Timestamp                = {2014.11.22}
+  Organization             = {Citeseer}
 }
 
 @Article{Sanchez2007,
-  Title                    = {Estudio de la Optimizacion del Trafico Rodado Mediante el Ajuste de los Ciclos de Semaforos por Algoritmos Geneticos en Dispositivos de Computacion Paralela Usando Modelizacion
-Discreta: Ejemplos de Aplicacion},
-  Author                   = {SÁNCHEZ},
+  Title                    = {Estudio de la optimizaci{\'o}n del tr{\'a}fico rodado mediante el ajuste de los ciclos de sem{\'a}foros por algoritmos gen{\'e}ticos en dispositivos de computaci{\'o}n paralela usando modelizaci{\'o}n discreta: ejemplos de aplicaci{\'o}n},
+  Author                   = {S{\'a}nchez Medina, Javier Jes{\'u}s},
   Year                     = {2007},
 
-  Timestamp                = {2014.11.22}
-}
-
-@Article{Sanchez2010,
-  Title                    = {Traffic Signal Optimization in {“La Almozara” District in Saragossa} Under Congestion Conditions, Using Genetic Algorithms, Traffic Microsimulation, and Cluster Computing},
-  Author                   = {Javier Sánchez and Manuel Galán and Enrique Rubio},
-  Year                     = {2010},
-
-  Timestamp                = {2014.11.22}
+  Publisher                = {ULPGC. Biblioteca Universitaria}
 }
 
 @Article{Sanchez2008,
-  Title                    = {Applying a Traffic Lights Evolutionary Optimization Technique to a Real Case: {“Las Ramblas” Area in Santa Cruz de Tenerife}},
-  Author                   = {Javier Sánchez and Manuel Galán and Enrique Rubio},
+  Title                    = {Applying a traffic lights evolutionary optimization technique to a real case: {“Las Ramblas” area in Santa Cruz de Tenerife}},
+  Author                   = {S{\'a}nchez, Javier and Gal{\'a}n, Manuel and Rubio, Enrique},
+  Journal                  = {Evolutionary Computation, IEEE Transactions on},
   Year                     = {2008},
+  Number                   = {1},
+  Pages                    = {25--40},
+  Volume                   = {12},
 
-  Timestamp                = {2014.11.22}
+  Publisher                = {IEEE}
 }
 
-@Article{Sanchez2004,
-  Title                    = {Genetic Algorithms and Cellular Automata: A New Architecture for Traffic Light Cycles Optimization},
-  Author                   = {Javier Sánchez and Manuel Galán and Enrique Rubio},
-  Year                     = {2004},
+@Article{Sanchez2010,
+  Title                    = {Traffic signal optimization in {“La Almozara” district in Saragossa} under congestion conditions, using genetic algorithms, traffic microsimulation, and cluster computing},
+  Author                   = {S{\'a}nchez-Medina, Javier J and Gal{\'a}n-Moreno, Manuel J and Rubio-Royo, Enrique},
+  Journal                  = {Intelligent Transportation Systems, IEEE Transactions on},
+  Year                     = {2010},
+  Number                   = {1},
+  Pages                    = {132--141},
+  Volume                   = {11},
 
-  Timestamp                = {2014.11.22}
+  Publisher                = {IEEE}
+}
+
+@InProceedings{Sanchez2004,
+  Title                    = {Genetic algorithms and cellular automata: a new architecture for traffic light cycles optimization},
+  Author                   = {Sanchez, Javier J and Galan, Manuel and Rubio, Enrique},
+  Booktitle                = {Evolutionary Computation, 2004. CEC2004. Congress on},
+  Year                     = {2004},
+  Organization             = {IEEE},
+  Pages                    = {1668--1674},
+  Volume                   = {2}
 }
 
 @Misc{SigMontevideo,
@@ -479,11 +475,17 @@ Discreta: Ejemplos de Aplicacion},
   Timestamp                = {2015.02.07}
 }
 
-@Article{Stolfi2012,
+@TechReport{ConteoTrafico,
+  Title                    = {Handbook of simplified practice for traffic studies},
+  Author                   = {Smith, Duane and McIntyre, Jeff},
+  Year                     = {2002}
+}
+
+@MastersThesis{Stolfi2012,
   Title                    = {Optimización del Tráfico Rodado en Ciudades Inteligentes},
   Author                   = {Daniel H. Stolfi},
+  School                   = {Universidad de Malaga},
   Year                     = {2012},
-
   Timestamp                = {2014.11.22}
 }
 
@@ -496,16 +498,6 @@ Discreta: Ejemplos de Aplicacion},
   Year                     = {2013},
 
   Timestamp                = {2014.11.26}
-}
-
-@Misc{SUMO,
-  Title                    = {Simulation of Urban MObility},
-
-  Author                   = {SUMO},
-  HowPublished             = {\url{http://sumo.dlr.de/wiki/Main_Page}},
-  Note                     = {Disponible online, consultado agosto 2014},
-
-  Timestamp                = {2014.12.23}
 }
 
 @Misc{sumo2014,
@@ -528,12 +520,13 @@ Discreta: Ejemplos de Aplicacion},
   Timestamp                = {2014.12.23}
 }
 
-@Article{Teo2010,
-  Title                    = {Optimization of Traffic Flow Within an Urban Traffic Light Intersection with Genetic Algorithm},
-  Author                   = {K. T. K. Teo and W. Y. Kow and Y. K. Chin},
+@InProceedings{Teo2010,
+  Title                    = {Optimization of traffic flow within an urban traffic light intersection with genetic algorithm},
+  Author                   = {Teo, Kenneth Tze Kin and Kow, Wei Yeang and Chin, YK},
+  Booktitle                = {Computational Intelligence, Modelling and Simulation (CIMSiM), 2010 Second International Conference on},
   Year                     = {2010},
-
-  Timestamp                = {2014.11.22}
+  Organization             = {IEEE},
+  Pages                    = {172--177}
 }
 
 @Misc{brt_standar,
@@ -546,30 +539,39 @@ Discreta: Ejemplos de Aplicacion},
   Timestamp                = {2015.03.16}
 }
 
-@Misc{TRANSYT-7F,
-  Title                    = {TRANSYT-7F},
-
-  Author                   = {TRANSYT-7F},
-  HowPublished             = {\url{http://mctrans.ce.ufl.edu/mct/?page_id=943}},
-  Note                     = {Disponible online, consultado agosto 2014},
-
-  Timestamp                = {2014.12.31}
+@InProceedings{Vogel2000,
+  Title                    = {Evolutionary algorithms for optimizing traffic signal operation},
+  Author                   = {Vogel, Andrea and Goerick, Christian and Von Seelen, Werner},
+  Booktitle                = {Proceedings of the European symposium on intelligent techniques (ESIT)},
+  Year                     = {2000},
+  Organization             = {Citeseer},
+  Pages                    = {83--91}
 }
 
-@Article{Vogel2000,
-  Title                    = {Evolutionary Algorithms for Optimizing Traffic Signal Operation},
-  Author                   = {Andrea Vogel and Christian Goerick and Werner von Seelen},
-  Year                     = {2000},
+@Article{Galib,
+  Title                    = {GAlib: A C++ library of genetic algorithm components},
+  Author                   = {Wall, Matthew},
+  Journal                  = {Mechanical Engineering Department, Massachusetts Institute of Technology},
+  Year                     = {1996},
+  Pages                    = {54},
+  Volume                   = {87}
+}
 
-  Timestamp                = {2014.11.22}
+@TechReport{TRANSYT-7F,
+  Title                    = {TRANSYT-7F user's manual},
+  Author                   = {Wallace, Charles E and Courage, KG and Reaves, DP and Schoene, GW and Euler, GW},
+  Year                     = {1984}
 }
 
 @Article{Whitley1994,
-  Title                    = {A Genetic Algorithm Tutorial},
-  Author                   = {Darrell Whitley},
-  Journal                  = {Technical Report CS 93-103, Colorado State University},
+  Title                    = {A genetic algorithm tutorial},
+  Author                   = {Whitley, Darrell},
+  Journal                  = {Statistics and computing},
   Year                     = {1994},
+  Number                   = {2},
+  Pages                    = {65--85},
+  Volume                   = {4},
 
-  Timestamp                = {2015.03.13}
+  Publisher                = {Springer}
 }
 
