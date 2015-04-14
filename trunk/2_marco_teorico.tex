@@ -2,18 +2,18 @@
 Este capítulo aborda el marco teórico necesario para comprender más fácilmente el desarrollo de los capítulos posteriores. Analiza el problema del tráfico en general y las soluciones propuestas como la construcción de corredores exclusivos para el transporte público. En este contexto se detalla el Corredor de Garzón, tanto su descripción como sus problemas. Luego se da un breve repaso sobre los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar se encuentra una lista con trabajos relacionados para mostrar otras soluciones y variantes.
 \section{Problema del tránsito vehicular}
 
-En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, lo cual ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas.  \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
+En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, lo cual ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades por lo que es un componente principal en los planes estratégicos para su crecimiento.
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Esto repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas, además se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
 
-Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}. Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Esto viene de la mano con el sostenido aumento de las ventas de vehículos  desde el 2003 \citep{Autoanuario2014}.
+Uruguay no escapa a este fenómeno, en particular Montevideo, donde el aumento del parque automotor está en ascenso constante desde el 2005 \citep{INE2014}. Y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Esto viene de la mano con el sostenido aumento de las ventas de vehículos desde el 2003 como se aprecia en la figura \ref{fig:ventas_autos}.
 
 Los expertos indican que la congestión ya está instalada y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados.\citep{Subrayado2013}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/ventas_autos}
-	\caption{Evolución en la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de \citet{Autoanuario2014}.	
+	\caption{Evolución en la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de {http://www.autoanuario.com.uy} .	
 	}
 	\label{fig:ventas_autos}
 \end{figure}
@@ -32,7 +32,7 @@ Las ciudades de países en vías de desarrollo deben estudiar si pueden instalar
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figures/costo_transporte}
+	\includegraphics[width=0.9\linewidth]{Figures/costo_transporte}
 	\caption{Gráfica de costos de transporte en función de la gente transportada.- Imagen original extraída de \citep{ITDP}		
 	}
 	\label{fig:Grafica de costos de otros medios de transporte}
@@ -40,21 +40,9 @@ Las ciudades de países en vías de desarrollo deben estudiar si pueden instalar
 
 Bus Rapid Transit (BRT) es una solución innovadora, de alta capacidad y de menor costo para el transporte público que puede alcanzar el rendimiento y los beneficios de sistemas ferroviarios con un costo significativamente menor. Se trata de un sistema integrado de movilidad basado en ómnibus para el transporte de los pasajeros a sus destinos de manera rápida y eficiente. Al mismo tiempo ofrece la flexibilidad necesaria para satisfacer una variedad de condiciones locales. Los elementos del sistema de BRT pueden ser fácilmente personalizados a las necesidades de la comunidad e incorporan tecnologías de última generación de bajo costo que atraen a más pasajeros y en última instancia ayudan a reducir la congestión de tráfico en general.
 
-Un BRT contiene características similares a un tren ligero o el sistema de metro por lo que es mucho más confiable, conveniente y más rápido que los servicios regulares de ómnibus. Con las características adecuadas, el BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de ómnibus, como estar atrapado en el tráfico y hacer cola para pagar a bordo. 
+Un BRT contiene características similares al tren ligero o al sistema de metro, por lo que es mucho más confiable, conveniente y más rápido que los servicios regulares de ómnibus. Entre sus características principales se destacan el uso de carriles exclusivos para el ómnibus, con un alineamiento central del carril y largo mínimo de 3km. El uso de ómnibus de gran capacidad para transportar un número mayor de personas, la compra de pasajes fuera del ómnibus que agiliza la entrada de pasajeros y que el ómnibus tenga prioridad sobre otros vehículos en las intersecciones. Con las especificaciones adecuadas, el BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de ómnibus, como estar atrapado en el tráfico y hacer cola para pagar a bordo. 
 
 Para crear una definición común de BRT y calificar los sistemas existentes alrededor del mundo,  evaluando su funcionamiento basado en las mejores practicas internacionales existe el standard BRT creado por \citet{brt_standar}. Su principal objetivo es brindar una mejor experiencia a los pasajeros, con un costo económico acorde e impacto ambiental positivo. El standard cuenta con un método para calcular el puntaje del corredor y determinar su nivel de calidad. 
-
-
-
-A continuación se presenta una breve lista de características de un BRT:
-
-\begin{itemize}
-	\item Carriles exclusivos para ómnibus, la mayor parte del tiempo, con un alineamiento central del carril y con un largo mínimo de 3km.
-	\item Paradas con plataformas a la altura del ómnibus.
-	\item Compra de pasajes fuera del ómnibus.
-	\item Uso de ómnibus de gran capacidad para transportar una gran cantidad de personas.
-	\item Prioridad para el ómnibus en las intersecciones.
-\end{itemize}
 
 En la siguiente sección se realizara un análisis exhaustivo de varios puntos presentados en el standard en relación al Corredor Garzón.
 
