@@ -99,11 +99,11 @@ L.~Eshelman.
 \newblock In \emph{{Foundations of Genetics Algorithms}}, pages 265--283.
   Morgan Kaufmann Publishers, Inc., 1991.
 
-\bibitem[Fagundez()]{Malva}
+\bibitem[Fagundez(2014)]{Malva}
 G.~Fagundez.
 \newblock {The Malva Project: A framework for comutational intelligence in
   C++}.
-\newblock \url{http://themalvaproject.github.io/}.
+\newblock \url{http://themalvaproject.github.io/}, 2014.
 \newblock Disponible online, consultado julio 2014.
 
 \bibitem[Gagn{\'e} y Parizeau(2002)]{OpenBeagle}
