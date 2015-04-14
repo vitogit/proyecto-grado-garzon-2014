@@ -1,6 +1,6 @@
 \chapter{Estrategia de resolución}
 
-En este capítulo se explica el proceso llevado a cabo para desarrollar la solución. La metodología se basa en tres puntos, estos son: el modelado del problema, el algoritmo genético desarrollado y la simulación del trafico.
+Este capítulo explica el proceso llevado a cabo para desarrollar la solución. La metodología se basa en tres puntos, estos son: el modelado del problema, el algoritmo genético desarrollado y la simulación del trafico.
 
 Se presenta el modelado del problema, el proceso de simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. Se detalla la biblioteca utilizada para el desarrollo del algoritmo genético y la arquitectura propuesta.
 
@@ -28,7 +28,7 @@ Dado que existe un amplio abanico de posibilidades a la hora de elegir un simula
 	
 	\item Información de salida: SUMO tiene la opción de generar una amplia gama de datos producto de la simulación entre los que se encuentran la velocidad de los vehículos y el largo del recorrido, datos requeridos por la solución propuesta.
 	
-	\item Eficiente: Soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad \citep{sumo2014}, lo cual es una característica deseable por la complejidad del problema a solucionar.
+	\item Eficiente: Soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad, lo cual es una característica deseable por la complejidad del problema a solucionar.
 	
 \end{itemize}
 
@@ -54,7 +54,7 @@ Se describen los pasos realizados para tener los elementos necesarios para ejecu
 
 \subsubsection{Diseño del mapa}
 
-El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Se importa la zona de interés del mapa al editor \citet{JOSM} para poder adecuarlo a las necesidades del problema. 
+El primer paso consiste en desarrollar un mapa de la zona que sea compatible con el simulador. Para ello se utiliza el servicio de Open Street Map \citep{OSM} que cuenta con mapas libres y actualizados por una comunidad muy activa. Se importa la zona de interés del mapa al editor JOSM(Java OpenStreetMap Editor) para poder adecuarlo a las necesidades del problema. 
 
 El alcance que se pretende es la zona que corresponde al Corredor Garzón desde su inicio hasta el final y dos caminos paralelas a cada lado.
 Como se ve en el mapa de la figura \ref{fig:mapa_osm_sumo}, no existen calles paralelas reales, por lo que se eligieron primero las calles que corresponderían a las paralelas y todas las calles que permiten ir de una de las calles paralelas a otra. Luego se verifica que cada paralela se constituya por una calle doble mano o dos calles de una sola mano y luego se borraron manualmente todas las demás calles.
@@ -151,7 +151,7 @@ Se manejaron dos tipos de vehículos autos y ómnibus cada uno con característi
 
 Se agregaron las frecuencias y los distintos recorridos de los ómnibus obtenidos de datos públicos de la Intendencia Municipal de Montevideo \citep{IMM}. Estos incluyen las líneas urbanas  'G', '409' ,'2', 'd5'  y  '148'. Las líneas de ómnibus suburbanas realizan  un mismo  trayecto y se generalizan con el nombre 'A' las cuales no van a ser tomadas en cuenta en la optimización del algoritmo pero si aparecerán en la simulación.
 
-La ubicación y líneas de cada parada se obtuvo de \citep{sigMontevideo}. Existen 14 paradas de líneas urbanas por el corredor para el recorrido de ida y la misma cantidad para la vuelta. Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas. También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
+La ubicación y líneas de cada parada se obtuvo del Servicio de Información Geográfica de Montevideo (http://sig.montevideo.gub.uy). Existen 14 paradas de líneas urbanas por el corredor para el recorrido de ida y la misma cantidad para la vuelta. Para los recorridos se hicieron  variantes  en  los  viajes  dentro  de  una  misma línea para simular el hecho de que no siempre se para en las mismas paradas. También se tuvo en cuenta para la simulación el tiempo que demora un ómnibus al detenerse en una parada y que hay algunas donde por la cantidad de gente se demora más. Estos datos fueron obtenidos en el lugar considerando tiempos de entre 15 a 35 segundos.
 
 Se realizó un estudio basado en datos de GPS proporcionados por la IMM. Estos datos cuentan con la posición exacta en coordenadas geográficas, la velocidad instantánea y la referencia del ómnibus para un conjunto de líneas seleccionadas tomadas en un período de una semana. 
 Para este procesamiento fue necesario utilizar QGIS, un sistema de información geográfico capaz de visualizar, editar y realizar operaciones sobre elementos geográficos. Además se desarrollaron \emph{scripts} para obtener las estadísticas necesarias ya que la cantidad de información estudiada era muy grande (1.5Gb). Esto permitió seleccionar, filtrar y relacionar los datos de posición y velocidad con las líneas que circulan por el Corredor Garzón. Luego de procesar los datos se obtuvo una velocidad media es de 14.5 km/h lo que permite ajustar mejor el modelo. 

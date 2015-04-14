@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,6 +9,7 @@
 E.~Alba y C.~Cotta.
 \newblock On-line tutorial on evolutionary computation.
 \newblock \url{http://neo.lcc.uma.es/TutorialEA/semEC/main.html}, 1997.
+\newblock Disponible online, consultado Abril 2015.
 
 \bibitem[Alba y Tomassini(2002)]{Alba2002}
 E.~Alba y M.~Tomassini.
@@ -26,19 +27,17 @@ E.~Alba, F.~Almeida, M.~Blesa, C.~Cotta, M.~Diaz, I.~Dorta, J.~Gabarr{\'o},
 \newblock \emph{Parallel Computing}, 32\penalty0 (5-6):\penalty0 415--440,
   2006.
 
-\bibitem[Autoanuario(2014)]{Autoanuario2014}
-Autoanuario.
-\newblock Gráficas y cuadros de valores estadísticos del mercado nacional.
-\newblock \url{http://www.autoanuario.com.uy/index_mercado_graficas.html},
-  2014.
-\newblock Disponible online, consultado noviembre 2014.
+\bibitem[Bañobre y Romero(2009)]{BRT_Dial}
+E.~Bañobre y {\'A}.~Romero.
+\newblock {Los BRT en corredores segregados como sistema óptimo de transporte
+  urbano}.
+\newblock In \emph{Administrando en entornos inciertos = managing in uncertain
+  environment}, 2009.
 
 \bibitem[{BBVA Research}(2013)]{BBVA2013}
 {BBVA Research}.
-\newblock Uruguay situación automotriz.
-\newblock
-  \url{https://www.bbvaresearch.com/wp-content/uploads/2014/05/1303_SitAutomotrizUruguay_2013.pdf},
-  2013.
+\newblock {Situación Automotriz Uruguay}.
+\newblock \url{https://www.bbvaresearch.com}, 2013.
 \newblock Disponible online, consultado noviembre 2014.
 
 \bibitem[Bull(2003)]{Cepal2003}
@@ -46,6 +45,13 @@ A.~Bull.
 \newblock \emph{Congesti{\'o}n de tr{\'a}nsito: el problema y c{\'o}mo
   enfrentarlo}.
 \newblock Number~87. United Nations Publications, 2003.
+
+\bibitem[Cahon et~al.(2004)Cahon, Melab, y Talbi]{Paradiseo}
+S.~Cahon, N.~Melab, y E.-G. Talbi.
+\newblock Paradiseo: A framework for the reusable design of parallel and
+  distributed metaheuristics.
+\newblock \emph{Journal of Heuristics}, 10\penalty0 (3):\penalty0 357--380,
+  2004.
 
 \bibitem[Deb(2001)]{Deb2001}
 K.~Deb.
@@ -60,6 +66,12 @@ A.~Di~Febbraro, D.~Giglio, y N.~Sacco.
 \newblock In \emph{Intelligent Transportation Systems, 2002. Proceedings. The
   IEEE 5th International Conference on}, pages 773--778. IEEE, 2002.
 
+\bibitem[Durillo y Nebro(2011)]{Jmetal}
+J.~J. Durillo y A.~J. Nebro.
+\newblock jmetal: A java framework for multi-objective optimization.
+\newblock \emph{Advances in Engineering Software}, 42\penalty0 (10):\penalty0
+  760--771, 2011.
+
 \bibitem[Eigen(1973)]{Ingo1971}
 M.~Eigen.
 \newblock \emph{Ingo Rechenberg Evolutionsstrategie Optimierung technischer
@@ -67,18 +79,17 @@ M.~Eigen.
 \newblock mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag,
   Struttgart-Bad Cannstatt, 1973.
 
-\bibitem[{El Pais}(2015)]{olivera2015}
-{El Pais}.
-\newblock Ana olivera: "no hay justificación, nos equivocamos con garzón".
-\newblock
-  \url{http://www.elpais.com.uy/informacion/ana-olivera-no-justificacion-corredor.html},
-  2015.
-\newblock Disponible online, consultado febrero 2015.
-
 \bibitem[{El País}(2013)]{olivera2013}
 {El País}.
 \newblock {\enquote{Garzón: Olivera admitió errores}}.
-\newblock El Pais, 30 Julio 2013.
+\newblock \url{http://www.elpais.com.uy/}, 30 Julio 2013.
+\newblock Disponible online, consultado febrero 2015.
+
+\bibitem[{El País}(2015)]{olivera2015}
+{El País}.
+\newblock {\enquote{Ana Olivera: "No hay justificación, nos equivocamos con
+  Garzón"}}.
+\newblock \url{http://www.elpais.com.uy/}, 10 Enero 2015.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[Eshelman(1991)]{CHC}
@@ -88,12 +99,18 @@ L.~Eshelman.
 \newblock In \emph{{Foundations of Genetics Algorithms}}, pages 265--283.
   Morgan Kaufmann Publishers, Inc., 1991.
 
-\bibitem[Eugenio~Bañobre(2009)]{BRT_Dial}
-l.~R. Eugenio~Bañobre.
-\newblock Los brt en corredores segregados como sistema óptimo de transporte
-  urbano.
-\newblock In \emph{Administrando en entornos inciertos = managing in uncertain
-  environment}, 2009.
+\bibitem[Fagundez()]{Malva}
+G.~Fagundez.
+\newblock {The Malva Project: A framework for comutational intelligence in
+  C++}.
+\newblock \url{http://themalvaproject.github.io/}.
+\newblock Disponible online, consultado julio 2014.
+
+\bibitem[Gagn{\'e} y Parizeau(2002)]{OpenBeagle}
+C.~Gagn{\'e} y M.~Parizeau.
+\newblock Open beagle: A new versatile c++ framework for evolutionary
+  computation.
+\newblock In \emph{GECCO Late Breaking Papers}, pages 161--168, 2002.
 
 \bibitem[Goldberg(1989)]{Goldberg1989}
 D.~E. Goldberg.
@@ -101,8 +118,12 @@ D.~E. Goldberg.
   Learning}}.
 \newblock Addison-Wesley Professional, 1 edition, Jan. 1989.
 \newblock ISBN 0201157675.
-\newblock URL
-  \url{http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20\&path=ASIN/0201157675}.
+
+\bibitem[Haklay y Weber(2008)]{OSM}
+M.~Haklay y P.~Weber.
+\newblock Openstreetmap: User-generated street maps.
+\newblock \emph{Pervasive Computing, IEEE}, 7\penalty0 (4):\penalty0 12--18,
+  2008.
 
 \bibitem[Halati et~al.(1997)Halati, Lieu, y Walker]{CORSIM}
 A.~Halati, H.~Lieu, y S.~Walker.
@@ -110,59 +131,38 @@ A.~Halati, H.~Lieu, y S.~Walker.
 \newblock In \emph{Traffic congestion and traffic safety in the 21st century:
   Challenges, innovations, and opportunities}, 1997.
 
-\bibitem[IMM()]{IMM}
-IMM.
-\newblock Intendencia municipal de montevideo.
-\newblock \url{http://www.montevideo.gub.uy}.
-\newblock Disponible online, consultado febrero 2015.
-
 \bibitem[IMM(2010)]{PlanMovilidad}
 IMM.
 \newblock Plan de movilidad urbana.
-\newblock
-  \url{http://www.montevideo.gub.uy/sites/default/files/plan_de_movilidad.pdf},
-  Febrero 2010.
+\newblock \url{http://www.montevideo.gub.uy}, Febrero 2010.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[INE(2014)]{INE2014}
 INE.
-\newblock Transporte y comunicaciones.
-\newblock
-  \url{http://www.ine.gub.uy/biblioteca/uruguayencifras2014/Uruguay_en_cifras_2014_Cap_11.pdf},
-  2014.
+\newblock \emph{Uruguay en cifras 2014}, chapter {Transporte y Comunicaciones
+  (11)}, pages 93--99.
+\newblock 2014.
+\newblock URL \url{http://www.ine.gub.uy/}.
 \newblock Disponible online, consultado enero 2015.
 
 \bibitem[{Institute for Transportation \& Development Policy
   (ITDP)}(2007)]{ITDP}
 {Institute for Transportation \& Development Policy (ITDP)}.
 \newblock Bus rapid transit planning guide.
-\newblock \url{http://www.nbrti.org/docs/pdf/ITDP BRT Planning Guide.pdf},
-  Junio 2007.
+\newblock \url{https://www.itdp.org}, Junio 2007.
 \newblock Disponible online, consultado febrero 2015.
 
-\bibitem[Jacob(2002)]{Penner2002}
-J.~P. R. H.~C. Jacob.
+\bibitem[Jacob et~al.(2002)Jacob, Penner, y Hoar]{Penner2002}
+J.~Jacob, R.~Penner, y C.~Hoar.
 \newblock Swarm-based traffic simulation with evolutionary traffic light
   adaptation.
 \newblock 2002.
-
-\bibitem[JMetal(2015)]{Jmetal}
-JMetal.
-\newblock Jmetal.
-\newblock \url{http://jmetal.sourceforge.net/}, 2015.
-\newblock Disponible online, consultado marzo 2015.
-
-\bibitem[{JOSM (Java OpenStreetMap Editor)}()]{JOSM}
-{JOSM (Java OpenStreetMap Editor)}.
-\newblock Josm (java openstreetmap editor).
-\newblock \url{https://josm.openstreetmap.de/}.
 
 \bibitem[Kotushevski y Hawick(2009)]{review_trafico}
 G.~Kotushevski y K.~A. Hawick.
 \newblock A review of traffic simulation software.
 \newblock Technical Report CSTN-095, Computer Science, Massey University,
   Albany, North Shore 102-904, Auckland, New Zealand, 2009.
-\newblock URL \url{http://www.massey.ac.nz/~kahawick/cstn/095/cstn-095.pdf}.
 
 \bibitem[Koza(1992)]{Koza1992}
 J.~R. Koza.
@@ -194,12 +194,6 @@ S.~López, P.~Hernández, A.~Hernández, y M.~García.
   volume 1607 of \emph{Lecture Notes in Computer Science}, pages 795--804.
   Springer, 1999.
 
-\bibitem[Malva()]{Malva}
-Malva.
-\newblock The malva project.
-\newblock \url{http://themalvaproject.github.io/}.
-\newblock Disponible online, consultado julio 2014.
-
 \bibitem[Mitchell(1998)]{Mitchell1996}
 M.~Mitchell.
 \newblock \emph{An Introduction to Genetic Algorithms (Complex Adaptive
@@ -219,27 +213,12 @@ D.~J. Montana y S.~Czerwinski.
 \newblock In \emph{Proceedings of the First Annual Conference on Genetic
   Programming}, pages 333--338. MIT Press, 1996.
 
-\bibitem[{Open Beagle}(2012)]{OpenBeagle}
-{Open Beagle}.
-\newblock {Open Beagle}.
-\newblock \url{https://code.google.com/p/beagle/}, 2012.
-
-\bibitem[OSM()]{OSM}
-OSM.
-\newblock Open street map.
-\newblock \url{www.openstreetmap.org/}.
-\newblock Disponible online, consultado agosto 2014.
-
-\bibitem[Papaleontiou()]{TrafficModeler}
-L.~Papaleontiou.
-\newblock Sumo traffic modeler.
-\newblock \url{http://sourceforge.net/projects/trafficmodeler/}.
-\newblock Disponible online, consultado diciembre 2014.
-
-\bibitem[Paradiseo(2010)]{Paradiseo}
-Paradiseo.
-\newblock Paradiseo.
-\newblock \url{http://paradiseo.gforge.inria.fr/}, 2010.
+\bibitem[Papaleondiou y Dikaiakos(2009)]{TrafficModeler}
+L.~G. Papaleondiou y M.~D. Dikaiakos.
+\newblock Trafficmodeler: A graphical tool for programming microscopic traffic
+  simulators through high-level abstractions.
+\newblock In \emph{Vehicular Technology Conference, 2009. VTC Spring 2009. IEEE
+  69th}, pages 1--5. IEEE, 2009.
 
 \bibitem[Rathi(1990)]{TRAF-NETSIM}
 A.~K. Rathi.
@@ -276,12 +255,6 @@ J.~J. S{\'a}nchez-Medina, M.~J. Gal{\'a}n-Moreno, y E.~Rubio-Royo.
 \newblock \emph{Intelligent Transportation Systems, IEEE Transactions on},
   11\penalty0 (1):\penalty0 132--141, 2010.
 
-\bibitem[{SIG IMM}()]{sigMontevideo}
-{SIG IMM}.
-\newblock Sistema de información geográfica montevideo.
-\newblock \url{http://sig.montevideo.gub.uy}.
-\newblock Disponible online, consultado agosto 2014.
-
 \bibitem[Smith y McIntyre(2002)]{ConteoTrafico}
 D.~Smith y J.~McIntyre.
 \newblock Handbook of simplified practice for traffic studies.
@@ -294,17 +267,10 @@ D.~H. Stolfi.
 
 \bibitem[Subrayado(2013)]{Subrayado2013}
 Subrayado.
-\newblock Expertos en tránsito: “el colapso está establecido” en
-  montevideo.
-\newblock
-  \url{http://www.subrayado.com.uy/Site/noticia/23835/expertos-en-transito-el-colapso-esta-establecido-en-montevideo},
-  2013.
+\newblock {\enquote{Expertos en tránsito: ``el colapso está establecido'' en
+  Montevideo}}.
+\newblock \url{http://www.subrayado.com.uy}, 27 Mayo 2013.
 \newblock Disponible online, consultado noviembre 2014.
-
-\bibitem[{Sumo Features}(2014)]{sumo2014}
-{Sumo Features}.
-\newblock {Sumo Features}.
-\newblock \url{http://sumo.dlr.de/daily/userdoc/Sumo_at_a_Glance.html}, 2014.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
 K.~T.~K. Teo, W.~Y. Kow, y Y.~Chin.
@@ -317,10 +283,8 @@ K.~T.~K. Teo, W.~Y. Kow, y Y.~Chin.
 \bibitem[{The Institute for Transportation and Development Policy
   (ITDP)}(2014)]{brt_standar}
 {The Institute for Transportation and Development Policy (ITDP)}.
-\newblock The brt standard, 2014 edition.
-\newblock
-  \url{https://www.itdp.org/wp-content/uploads/2014/07/BRT-Standard-2014.pdf},
-  2014.
+\newblock {The BRT Standard, 2014 edition}.
+\newblock \url{https://www.itdp.org/}, 2014.
 
 \bibitem[Vogel et~al.(2000)Vogel, Goerick, y Von~Seelen]{Vogel2000}
 A.~Vogel, C.~Goerick, y W.~Von~Seelen.
@@ -330,7 +294,7 @@ A.~Vogel, C.~Goerick, y W.~Von~Seelen.
 
 \bibitem[Wall(1996)]{Galib}
 M.~Wall.
-\newblock Galib: A c++ library of genetic algorithm components.
+\newblock {GAlib: A C++ library of genetic algorithm components}.
 \newblock \emph{Mechanical Engineering Department, Massachusetts Institute of
   Technology}, 87:\penalty0 54, 1996.
 
