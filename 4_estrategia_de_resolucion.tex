@@ -1,9 +1,6 @@
 \chapter{Estrategia de resolución}
 
-Este capítulo explica el proceso llevado a cabo para desarrollar la solución. La metodología se basa en tres puntos, estos son: el modelado del problema, el algoritmo genético desarrollado y la simulación del trafico.
-
-Se presenta el modelado del problema, el proceso de simulación y el algoritmo genético utilizado con su estructura, parámetros y configuración. Se detalla la biblioteca utilizada para el desarrollo del algoritmo genético y la arquitectura propuesta.
-
+Este capítulo explica el proceso llevado a cabo para desarrollar la solución para resolver el problema de sincronización de semáforos en el Corredor Garzón. Se basa en tres puntos: el modelado del problema, el algoritmo genético utilizado y las simulaciones realizadas. Comienza con el modelado del problema que incluye el diseño del mapa de la zona, el trabajo de campo donde se recabaron datos de la realidad y el modelo del tráfico para la ejecución de las simulaciones. Luego se detalla la arquitectura de la solución explicando la biblioteca Malva y el modelo de paralelismo aplicado. Finalmente se especifican todos los parámetros y características del Algoritmo Genético utilizado.
 
 \section{Modelado del problema }
 
@@ -42,7 +39,7 @@ Dada la complejidad del problema a enfrentar, se utilizaron otras herramientas �
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/sim1}
-	\caption{Simulacion de tráfico en SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzón.}
+	\caption[Simulación de trafico en el simulador SUMO.]{Simulación de tráfico en el simulador SUMO en el cruce entre Bulevar Battle y Ordoñez y el Corredor Garzón.}
 	\label{fig:sim1}
 \end{figure}
 
@@ -64,7 +61,7 @@ Al notar que habían calles de una sola mano que estaban representadas en Open S
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/mapa_osm_sumo}
-	\caption{A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO. El corredor Garzón está en el centro de cada imagen.}
+	\caption[Mapa del corredor Garzón]{Mapa del corredor Garzón. A la izquierda el mapa extraído de OSM, a la derecha el mapa procesado listo para ser usado en SUMO. El corredor Garzón está en el centro de cada imagen.}
 	\label{fig:mapa_osm_sumo}
 \end{figure}
 
@@ -90,7 +87,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/conteo_hoja}
-	\caption{Ejemplo de planilla electrónica para el conteo manual en Camino Ariel}
+	\caption[Ejemplo de planilla electrónica para el conteo manual de tráfico.]{Ejemplo de planilla electrónica para el conteo manual de tráfico en la intersección entre el corredor Garzón y Camino Ariel}
 	\label{fig:conteo_hoja}
 \end{figure}
 
@@ -98,7 +95,7 @@ Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se anal
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículos y la orientación hacia donde circulan.}
+	\caption[Resumen del revelamiento del tráfico en la zona del corredor Garzón.]{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículos y la orientación hacia donde circulan.}
 	\label{table:resumen_trafico}
 	\centering
 	\begin{tabular}{lcccc}
@@ -142,7 +139,7 @@ Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que sirve para ge
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\linewidth]{Figures/areaflow1}
-	\caption{Mapa del TrafficModeler con las áreas de tráfico. Círculos del mismo color indican tráfico especificado entre esas áreas}
+	\caption[Mapa diseñado en el TrafficModeler para la generación de tráfico.]{Mapa diseñado en el TrafficModeler para la generación de trafico. Los círculos del mismo color especifican el tráfico entre esas áreas. }
 	\label{fig:areaflow1}
 \end{figure}
 
@@ -264,7 +261,7 @@ En la representación se omiten las luces amarillas ya que no modifican los tiem
  \begin{figure}[h]
  	\centering
  	\includegraphics[width=0.7\linewidth]{Figures/cromosoma1}
- 	\caption{Cromosoma de 2 cruces}
+ 	\caption{Cromosoma de dos cruces}
  	\label{fig:cromosoma1}
  \end{figure}
  
@@ -293,7 +290,7 @@ Por tanto para \emph{GGGGrrrGGGGrrr} tenemos que:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/semaforos_numerado}
-	\caption{Representación de una fase de los semáforos para un cruce. Cada número se corresponde a una letra en la secuencia de \emph{state} del archivo de configuración del simulador SUMO.}
+	\caption[Representación de una fase de los semáforos para un cruce.]{Representación de una fase de los semáforos para un cruce. Cada número se corresponde a una letra en la secuencia de \emph{state} del archivo de configuración del simulador SUMO.}
 	\label{fig:sem_numerados}
 \end{figure}
 
