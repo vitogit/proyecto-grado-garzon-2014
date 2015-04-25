@@ -9,15 +9,14 @@
 \end{center}
 ~\\[0.2cm]
 \textbf{\large 
-Este proyecto propone el estudio de la sincronización de semáforos como problema de optimización multiobjetivo, y el diseño e implementación de un algoritmo evolutivo para resolverlo con alta eficacia numérica y desempeño computacional. \newline \newline
-Se toma como aplicación la sincronización de semáforos en el Corredor Garzón  (Montevideo, Uruguay). La cantidad de cruces, calles, tráfico y semáforos lo hace un problema interesante desde el punto de vista de su complejidad. Además se ha admitido, por parte de las autoridades responsables, los problemas relacionados con la sincronización de los semáforos, por lo que todavía hay espacio para la mejora de los tiempos promedio de los viajes.  \newline \newline
-El problema de sincronización de semáforos es NP-difícil por lo que los métodos exactos solo son útiles en instancias de tamaño reducido. Se buscará mediante un algoritmo evolutivo llegar a una configuración aceptable de los semáforos maximizando la velocidad media tanto de ómnibus como de otros vehículos.
-El enfoque seguido es la obtención de datos reales relacionados a la red vial, tráfico y configuración de semáforos y la utilización del simulador de tráfico SUMO para generar los datos requeridos por el algoritmo.
+Este proyecto propone el estudio de la sincronización de semáforos como problema de optimización multiobjetivo, y el diseño e implementación de un algoritmo evolutivo para resolverlo con alta eficacia numérica y desempeño computacional. Se toma como aplicación la sincronización de semáforos en el Corredor Garzón  (Montevideo, Uruguay). La cantidad de cruces, calles, tráfico y semáforos lo hace un problema interesante desde el punto de vista de su complejidad. Además, las autoridades responsables admitieron la existencia de problemas relacionados con la sincronización de los semáforos, por lo que todavía hay espacio para la mejora de los tiempos promedio de los viajes en el Corredor Garzón.  \newline \newline
+El problema de sincronización de semáforos es un problema de optimización NP-difícil por lo que los métodos computacionales exactos solo son útiles en instancias de tamaño reducido. Se buscará mediante un algoritmo evolutivo llegar a una configuración aceptable de los semáforos, maximizando la velocidad media tanto de ómnibus como de otros vehículos.
+El enfoque seguido comprende la obtención de datos reales relacionados con la red vial, el tráfico y la configuración de los semáforos, y la utilización del simulador de tráfico SUMO para generar los datos requeridos por el algoritmo evolutivo.
 \newline \newline
-El análisis experimental consiste en comparar los resultados del algoritmo con los valores obtenidos en la simulación de la realidad actual y además crear un escenario alternativo con modificaciones con el objetivo de obtener mejores métricas. Los resultados muestran que el algoritmo logra una mejora de hasta  24.2 \% (21.40 \% en promedio) en el valor de fitness comparando con la realidad actual, mientras el escenario alternativo obtiene una mejora de hasta 37.1 \% (34.7\% en promedio) en el valor de fitness.
+El análisis experimental consiste en comparar los resultados numéricos del algoritmo evolutivo, con los valores del escenario base que modela la realidad actual. Complementariamente se desarrolla un escenario alternativo cuyo objetivo es mejorar la velocidad promedio de ómnibus y otros vehículos. Los resultados muestran que el algoritmo evolutivo propuesto logra una mejora de hasta 24.2 \% (21.40 \% en promedio) en el valor de \emph{fitness} comparando con la realidad actual, mientras que al aplicar el algoritmo sobre el escenario alternativo se obtiene una mejora de hasta 37.1 \% (34.7\% en promedio) en el valor de \emph{fitness}.
  } 	
 	~\\[1.0cm]
-    \textbf{\large Palabras clave: Optimización, Sincronizacion semáforos, Corredor Garzón, simulación de tráfico,  Algoritmo Genetico multiobjetivo y paralelo,  escenario real, Cluster}
+    \textbf{\large Palabras clave: Algoritmo Evolutivo, Sincronización de semáforos, Optimización de tráfico, Corredor Garzón}
 
 }
 \cleardoublepage

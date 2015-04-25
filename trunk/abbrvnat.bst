@@ -451,7 +451,7 @@ FUNCTION {either.or.check}
 FUNCTION {format.bvolume}
 { volume empty$
     { "" }
-    { "volume" volume tie.or.space.connect
+    { "volumen" volume tie.or.space.connect
       series empty$
         'skip$
         { " of " * series emphasize * }
@@ -518,8 +518,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pages" pages n.dashify tie.or.space.connect }
-        { "page" pages tie.or.space.connect }
+        { "p." pages n.dashify tie.or.space.connect }
+        { "p." pages tie.or.space.connect }
       if$
     }
   if$
@@ -578,7 +578,7 @@ FUNCTION {format.chapter.pages}
 { chapter empty$
     'format.pages
     { type empty$
-        { "chapter" }
+        { "capítulo" }
         { type "l" change.case$ }
       if$
       chapter tie.or.space.connect
@@ -594,8 +594,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-        { "In " booktitle emphasize * }
-        { "In " format.editors * ", " * booktitle emphasize * }
+        { "En " booktitle emphasize * }
+        { "En " format.editors * ", " * booktitle emphasize * }
       if$
     }
   if$
@@ -638,10 +638,10 @@ FUNCTION {format.article.crossref}
           warning$
           ""
         }
-        { "In \emph{" journal * "}" * }
+        { "En \emph{" journal * "}" * }
       if$
     }
-    { "In " }
+    { "En " }
   if$
   " \citet{" * crossref * "}" *
 }
@@ -649,7 +649,7 @@ FUNCTION {format.article.crossref}
 FUNCTION {format.book.crossref}
 { volume empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
-      "In "
+      "En "
     }
     { "Volume" volume tie.or.space.connect
       " of " *
@@ -685,13 +685,13 @@ FUNCTION {format.incoll.inproc.crossref}
               crossref * warning$
               ""
             }
-            { "In \emph{" booktitle * "}" * }
+            { "En \emph{" booktitle * "}" * }
           if$
         }
-        { "In " }
+        { "En " }
       if$
     }
-    { "In " }
+    { "En " }
   if$
   " \citet{" * crossref * "}" *
 }
