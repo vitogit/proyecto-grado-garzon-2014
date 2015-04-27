@@ -34,7 +34,7 @@
 \contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{29}{section*.25}
 \contentsline {subsubsection}{Trabajo de campo}{31}{section*.27}
 \contentsline {subsubsection}{Desarrollo de instancias realistas del problema}{33}{section*.30}
-\contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{34}{section.3.2}
+\contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{35}{section.3.2}
 \contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n: Biblioteca Malva}{35}{section.3.3}
 \contentsline {section}{\numberline {3.4}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{36}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Representaci\IeC {\'o}n del cromosoma}{37}{subsection.3.4.1}
