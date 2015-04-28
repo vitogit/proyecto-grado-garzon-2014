@@ -34,45 +34,45 @@
 \contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{29}{section*.25}
 \contentsline {subsubsection}{Trabajo de campo}{31}{section*.27}
 \contentsline {subsubsection}{Desarrollo de instancias realistas del problema}{33}{section*.30}
-\contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{35}{section.3.2}
-\contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n: Biblioteca Malva}{35}{section.3.3}
-\contentsline {section}{\numberline {3.4}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{36}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Representaci\IeC {\'o}n del cromosoma}{37}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Poblaci\IeC {\'o}n inicial}{39}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Funci\IeC {\'o}n \emph {fitness}}{39}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Operadores}{40}{subsection.3.4.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{40}{section*.36}
-\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{41}{section*.38}
-\contentsline {subsubsection}{Operador de selecci\IeC {\'o}n y reemplazo}{41}{section*.39}
-\contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{41}{section*.40}
-\contentsline {section}{\numberline {3.5}Modelo de paralelismo e implementaci\IeC {\'o}n}{41}{section.3.5}
-\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis Experimental}{43}{chapter.4}
-\contentsline {section}{\numberline {4.1}Plataforma de ejecuci\IeC {\'o}n y Desarrollo}{43}{section.4.1}
-\contentsline {section}{\numberline {4.2}Ajuste param\IeC {\'e}trico}{43}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Pesos de la funci\IeC {\'o}n de fitness}{44}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Tiempo de simulaci\IeC {\'o}n}{44}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Criterio de parada}{45}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{45}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{46}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de escenarios}{47}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Caso base o realidad actual del corredor}{47}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Escenario alternativo}{48}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Resultados}{48}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{49}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{49}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{50}{subsection.4.4.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{50}{section*.48}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{50}{section*.49}
-\contentsline {subsubsection}{Alternar paradas}{51}{section*.50}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{52}{section*.52}
-\contentsline {subsection}{\numberline {4.4.4}Valores num\IeC {\'e}ricos al aplicar los cambios}{52}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{53}{subsection.4.4.5}
-\contentsline {subsection}{\numberline {4.4.6}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de \emph {fitness}}{54}{subsection.4.4.6}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{54}{section*.57}
-\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{54}{section*.58}
-\contentsline {subsubsection}{Resultados}{55}{section*.59}
-\contentsline {subsection}{\numberline {4.4.7}Eficiencia computacional}{55}{subsection.4.4.7}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusiones}{59}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{59}{section.5.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{60}{section.5.2}
+\contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{36}{section.3.2}
+\contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n: Biblioteca Malva}{36}{section.3.3}
+\contentsline {section}{\numberline {3.4}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{37}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Representaci\IeC {\'o}n del cromosoma}{38}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Poblaci\IeC {\'o}n inicial}{40}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Funci\IeC {\'o}n \emph {fitness}}{40}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Operadores}{41}{subsection.3.4.4}
+\contentsline {subsubsection}{Operador de Cruzamiento}{41}{section*.36}
+\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{42}{section*.38}
+\contentsline {subsubsection}{Operador de selecci\IeC {\'o}n y reemplazo}{42}{section*.39}
+\contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{42}{section*.40}
+\contentsline {section}{\numberline {3.5}Modelo de paralelismo e implementaci\IeC {\'o}n}{42}{section.3.5}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis Experimental}{45}{chapter.4}
+\contentsline {section}{\numberline {4.1}Plataforma de ejecuci\IeC {\'o}n y Desarrollo}{45}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ajuste param\IeC {\'e}trico}{45}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Pesos de la funci\IeC {\'o}n de fitness}{46}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Tiempo de simulaci\IeC {\'o}n}{46}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Criterio de parada}{47}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{47}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Probabilidad de mutaci\IeC {\'o}n y cruzamiento}{48}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de escenarios}{49}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Caso base o realidad actual del corredor}{49}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Escenario alternativo}{50}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Resultados}{50}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Valores num\IeC {\'e}ricos del caso base}{51}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{51}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Detalles del escenario alternativo}{52}{subsection.4.4.3}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{52}{section*.48}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{52}{section*.49}
+\contentsline {subsubsection}{Alternar paradas}{53}{section*.50}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{54}{section*.52}
+\contentsline {subsection}{\numberline {4.4.4}Valores num\IeC {\'e}ricos al aplicar los cambios}{54}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{55}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de \emph {fitness}}{56}{subsection.4.4.6}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{56}{section*.57}
+\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{56}{section*.58}
+\contentsline {subsubsection}{Resultados}{57}{section*.59}
+\contentsline {subsection}{\numberline {4.4.7}Eficiencia computacional}{57}{subsection.4.4.7}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{61}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusiones}{61}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{61}{section.5.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{62}{section.5.2}
