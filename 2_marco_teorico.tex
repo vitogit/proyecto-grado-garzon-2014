@@ -394,45 +394,39 @@ Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya
  
 \section{Trabajos relacionados}
 
-La investigación del estado del arte se realizó con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema y segundo encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución.
+La investigación del estado del arte se realizó con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema de sincronización de semáforos y segundo para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución propuesta.
 
-El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos como  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, etc. La cantidad de soluciones encontradas fue abundante y variada, por esto se decidió enfocar la búsqueda en soluciones cercanas al proyecto propuesto, en particular que utilizaran algoritmos genéticos y en otras que tuvieran alguna particularidad interesante para destacar.
+El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos como  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, etc. La cantidad de soluciones encontradas fue abundante y variada, por este motivo se decidió enfocar la búsqueda en soluciones cercanas al proyecto propuesto, en particular que utilizaran algoritmos genéticos y en otras que tuvieran alguna particularidad interesante para destacar.
 
 
 \begin{itemize}
 \begin{item}
 \bibentry{Sanchez2004}
 
-Este trabajo se basa en tres puntos: El uso de algoritmos genéticos para la optimización, simulación de autómatas celulares para la función de evaluación del tráfico y un cluster para realizar ejecuciones en paralelo.
-El modelo es pequeño con 5 calles de 2 vías que se intersectan.
-La codificación del cromosoma es un vector de números enteros, donde se codifica para cada intersección cual calle está habilitada en cada ciclo.
-Usa una estrategia de selección elitista donde los dos mejores individuos se clonan a la siguiente generación y el resto es generado por cruzamiento de dos puntos.
+Este trabajo se basa en tres puntos: El uso de algoritmos genéticos para la sincronización de los semáforos, la simulación de autómatas celulares para la función de evaluación del tráfico y un cluster para realizar ejecuciones del algoritmo en paralelo.
+El modelo presentado es pequeño, con 5 calles de 2 vías que se intersectan. La codificación del cromosoma utiliza un vector de números enteros, donde se codifica para cada intersección cual es la calle habilitada en cada ciclo. Usa una estrategia de selección elitista, donde los dos mejores individuos se clonan a la siguiente generación y el resto es generado por cruzamiento de dos puntos.
 
-Para la evaluación se utiliza el tiempo que transcurre desde el momento que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos que evalúan y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
-Se compararon los resultados con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados.
+Para la evaluación del \emph{fitness}, se utiliza el tiempo que transcurre desde el momento en que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos para que evalúen y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
+Se comparan los resultados obtenidos por el algoritmo con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados.
 	
-Este mismo grupo realizó trabajos similares expandiendo esta investigación, que se presentan a continuación.
+Los autores de este trabajo realizaron otros similares, expandiendo esta investigación, los cuales se presentan a continuación.
 \end{item}
 	
 \begin{item}
 \bibentry{Sanchez2008}
 
-Lo interesante de este estudio es que se aplica lo expuesto en el trabajo anterior a un lugar real en Santa Cruz de Tenerife para validar los resultados.
-Algunas mejoras que se introdujeron fueron que el cromosoma se codifica utilizando código Gray lo que dicen mejora el rendimiento en mutación y cruzamiento. La población inicial esta compuesta por nueve \emph{soluciones} provistas por la alcaldía de la ciudad. Tanto la estrategia de selección como de cruzamiento y mutación es similar al anterior trabajo.
+Este estudio aplica lo presentado en el trabajo anterior en un escenario real en Santa Cruz de Tenerife. Algunas mejoras introducidas incluyen una nueva codificación del cromosoma utilizando código Gray indicando que mejora el rendimiento de los operadores de mutación y cruzamiento. La población inicial se compone de nueve \emph{soluciones} provistas por la alcaldía de la ciudad. La estrategia de selección, cruzamiento y mutación es similar al trabajo anterior.
 
-El modelo se discretizó en 42 semáforos, 26 entradas y 20 salidas.
-Las soluciones provistas por la alcaldía se simularon y compararon con los resultados obtenidos por el algoritmo, que en términos generales logra una mejora de 26\% en el valor del fitness.
+El modelo discretizado de la zona estudiada se compone de 42 semáforos, 26 vías de entrada y 20 de salida. Las soluciones provistas por la alcaldía se ejecutaron en el simulador y los resultados obtenidos se compararon con los valores alcanzados  por el algoritmo, concluyendo que logra una mejora de 26\% en el valor del fitness.
 
 \end{item}
 
 \begin{item}
 \bibentry{Sanchez2010}
 
-Este trabajo es similar al anterior pero se destacan algunos cambios. Por ejemplo se probaron cuatro funciones de fitness diferentes, ellas fueron: cantidad de vehículos que llegaron a destino, tiempo de viaje promedio, tiempo de ocupación promedio y velocidad promedio global.
-
-También agrega medidas correspondientes al gas total emitido por los vehículos que tiene relación con la velocidad a la que circulan.
+Este trabajo contiene  puntos de contacto con el presentado anteriormente. Un cambio introducido fue el análisis de cuatro funciones de fitness diferentes que tenían en cuenta: cantidad de vehículos que llegaron a destino, el tiempo de viaje promedio, tiempo de ocupación promedio y velocidad promedio global. Además, incluye nuevas métricas correspondientes al gas total emitido por los vehículos, que tiene relación con la velocidad a la que circulan.
 El modelo discretizado de la zona de \emph{La Almozara} cuenta con 17 semáforos, 7 intersecciones, 16 entradas y 18 salidas.
-Se simuló tanto un caso standard como casos de alta congestión de tráfico, las comparaciones se hacen respecto a las distintas funciones de fitness y los distintos escenarios planteados logrando buenos resultados.
+Se simuló tanto un caso standard como casos de alta congestión de tráfico, las comparaciones se hacen respecto a las distintas funciones de fitness y los distintos escenarios planteados mostraron buenos resultados.
 
 \end{item}
 
@@ -440,25 +434,22 @@ Se simuló tanto un caso standard como casos de alta congestión de tráfico, la
 \begin{item}
 \bibentry{Penner2002}
 
-Este trabajo se centra en un modelo de simulación basado en enjambres que luego se optimiza utilizando un algoritmo genético cuya función de fitness es el tiempo promedio de los vehículos dentro de la red. El cromosoma cuenta con la secuencia y duración de los semáforos, así como la relación con los semáforos complementarios, la mutación tiene en cuenta esto para que no ocurra en una misma intersección dos luces verdes. El cruzamiento se hace entre los distintos semáforos con una probabilidad más alta si esta en la misma intersección.
+Este trabajo se centra en un modelo de simulación basado en enjambres. Se busca optimizar este modelo utilizando un algoritmo genético cuya función de fitness es el tiempo promedio de los vehículos dentro de la red. El cromosoma contiene la secuencia y duración de los semáforos, así como la relación con los semáforos complementarios, la mutación tiene ese factor en cuenta para que no generar inconsistencias, por ejemplo: una intersección con dos luces verdes. El cruzamiento se realiza con una probabilidad más alta si los semáforos involucrados se encuentra en la misma intersección.
 
-El primer escenario es pequeño, cuenta con una ruta de tres carriles y tres intersecciones. Con diferentes variaciones logra mejoras significativas.
-Luego se realiza otro escenario más complejo de 28 semáforos y 9 intersecciones logrando mejoras de hasta 26\%.
+El primer escenario donde se realiza el análisis experimental es pequeño, cuenta con una ruta de tres carriles y tres intersecciones, este modelo logra mejoras significativas. Luego experimenta sobre otro escenario más complejo, de 28 semáforos y 9 intersecciones logrando mejoras de hasta 26\%.
 \end{item}	
 
 
 \begin{item}
 \bibentry{Stolfi2012}
 
-Este trabajo se basa en el concepto de una ciudad inteligente enfocado en la movilidad, indicando que los atascos del tráfico provocan tanto pérdidas económicas como también contaminación ambiental.
+Este trabajo propone el concepto de ciudad inteligente, enfocada en la movilidad, plantea que la congestión de tráfico provoca tanto pérdidas económicas como contaminación ambiental. Utiliza un algoritmo inteligente, que toma en cuenta el estado de congestión de las rutas y sugiere al usuario la ruta más rápida a su destino. Para detectar el nivel de congestión, utiliza un dispositivo en el automóvil que se enlaza por \emph{wifi} con los semáforos, los cuales tienen los sensores. El trabajo no se basa en la sincronización de los semáforos, sino que presenta un sistema de búsqueda de la mejor ruta.
 
-Utiliza un algoritmo inteligente que tomando en cuenta el estado de congestión de las rutas sugiere al usuario cual es la ruta más rápida a su destino, utilizando un dispositivo en el automóvil que se enlaza por \emph{wifi} con los semáforos que cuentan con sensores. Por lo tanto el trabajo no se basa en la optimización de las señales de los semáforos existentes sino que agrega además de esto un sistema de búsqueda de mejor ruta.
+El modelo se desarrolla en una zona  de la ciudad de Málaga, que cuenta con ocho entradas y ocho salidas. Para la simulación del tráfico utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión. Cada vehículo del modelo posee características diferentes como: la longitud, velocidad y probabilidad que entre en la red de tráfico.
 
-Para el modelo utiliza una zona  de la ciudad de Málaga que cuenta con ocho entradas y ocho salidas. Para la simulación utiliza \citet{SUMO}. Los vehículos modelados son: turismo, monovolumen, furgoneta y camión donde se varía la longitud, velocidad y probabilidad que entre en la red de tráfico.
+El objetivo buscado es minimizar los tiempo de viaje de los vehículos que circulan por la red. Utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los dos peores individuos reemplazándolos por los dos mejores hijos encontrados. El cromosoma representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución de la simulación, el tiempo medio utilizado y el retraso medio. Se probaron varias estrategias de cruzamiento y mutación y las simulaciones especifican un tiempo fijo de duración.
 
-Se intenta minimizar los tiempo de viaje de los vehículos que circulan por la red. Para ello se utiliza un algoritmo genético cuya estrategia de selección consiste en tomar los dos peores individuos reemplazándolos por los dos mejores hijos encontrados. En el cromosoma se representa cada sensor, con los destinos y rutas posibles. La función de fitness tiene en cuenta la cantidad de viajes completados durante el tiempo de ejecución, el tiempo medio utilizado y el retraso medio. Se prueban varias estrategias de cruzamiento y mutación. Las ejecuciones tienen un tiempo fijo de duración.
-
-Compara el resultado con una simulación donde se generaron 64 itinerarios diferentes. Las simulaciones se realiza hasta con 800 vehículos, concluyendo que al aumentar la cantidad de vehículos (más de 400) en el sistema, la solución mejora sustancialmente el resultado base.
+Para el análisis experimental obtiene los resultados bases simulando 64 itinerarios diferentes y los compara con la aplicación del algoritmo. Las simulaciones se realizan hasta con 800 vehículos, concluyendo que al aumentar la cantidad de vehículos (más de 400) en el sistema, el algoritmo mejora sustancialmente los resultados bases.
 
 \end{item}	
 
@@ -466,22 +457,20 @@ Compara el resultado con una simulación donde se generaron 64 itinerarios difer
 \begin{item}
 \bibentry{Teo2010}
 
-Este trabajo presenta un modelo simple con una sola intersección en donde se intenta optimizar los tiempos de los semáforos para lograr mejorar rendimiento del tráfico. El cromosoma representa los tiempos de la luces verdes mientras que la función de fitness es el largo de las colas generadas. Un aspecto interesante es que la simulación tiene un tiempo fijo de 600 segundos por generación pero no se detalla el tipo de simulación utilizada. Las conclusiones indican que la optimización usando algoritmos genéticos  es buena para el problema del flujo de tráfico.	
+Este trabajo presenta un modelo simple con una sola intersección, donde se intentan optimizar los tiempos de las luces de los semáforos para lograr mejorar el tráfico vehicular. El algoritmo genético presentando incluye un cromosoma que representa los tiempos de la luces verdes, mientras que la función de fitness se calcula teniendo en cuenta el largo de las colas generadas por los vehículos en las intersecciones. La ejecución de la simulación utiliza un tiempo fijo de 600 segundos por generación, pero no se describe el tipo de simulador utilizado. Entre las conclusiones del trabajo se indica, que la optimización de las lueces de los semáforos usando algoritmos genéticos es una buena opción para resolver el problema de la congestión de tráfico.	
 \end{item}	
 
 
 \begin{item}
 \bibentry{Montana1996}
 
-Esta propuesta utiliza un enfoque adaptativo con sensores que analizan el tráfico en tiempo real. Un sensor cuenta la cantidad de autos que circulan y otro detecta que tan larga es la cola. Considera los cambios que se producen con respecto al caso promedio y cambia los tiempos de las señales en forma acorde.
+Esta propuesta utiliza un enfoque adaptativo, con sensores que analizan el tráfico en tiempo real. Un sensor contabiliza los autos que circulan y otro detecta el largo de la cola de vehículos generada en la intersección. Se consideran los cambios producidos con respecto al caso promedio y se modifican los tiempos de las luces de los semáforos en forma acorde, con el objetivo de mejorar la circulación del transito. La premisa se basa en la inteligencia colectiva, en donde agentes individuales realizan tareas simples que al interactuar producen resultados globales.
 
-La premisa se basa en la inteligencia colectiva en donde agentes individuales realizan tareas simples que al interactuar producen resultados globales.
+Se aplica programación genética, más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones. Un algoritmo genético híbrido busca diferentes constantes que serán usadas en los árboles de decisión mejorando el flujo de tráfico. La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto representa el total de tiempo perdido por causa de las señales de tráfico. 
 
-Se aplica programación genética, más específicamente STGP (strongly typed genetic programming) \citep{Montana1995} que aprende el árbol de decisión que será ejecutado por todas las intersecciones cuando decida el cambio de fase. Además un algoritmo genético híbrido busca diferentes constantes que serán usadas en los árboles de decisión mejorando el flujo de tráfico.
+El análisis experimental se desarrolló sobre tres modelos de trafico diferente, en escenarios simples de cuatro intersecciones, utilizando una versión especial del simulador TRAF-NETSIM \citep{TRAF-NETSIM}.
 
-La medida básica de efectividad en la función de evaluación es el \emph{Delay}, esto es el total de tiempo perdido por causa de las señales de tráfico. Se probaron tres modelos distintos de cuatro intersecciones con una versión especial del simulador TRAF-NETSIM \citep{TRAF-NETSIM}.
-
-El experimento arroja buenos resultados en cuanto a la performance de la red y destaca la buena adaptabilidad en diferentes circunstancias. Sin embargo se recalca el hecho de que el modelo es simple y de tamaño pequeño, siendo una incógnita como funcionará con problemas más complejos.
+Los resultados indican que se aprecian mejoras en el flujo de tránsito y destaca la buena adaptabilidad en diferentes circunstancias. Sin embargo, recalca que el modelo es simple y de tamaño reducido, siendo una incógnita como el algoritmo funcionará en problemas más complejos.
 
 \end{item}	
 
@@ -489,42 +478,36 @@ El experimento arroja buenos resultados en cuanto a la performance de la red y d
 \begin{item}
 \bibentry{Vogel2000}
 
-La solución utiliza un enfoque auto-adaptable para mejorar el tráfico tanto en el corto como en el largo plazo a través de la optimización de las señales de tráfico en las intersecciones de una red de rutas. Al darle dinamismo a cada intersección se mejora el rendimiento de la red.
+Esta solución utiliza un enfoque auto-adaptable para mejorar el tráfico, tanto en el corto como en el largo plazo, a través de la optimización de las señales de tráfico en las intersecciones de una red de rutas. Al darle dinamismo a cada intersección se mejora el rendimiento de la red.
 
-Destaca el hecho que dada una configuración de semáforos aún siendo optimizada usando simulaciones es difícil que sea la mejor en todas las situaciones o en casos extremos (horas picos). Para solucionar esto proponen un sistema auto-adaptable que toma la información del tráfico actual usando detectores de vehículos y espacios.
+Plantea, que dada una configuración de semáforos aún siendo optimizada usando simulaciones es difícil que sea la mejor en todas las situaciones o en casos extremos (horas picos). Para solucionar ese problema, proponen un sistema auto-adaptable que toma la información del tráfico actual usando detectores de vehículos y espacios disponibles.
 
-Utiliza el concepto de fases para representar las distintas posibilidades en la señalización de la intersección y cuanto tiempo debe permanecer en esa fase. 
-Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases mientras el \emph{fitness} se obtiene simulando ese sistema en un modelo de tráfico. Este es relativamente pequeño con una intersección con cuatro brazos, cada uno con tres líneas donde la ruta principal tiene el doble de densidad vehicular. 
-
-Los resultados indican que la ventaja de usar conocimiento experto para configurar los parámetros iniciales es mínimo ya que llega muy rápido a resultados similares. Tanto la búsqueda de los mejores parámetros como en estructuras más simples el algoritmo se comporta con buenos resultados.
+ Propone el desarrollo de un algoritmo evolutivo donde cada individuo representa un sistema de fases, mientras el \emph{fitness} se obtiene simulando ese sistema en un modelo de tráfico. Este modelo es relativamente pequeño, con una intersección de cuatro brazos, cada uno con tres líneas, donde la ruta principal tiene el doble de densidad vehicular. Los resultados obtenidos de este trabajo se destaca que la ventaja de usar conocimiento experto para configurar los parámetros iniciales es mínimo, ya que el algoritmo llega rápidamente a resultados similares. 
 
 \end{item}	
 
 \begin{item}
 \bibentry{Rouphail2000}
 
-Se estudia una pequeña red de tráfico de nueve intersecciones con semáforos en la ciudad de Chicago, contando con tráfico de vehículos, parking, rutas de ómnibus y paradas.  
-Se toman valores reales en horas pico, comprobando que las colas que se generan en la simulación coinciden con la realidad.
-Usa el programa \citet{TRANSYT-7F} que permite visualizar mapas y contiene optimización de varios algoritmos genéticos y \citet{CORSIM}  un simulador de tráfico comercial.
-Se probaron 12 estrategias distintas de resolución midiendo el tiempo de demora en la red y el largo de las colas producidas. Los resultados indican que la performance de la red aumentó considerablemente usando este método.	
+Este trabajo estudia una pequeña red de tráfico con nueve intersecciones semaforizadas en la ciudad de Chicago, el modelado incluye: tráfico de vehículos, rutas y paradas de ómnibus.  Se toman valores reales en horas pico, comprobando que las colas de vehiculos generadas en la simulación coinciden con la realidad. Utiliza el programa \citet{TRANSYT-7F} que permite visualizar mapas y \citet{CORSIM} un simulador de tráfico comercial.
+Se probaron 12 estrategias distintas para resolver el problema de sincronización de semáforos, midiendo las demoras en la red y el largo de las colas producidas. Los resultados indican que la performance de la red aumentó considerablemente usando este método.	
 \end{item}	
 	
 \end{itemize}
 
 
 \subsection{Resumen}
-Aquí un breve repaso sobre los trabajos evaluados y su comparación con el presente proyecto.
+Esta sección presenta un breve análisis sobre los trabajos evaluados y como se relacionan con el presente proyecto.
 
-El trabajo de \citet{Sanchez2004} posee algunos puntos de contacto con el presente trabajo, como es la ejecución paralela en un cluster y la arquitectura maestro-esclavo. La principal diferencia es que el escenario que evalúan es pequeño y no se compara con un escenario real. El siguiente trabajo de \citet{Sanchez2008} expande lo anterior y lo utiliza en un caso real, en Santa Cruz de Tenerife siendo de una complejidad similar a Garzón en términos de cantidad de cruces y semáforos. Los resultados obtenidos son muy positivos obteniendo mejoras de hasta 26\%.
+El trabajo de \citet{Sanchez2004} incluye algunos puntos de contacto con el presente proyecto, ambos utilizan un cluster como plataforma de ejecución del algoritmo evolutivo y aplican el mismo método de paralelismo maestro-esclavo en el modelo de paralelismo. La principal diferencia entre ambos trabajos, es que el escenario que evalúan es pequeño y no se realizan comparaciones con modelos que representen un escenario real. El siguiente trabajo de \citet{Sanchez2008} expande lo anterior y lo aplica a un escenario real, en Santa Cruz de Tenerife. Este escenario presenta una complejidad similar al Corredor Garzón en términos de cantidad de cruces y semáforos. Los resultados obtenidos son muy positivos, obteniendo mejoras de hasta 26\%.
 
-De \citet{Sanchez2010} se destacan las pruebas de diferentes funciones de \emph{fitness} teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiró la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el presente proyecto.
+Se destaca de \citet{Sanchez2010} las pruebas realizadas con diferentes funciones de \emph{fitness}, teniendo en cuenta diversos factores como: tiempo de viaje o velocidad promedio. Este trabajo inspiró al presente proyecto en considerar la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio de los auto y ómnibus.
 
-Aunque \citet{Stolfi2012} no optimiza la configuración de los semáforos, si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta, por lo que se podría tomar como un elemento en trabajos futuros. Tanto los trabajos de \citet{Teo2010} como \citet{Stolfi2012} plantean la simulación con un tiempo fijo lo que se utilizó en este proyecto.
+En el trabajo de \citet{Stolfi2012} no se optimiza la configuración de los semáforos, pero plantea una posibilidad interesante para mejorar el tráfico de una ciudad indicando a los vehículos la mejor ruta. Esta novedosa opción se podría tomar como un elemento en trabajos futuros. Tanto \citet{Teo2010} como \citet{Stolfi2012} plantean la simulación con un tiempo fijo, característica que se consideró para el presente proyecto.
 
-\citet{Montana1996} y \citet{Vogel2000}  proponen algoritmos que se adapten en tiempo real, por lo que se destacan como posibles trabajos a futuro.
-Es digno de mención que todos los trabajos consultados lograron mejoras significativas en sus resultados.
+\citet{Montana1996} y \citet{Vogel2000}  proponen algoritmos adaptables en tiempo real, siendo un aporte interesante a tener en cuenta para trabajos a futuro.
 
-En conclusión el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivó aún más el desarrollo del trabajo presentado.
+En conclusión, el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que se consideraron en menor o mayor medida en la solución propuesta. El hecho de que todos los trabajos consultados obtuvieron mejoras significativas en sus resultados motivó aún más el desarrollo del presente proyecto.
 
 
 
