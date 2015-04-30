@@ -394,16 +394,19 @@ Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya
  
 \section{Trabajos relacionados}
 
-La investigación del estado del arte se realizó con dos objetivos en mente, el primero analizar las distintas soluciones que existen actualmente para el problema de sincronización de semáforos y segundo para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución propuesta.
+La investigación del estado del arte se realizó con dos objetivos en mente, el primero fue analizar las distintas soluciones que existen actualmente para el problema de sincronización de semáforos y el segundo fue para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución a implementar.
 
-El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos como  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, etc. La cantidad de soluciones encontradas fue abundante y variada, por este motivo se decidió enfocar la búsqueda en soluciones cercanas al proyecto propuesto, en particular que utilizaran algoritmos genéticos y en otras que tuvieran alguna particularidad interesante para destacar.
+El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos incluyendo  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, entre otros. El número de artículos encontrados en el relevamiento de trabajos relacionados fue abundante y los tipos de propuesta fueron variadas, por este motivo se decidió enfocar la búsqueda en los trabajos que proponen soluciones cercanas al proyecto propuesto. En particular se relevaron aquellos trabajos que utilizan algoritmos genéticos.
+
+Una reseña de los principales trabajos relacionados se presenta a continuación:
 
 
 \begin{itemize}
 \begin{item}
 \bibentry{Sanchez2004}
 
-Este trabajo se basa en tres puntos: El uso de algoritmos genéticos para la sincronización de los semáforos, la simulación de autómatas celulares para la función de evaluación del tráfico y un cluster para realizar ejecuciones del algoritmo en paralelo.
+  
+Este trabajo se basa en tres ideas fundamentales: El uso de algoritmos genéticos para la sincronización de los semáforos, la simulación de autómatas celulares para la función de evaluación del tráfico y un cluster para realizar ejecuciones del algoritmo en paralelo.
 El modelo presentado es pequeño, con 5 calles de 2 vías que se intersectan. La codificación del cromosoma utiliza un vector de números enteros, donde se codifica para cada intersección cual es la calle habilitada en cada ciclo. Usa una estrategia de selección elitista, donde los dos mejores individuos se clonan a la siguiente generación y el resto es generado por cruzamiento de dos puntos.
 
 Para la evaluación del \emph{fitness}, se utiliza el tiempo que transcurre desde el momento en que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos para que evalúen y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
