@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{49}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -72,13 +72,6 @@ J.~J. Durillo y A.~J. Nebro.
 \newblock \emph{Advances in Engineering Software}, 42\penalty0 (10):\penalty0
   760--771, 2011.
 
-\bibitem[Eigen(1973)]{Ingo1971}
-M.~Eigen.
-\newblock \emph{Ingo Rechenberg Evolutionsstrategie Optimierung technischer
-  Systeme nach Prinzipien der biologishen Evolution}.
-\newblock mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag,
-  Struttgart-Bad Cannstatt, 1973.
-
 \bibitem[{El País}(2013)]{olivera2013}
 {El País}.
 \newblock {\enquote{Garzón: Olivera admitió errores}}.
@@ -99,8 +92,8 @@ L.~Eshelman.
 \newblock En \emph{{Foundations of Genetics Algorithms}}, p. 265--283. Morgan
   Kaufmann Publishers, Inc., 1991.
 
-\bibitem[Fagundez(2014)]{Malva}
-G.~Fagundez.
+\bibitem[Fagúndez(2014)]{Malva}
+G.~Fagúndez.
 \newblock {The Malva Project: A framework for comutational intelligence in
   C++}.
 \newblock En \url{http://themalvaproject.github.io/}, 2014.
@@ -152,11 +145,12 @@ INE.
 \newblock En \url{https://www.itdp.org}, Junio 2007.
 \newblock Disponible online, consultado febrero 2015.
 
-\bibitem[Jacob et~al.(2002)Jacob, Penner, y Hoar]{Penner2002}
-J.~Jacob, R.~Penner, y C.~Hoar.
+\bibitem[J.~Penner y Jacob(2002)]{Penner2002}
+R.~H. J.~Penner y C.~Jacob.
 \newblock Swarm-based traffic simulation with evolutionary traffic light
   adaptation.
-\newblock 2002.
+\newblock En \emph{Proceedings of Artificial Intelligence and Soft Computing},
+  2002.
 
 \bibitem[Kotushevski y Hawick(2009)]{review_trafico}
 G.~Kotushevski y K.~A. Hawick.
@@ -238,6 +232,13 @@ A.~K. Rathi.
 \newblock \emph{Journal of Transportation Engineering}, 116\penalty0
   (6):\penalty0 734--743, November-December 1990.
 
+\bibitem[Rechenberg(1973)]{Ingo1971}
+E.~Rechenberg.
+\newblock \emph{Ingo Rechenberg Evolutionsstrategie Optimierung technischer
+  Systeme nach Prinzipien der biologishen Evolution}.
+\newblock mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag,
+  Struttgart-Bad Cannstatt, 1973.
+
 \bibitem[Rouphail et~al.(2000)Rouphail, Park, y Sacks]{Rouphail2000}
 N.~M. Rouphail, B.~B. Park, y J.~Sacks.
 \newblock Direct signal timing optimization: Strategy development and results.
@@ -271,6 +272,12 @@ J.~J. S{\'a}nchez-Medina, M.~J. Gal{\'a}n-Moreno, y E.~Rubio-Royo.
 D.~Smith y J.~McIntyre.
 \newblock Handbook of simplified practice for traffic studies.
 \newblock Technical report, 2002.
+
+\bibitem[Spears(2000)]{spears2000evolutionary}
+W.~M. Spears.
+\newblock \emph{Evolutionary algorithms: the role of mutation and
+  recombination}.
+\newblock Springer Science \& Business Media, 2000.
 
 \bibitem[Stolfi(2012)]{Stolfi2012}
 D.~H. Stolfi.
