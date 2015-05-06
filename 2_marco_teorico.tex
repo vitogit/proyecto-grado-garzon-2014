@@ -225,11 +225,17 @@ La función de evaluación indica qué tan bueno es un individuo para resolver e
 \subsubsection{Operador de Selección}
 Existen diversos operadores de selección, cuya función es mantener las mejores características de los individuos en las siguientes generaciones. Entre ellos se encuentran:
 \begin{itemize}
-	\item Selección proporcional: También conocida como ruleta, elige aleatoriamente individuos donde la probabilidad de selección es proporcional al valor de fitness.
-	\item Torneo: Se elige aleatoriamente un determinado número de individuos los cuales compiten entre sí usando su valor de fitness.
+	\item Selección proporcional: Elige aleatoriamente individuos donde la probabilidad de selección es proporcional al valor del \emph{fitness}. Los mejores individuos son elegidos con mayor probabilidad, pero los peores individuos también pueden ser elegidos, lo que permite mantener la diversidad en la población. Sea N la cantidad de individuos en la población y $f_i$ el valor de \emph{fitness} del i-ésimo individuo, la probabilidad asociada a su selección esta dada por la la ecuación \ref{eq:seleccion_proporcional} .
+	\item Torneo: Se eligen aleatoriamente un determinado número de individuos y se selecciona un subconjunto de los individuos con mejor \emph{fitness}.
 	\item Rango: Se ordenan los individuos por el valor de \emph{fitness} y se selecciona un determinado porcentaje(rango) de los mejores individuos.
 \end{itemize}
 
+\begin{equation}
+\label{eq:seleccion_proporcional}
+F(x) =  p_i = \frac{f_i}{\sum_{j=1}^{n}{f_j}}  
+\end{equation}
+        
+        
 \subsubsection{Operador de cruzamiento}
 La función del operador de cruzamiento es combinar individuos con el objetivo de preservar las mejores características de los progenitores y así lograr construir mejores soluciones. El operador de cruzamiento se aplica de acuerdo a una tasa de probabilidad prefijada. 
 
