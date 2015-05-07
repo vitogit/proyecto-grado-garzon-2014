@@ -28,13 +28,12 @@
 \contentsline {section}{\numberline {2.7}Trabajos relacionados}{23}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Resumen}{28}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{31}{chapter.3}
-\contentsline {section}{\numberline {3.1}Modelado del problema }{31}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Simulador SUMO (Simulation of Urban MObility)}{31}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Proceso de modelado}{33}{subsection.3.1.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o del mapa}{33}{section*.27}
-\contentsline {subsubsection}{Trabajo de campo}{35}{section*.29}
-\contentsline {subsubsection}{Desarrollo de instancias realistas del problema}{37}{section*.32}
-\contentsline {section}{\numberline {3.2}Arquitectura de la soluci\IeC {\'o}n}{40}{section.3.2}
+\contentsline {section}{\numberline {3.1}Modelo del problema }{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Simulaciones de tr\IeC {\'a}fico}{31}{section.3.2}
+\contentsline {section}{\numberline {3.3}Dise\IeC {\~n}o del mapa de la zona de estudio}{33}{section.3.3}
+\contentsline {section}{\numberline {3.4}Recolecci\IeC {\'o}n de datos en trabajo de campo}{35}{section.3.4}
+\contentsline {section}{\numberline {3.5}Desarrollo de instancias realistas del problema}{37}{section.3.5}
+\contentsline {section}{\numberline {3.6}Arquitectura de la soluci\IeC {\'o}n}{38}{section.3.6}
 \contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n de la soluci\IeC {\'o}n}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}Implementaci\IeC {\'o}n: Biblioteca Malva}{41}{section.4.1}
 \contentsline {section}{\numberline {4.2}Especificaci\IeC {\'o}n del Algoritmo Gen\IeC {\'e}tico utilizado}{42}{section.4.2}
@@ -42,10 +41,10 @@
 \contentsline {subsection}{\numberline {4.2.2}Poblaci\IeC {\'o}n inicial}{45}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Funci\IeC {\'o}n \emph {fitness}}{45}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Operadores}{46}{subsection.4.2.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{46}{section*.38}
-\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{47}{section*.40}
-\contentsline {subsubsection}{Selecci\IeC {\'o}n y reemplazo}{47}{section*.41}
-\contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{47}{section*.42}
+\contentsline {subsubsection}{Operador de Cruzamiento}{46}{section*.35}
+\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{47}{section*.37}
+\contentsline {subsubsection}{Selecci\IeC {\'o}n y reemplazo}{47}{section*.38}
+\contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{47}{section*.39}
 \contentsline {section}{\numberline {4.3}Modelo de paralelismo e implementaci\IeC {\'o}n}{47}{section.4.3}
 \contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis Experimental}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}Plataforma de ejecuci\IeC {\'o}n y Desarrollo}{49}{section.5.1}
@@ -62,16 +61,16 @@
 \contentsline {subsection}{\numberline {5.4.1}Valores num\IeC {\'e}ricos del caso base}{55}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{55}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Detalles del escenario alternativo}{56}{subsection.5.4.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{56}{section*.50}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{56}{section*.51}
-\contentsline {subsubsection}{Alternar paradas}{57}{section*.52}
-\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{58}{section*.54}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{56}{section*.47}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{56}{section*.48}
+\contentsline {subsubsection}{Alternar paradas}{57}{section*.49}
+\contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{58}{section*.51}
 \contentsline {subsection}{\numberline {5.4.4}Valores num\IeC {\'e}ricos al aplicar los cambios}{58}{subsection.5.4.4}
 \contentsline {subsection}{\numberline {5.4.5}Resultados de la evaluaci\IeC {\'o}n sobre el escenario alternativo}{59}{subsection.5.4.5}
 \contentsline {subsection}{\numberline {5.4.6}Variaci\IeC {\'o}n de la funci\IeC {\'o}n de \emph {fitness}}{60}{subsection.5.4.6}
-\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{60}{section*.59}
-\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{60}{section*.60}
-\contentsline {subsubsection}{Resultados}{61}{section*.61}
+\contentsline {subsubsection}{Prioridad \IeC {\'o}mnibus}{60}{section*.56}
+\contentsline {subsubsection}{Prioridad a otros veh\IeC {\'\i }culos}{60}{section*.57}
+\contentsline {subsubsection}{Resultados}{61}{section*.58}
 \contentsline {subsection}{\numberline {5.4.7}Eficiencia computacional}{61}{subsection.5.4.7}
 \contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{65}{chapter.6}
 \contentsline {section}{\numberline {6.1}Conclusiones}{65}{section.6.1}

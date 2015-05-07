@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  7 MAY 2015 07:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  7 MAY 2015 10:13
 entering extended mode
 **index.tex
 
@@ -1402,30 +1402,30 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 3.
-[31] <Figures/sim1.jpg, id=637, 995.72pt x 678.535pt>
+[31]
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+ [32] <Figures/sim1.jpg, id=645, 939.51pt x 670.505pt>
 File: Figures/sim1.jpg Graphic file (type jpg)
- <use Figures/sim1.jpg>
-Package pdftex.def Info: Figures/sim1.jpg used on input line 42.
-(pdftex.def)             Requested size: 377.99744pt x 257.58713pt.
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
 
-[32]
+<use Figures/sim1.jpg>
+Package pdftex.def Info: Figures/sim1.jpg used on input line 42.
+(pdftex.def)             Requested size: 377.99744pt x 269.7626pt.
 LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
  [33 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/sim1.jpg>]
-<Figures/mapa_osm_sumo.jpg, id=652, 720.6925pt x 617.30624pt>
+<Figures/mapa_osm_sumo.jpg, id=656, 1165.35374pt x 1060.96375pt>
 File: Figures/mapa_osm_sumo.jpg Graphic file (type jpg)
 
 <use Figures/mapa_osm_sumo.jpg>
 Package pdftex.def Info: Figures/mapa_osm_sumo.jpg used on input line 67.
-(pdftex.def)             Requested size: 377.99744pt x 323.77037pt.
+(pdftex.def)             Requested size: 377.99744pt x 344.1292pt.
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
  [34 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/mapa_osm_sumo.jpg>]
-<Figures/conteo_hoja.jpg, id=660, 673.51625pt x 516.93124pt>
+<Figures/conteo_hoja.jpg, id=665, 673.51625pt x 516.93124pt>
 File: Figures/conteo_hoja.jpg Graphic file (type jpg)
 
 <use Figures/conteo_hoja.jpg>
@@ -1441,27 +1441,24 @@ LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
 
 [36 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figur
-es/conteo_hoja.jpg>] <Figures/areaflow1.jpg, id=674, 291.0875pt x 599.23875pt>
+es/conteo_hoja.jpg>] <Figures/areaflow1.jpg, id=681, 726.715pt x 1166.3575pt>
 File: Figures/areaflow1.jpg Graphic file (type jpg)
 
 <use Figures/areaflow1.jpg>
 Package pdftex.def Info: Figures/areaflow1.jpg used on input line 141.
-(pdftex.def)             Requested size: 210.0pt x 432.32022pt.
+(pdftex.def)             Requested size: 210.0pt x 337.0426pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
+LaTeX Info: Redefining \. on input line 154.
+LaTeX Info: Redefining \% on input line 154.
 [37]
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
- [38]
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
- [39 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+LaTeX Info: Redefining \. on input line 163.
+LaTeX Info: Redefining \% on input line 163.
+ [38 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/areaflow1.jpg>]
-<Figures/arquitectura1.jpg, id=690, 536.0025pt x 390.45876pt>
+<Figures/arquitectura1.jpg, id=694, 536.0025pt x 390.45876pt>
 File: Figures/arquitectura1.jpg Graphic file (type jpg)
 
 <use Figures/arquitectura1.jpg>
@@ -1472,24 +1469,22 @@ Package pdftex.def Info: Figures/arquitectura1.jpg used on input line 166.
 mentacion.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [40
-
- <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figures/
-arquitectura1.jpg>]
-Cap\'{\i }tulo 4.
-[41
+ [39 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+res/arquitectura1.jpg>] [40
 
 ]
+Cap\'{\i }tulo 4.
+[41]
 LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
- [42] <Figures/cromosoma1.jpg, id=722, 417.56pt x 215.80624pt>
+ [42] <Figures/cromosoma1.jpg, id=731, 417.56pt x 215.80624pt>
 File: Figures/cromosoma1.jpg Graphic file (type jpg)
 
 <use Figures/cromosoma1.jpg>
 Package pdftex.def Info: Figures/cromosoma1.jpg used on input line 76.
 (pdftex.def)             Requested size: 293.99872pt x 151.95572pt.
 
-<Figures/rep_sumo2.jpg, id=723, 672.5125pt x 298.11375pt>
+<Figures/rep_sumo2.jpg, id=732, 672.5125pt x 298.11375pt>
 File: Figures/rep_sumo2.jpg Graphic file (type jpg)
 
 <use Figures/rep_sumo2.jpg>
@@ -1503,7 +1498,7 @@ LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
  [44 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/rep_sumo2.jpg>]
-<Figures/semaforos_numerado.jpg, id=735, 582.175pt x 488.82625pt>
+<Figures/semaforos_numerado.jpg, id=745, 582.175pt x 488.82625pt>
 File: Figures/semaforos_numerado.jpg Graphic file (type jpg)
 
 <use Figures/semaforos_numerado.jpg>
@@ -1514,7 +1509,7 @@ LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
  [45 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/semaforos_numerado.jpg>]
-<Figures/alg_cruzamiento.png, id=740, 553.06625pt x 493.845pt>
+<Figures/alg_cruzamiento.png, id=750, 553.06625pt x 493.845pt>
 File: Figures/alg_cruzamiento.png Graphic file (type png)
 
 <use Figures/alg_cruzamiento.png>
@@ -1542,7 +1537,7 @@ Cap\'{\i }tulo 5.
 ]
 LaTeX Info: Redefining \. on input line 42.
 LaTeX Info: Redefining \% on input line 42.
- [50] <Figures/criterio_parada.png, id=770, 433.62pt x 289.08pt>
+ [50] <Figures/criterio_parada.png, id=780, 433.62pt x 289.08pt>
 File: Figures/criterio_parada.png Graphic file (type png)
 
 <use Figures/criterio_parada.png>
@@ -1552,7 +1547,7 @@ LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
  [51 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/criterio_parada.png>]
-<Figures/grafica_mutacion_cruzamiento.jpg, id=777, 635.37375pt x 403.5075pt>
+<Figures/grafica_mutacion_cruzamiento.jpg, id=788, 635.37375pt x 403.5075pt>
 File: Figures/grafica_mutacion_cruzamiento.jpg Graphic file (type jpg)
 
 <use Figures/grafica_mutacion_cruzamiento.jpg>
@@ -1575,7 +1570,7 @@ LaTeX Info: Redefining \% on input line 188.
 [54]
 LaTeX Info: Redefining \. on input line 245.
 LaTeX Info: Redefining \% on input line 245.
- [55] <Figures/duracion_viajes.jpg, id=799, 477.785pt x 282.05376pt>
+ [55] <Figures/duracion_viajes.jpg, id=812, 477.785pt x 282.05376pt>
 File: Figures/duracion_viajes.jpg Graphic file (type jpg)
 
 <use Figures/duracion_viajes.jpg>
@@ -1585,7 +1580,7 @@ LaTeX Info: Redefining \. on input line 264.
 LaTeX Info: Redefining \% on input line 264.
  [56 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/duracion_viajes.jpg>]
-<Figures/paradas_alternativas.jpg, id=806, 401.45985pt x 401.45985pt>
+<Figures/paradas_alternativas.jpg, id=819, 401.45985pt x 401.45985pt>
 File: Figures/paradas_alternativas.jpg Graphic file (type jpg)
 
 <use Figures/paradas_alternativas.jpg>
@@ -1603,7 +1598,7 @@ Underfull \hbox (badness 3646) in paragraph at lines 334--336
 []|\OT1/cmr/m/n/10.95 Mejora \OT1/cmr/m/it/10.95 fit-
  []
 
-<Figures/duracio_viajes_alternativo.jpg, id=821, 463.7325pt x 278.03876pt>
+<Figures/duracio_viajes_alternativo.jpg, id=836, 463.7325pt x 278.03876pt>
 File: Figures/duracio_viajes_alternativo.jpg Graphic file (type jpg)
 
 <use Figures/duracio_viajes_alternativo.jpg>
@@ -1792,7 +1787,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 470--473
 
  []
 
-<Figures/speedup1.jpg, id=842, 484.81125pt x 292.09125pt>
+<Figures/speedup1.jpg, id=861, 484.81125pt x 292.09125pt>
 File: Figures/speedup1.jpg Graphic file (type jpg)
 
 <use Figures/speedup1.jpg>
@@ -1866,20 +1861,20 @@ e identifier (name{cite.Stolfi2012}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.282 \bibitem[Stolfi(2012)]{Stolfi2012}
-                                        pdfTeX warning (ext4): destination with
- the same identifier (name{cite.Teo2010}) has been already used, duplicate igno
-red
+                                        
+LaTeX Info: Redefining \. on input line 299.
+LaTeX Info: Redefining \% on input line 299.
+ [69]pdfTeX warning (ext4): destination with the same identifier (name{cite.Teo
+2010}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.294 ...eo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
-                                                  
-LaTeX Info: Redefining \. on input line 300.
-LaTeX Info: Redefining \% on input line 300.
- [69]pdfTeX warning (ext4): destination with the same identifier (name{cite.Vog
-el2000}) has been already used, duplicate ignored
+l.300 ...eo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.Vogel2000}) has been already used, du
+plicate ignored
 <to be read again> 
                    \relax 
-l.308 ...)Vogel, Goerick, y Von~Seelen]{Vogel2000}
+l.314 ...)Vogel, Goerick, y Von~Seelen]{Vogel2000}
                                                   )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
 LaTeX Info: Redefining \. on input line 139.
@@ -1906,33 +1901,84 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 18026 strings out of 493921
- 305657 string characters out of 3144879
- 393610 words of memory out of 3000000
- 20723 multiletter control sequences out of 15000+200000
+ 18051 strings out of 493921
+ 306036 string characters out of 3144879
+ 393634 words of memory out of 3000000
+ 20731 multiletter control sequences out of 15000+200000
  17402 words of font info for 66 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  41i,13n,44p,10416b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on index.pdf (82 pages, 3562076 bytes).
+pdfTeX warning (dest): name{table.caption.63} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.62} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.57} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.56} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.55} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.47} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.31} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.64} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.58} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.53} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.49} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.39} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/latxfont/lasy10.pfb>
+Output written on index.pdf (82 pages, 4093121 bytes).
 PDF statistics:
- 1189 PDF objects out of 1200 (max. 8388607)
- 298 named destinations out of 1000 (max. 500000)
- 584 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 315 named destinations out of 1000 (max. 500000)
+ 600 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,15 +1,17 @@
 \chapter{Estrategia de resolución}
 
-Este capítulo explica la estrategia de resolución seguida para resolver el problema de sincronización de semáforos en el Corredor Garzón. La metodología se basa en tres puntos: el modelado del problema, el algoritmo evolutivo desarrollado y el uso de técnicas de alto desempeño. El capítulo comienza presentando el modelado del problema, que incluye el diseño del mapa de la zona y la creación de instancias realistas que serán usadas para simular el tráfico. En esta primera sección se presenta el simulador de tráfico SUMO y el trabajo de campo realizado para recabar datos precisos de la realidad. Luego la sección 2 detalla la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo, que fue desarrollado utilizando la biblioteca Malva presentada en la sección 3. Finalmente se especifican los parámetros, características y modelo de paralelismo del Algoritmo Evolutivo implementado.
+Este capítulo explica la estrategia de resolución seguida para resolver el problema de sincronización de semáforos en el Corredor Garzón. La metodología se basa en tres puntos: el modelado del problema, el algoritmo evolutivo multiobjetivo desarrollado y el uso de técnicas de alto desempeño. El capítulo comienza presentando el modelo del problema, que incluye el diseño del mapa de la zona y la creación de instancias realistas que serán usadas para simular el tráfico. El capítulo describe al simulador de tráfico SUMO y el trabajo de campo realizado para recabar datos precisos de la realidad. Para finalizar se detalla la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo.
+
+%Luego la sección 2 detalla la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo, que fue desarrollado utilizando la biblioteca Malva presentada en la sección 3. Finalmente se especifican los parámetros, características y modelo de paralelismo del Algoritmo Evolutivo implementado.
 
 
-\section{Modelado del problema }
+\section{Modelo del problema }
 
 El modelado del problema comprende la simplificación de la realidad y el uso de aquellos elementos que resulten útiles para resolver el problema de sincronización de semáforos. El modelado se basa en el diseño de un mapa de la zona geográfica a estudiar y la elaboración de instancias realistas que serán usadas en el simulador de tráfico SUMO. A continuación se presenta el simulador, las herramientas necesarias utilizadas y el proceso seguido para desarrollar el modelo propuesto. 
 
-\subsection{Simulador SUMO (Simulation of Urban MObility)}
+\section{Simulaciones de tráfico}
 
-Como se explicó en el capítulo de marco teórico, SUMO es un simulador de tráfico gratuito y de código abierto que permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos. Este simulador sigue un modelo microscópico, ya que realiza la simulación individual explícita de cada elemento. SUMO incluye un conjunto de herramientas destinadas a facilitar la generación de tráfico y la construcción de mapas. 
+Como se explicó en el capítulo de marco teórico, SUMO es un simulador de tráfico gratuito y de código abierto que permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos. Este simulador sigue un modelo microscópico, ya que realiza la simulación individual explícita de cada elemento. SUMO incluye un conjunto de herramientas destinadas a facilitar la generación de tráfico y la construcción de mapas \citep{SumoTools}. 
 
 Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simulador de tráfico, se efectuó un análisis relacionado con las posibilidades y objetivos del proyecto. A continuación se presentan las razones que sustentan la elección de SUMO como el simulador de tráfico utilizado en el marco del proyecto:
 
@@ -18,7 +20,7 @@ Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simu
 	
 	\item Disponibilidad de modos de ejecución: SUMO puede ejecutarse sin interfaz gráfica, utilizando solamente la línea de comando, lo que aumenta sensiblemente la velocidad de ejecución. Esta funcionalidad es fundamental a la hora de diseñar el algoritmo evolutivo, ya que la interacción con el simulador de tráfico debe ser eficiente. Por otro lado SUMO, presenta la opción de ejecutarse con interfaz gráfica, lo que es indispensable a la hora de visualizar la simulación. Esta opción es útil sobre todo en el inicio del desarrollo, cuando se realizan ajustes y pruebas sobre el modelo y el algoritmo.
 	
-	\item Software gratuito y abierto: SUMO se presenta como un proyecto de código abierto y sin costo, siendo un factor importante para un proyecto de investigación como el que se quiere desarrollar. 
+	\item Software gratuito y abierto: SUMO se presenta como un proyecto de código abierto por lo que permite implementar características especificas, y no tiene costos asociados, que no podrían ser cubiertos por un proyecto estudiantil. 
 	
 	\item Documentación y mantenimiento: El simulador incluye una detallada documentación que hace más fácil su utilización. SUMO cuenta con una comunidad muy activa que responde dudas en los foros, lo cual es útil a la hora de buscar soporte en caso de problemas o errores. SUMO también cuenta con un desarrollo activo que permite su mejora por medio de actualizaciones frecuentemente.
 	
@@ -26,12 +28,12 @@ Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simu
 	
 	\item Información de salida: SUMO ofrece la opción de generar una amplia variedad de datos, producida por la simulación ejecutada. Entre estos datos se encuentran la velocidad de los vehículos y el largo del recorrido, datos que son requeridos por la solución propuesta.
 	
-	\item Eficiencia: SUMO soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad, siendo una característica deseable por la complejidad del problema a solucionar.
+	\item Eficiencia: SUMO soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad, siendo una característica deseable por la complejidad del problema a solucionar. Un ejemplo de escenario de grandes es el \emph{"TAPAS Cologne" Scenario}, disponible públicamente en www.sumo.dlr.de/wiki , donde se describe el tráfico de la ciudad de Colonia (Alemania)  para un día entero, simulando cerca de 1.2 millones de recorridos de vehículos.
 	
 \end{itemize}
 
 
-SUMO presenta un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Además, genera archivos de salida con información útil como el tiempo de simulación, la cantidad de vehículos, velocidad de los vehículos, duración del viaje, emisiones de gases contaminantes, etc. 
+SUMO presenta un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Además, genera archivos de salida con información útil como el tiempo de simulación, la cantidad de vehículos, velocidad de los vehículos, duración del viaje, emisiones de gases contaminantes, etc. Una instancia de ejecución del simulador SUMO se muestra en la Figura \ref{fig:sim1}, donde se aprecia la red vial, los autos, ómnibus y paradas de ómnibus.
 
 Dada la complejidad del problema a enfrentar en el marco del proyecto, se propone utilizar otras herramientas para realizar ciertas tareas de manera más eficiente y con menos errores. \emph{NetConvert} viene integrado con SUMO y es utilizado para generar la red vial a partir del mapa obtenido de Open Street Map, transformándolo al formato que SUMO reconoce. Otra herramienta integrada con SUMO es \emph{DUaRouter} que permite generar recorridos de vehículos basado en dinámicas definidas por el usuario. \emph{Traffic Modeler}, creado por \citet{TrafficModeler}, es útil para la generación de tráfico de manera visual que puede ser exportado al formato reconocido por SUMO. 
 	
@@ -46,11 +48,11 @@ Dada la complejidad del problema a enfrentar en el marco del proyecto, se propon
 
 
 
-\subsection{Proceso de modelado}
+%\subsection{Proceso de modelado}
 
-El objetivo del proceso de modelado es desarrollar de instancias realistas del problema. Se comienza con el diseño del mapa que representa la zona del Corredor Garzón. Luego se describe el trabajo de campo realizado para obtener datos precisos de la realidad. Finalmente utilizando estos datos, se describe el desarrollo de las instancias realistas que serán utilizadas en el simulador de tráfico.
+%El objetivo del proceso de modelado es desarrollar instancias realistas del problema. Se comienza con el diseño del mapa que representa la zona del Corredor Garzón. Luego se describe el trabajo de campo realizado para obtener datos precisos de la realidad. Finalmente utilizando estos datos, se describe el desarrollo de las instancias realistas que serán utilizadas en el simulador de tráfico.
 
-\subsubsection{Diseño del mapa}
+\section{Diseño del mapa de la zona de estudio}
 
 El primer paso del modelado consiste en diseñar un mapa de la zona del Corredor Garzón que sea compatible con el simulador. El servicio de Open Street Map \citep{OSM} cuenta con mapas libres y actualizados por una comunidad muy activa. Este servicio se utiliza para importar la zona de interés y luego editarlo con el programa JOSM (Java OpenStreetMap Editor) para poder adecuarlo a las necesidades del problema.  Se utilizaron otros servicios (Google Maps y Bing Maps) y un estudio de la zona para validar la exactitud del mapa importado desde OSM. Como resultado de la verificación in situ fueron detectadas algunas inconsistencias entre la realidad y el mapa importado, por ejemplo en la dirección de las rutas y el diseño de algunos cruces. Todas las inconsistencias detectadas fueron corregidas en la versión del mapa a utilizar en el proyecto. 
 
@@ -76,7 +78,7 @@ La herramienta \emph{Netconvert} fue utilizada para transformar el mapa obtenido
 Al finalizar el proceso de diseño se obtuvo un mapa fiel a la realidad, delimitado en la zona del Corredor Garzón, que es compatible con el simulador de tráfico SUMO.
 
 
-\subsubsection{Trabajo de campo}
+\section{Recolección de datos en trabajo de campo}
 
 Existen datos públicos disponibles sobre la cantidad de ómnibus y sus frecuencias, pero no se tienen datos sobre la densidad del tráfico vehicular en la zona del Corredor Garzón. Por este motivo se realizó un revelamiento in-situ en cinco cruces representativos de la zona estudiada. Los cruces seleccionados fueron: Camino Ariel, Batlle y Ordoñez, Plaza Videla, Camino Colman y Aparicio Saravia. Estos cruces presentan diferentes características que son útiles para modelar variantes en la cantidad de vehículos circulantes. 
 
@@ -117,20 +119,20 @@ En el relevamiento de trafico se siguieron las recomendaciones de los textos con
 	\end{tabular}
 \end{table}
 
-La tabla \ref{table:resumen_trafico} muestra la cantidad de vehículos contados en los distintos cruces; hay que tener en cuenta que solamente se contabilizan los autos, no se tienen en cuenta otro tipo de vehículos.
+La tabla \ref{table:resumen_trafico} muestra la cantidad de vehículos contados en los distintos cruces; hay que tener en cuenta que solamente se contabilizan los autos, no se tienen en cuenta otro tipo de vehículos. Esta decisión se basa en un relevamiento preliminar de la zona constató que la cantidad de otros vehículos (camiones, motos, bicicletas, etc) no era significante en el total del tráfico (menos de 10 \%), por lo que no se justificaba su adición al conteo y a la posterior simulación del tráfico.
 
 Complementariamente al procedimiento de conteo manual, se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto, para tomar datos de demora a ser utilizados a la hora de desarrollar las simulaciones de tráfico. Con este análisis se obtiene tanto la duración total del recorrido como el tiempo que un vehículo permanece detenido en los cruces semaforizados. 
 
 Para la configuración de los semáforos, se realizó un recorrido (en bicicleta) por toda la extensión del Corredor Garzón. Se cronometró la duración de las luces de los semáforos en cada esquina recorriendo el camino de ida, y para validar los tiempos también se relevaron las duraciones de las luces en el camino de vuelta. Estos tiempos fueron verificados por los vídeos obtenidos anteriormente en el conteo del tráfico.
 
 
-\subsubsection{Desarrollo de instancias realistas del problema}
+\section{Desarrollo de instancias realistas del problema}
 
 Una vez completado el diseño del mapa compatible con el simulador de la zona del Corredor Garzón,  y obtenidos los datos relevados de la realidad, se procedió al desarrollo de instancias realistas que representen la situación actual en relación con el tráfico.
 
 Existen varios modelos disponibles para representar la circulación de los vehículos. El modelo \emph{aleatorio} genera recorridos para los vehiculos al azar. En el modelo \emph{basado en áreas} se especifican las zonas donde el tráfico se origina y donde finaliza. Un modelo más complejo es el \emph{basado en actividad}, donde se definen la cantidad de casas, el número de vehículos y la población de una zona determinada. Luego, el modelo genera la densidad de tráfico basado en los tipos de actividades que se realizan comúnmente, como ir al trabajo, hacer las compras, ir a la escuela, etc. Finalmente, un modelo muy utilizado, sobre todo en escenarios de tamaño reducido, es el \emph{definido por el usuario}, que permite determinar la ruta de cada vehículo con mayor detalle.
 
-Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que se caracteriza por generar modelos de tráfico complejos de manera visual. Se optó por un modelo de movilidad entre áreas, lo que permite una buena granularidad al especificar la densidad de tráfico. 
+Se utilizó el programa Traffic Modeler \citep{TrafficModeler} que se caracteriza por generar modelos de tráfico complejos de manera visual como se ve en la Figura \ref{fig:areaflow1}. Se optó por un modelo de movilidad entre áreas, lo que permite una buena granularidad al especificar la densidad de tráfico. 
 
 %El programa genera el recorrido del viaje para cada vehículo, que se mantiene constantes en las distintas ejecuciones del algoritmo evolutivo. La variación se produce en las velocidades desarrolladas por cada uno, ya que dependiendo de la configuración de los semáforos logrará mayores o menores velocidades.
 
@@ -159,12 +161,12 @@ Finalizando este proceso, se cuenta con todos los elementos necesarios para la c
 %REDACTAR: no me convence mucho el titulo
 \section{Arquitectura de la solución}
 
-El esquema de la Figura \ref{fig:arquitectura1}  muestra la arquitectura propuesta para el problema. La biblioteca Malva se utiliza para la implementación del algoritmo evolutivo. En cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. El primer paso consiste en generar la población inicial del algoritmo evolutivo, estos individuos representan una configuración de semáforos para todo el Corredor Garzón, que incluye la duración de las fases y el \emph{offset}. Luego por cada individuo se genera un archivo compatible con el simulador, que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo evolutivo. Los datos de salida incluyen información necesaria para calcular el \emph{fitness} de cada individuo como la velocidad media de ómnibus y otros vehículos. El algoritmo se detiene al alcanzar un número de generaciones determinado, en ese momento se crea un archivo con la mejor configuración de semáforos encontrada. 
+El esquema de la Figura \ref{fig:arquitectura1}  muestra la arquitectura propuesta para la resolución del problema. En cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. El primer paso consiste en generar la población inicial del algoritmo evolutivo, estos individuos representan una configuración de semáforos para todo el Corredor Garzón, que incluye la duración de las fases y el \emph{offset}. Luego, por cada individuo se genera un archivo compatible con el simulador, que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador al momento de evaluar la función de \emph{fitness}. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo evolutivo. Los datos de salida incluyen información necesaria para calcular el \emph{fitness} de cada individuo como la velocidad media de ómnibus y otros vehículos. El algoritmo se detiene al alcanzar un número de generaciones determinado, en ese momento se crea un archivo con la mejor configuración de semáforos encontrada, que corresponde a la mejor solución del problema de optimización planteado. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
-	\caption{Arquitectura de la función de fitness}
+	\caption{Arquitectura de la solución propuesta.}
 	\label{fig:arquitectura1}
 \end{figure}
 

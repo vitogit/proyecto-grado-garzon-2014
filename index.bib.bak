@@ -444,7 +444,7 @@ C++}},
 
 @Article{Sanchez2010,
   Title                    = {Traffic signal optimization in {“La Almozara” district in Saragossa} under congestion conditions, using genetic algorithms, traffic microsimulation, and cluster computing},
-  Author                   = {S{\'a}nchez-Medina, Javier J and Gal{\'a}n-Moreno, Manuel J and Rubio-Royo, Enrique},
+  Author                   = {S{\'a}nchez, Javier J and Gal{\'a}n-Moreno, Manuel J and Rubio-Royo, Enrique},
   Journal                  = {Intelligent Transportation Systems, IEEE Transactions on},
   Year                     = {2010},
   Number                   = {1},
