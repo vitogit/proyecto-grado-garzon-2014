@@ -87,9 +87,9 @@ Es importante que el algoritmo evolutivo genere solamente soluciones factibles, 
 	\label{fig:rep_sumo}
 \end{figure}
 
-La figura \ref{fig:rep_sumo} muestra el archivo de configuración de semáforos que utiliza el simulador SUMO para el cromosoma anterior, donde se representan las fases. Por ejemplo la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase. 
+La Figura \ref{fig:rep_sumo} muestra el archivo de configuración de semáforos que utiliza el simulador SUMO para el cromosoma anterior, donde se representan las fases. Por ejemplo la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase. 
 
-La figura \ref{fig:sem_numerados} presenta la numeración de los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde con un color en particular. 
+La Figura \ref{fig:sem_numerados} presenta la numeración de los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde con un color en particular. 
 
 \newpage
 Por tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
@@ -139,7 +139,7 @@ Se plantea optimizar la velocidad promedio de los vehículos en toda la red vial
 
 \subsection{Operadores}
 \subsubsection{Operador de Cruzamiento}
-Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento se intenta mantener esa propiedad. En el escenario que plantea la siguiente figura, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces y se generan los hijos que son una combinación de los padres.
+Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento se intenta mantener esa propiedad. En el escenario que plantea la siguiente Figura, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces y se generan los hijos que son una combinación de los padres.
 
 \begin{figure}[H]
 	\centering

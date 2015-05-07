@@ -6,7 +6,7 @@ En gran parte del mundo se está produciendo un crecimiento sostenido del parque
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación, con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Esto repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas; además, se genera una exigencia en las vías de tránsito que ocasiona un deterioro mayor de calles y rutas.
 
-Uruguay y en particular Montevideo, no escapa a este fenómeno. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos desde el 2003 como se aprecia en la figura \ref{fig:ventas_autos}.
+Uruguay y en particular Montevideo, no escapa a este fenómeno. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
 
 Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, alguno de los cuales no están coordinados \citep{Subrayado2013}.
 
@@ -60,7 +60,7 @@ El Corredor Garzón fue construido como parte del Plan de Movilidad Urbana que i
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
 
-Como se aprecia en la figura \ref{fig:perfil_garzon}, el corredor consiste básicamente de tres calles paralelas e independientes. Dos calles cuentan con dos carriles de una sola mano y entre medio de éstas se encuentra una calle de doble vía con un carril para cada vía, que es exclusivamente usado por ómnibus urbanos durante el día y por ómnibus urbanos y suburbanos en la noche.
+Como se aprecia en la Figura \ref{fig:perfil_garzon}, el corredor consiste básicamente de tres calles paralelas e independientes. Dos calles cuentan con dos carriles de una sola mano y entre medio de éstas se encuentra una calle de doble vía con un carril para cada vía, que es exclusivamente usado por ómnibus urbanos durante el día y por ómnibus urbanos y suburbanos en la noche.
 
 Basándose en el standard antes mencionado, el Corredor de Garzón cumple con la definición de BRT por las siguientes características:
 \begin{itemize}
@@ -439,7 +439,7 @@ El mismo grupo de trabajo realizaron otros similares, expandiendo esta investiga
 \begin{item}
 \bibentry{Sanchez2008}
 
-Este estudio aplica lo presentado en el trabajo anterior a un escenario real en Santa Cruz de Tenerife. Algunas mejoras introducidas en el modelo del problema incluyen una nueva codificación del cromosoma utilizando código de Gray, que segun los autores permite mejorar el desempeño computacional de los operadores de mutación y cruzamiento. La población inicial se compone de nueve soluciones provistas por la alcaldía de la ciudad. Las estrategias de selección, cruzamiento y mutación son similares a las aplicadas en el trabajo anterior.
+Este estudio aplica lo presentado en el trabajo anterior a un escenario real en Santa Cruz de Tenerife. Algunas mejoras introducidas en el modelo del problema incluyen una nueva codificación del cromosoma utilizando código de Gray, que según los autores permite mejorar el desempeño computacional de los operadores de mutación y cruzamiento. La población inicial se compone de nueve soluciones provistas por la alcaldía de la ciudad. Las estrategias de selección, cruzamiento y mutación son similares a las aplicadas en el trabajo anterior.
 
 El escenario discretizado de la zona estudiada lo componen 42 semáforos, 26 vías de entrada y 20 de salida. Las soluciones provistas por la alcaldía se ejecutaron en el simulador y los resultados obtenidos se compararon con los valores alcanzados  por el algoritmo, concluyendo que logra una mejora de 26\% en el valor del fitness.
 
@@ -531,6 +531,32 @@ En el trabajo de \citet{Stolfi2012} no se optimiza la configuración de los sem�
 
 En conclusión, el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que se consideraron en menor o mayor medida en la solución propuesta. El hecho de que todos los trabajos consultados obtuvieron mejoras significativas en sus resultados motivó aún más el desarrollo del presente proyecto.
 
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Resumen de los principales trabajos relacionados relevados.}
+	\label{table:resumen_trabajos}
+	\centering
+	\begin{tabular}{p{3cm}p{1cm}p{9cm}}
+		\hline
+		Autor& 
+	    Año & 
+		Línea de trabajo\\ 
+		\hline
+		\citeauthor{Montana1996} & \citeyear{Montana1996}   &  Sincronización de semáforos en tiempo real utilizando un algoritmo híbrido entre programación genética y  algoritmo genético en un escenario simple. \\
+		\citeauthor{Vogel2000} & \citeyear{Vogel2000}       &  Sincronización de semáforos en tiempo real utilizando un algoritmo evolutivo un escenario simple.\\
+		\citeauthor{Rouphail2000} & \citeyear{Rouphail2000} &  Sincronización de semáforos utilizando un algoritmo genético en un escenario real.\\			
+		\citeauthor{Penner2002} & \citeyear{Penner2002}     &  Sincronización de semáforos utilizando un algoritmo genético en un escenario complejo.\\	
+	    \citeauthor{Sanchez2004} & \citeyear{Sanchez2004}   &  Sincronización de semáforos utilizando un algoritmo genético en un escenario simple.\\
+		\citeauthor{Sanchez2008} & \citeyear{Sanchez2008}   &  Sincronización de semáforos utilizando un algoritmo genético en un escenario real.\\
+		\citeauthor{Sanchez2010} & \citeyear{Sanchez2010}   &  Sincronización de semáforos utilizando un algoritmo genético en un escenario real. Análisis de cuatro funciones de fitness diferentes.\\
+		\citeauthor{Teo2010} & \citeyear{Teo2010}           &  Sincronización de semáforos utilizando un algoritmo genético en un escenario simple.\\
+		\citeauthor{Stolfi2012} & \citeyear{Stolfi2012}     &  Propone el concepto de ciudad inteligente, utilizando un algoritmo genético para sugerir la mejor ruta a los conductores en tiempo real.\\
+
+
+			
+		\hline
+	\end{tabular}
+\end{table}
 
 
 
