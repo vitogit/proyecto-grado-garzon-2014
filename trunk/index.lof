@@ -14,20 +14,20 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Modelo Maestro-Esclavo}}{20}{figure.caption.23}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Simulaci\IeC {\'o}n de trafico en el simulador SUMO.}}{33}{figure.caption.26}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa del corredor Garz\IeC {\'o}n}}{34}{figure.caption.28}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual de tr\IeC {\'a}fico.}}{36}{figure.caption.30}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa dise\IeC {\~n}ado en el TrafficModeler para la generaci\IeC {\'o}n de tr\IeC {\'a}fico.}}{39}{figure.caption.33}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{40}{figure.caption.34}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Mapa del corredor Garz\IeC {\'o}n}}{34}{figure.caption.27}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de planilla electr\IeC {\'o}nica para el conteo manual de tr\IeC {\'a}fico.}}{36}{figure.caption.28}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa dise\IeC {\~n}ado en el TrafficModeler para la generaci\IeC {\'o}n de tr\IeC {\'a}fico.}}{38}{figure.caption.30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura de la funci\IeC {\'o}n de fitness\relax }}{39}{figure.caption.31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Cromosoma de dos cruces\relax }}{43}{figure.caption.35}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{44}{figure.caption.36}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce.}}{45}{figure.caption.37}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{47}{figure.caption.39}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Cromosoma de dos cruces\relax }}{43}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{44}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce.}}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{47}{figure.caption.36}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fica de la evoluci\IeC {\'o}n de los valores de fitness. }}{51}{figure.caption.43}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento y de mutaci\IeC {\'o}n.}}{53}{figure.caption.46}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.}}{56}{figure.caption.49}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Gr\IeC {\'a}fico de las paradas alternativas.}}{57}{figure.caption.53}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo al escenario alternativo.}}{60}{figure.caption.58}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparaci\IeC {\'o}n de los \emph {speedup} promedios para cada tipo de tr\IeC {\'a}fico.}}{63}{figure.caption.64}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fica de la evoluci\IeC {\'o}n de los valores de fitness. }}{51}{figure.caption.40}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento y de mutaci\IeC {\'o}n.}}{53}{figure.caption.43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.}}{56}{figure.caption.46}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Gr\IeC {\'a}fico de las paradas alternativas.}}{57}{figure.caption.50}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo al escenario alternativo.}}{60}{figure.caption.55}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparaci\IeC {\'o}n de los \emph {speedup} promedios para cada tipo de tr\IeC {\'a}fico.}}{63}{figure.caption.61}
 \addvspace {10\p@ }
