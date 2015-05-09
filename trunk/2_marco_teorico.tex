@@ -274,11 +274,10 @@ El operador de mutación es el método utilizado para modificar un individuo, co
 
 
 \subsubsection{Criterio de reemplazo} 
-Luego de que se aplica el cruzamiento se insertan nuevos individuos que aumentan la población original. Por lo tanto el operador de reemplazo indica cual es el criterio que se debe tomar para crear una nueva población con una cantidad de individuos igual a la original.
-Se podría reemplazar todos los padres por los hijos, o seleccionar cuales reemplazar, entre otros criterios.
+El criterio de reemplazo indica cual es el mecanismo utilizado para realizar el recambio generacional. Se podría reemplazar todos los padres por los hijos o seleccionar solo algunos padres a reemplazar, que en general son los que tienen peor valor de \emph{fitness}).
 
 \subsubsection{Criterio de parada} 
-El criterio de parada indica cuándo debe terminar el algoritmo. Puede definirse un número fijo de generaciones o determinar si el mejor valor de fitness se mantiene relativamente constante durante un número determinado de generaciones entre otros criterios. El objetivo será encontrar un compromiso entre un buen resultado y un tiempo acorde de ejecución, ya que el algoritmo no arrojará un valor exacto sino una buena aproximación. 
+El criterio de parada indica cuándo debe terminar la fase iterativa del algoritmo. Puede definirse un número prefijado de generaciones o determinar si el proceso se estanca, por ejemplo cuando no se generan mejoras significativas en el valor de \emph{fitness}.
 
 
 
@@ -417,7 +416,7 @@ Un aspecto importante a tener en cuenta es la salida que genera el simulador, ya
 
 La investigación del estado del arte se realizó con dos objetivos en mente, el primero fue analizar las distintas soluciones que existen actualmente para el problema de sincronización de semáforos y el segundo fue para encontrar nuevas prácticas, algoritmos o utilidades que pudieran fortalecer la solución a implementar.
 
-El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos incluyendo  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, entre otros. El número de artículos encontrados en el relevamiento de trabajos relacionados fue abundante y los tipos de propuesta fueron variadas, por este motivo se decidió enfocar la búsqueda en los trabajos que proponen soluciones cercanas al proyecto propuesto. En particular se relevaron aquellos trabajos que utilizan algoritmos genéticos.
+El problema del tráfico optimizando las luces de los semáforos se puede resolver por diferentes métodos incluyendo  redes neuronales \citep{Lopez1999}, lógica difusa \citep{Lim2001}, redes de petri \citep{DiFebbraro2002}, entre otros. El número de artículos encontrados en el relevamiento de trabajos relacionados fue abundante y los tipos de propuesta fueron variadas, por este motivo se decidió enfocar la búsqueda en los trabajos que proponen soluciones cercanas al proyecto propuesto. En particular se relevaron aquellos trabajos que resolvían el problema de sincronización de semáforos utilizando algoritmos genéticos.
 
 Una reseña de los principales trabajos relacionados se presenta a continuación:
 
@@ -427,11 +426,11 @@ Una reseña de los principales trabajos relacionados se presenta a continuación
 \bibentry{Sanchez2004}
 
   
-Este trabajo se basa en tres ideas fundamentales: El uso de algoritmos genéticos para la sincronización de los semáforos, la simulación de autómatas celulares para la función de evaluación del tráfico y un cluster para realizar ejecuciones del algoritmo en paralelo.
+Este trabajo se basa en tres ideas fundamentales:  \textit{i)} el uso de algoritmos genéticos para la sincronización de los semáforos con el objetivo de mejorar el tráfico en una red vial simple,  \textit{ii)} la simulación de autómatas celulares para la función de evaluación del tráfico y \textit{iii)} la utilización de una infraestructura cluster para realizar ejecuciones del algoritmo en paralelo.
 El caso de estudio presentado es pequeño, con 5 calles de 2 vías que se intersectan. La codificación del cromosoma utiliza un vector de números enteros, donde se codifica para cada intersección cuál es la calle habilitada en cada ciclo. El AG utiliza una estrategia de selección elitista, donde los dos mejores individuos se clonan a la siguiente generación y el resto son generados aplicando un operador de cruzamiento de dos puntos.
 
-Para la evaluación del \emph{fitness}, se considera el tiempo que transcurre desde el momento en que un vehículo entra en la red hasta que sale. Se ejecuta sobre un cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos para que evalúen y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
-Se comparan los resultados obtenidos por el algoritmo con una simulación aleatoria y con una fija, obteniendo la solución propuesta mejores resultados en todos los casos evaluados.
+Para la evaluación del \emph{fitness}, se considera el tiempo que transcurre desde el momento en que un vehículo entra en la red hasta que sale (llega a su destino). Se ejecuta sobre una infraestructura cluster en forma paralela con una estrategia maestro-esclavo. El maestro envía los cromosomas a los esclavos para que ejecuten la funcion de \emph{fitness} y devuelven el resultado, luego el maestro se encarga de generar la siguiente población.
+Se comparan los resultados del algoritmo genético con los valores obtenidos de simular el escenario con una configuración de semáforos aleatoria y otra fija. El AG logra una reducción del 56\% comparando con la configuración de semáforos fija, y una reducción de 84\% comparando con la configuración aleatoria en el tiempo promedio que los vehículos permanecen en la red vial. 
 	
 El mismo grupo de trabajo realizaron otros similares, expandiendo esta investigación, los cuales se presentan a continuación.
 \end{item}
@@ -439,7 +438,7 @@ El mismo grupo de trabajo realizaron otros similares, expandiendo esta investiga
 \begin{item}
 \bibentry{Sanchez2008}
 
-Este estudio aplica lo presentado en el trabajo anterior a un escenario real en Santa Cruz de Tenerife. Algunas mejoras introducidas en el modelo del problema incluyen una nueva codificación del cromosoma utilizando código de Gray, que según los autores permite mejorar el desempeño computacional de los operadores de mutación y cruzamiento. La población inicial se compone de nueve soluciones provistas por la alcaldía de la ciudad. Las estrategias de selección, cruzamiento y mutación son similares a las aplicadas en el trabajo anterior.
+Este estudio aplica lo presentado en el trabajo anterior a un escenario real en Santa Cruz de Tenerife, utilizando un AG para sincronizar los semáforos de la zona con el objetivo de mejorar el flujo de circulación del tráfico. Algunas mejoras introducidas en el modelo del problema incluyen una nueva codificación del cromosoma utilizando código de Gray, que según los autores permite mejorar el desempeño computacional de los operadores de mutación y cruzamiento. La población inicial se compone de nueve soluciones provistas por la alcaldía de la ciudad. Las estrategias de selección, cruzamiento y mutación son similares a las aplicadas en el trabajo anterior, así como la función de \emph{fitness} que evalúa el tiempo promedio de permanencia de los vehículos en la red vial simulada.
 
 El escenario discretizado de la zona estudiada lo componen 42 semáforos, 26 vías de entrada y 20 de salida. Las soluciones provistas por la alcaldía se ejecutaron en el simulador y los resultados obtenidos se compararon con los valores alcanzados  por el algoritmo, concluyendo que logra una mejora de 26\% en el valor del fitness.
 
