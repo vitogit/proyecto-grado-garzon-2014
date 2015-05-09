@@ -433,7 +433,7 @@ C++}},
 @Article{Sanchez2008,
   Title                    = {Applying a traffic lights evolutionary optimization technique to a real case: {“Las Ramblas” area in Santa Cruz de Tenerife}},
   Author                   = {S{\'a}nchez, Javier and Gal{\'a}n, Manuel and Rubio, Enrique},
-  Journal                  = {Evolutionary Computation, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Evolutionary Computation},
   Year                     = {2008},
   Number                   = {1},
   Pages                    = {25--40},
@@ -445,7 +445,7 @@ C++}},
 @Article{Sanchez2010,
   Title                    = {Traffic signal optimization in {“La Almozara” district in Saragossa} under congestion conditions, using genetic algorithms, traffic microsimulation, and cluster computing},
   Author                   = {S{\'a}nchez, Javier J and Gal{\'a}n-Moreno, Manuel J and Rubio-Royo, Enrique},
-  Journal                  = {Intelligent Transportation Systems, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Intelligent Transportation Systems},
   Year                     = {2010},
   Number                   = {1},
   Pages                    = {132--141},
@@ -457,7 +457,7 @@ C++}},
 @InProceedings{Sanchez2004,
   Title                    = {Genetic algorithms and cellular automata: a new architecture for traffic light cycles optimization},
   Author                   = {Sanchez, Javier J and Galan, Manuel and Rubio, Enrique},
-  Booktitle                = {Evolutionary Computation, 2004. CEC2004. Congress on},
+  Booktitle                = {Congress on Evolutionary Computation, 2004. CEC2004.},
   Year                     = {2004},
   Organization             = {IEEE},
   Pages                    = {1668--1674},
@@ -496,6 +496,18 @@ C++}},
   Year                     = {2013},
 
   Timestamp                = {2014.11.26}
+}
+
+@Misc{SumoTools,
+  Title                    = {SUMO tools},
+
+  Author                   = {SUMO},
+  HowPublished             = {En \url{http://sumo.dlr.de/wiki/Tools/Main}},
+  Month                    = {Noviembre},
+  Note                     = {Disponible online, consultado febrero 2015},
+  Year                     = {2014},
+
+  Timestamp                = {2014.12.27}
 }
 
 @InProceedings{Teo2010,
