@@ -12,22 +12,22 @@ Como se detalló en el marco teórico, existen varias opciones disponibles para 
 \begin{itemize}
 	\item Código abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no existan costos económicos asociados. Además, es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
 	\item Algoritmo genético: El \emph{framework} debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
-	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume, es fundamental que incluya la opción de ejecución en paralelo. Si no cuenta con funcionalidad nativa, al menos que exista la posibilidad de modificar el código base para agregarlo.
-	\item Plataforma: Es requerido que se pueda ejecutar en el Cluster Fing (CentOs - Linux), en Windows y otros sistemas Linux, ya que son las plataformas en donde se desarrolla y donde se realiza el análisis experimental del trabajo.
-	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Por ejemplo que existan casos de éxito usando el \emph{framework}, documentación, ejemplos de código, etc.
-	\item Lenguaje: Es deseable que esté desarrollado en C++ o Java por la experiencia que se cuenta en estos lenguajes. 
-	\item Multiobjetivo: Es deseable (aunque no requerido) que soporte algoritmos multiobjetivo, ya que la función que se quiere implementar aún siendo multiobjetivo es sencilla.	
+	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume el proceso de evaluación de solciones utilizando simulaciones de SUMO, es fundamental que el \emph{framework} incluya la opción de ejecución en paralelo. Si no cuenta con esta funcionalidad nativa, es deseable al menos que exista la posibilidad de modificar el código base para agregarla.
+	\item Plataforma: Es requerido que el \emph{framework} se pueda ejecutar en la plataforma de computación de alto desempeño Cluster FING cuyo sistema operativo es Linux CentOs, ya que es donde se realiza el análisis experimental del trabajo. 
+	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará muy positivamente que existan casos de éxito usando el \emph{framework}, la existencia de documentación accesible, ejemplos de código desarrollado, etc.
+	\item Lenguaje: Es deseable que el framework esté desarrollado en C++ o Java ,por la experiencia que el equipo de desarrollo cuenta en estos lenguajes. 
+	\item Multiobjetivo: Es deseable (aunque no requerido) que el framework soporte algoritmos multiobjetivo; no es requerido porque la función que se quiere implementar es sencilla y puede usarse una agregación lineal de los objetivos.
 \end{itemize} 
 
-Luego de analizar los puntos anteriores, se selecciona la biblioteca Malva para la implementación del algoritmo evolutivo. A continuación se detalla su funcionamiento y características.
+Luego de analizar los puntos anteriores, se seleccionó la biblioteca Malva para la implementación del algoritmo evolutivo. A continuación se detalla su funcionamiento y características.
 
-Como se explicó anteriormente, Malva \citep {Malva} surge como una variante del proyecto Mallba \citep{Mallba}. Propone su actualización, mejora y desarrollo como un proyecto de código abierto colaborativo.  Su objetivo es proveer de varios esqueletos de heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente. Los esqueletos se basan en separar dos conceptos: El problema concreto que se quiere resolver y por otro lado el método utilizado para resolverlo. Por tanto un esqueleto se puede ver como una instancia de una plantilla genérica para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
+Como se explicó anteriormente, Malva \citep {Malva} surge como una variante del proyecto Mallba \citep{Mallba}. Malva propone la actualización, mejora y desarrollo de Mallba como un proyecto de código abierto colaborativo.  Su objetivo es proveer varios esqueletos de heurísticas de optimización que puedan ser utilizados y extendidos de manera fácil y eficiente. Los esqueletos se basan en separar dos conceptos: el problema concreto que se quiere resolver y el método utilizado para resolverlo. Por lo tanto, un esqueleto se puede ver como una instancia de una plantilla genérica para resolver un problema particular, manteniendo todas las funcionalidades genéricas.
 
-Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases requeridas que el usuario deberá modificar para adaptarlo a su problema, y las provistas que incluyen todos los aspectos internos del esqueleto siendo  independientes del problema particular. Entre los algoritmos provistos se encuentra el de Algoritmos genéticos y CHC \citep{CHC}.
+Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases \emph{requeridas} que el usuario deberá modificar para adaptarlo a su problema, y clases \emph{provistas} que incluyen todos los aspectos internos del esqueleto siendo  independientes del problema particular. Entre los algoritmos provistos se encuentran los algoritmos genéticos,algoritmo  CHC \citep{CHC} y otros.
 
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado NewGA con las modificaciones detalladas en la sección anterior. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
+Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado "NewGA", con las modificaciones detalladas en la sección anterior. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
@@ -35,9 +35,9 @@ Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado NewG
 	\begin{algorithmic} [1] 
 		{
 			\STATE \texttt{t} = 0
-			\STATE {Inicializo( P(t))}
-			\STATE {Evaluar estructuras en ( P(t))}			
-			\WHILE {\text{No termine}}
+			\STATE {Inicializar( P(t))}
+			\STATE {Evaluar estructuras en (P(t))}			
+			\WHILE {\text{No terminar}}
 			\STATE \texttt{t}++		
 			\STATE {Seleccionar C(t) de P(t-1)}	
 			\STATE {Recombinar estructuras en C(t) formando C'(t)}				
@@ -51,11 +51,11 @@ Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado NewG
 	
 \end{algorithm}
 
-A continuación se realiza un resumen de las características del algoritmo implementado, que en la siguiente sección serán tratados detalladamente:
+A continuación se realiza un resumen de las características del algoritmo implementado, que en la siguiente sección serán descritas en detalle:
 \begin{itemize}
 	
-	\item Algoritmo paralelo: Utiliza el método maestro-esclavo donde en cada iteración el maestro genera un hilo por cada ejecución  de la función \emph{fitness} y luego espera a la terminación de todos los hilos para consolidar los datos. 
-	\item Función Multiobjetivo: Se intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada uno un peso específico.
+	\item Se aplica un modelo de algoritmo evolutivo paralelo, utilizando el esquema maestro-esclavo, donde en cada iteración el maestro genera un hilo por cada evaluación de la función de \emph{fitness} y luego espera a la terminación de todos los hilos para consolidar los datos. 
+	\item Se considera una formulación multiobjetivo del problema, que intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada componente un peso específico en la combinación lineal utilizada para definir la función de \emph{fitness}.
 	\item Representación del cromosoma: Es un vector de números naturales que representan la duración de las fases de los semáforos y el \emph{offset} para todos los semáforos del Corredor Garzón.
 	\item Cruzamiento y mutación: Se implementa una variante del cruzamiento de un punto específico para este problema y se utilizan dos tipos de mutación para modificar la duración de fase y el \emph{offset} de los semáforos.
 	\item Selección y reemplazo: Reemplaza padres por hijos. La selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
