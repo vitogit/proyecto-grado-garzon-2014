@@ -56,18 +56,18 @@ A continuación se realiza un resumen de las características del algoritmo impl
 	
 	\item Se aplica un modelo de algoritmo evolutivo paralelo, utilizando el esquema maestro-esclavo, donde en cada iteración el maestro genera un hilo por cada evaluación de la función de \emph{fitness} y luego espera a la terminación de todos los hilos para consolidar los datos. 
 	\item Se considera una formulación multiobjetivo del problema, que intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada componente un peso específico en la combinación lineal utilizada para definir la función de \emph{fitness}.
-	\item Representación del cromosoma: Es un vector de números naturales que representan la duración de las fases de los semáforos y el \emph{offset} para todos los semáforos del Corredor Garzón.
-	\item Cruzamiento y mutación: Se implementa una variante del cruzamiento de un punto específico para este problema y se utilizan dos tipos de mutación para modificar la duración de fase y el \emph{offset} de los semáforos.
-	\item Selección y reemplazo: Reemplaza padres por hijos. La selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta.
+	\item La representación de soluciones: es un vector de números naturales, que representan la duración de las fases de los semáforos y el \emph{offset} para todos los semáforos del Corredor Garzón.
+	\item Respecto a los operadores evolutivos: se implementa una variante del cruzamiento de un punto específico para este problema y se utilizan dos tipos de mutación para modificar la duración de fase y el \emph{offset} de los semáforos.
+	\item Respecto a los criterios de selección y reemplazo el AE propuesto utiliza un modelo generacional y reemplaza padres por hijos. La selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional.
 	
 \end{itemize}
 
-\subsection{Representación del cromosoma}
+\subsection{Representación de individuos}
 
-Como se explicó en el marco teórico, el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros. Entre estos parámetros se encuentran la duración de fase, de ciclo y el \emph{offset}. Dependiendo de cuáles se seleccionen deberán ser incluidos en la representación del cromosoma.
+Como se explicó en el marco teórico, el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros. Entre estos parámetros se encuentran la duración de fase, de ciclo y el \emph{offset} de los semáforos. Los parámetros que se seleccionen deberán ser incluidos en la representación del cromosoma.
 
 Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. El cromosoma se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una
-fase en un cruce, además se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
+fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
 
 En la representación del cromosoma se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
 
@@ -87,7 +87,7 @@ Es importante que el algoritmo evolutivo genere solamente soluciones factibles, 
 	\label{fig:rep_sumo}
 \end{figure}
 
-La Figura \ref{fig:rep_sumo} muestra el archivo de configuración de semáforos que utiliza el simulador SUMO para el cromosoma anterior, donde se representan las fases. Por ejemplo la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase. 
+La Figura \ref{fig:rep_sumo} muestra el archivo de configuración de semáforos que utiliza el simulador SUMO para el cromosoma de la Figura \ref{fig:cromosoma1} , donde se representan las fases. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase. 
 
 La Figura \ref{fig:sem_numerados} presenta la numeración de los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde con un color en particular. 
 
