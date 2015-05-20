@@ -68,26 +68,25 @@ Como se explicó en el marco teórico, el problema de sincronización de semáfo
 
 Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. El cromosoma se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una
 fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
-
-En la representación del cromosoma se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/cromosoma1}
-	\caption{Cromosoma de dos cruces}
-	\label{fig:cromosoma1}
-\end{figure}
-
-Es importante que el algoritmo evolutivo genere solamente soluciones factibles, por lo tanto se tiene especial cuidado al ejecutar los operadores de cruzamiento y mutación.
-
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{Figures/rep_sumo2}
+	\includegraphics[width=\linewidth]{Figures/rep_sumo}
 	\caption{Representación de Sumo}
 	\label{fig:rep_sumo}
 \end{figure}
 
-La Figura \ref{fig:rep_sumo} muestra el archivo de configuración de semáforos que utiliza el simulador SUMO para el cromosoma de la Figura \ref{fig:cromosoma1} , donde se representan las fases. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/cromosoma1}
+	\caption{Vista del Cromosoma para los cruces de Avda. Millán y Cno. Ariel}
+	\label{fig:cromosoma1}
+\end{figure}
+
+
+La Figura \ref{fig:rep_sumo} muestra como se modela el cruce de Emancipación, en el archivo de configuración de semáforos, que utiliza el simulador SUMO. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase.
+
+La Figura \ref{fig:cromosoma1} muestra ejemplos de codificación para los cruces de Emancipación y de Camino Colman, siendo estos cruces los correspondientes al principio y el final del Corredor Garzón. En la representación del cromosoma se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos, se puede apreciar los valores que no tienen luces amarillas corresponden con los de la Figura \ref{fig:cromosoma1}.
 
 La Figura \ref{fig:sem_numerados} presenta la numeración de los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde con un color en particular. 
 
