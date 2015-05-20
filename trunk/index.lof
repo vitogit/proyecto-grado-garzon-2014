@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Evoluci\IeC {\'o}n de la venta de autom\IeC {\'o}viles en Uruguay}}{6}{figure.caption.5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Gr\IeC {\'a}fica de costos de transporte en funci\IeC {\'o}n de la gente transportada.}}{7}{figure.caption.6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Localizaci\IeC {\'o}n del Corredor de Garz\IeC {\'o}n en Montevideo}}{9}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Perfil propuesto para el corredor Garz\IeC {\'o}n.}}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Perfil propuesto para el corredor Garz\IeC {\'o}n.}}{10}{figure.caption.8}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Distintas fases de sem\IeC {\'a}foros para dos cruces en una red de tr\IeC {\'a}nsito.\relax }}{12}{figure.caption.9}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Esquema de la evoluci\IeC {\'o}n del valor del fitness en un algoritmo evolutivo }}{15}{figure.caption.10}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Representaci\IeC {\'o}n binaria de un cromosoma.\relax }}{16}{figure.caption.13}
@@ -22,7 +22,7 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Cromosoma de dos cruces\relax }}{41}{figure.caption.32}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Representaci\IeC {\'o}n de Sumo\relax }}{42}{figure.caption.33}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Representaci\IeC {\'o}n de una fase de los sem\IeC {\'a}foros para un cruce.}}{43}{figure.caption.34}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Visualizaci\IeC {\'o}n del cruzamiento entre individuos.\relax }}{45}{figure.caption.36}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ejemplo del operador de cruzamiento utilizado\relax }}{45}{figure.caption.36}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fica de la evoluci\IeC {\'o}n de los valores de fitness. }}{49}{figure.caption.40}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento y de mutaci\IeC {\'o}n.}}{51}{figure.caption.43}

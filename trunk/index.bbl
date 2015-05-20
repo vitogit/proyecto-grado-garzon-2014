@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,6 +52,13 @@ S.~Cahon, N.~Melab, y E.-G. Talbi.
   distributed metaheuristics.
 \newblock \emph{Journal of Heuristics}, 10\penalty0 (3):\penalty0 357--380,
   2004.
+
+\bibitem[Coello et~al.(2002)Coello, Van~Veldhuizen, y
+  Lamont]{coello2002evolutionary}
+C.~A.~C. Coello, D.~A. Van~Veldhuizen, y G.~B. Lamont.
+\newblock \emph{Evolutionary algorithms for solving multi-objective problems},
+  volumen 242.
+\newblock Springer, 2002.
 
 \bibitem[Deb(2001)]{Deb2001}
 K.~Deb.
