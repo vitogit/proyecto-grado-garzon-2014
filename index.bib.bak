@@ -513,7 +513,7 @@ C++}},
 @InProceedings{Teo2010,
   Title                    = {Optimization of traffic flow within an urban traffic light intersection with genetic algorithm},
   Author                   = {Teo, Kenneth Tze Kin and Kow, Wei Yeang and Chin, YK},
-  Booktitle                = {Computational Intelligence, Modelling and Simulation (CIMSiM), 2010 Second International Conference on},
+  Booktitle                = {Second International Conference on Computational Intelligence, Modelling and Simulation (CIMSiM)},
   Year                     = {2010},
   Organization             = {IEEE},
   Pages                    = {172--177}

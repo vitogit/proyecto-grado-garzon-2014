@@ -36,7 +36,7 @@ Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado "New
 		{
 			\STATE \texttt{t} = 0
 			\STATE {Inicializar( P(t))}
-			\STATE {Evaluar estructuras en (P(t))}			
+			\STATE {Evaluar estructuras en ( P(t))}			
 			\WHILE {\text{No terminar}}
 			\STATE \texttt{t}++		
 			\STATE {Seleccionar C(t) de P(t-1)}	
@@ -106,44 +106,46 @@ Por tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
 	\label{fig:sem_numerados}
 \end{figure}
 
-\subsection{Población inicial}
+\subsection{Generación de la población inicial}
 
 Para la inicialización de la población se toma como referencia
-la configuración obtenida a partir de los datos de la realidad,  luego para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además se selecciona la fase inicial aleatoriamente entre la cantidad de fases del cruce.
+la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
 
-\subsection{Función \emph{fitness}}
+\subsection{Función de \emph{fitness}}
 
 
-La evaluación de un individuo se realiza generando un archivo con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO utilizando esta configuración para obtener los datos necesarios para calcular el \emph{fitness}.
+La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos).
 
-Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando son menos de tres objetivos. El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori.
+Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
 
 \begin{equation}
 \label{eq:funcion_fitness_generica}
 F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
 \end{equation}
 
-Se selecciona como objetivo la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Esta métrica fue elegida pues es más adecuada para realizar las comparaciones con la realidad. Por ejemplo la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación son todas métricas que podrían usarse pero no son útiles a la hora de realizar comparaciones con la realidad.
+Se seleccionan como objetivos la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Estos objetivos fueron elegidos ya que son  adecuados para realizar las comparaciones con la realidad, ya que las velocidades promedio se pueden obtener simulando las instancias que representan la realidad. Otros objetivos podrían utilizarse, como la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación pero no son útiles para realizar comparaciones con la realidad ya que son datos que no se pueden medir u obtener con facilidad.
 
-La siguiente es la fórmula de \emph{fitness} utilizada, donde \emph{x} e \emph{y} indican los pesos que se especifican en la función. En una primera instancia se establece x = y = 1, más adelante se experimentará con otros pesos.
+La función de \emph{fitness} utilizada se presenta en la Ecuación \ref{eq:funcion_fitness}, donde \emph{$w_1$} e \emph{$w_1$} indican los pesos que se especifican en la función. En una primera instancia se establece $w_1$ = $w_2$ = 1, más adelante se experimentará con otros pesos.
 
 \begin{equation}
 \label{eq:funcion_fitness}
-f = x.vpb + y.vpv
+f = w_1.vpb + w_2.vpv
 \end{equation}
 
 
 
-Se plantea optimizar la velocidad promedio de los vehículos en toda la red vial, de manera global, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como aquellos que circulan por los cruces o calles paralelas. La optimización global es fundamental, ya que si cada cruce se optimiza individualmente podría generar problemas de congestión en otras zonas.
+Se plantea optimizar la velocidad promedio de los vehículos en toda la red vial (vpv), de manera global, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como aquellos que circulan por el resto de las calles del escenario geográfico estudiado. Por este motivo cuando se realicen las simulaciones de las instancias realistas del problema se tendrán en cuenta las velocidades promedio de todos los vehículos participantes, cuyo valor sera utilizado en la función de \emph{fitness} (variable vpv). La optimización global es fundamental para lograr una mejora en la velocidad promedio de toda la red vial, ya que si cada cruce se optimiza individualmente podría generar problemas de congestión en otras zonas.
 
-\subsection{Operadores}
+\subsection{Operadores Evolutivos}
+
 \subsubsection{Operador de Cruzamiento}
-Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, por tanto si un tramo del corredor tiene un buen comportamiento se intenta mantener esa propiedad. En el escenario que plantea la siguiente Figura, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces y se generan los hijos que son una combinación de los padres.
+Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, motivado por el hecho de que si un tramo del corredor tiene un buen comportamiento, se intenta mantener esa propiedad. En el escenario que plantea la Figura \ref{fig:op_cruzamiento}, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces, cortando a los padres e intercambiando los trozos del cromosoma para generar los hijos como se ve en la Figura \ref{fig:op_cruzamiento} .
+
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{Figures/alg_cruzamiento}
-	\caption{Visualización del cruzamiento entre individuos.}
+	\includegraphics[width=0.8\linewidth]{Figures/alg_cruzamiento}
+	\caption{Ejemplo del operador de cruzamiento utilizado}
 	\label{fig:op_cruzamiento}
 \end{figure}
 
@@ -153,22 +155,28 @@ Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición al
 Se implementaron dos tipos de mutación:
 \begin{itemize}
 	
-	\item Mutación de duración de fase: para cada fase de cada cruce se modifica su duración sumando o restando una cantidad dada de segundos, con una probabilidad dada. Teniendo en cuenta que el valor obtenido se encuentre dentro de un rango especificado para que no se produzcan casos irreales como un cruce de menos de 5 segundos.
+	\item Mutación de duración de fase: para cada fase de cada cruce se modifica su duración sumando o restando una cantidad dada de segundos. Se valida que el nuevo valor obtenido se encuentre dentro de un rango especificado de entre 5 y 60 segundos (valores que se pueden modificar), para que no se produzcan casos alejados de la realidad, por ejemplo una intersección donde los vehículos tengan menos de 5 segundos para cruzar.
 	
-	\item Mutación del \emph{offset}: Se elige aleatoriamente una fase con la cual va a comenzar el cruce con una probabilidad dada.
+	\item Mutación del \emph{offset}: Para cada \emph{offset} del cromosoma se suma o resta una cantidad de segundos dada y se valida que esté dentro de un rango prefijado de entre 0 y el máximo valor de \emph{offset} para ese cruce.
+	
+
 \end{itemize}
+Ambas mutaciones son aplicadas de acuerdo a una tasa de probabilidad prefijada.
 
 \subsubsection{Selección y reemplazo}
-Se  utilizan los operadores y criterios provistos por el algoritmo genético newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de ruleta. La política de reemplazo indica que tanto padres como hijos pueden ser parte de la siguiente generación (no solamente los hijos), por lo que existe reemplazo de padres por hijos.
+Se  utilizan los operadores y criterios provistos por el algoritmo genético newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional. 
+
+Malva incluye dos políticas de reemplazo, la primera indica que se reemplazan padres por hijos y la segunda que solamente los nuevos hijos pueden ser padres, para el algoritmo evolutivo propuesto se utiliza la primera opción por lo que tanto padres como hijos pueden ser parte de la siguiente generación.
 
 \subsubsection{Parámetros del algoritmo}
-Los parámetros específicos del algoritmo se establecen en el siguiente capítulo, donde se realiza un análisis experimental para encontrar los más adecuados. Estos parámetros son: número de generaciones, tamaño de población, probabilidad de cruzamiento y de mutación.
-
+Los parámetros del algoritmo son: el número de generaciones que se realizan hasta detener el algoritmo, el tamaño de la población que indica la cantidad de individuos incluidos en el algoritmo evolutivo, la tasa de probabilidad de cruzamiento y de mutación que se utiliza para determinar cuando aplicar los operadores de cruzamiento y mutación. Los valores específicos de los parámetros del algoritmo evolutivo se ajustan en el capítulo 5 donde se realiza el análisis de configuración paramétrica. 
 
 \section{Modelo de paralelismo e implementación}
 
-Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo, con el objetivo de reducir los tiempos de ejecución. El motivo principal fue que los escenarios planteados se consideraron complejos y que utilizarían gran cantidad de recursos computacionales. Para este propósito, se utilizó como código base el algoritmo genético provisto por la biblioteca Malva llamado NewGA. Este código fue modificado para que el algoritmo soportara la ejecución en paralelo, específicamente se desarrolló una nueva forma de evaluar a los individuos, generando un hilo de ejecución por cada individuo.
+Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo, con el objetivo de reducir los tiempos de ejecución de las simulaciones necesarias para evaluar la función de \emph{fitness} de los individuos. El motivo principal fue que los escenarios planteados se consideraron complejos por lo que la ejecución del algoritmo evolutivo insumiría un tiempo considerable. El código base del algoritmo evolutivo fue modificado para que el  soportara la ejecución en paralelo. Específicamente, se desarrolló una nueva forma de evaluar a los individuos, generando un hilo de ejecución por cada individuo.
 
-Se utilizó el método maestro-esclavo para el modelo de paralelismo. El proceso maestro se encarga de la mayoría de las etapas del algoritmo evolutivo, al comenzar, inicializa la población y se encarga de distribuir la evaluación de los individuos hacia los esclavos, creando un hilo de ejecución por cada esclavo. Luego el proceso maestro espera a que las evaluaciones terminen para obtener los valores de \emph{fitness} de los esclavos. Una vez obtenidos los valores, selecciona a los mejores individuos y le aplica los operadores de cruzamiento y mutación. Para finalizar ejecuta el criterio de reemplazo para generar la siguiente población. Mientras, los esclavos se encargan solamente de obtener el individuo enviado por el maestro y de efectuar la evaluación del individuo, que corresponde a ejecutar el simulador y obtener los datos de salida.
+Se utilizó el esquema maestro-esclavo para el modelo de paralelismo. El proceso maestro se encarga de la mayoría de las etapas del algoritmo evolutivo, al comenzar, inicializa la población y se encarga de distribuir la evaluación de los individuos hacia los esclavos, creando un hilo de ejecución por cada esclavo. Luego el proceso maestro espera a que las evaluaciones terminen para obtener los valores de \emph{fitness} de los esclavos. Una vez obtenidos los valores, selecciona a los mejores individuos y le aplica los operadores de cruzamiento y mutación. Para finalizar ejecuta el criterio de reemplazo para generar la siguiente población. Mientras, los esclavos se encargan solamente de obtener el individuo enviado por el maestro y de efectuar la evaluación del individuo, que corresponde a ejecutar el simulador y obtener los datos de salida. 
 
-En el capítulo siguiente, en la sección de análisis experimental se realiza un estudio de la eficiencia computacional del algoritmo genético paralelo, para comparar los tiempos de ejecución entre la versión paralela y en serie.
+El modelo de paralelismo no cambia el comportamiento del algoritmo secuencial, solo se enfoca en mejorar la eficiencia computacional para poder abordar escenarios realistas y complejos.
+
+En el capítulo siguiente, en la sección de análisis experimental se realiza un estudio de la eficiencia computacional del algoritmo genético paralelo, para comparar los tiempos de ejecución entre la versión paralela y la secuencial.
