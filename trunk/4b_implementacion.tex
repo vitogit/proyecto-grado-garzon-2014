@@ -1,7 +1,6 @@
 \chapter{Implementación de la solución}
 
-Este capítulo...
-
+Este capítulo detalla la implementación del algoritmo evolutivo desarrollado. Comienza describiendo a la biblioteca utilizada Malva y continua especificando el algoritmo evolutivo desarrollado donde se explica: la representación del cromosoma, la generación de la población, la función de \emph{fitness} y el funcionamiento de los operadores evolutivos. Para finalizar se detalla el modelo de paralelismo utilizado.
 
 \section{Implementación: Biblioteca Malva}
 
@@ -173,9 +172,36 @@ Los parámetros del algoritmo son: el número de generaciones que se realizan ha
 
 \section{Modelo de paralelismo e implementación}
 
-Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo, con el objetivo de reducir los tiempos de ejecución de las simulaciones necesarias para evaluar la función de \emph{fitness} de los individuos. El motivo principal fue que los escenarios planteados se consideraron complejos por lo que la ejecución del algoritmo evolutivo insumiría un tiempo considerable. El código base del algoritmo evolutivo fue modificado para que el  soportara la ejecución en paralelo. Específicamente, se desarrolló una nueva forma de evaluar a los individuos, generando un hilo de ejecución por cada individuo.
+Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo, con el objetivo de reducir los tiempos de ejecución de las simulaciones necesarias para evaluar la función de \emph{fitness} de los individuos. El motivo principal fue que los escenarios planteados se consideraron complejos por lo que la ejecución del algoritmo evolutivo insumiría un tiempo considerable. El código base del algoritmo evolutivo fue modificado para que soportara la ejecución en paralelo. Específicamente, se desarrolló una nueva forma de evaluar a los individuos, generando un hilo de ejecución por cada individuo.
+
+El código del algoritmo genético provisto por la biblioteca Malva (newGA.pro.hh) fue modificado agregando dos nuevas funciones encargadas de llamar a la función de \emph{fitness} y asignar el valor obtenido al individuo tanto para padres (\emph{evaluate{\_}parent{\_}threads}) como hijos (\emph{evaluate{\_}offpring{\_}threads}). En la Figura \ref{fig:codigo1} se presenta el código de la función \emph{evaluate{\_}parent{\_}threads} que se explica a continuación. El parámetro \emph{data} contiene información sobre la población, el individuo a evaluar, su índice y un vector con los valores de \emph{fitness} de la población.
+En la línea 378 se hace un chequeo para saber si el valor de \emph{fitness} ya fue obtenido para el individuo, de esta forma no se repiten evaluaciones, en la línea 380 se ejecuta la función de \emph{fitness} y se aplica el valor de \emph{fitness} al individuo, luego en la línea 381 se incrementa el numero de evaluaciones realizadas en la población.
+La función \emph{evaluate{\_}offpring{\_}threads} es análoga a \emph{evaluate{\_}parent{\_}threads} pero especifica para los hijos, por lo que no se considera necesario mostrar su código.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\linewidth]{Figures/codigo1}
+	\caption{Nueva función agrega al codigo provisto por Malva.}
+	\label{fig:codigo1}
+\end{figure}
+
+	
+La función \emph{evaluate{\_}parents()} provista por Malva se encarga de iterar sobre los padres de la población y ejecutar la evaluación sobre cada uno de ellos para obtener el valor de \emph{fitness} asociado. Esta función fue modificada para generar un hilo de ejecución por cada evaluación, como se aprecia en la porción de código de la Figura \ref{fig:codigo2}.
+En la línea 434  se genera el hilo llamando a la función agregada anteriormente \emph{evaluate{\_}parent{\_}threads}. Luego en la línea 504 se espera a que todos los hilos finalicen su ejecución.
+Análogamente se realizan modificaciones similares en la función 	\emph{evaluate{\_}offsprings }que itera sobre los hijos, para que
+genere un hilo por cada evaluación de los hijos, llamando a la función de  \emph{evaluate{\_}offpring{\_}threads}.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\linewidth]{Figures/codigo2}
+	\caption{Modificaciones de la función evaluate{\_}parents.}
+	\label{fig:codigo2}
+\end{figure}		
 
 Se utilizó el esquema maestro-esclavo para el modelo de paralelismo. El proceso maestro se encarga de la mayoría de las etapas del algoritmo evolutivo, al comenzar, inicializa la población y se encarga de distribuir la evaluación de los individuos hacia los esclavos, creando un hilo de ejecución por cada esclavo. Luego el proceso maestro espera a que las evaluaciones terminen para obtener los valores de \emph{fitness} de los esclavos. Una vez obtenidos los valores, selecciona a los mejores individuos y le aplica los operadores de cruzamiento y mutación. Para finalizar ejecuta el criterio de reemplazo para generar la siguiente población. Mientras, los esclavos se encargan solamente de obtener el individuo enviado por el maestro y de efectuar la evaluación del individuo, que corresponde a ejecutar el simulador y obtener los datos de salida. 
+
 
 El modelo de paralelismo no cambia el comportamiento del algoritmo secuencial, solo se enfoca en mejorar la eficiencia computacional para poder abordar escenarios realistas y complejos.
 

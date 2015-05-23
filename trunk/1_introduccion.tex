@@ -53,7 +53,9 @@ Como segundo punto de la metodología se plantea el diseño y desarrollo de un a
 
 \section{Limitaciones y alcance}
 
-El alcance geográfico que se plantea comprende la zona del Corredor Garzón, que incluye toda la extensión del Corredor, y dos paralelas a cada lado del mismo. Se pretende desarrollar un modelo preciso de la realidad pero se tiene en cuenta que es usual que algunos elementos de la realidad sean eliminados o simplificados, por tanto se buscará que estas simplificaciones no afecten los resultados de la solución propuesta. El modelado incluye el relevamiento manual de datos en el Corredor Garzón. Debido a los errores intrínsecos que pueden ocurrir en la toma de datos, no se puede asegurar la exactitud de los mismos, por este motivo se realizarán verificaciones con el objetivo de minimizar el impacto que pudieran tener.
+El alcance geográfico comprende la zona del Corredor Garzón, que incluye toda la extensión del Corredor, y dos caminos paralelos a cada lado del mismo. Se pretende desarrollar un modelo preciso de la realidad, pero se tiene en cuenta que algunos elementos de la realidad serán eliminados o simplificados, por tanto se buscará que estas simplificaciones no afecten los resultados de la solución propuesta. 
+
+El modelado incluye el relevamiento manual de datos en el Corredor Garzón. Debido a los errores intrínsecos que pueden ocurrir en el relevamiento manual de datos in-situ, no se puede asegurar la exactitud de los mismos. Por este motivo se realizarán verificaciones, con el objetivo de minimizar el impacto que estos errores pudieran tener.
 
 
 
@@ -66,11 +68,14 @@ Los aportes del proyecto incluyen: estudio del estado del arte y el marco teóri
 \section{Estructura del documento}
 El capítulo 2 presenta los fundamentos teóricos necesarios para comprender el resto del trabajo. Comienza describiendo el problema del tráfico vehicular y algunas formas de atacarlo entre las que se encuentra la creación de planes de movilidad y la sincronización de semáforos. El capítulo incluye información sobre corredores urbanos de tránsito y en concreto sobre el Corredor Garzón, así como una descripción acerca de algoritmos evolutivos y simuladores de tráfico. Complementariamente, se ofrece una reseña de los principales trabajos relacionados, haciendo especial foco en algoritmos genéticos para la sincronización de semáforos.
 
-El capítulo 3 explica la estrategia de resolución del problema de sincronización de semáforos implementada en este trabajo. Se presenta el modelado del problema que se basa en: la creación de un mapa digital de la zona del Corredor Garzón compatible con el simulador de tráfico SUMO y el trabajo de campo realizado para obtener datos de la realidad actual, que serán usados en las simulaciones. El capítulo detalla el diseño e implementación del algoritmo evolutivo y el modelo de paralelismo utilizado.
+El capítulo 3 explica la estrategia de resolución del problema de sincronización de semáforos implementada en este trabajo. Se presenta el modelado del problema que se basa en: la creación de un mapa digital de la zona del Corredor Garzón compatible con el simulador de tráfico SUMO, el trabajo de campo realizado para obtener datos de la realidad actual, que serán usados en las simulaciones y el uso de técnicas de alto desempeño para mejorar el rendimiento del algoritmo. El capítulo presenta al simulador de tráfico SUMO y finaliza describiendo la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo.
 
-El capítulo 4 presenta el análisis experimental del algoritmo evolutivo, describe los escenarios utilizados en su evaluación y los resultados numéricos obtenidos. Se especifica el escenario que modela la situación actual del Corredor Garzón y el escenario alternativo que presenta modificaciones sobre el escenario anterior con el objetivo de mejorar la velocidad promedio de circulación. Se ofrece un análisis de los resultados obtenidos al variar la función de \emph{fitness} y se realiza un breve estudio de la eficiencia computacional del algoritmo evolutivo.
+El capítulo 4 describe la implementación del algoritmo evolutivo, presentando la biblioteca Malva y las especificaciones del algoritmo evolutivo desarrollado. Se detalla el cromosoma utilizado, la inicializacion de la población, la función de \emph{fitness} y los operadores evolutivos. Para finalizar el capítulo explica el modelo de paralelismo utilizado.
 
-El capítulo 5 plantea las conclusiones finales del trabajo, tanto sobre la metodología utilizada como de los resultados obtenidos. Para finalizar, el capítulo describe las posibles lineas de investigación para desarrollar en el futuro.
+
+El capítulo 5 presenta el análisis experimental del algoritmo evolutivo, describe los escenarios utilizados en su evaluación y los resultados numéricos obtenidos. Se especifica el escenario que modela la situación actual del Corredor Garzón y el escenario alternativo que presenta modificaciones sobre el escenario anterior con el objetivo de mejorar la velocidad promedio de circulación. Se ofrece un análisis de los resultados obtenidos al variar la función de \emph{fitness} y se realiza un breve estudio de la eficiencia computacional del algoritmo evolutivo.
+
+El capítulo 6 plantea las conclusiones finales del trabajo, tanto sobre la metodología utilizada como de los resultados obtenidos. Para finalizar, el capítulo describe las posibles lineas de investigación para desarrollar en el futuro.
 
 
 
