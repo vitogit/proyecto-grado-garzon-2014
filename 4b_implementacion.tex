@@ -174,6 +174,16 @@ Los parámetros del algoritmo son: el número de generaciones que se realizan ha
 
 \section{Modelo de paralelismo e implementación}
 
+
+%The skeletons in MALLBA offer support for parallelism using the distributed memory approach (i.e., implementing distributed subpopulation models for metaheuristics). However, the library does not provide support for shared-memory multithreading parallel programming. Multihtreading programming allows implementing efficient algorithms by using multiple threads within a single process. Multihtreading is well suited for multi-core computers, where each thread is executed on a single core. It provides a fast method for concurrent execution; communications and synchronizations are performed via the shared-memory resource, which is handled using mutuallyexclusive operations in order to prevent simultaneous accesses.
+
+%The multithreading master-slave parallel EA proposed in this work was implemented using the GA skeleton in MALLBA. Additional code was incorporated into the GA skeleton to implement several new features:
+%– to create and manage the pool of threads used for the fitness evaluation;
+%– to implement the master-slave hierarchy and the communications between master and slaves;
+%– to define the synchronization mechanisms between threads,
+%used to read and write the shared memory. Our implementation starts by creating and initializing a pool of threads to distribute the fitness evaluation. Each thread receives several input parameters from the master process, including the solution to be evaluated, the thread identification, and the index in the array of fitness values.Then, each slave process, implemented in each thread, computes the fitness evaluation by simulating the mobile communications with the proposed
+
+
 Uno de los requisitos planteados al inicio del presente trabajo era la creación de un algoritmo genético que soportara paralelismo, con el objetivo de reducir los tiempos de ejecución de las simulaciones necesarias para evaluar la función de \emph{fitness} de los individuos. El motivo principal fue que los escenarios planteados se consideraron complejos por lo que la ejecución del algoritmo evolutivo insumiría un tiempo considerable. El código base del algoritmo evolutivo fue modificado para que soportara la ejecución en paralelo. Específicamente, se desarrolló una nueva forma de evaluar a los individuos, generando un hilo de ejecución por cada individuo.
 
 El código del algoritmo genético provisto por la biblioteca Malva (newGA.pro.hh) fue modificado agregando dos nuevas funciones encargadas de llamar a la función de \emph{fitness} y asignar el valor obtenido al individuo tanto para padres (\emph{evaluate{\_}parent{\_}threads}) como hijos (\emph{evaluate{\_}offpring{\_}threads}). En la Figura \ref{fig:codigo1} se presenta el código de la función \emph{evaluate{\_}parent{\_}threads} que se explica a continuación. El parámetro \emph{data} contiene información sobre la población, el individuo a evaluar, su índice y un vector con los valores de \emph{fitness} de la población.

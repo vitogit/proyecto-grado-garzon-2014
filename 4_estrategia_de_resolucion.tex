@@ -167,14 +167,23 @@ Para este procesamiento se utilizó QGIS (www.qgis.org), un sistema de informaci
 Una vez obtenidos los archivos con la configuración de los semáforos, el recorrido de los vehículos y el recorrido de ómnibus, se cuenta con todos los elementos necesarios para la creación de instancias realistas del problema, que serán utilizadas en el simulador para modelar la realidad.  En el análisis experimental presentado en el capítulo 5 se describen los escenarios que hacen uso de estas instancias, modificando algunas variables como la densidad del tráfico para ajustarlo a las necesidades de la experimentación.
 
 
-%REDACTAR: no me convence mucho el titulo
+
 \section{Arquitectura de la solución}
+
+%definicion del problema de optimizacion
+%enfoque multiobjetivo (agregacion lineal, motivacion de su uso, utilidad)
+
+%interaccion entre AE y sumo
 
 El esquema de la Figura \ref{fig:arquitectura1}  muestra la arquitectura propuesta para la resolución del problema. En cada evaluación de la función de fitness se realiza un llamado al simulador SUMO. El primer paso consiste en generar la población inicial del algoritmo evolutivo, estos individuos representan una configuración de semáforos para todo el Corredor Garzón, que incluye la duración de las fases y el \emph{offset}. Luego, por cada individuo se genera un archivo compatible con el simulador, que representa la configuración de semáforos. Este archivo se utiliza como entrada para ejecutar el simulador al momento de evaluar la función de \emph{fitness}. Al finalizar la ejecución se generan archivos de salida que son procesados por el algoritmo evolutivo. Los datos de salida incluyen información necesaria para calcular el \emph{fitness} de cada individuo como la velocidad media de ómnibus y otros vehículos. El algoritmo se detiene al alcanzar un número de generaciones determinado, en ese momento se crea un archivo con la mejor configuración de semáforos encontrada, que corresponde a la mejor solución del problema de optimización planteado. 
 
+
+%Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
+
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/arquitectura1}
+	\includegraphics[width=0.99\linewidth]{Figures/arquitectura1}
 	\caption{Arquitectura de la solución propuesta.}
 	\label{fig:arquitectura1}
 \end{figure}
