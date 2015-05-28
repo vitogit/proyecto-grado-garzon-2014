@@ -117,7 +117,9 @@ la configuración obtenida a partir de los datos de la realidad, recolectadas en
 
 La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos).
 
-Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos, ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
+Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos.
+%ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. 
+El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
 
 \begin{equation}
 \label{eq:funcion_fitness_generica}
