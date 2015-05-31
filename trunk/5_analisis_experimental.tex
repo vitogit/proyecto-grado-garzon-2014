@@ -4,7 +4,6 @@ Este capítulo presenta la evaluación experimental del algoritmo evolutivo mult
 
 
 \section{Plataforma de ejecución y Desarrollo}
-%Como se explicó en el capítulo anterior, la biblioteca Malva se utiliza para implementar el algoritmo evolutivo propuesto, específicamente se trabaja con el algoritmo genético newGA provisto por la biblioteca. El código base de este algoritmo fue extendida para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
 Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster Fing (sitio web: http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el algoritmo evolutivo en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
 
@@ -57,7 +56,7 @@ Para la elección del tamaño de la población se tienen en cuenta tres elemento
 
 La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster Fing, donde la cantidad máxima de núcleos en el mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-La tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de trafico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster Fing que es utilizada por otras personas y presenta recursos limitados.
+La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de trafico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster Fing que es utilizada por otras personas y presenta recursos limitados.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
@@ -172,7 +171,7 @@ Esta sección muestra los resultados obtenidos tanto de la simulación de las in
 
 \subsection{Valores numéricos del caso base}
 
-En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.6 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima a la realidad. 
+En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima a la realidad. 
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
@@ -199,7 +198,7 @@ En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenid
 
 \subsection{Resultados numéricos de la evaluación }
 
-Como se aprecia en la tabla \ref{table:resultado_caso_base}, el AE mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además, la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de hasta 24\%. A continuación se describe el análisis estadístico para comprobar la mejora.
+Como se aprecia en la tabla \ref{table:resultado_caso_algoritmo}, el AE mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además, la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de hasta 24\%. A continuación se describe el análisis estadístico para comprobar la mejora.
 
 
 \begin{table}[H]
@@ -221,7 +220,7 @@ Como se aprecia en la tabla \ref{table:resultado_caso_base}, el AE mejora la vel
 	\end{tabular}
 \end{table}
 
-Se realizaron 20 ejecuciones independientes para cada tipo de tráfico, comprobando que los valores obtenidos siguieran una distribución normal. Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados. Este criterio indica que el
+Se realizaron 20 ejecuciones independientes del AE para cada tipo de tráfico, comprobando que los valores obtenidos siguieran una distribución normal. Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados. Este criterio indica que el
 algoritmo A es mejor que B si los resultados de A y B cumplen:
 
 \begin{equation}
@@ -238,16 +237,18 @@ En este caso, A representa la aplicación del algoritmo evolutivo, y B el caso b
 	\label{fig:duracion_viajes}
 \end{figure}
 
-En la Figura \ref{fig:duracion_viajes} se aprecia un resultado interesante, donde la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el AE. %Para ómnibus se tiene 24.5m y 23.6m y para otros vehículos 12.0m y 11.9m.
+En la Figura \ref{fig:duracion_viajes} se comparan las duraciones de los viajes obtenidas del caso base y las duraciones luego de aplicar el AE. Se comprueba que las duraciones de los viajes luego de aplicar el AE son menores tanto para ómnibus como para otros vehículos en los tres tipos de tráfico estudiados. 
+
+%aprecia un resultado interesante, donde la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el AE. %Para ómnibus se tiene 24.5m y 23.6m y para otros vehículos 12.0m y 11.9m.
 
 \subsection{Detalles del escenario alternativo}
 Los cambios propuestos para el escenario alternativo incluyen eliminación de paradas, semáforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas, como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
 
 \subsubsection{Eliminación de paradas}
-Se consideraron eliminar dos paradas que cumplieran con las siguientes características: no estuvieran próximas a una calle principal, que existiera otra parada cercana y que la eliminación de la parada no afecte a las personas al realizar un traslado mayor. Se seleccionaron las paradas ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle que cumplen con los criterios anteriores.
+Se consideraron eliminar dos paradas que cumplieran con las siguientes características: no estuvieran próximas a una calle principal y que existiera otra parada cercana para no afectar a los pasajeros realizando un traslado excesivo. Se seleccionaron las paradas ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle que cumplen con los criterios anteriores.
 
 \subsubsection{Eliminación de pasajes peatonales}
-Hay tres pasajes peatonales en el corredor Garzón con semáforos que detienen el tráfico, por lo tanto el objetivo al eliminarlos es aumentar la velocidad promedio de los vehículos circulantes . Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escesnario alternativo estos dos pasajes fueron cambiados por una señalización de \emph{pare} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal, y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal por encima del corredor Garzón.
+Hay tres pasajes peatonales en el corredor Garzón con semáforos que detienen el tráfico, por lo tanto el objetivo al eliminarlos es aumentar la velocidad promedio de los vehículos circulantes . Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escenario alternativo estos dos pasajes fueron cambiados por una señalización de \emph{pare} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal, y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal por encima del corredor Garzón.
 
 \subsubsection{Alternar paradas}
 
@@ -503,4 +504,4 @@ El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución c
 	\label{fig:speedup1}
 \end{figure}
 
-La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico disminuye el speedup. Este fenómeno sucede por que está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo (aunque como se ve no tiene un gran impacto).
+La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico disminuye el \emph{speedup}. Este fenómeno sucede por que está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo (aunque como se ve no tiene un gran impacto).
