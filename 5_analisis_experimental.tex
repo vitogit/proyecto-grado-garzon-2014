@@ -4,11 +4,11 @@ Este capítulo presenta la evaluación experimental del algoritmo evolutivo mult
 
 
 \section{Plataforma de ejecución y Desarrollo}
-Como se explicó en el capítulo anterior, la biblioteca Malva se utiliza para implementar el algoritmo evolutivo propuesto, específicamente se trabaja con el algoritmo genético newGA provisto por la biblioteca. El código base de este algoritmo fue extendida para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
+%Como se explicó en el capítulo anterior, la biblioteca Malva se utiliza para implementar el algoritmo evolutivo propuesto, específicamente se trabaja con el algoritmo genético newGA provisto por la biblioteca. El código base de este algoritmo fue extendida para soportar la creación de nuevos hilos de ejecución para lograr el funcionamiento en paralelo.
 
-Dada la complejidad del problema, el análisis experimental  se realiza en la plataforma Cluster Fing (sitio web: http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el algoritmo evolutivo en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
+Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster Fing (sitio web: http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el algoritmo evolutivo en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
 
-Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con una cantidad igual de recursos disponibles, además para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados sera tenido en cuenta cuando se realice el análisis de eficiencia computacional detallado al final de este capítulo.
+Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con la misma cantidad de recursos disponibles, además, para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados será tenido en cuenta, cuando se realice el análisis de eficiencia computacional detallado al final de éste capítulo.
 
 
 \section{Ajuste paramétrico}
@@ -26,28 +26,23 @@ A continuación se presenta la cantidad de vehículos para cada uno de los tres 
 
 En el ajuste paramétrico los primeros parámetros que se definen son: el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los valores con los cuales el algoritmo evolutivo obtiene una mejor calidad de resultados.
 
-La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
+%La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 \subsection{Pesos de la función de fitness}
 
-Para el análisis experimental la función \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{x = y = 1}. Estos valores dan pesos equitativos tanto a ómnibus como a otros vehículos por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
+Para el análisis experimental la función \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{$w_1$ = $w_2$ = 1}. Estos valores dan pesos equitativos tanto a ómnibus como a otros vehículos, por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
 
 
 \subsection{Tiempo de simulación}
-El tiempo de simulación refiere a la duración de una simulación usando SUMO. Es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
+El tiempo de simulación refiere a la duración de la ejecución de una simulación usando SUMO. Es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras que el tiempo real de ejecución depende de la plataforma computacional utilizada y de la cantidad de vehículos considerados en el escenario. En las simulaciones realizadas en el marco de este proyecto se encuentra entre los 5 y 20 segundos. En el análisis experimental se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del algoritmo para cada uno de los tres tipos de tráfico comprobando que se cumplía el criterio.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras que el tiempo real de ejecución depende de la plataforma computacional utilizada y de la cantidad de vehículos considerados en el escenario. En las simulaciones realizadas en el marco de este proyecto se encuentra entre los 5 y 20 segundos. En el análisis experimental se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del algoritmo evolutivo para cada uno de los tres tipos de tráfico, comprobando que se cumplía el criterio anterior.
 
 
 \subsection{Criterio de parada}
-Se elige como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo se busca un compromiso entre un buen resultado y un tiempo de ejecución que no sea excesivo.
+Se elige como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo, se busca un compromiso entre un buen resultado numérico y un tiempo de ejecución que no sea excesivo. Se determina que esta duración se encuentre entre 1 y 24 horas, y para potencialmente obtener un buen resultado numérico se comprueba experimentalmente que el valor de \emph{fitness} no presente variaciones importantes en las ultimas 100 generaciones.  
 
-Se decide que por un lado la ejecución del algoritmo deberá estar comprendida entre 1 y 24 horas, y además comprobar experimentalmente que el valor de \emph{fitness} no tiene una gran variación en las ultimas 100 generaciones. Se ejecutaron 10 ejecuciones del algoritmo por cada tipo de tráfico.
-
-Luego de la realización de las pruebas se elige el número de 500 generaciones como criterio de parada.
-En la siguiente gráfica se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real está dentro del margen pautado. La gráfica no muestra todos los valores, solo algunos representativos para una mejor visualización.
-
-
+Para determinar este criterio se realizaron 10 ejecuciones del algoritmo evolutivo por cada uno de los tres tipos de tráfico, eligiendo el número de 500 generaciones como criterio de parada. En la Figura \ref{fig:criterio_parada} se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos, solo algunos valores representativos para una mejor visualización.
 
 \begin{figure}[h]
 \centering
@@ -56,17 +51,13 @@ En la siguiente gráfica se aprecia como el valor de \emph{fitness} no presenta 
 \label{fig:criterio_parada}
 \end{figure}
 
-
-
 \subsection{Tamaño de la población}
 
-Para la elección del tamaño de la población se tendrán en cuenta tres elementos: el valor de \emph{fitness} resultante de la ejecución del algoritmo genético, el tiempo de ejecución total y los recursos de la plataforma de ejecución.
+Para la elección del tamaño de la población se tienen en cuenta tres elementos: el valor de \emph{fitness} resultante de la ejecución del AE, el tiempo de ejecución total y los recursos de la plataforma de ejecución.
 
-La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster Fing, donde la cantidad máxima de núcleos en el mismo nodo es 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo de la población por núcleo, se determina que la máxima cantidad de población será de 64 individuos.
+La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster Fing, donde la cantidad máxima de núcleos en el mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-Luego se eligen dos valores mas para completar el análisis, estos son 32 y 48 individuos de tamaño de población. Se tiene en cuenta que no son lo suficientemente bajos y son valores con los que se obtiene una distribución adecuada de individuos en la infraestructura. Para las pruebas se realizan 10 ejecuciones del algoritmo por cada tipo de tráfico obteniendo el promedio de esos valores.
-
-La tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos; como se aprecia no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige 32 como tamaño de la población, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es importante al ejecutarse sobre el Cluster Fing que es utilizada por otras personas y con recursos limitados.
+La tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de trafico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster Fing que es utilizada por otras personas y presenta recursos limitados.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
@@ -89,13 +80,9 @@ La tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos; como 
 	\end{tabular}
 \end{table}
 
-
-
-
-
 \subsection{Probabilidad de mutación y cruzamiento}
 
-Para configurar la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
+Para establecer la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
@@ -121,7 +108,7 @@ Para configurar la probabilidad de cruzamiento (pc) se consideraron tres valores
  	\end{tabular}
  \end{table}
  
-Analizando la tabla y la gráfica se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
+Analizando la Tabla \ref{table:parametro_mutacion_cruzamiento} y la Figura \ref{fig:grafica_mutacion_cruzamiento} se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
 
 \begin{figure}[H]
 	\centering
@@ -131,7 +118,7 @@ Analizando la tabla y la gráfica se puede apreciar claramente que para una prob
 \end{figure}
 
 
-Se comprueba que todas las muestras siguen la distribución normal para poder aplicar el test de Student. 
+Se comprueba que los resultados obtenidos siguen la distribución normal para poder aplicar el test de Student. 
 
 %Siendo las hipótesis de la prueba u1 el promedio del  grupo 1 y u2 el del grupo 2)
 %
@@ -144,19 +131,19 @@ Se comprueba que todas las muestras siguen la distribución normal para poder ap
 %			\end{split}			
 %        \end{equation}
 
-Si se compara la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada, por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05) para la ejecución del algoritmo. Para comprobar si es la mejor opción  se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios. En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige  la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
+Si se compara la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada, por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05). Para comprobar si esta es la mejor opción, se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios. En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
 
 
 
 \section{Descripción de escenarios}
-Esta sección presenta los escenarios que serán evaluados, el primero es el escenario base que representa la realidad actual y el segundo un escenario alternativo que contiene modificaciones con el objetivo de obtener mejores métricas que el escenario base.
+Esta sección presenta los escenarios que serán evaluados experimentalmente. El primero es el escenario base que representa la realidad actual y el segundo es un escenario alternativo que presenta modificaciones respecto al caso base, con el objetivo de mejorar los resultados numéricos.
 
 \subsection{Caso base o realidad actual del corredor}
-El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. El objetivo es realizar una simulación para recabar mas información (velocidad promedio de vehículos y ómnibus) que sirva para comparar con los resultados del algoritmo utilizando los datos obtenidos in-situ (configuración de semáforos, cantidad de vehículos, etc).  Se valida su correctitud comparando los tiempos obtenidos en la simulación con tiempos obtenidos in-situ de los recorridos de ida y vuelta para los vehículos. Para el caso de los ómnibus se utilizan las frecuencias, cantidad y recorridos de los mismos que son de acceso público.
+El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. Se simulan las instancias realistas desarrolladas en el capitulo 4 para obtener las velocidades promedio de ómnibus y otros vehículos y poder comparar con los resultados numéricos luego de aplicar el AE.  
 
-Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que pasan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h. Esto permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus para mayor precisión.
+Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que pasan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h. Esta información permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus.
 
-Sobre el escenario base geográfico se realizarán tres escenarios de tráfico : bajo, medio y alto. El caso medio representa los datos obtenidos en el trabajo de campo, el bajo es disminuyendo el 50\% de vehículos y el tiempo de espera en las paradas de ómnibus teniendo en cuenta que en este caso existirá menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad. El caso de tráfico alto se aumenta 50 \%  los vehículos y el tiempo de espera en la parada de los ómnibus. El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
+Sobre el escenario base geográfico se generan tres escenarios de tráfico : bajo, medio y alto. El caso medio representa los datos obtenidos en el trabajo de campo, el bajo es disminuyendo en un 50\% la cantidad de vehículos y disminuyendo el tiempo de espera en las paradas de ómnibus, teniendo en cuenta que en este caso existirá menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que no son alteradas en la realidad cuando cambia la densidad de tráfico. El caso de tráfico alto se aumenta 50 \%  la cantidad de vehículos y el tiempo de espera en la parada de los ómnibus. El aumento y disminución del 50\% se obtuvo al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
 
 A continuación el resumen de la cantidad vehicular para los tres escenarios de tráfico:
 
@@ -170,21 +157,22 @@ A continuación el resumen de la cantidad vehicular para los tres escenarios de 
 
 \subsection{Escenario alternativo}
 
-Para mostrar la utilidad que tienen las simulaciones sobre un escenario real, se realiza un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no afecta la situación actual de la realidad, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
+Para mostrar la utilidad que tienen las simulaciones de tráfico sobre un escenario que representa la realidad actual, se realiza un escenario alternativo. Una de las ventajas principales es que no requiere gran inversión monetaria, de tiempo y que no modifica la infraestructura del lugar, por lo que se pueden generar distintas pruebas para encontrar aquellas que logren un beneficio.
 
-Analizando los puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. El objetivo no es demostrar que será la mejor alternativa, sino dar una de las muchas alternativas que se pueden generar y probar con la simulación si se logran mejoras. Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
+Analizando los puntos que se entienden podrían atentar contra el buen funcionamiento del Corredor, se agregan algunas modificaciones al escenario base para intentar mejorarlo. El objetivo no es encontrar la mejor alternativa, sino dar una de las muchas alternativas que se pueden generar y probar con las simulaciones de tráfico.
+ % Ya que pueden existir limitaciones o reglas que no estamos tomando en cuenta y que deben cumplirse en la realidad.
 
-Entre los cambios estudiados se encuentran: eliminación de paradas y pasajes peatonales, alternar paradas y modificación de reglas de semáforos.
+Entre los cambios propuestos para el escenario alternativo se encuentran: eliminación de paradas y pasajes peatonales, alternancia de paradas y modificación de reglas de los semáforos.
 
 
 
 \section{Resultados}
-Esta sección muestra los resultados obtenidos tanto de la simulación de la realidad, como de la aplicación del algoritmo. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de fitness del algoritmo y un breve análisis de la eficiencia computacional.
+Esta sección muestra los resultados obtenidos tanto de la simulación de las instancias realistas desarrolladas, como de la aplicación del AE sobre las mismas. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de \emph{fitness} del AE y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Valores numéricos del caso base}
 
-En la tabla \ref{table:resultado_caso_base} se pueden ver las métricas obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia la velocidad promedio de los ómnibus en tráfico medio es de 14.6km/h siendo 14.5km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima a la realidad. 
+En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.6 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima a la realidad. 
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
@@ -206,12 +194,12 @@ En la tabla \ref{table:resultado_caso_base} se pueden ver las métricas obtenida
  	\end{tabular}
  \end{table}
  
- En el caso base no se representa la desviación standard ya que los resultados de su simulación son constantes, pues siempre se están probando los mismos recorridos de los vehículos y la configuración de los semáforos no cambia. Cuando se aplica el algoritmo obtenemos un valor diferente de velocidad y \emph{fitness} en cada ejecución ya que tienen distintas configuraciones de semáforos, en este caso si se muestra la desviación standard.
+ En el caso base no se calcula la desviación standard ya que los valores obtenidos son constantes (velocidad promedio de ómnibus, de otros vehículos y el valor de \emph{fintess}), pues siempre se simulan los mismos recorridos de los vehículos y la misma configuración de los semáforos. Cuando se aplica el AE, se generan nuevas configuraciones de semáforos, por lo que se obtiene un valor diferente de la velocidad promedio y del valor de \emph{fitness}, en este caso si se calcula la desviación standard.
 
 
 \subsection{Resultados numéricos de la evaluación }
 
-Como se aprecia en la tabla \ref{table:resultado_caso_base}, el algoritmo mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de de hasta 24\%. A continuación se describe el análisis estadístico para comprobar la mejora.
+Como se aprecia en la tabla \ref{table:resultado_caso_base}, el AE mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además, la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de hasta 24\%. A continuación se describe el análisis estadístico para comprobar la mejora.
 
 
 \begin{table}[H]
@@ -233,7 +221,7 @@ Como se aprecia en la tabla \ref{table:resultado_caso_base}, el algoritmo mejora
 	\end{tabular}
 \end{table}
 
-Se realizaron 20 ejecuciones independientes para cada tipo de tráfico, comprobando que siguieran una distribución normal.Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados. Este indica que el
+Se realizaron 20 ejecuciones independientes para cada tipo de tráfico, comprobando que los valores obtenidos siguieran una distribución normal. Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados. Este criterio indica que el
 algoritmo A es mejor que B si los resultados de A y B cumplen:
 
 \begin{equation}
@@ -241,7 +229,7 @@ algoritmo A es mejor que B si los resultados de A y B cumplen:
 \left |f_{avg}(A) - f_{avg}(B)  \right | > max(std(f_A),std(f_B))
 \end{equation}
 
-En este caso, A representa el algoritmo y B el caso base. Esto indica que la diferencia del resultado promedio del algoritmo restado al resultado del caso base debe ser mayor a la máxima desviación. Esto se cumple para todos los casos, por lo que se puede afirmar  que existe evidencia estadística para indicar que los resultados del algoritmo son mejores al del caso base.
+En este caso, A representa la aplicación del algoritmo evolutivo, y B el caso base. La Ecuación \ref{eq:funcion_significancia} indica que: el resultado promedio obtenido por el AE restado al valor del caso base, debe ser mayor a la máxima desviación standard calculada. Esta ecuación se cumple para todos los casos estudiados, por lo que se puede afirmar que existe evidencia estadística para afirmar que los resultados obtenidos por el AE son mejores a los valores del caso base.
 
 \begin{figure}[H]
 	\centering
@@ -250,22 +238,21 @@ En este caso, A representa el algoritmo y B el caso base. Esto indica que la dif
 	\label{fig:duracion_viajes}
 \end{figure}
 
-Un resultado interesante es que la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el algoritmo.
-Para ómnibus tenemos 24.5m y 23.6m y  para otros vehículos 12.0m y 11.9m.
+En la Figura \ref{fig:duracion_viajes} se aprecia un resultado interesante, donde la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el AE. %Para ómnibus se tiene 24.5m y 23.6m y para otros vehículos 12.0m y 11.9m.
 
 \subsection{Detalles del escenario alternativo}
-Los cambios propuestos incluyen eliminación de paradas, semáforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas, como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
+Los cambios propuestos para el escenario alternativo incluyen eliminación de paradas, semáforos, pasajes peatonales y alternar paradas. Se estudiaron otras propuestas pero fueron descartadas por la poca viabilidad real de las mismas, como por ejemplo construir calles paralelas a Garzón o nuevas reglas en los cruces como existen en otros países.
 
 \subsubsection{Eliminación de paradas}
-Se consideraron dos paradas a eliminar que cumplieran con algunas características: no fueran cercana a una calle principal, que existiera otra parada cercana y que la eliminación de la parada no afecte en demasía a la gente en un traslado mayor. En este caso se seleccionaron las paradas en la calle Ariel y Casavalle.
+Se consideraron eliminar dos paradas que cumplieran con las siguientes características: no estuvieran próximas a una calle principal, que existiera otra parada cercana y que la eliminación de la parada no afecte a las personas al realizar un traslado mayor. Se seleccionaron las paradas ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle que cumplen con los criterios anteriores.
 
 \subsubsection{Eliminación de pasajes peatonales}
-Hay tres pasajes peatonales en el corredor con semáforos que detienen el tráfico, dos de ellos solo manejan una esquina (sin pulsador en funcionamiento) donde en el escenario alternativo se implementó solamente mediante un \emph{pare} en la calle transversal al corredor y el otro es netamente peatonal frente a la Facultad de Agronomía que fue totalmente eliminado. Una opción que mantiene los pasajes peatonales así como también los resultados obtenidos en el escenario alternativo sería implementar el pasaje peatonal por encima del corredor. Al eliminar los pasajes peatonales se aumenta la velocidad media de todo el transporte.
+Hay tres pasajes peatonales en el corredor Garzón con semáforos que detienen el tráfico, por lo tanto el objetivo al eliminarlos es aumentar la velocidad promedio de los vehículos circulantes . Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escesnario alternativo estos dos pasajes fueron cambiados por una señalización de \emph{pare} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal, y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal por encima del corredor Garzón.
 
 \subsubsection{Alternar paradas}
 
-Uno de los problemas del ómnibus es su baja aceleración, por lo que cada vez que este frena en un semáforo o en una parada demora en retomar una velocidad aceptable. Por tanto al reducir la cantidad de paradas que un ómnibus tiene que hacer se mejora la velocidad promedio.
-La línea G recorre a Garzón de punta a punta y es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
+Uno de los problemas del ómnibus es su baja aceleración, por lo que cada vez que se detiene en un semáforo o en una parada, demora en retornar a una velocidad aceptable. Al reducir la cantidad de paradas donde un ómnibus tiene que detenerse se mejora la velocidad promedio.
+La línea G recorre el corredor Garzón de punta a punta y es cubierta por las empresas Coectc y Cutcsa. Una posibilidad de alternancia de paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
 
 \begin{figure}[H]
 	\centering
@@ -274,14 +261,13 @@ La línea G recorre a Garzón de punta a punta y es cubierta por las empresas Co
 	\label{fig:paradas_alternadas}
 \end{figure}
 
-Una empresa se detendrá en las paradas pares y la otra en las impares y algunas de mayor aglomeración de pasaje/tiempo serán realizadas por las dos. Cada empresa viajará por el corredor a 4 minutos de frecuencia (como en la actualidad). Si se reduce el número de paradas que hace un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+Una empresa se detendrá en las paradas pares y la otra en las impares y algunas paradas con mas cantidad de pasajeros serán realizadas por las dos. Cada empresa viajará por el corredor con una frecuencia de 4 minutos (como en la actualidad). Si se reduce el número de paradas donde se detiene un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
 
-El cambio de alternar paradas es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
-
+%El cambio de alternar paradas es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
 
 
 \subsubsection{Cambio básico de semáforos}
-Al hacer el relevamiento de los datos obtenidos de la configuración de los semáforos del Corredor Garzón, se constató que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema, el carril que hay que detener es el de la izquierda del ómnibus cuando una línea dobla a la izquierda pero no los dos carriles al mismo tiempo. No se tiene conocimiento si esto corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Como esto ocurre en varias intersecciones y en ambos sentidos este cambio mejora la velocidad promedio de los autos que circulan por los dos carriles.
+Al hacer el relevamiento de los datos obtenidos de la configuración de los semáforos del Corredor Garzón, se constató que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido ya que podrían seguir circulando por el corredor sin ningún tipo de problema. El carril que hay que detener es el de la izquierda del ómnibus cuando una línea dobla a la izquierda pero no los dos carriles al mismo tiempo. No se tiene conocimiento si corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Como esto ocurre en varias intersecciones y en ambos sentidos, el cambio mejora la velocidad promedio de los autos que circulan por los dos carriles.
 
 Este cambio se aplicó en las siguientes intersecciones:
 \begin{itemize}
@@ -292,7 +278,7 @@ Este cambio se aplicó en las siguientes intersecciones:
 
 \subsection{Valores numéricos al aplicar los cambios}
 
-Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta se basa en el tráfico medio, ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Estos cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que el que logra una mayor diferencia es la utilización de paradas alternadas.
+Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta tabla se basa en el tráfico medio, ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Los cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que la modificación que logra una mayor diferencia es la utilización de paradas alternadas.
 
 
 \begin{table}[H]
@@ -342,20 +328,17 @@ Una vez que se aplican todos las modificaciones sobre el escenario, se realiza u
 	\end{tabular}
 \end{table}
 
-Una vez que tenemos el escenario alternativo se procede a aplicarle el algoritmo cuyo resultado veremos a continuación.
+Luego de obtener los valores para el escenario alternativo se procede a aplicarle el algoritmo evolutivo cuyo resultados veremos a continuación.
 
 
 \subsection{Resultados de la evaluación sobre el escenario alternativo}
 
-El escenario alternativo supuso una mejora sustancial en comparación con el caso base (11 \% en el valor de fitness). Se procede a aplicarle el algoritmo para determinar si aún hay posibilidad de mejorar los valores de velocidad y \emph{fitness}.
+El escenario alternativo supuso una mejora sustancial en comparación con el caso base (11 \% en el valor de fitness). Se procede a aplicarle el algoritmo evolutivo para determinar si aún hay posibilidad de mejorar los valores de velocidad y \emph{fitness}.
 
 
 Los resultados obtenidos en la tabla \ref{table:mejoras_trafico_alternativo_algoritmo}  mejoran claramente el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
 
-Al comparar los resultados obtenidos se aprecia que cuanto más densidad de tráfico, mayor es el porcentaje de mejora. Además un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
-
-
-
+Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad de tráfico, mayor es el porcentaje de mejora. Además, un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
@@ -377,20 +360,20 @@ Al comparar los resultados obtenidos se aprecia que cuanto más densidad de trá
 	\end{tabular}
 \end{table}
 
-En la gráfica \ref{fig:duracion_viajes_alernativo} se puede apreciar la comparación en la duración de los viajes. Se produce una gran reducción en la duración de los viajes de los ómnibus en los tres tipos de tráfico, mientras para el caso de los vehículos la mayor diferencia ocurre cuando el tráfico es alto.
+En la gráfica de la Figura \ref{fig:duracion_viajes_alernativo} se comparan las duraciones de los viajes al aplicar el AE sobre el escenario alternativo. Se produce una gran reducción en la duración de los viajes de los ómnibus en los tres tipos de tráfico, mientras para el caso de los vehículos la mayor diferencia ocurre cuando el tráfico es alto.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/duracio_viajes_alternativo}
-	\caption[Comparación de la duración en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo al escenario alternativo.]{Comparación de la duración en minutos de los viajes realizados sobre el escenario base y al aplicar el algoritmo evolutivo  al escenario alternativo, de ómnibus y otros vehículos en el recorrido completo del corredor Garzón, para los diferentes tipos de tráfico.}
+	\caption[Comparación de la duración de los viajes en minutos entre el escenario base y el algoritmo evolutivo sobre el escenario alternativo.]{Comparación de la duración en minutos de los viajes realizados sobre el escenario base y al aplicar el algoritmo evolutivo  al escenario alternativo, de ómnibus y otros vehículos en el recorrido completo del corredor Garzón, para los diferentes tipos de tráfico.}
 	\label{fig:duracion_viajes_alernativo}
 \end{figure}
 
-Otra vez podemos aplicar el criterio de significancia estadística( \ref{eq:funcion_significancia}) para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del alternativo.
+Otra vez se aplica el criterio de significancia estadística( \ref{eq:funcion_significancia}) para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del escenario alternativo.
 
 \subsection{Variación de la función de \emph{fitness}}
 
-La función \emph{fitness} (\ref{eq:funcion_fitness}) utilizaba los pesos \emph{x = y = 1} lo que representa un balance equitativo  para ómnibus y vehículos. Estos pesos pueden ser variados en función de lo que se necesite, por lo que se realizaron pruebas con dos tipos de pesos para comparar como varían las velocidades cuando se da más peso a un tipo de vehículo sobre el otro.
+La función \emph{fitness} (\ref{eq:funcion_fitness}) utilizaba los pesos \emph{$w_1$ = $w_2$ = 1} lo que representa un balance equitativo para ómnibus y vehículos. Estos pesos pueden ser modificados en función de lo que se necesite, por lo que se realizaron pruebas con dos tipos de pesos para comparar como varían las velocidades cuando se da más peso a un tipo de vehículo sobre el otro.
 
 %Por un cruce de Garzón pasan cada hora:
 %70 ómnibus , si aproximamos con 23 personas= 1610 personas por hora
@@ -398,10 +381,8 @@ La función \emph{fitness} (\ref{eq:funcion_fitness}) utilizaba los pesos \emph{
 %Una cantidad similar  pasan por el cruce en ambos medios de transporte por lo que no existe una tendencia a favor de una sobre la otra, se podría aproximar que 50\% eligen el ómnibus y 50\% el auto.
 
 
-
-
 \subsubsection{Prioridad ómnibus}
-Este caso dará más prioridad a los ómnibus. Esto se sostiene en el hecho que uno de los objetivos buscados por la IMM  es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana \citep{PlanMovilidad}. Con la premisa que al mejorar la duración del viaje en ómnibus en relación al del auto por el corredor, las personas que utilizan auto para sus viajes optarán por el transporte colectivo. Por tanto se experimentó cambiando los pesos de la función \emph{fitness} con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
+Este caso dará más prioridad a los ómnibus, este caso se justifica por el hecho que uno de los objetivos buscados por la IMM es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana. La premisa es que al mejorar la duración del viaje en ómnibus, en relación al del auto por el corredor, las personas que utilizan auto para sus viajes optarán por el transporte colectivo. Se experimentó cambiando los pesos de la función \emph{fitness} con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
 
 \subsubsection{Prioridad a otros vehículos}
@@ -410,7 +391,7 @@ Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el cas
 
 \subsubsection{Resultados}
 
-La siguiente tabla compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de ómnibus (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
+La tabla \ref{table:analisis_fitness} compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de ómnibus (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
 
 
 \begin{table}[H]
@@ -448,18 +429,18 @@ La siguiente tabla compara las velocidades promedio de ómnibus y vehículos par
 \end{table}
 
 
-Los resultados indican que al variar los pesos de la función \emph{fitness} las velocidades promedio de los vehículos se ve afectada. En el caso de dar más prioridad a los ómnibus se produce como cabía esperar un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus. Una explicación posible de este comportamiento es que ya se llegó a un limite máximo y no se puede mejorar más.
+Los resultados indican que al variar los pesos de la función \emph{fitness} las velocidades promedio de los vehículos se ve afectada. Al dar más prioridad a los ómnibus se produce, como cabía esperar, un aumento en su velocidad promedio y una leve baja en la velocidad promedio del resto de los vehículos. Cuando el tráfico es bajo este cambio casi no aumenta la velocidad de los ómnibus. Una explicación posible de este comportamiento es que ya se llegó a un limite máximo y no se puede mejorar más.
 
 Al dar más prioridad a los otros vehículos se produce un aumento en su velocidad y una disminución en la velocidad de los ómnibus la cual es muy evidente en el caso de tráfico alto. Este resultado permite apreciar como estos valores son fuertemente afectados por la densidad de tráfico que se estudie.
 
-En general las variaciones en las velocidades no son grandes pero suficientemente apreciable para tener cierta libertad al plantear distintos objetivos que tiendan a favorecer un tipo u otro de vehículos.
+En general las variaciones en las velocidades no son grandes, pero suficientemente apreciable para tener cierta libertad al plantear distintos objetivos que tiendan a favorecer un tipo u otro de vehículos.
 
 
 \subsection{Eficiencia computacional}
 
-Se realiza un estudio de la eficiencia computacional del algoritmo para analizar los tiempos de ejecución cuando se usan varios procesadores y como se comporta su capacidad de paralelismo.
+Se realiza un estudio de la eficiencia computacional del AE para analizar los tiempos de ejecución cuando se usan varios procesadores y como se desempeña su capacidad de paralelismo.
 
-Se evalúan nueve ejecuciones del algoritmo; tres con cada tipo de tráfico: alto, medio y bajo, para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de núcleos.
+Se evalúan nueve ejecuciones del AE; tres con cada tipo de tráfico: alto, medio y bajo, para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de núcleos.
 
 Las pruebas fueron realizadas sobre el node40 del Cluster Fing, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
 
@@ -522,4 +503,4 @@ El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución c
 	\label{fig:speedup1}
 \end{figure}
 
-La gráfica \ref{fig:speedup1} muestra como a medida que aumenta el tráfico disminuye el speedup. Esto sucede por que está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo, aunque como se ve no tiene un gran impacto.
+La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico disminuye el speedup. Este fenómeno sucede por que está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo (aunque como se ve no tiene un gran impacto).
