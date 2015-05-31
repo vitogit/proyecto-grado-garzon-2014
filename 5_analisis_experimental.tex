@@ -5,7 +5,7 @@ Este capítulo presenta la evaluación experimental del algoritmo evolutivo mult
 
 \section{Plataforma de ejecución y Desarrollo}
 
-Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster Fing (sitio web: http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el algoritmo evolutivo en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
+Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster Fing (http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el algoritmo evolutivo en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
 
 Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con la misma cantidad de recursos disponibles, además, para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados será tenido en cuenta, cuando se realice el análisis de eficiencia computacional detallado al final de éste capítulo.
 
@@ -262,7 +262,7 @@ La línea G recorre el corredor Garzón de punta a punta y es cubierta por las e
 	\label{fig:paradas_alternadas}
 \end{figure}
 
-Una empresa se detendrá en las paradas pares y la otra en las impares y algunas paradas con mas cantidad de pasajeros serán realizadas por las dos. Cada empresa viajará por el corredor con una frecuencia de 4 minutos (como en la actualidad). Si se reduce el número de paradas donde se detiene un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+La Figura \ref{fig:paradas_alternadas} brinda un ejemplo donde, una empresa se detendrá en las paradas pares y la otra en las impares y algunas paradas con mas cantidad de pasajeros serán realizadas por las dos. Cada empresa viajará por el corredor con una frecuencia de 4 minutos (como en la actualidad). Si se reduce el número de paradas donde se detiene un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
 
 %El cambio de alternar paradas es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
 
@@ -279,7 +279,7 @@ Este cambio se aplicó en las siguientes intersecciones:
 
 \subsection{Valores numéricos al aplicar los cambios}
 
-Para determinar cuales son los cambios que logran mejores rendimientos se elabora la tabla \ref{table:resultado_alternativo}. Esta tabla se basa en el tráfico medio, ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Los cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que la modificación que logra una mayor diferencia es la utilización de paradas alternadas.
+Para determinar cuales son los cambios que logran mejores rendimientos se elabora la Tabla \ref{table:resultado_alternativo}. Esta tabla se basa en el tráfico medio, ya que solo se quiere realizar una comparación sencilla de las mejoras realizadas. Los cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que la modificación que logra una mayor diferencia es la utilización de paradas alternadas.
 
 
 \begin{table}[H]
@@ -305,7 +305,7 @@ Para determinar cuales son los cambios que logran mejores rendimientos se elabor
 	\end{tabular}
 \end{table}
 
-Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se ve en la tabla \ref{table:mejoras_trafico_alternativo} se obtienen mejores rendimientos en todos los tipos de tráfico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
+Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se ve en la Tabla \ref{table:mejoras_trafico_alternativo} se obtienen mejores rendimientos en todos los tipos de tráfico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
@@ -337,7 +337,7 @@ Luego de obtener los valores para el escenario alternativo se procede a aplicarl
 El escenario alternativo supuso una mejora sustancial en comparación con el caso base (11 \% en el valor de fitness). Se procede a aplicarle el algoritmo evolutivo para determinar si aún hay posibilidad de mejorar los valores de velocidad y \emph{fitness}.
 
 
-Los resultados obtenidos en la tabla \ref{table:mejoras_trafico_alternativo_algoritmo}  mejoran claramente el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
+Los resultados obtenidos en la Tabla \ref{table:mejoras_trafico_alternativo_algoritmo}  mejoran claramente el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual se logran mejoras de hasta 37\%. 
 
 Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad de tráfico, mayor es el porcentaje de mejora. Además, un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
@@ -370,7 +370,7 @@ En la gráfica de la Figura \ref{fig:duracion_viajes_alernativo} se comparan las
 	\label{fig:duracion_viajes_alernativo}
 \end{figure}
 
-Otra vez se aplica el criterio de significancia estadística( \ref{eq:funcion_significancia}) para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del escenario alternativo.
+Otra vez se aplica el criterio de significancia estadística para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del escenario alternativo.
 
 \subsection{Variación de la función de \emph{fitness}}
 
@@ -392,7 +392,7 @@ Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el cas
 
 \subsubsection{Resultados}
 
-La tabla \ref{table:analisis_fitness} compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de ómnibus (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
+La Tabla \ref{table:analisis_fitness} compara las velocidades promedio de ómnibus y vehículos para los tres tipos de pesos que se probaron y por cada tipo de tráfico.  El caso 50-50 es el caso base donde los pesos son iguales, 70-30 es el caso con más prioridad para los ómnibus y el 30-70 más prioridad a los otros vehículos. Se analiza cuanto varían las velocidades de ómnibus (var. vpb) y otros vehículos(var. vpv) comparando contra el caso 50-50 de cada tipo de tráfico.
 
 
 \begin{table}[H]
@@ -495,7 +495,7 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 \end{table}
 
 
-El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del \emph{speedup} de 25.7  y  eficiencia promedio de 0.8, lo cual puede considerarse como buenas métricas.
+La Table \ref{table:analisis_speedup} El algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del \emph{speedup} de 25.7  y  eficiencia promedio de 0.8, lo cual puede considerarse como buenas métricas.
 
 \begin{figure}[H]
 	\centering

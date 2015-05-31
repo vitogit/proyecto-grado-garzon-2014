@@ -2,7 +2,7 @@
 Este capítulo aborda el marco teórico necesario para comprender el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y las soluciones propuestas para manejarlo, incluyendo la construcción de corredores exclusivos para el transporte público. En este contexto se presenta la descripción del Corredor de Garzón y sus problemas. Luego, se presentan los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar, se incluye un relevamiento de trabajos relacionados para mostrar y comentar otras variantes del problema y soluciones propuestas en la literatura del área.
 \section{Problema del tránsito vehicular}
 
-En gran parte del mundo se está produciendo un crecimiento sostenido del parque automotor, lo cual ocasiona una serie de problemas relacionados con el agravamiento de las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas.
+El constante crecimiento del parque automotor, ocasiona problemas relacionados con las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas.
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación, con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Este problema repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas; además, se genera una exigencia en las vías de tránsito que produce un deterioro mayor de calles y rutas.
 
@@ -10,7 +10,7 @@ Uruguay y en particular Montevideo, no escapa a este fenómeno. El aumento del p
 
 Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, algunos de los cuales no están coordinados \citep{Subrayado2013}.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/ventas_autos}
 	\caption[Evolución de la venta de automóviles en Uruguay]{Evolución de la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de {http://www.autoanuario.com.uy} .	
@@ -30,7 +30,7 @@ En el caso de Montevideo el carril \emph{sólo bus} está sobre la derecha, por 
 
 Las ciudades de países en vías de desarrollo, que tengan como objetivo fundamental conseguir mayores velocidades en el sistema vial, deben estudiar la factibilidad de instalar corredores, dado que existen muchas posibilidades de implementación y no todas pueden ser aplicables por el contexto zonal, cultural o de inversión necesaria.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/costo_transporte}
 	\caption[Gráfica de costos de transporte en función de la gente transportada.]{Gráfica de costos de transporte en función de la gente transportada.- Imagen original extraída de \citet{ITDP}		
@@ -52,7 +52,7 @@ En la siguiente sección se presenta un análisis exhaustivo de varios puntos pr
 
 El Corredor Garzón fue construido como parte del Plan de Movilidad Urbana en la ciudad de Montevideo \citep{PlanMovilidad}. El corredor está ubicado en el centro geográfico de Montevideo como se puede apreciar en la Figura \ref{fig:Mapa_Garzon_0} y conecta los barrios de Colón, Sayago, Belvedere y Paso Molino. Tiene una extensión de 6.5 km con 24 cruces semaforizados, en donde se encuentran calles importantes como Millán, que conecta con una autopista (Ruta 5), y Bulevar Batlle y Ordoñez, que tiene una gran densidad de tráfico. Es importante aclarar que el corredor Garzón no es sólo una conexión de extremo a extremo, ya que se encuentra en una zona densamente poblada cuyos barrios tienen al corredor como la principal vía de movilidad.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.99\linewidth]{figures/Mapa_Garzon_0}
 	\caption[Localización del Corredor de Garzón en Montevideo]{Localización del Corredor de Garzón en Montevideo, referenciado en color rojo - Imagen original extraída de www.montevideo.gub.uy		
@@ -65,7 +65,7 @@ Como se aprecia en la Figura \ref{fig:perfil_garzon}, el corredor consiste bási
 Basándose en el standard antes mencionado, el Corredor Garzón cumple con la definición de BRT por las siguientes características:\textit{i)} el largo del carril exclusivo para los ómnibus es de mas de 3 km de longitud,\textit{ii)} más del 90\% de la extensión del corredor está segregado físicamente, impidiendo el traspaso de carril de otros vehículos hacia el carril exclusivo para ómnibus,\textit{iii)} presenta dos carriles centrales para los ómnibus que se encuentran en medio de los carriles para los demás vehículos constituyendo un corredor alineado centralmente,\textit{iv)} incluye prohibiciones de algunos virajes a la izquierda y el carril de ómnibus tiene prioridad en la mayoría de las intersecciones.
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/busway_configuration}
 	\caption[Perfil propuesto para el corredor Garzón.]{Perfil propuesto para el corredor Garzón desde San Quintín a Camino Colman - Imagen original extraída de \citep{PlanMovilidad}
@@ -73,6 +73,7 @@ Basándose en el standard antes mencionado, el Corredor Garzón cumple con la de
 	\label{fig:perfil_garzon}
 \end{figure}
 
+\newpage
 Analizando los puntos presentados en el standard como recomendaciones para la implementación de corredores urbanos, hay algunas características que no están totalmente aplicadas al Corredor Garzón, entre las que se destacan:
 
 \begin{enumerate}
@@ -101,7 +102,7 @@ Los métodos para la sincronización de semáforos se encuentran entre los más 
 
 Un concepto importante en el manejo de semáforos es el de \emph{fase}, que se refiere a una configuración específica de luces de semáforos en una intersección de calles, que permiten el movimiento de ciertos flujos de tráfico. Como se ve en la Figura \ref{fig:fases} cada intersección puede tener diferente número de fases y también distintas duraciones. Las fases suelen ser configuradas y establecidas manualmente por técnicos especializados basados en su experiencia, aunque en ciertas ocasiones se utilizan simulaciones computacionales para obtener configuraciones apropiadas. 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/fases1}
 	\caption{Distintas fases de semáforos para dos cruces en una red de tránsito.}
@@ -125,7 +126,7 @@ Los parámetros mencionados anteriormente pueden ser utilizados a la hora de sin
 
 Los métodos para lograr la coordinación necesaria entre semáforos incluyen desde simples mecanismos de reloj hasta sistemas computarizados que se ajustan en tiempo real con la ayuda de sensores en la calle. Estos métodos pueden clasificarse como estrategias de tiempo fijo o de tiempo dinámico auto-ajustable.
 
-Se considera al problema de sincronización de semáforos como un problema de optimización NP-difícil \citep{yang1996model}, por lo que los métodos computacionales exactos son solo útiles en instancias de tamaño reducido. Por este motivo deben utilizarse métodos heurísticos y metaheurísticos para resolver instancias realistas del problema, algunos de los cuales se describen en la sección de trabajos relacionados. Entre los métodos más desarrollados y efectivos para resolver el problema están los algoritmos evolutivos, en particular los algoritmos genéticos, que serán explicados a continuación.
+Se considera al problema de sincronización de semáforos como un problema de optimización NP-difícil \citep{yang1996model}, lo que provoca que los métodos computacionales exactos lo resuelvan eficientemente solamente en instancias de tamaño reducido. Por este motivo deben utilizarse métodos heurísticos y metaheurísticos para resolver instancias realistas del problema, algunos de los cuales se describen en la sección de trabajos relacionados. Entre los métodos más desarrollados y efectivos para resolver el problema están los algoritmos evolutivos, en particular los algoritmos genéticos, que serán explicados a continuación.
 
 \section{Algoritmos Evolutivos}
 
@@ -158,7 +159,7 @@ En Algoritmo \ref{alg:algoritmo_genetico_simple} muestra la formulación básica
 Un individuo es una codificación de una solución que resuelve el problema. La población inicial puede generarse aleatoriamente o basándose en heurísticas que utilizan conocimiento especifico sobre el problema. El mecanismo de selección determina cuales individuos son adecuados para integrar la población de la siguiente generación. Este mecanismo utiliza el valor de la función de evaluación o \emph{fitness} para definir que tan buena o apta es una solución en comparación con las demás. En cada iteración, la cual se conoce como generación, se aplican operadores de cruzamiento y mutación sobre los individuos. El cruzamiento permite combinar a dos individuos para obtener otros que potencialmente sean una mejor solución. La mutación aplica cambios aleatorios sobre los individuos. Estos operadores y el mecanismo de selección son probabilísticos, es decir, que su aplicación depende de una una tasa de probabilidad asociada al operador.
 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=10cm]{Figures/fitness_generaciones}
 	\caption[Esquema de la evolución del valor del fitness en un algoritmo evolutivo ]{Esquema de la evolución del valor del fitness en un algoritmo evolutivo a través de las generaciones.}
@@ -177,7 +178,7 @@ A continuación se presentan las principales características de los AG.
 El esquema básico de funcionamiento se presenta en el Algoritmo \ref{alg:algoritmo_genetico_simple}:
 
 
-\begin{algorithm}[H]
+\begin{algorithm}[ht]
 	\caption{Algoritmo Genético}
 	\label{alg:algoritmo_genetico_simple}
 	\begin{algorithmic} [1] 
@@ -204,7 +205,7 @@ El esquema básico de funcionamiento se presenta en el Algoritmo \ref{alg:algori
 Los AG no trabajan directamente sobre las soluciones del problema, sino que utilizan una abstracción de las soluciones llamada cromosoma. Un cromosoma es un vector de genes donde el valor de cada gen se denomina alelo; nombres inspirados en la evolución natural biológica.
 En general los AG codifican las soluciones utilizando un vector de números binarios o reales de largo fijo.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=8cm]{Figures/rep_binaria}
 	\caption{Representación binaria de un cromosoma.}
@@ -232,7 +233,7 @@ F(x) =  p_i = \frac{f_i}{\sum_{j=1}^{n}{f_j}}
 \subsubsection{Operador de cruzamiento}
 La función del operador de cruzamiento es combinar individuos con el objetivo de preservar las mejores características de los progenitores y así lograr construir mejores soluciones. El operador de cruzamiento se aplica de acuerdo a una tasa de probabilidad prefijada. 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/cruzamiento1}
 	\caption{Cruzamiento de un punto}
@@ -249,7 +250,7 @@ En general, los operadores de cruzamiento se pueden clasificar en:
 
 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/cruzamiento_uniforme}
 	\caption{Cruzamiento uniforme}
@@ -258,7 +259,7 @@ En general, los operadores de cruzamiento se pueden clasificar en:
 
 \subsubsection{Operador de mutación} 
 El operador de mutación es el método utilizado para modificar un individuo, con el objetivo de mantener y mejorar la diversidad y otorgar al AG un mecanismo que le permita escapar de óptimos locales. En general la mutación aplica una modificación aleatoria en el cromosoma, por ejemplo, en una representación binaria se invertiría aleatoriamente el valor de un alelo, como se muestra en la Figura \ref{fig:mutacion1}.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/mutacion1}
 	\caption{Mutación por inversión binaria}
@@ -341,7 +342,7 @@ En el caso de los algoritmos genéticos, gran parte del tiempo se ocupa en la et
 
 Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de la función fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar con la evaluación, ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios procesos que ejecutan concurrentemente.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/diagrama-master-slave}
 	\caption[Modelo Maestro-Esclavo]{Modelo Maestro-Esclavo}
@@ -395,7 +396,7 @@ En la actualidad existe una gran variedad de simuladores disponibles, que se enc
 
 Cabe destacar que de los cinco simuladores de tráfico mencionados anteriormente, solamente SUMO es abierto y gratuito, el resto son programas propietarios. 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/simuladores}
 	\caption[]{Algunos simuladores de tráfico. (A) Sumo, (B) QuadStone Paramics, (C) Aimsun, (D) Trafficware SimTraffic}
@@ -522,7 +523,7 @@ En el trabajo de \citet{Stolfi2012} no se optimiza la configuración de los sem�
 
 En conclusión, el estudio de los trabajos relacionados permitió conocer en profundidad distintas soluciones y métodos que se consideraron en menor o mayor medida en la solución propuesta. El hecho de que todos los trabajos consultados obtuvieron mejoras significativas en sus resultados motivó aún más el desarrollo del presente proyecto.
 
-\begin{table}[H]
+\begin{table}[ht]
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Resumen de los principales trabajos relacionados relevados.}
 	\label{table:resumen_trabajos}
