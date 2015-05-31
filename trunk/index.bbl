@@ -252,19 +252,19 @@ N.~M. Rouphail, B.~B. Park, y J.~Sacks.
 \newblock En \emph{XI Pan American Conference in Traffic and Transportation
   Engineering}. Citeseer, 2000.
 
+\bibitem[S{\'a}nchez et~al.(2004)S{\'a}nchez, Gal{\'a}n, y Rubio]{Sanchez2004}
+J.~S{\'a}nchez, M.~Gal{\'a}n, y E.~Rubio.
+\newblock Genetic algorithms and cellular automata: a new architecture for
+  traffic light cycles optimization.
+\newblock En \emph{Congress on Evolutionary Computation, 2004. CEC2004.},
+  volumen~2, p. 1668--1674. IEEE, 2004.
+
 \bibitem[S{\'a}nchez et~al.(2008)S{\'a}nchez, Gal{\'a}n, y Rubio]{Sanchez2008}
 J.~S{\'a}nchez, M.~Gal{\'a}n, y E.~Rubio.
 \newblock Applying a traffic lights evolutionary optimization technique to a
   real case: {“Las Ramblas” area in Santa Cruz de Tenerife}.
 \newblock \emph{IEEE Transactions on Evolutionary Computation}, 12\penalty0
   (1):\penalty0 25--40, 2008.
-
-\bibitem[Sanchez et~al.(2004)Sanchez, Galan, y Rubio]{Sanchez2004}
-J.~J. Sanchez, M.~Galan, y E.~Rubio.
-\newblock Genetic algorithms and cellular automata: a new architecture for
-  traffic light cycles optimization.
-\newblock En \emph{Congress on Evolutionary Computation, 2004. CEC2004.},
-  volumen~2, p. 1668--1674. IEEE, 2004.
 
 \bibitem[S{\'a}nchez et~al.(2010)S{\'a}nchez, Gal{\'a}n-Moreno, y
   Rubio-Royo]{Sanchez2010}
