@@ -65,8 +65,7 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 Como se explicó en el marco teórico, el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros. Entre estos parámetros se encuentran la duración de fase, de ciclo y el \emph{offset} de los semáforos. Los parámetros que se seleccionen deberán ser incluidos en la representación del cromosoma.
 
-Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. El cromosoma se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una
-fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
+Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. La figura \ref{fig:cromosoma1} muestra la representación del cromosoma, como se puede observar se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
 
 \begin{figure}[H]
 	\centering
@@ -74,8 +73,8 @@ fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}.
 	\caption{Vista del Cromosoma para los cruces de Avda. Millán y Cno. Ariel}
 	\label{fig:cromosoma1}
 \end{figure}
-Para convertir la información del cromosoma en un lenguaje que el simulador entienda, se utiliza el formato \emph{XML} que el simulador especifica; la Figura \ref{fig:rep_sumo} muestra en ese formato xml, la representación de la esquina de Garzón y Emancipación, aquí vemos 4 líneas de \emph{phase} que (si no contienen luces amarillas) el parámetro \emph{duration} indican los alelo de duraciones de fases y el tiempo indicado en el \emph{offset} sera el correspondiente al del gen de Emancipación. Cabe destacar que de las 4 fases que componen al cruce solo dos son las que se modelarán en el cromosoma porque no modelamos las luces amarillas.
 
+Toda la información del cromosoma se guarda y carga en el formato \emph{XML}, del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases o secuencias de luces de los semáforos de una determinada esquina, se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces, por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla; y  \emph{duration} especifica la duración de la fase, que corresponderá a los alelos de duraciones del cromosoma, si no existe una luz amarilla en la secuencia de luces. El tiempo indicado en el \emph{offset} indica el inicio de la fase y será el correspondiente al del gen de Emancipación. 
 
 
 \begin{figure}[H]
@@ -84,7 +83,9 @@ Para convertir la información del cromosoma en un lenguaje que el simulador ent
 	\caption{Representación de Sumo}
 	\label{fig:rep_sumo}
 \end{figure}
-La Figura \ref{fig:rep_sumo} muestra como se modela el cruce de Emancipación, en el archivo de configuración de semáforos, que utiliza el simulador SUMO. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces y su duración de 52 segundos, \emph{G} indica la luz verde, \emph{r} la roja, \emph{y} el Amarillo. El valor del \emph{offset} indica el inicio de la fase.
+
+
+
 \newpage
 
 \begin{figure}[H]
@@ -93,22 +94,8 @@ La Figura \ref{fig:rep_sumo} muestra como se modela el cruce de Emancipación, e
 	\caption[Representación de una fase de los semáforos para un cruce.]{Representación de una fase de los semáforos para un cruce. Cada número se corresponde a una letra en la secuencia de \emph{state} del archivo de configuración del simulador SUMO.}
 	\label{fig:sem_numerados}
 \end{figure}
-El simulador representa en las esquinas, mediante el uso de flechas blancas, la elección de carriles habilitados, para los vehículos que transitan por un determinado carril; en el caso de un giro, la flecha apunta hacia donde se encuentra el carril del giro. 
-Por tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
-\begin{itemize}
-	\item GGGG se corresponde a 1, 2, 3 y 4. 
-	\item rrr a 5, 6 y 7. 
-	\item GGGG a 8, 9, 10 y 11. 
-	\item rrr a 12, 13 y 14. 
-\end{itemize}
-
-
-
-La Figura \ref{fig:cromosoma1} muestra ejemplos de codificación para los cruces de Emancipación y de Camino Colman, siendo estos cruces los correspondientes al principio y el final del Corredor Garzón.
-
- Dadas las duraciones de las secuencias de luces de la figura \ref{fig:rep_sumo} que no contengan luces amarillas y el offset del semáforo, se genera el cromosoma que utilizaremos. En la representación del cromosoma se omiten las luces amarillas ya que no modifican los tiempos reales del paso de vehículos
-
-La Figura \ref{fig:sem_numerados} presenta la numeración de los semáforos que se corresponden con la primera fase de este ejemplo, donde cada posición de la secuencia \emph{estado} se corresponde con un color en particular. 
+El simulador representa en las esquinas, mediante el uso de flechas blancas, la elección de carriles habilitados, para los vehículos que transitan por un determinado carril; en el caso de un giro, la flecha apunta hacia donde se encuentra el carril del giro. La figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador, se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la figura \ref{fig:rep_sumo}. Por tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
+\textit{i)} \emph{GGGG} se corresponde a 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde a 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde a 8, 9, 10 y 11. y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in situ.
 
 
 \subsection{Generación de la población inicial}
