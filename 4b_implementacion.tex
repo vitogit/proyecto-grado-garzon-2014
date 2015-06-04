@@ -1,21 +1,19 @@
 \chapter{Implementación de la solución}
 
-Este capítulo detalla la implementación del algoritmo evolutivo desarrollado. Comienza describiendo a la biblioteca utilizada Malva y continua especificando el algoritmo evolutivo desarrollado donde se explica: la representación del cromosoma, la generación de la población, la función de \emph{fitness} y el funcionamiento de los operadores evolutivos. Para finalizar se detalla el modelo de paralelismo utilizado.
+Este capítulo detalla la implementación del algoritmo evolutivo desarrollado. Comienza describiendo a la biblioteca Malva, utilizada para la implementación y continua especificando el algoritmo evolutivo desarrollado donde se explica: la representación del cromosoma, la generación de la población, la función de \emph{fitness} y el funcionamiento de los operadores evolutivos. Para finalizar se detalla el modelo de paralelismo utilizado.
 
 \section{Implementación: Biblioteca Malva}
 
-Dada la complejidad del problema, se contempló desde el inicio del proyecto la utilización de un \emph{framework} para el desarrollo del algoritmo evolutivo. De esta forma, se logra una implementación robusta y flexible. 
-
-Como se detalló en el marco teórico, existen varias opciones disponibles para seleccionar un \emph{framework} para AEs. Por las particularidades del problema planteado, existen ciertos requerimientos a la hora de seleccionar un \emph{framework}, entre los que se destacan:
+Dada la complejidad del problema, se contempló desde el inicio del proyecto la utilización de un \emph{framework} para el desarrollo del algoritmo evolutivo. De esta forma, se facilita el desarrollo y la implementación de una solución robusta y flexible. Como se detalló en el marco teórico, existen varias opciones disponibles de \emph{framework} para el desarrollo de AEs. Por las particularidades del problema planteado, existen ciertos requerimientos a la hora de seleccionar un \emph{framework}, entre los que se destacan:
 
 \begin{itemize}
 	\item Código abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no existan costos económicos asociados. Además, es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
 	\item Algoritmo genético: El \emph{framework} debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
-	\item Algoritmo paralelo: Por la complejidad del problema y el alto consumo de recursos computacionales que insume el proceso de evaluación de solciones utilizando simulaciones de SUMO, es fundamental que el \emph{framework} incluya la opción de ejecución en paralelo. Si no cuenta con esta funcionalidad nativa, es deseable al menos que exista la posibilidad de modificar el código base para agregarla.
+	\item Algoritmo paralelo: La complejidad del problema y de las instancias que se estudian, justifican la necesidad de que el \emph{framework} incluya la opción de ejecución en paralelo para reducir los tiempos de ejecución. Si no cuenta con esta funcionalidad nativa, es deseable que al menos que exista la posibilidad de modificar el código base para agregarla.
 	\item Plataforma: Es requerido que el \emph{framework} se pueda ejecutar en la plataforma de computación de alto desempeño Cluster FING cuyo sistema operativo es Linux CentOs, ya que es donde se realiza el análisis experimental del trabajo. 
-	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará muy positivamente que existan casos de éxito usando el \emph{framework}, la existencia de documentación accesible, ejemplos de código desarrollado, etc.
-	\item Lenguaje: Es deseable que el framework esté desarrollado en C++ o Java ,por la experiencia que el equipo de desarrollo cuenta en estos lenguajes. 
-	\item Multiobjetivo: Es deseable (aunque no requerido) que el framework soporte algoritmos multiobjetivo; no es requerido porque la función que se quiere implementar es sencilla y puede usarse una agregación lineal de los objetivos.
+	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará positivamente que existan casos de éxito utilizando el \emph{framework}, la existencia de documentación accesible, ejemplos de código desarrollado, etc.
+	\item Lenguaje: Es deseable que el \emph{framework} esté desarrollado en C++ o Java, por la experiencia que el equipo de desarrollo cuenta en estos lenguajes. 
+	\item Multiobjetivo: Es deseable (aunque no requerido) que el \emph{framework} soporte algoritmos multiobjetivo. No es requerido porque la función que se quiere implementar es sencilla y puede usarse una agregación lineal de los objetivos.
 \end{itemize} 
 
 Luego de analizar los puntos anteriores, se seleccionó la biblioteca Malva para la implementación del algoritmo evolutivo. Malva cumple con la mayoría de los puntos: es de código abierto y gratuito, facilita el desarrollo un algoritmo genético, funciona en la plataforma Cluster Fing, utiliza el lenguaje C++ y el punto de mayor peso en la decisión fue la confiabilidad que daba saber que ya se habían realizado implementaciones exitosas de soluciones similares utilizando algoritmos evolutivos paralelos en la plataforma Cluster Fing. Los dos puntos donde Malva no satisface totalmente el requerimiento son: el funcionamiento en paralelo y el soporte de algoritmos multiobjetivo. Estos problemas se pueden resolver de forma aceptable y sencilla como se explica a continuación. Para el caso del funcionamiento en paralelo al ser Malva de código abierto, es posible modificar el código para soportar la creación de hilos de ejecución, este procedimiento se explica en mas detalle en la ultima sección de este capítulo que trata sobre el modelo de paralelismo y su implementación. El segundo punto acerca del soporte de algoritmos multiobjetivo por parte del \emph{framework}, no supone un gran inconveniente, ya que la función de \emph{fitness} que se plantea utilizar es una combinación lineal sencilla de objetivos y puede ser utilizada en Malva. A continuación se detalla su funcionamiento y características.
@@ -26,7 +24,7 @@ Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibil
 
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el algoritmo genético provisto por la biblioteca  Malva llamado "NewGA", con las modificaciones detalladas en la sección anterior. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
+Se utiliza el algoritmo genético provisto por la biblioteca Malva llamado "NewGA", con las modificaciones detalladas en el capítulo anterior. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
@@ -57,7 +55,7 @@ A continuación se realiza un resumen de las características del algoritmo impl
 	\item Se considera una formulación multiobjetivo del problema, que intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada componente un peso específico en la combinación lineal utilizada para definir la función de \emph{fitness}.
 	\item La representación de soluciones: es un vector de números naturales, que representan la duración de las fases de los semáforos y el \emph{offset} para todos los semáforos del Corredor Garzón.
 	\item Respecto a los operadores evolutivos: se implementa una variante del cruzamiento de un punto específico para este problema y se utilizan dos tipos de mutación para modificar la duración de fase y el \emph{offset} de los semáforos.
-	\item Respecto a los criterios de selección y reemplazo el AE propuesto utiliza un modelo generacional y reemplaza padres por hijos. La selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional.
+	\item Respecto a los criterios de selección y reemplazo, el AE propuesto utiliza un modelo generacional y reemplaza padres por hijos. La selección de los padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional.
 	
 \end{itemize}
 
@@ -65,7 +63,7 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 Como se explicó en el marco teórico, el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros. Entre estos parámetros se encuentran la duración de fase, de ciclo y el \emph{offset} de los semáforos. Los parámetros que se seleccionen deberán ser incluidos en la representación del cromosoma.
 
-Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. La figura \ref{fig:cromosoma1} muestra la representación del cromosoma, como se puede observar se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
+Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. La figura \ref{fig:cromosoma1} muestra la representación del cromosoma donde se puede observar que se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo, el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
 
 \begin{figure}[H]
 	\centering
@@ -74,13 +72,13 @@ Para la solución propuesta se contempla tanto la duración de fase como el \emp
 	\label{fig:cromosoma1}
 \end{figure}
 
-Toda la información del cromosoma se guarda y carga en el formato \emph{XML}, del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases o secuencias de luces de los semáforos de una determinada esquina, se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces, por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla; y  \emph{duration} especifica la duración de la fase, que corresponderá a los alelos de duraciones del cromosoma,  en la representación del cromosoma se omiten las fases que contengan luces amarillas ya que no modifican los tiempos reales del paso de vehículos. El tiempo indicado en el \emph{offset} especifica el inicio de la fase y será el correspondiente al del gen de Emancipación.
+Toda la información del cromosoma se guarda y carga en el formato \emph{XML} del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases o secuencias de luces de los semáforos de una determinada esquina se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces, por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla y \emph{duration} especifica la duración de la fase, que corresponderá a los alelos de duraciones del cromosoma. En la representación del cromosoma se omiten las fases que contengan luces amarillas ya que no modifican los tiempos reales del paso de vehículos. El tiempo indicado en el \emph{offset} especifica el inicio de la fase y será el correspondiente al del gen de Emancipación.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/rep_sumo}
-	\caption{Representación de Sumo}
+	\caption{Representación de la configuración de semáforos en Sumo}
 	\label{fig:rep_sumo}
 \end{figure}
 
@@ -91,24 +89,21 @@ Toda la información del cromosoma se guarda y carga en el formato \emph{XML}, d
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/semaforos_numerado}
-	\caption[Representación de una fase de los semáforos para un cruce.]{Representación de una fase de los semáforos para un cruce. Cada número se corresponde a una letra en la secuencia de \emph{state} del archivo de configuración del simulador SUMO.}
+	\caption[Representación de una fase de los semáforos para un cruce.]{Representación de una fase de los semáforos para el cruce de Emancipación y Garzón.}
 	\label{fig:sem_numerados}
 \end{figure}
-El simulador representa en las esquinas, mediante el uso de flechas blancas, la elección de carriles habilitados, para los vehículos que transitan por un determinado carril; en el caso de un giro, la flecha apunta hacia donde se encuentra el carril del giro. La figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador, se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la figura \ref{fig:rep_sumo}. Por tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
+El simulador representa en las esquinas (mediante el uso de flechas blancas) la elección de carriles habilitados para los vehículos que transitan por un determinado carril; en el caso de un giro la flecha apunta hacia donde se encuentra el carril del giro. La Figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador. A la Figura se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la figura \ref{fig:rep_sumo}. Por lo tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
 \textit{i)} \emph{GGGG} se corresponde a 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde a 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde a 8, 9, 10 y 11. y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in situ.
 
 
 \subsection{Generación de la población inicial}
 
-Para la inicialización de la población se toma como referencia
-la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
+Para la inicialización de la población se toma como referencia la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
 
 \subsection{Función de \emph{fitness}}
 
 
-La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos).
-
-Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos.
+La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos). Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos.
 %ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. 
 El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
 
@@ -117,7 +112,7 @@ El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a pr
 F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
 \end{equation}
 
-Se seleccionan como objetivos la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Estos objetivos fueron elegidos ya que son  adecuados para realizar las comparaciones con la realidad, ya que las velocidades promedio se pueden obtener simulando las instancias que representan la realidad. Otros objetivos podrían utilizarse, como la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación pero no son útiles para realizar comparaciones con la realidad ya que son datos que no se pueden medir u obtener con facilidad.
+Se seleccionan como objetivos la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Estos objetivos fueron elegidos por su utilidad a la hora de realizar comparaciones con la realidad, ya que las velocidades promedio se pueden obtener simulando las instancias que representan la realidad. Otros objetivos podrían utilizarse, como la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación pero no son útiles para realizar comparaciones con la realidad ya que son datos que no se pueden medir u obtener con facilidad.
 
 La función de \emph{fitness} utilizada se presenta en la Ecuación \ref{eq:funcion_fitness}, donde \emph{$w_1$} e \emph{$w_1$} indican los pesos que se especifican en la función. En una primera instancia se establece $w_1$ = $w_2$ = 1, más adelante se experimentará con otros pesos.
 
