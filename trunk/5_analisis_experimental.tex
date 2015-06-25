@@ -1,19 +1,19 @@
-\chapter{Análisis Experimental}
+\chapter{Análisis experimental}
 Este capítulo presenta la evaluación experimental del AE multiobjetivo propuesto para resolver el problema de sincronización de semáforos en el Corredor Garzón. Inicialmente se presenta una descripción de los escenarios utilizados en la evaluación experimental y la plataforma de ejecución en la que se llevó a acabo la experimentación. A continuación se detalla el análisis experimental, que se divide en dos etapas: primero se analiza la configuración paramétrica inicial del AE con el objetivo de obtener una mejor calidad de resultados y luego se realizan los experimentos de validación para los que se reportan los resultados numéricos. Finalmente se ofrece un breve análisis de la eficiencia computacional del AE propuesto.
 
 
 
-\section{Plataforma de ejecución y Desarrollo}
+\section{Plataforma de ejecución y desarrollo}
 
-Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster Fing (http://www.fing.edu.uy/cluster) con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el AE en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster Fing cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
+Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster FING \citep{nesmachnow2010computacion} con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el AE en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster FING cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
 
 Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con la misma cantidad de recursos disponibles, además, para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados será tenido en cuenta, cuando se realice el análisis de eficiencia computacional detallado al final de este capítulo.
 
 
 \section{Ajuste paramétrico}
-Se realiza un análisis previo para determinar el mejor valor de los parámetros del AE propuesto. Este análisis tiene como objetivo obtener una mejor calidad de resultados. Los parámetros que se ajustan incluyen el \emph{tiempo de simulación} que se refiere al parámetro del simulador SUMO para determinar la duración de la simulación. Luego el \emph{criterio de parada} que indica el método usado para detener el algoritmo y el \emph{tamaño de la población} que representa la cantidad de individuos de la población utilizada en el AE. Finalmente se ajustan los parámetros de \emph{probabilidad de mutación y probabilidad de cruzamiento}. Estos parámetros serán descritos en detalle en las siguientes secciones.
+Se llevó a cabo un análisis previo para determinar el mejor valor de los parámetros del AE propuesto. Este análisis tiene como objetivo obtener una mejor calidad de resultados. Los parámetros que se ajustan incluyen el \emph{tiempo de simulación} que se refiere al parámetro del simulador SUMO para determinar la duración de la simulación. También se configura el \emph{criterio de parada} que indica el método usado para detener el algoritmo y el \emph{tamaño de la población} que representa la cantidad de individuos de la población utilizada en el AE. Finalmente se ajustan los parámetros de \emph{probabilidad de mutación y probabilidad de cruzamiento}. Estos parámetros serán descritos en detalle en las siguientes secciones.
 
-Para comenzar el análisis del ajuste paramétrico se generan tres escenarios de tráfico diferentes. Estos escenarios no incluyen datos recabados de la realidad (como el tráfico vehicular o la frecuencia de los ómnibus), para no ajustar los parámetros a un caso particular.
+Para realizar el análisis del ajuste paramétrico se generan tres escenarios de tráfico diferentes. Estos escenarios no incluyen datos recabados de la realidad (como el tráfico vehicular o la frecuencia de los ómnibus), para no ajustar los parámetros a un caso particular.
 A continuación se presenta la cantidad de vehículos para cada uno de los tres escenarios de tráfico propuestos:
 
 \begin{itemize}
@@ -25,7 +25,7 @@ A continuación se presenta la cantidad de vehículos para cada uno de los tres 
 
 En el ajuste paramétrico los primeros parámetros que se definen son: el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los valores con los cuales el AE obtiene una mejor calidad de resultados.
 
-%La plataforma Cluster Fing donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
+%La plataforma Cluster FING donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 \subsection{Pesos de la función de fitness}
 
@@ -39,9 +39,9 @@ Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de ti
 
 
 \subsection{Criterio de parada}
-Se elige como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo, se busca un compromiso entre un buen resultado numérico y un tiempo de ejecución que no sea excesivo. Se determina que esta duración se encuentre entre 1 y 24 horas, y para potencialmente obtener un buen resultado numérico se comprueba experimentalmente que el valor de \emph{fitness} no presente variaciones importantes en las últimas 100 generaciones.  
+Se decidió utilizar como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo, se busca un compromiso entre un buen resultado numérico y un tiempo de ejecución que no sea excesivo. Se determina que esta duración se encuentre entre 1 y 24 horas, y para potencialmente obtener un buen resultado numérico se comprueba experimentalmente que el valor de \emph{fitness} no presente variaciones importantes en las últimas 100 generaciones.  
 
-Para determinar este criterio se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, eligiendo el número de 500 generaciones como criterio de parada. En la Figura \ref{fig:criterio_parada} se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos, sólo algunos valores representativos para una mejor visualización.
+Para determinar un valor apropiado para el numero de generaciones se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, utilizando un número razonable de generaciones (500), para estudiar la variación de los valores de fitness. En la Figura \ref{fig:criterio_parada} se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos, sólo algunos valores representativos para una mejor visualización.
 
 \begin{figure}[h]
 \centering
@@ -54,9 +54,9 @@ Para determinar este criterio se realizaron 10 ejecuciones del AE por cada uno d
 
 Para la elección del tamaño de la población se tienen en cuenta tres elementos: el valor de \emph{fitness} resultante de la ejecución del AE, el tiempo de ejecución total y los recursos de la plataforma de ejecución.
 
-La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster Fing, donde la cantidad máxima de núcleos en el mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
+La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster FING, donde la cantidad máxima de núcleos en el mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de tráfico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster Fing que es utilizada por otras personas y presenta recursos limitados.
+La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de tráfico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster FING que es utilizada por otras personas y presenta recursos limitados.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
@@ -443,7 +443,7 @@ Se realiza un estudio de la eficiencia computacional del AE para analizar los ti
 
 Se evalúan nueve ejecuciones del AE; tres con cada tipo de tráfico: alto, medio y bajo, para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que utilizamos esa cantidad de núcleos.
 
-Las pruebas fueron realizadas sobre el node40 del Cluster Fing, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
+Las pruebas fueron realizadas sobre el node40 del Cluster FING, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
 
 El \emph{speedup} (S) mide la mejora de rendimiento de una aplicación al aumentar la cantidad de procesadores comparando con el rendimiento al usar un solo procesador.
 \begin{equation}

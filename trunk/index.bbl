@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -225,6 +225,13 @@ D.~J. Montana y S.~Czerwinski.
 \newblock Evolving control laws for a network of traffic signals.
 \newblock En \emph{Proceedings of the First Annual Conference on Genetic
   Programming}, p. 333--338. MIT Press, 1996.
+
+\bibitem[Nesmachnow(2010)]{nesmachnow2010computacion}
+S.~Nesmachnow.
+\newblock Computaci{\'o}n cient{\i}fica de alto desempeno en la facultad de
+  ingenier{\i}a, universidad de la rep{\'u}blica.
+\newblock \emph{Revista de la Asociaci{\'o}n de Ingenieros del Uruguay},
+  61:\penalty0 12--15, 2010.
 
 \bibitem[Papaleondiou y Dikaiakos(2009)]{TrafficModeler}
 L.~G. Papaleondiou y M.~D. Dikaiakos.
