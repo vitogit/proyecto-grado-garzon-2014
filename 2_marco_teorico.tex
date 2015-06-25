@@ -2,19 +2,18 @@
 Este capítulo aborda el marco teórico necesario para comprender el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y las soluciones propuestas para manejarlo, incluyendo la construcción de corredores exclusivos para el transporte público. En este contexto se presenta la descripción del Corredor Garzón y sus problemas. Luego, se presentan los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar, se incluye un relevamiento de trabajos relacionados para mostrar y comentar otras variantes del problema y soluciones propuestas en la literatura del área.
 \section{Problema del tránsito vehicular}
 
-El constante crecimiento del parque automotor, ocasiona problemas relacionados con las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas.
+El constante crecimiento del parque automotor ocasiona problemas relacionados con las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas.
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación, con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Este problema repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas; además, se genera una exigencia en las vías de tránsito que produce un deterioro mayor de calles y rutas.
 
-Uruguay y en particular Montevideo, no escapa a este fenómeno. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
+Uruguay, y en particular Montevideo, no escapa a este fenómeno. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos en el país desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
 
 Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, algunos de los cuales no están coordinados \citep{Subrayado2013}.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/ventas_autos}
-	\caption[Evolución de la venta de automóviles en Uruguay]{Evolución de la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de {http://www.autoanuario.com.uy} .	
-	}
+	\caption[Evolución de la venta de automóviles en Uruguay]{Evolución de la venta de automóviles por año. El valor más bajo corresponde al año 2003, y el más alto 2013. Imagen extraída de {http://www.autoanuario.com.uy}.}
 	\label{fig:ventas_autos}
 \end{figure}
 
@@ -156,6 +155,33 @@ Se han desarrollado enfoques de algoritmos de optimización que aplican estos co
 \subsection{Algoritmos Genéticos}
 En Algoritmo \ref{alg:algoritmo_genetico_simple} muestra la formulación básica de un algoritmo genético (AG) que se basa en el esquema general de un AE. Comienza con una población inicial de individuos a los cuales en cada generación se le aplican operadores de cruzamiento y mutación, seleccionando a los mejores en base a su aptitud para resolver el problema. El operador de cruzamiento guía la búsqueda, mientras el operador de mutación se encarga de aportar diversidad a la exploración. Por tanto el objetivo es que con el paso de las generaciones se obtengan mejores soluciones, como se muestra la Figura \ref{fig:fitness_generaciones} hasta detenerse usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los AE.
 
+\subsubsection{Esquema del algoritmo}
+
+El esquema básico de funcionamiento se presenta en el Algoritmo \ref{alg:algoritmo_genetico_simple}:
+
+
+\begin{algorithm}[ht]
+	\caption{Algoritmo Genético}
+	\label{alg:algoritmo_genetico_simple}
+	\begin{algorithmic} [1] 
+		{
+			%\small
+			\STATE {Inicializar(Pob(0))}
+			\STATE {generación} = 0
+			\STATE \textbf{mientras} {no se cumple el criterio de parada} \textbf{hacer}
+			\STATE\hspace{\algorithmicindent} {Evaluar (Pob(generación))}
+			\STATE\hspace{\algorithmicindent} {Padres = Seleccionar(Pob(generación))}
+			\STATE\hspace{\algorithmicindent} {Hijos = Cruzamiento(Padres)}
+			\STATE\hspace{\algorithmicindent} {Hijos = Mutación(Hijos)}
+			\STATE\hspace{\algorithmicindent} {NuevaPob = (Reemplazar Pob(generación), Hijos)}
+			\STATE\hspace{\algorithmicindent} {generación}++
+			\STATE \textbf{fin}
+			\STATE \textbf{retornar} mejor solución encontrada
+		}
+	\end{algorithmic}
+\end{algorithm}
+
+
 Un individuo es una codificación de una solución que resuelve el problema. La población inicial puede generarse aleatoriamente o basándose en heurísticas que utilizan conocimiento específico sobre el problema. El mecanismo de selección determina cuales individuos son adecuados para integrar la población de la siguiente generación. Este mecanismo utiliza el valor de la función de evaluación o \emph{fitness} para definir que tan buena o apta es una solución en comparación con las demás. En cada iteración, la cual se conoce como generación, se aplican operadores de cruzamiento y mutación sobre los individuos. El cruzamiento permite combinar a dos individuos para obtener otros que potencialmente sean una mejor solución. La mutación aplica cambios aleatorios sobre los individuos. Estos operadores y el mecanismo de selección son probabilísticos, es decir, que su aplicación depende de una una tasa de probabilidad asociada al operador.
 
 
@@ -173,30 +199,6 @@ El criterio de parada nos indica cuando termina este proceso, ya sea porque se a
 
 A continuación se presentan las principales características de los AG.
 
-\subsubsection{Esquema del algoritmo}
-
-El esquema básico de funcionamiento se presenta en el Algoritmo \ref{alg:algoritmo_genetico_simple}:
-
-
-\begin{algorithm}[ht]
-	\caption{Algoritmo Genético}
-	\label{alg:algoritmo_genetico_simple}
-	\begin{algorithmic} [1] 
-		{
-			%\small
-			\STATE {Inicializo( Pob(0))}
-			\STATE \texttt{generacion} = 0
-			\WHILE {\text{No llegue al criterio de parada}}
-			\STATE {Evaluar Pob(generacion)}
-			\STATE {Padres = Seleccionar(Pob(generacion))}
-			\STATE {Hijos = Cruzamiento(Padres) y Mutacion(Padres)}
-			\STATE {NuevaPob = Reemplazar Pob(generacion) con Hijos}
-			\STATE \texttt{generacion}++
-			\ENDWHILE
-			\RETURN Mejor solución
-		}
-	\end{algorithmic}
-\end{algorithm}
 
 
 
@@ -305,32 +307,33 @@ Existen algoritmos evolutivos para resolver problemas de optimización multiobje
 Éstos son los llamados MOEA, por sus siglas en inglés \emph{ MultiObjetive Evolutionary Algorithm}. Sus propósitos son aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir. Para un análisis más detallado de los AE multiobjetivo se recomienda el trabajo de \citet{Deb2001}.
 
 
-\begin{algorithm}%[!ht]
-	\caption[Algoritmo evolutivo multiobjetivo]{Algoritmo evolutivo multiobjetivo. En rojo se indican las diferencias con el algoritmo evolutivo genérico.}
+\begin{algorithm}[ht]
+	\caption[Algoritmo evolutivo multiobjetivo]{Algoritmo evolutivo multiobjetivo. En negrita se indican las diferencias con el algoritmo evolutivo genérico.}
 	\label{alg:algoritmo_genetico_multiobjetivo}
 	\begin{algorithmic} [1] 
 		{
 			%\small
-			\STATE {Inicializo( Pob(0))}
-			\STATE \texttt{generacion} = 0
-			\WHILE {\text{No llegue al criterio de parada}}
-			\STATE {Evaluar Pob(generacion)}
-			\STATE {\textcolor{red}{Operador Diversidad (Pob(generacion))}}
-			\STATE {\textcolor{red}{Asignar Fitness (Pob(generacion))}}
-			\STATE {Padres = Seleccionar(Pob(generacion))}
-			\STATE {Hijos = Cruzamiento(Padres) y Mutacion(Padres)}
-			\STATE {NuevaPob = Reemplazar Pob(generacion) con Hijos}
-			\STATE \texttt{generacion}++
-			\ENDWHILE
-			\RETURN 	{\textcolor{red}{Frente de Pareto}}
+			\STATE {Inicializar(Pob(0))}
+			\STATE {generación} = 0
+			\STATE \textbf{mientras} {no se cumple el criterio de parada} \textbf{hacer}
+			\STATE\hspace{\algorithmicindent} {Evaluar (Pob(generación))}
+			\STATE\hspace{\algorithmicindent} \textbf{Operador diversidad(Pob(generación))}
+			\STATE\hspace{\algorithmicindent} \textbf{Asignar fitness(Pob(generación))}						
+			\STATE\hspace{\algorithmicindent} {Padres = Seleccionar(Pob(generación))}
+			\STATE\hspace{\algorithmicindent} {Hijos = Cruzamiento(Padres)}
+			\STATE\hspace{\algorithmicindent} {Hijos = Mutación(Hijos)}
+			\STATE\hspace{\algorithmicindent} {NuevaPob = (Reemplazar Pob(generación), Hijos)}
+			\STATE\hspace{\algorithmicindent} {generación}++
+			\STATE \textbf{fin}
+			\STATE \textbf{retornar} \textbf{frente de pareto}
 		}
 	\end{algorithmic}
 \end{algorithm}
 
+
 El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema básico de un MOEA, donde se aprecia que existen dos operadores característicos: el operador de diversidad y el operador de asignación de \emph{fitness}. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, mientras que el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
 
-Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness} y son adecuados cuando el problema tiene no más de tres funciones objetivo. Un mecanismo popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos. 
-%Por otro lado, los métodos de asignación de fitness que se basan en Pareto dominancia de Pareto utilizan explícitamente la dominancia de Pareto al asignar el fitness.
+Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness} y son adecuados cuando el problema tiene no más de tres funciones objetivo. Un mecanismo popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos. Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto al asignar el fitness.
 
 
 
@@ -340,7 +343,7 @@ Resolver problemas complejos suelen insumir gran cantidad de tiempo, por lo que 
 
 En el caso de los AG, gran parte del tiempo se ocupa en la etapa de evaluación de \emph{fitness}, por esta razón es un buen método distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
 
-Un modelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de  fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar con la evaluación, ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que una de las funciones más costosas es distribuida entre varios procesos que ejecutan concurrentemente.
+Un modelo de AE paralelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de  fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar con la evaluación, ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que las múltiples ejecuciones de una de las funciones más costosas es distribuida entre varios procesos que ejecutan concurrentemente.
 
 \begin{figure}[ht]
 	\centering

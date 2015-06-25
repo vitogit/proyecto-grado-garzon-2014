@@ -16,7 +16,7 @@ Como se explicó en el capítulo de marco teórico, SUMO es un simulador de trá
 Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simulador de tráfico, se efectuó un análisis relacionado con las posibilidades y objetivos del proyecto. A continuación se presentan las razones que sustentan la elección de SUMO como el simulador de tráfico utilizado en el marco del proyecto:
 
 \begin{itemize}
-	\item Portabilidad: SUMO puede ser ejecutado tanto en Windows como en Linux. Esta característica es requerida, dado que Windows es una de las plataformas utilizadas para implementar el proyecto y Linux (CentOs) es el sistema operativo utilizado por la infraestructura computacional de alto desempeño (Cluster Fing) donde se plantea desarrollar el análisis experimental.
+	\item Portabilidad: SUMO puede ser ejecutado tanto en Windows como en Linux. Esta característica es requerida, dado que Windows es una de las plataformas utilizadas para implementar el proyecto y Linux (CentOs) es el sistema operativo utilizado por la infraestructura computacional de alto desempeño (Cluster FING) donde se plantea desarrollar el análisis experimental.
 	
 	\item Disponibilidad de modos de ejecución: SUMO puede ejecutarse sin interfaz gráfica, utilizando solamente la línea de comando, lo que aumenta sensiblemente la velocidad de ejecución. Esta funcionalidad es fundamental a la hora de diseñar el AE, ya que la interacción con el simulador de tráfico debe ser eficiente. Por otro lado SUMO, presenta la opción de ejecutarse con interfaz gráfica, lo que es indispensable a la hora de visualizar la simulación. Esta opción es útil sobre todo en el inicio del desarrollo, cuando se realizan ajustes y pruebas sobre el modelo y el algoritmo.
 	
@@ -28,7 +28,7 @@ Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simu
 	
 	\item Información de salida: SUMO ofrece la opción de generar una amplia variedad de datos, producida por la simulación ejecutada. Entre estos datos se encuentran la velocidad de los vehículos y el largo del recorrido, datos que son requeridos por la solución propuesta.
 	
-	\item Eficiencia: SUMO soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad, siendo una característica deseable por la complejidad del problema a solucionar. Un ejemplo de escenario de grandes es el \emph{"TAPAS Cologne" Scenario}, disponible públicamente en www.sumo.dlr.de/wiki , donde se describe el tráfico de la ciudad de Colonia (Alemania)  para un día entero, simulando cerca de 1.2 millones de recorridos de vehículos.
+	\item Eficiencia: SUMO soporta redes de tránsito muy grandes y está diseñado para ejecutar simulaciones a gran velocidad, siendo una característica deseable por la complejidad del problema a solucionar. Un ejemplo de escenario de grandes es el \emph{``TAPAS Cologne''}, disponible públicamente en www.sumo.dlr.de/wiki , donde se describe el tráfico de la ciudad de Colonia (Alemania)  para un día entero, simulando cerca de 1.2 millones de recorridos de vehículos.
 	
 \end{itemize}
 
