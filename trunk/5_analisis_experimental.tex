@@ -41,12 +41,12 @@ Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de ti
 \subsection{Criterio de parada}
 Se decidió utilizar como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo, se busca un compromiso entre un buen resultado numérico y un tiempo de ejecución que no sea excesivo. Se determina que esta duración se encuentre entre 1 y 24 horas, y para potencialmente obtener un buen resultado numérico se comprueba experimentalmente que el valor de \emph{fitness} no presente variaciones importantes en las últimas 100 generaciones.  
 
-Para determinar un valor apropiado para el numero de generaciones se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, utilizando un número razonable de generaciones (500), para estudiar la variación de los valores de fitness. En la Figura \ref{fig:criterio_parada} se aprecia como el valor de \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos, sólo algunos valores representativos para una mejor visualización.
+Para determinar un valor apropiado para el numero de generaciones se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, utilizando un número razonable de generaciones (500), para estudiar la variación de los valores de fitness. En la Figura \ref{fig:criterio_parada} se aprecia como el valor del mejor \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos en los experimentos de configuración, sólo algunos valores representativos para una mejor visualización.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{Figures/criterio_parada}
-\caption[Gráfica de la evolución de los valores de fitness. ]{Gráfica de la evolución de los valores de fitness para establecer el criterio de parada.}
+\caption[Gráfica de la evolución de los valores de fitness. ]{Gráfica de la evolución de los mejores valores de fitness para establecer el criterio de parada.}
 \label{fig:criterio_parada}
 \end{figure}
 
@@ -54,22 +54,22 @@ Para determinar un valor apropiado para el numero de generaciones se realizaron 
 
 Para la elección del tamaño de la población se tienen en cuenta tres elementos: el valor de \emph{fitness} resultante de la ejecución del AE, el tiempo de ejecución total y los recursos de la plataforma de ejecución.
 
-La máxima cantidad poblacional a estudiar está determinada por la infraestructura del Cluster FING, donde la cantidad máxima de núcleos en el mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
+El número máximo de individuos en la población a estudiar está determinada por la infraestructura del Cluster FING, donde la cantidad máxima de núcleos en un mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de tráfico estudiado; como se aprecia, no existen grandes diferencias en la elección de un número poblacional sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster FING que es utilizada por otras personas y presenta recursos limitados.
+La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de tráfico estudiado. Analizando los resultados de la Tabla \ref{table:parametro_poblacion}, es posible apreciar que no existen grandes diferencias en la elección de un tamaño de población sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster FING que es utilizada por otras personas y presenta recursos limitados.
 
 \begin{table}[h]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Comparación de los valores de \emph{fitness} para distintas poblaciones.}
+	\caption{Comparación de los valores de \emph{fitness} para distintos valores de tamaño de población.}
 	\label{table:parametro_poblacion}
 	\centering
 	\begin{tabular}{ccrrcp{2cm}}
 		\hline
-	    \multirow{2}{*}{\textbf{Población}}& & 
+	    \multirow{2}{*}{\textbf{#Población}}& & 
 		\multicolumn{2}{c}{\textbf{Fitness}} \\
 		\cline{3-4}
 		& & {mejor} 
-		& {promedio} 
+		& {promedio +/- desv. estandar} 
 		& \textbf{Tiempo ejecución serial (m)} \\
 		\hline
 		32 & & {17.28} & 16.37$\pm$0.5 & 10184$\pm$526\\
@@ -79,9 +79,9 @@ La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego 
 	\end{tabular}
 \end{table}
 
-\subsection{Probabilidad de mutación y cruzamiento}
+\subsection{Probabilidades de cruzamiento y mutación}
 
-Para establecer la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
+Para el análisis paramétrico de la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
@@ -107,7 +107,7 @@ Para establecer la probabilidad de cruzamiento (pc) se consideraron tres valores
  	\end{tabular}
  \end{table}
  
-Analizando la Tabla \ref{table:parametro_mutacion_cruzamiento} y la Figura \ref{fig:grafica_mutacion_cruzamiento} se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
+Analizando los resultados reportados en la Tabla \ref{table:parametro_mutacion_cruzamiento} y la Figura \ref{fig:grafica_mutacion_cruzamiento} se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
 
 \begin{figure}[H]
 	\centering
@@ -130,7 +130,7 @@ Se comprueba que los resultados obtenidos siguen la distribución normal para po
 %			\end{split}			
 %        \end{equation}
 
-Si se compara la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada, por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05). Para comprobar si ésta es la mejor opción, se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras por lo que elegir una sobre otra no implicaría grandes beneficios. En tal sentido podríamos elegir cualquiera de las dos, en este caso se elige la combinación (0.5-0.01) por su buen promedio y baja desviación estándar.
+Si se compara la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada, por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05). Para comprobar si ésta es la mejor opción, se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras, por lo que elegir una sobre otra no implicaría grandes beneficios. En tal sentido es posible utilizar cualquiera de las dos combinaciones. En la evaluación experimental reportada en la sección 5.4 se utiliza la combinación de parámetros (0.5-0.01) por su buen promedio y baja desviación estándar.
 
 
 
