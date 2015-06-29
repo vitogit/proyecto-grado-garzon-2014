@@ -24,7 +24,7 @@ Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibil
 
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el AG provisto por la biblioteca Malva llamado "NewGA", con las modificaciones detalladas en el capítulo anterior. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
+Se utiliza el AG provisto por la biblioteca Malva llamado "NewGA", con las modificaciones detalladas al final de este capítulo. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
@@ -68,7 +68,7 @@ Para la solución propuesta se contempla tanto la duración de fase como el \emp
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/cromosoma1}
-	\caption{Vista del Cromosoma para los cruces de Avda. Millán y Cno. Ariel}
+	\caption{Vista del Cromosoma para los cruces de Emancipación y Colman}
 	\label{fig:cromosoma1}
 \end{figure}
 
@@ -101,7 +101,6 @@ El simulador representa en las esquinas (mediante el uso de flechas blancas) la 
 Para la inicialización de la población se toma como referencia la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
 
 \subsection{Función de \emph{fitness}}
-
 
 La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos). Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos.
 %ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. 
