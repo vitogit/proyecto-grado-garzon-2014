@@ -28,8 +28,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fica de la evoluci\IeC {\'o}n de los valores de fitness. }}{51}{figure.caption.42}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Gr\IeC {\'a}fica con combinaciones de probabilidad de cruzamiento y de mutaci\IeC {\'o}n.}}{53}{figure.caption.45}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.}}{56}{figure.caption.48}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Gr\IeC {\'a}fico de las paradas alternativas.}}{57}{figure.caption.52}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Gr\IeC {\'a}fico de las paradas alternativas.}}{56}{figure.caption.49}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.}}{58}{figure.caption.53}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaci\IeC {\'o}n de la duraci\IeC {\'o}n de los viajes en minutos entre el escenario base y el algoritmo evolutivo sobre el escenario alternativo.}}{60}{figure.caption.57}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Comparaci\IeC {\'o}n de los \emph {speedup} promedios para cada tipo de tr\IeC {\'a}fico.}}{63}{figure.caption.63}
 \addvspace {10\p@ }
