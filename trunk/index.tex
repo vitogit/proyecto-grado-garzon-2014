@@ -14,11 +14,13 @@
 \usepackage{color,colortbl}
 \usepackage{url}
 \usepackage{array}
+\usepackage{tabularx,dcolumn,booktabs}
 \usepackage[bookmarks=true, pdftitle={
 Algoritmos evolutivos en sincronización de semáforos en el Corredor de Garzón 	
 	}, pdfauthor={Alvaro Acuña, Efraín Arreche}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{bookmark}
-\usepackage[spanish]{babel}
+
+\usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 
 \usepackage{amssymb}
@@ -76,7 +78,7 @@ Algoritmos evolutivos en sincronización de semáforos en el Corredor de Garzón
 % algoritmos
 \renewcommand{\ALG@name}{Algoritmo}
 \renewcommand{\listalgorithmname}{Índice de \ALG@name s}
-
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{4cm}}
 \makeatother
 
 \hyphenation{}

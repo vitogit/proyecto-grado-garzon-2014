@@ -43,7 +43,7 @@ Se decidió utilizar como criterio de parada un determinado número de generacio
 
 Para determinar un valor apropiado para el numero de generaciones se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, utilizando un número razonable de generaciones (500), para estudiar la variación de los valores de fitness. En la Figura \ref{fig:criterio_parada} se aprecia como el valor del mejor \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos en los experimentos de configuración, sólo algunos valores representativos para una mejor visualización.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\linewidth]{Figures/criterio_parada}
 \caption[Gráfica de la evolución de los valores de fitness. ]{Gráfica de la evolución de los mejores valores de fitness para establecer el criterio de parada.}
@@ -63,7 +63,7 @@ La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego 
 	\caption{Comparación de los valores de \emph{fitness} para distintos valores de tamaño de población.}
 	\label{table:parametro_poblacion}
 	\centering
-	\begin{tabular}{ccrrcp{2cm}}
+	\begin{tabular}{crrrrr}
 		\hline
 	    \multirow{2}{*}{\textbf{\#Población}}& & 
 		\multicolumn{2}{c}{\textbf{Fitness}} \\
@@ -88,11 +88,11 @@ Para el análisis paramétrico de la probabilidad de cruzamiento (pc) se conside
  	\caption{Valores del fitness para las distintas combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
  	\label{table:parametro_mutacion_cruzamiento}
  	\centering
- 	\begin{tabular}{p{1cm}p{1cm}p{3.5cm} }
+ 	\begin{tabular}{ccR}
  		\hline
  		$p_C$& 
  		$p_M$ & 
- 		Fitness promedio  $\pm$ desviación estándar\\ 
+ 		Fitness promedio $\pm$  desviación estándar\\ 
  		\hline
  		0.5 & 0.01  &  16.09$\pm$0.30\\
  		0.5 & 0.05 &  15.60$\pm$0.17\\
@@ -109,7 +109,7 @@ Para el análisis paramétrico de la probabilidad de cruzamiento (pc) se conside
  
 Analizando los resultados reportados en la Tabla \ref{table:parametro_mutacion_cruzamiento} y la Figura \ref{fig:grafica_mutacion_cruzamiento} se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/grafica_mutacion_cruzamiento}
 	\caption[Gráfica con combinaciones de probabilidad de cruzamiento y de mutación.]{Gráfica con combinaciones de probabilidad de cruzamiento (pc) y de mutación (pm).}
@@ -140,7 +140,7 @@ Esta sección presenta los escenarios que serán evaluados experimentalmente. El
 \subsection{Caso base o realidad actual del corredor}
 El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. Se simulan las instancias realistas desarrolladas en el capítulo 4 para obtener las velocidades promedio de ómnibus y otros vehículos y poder comparar con los resultados numéricos luego de aplicar el AE propuesto.  
 
-Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que circulan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h. Esta información permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus.
+%Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que circulan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h. Esta información permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus.
 
 Sobre el escenario geográfico base se generan tres escenarios de tráfico: bajo, medio y alto. El caso medio representa los datos obtenidos en el trabajo de campo; el caso de tráfico bajo se construye disminuyendo en un 50\% la cantidad de vehículos y disminuyendo el tiempo de espera en las paradas de ómnibus, teniendo en cuenta que en este caso existirán menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que en la realidad no son alteradas cuando cambia la densidad de tráfico. En el caso de tráfico alto se aumenta 50 \%  la cantidad de vehículos y el tiempo de espera en la parada de los ómnibus. El valor de 50\% para el aumento y disminución de vehículos se infirió al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
 
@@ -164,22 +164,58 @@ Analizando los puntos que se entienden podrían atentar contra el buen funcionam
 
 Entre los cambios propuestos para el escenario alternativo se encuentran: eliminación de paradas y pasajes peatonales, alternancia de paradas y modificación de reglas de los semáforos.
 
+\subsection{Detalles del escenario alternativo}
+Los cambios propuestos para el escenario alternativo incluyen la eliminación de paradas, semáforos y pasajes peatonales y la posibilidad de alternar paradas. Se estudiaron otras propuestas como por ejemplo construir calles paralelas a Garzón o incorporar nuevas reglas de tráfico en los cruces (por ej. permitir doblar a la derecha con roja) como existen en otros países pero fueron descartadas por la poca viabilidad real de implementarlas.
 
+\subsubsection{Eliminación de paradas}
+Se consideraron eliminar paradas que cumplieran con las siguientes características: no estuvieran próximas a una calle principal y que existiera otra parada cercana para no afectar a los pasajeros realizando un traslado excesivo.  Se seleccionaron solamente dos paradas para que su eliminación no tuviera un impacto negativo en el funcionamiento diario del Corredor y que cumplieran los criterios mencionados anteriormente. Las paradas elegidas están ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle.
+
+\subsubsection{Eliminación de pasajes peatonales}
+En la actualidad, existen en el corredor Garzón tres pasajes peatonales en el corredor Garzón con semáforos que detienen el tráfico, el objetivo buscado al proponer su eliminación es aumentar la velocidad promedio de los vehículos circulantes. Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escenario alternativo estos dos pasajes fueron cambiados por una señalización de {PARE} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado en el escenario alternativo. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal mediante puentes por encima del corredor Garzón.
+
+\subsubsection{Alternar paradas}
+
+Uno de los problemas del ómnibus es su baja aceleración, por lo que cada vez que se detiene en un semáforo o en una parada, demora en retornar a una velocidad aceptable. Al reducir la cantidad de paradas donde un ómnibus tiene que detenerse se mejora la velocidad promedio.
+La línea G recorre el corredor Garzón de punta a punta y es cubierta por las empresas COETC y CUTCSA. Una posibilidad para alternar paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
+
+La Figura \ref{fig:paradas_alternadas} brinda un ejemplo donde una empresa se detendrá en las paradas pares y la otra en las impares y algunas paradas con más cantidad de pasajeros serán realizadas por las dos. Cada empresa viajará por el corredor con una frecuencia de 4 minutos (como en la actualidad). Si se reduce el número de paradas donde se detiene un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
+
+%El cambio de alternar paradas es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figures/paradas_alternativas}
+	\caption[Gráfico de las paradas alternativas.]{Gráfico de las paradas alternativas. Gris: Parada Eliminada. Azul: línea G de COETC y de CUTCSA. Rojo: línea G de COETC. Violeta: G de CUTCSA. - Imagen original extraída de montevideo.gub.uy}
+	\label{fig:paradas_alternadas}
+\end{figure}
+
+
+
+\subsubsection{Cambio básico de semáforos}
+Al hacer el relevamiento de los datos obtenidos de la configuración de los semáforos del Corredor Garzón, se constató que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido, ya que los vehículos podrían seguir circulando por el corredor sin ningún tipo de problema. El carril que hay que detener cuando una línea dobla a la izquierda es el de la izquierda del ómnibus, pero no los dos carriles al mismo tiempo. No se tiene conocimiento si esta decisión corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Como esto ocurre en varias intersecciones y en ambos sentidos, el cambio mejora la velocidad promedio de los autos que circulan por los dos carriles.
+
+Este cambio se aplicó en las siguientes intersecciones:
+\begin{itemize}
+	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colón (Norte).
+	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino (Sur). 
+	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino (Sur). 
+\end{itemize}
 
 \section{Resultados}
-Esta sección muestra los resultados obtenidos en la simulación de las instancias realistas desarrolladas, y en la aplicación del AE sobre las mismas. Se presenta la simulación del escenario alternativo y la posterior evaluación. Además se realizan estudios sobre cambios en la función de \emph{fitness} del AE y un breve análisis de la eficiencia computacional.
+Esta sección muestra los resultados obtenidos en la simulación de las instancias realistas desarrolladas, y en la aplicación del AE sobre las mismas. Se presenta la simulación del escenario alternativo y la posterior evaluación. %Además se realizan estudios sobre cambios en la función de \emph{fitness} del AE y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Valores numéricos del caso base}
 
-En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima significativamente a la realidad. 
+En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima significativamente a la realidad. En la tabla  \ref{table:resultado_caso_base} el valor de \emph{fitness} se corresponde con la evaluación de la función de \emph{fitness} (Ecuación \ref{eq:funcion_fitness_generica}) utilizando las velocidades de ómnibus y otros vehículos obtenidas para cada tipo de tráfico.
  
  \begin{table}[H]
  	\renewcommand{\arraystretch}{1.2}
  	\caption[Resultados numéricos del caso base.]{Resultados numéricos del caso base, mostrando la velocidad promedio ómnibus (\textit{vpb}) y velocidad promedio vehículos(\textit{vpv}) para los distintos tipos de tráfico}
  	\label{table:resultado_caso_base}
  	\centering
- 	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2cm} }
+ 	\begin{tabular}{rrrr }
  		\hline
  		&
  		\textit{vbp (km/h)}& 
@@ -207,7 +243,7 @@ Como se aprecia en la tabla \ref{table:resultado_caso_algoritmo}, el AE mejora l
 		\centering
 	\caption[Resultados numéricos del AE]{Resultados numéricos del algoritmo evolutivo, mostrando velocidad promedio ómnibus (vpb) y de otros vehículos(vpv) para los distintos tipos de tráfico. }
 	\label{table:resultado_caso_algoritmo}
-	\begin{tabular}{cccccccc}
+	\begin{tabular}{ccccccrr}
 		\hline 
 		Tráfico& 
 		$vbp(km/h)$& 
@@ -233,7 +269,7 @@ En este caso, A representa la aplicación del AE, y B el caso base. La Ecuación
 
 En la Figura \ref{fig:duracion_viajes} se comparan las duraciones de los viajes obtenidas del caso base y las duraciones luego de aplicar el AE. Se comprueba que las duraciones de los viajes luego de aplicar el AE son menores tanto para ómnibus como para otros vehículos en los tres tipos de tráfico estudiados. 
  
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/duracion_viajes}
 	\caption[Comparación de la duración en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.]{Comparación entre la duración en minutos de los viajes sobre el escenario base y al aplicar el AE, de ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico.}
@@ -243,45 +279,11 @@ En la Figura \ref{fig:duracion_viajes} se comparan las duraciones de los viajes 
 
 %aprecia un resultado interesante, donde la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el AE. %Para ómnibus se tiene 24.5m y 23.6m y para otros vehículos 12.0m y 11.9m.
 
-\subsection{Detalles del escenario alternativo}
-Los cambios propuestos para el escenario alternativo incluyen la eliminación de paradas, semáforos y pasajes peatonales y la posibilidad de alternar paradas. Se estudiaron otras propuestas como por ejemplo construir calles paralelas a Garzón o incorporar nuevas reglas de tráfico en los cruces (por ej. permitir doblar a la derecha con roja) como existen en otros países pero fueron descartadas por la poca viabilidad real de implementarlas.
 
-\subsubsection{Eliminación de paradas}
-Se consideraron eliminar dos paradas que cumplieran con las siguientes características: no estuvieran próximas a una calle principal y que existiera otra parada cercana para no afectar a los pasajeros realizando un traslado excesivo. Se seleccionaron las paradas ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle que cumplen con los criterios anteriores.
-
-\subsubsection{Eliminación de pasajes peatonales}
-En la actualidad, existen en el corredor Garzón tres pasajes peatonales en el corredor Garzón con semáforos que detienen el tráfico, el objetivo buscado al proponer su eliminación es aumentar la velocidad promedio de los vehículos circulantes. Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escenario alternativo estos dos pasajes fueron cambiados por una señalización de {PARE} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado en el escenario alternativo. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal mediante puentes por encima del corredor Garzón.
-
-\subsubsection{Alternar paradas}
-
-Uno de los problemas del ómnibus es su baja aceleración, por lo que cada vez que se detiene en un semáforo o en una parada, demora en retornar a una velocidad aceptable. Al reducir la cantidad de paradas donde un ómnibus tiene que detenerse se mejora la velocidad promedio.
-La línea G recorre el corredor Garzón de punta a punta y es cubierta por las empresas COETC y CUTCSA. Una posibilidad para alternar paradas consiste en dividir las paradas por empresa y compartir las ganancias del corredor u otro método para equiparar el pasaje transportado. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\linewidth]{Figures/paradas_alternativas}
-	\caption[Gráfico de las paradas alternativas.]{Gráfico de las paradas alternativas. Gris: Parada Eliminada. Azul: línea G de COETC y de CUTCSA. Rojo: línea G de COETC. Violeta: G de CUTCSA. - Imagen original extraída de montevideo.gub.uy}
-	\label{fig:paradas_alternadas}
-\end{figure}
-
-La Figura \ref{fig:paradas_alternadas} brinda un ejemplo donde una empresa se detendrá en las paradas pares y la otra en las impares y algunas paradas con más cantidad de pasajeros serán realizadas por las dos. Cada empresa viajará por el corredor con una frecuencia de 4 minutos (como en la actualidad). Si se reduce el número de paradas donde se detiene un ómnibus, aumentará su velocidad promedio y no se deberá resentir en demasía el servicio ya que la disminución de la frecuencia en una parada se contrarresta con el aumento promedio de velocidad.
-
-%El cambio de alternar paradas es el que más aumenta la velocidad media y tal vez es uno de los más sencillos de implementar en la realidad.
-
-
-\subsubsection{Cambio básico de semáforos}
-Al hacer el relevamiento de los datos obtenidos de la configuración de los semáforos del Corredor Garzón, se constató que en todas las intersecciones en donde una línea de ómnibus que circula por el corredor tiene un viraje a la izquierda, se hace detener el tránsito de la derecha de la misma, cada vez que el corredor central tiene la luz verde. Esto no parece tener mucho sentido, ya que podrían seguir circulando por el corredor sin ningún tipo de problema. El carril que hay que detener cuando una línea dobla a la izquierda es el de la izquierda del ómnibus, pero no los dos carriles al mismo tiempo. No se tiene conocimiento si esta decisión corresponde a un error en la configuración, un tema de costos o facilidad para manejar los dos semáforos de los carriles paralelos juntos. Como esto ocurre en varias intersecciones y en ambos sentidos, el cambio mejora la velocidad promedio de los autos que circulan por los dos carriles.
-
-Este cambio se aplicó en las siguientes intersecciones:
-\begin{itemize}
-	\item Islas Canarias: dobla línea 409 hacia la izquierda, orientado a Colón (Norte).
-	\item Camino Ariel: doblan líneas como la  2 y la 148 hacia la izquierda, orientado a Paso Molino (Sur). 
-	\item Camino Casavalle: dobla línea 174 hacia la izquierda, orientado a Paso Molino (Sur). 
-\end{itemize}
 
 \subsection{Valores numéricos al aplicar los cambios (escenario alternativo)}
 
-Para determinar cuales son los cambios que logran mejores rendimientos se elabora la Tabla \ref{table:resultado_alternativo}. Esta tabla se basa en el tráfico medio, ya que sólo se quiere realizar una comparación sencilla de las mejoras realizadas. Los cambios son acumulativos, por lo que se hacen uno después del otro. Se puede apreciar que la modificación que logra una mayor diferencia es la utilización de paradas alternadas.
+Para determinar cuales son los cambios que logran mejores rendimientos se elabora la Tabla \ref{table:resultado_alternativo}. Esta tabla se basa en el tráfico medio, ya que sólo se quiere realizar una comparación sencilla de las mejoras realizadas dado que luego se realizaran las evaluaciones aplicando todas las modificaciones para cada uno de los tipos de tráfico estudiados. Las modificaciones presentadas se aplican en el orden que aparece en la tabla y sus valores son acumulativos. Se puede apreciar que la modificación que logra una mayor diferencia es la utilización de paradas alternadas.
 
 
 \begin{table}[H]
@@ -289,7 +291,7 @@ Para determinar cuales son los cambios que logran mejores rendimientos se elabor
 	\caption[Valores numéricos del escenario alternativo]{Valores numéricos del escenario alternativo con su velocidad promedio ómnibus (vpb) y velocidad promedio vehículos(vpv) comparando el \emph{fitness} para el tráfico medio }
 	\label{table:resultado_alternativo}
 	\centering
-	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+	\begin{tabular}{lrrrr }
 		\hline
 		&
 		$vbp(km/h)$& 
@@ -314,13 +316,13 @@ Una vez que se aplican todos las modificaciones sobre el escenario, se realiza u
 	\caption[Mejoras del escenario alternativo.]{Mejoras del escenario alternativo  para las velocidades promedio de los ómnibus \textit{(vpb)} y de otros vehiculos \textit{(vpv)} en el escenario alternativo para distintos tipos de tráficos }
 	\label{table:mejoras_trafico_alternativo}
 	\centering
-	\begin{tabular}{p{3.5cm}p{2.5cm}p{2.5cm}p{2cm}p{2cm} }
+	\begin{tabular}{lrrrr }
 		\hline
 		&
 		$vbp(km/h)$& 
 		$vvp(km/h)$ & 
 		Fitness &
-		Mejora \emph{fitness}(\%)
+		Mejora \newline \emph{fitness}(\%)
 		\\ 
 		\hline
 
@@ -339,7 +341,7 @@ Luego de obtener los valores para el escenario alternativo se procede a aplicar 
 El escenario alternativo supuso una mejora sustancial en comparación con el caso base (11 \% en el valor de fitness). Se procedió a aplicar el AE para determinar si aún hay posibilidad de mejorar los valores de velocidad y \emph{fitness}.
 
 
-Los resultados obtenidos se reportan en la Tabla \ref{table:mejoras_trafico_alternativo_algoritmo} y permiten concluir que se mejora claramente el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual, se logran mejoras de hasta 37\%. 
+Los resultados obtenidos se reportan en la Tabla \ref{table:mejoras_trafico_alternativo_algoritmo} y permiten concluir que se mejora claramente el rendimiento del escenario alternativo y por supuesto del caso base en todos los tipos de tráfico. Comparando con la realidad actual, se logran mejoras de hasta 37\% en el valor de \emph{fitness}. 
 
 Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad de tráfico, mayor es el porcentaje de mejora. Además, un resultado interesante es que las diferencias entre los valores de los distintos tipos de tráfico se redujo.
 
@@ -348,7 +350,7 @@ Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad 
 	\caption[Valores numéricos al aplicar el AE sobre el escenario alternativo.]{Mejoras obtenidas al aplicar el algoritmo evolutivo sobre el escenario alternativo, comparando las velocidades de ómnibus \textit{(vpb)}, otros vehículos \textit{(vpv)} y el \emph{fitness} con cada tipo de tráfico contra el escenario base.}
 	\label{table:mejoras_trafico_alternativo_algoritmo}
 	\centering
-	\begin{tabular}{cccccccc}
+	\begin{tabular}{lrrrrrrr}
 		\hline 
 		Tráfico& 
 		$vbp(km/h)$& 
@@ -365,14 +367,14 @@ Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad 
 
 En la gráfica de la Figura \ref{fig:duracion_viajes_alernativo} se comparan las duraciones de los viajes al aplicar el AE sobre el escenario alternativo. Se produce una gran reducción en la duración de los viajes de los ómnibus en los tres tipos de tráfico, mientras para el caso de los vehículos la mayor diferencia ocurre cuando el tráfico es alto.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/duracio_viajes_alternativo}
 	\caption[Comparación de la duración de los viajes en minutos entre el escenario base y el algoritmo evolutivo sobre el escenario alternativo.]{Comparación de la duración en minutos de los viajes realizados sobre el escenario base y al aplicar el algoritmo evolutivo  al escenario alternativo, de ómnibus y otros vehículos en el recorrido completo del corredor Garzón, para los diferentes tipos de tráfico.}
 	\label{fig:duracion_viajes_alernativo}
 \end{figure}
 
-Al aplicar el criterio de significancia estadística para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del escenario alternativo.
+Al aplicar el criterio de significancia estadística para comprobar que la mejora es significativa tanto al comparar con los valores del caso base como con los del escenario alternativo se determina que efectivamente existe evidencia estadística que soporta esta hipótesis.
 
 \subsection{Variación de la función de \emph{fitness}}
 
@@ -390,7 +392,7 @@ Este caso dá más prioridad a los ómnibus, y se justifica por el hecho que uno
 
 \subsubsection{Prioridad a otros vehículos}
 
-Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el caso opuesto al anterior y resulta útil para poder comparar como varían los valores de las velocidades.
+Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el caso opuesto al anterior y resulta útil para poder comparar con el caso anterior. No resulta especialmente útil en el caso de Garzón, pero podrían existir otros escenarios donde se requiera un tránsito vehicular mas fluido.
 
 \subsubsection{Resultados}
 
@@ -399,7 +401,7 @@ La Tabla \ref{table:analisis_fitness} compara las velocidades promedio de ómnib
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption[Valores obtenidos al modificar los pesos de la función de \emph{fitness}.]{Valores obtenidos al modificar los pesos de la función de \emph{fitness}, analizando las variaciones en la velocidad promedio de ómnibus (vpb), otros vehículos (vpv) y \emph{fitness}. }
+	\caption[Valores obtenidos al modificar los pesos de la función de \emph{fitness}.]{Valores obtenidos al modificar los pesos de la función de \emph{fitness}, analizando las variaciones en la velocidad promedio de ómnibus (vpb), otros vehículos (vpv) y \emph{fitness}, donde el símbolo positivo (+) y negativo(-) indican la variación porcentual de esos valores. }
 	\label{table:analisis_fitness}
 	\centering
 	\begin{tabular}{p{1cm}p{1.2cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.2cm}p{1.2cm}p{1.2cm} }
@@ -466,32 +468,33 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption[Análisis de la eficiencia computacional.]{Análisis de la eficiencia computacional comparando los tiempos de ejecución en serial y paralelo en minutos. }
+	\caption[Análisis de la eficiencia computacional.]{Análisis de la eficiencia computacional comparando los tiempos de ejecución en serial y paralelo en minutos. Se presentan las nueve ejecuciones realizadas, tres por cada tipo de tráfico. }
 	\label{table:analisis_speedup}
 	\centering
-	\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm} }
+	\begin{tabular}{ccrrrr}
 		\hline
 		
-		Instancia& 
-		Serial(m) & 
-		Paralelo(m) &
+		\#&
+		Tipo de \newline tráfico& 		 
+		Serial (m) & 
+		Paralelo (m) &
 		\emph{Speedup} &
 		Eficiencia
 		\\ 
 		\hline
-		bajo1  & 1572 & 59 & 26.64 & 0.83\\
-		bajo2  & 1571 & 59 & 26.62 & 0.83\\
-		bajo3  & 1183 & 44 & 26.88 & 0.84\\
+		1& bajo  & 1572 & 59 & 26.64 & 0.83\\
+		2& bajo  & 1571 & 59 & 26.62 & 0.83\\
+		3& bajo  & 1183 & 44 & 26.88 & 0.84\\
 		
-		medio1  & 3002 & 119 & 25.22 & 0.78\\
-		medio2  & 2195 & 82 & 26.76 & 0.83\\
-		medio3  & 3007 & 120 & 25.05 & 0.78\\
+		4& medio  & 3002 & 119 & 25.22 & 0.78\\
+		5& medio  & 2195 & 82 & 26.76 & 0.83\\
+		6& medio  & 3007 & 120 & 25.05 & 0.78\\
 		
-		alto1  & 2920 & 110 & 26.5 & 0.82\\
-		alto2  & 4365 & 183 & 23.85 & 0.74\\
-		alto3  & 4276 & 177 & 24.15 & 0.75\\
+		7& alto  & 2920 & 110 & 26.5 & 0.82\\
+		8& alto  & 4365 & 183 & 23.85 & 0.74\\
+		9& alto  & 4276 & 177 & 24.15 & 0.75\\
 		\hline
-		  &  & Promedio & 25.7$\pm$1.1 & 0.80$\pm$0.03\\
+		 &  &  & Promedio & 25.7$\pm$1.1 & 0.80$\pm$0.03\\
 		
 		\hline
 	\end{tabular}
@@ -501,7 +504,7 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 
 La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico disminuye el \emph{speedup}. Este fenómeno sucede porque está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo (aunque como se ve no tiene un gran impacto).
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/speedup1}
 	\caption[Comparación de los \emph{speedup} promedios para cada tipo de tráfico.]{Comparación de los \emph{speedup} promedios para cada tipo de tráfico. Se representa el caso serial que corresponde al \emph{speedup} = 1 para fines de comparación.}
