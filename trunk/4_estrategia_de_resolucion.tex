@@ -164,7 +164,21 @@ Para este procesamiento se utilizó QGIS (www.qgis.org), un sistema de informaci
 
 Una vez obtenidos los archivos con la configuración de los semáforos, el recorrido de los vehículos y el recorrido de los ómnibus, se cuenta con todos los elementos necesarios para la creación de instancias realistas del problema, que serán utilizadas en el simulador para modelar la realidad.  En el análisis experimental presentado en el capítulo 5 se describen los escenarios que hacen uso de estas instancias, modificando algunas variables como la densidad del tráfico para ajustarlo a las necesidades de la experimentación.
 
+\section{Formulación del problema}
 
+El problema de optimización a resolver es el de maximizar la velocidad promedio de ómnibus y vehículos en la zona del Corredor Garzón. Se plantea optimizar dos objetivos simultáneamente, utilizando un enfoque de optimización multiobjetivo. Para implementarlo, se utiliza una combinación lineal de los objetivos (velocidad de ómnibus y de vehículos), una técnica que proporciona un método sencillo y adecuado para resolver problemas de optimización que involucran menos de tres objetivos y el frente de Pareto del problema es convexo \cite{coello2002evolutionary}.
+
+Los objetivos del problema, la velocidad promedio de los ómnibus (\emph{vpb}) y la velocidad promedio del resto de los vehículos (\emph{vpv}), fueron seleccionados por ser las principales métricas de calidad de servicio para los usuarios del Corredor Garzón, y por su utilidad a la hora de realizar comparaciones con la realidad.
+%, ya que las velocidades promedio se pueden obtener simulando las instancias que representan la realidad. ESTO NO LO ENTIENDO, lo saco
+
+La formulación multiobjetivo del problema se presenta en la Ecuación \ref{eq:funcion_fitness}. Se plantea optimizar una combinacion lineal de los objetivos, donde \emph{$w_1$} y \emph{$w_2$} son pesos que pueden ser utilizados para dar mas prioridad a un tipo de vehículo sobre otro. En el estudio presentado en este trabajo se busca optimizar con igual importancia ambas velocidades, por lo cual se utilizan los valores $w_1$ = $w_2$ = 1.
+
+\begin{equation}
+\label{eq:funcion_fitness}
+f = w_1.vpb + w_2.vpv
+\end{equation}
+
+La optimización de la velocidad promedio de los vehículos se realiza en toda la red vial considerada en el mapa estudiado, de manera global. Se busca mejorar la velocidad promedio en vehiculos que circulan por Garzón y por el resto de las calles del escenario geográfico estudiado. Aplicar una técnica de optimización global es fundamental para lograr una mejora sostenible en la velocidad de los vehículos, ya que si cada cruce se optimizara individualmente, se podrian generar problemas de congestión en otras intersecciones o sub-zonas del mapa.
 
 \section{Arquitectura de la solución}
 
