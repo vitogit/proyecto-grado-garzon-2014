@@ -122,11 +122,9 @@ Se probaron 12 estrategias distintas de resolución distintas midiendo el tiempo
 \subsection{Resumen}
 Aquí un breve repaso sobre los trabajos evaluados y su comparación con la propuesta presentada.
 
-El trabajo de \citet{Sanchez2004} posee algunos puntos de contacto como es la ejecución paralela en un cluster y la arquitectura master-slave. La principal diferencia es que el escenario que evalúan es muy pequeño en comparación y no se compara con un escenario real.
+El trabajo de \citet{Sanchez2004} posee algunos puntos de contacto con el presente trabajo al utilizar un AE paralelo con una aquitectura master-slave. La principal diferencia es que el escenario que evalúan es muy pequeño en comparación y no se estudia un escenario real.
 
-El siguiente trabajo de \citep{Sanchez2008} expande lo anterior y lo utiliza en un caso real en Santa Cruz de Tenerife siendo de un porte similar a Garzón en términos de cantidad de cruces y semáforos. Los resultados obtenidos son muy positivos obteniendo mejoras de hasta 26%.
-
-Se destaca de \citep{Sanchez2010} donde se prueban diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiro la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
+El trabajo de \citep{Sanchez2010} prueba diferentes funciones de fitness teniendo en cuenta diversos factores como tiempo de viaje o velocidad promedio. Este trabajo inspiro la realización de una función multiobjetivo que tuviera en cuenta la velocidad promedio en el proyecto actual.
 
 Aunque \citep{Stolfi2012} no optimiza la configuración de los semáforos si plantea una posibilidad interesante para mejorar el tráfico en una ciudad indicando a los vehículos la mejor ruta por lo que se podría tomar como un elemento en trabajos futuros.
 
@@ -135,4 +133,6 @@ Tanto los trabajos de \citep{Teo2010} como \citep{Stolfi2012} plantean la simula
 Tanto \citep{Montana1996} como \citep{Vogel2000}  proponen algoritmos que se adapten en tiempo real por lo que se destacan como posibles trabajos a futuro.
 Es digno de mención que todos los trabajos destacan una mejora en el rendimiento al utilizar algoritmos genéticos. 
 
-En conclusión el estudio de los trabajos relacionados permitió conocer más en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. El hecho de que se obtuvieran buenos resultados motivo aún más el desarrollo del trabajo presentado.
+Las propuestas de \citet{Sanchez2004} y \citet{Rouphail2000} guardan puntos de contacto con el presente trabajo, al utilizar AEs para resolver el problema de sincronización de semáforos sobre escenarios realistas. Sin embargo, el tamaño del escenario considerado en el presente trabajo es mayor al de los trabajos relacionados---por su extensión (6.5 km), la cantidad de intersecciones semaforizadas (28) y el número de paradas de ómnibus (28)---y reviste una complejidad mayor al incluir la lógica aplicada para el funcionamiento del carril exclusivo para ómnibus.
+
+En conclusión el estudio de los trabajos relacionados permitió conocer más en profundidad distintas soluciones y métodos que fueron tenidos en cuenta en menor o mayor medida en la solución propuesta. 
