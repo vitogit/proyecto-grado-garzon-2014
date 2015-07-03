@@ -1,15 +1,16 @@
 \chapter{Conclusiones y trabajo futuro}
 
 \section{Conclusiones}
-Luego de analizar los objetivos planteados al inicio del trabajo se puede afirmar que se cumplieron satisfactoriamente.
-La investigación de los trabajos relacionados permitió encontrar información relevante que ayudó a mejorar la solución presentada. 
-Al estudiar el problema del tráfico, se constató  que afecta a la población y al desarrollo de las ciudades. Por este motivo se considera imprescindible la búsqueda de nuevas soluciones. En el contexto de nuestro país (Uruguay), no se encontraron soluciones similares, por lo que este trabajo se plantea como un aporte interesante, que demuestra que existen las herramientas y el conocimiento necesario para realizarlo.
- 
-Las simulaciones del tráfico demostraron su utilidad al dar la flexibilidad necesaria para probar distintas variantes de forma sencilla, y poder diseñar un escenario alternativo con modificaciones agregadas que logró una mejora del 11 \% en el valor de \emph{fitness} comparando con el escenario base que representa la realidad.
- 
-A pesar de que el problema de sincronización de semáforos es un problema difícil de abordar, los resultados obtenidos muestran la capacidad de los AG para resolver problemas de este tipo, obteniendo evidencia estadística que valida las mejoras producidas. En general el AG propuesto logra una mejora de hasta  24.2 \% (21.40 \% en promedio) del valor de fitness comparando con la realidad actual, mientras el escenario alternativo obtiene una mejora de hasta 37.1 \% (34.7\% en promedio) en el valor de fitness.
+Este trabajo presenta una solución al problema de sincronización de semáforos en el Corredor Garzón utilizando un AE multiobjetivo.
 
-El enfoque multiobjetivo, aún siendo básico, permitió analizar las diferentes velocidades medias de ómnibus y otros vehículos, que fueron utilizadas para realizar análisis comparativos que enriquecieron el trabajo.
+El problema del tráfico afecta a la población y al desarrollo de las ciudades. En la actualidad, se considera imprescindible la búsqueda de soluciones innovadoras y eficientes para mejorar la calidad de servicio ofrecida por las infraestructuras viales urbanas. En nuestro país (Uruguay), no existen antecedentes de propuestas relacionadas con la optimizacion del trafico urbano. En este contexto, este trabajo plantea un aporte interesante, orientado a estudiar el problema y demostrar que existen las herramientas y el conocimiento necesario para resolverlo.
+
+La sincronización de semáforos es un problema difícil de abordar, en especial al trabajar sobre escenarios reales que revisten complejidad. Sin embargo, las técnicas de inteligencia computacional permiten calcular soluciones eficientes al problema. 
+El AE propuesto en este trabajo contempla un amplio número de características del problema que proporcionan realismo y aplicación práctica a la solución aportada, incluyendo informacion real de mapas y datos de tráfico obtenidos en relevamientos in-situ y mediante análisis de trazas de GPS.
+
+El enfoque multiobjetivo permitió resolver el problema mediante un enfoque de optimización global, estudiando las velocidades medias de ómnibus y otros vehículos en la zona del Corredor Garzón. El análisis experimental se enfocó en realizar un análisis comparativo con el caso base que representa la realidad actual del Corredor Garzón. Los resultados obtenidos muestran la capacidad de los AE para resolver el problema: el AE propuesto logra una mejora de hasta \textbf{15.3}\% en la velocidad promedio de ómnibus y \textbf{24.8}\% en la velocidad promedio de otros vehículos, obteniendo evidencia estadística que valida las mejoras calculadas. 
+
+Las simulaciones del tráfico demostraron su utilidad al dar la flexibilidad necesaria para probar distintas variantes de forma sencilla, y poder diseñar un escenario alternativo con modificaciones agregadas al escenario base con el objetivo de mejorar las velocidades promedio de los vehiculos. La aplicacion del AE propuesto sobre este escenario alternativo logra una mejora de hasta \textbf{49.9}\% en la velocidad promedio de ómnibus y \textbf{26,7}\% en la velocidad promedio de otros vehículos comparando con la realidad actual.
 
 El desarrollo de AE con capacidad de paralelización son fundamentales, sobre todo en problemas complejos que requieren mucho poder de computo como el abordado. El AE obtuvo buenas métricas de \emph{speedup} sin las cuales hubiera sido muy difícil realizar la cantidad de pruebas presentadas.
 
