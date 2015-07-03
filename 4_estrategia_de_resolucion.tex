@@ -7,13 +7,13 @@ Este capítulo explica la estrategia de resolución seguida para resolver el pro
 
 \section{Modelo del problema }
 
-El modelado del problema comprende la simplificación de la realidad y el uso de aquellos elementos que resulten útiles para resolver el problema de sincronización de semáforos. El modelado se basa en el diseño de un mapa de la zona geográfica a estudiar y la elaboración de instancias realistas que serán usadas en el simulador de tráfico SUMO. A continuación se presenta el simulador, las herramientas necesarias utilizadas y el proceso seguido para desarrollar el modelo propuesto. 
+El problema se modela mediante una simplificación de la realidad, para considerar el uso de aquellos elementos útiles para resolver la sincronización de semáforos. El modelado se basa en el diseño de un mapa de la zona geográfica a estudiar y la construcción de instancias realistas, incluyendo datos recabados in-situ, que serán usadas en el simulador de tráfico SUMO. A continuación se presenta el simulador de tráfico, el proceso seguido para el diseño del mapa y el método de recolección de datos para desarrollar el modelo propuesto. 
 
 \section{Simulaciones de tráfico}
 
-Como se explicó en el capítulo de marco teórico, SUMO es un simulador de tráfico gratuito y de código abierto que permite modelar redes de calles, vehículos, transporte público, ciudadanos y semáforos. Este simulador sigue un modelo microscópico, ya que realiza la simulación individual explícita de cada elemento. SUMO incluye un conjunto de herramientas destinadas a facilitar la generación de tráfico y la construcción de mapas \citep{SumoTools}. 
+Como se explicó en el capítulo de marco teórico, SUMO es un simulador de tráfico gratuito y de código abierto que permite modelar redes de calles, vehículos, transporte público, movimiento de peatones y semáforos. Este simulador sigue un modelo microscópico, ya que realiza la simulación individual explícita de cada elemento en el escenario. SUMO incluye un conjunto de herramientas destinadas a facilitar la generación de tráfico y la construcción de mapas \citep{SumoTools}. 
 
-Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simulador de tráfico, se efectuó un análisis relacionado con las posibilidades y objetivos del proyecto. A continuación se presentan las razones que sustentan la elección de SUMO como el simulador de tráfico utilizado en el marco del proyecto:
+Al existir un amplio abanico de posibilidades a la hora de elegir un simulador de tráfico, se efectuó un análisis relacionado con las posibilidades y objetivos del proyecto. A continuación se presentan las razones que sustentan la elección de SUMO como el simulador de tráfico utilizado en el marco del proyecto:
 
 \begin{itemize}
 	\item Portabilidad: SUMO puede ser ejecutado tanto en Windows como en Linux. Esta característica es requerida, dado que Windows es una de las plataformas utilizadas para implementar el proyecto y Linux (CentOs) es el sistema operativo utilizado por la infraestructura computacional de alto desempeño (Cluster FING) donde se plantea desarrollar el análisis experimental.
@@ -33,7 +33,7 @@ Puesto que existe un amplio abanico de posibilidades a la hora de elegir un simu
 \end{itemize}
 
 
-SUMO presenta un funcionamiento sencillo basado en tomar como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos. Además, genera archivos de salida con información útil como el tiempo de simulación, la cantidad de vehículos, velocidad de los vehículos, duración del viaje, emisiones de gases contaminantes, etc. Una instancia de ejecución del simulador SUMO se muestra en la Figura \ref{fig:sim1}, donde se aprecia la red vial, los autos, ómnibus y paradas de ómnibus.
+SUMO tiene un funcionamiento sencillo; toma como entradas archivos de configuración que representan la red vial, los vehículos, el tráfico y los semáforos y genera archivos de salida con información útil del escenario simulado: el tiempo de simulación, la cantidad de vehículos, la velocidad de los vehículos, la duración de los viaje, las emisiones de gases contaminantes, etc. Una instancia de ejecución del simulador SUMO se muestra en la Figura \ref{fig:sim1}, donde se aprecia la red vial, los autos, ómnibus y paradas de ómnibus.
 
 Dada la complejidad del problema a enfrentar en el marco del proyecto, se propone utilizar otras herramientas para realizar ciertas tareas de manera más eficiente y con menos errores. \emph{NetConvert} viene integrado con SUMO y es utilizado para generar la red vial a partir del mapa obtenido de Open Street Map, transformándolo al formato que SUMO reconoce. Otra herramienta integrada con SUMO es \emph{DUaRouter} que permite generar recorridos de vehículos basado en dinámicas definidas por el usuario. \emph{Traffic Modeler}, creado por \citet{TrafficModeler}, es útil para la generación de tráfico de manera visual que puede ser exportado al formato reconocido por SUMO. 
 	
@@ -54,13 +54,11 @@ Dada la complejidad del problema a enfrentar en el marco del proyecto, se propon
 
 \section{Diseño del mapa de la zona de estudio}
 
-El primer paso del modelado consiste en diseñar un mapa de la zona del Corredor Garzón que sea compatible con el simulador. El servicio de Open Street Map \citep{OSM} cuenta con mapas libres y actualizados por una comunidad muy activa. Este servicio se utiliza para importar la zona de interés y luego editarlo con el programa JOSM (Java OpenStreetMap Editor) para poder adecuarlo a las necesidades del problema.  Se utilizaron otros servicios (Google Maps y Bing Maps) y un estudio de la zona para validar la exactitud del mapa importado desde OSM. El estudio consistió en recorrer el Corredor Garzón, analizando en cada intersección: las reglas de cruce utilizadas y las direcciones de circulación de las calles. Como resultado de la verificación in situ fueron detectadas algunas inconsistencias entre la realidad y el mapa importado. Todas las inconsistencias detectadas fueron corregidas en la versión del mapa a utilizar en el proyecto. 
+El primer paso del modelado consistió en diseñar un mapa de la zona del Corredor Garzón que sea compatible con el simulador SUMO. Se utilizó el servicio de Open Street Map (OSM) \cite{OSM}, que cuenta con mapas libres y actualizados por una comunidad muy activa, para importar la zona de interés en el mapa y el programa Java Open Street Map Editor para adecuarlo a los elementos del problema. Para validar la exactitud del mapa importado desde OSM se utilizaron otros servicios (Google Maps y Bing Maps) y un estudio in-situ de la zona, recorriendo el Corredor Garzón y analizando en cada intersección las reglas de cruce y las direcciones de circulación. Como resultado de la verificación in-situ fueron detectadas algunas inconsistencias entre la realidad y el mapa importado. Todas las inconsistencias detectadas fueron corregidas en la versión del mapa a utilizar en la investigación. 
 
-El alcance geográfico de la zona de estudio comprende al Corredor Garzón en toda su extensión y dos caminos paralelos a cada lado del mismo. Como se ve en el mapa de la Figura \ref{fig:mapa_osm_sumo}, no existen calles paralelas reales, por lo que el proceso para diseñar el mapa consistió en: \textit{i)} seleccionar las calles que construyen dos caminos paralelos a cada lado del Corredor Garzón; \textit{ii)} seleccionar las calles internas entre las paralelas, verificando que cada camino paralelo incluya calles doble mano o dos calles de una sola mano, \textit{iii)} finalmente se borran las demás calles que no están incluidas en la zona modelada.
+LLa zona de estudio comprende al Corredor Garzón en toda su extensión y dos caminos paralelos a cada lado (véase el mapa en la Fig.~\ref{fig:mapa_osm_sumo}). No existen calles paralelas reales, por lo que el mapa se diseñó seleccionando las calles que construyen dos caminos paralelos a cada lado del Corredor Garzón y las calles internas entre las paralelas, verificando que cada camino paralelo incluya calles doble mano o dos calles de una sola mano.
 
 Dado los cambios realizados en el mapa, como la eliminación de calles que no formaban parte de la zona modelada, no se pudo contribuir con la comunidad OSM subiendo el mapa con las modificaciones que corregían algunas inconsistencias encontradas.
-
-
 
 \begin{figure}[H]
 	\centering
@@ -73,14 +71,16 @@ La herramienta \emph{Netconvert} fue utilizada para transformar el mapa obtenido
 
 La modificación realizada permitió que \emph{NetConvert} interpretara correctamente el funcionamiento del corredor, para que los vehículos no se trasladaran entre la vía de los autos y la del corredor de ómnibus. Sin embargo, el cambio implementado generó un problema, ya que cada cruce de la realidad pasó a ser representado por tres cruces distintos (uno por cada calle del corredor). Para solucionar el problema anterior y otros errores relacionados a las reglas de circulación en las intersecciones, se realizaron ajustes manuales, modificando los archivos XML relacionados. Entre otros cambios, se especificaron manualmente las reglas de movilidad correctas en algunos cruces, por ejemplo cuando estaba prohibido girar a la izquierda.
 
-Al finalizar el proceso de diseño se obtuvo un mapa fiel a la realidad, delimitado en la zona del Corredor Garzón, que es compatible con el simulador de tráfico SUMO. Al importar el mapa desde OSM y transformarlo con \emph{NetConvert} se genera una configuración de semáforos por defecto que no es correcta t será corregida mas adelante utilizando los datos relevados in situ; proceso que se explica a continuación.
+Al finalizar el proceso de diseño se obtuvo un mapa fiel a la realidad, delimitado en la zona del Corredor Garzón, que es compatible con el simulador de tráfico SUMO. Al importar el mapa desde OSM y transformarlo con \emph{NetConvert} se genera una configuración de semáforos por defecto, que debe ser corregida utilizando los datos relevados in situ; proceso que se explica a continuación.
 
 
-\section{Recolección de datos en trabajo de campo}
+\section{Recolección de datos de semáforos y vehículos en trabajo de campo.}
 
-Existen datos públicos disponibles en el sitio web de la Intendencia de Montevideo (www.montevideo.gub.uy) sobre la cantidad de ómnibus y sus frecuencias, pero no se tienen datos sobre la densidad del tráfico vehicular en la zona del Corredor Garzón. Por este motivo se realizó un revelamiento in-situ en cinco cruces representativos de la zona estudiada; cada cruce representa una intersección de vías entre el Corredor Garzón y una calle en particular. Los cruces seleccionados fueron: Camino Ariel, Batlle y Ordoñez, Plaza Vidella, Camino Colman y Aparicio Saravia. Estos cruces presentan diferentes características que son útiles para modelar variantes en la cantidad de vehículos circulantes. 
+Existen datos públicos sobre la cantidad de ómnibus y sus frecuencias en el sitio web de la Intendencia de Montevideo (IMM), pero no se tienen datos sobre el tráfico vehicular en la zona del Corredor Garzón. Por este motivo se realizó un revelamiento in-situ en cinco cruces representativos de la Avenida Garzón, con características útiles para modelar variantes en la cantidad de vehículos circulantes. 
+%Cada cruce representa una intersección de vías entre el Corredor Garzón y una calle en particular. 
+Los cruces seleccionados fueron: Camino Ariel, Batlle y Ordoñez, Plaza Vidella, Camino Colman y Aparicio Saravia. 
 
-En el relevamiento de tráfico se siguieron las recomendaciones de los textos consultados relacionados con el conteo vehicular \citep{ConteoTrafico}. El día seleccionado para efectuar el conteo fué el miércoles, con clima soleado y en el horario de 15:00 a 17:00 horas, para no obtener sesgos que se producen los fines de semana, en horas pico, o en días de lluvia. Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para efectuar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad del conteo. Luego se completó una planilla electrónica con el formato presentado en la Figura \ref{fig:conteo_hoja}, donde se reportan la cantidad de vehículos que recorren el Corredor Garzón, los que circulan por la calle que cruza y los que doblan en cada intersección. 
+El relevamiento de tráfico aplicó las recomendaciones de los textos sobre el conteo vehicular \cite{ConteoTrafico}: se realizó un miércoles, con clima soleado y en el horario de 15:00 a 17:00 horas, para evitar sesgos que se producen los fines de semana, en horas pico, o en días de lluvia. Se realizaron filmaciones de entre 15 y 30 minutos en los cruces y luego se analizaron los vídeos para efectuar el conteo manual con la posibilidad de enlentecer el vídeo para mayor facilidad del conteo. Luego se completó una planilla electrónica con el formato presentado en la Figura \ref{fig:conteo_hoja}, donde se reportan la cantidad de vehículos que recorren el Corredor Garzón, los que circulan por la calle que cruza y los que doblan en cada intersección. 
 
 \begin{figure}[ht]
 	\centering
@@ -91,37 +91,35 @@ En el relevamiento de tráfico se siguieron las recomendaciones de los textos co
 
 
 
+
+
+Se decidió contabilizar sólo automóviles, en base a un relevamiento preliminar de la zona, que permitió constatar que la cantidad de otros vehículos (camiones, motos, bicicletas, etc.) no es significativa en el total del tráfico (menos del 10\% de los vehículos). La Tabla \ref{table:resumen_trafico} muestra la cantidad de automóviles en cada cruce.
+
 \begin{table}[ht]
-	\renewcommand{\arraystretch}{1.2}
-	\caption[Resumen del revelamiento del tráfico en la zona del corredor Garzón.]{Resumen del revelamiento del tráfico en la zona del corredor Garzón. Se muestra la cantidad de vehículos y la orientación hacia donde circulan.}
+	\renewcommand{\arraystretch}{1.0}
+\renewcommand{\tabcolsep}{8pt}
+	\caption[Resumen del revelamiento del tráfico en la zona del Corredor Garzón.]{Resumen del revelamiento del tráfico en la zona del Corredor Garzón.}
 	\label{table:resumen_trafico}
 	\centering
 	\begin{tabular}{lcccc}
-		\hline
-		Intersección&
-		Sur-Garzón& 
-		Norte-Garzón & 
-		Oeste &
-		Este 
-		\\ 
-		\hline
+		\toprule
+		\multirow{2}{*}{\textit{intersección}}&\multicolumn{4}{c}{\textit{dirección de circulación}}\\
+		\cline{2-5}\\[-9pt]
+		& \textit{Sur-Garzón} & \textit{Norte-Garzón} & \textit{Oeste} & \textit{Este} \\ 
+		\midrule
 		Camino Colman  & 410 & 390 & 140 & 230\\		
 		Plaza Vidiella  & 400 & 444 & 292 & 0\\		
 		Aparicio Saravia  & 390 & 450 & 40 & 90\\		
 		Batlle y Ordoñez  & 510 & 390 & 470 & 300 \\	
 		Camino Ariel  & 436 & 226 & 177 & 203 \\													
-		\hline
-		
-		
-		\hline
+		\bottomrule
 	\end{tabular}
 \end{table}
 
-La tabla \ref{table:resumen_trafico} muestra la cantidad de vehículos contados en los distintos cruces; hay que tener en cuenta que solamente se contabilizan los autos, no se tienen en cuenta otro tipo de vehículos. Esta decisión se basa en un relevamiento preliminar de la zona que constató que la cantidad de otros vehículos (camiones, motos, bicicletas, etc) no era significante en el total del tráfico (menos de 10 \%), por lo que no se justificaba su adición al conteo y a la posterior simulación del tráfico.
+Complementariamente al conteo manual, se recorrió el corredor en automóvil a una velocidad constante, para tomar datos realistas de demora (duración total del recorrido y el tiempo que un vehículo permanece detenido en los cruces semaforizados),
+ a ser utilizados al desarrollar las simulaciones de tráfico. 
 
-Complementariamente al procedimiento de conteo manual, se realizaron recorridas de punta a punta del corredor a una velocidad constante en auto, para tomar datos de demora a ser utilizados a la hora de desarrollar las simulaciones de tráfico. Con este análisis se obtiene tanto la duración total del recorrido como el tiempo que un vehículo permanece detenido en los cruces semaforizados. 
-
-Para la configuración de los semáforos, se realizó un recorrido (en bicicleta) por toda la extensión del Corredor Garzón. Se cronometró la duración de las luces de los semáforos en cada esquina recorriendo el camino de ida, y para validar los tiempos también se relevaron las duraciones de las luces en el camino de vuelta. Estos tiempos fueron verificados por los vídeos obtenidos anteriormente en el conteo del tráfico.
+Para la configuración de los semáforos, se realizó un recorrido (en bicicleta) por toda la extensión del Corredor Garzón. Se cronometró la duración de las luces de los semáforos en cada esquina recorriendo el camino de ida, y para validar los tiempos también se relevaron las duraciones de las luces en el camino de vuelta. Estos tiempos fueron verificados por los vídeos obtenidos en el conteo del tráfico.
 
 
 \section{Desarrollo de instancias realistas del problema}
