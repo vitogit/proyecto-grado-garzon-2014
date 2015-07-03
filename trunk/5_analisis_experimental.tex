@@ -1,27 +1,17 @@
 \chapter{Análisis experimental}
-Este capítulo presenta la evaluación experimental del AE multiobjetivo propuesto para resolver el problema de sincronización de semáforos en el Corredor Garzón. Inicialmente se presenta una descripción de los escenarios utilizados en la evaluación experimental y la plataforma de ejecución en la que se llevó a acabo la experimentación. A continuación se detalla el análisis experimental, que se divide en dos etapas: primero se analiza la configuración paramétrica inicial del AE con el objetivo de obtener una mejor calidad de resultados y luego se realizan los experimentos de validación para los que se reportan los resultados numéricos. Finalmente se ofrece un breve análisis de la eficiencia computacional del AE propuesto.
-
-
+Este capítulo presenta la evaluación experimental del AE multiobjetivo propuesto para resolver el problema de sincronización de semáforos en el Corredor Garzón. Se describen las instancias del problema y la plataforma de ejecución utilizada en la evaluación experimental. A continuación se estudia la configuración paramétrica del AE con el objetivo de obtener una mejor calidad de resultados, se describen los experimentos de validación y se reportan los resultados numéricos. Finalmente se ofrece un breve análisis de la eficiencia computacional del AE propuesto.
 
 \section{Plataforma de ejecución y desarrollo}
 
-Dada la complejidad del problema, el análisis experimental se realiza en la infraestructura computacional de alto desempeño Cluster FING \citep{nesmachnow2010computacion} con el objetivo de acelerar el tiempo real de procesamiento al ejecutar el AE en paralelo. De esta forma se distribuye la carga de procesamiento en varios núcleos. El cluster FING cuenta con procesadores AMD Opteron 6272 de 2.09GHz, 48Gb RAM, 64 núcleos, con sistema operativo CentOS Linux 6.5.
+Dada la complejidad del problema, el análisis experimental se realizó en la plataforma de cómputo de alto desempeño Cluster FING, de la Universidad de la República~\cite{nesmachnow2010computacion}. Para acelerar el tiempo de procesamiento se ejecuta el AE en paralelo, distribuyendo la carga de procesar las simulaciones de tráfico en múltiples núcleos de cómputo. El Cluster FING cuenta con procesadores AMD Opteron 6272 de 2.09GHz, con 64 núcleos, 48GB RAM, y sistema operativo CentOS Linux 6.5.
 
-Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con la misma cantidad de recursos disponibles, además, para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados será tenido en cuenta, cuando se realice el análisis de eficiencia computacional detallado al final de este capítulo.
+%Las pruebas incluidas en el análisis experimental utilizaron entre 4 y 32 núcleos de procesamiento. Dada la naturaleza de recursos compartidos del Cluster, no siempre es posible contar con la misma cantidad de recursos disponibles, además, para la mayoría de las pruebas el número de núcleos no es relevante. El numero de núcleos utilizados será tenido en cuenta, cuando se realice el análisis de eficiencia computacional detallado al final de este capítulo.
 
 
-\section{Ajuste paramétrico}
+\section{Experimentos de calibración paramétrica del AE}
 Se llevó a cabo un análisis previo para determinar el mejor valor de los parámetros del AE propuesto. Este análisis tiene como objetivo obtener una mejor calidad de resultados. Los parámetros que se ajustan incluyen el \emph{tiempo de simulación} que se refiere al parámetro del simulador SUMO para determinar la duración de la simulación. También se configura el \emph{criterio de parada} que indica el método usado para detener el algoritmo y el \emph{tamaño de la población} que representa la cantidad de individuos de la población utilizada en el AE. Finalmente se ajustan los parámetros de \emph{probabilidad de mutación y probabilidad de cruzamiento}. Estos parámetros serán descritos en detalle en las siguientes secciones.
 
-Para realizar el análisis del ajuste paramétrico se generan tres escenarios de tráfico diferentes. Estos escenarios no incluyen datos recabados de la realidad (como el tráfico vehicular o la frecuencia de los ómnibus), para no ajustar los parámetros a un caso particular.
-A continuación se presenta la cantidad de vehículos para cada uno de los tres escenarios de tráfico propuestos:
-
-\begin{itemize}
-	\item Tráfico Bajo: 30 ómnibus y 500 vehículos	
-	\item Tráfico Medio: 60 ómnibus y 1000 vehículos
-	\item Tráfico Alto: 120 ómnibus y 2000 vehículos
-\end{itemize}
-
+Los experimentos de ajuste paramétrico se realizaron sobre tres escenarios de tráfico: \emph{i}) \emph{tráfico bajo}, con 30 ómnibus y 500 vehículos; \emph{ii}) \emph{tráfico medio}, con 60 ómnibus y 1000 vehículos; y \emph{iii}) \emph{tráfico alto}, con 120 ómnibus y 2000 vehículos. Estos escenarios no incluyen datos recabados de la realidad (como el tráfico vehicular o la frecuencia de los ómnibus), para no ajustar los parámetros a un caso particular.
 
 En el ajuste paramétrico los primeros parámetros que se definen son: el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los valores con los cuales el AE obtiene una mejor calidad de resultados.
 
@@ -35,103 +25,108 @@ Para el análisis experimental la función de \emph{fitness} del algoritmo (\ref
 \subsection{Tiempo de simulación}
 El tiempo de simulación refiere a la duración de la ejecución de una simulación usando SUMO. Es un parámetro que se puede configurar y permite tener un mejor control sobre los tiempos totales de ejecución del algoritmo.
 
-Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador). Este número representa 66 minutos en la simulación, mientras que el tiempo real de ejecución depende de la plataforma computacional utilizada y de la cantidad de vehículos considerados en el escenario. En las simulaciones realizadas en el marco de este proyecto se encuentra entre los 5 y 20 segundos. En el análisis experimental se tuvo en cuenta y validó que en cada escenario más del 80 \% de los vehículos completaran la simulación, es decir que llegaran a sus destinos. Se realizaron 10 ejecuciones del AE para cada uno de los tres tipos de tráfico, comprobando que se cumplía el criterio anterior.
+Se establece un tiempo de simulación de 4000 \emph{steps} (medida interna de tiempo del simulador) que representa 66 minutos en la realidad. El tiempo de ejecución real de cada simulación depende de la plataforma computacional utilizada y de la cantidad de vehículos considerados en el escenario, variando entre los 5 y 20 segundos. Para cada escenario, se valida que más del 80\% de los vehículos completen la simulación (lleguen a sus destinos). 
+%Se realizaron 10 ejecuciones del AE para cada uno de los tres tipos de tráfico, comprobando que se cumplía el criterio anterior.
 
 
 \subsection{Criterio de parada}
-Se decidió utilizar como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinarlo, se busca un compromiso entre un buen resultado numérico y un tiempo de ejecución que no sea excesivo. Se determina que esta duración se encuentre entre 1 y 24 horas, y para potencialmente obtener un buen resultado numérico se comprueba experimentalmente que el valor de \emph{fitness} no presente variaciones importantes en las últimas 100 generaciones.  
+Se decidió utilizar como criterio de parada un determinado número de generaciones. Este criterio permite estandarizar las pruebas y evaluar una comparación justa entre los distintos escenarios de tráfico. Para determinar el 
+criterio de parada del AE se busca un compromiso entre los resultados numéricos y el tiempo de ejecución. 
+Se realizaron 10 ejecuciones del AE para cada tipo de tráfico, y los resultados indicaron que el mejor valor de \emph{fitness} no varía significativamente luego de la generación 400, por lo que se decidió utilizar un criterio de parada de 500 generaciones, que involucra un tiempo de ejecución del AE en un margen razonable (entre 1 y 24 horas). 
 
-Para determinar un valor apropiado para el numero de generaciones se realizaron 10 ejecuciones del AE por cada uno de los tres tipos de tráfico, utilizando un número razonable de generaciones (500), para estudiar la variación de los valores de fitness. En la Figura \ref{fig:criterio_parada} se aprecia como el valor del mejor \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos en los experimentos de configuración, sólo algunos valores representativos para una mejor visualización.
+%En la Figura \ref{fig:criterio_parada} se aprecia como el valor del mejor \emph{fitness} no presenta grandes variaciones luego de la generación 400, además el tiempo de ejecución real se encuentra dentro del margen pautado. La gráfica no muestra todos los valores obtenidos en los experimentos de configuración, sólo algunos valores representativos para una mejor visualización.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.8\linewidth]{Figures/criterio_parada}
-\caption[Gráfica de la evolución de los valores de fitness. ]{Gráfica de la evolución de los mejores valores de fitness para establecer el criterio de parada.}
-\label{fig:criterio_parada}
-\end{figure}
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=0.8\linewidth]{Figures/criterio_parada}
+%\caption[Gráfica de la evolución de los valores de fitness. ]{Gráfica de la evolución de los mejores valores de fitness para %establecer el criterio de parada.}
+%\label{fig:criterio_parada}
+%\end{figure}
 
 \subsection{Tamaño de la población}
 
-Para la elección del tamaño de la población se tienen en cuenta tres elementos: el valor de \emph{fitness} resultante de la ejecución del AE, el tiempo de ejecución total y los recursos de la plataforma de ejecución.
+Para determinar el número de individuos de la población 
+%se tienen en cuenta tres elementos: 
+se tiene en cuenta
+el valor de \emph{fitness} obtenido por el AE, su tiempo de ejecución y los recursos 
+%disponibles en la plataforma computacional. 
+computacionales. 
+Teniendo en cuenta la distribución de recursos computacionales para realizar las simulaciones de tráfico, el número máximo de individuos (64) queda determinado por la cantidad 
+%máxima 
+de núcleos en un nodo del Cluster FING. Además, se estudian poblaciones de 32 y 48 individuos.
+%Teniendo en cuenta que la mejor distribución para realizar las simulaciones es de un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-El número máximo de individuos en la población a estudiar está determinada por la infraestructura del Cluster FING, donde la cantidad máxima de núcleos en un mismo nodo es de 64. Teniendo en cuenta que la mejor distribución de trabajo es un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
+La Tabla \ref{table:parametro_poblacion} reporta los resultados de 10 ejecuciones del AE por cada tipo de tráfico estudiado, con diferente número de individuos en la población. Los resultados 
+%reportados en la Tabla \ref{table:parametro_poblacion} 
+indican que no existen diferencias significativas en los valores de fitness, por lo cual se elige un tamaño de población de 32 individuos, teniendo en cuenta el menor tiempo de ejecución del AE y el menor uso de recursos computacionales.
 
-La Tabla \ref{table:parametro_poblacion} muestra los resultados obtenidos luego de realizar 10 ejecuciones del AE por cada tipo de tráfico estudiado. Analizando los resultados de la Tabla \ref{table:parametro_poblacion}, es posible apreciar que no existen grandes diferencias en la elección de un tamaño de población sobre otro. Por tanto se elige un tamaño de población de 32 individuos, teniendo en cuenta que el tiempo de ejecución secuencial del algoritmo es el menor y que insume menos recursos al ejecutarse. Esto es un factor importante al ejecutarse sobre el Cluster FING que es utilizada por otras personas y presenta recursos limitados.
-
-\begin{table}[h]
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Comparación de los valores de \emph{fitness} para distintos valores de tamaño de población.}
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{1.0}
+\renewcommand{\tabcolsep}{8pt}
+	\caption{Resultados del análisis de diferentes valores para el tamaño de población.}
 	\label{table:parametro_poblacion}
 	\centering
-	\begin{tabular}{crrrrr}
-		\hline
-	    \multirow{2}{*}{\textbf{\#Población}}& & 
-		\multicolumn{2}{c}{\textbf{Fitness}} \\
-		\cline{3-4}
-		& & {mejor} 
-		& {promedio +/- desv. estandar} 
-		& \textbf{Tiempo ejecución serial (m)} \\
-		\hline
+	\begin{tabular}{rrrrrp{2cm}}
+		\toprule
+		\multirow{2}{*}{\textit{\#población}}& &
+		\multicolumn{2}{c}{\textit{fitness}} & \multirow{2}{*}{\textit{tiempo de ejecución (m)}} \\
+		\cline{3-4} \\[-9pt]
+		& & \textit{mejor}
+		& \textit{promedio$\pm \sigma$}
+		\\
+		\midrule
 		32 & & {17.28} & 16.37$\pm$0.5 & 10184$\pm$526\\
 		48 & & {16.19} & 15.84$\pm$0.3 & 6772$\pm$256\\
 		64 & & {17.27} & 16.46$\pm$0.6 & 4853$\pm$155\\
-		\hline
+		\bottomrule
 	\end{tabular}
 \end{table}
 
 \subsection{Probabilidades de cruzamiento y mutación}
+Para el análisis paramétrico de la probabilidad de cruzamiento ($p_C$) se consideraron tres valores candidatos: \{0.5, 0.8, 1\} y para la probabilidad de mutación ($p_M$) los valores \{0.01,  0.05,  0.1\}. De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del AE para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
 
-Para el análisis paramétrico de la probabilidad de cruzamiento (pc) se consideraron tres valores candidatos (0.5, 0.8, y 1) y para la probabilidad de mutación (pm) otros tres (0.01,  0.05,  y  0.1). De las nueve combinaciones posibles, se realizaron tres ejecuciones independientes del algoritmo para cada uno de los tres tipos de tráfico (bajo, medio y alto).  
- 
- \begin{table}[H]
- 	\renewcommand{\arraystretch}{1.2}
- 	\caption{Valores del fitness para las distintas combinaciones de probabilidad de cruzamiento(pc) y de mutación (pm)}
- 	\label{table:parametro_mutacion_cruzamiento}
- 	\centering
- 	\begin{tabular}{ccR}
- 		\hline
- 		$p_C$& 
- 		$p_M$ & 
- 		Fitness promedio $\pm$  desviación estándar\\ 
- 		\hline
- 		0.5 & 0.01  &  16.09$\pm$0.30\\
- 		0.5 & 0.05 &  15.60$\pm$0.17\\
- 		0.5 & 0.1  &  16.16$\pm$0.42\\
- 		0.8 & 0.01  &  16.04$\pm$0.55\\
- 		0.8 & 0.05  &  15.85$\pm$0.32\\
- 		0.8 & 0.1  &  16.08$\pm$0.34\\
- 		1 & 0.01 &  16.08$\pm$0.45\\
- 		1 & 0.05 &  15.82$\pm$0.34\\
- 		1 & 0.1 &  16.04$\pm$0.25\\
- 		\hline
- 	\end{tabular}
- \end{table}
- 
-Analizando los resultados reportados en la Tabla \ref{table:parametro_mutacion_cruzamiento} y la Figura \ref{fig:grafica_mutacion_cruzamiento} se puede apreciar claramente que para una probabilidad de mutación de 0.05 se obtienen los peores resultados. Otro dato interesante es que no existe gran diferencia en el resto de las combinaciones.
-
-\begin{figure}[ht]
+\begin{figure}[H]
+\begin{minipage}[t]{0.4\linewidth}
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.0}
+\renewcommand{\tabcolsep}{4pt}
 	\centering
-	\includegraphics[width=0.8\linewidth]{Figures/grafica_mutacion_cruzamiento}
-	\caption[Gráfica con combinaciones de probabilidad de cruzamiento y de mutación.]{Gráfica con combinaciones de probabilidad de cruzamiento (pc) y de mutación (pm).}
+	\begin{tabular}{rrr}
+		\toprule
+		$p_C$&
+		$p_M$ &
+		\textit{fitness prom.$\pm \sigma$}\\
+		\midrule
+		0.5 & 0.01  &  16.09$\pm$0.30\\
+		0.5 & 0.05 &  15.60$\pm$0.17\\
+		0.5 & 0.1  &  16.16$\pm$0.42\\
+		0.8 & 0.01  &  16.04$\pm$0.55\\
+		0.8 & 0.05  &  15.85$\pm$0.32\\
+		0.8 & 0.1  &  16.08$\pm$0.34\\
+		1 & 0.01 &  16.08$\pm$0.45\\
+		1 & 0.05 &  15.82$\pm$0.34\\
+		1 & 0.1 &  16.04$\pm$0.25\\
+		\bottomrule
+\\[-9pt]
+	\end{tabular}
+\end{table}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{Figures/grafica_mutacion_cruzamiento}
 	\label{fig:grafica_mutacion_cruzamiento}
 \end{figure}
+\end{minipage}
+	\caption{Resultados 
+%(\textit{fitness}) 
+del análisis de la probabilidad de cruzamiento ($p_C$) y mutación ($p_M$)}
+	\label{table:parametro_mutacion_cruzamiento}
+\end{figure}
+ 
+El análisis estadístico muestra que los resultados siguen una distribución normal, siendo posible aplicar el test de Student para estudiar las distribuciones. Al comparar los resultados de las combinaciones que obtienen el mejor (0.5--0.1) y el peor (0.5--0.05) promedio de fitness, el test de Student reporta un valor $t(x)= 0.07$, que permite rechazar la hipótesis nula con un nivel de significancia de 0.1, indicando que existe evidencia estadística para elegir la combinación con el mejor promedio.
 
-
-Se comprueba que los resultados obtenidos siguen la distribución normal para poder aplicar el test de Student. 
-
-%Siendo las hipótesis de la prueba u1 el promedio del  grupo 1 y u2 el del grupo 2)
-%
-%
-%        \begin{equation}
-%        \label{eq:student_eq}
-%			\begin{split}
-%				H0: u1  = u2  \\
-%				H1: u1 != u2 
-%			\end{split}			
-%        \end{equation}
-
-Si se compara la combinación del mejor promedio (0.5-0.1) y del peor (0.5-0.05) con el test de Student obtenemos t(x) = 0.07 que nos indica que para un nivel de significancia de  0,1 la hipótesis nula es rechazada, por lo tanto existe evidencia estadística para elegir la combinación con el mejor promedio (0.5-0.1) sobre la combinación con el peor promedio (0.5-0.05). Para comprobar si ésta es la mejor opción, se toman las dos combinaciones con el mejor promedio (0.5-0.1) y (0.5-0.01) obteniendo en el test Student t(x) = 0.71 que nos indica que no existe una diferencia significativa entre ambas muestras, por lo que elegir una sobre otra no implicaría grandes beneficios. En tal sentido es posible utilizar cualquiera de las dos combinaciones. En la evaluación experimental reportada en la sección 5.4 se utiliza la combinación de parámetros (0.5-0.01) por su buen promedio y baja desviación estándar.
-
+Entre las dos mejores combinaciones (0.5--0.1) y (0.5--0.01) no existe una diferencia significativa, siendo posible utilizar cualquiera de ambas. En la evaluación experimental se utiliza la combinación de parámetros (0.5-0.01) por su buen promedio y baja desviación estándar.
 
 
 \section{Descripción de escenarios}
@@ -140,18 +135,7 @@ Esta sección presenta los escenarios que serán evaluados experimentalmente. El
 \subsection{Caso base o realidad actual del corredor}
 El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. Se simulan las instancias realistas desarrolladas en el capítulo 4 para obtener las velocidades promedio de ómnibus y otros vehículos y poder comparar con los resultados numéricos luego de aplicar el AE propuesto.  
 
-%Se realizó un estudio sobre datos proporcionados por la IMM que contenían el posicionamiento de los ómnibus, velocidad instantánea y datos de la línea durante todo el día para una semana en particular. De esta forma se constató que para las líneas de ómnibus que circulan por Garzón la velocidad promedio de los ómnibus es de 14.5 km/h. Esta información permitió calibrar el escenario modificando aspectos de la simulación relacionados con los ómnibus.
-
-Sobre el escenario geográfico base se generan tres escenarios de tráfico: bajo, medio y alto. El caso medio representa los datos obtenidos en el trabajo de campo; el caso de tráfico bajo se construye disminuyendo en un 50\% la cantidad de vehículos y disminuyendo el tiempo de espera en las paradas de ómnibus, teniendo en cuenta que en este caso existirán menos personas utilizando el transporte público. Las frecuencias de ómnibus se mantienen iguales ya que en la realidad no son alteradas cuando cambia la densidad de tráfico. En el caso de tráfico alto se aumenta 50 \%  la cantidad de vehículos y el tiempo de espera en la parada de los ómnibus. El valor de 50\% para el aumento y disminución de vehículos se infirió al analizar datos proporcionados por la IMM de la zona de Garzón de años anteriores. \newline
-
-A continuación se presenta el resumen de la cantidad vehicular para los tres escenarios de tráfico:
-
-\begin{itemize}
-\item Tráfico Alto:  3000 vehículos en la simulación y 70 ómnibus. 
-\item Tráfico Medio: 2000 vehículos y 70 ómnibus.
-\item Tráfico Bajo:  1000 vehículos y 70 ómnibus.
-\end{itemize}
-
+Sobre el mapa base se generan tres escenarios de tráfico: 1) \textit{tráfico medio}, que representa los datos obtenidos en el trabajo de campo (2000 vehículos y 70 ómnibus); 2) \textit{tráfico bajo}, que se construye reduciendo en un 50\% la cantidad de vehículos y el tiempo de espera en las paradas de ómnibus, ya que existirán menos personas utilizando el transporte público (1000 vehículos y 70 ómnibus); y 3)  \textit{tráfico alto}, en el que se aumenta 50\%  la cantidad de vehículos y el tiempo de espera en la parada de los ómnibus (3000 vehículos y 70 ómnibus). Las frecuencias de ómnibus se mantienen, ya que en la realidad no son alteradas cuando cambia la densidad de tráfico. El valor de 50\% para el aumento y reducción del número de vehículos se infirió al analizar datos de la zona de Garzón de años anteriores, proporcionados por la IMM.
  
 
 \subsection{Escenario alternativo}
@@ -206,79 +190,95 @@ Este cambio se aplicó en las siguientes intersecciones:
 Esta sección muestra los resultados obtenidos en la simulación de las instancias realistas desarrolladas, y en la aplicación del AE sobre las mismas. Se presenta la simulación del escenario alternativo y la posterior evaluación. %Además se realizan estudios sobre cambios en la función de \emph{fitness} del AE y un breve análisis de la eficiencia computacional.
 
 
-\subsection{Valores numéricos del caso base}
+\subsection{Resultados de la simulación del caso base.}
 
-En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima significativamente a la realidad. En la tabla  \ref{table:resultado_caso_base} el valor de \emph{fitness} se corresponde con la evaluación de la función de \emph{fitness} (Ecuación \ref{eq:funcion_fitness_generica}) utilizando las velocidades de ómnibus y otros vehículos obtenidas para cada tipo de tráfico.
- 
- \begin{table}[H]
- 	\renewcommand{\arraystretch}{1.2}
- 	\caption[Resultados numéricos del caso base.]{Resultados numéricos del caso base, mostrando la velocidad promedio ómnibus (\textit{vpb}) y velocidad promedio vehículos(\textit{vpv}) para los distintos tipos de tráfico}
- 	\label{table:resultado_caso_base}
- 	\centering
- 	\begin{tabular}{rrrr }
- 		\hline
- 		&
- 		\textit{vbp (km/h)}& 
- 		\textit{vvp (km/h)} & 
- 		Fitness \\ 
- 		\hline
- 		Tráfico Bajo & 15.89  & 32.45& 13.42\\
- 		Tráfico Medio & 14.59  & 28.81& 12.05\\
- 		Tráfico Alto & 14.31  & 26.36& 11.30\\
+Los resultados de las simulaciones para los diferentes tráficos en la realidad actual, tomada como caso base para comparar los resultados del AE propuesto, se reportan en la Tabla \ref{table:resultado_caso_base}. Los resultados representan la realidad actual del Corredor Garzón: la velocidad promedio en tráfico medio es de 14.59 km/h para los ómnibus y de 28.81 km/h para los vehiculos. Estos valores se corresponden con los que surgen del análisis de datos reales (trazas de GPS de ómnibus) proporcionados por la IMM(14.5 km/h), ve-rificando que el modelo propuesto se aproxima significativamente a la realidad.
 
- 		\hline
- 	\end{tabular}
- \end{table}
+%En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima significativamente a la realidad. En la tabla  \ref{table:resultado_caso_base} el valor de \emph{fitness} se corresponde con la evaluación de la función de \emph{fitness} (Ecuación \ref{eq:funcion_fitness_generica}) utilizando las velocidades de ómnibus y otros vehículos obtenidas para cada tipo de tráfico.
  
- En el caso base no se calcula la desviación standard ya que los valores obtenidos son deterministas (velocidad promedio de ómnibus, de otros vehículos y el valor de \emph{fintess}), pues siempre se simulan los mismos recorridos de los vehículos y la misma configuración de los semáforos. Cuando se aplica el AE, se generan nuevas configuraciones de semáforos, por lo que se obtiene un valor diferente de la velocidad promedio y del valor de \emph{fitness}, calculándose la desviación standard para evaluar la robustez de los resultados.
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.0}
+\renewcommand{\tabcolsep}{12pt}
+	\caption[Resultados numéricos del caso base.]{Resultados numéricos del caso base: velocidad promedio para ómnibus (\textit{vpb}) y vehículos (\textit{vpv}) para los distintos tipos de tráfico.}
+	\label{table:resultado_caso_base}
+	\centering
+	\begin{tabular}{lrrr}
+		\toprule
+		\textit{escenario}  &
+		\textit{vpb}(km/h) &
+		\textit{vpv}(km/h) &
+		\textit{fitness} \\
+		\midrule
+		tráfico bajo & 15.89  & 32.45& 13.42\\
+		tráfico medio & 14.59  & 28.81& 12.05\\
+		tráfico alto & 14.31  & 26.36& 11.30\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+ 
+ %En el caso base no se calcula la desviación standard ya que los valores obtenidos son deterministas (velocidad promedio de ómnibus, de otros vehículos y el valor de \emph{fintess}), pues siempre se simulan los mismos recorridos de los vehículos y la misma configuración de los semáforos. Cuando se aplica el AE, se generan nuevas configuraciones de semáforos, por lo que se obtiene un valor diferente de la velocidad promedio y del valor de \emph{fitness}, calculándose la desviación standard para evaluar la robustez de los resultados.
 
 
 \subsection{Resultados numéricos de la evaluación }
 
-Como se aprecia en la tabla \ref{table:resultado_caso_algoritmo}, el AE mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además, la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de hasta 24\% con respecto al caso base. A continuación se describe el análisis estadístico para comprobar la mejora.
+Los resultados de aplicar la optimización de las velocidades de ómnibus y otros vehículos con el AE propuesto se reportan en la Tabla \ref{table:resultado_caso_algoritmo}. Se presentan los valores promedio de las velocidades para ómnibus y otros vehículos, el valor de \emph{fitness} resultante y la mejora porcentual del valor de \emph{fitness} obtenida en comparación con el valor obtenido en el caso base.
+
+Se realizaron 20 ejecuciones independientes del AE para cada tipo de tráfico. Al aplicar el AE se generan nuevas configuraciones de semáforos, por lo que se obtiene un valor diferente de la velocidad promedio y del valor de \emph{fitness}, calculándose la desviación estándar ($\sigma$) para evaluar la robustez de los resultados.
+
+%Como se aprecia en la tabla \ref{table:resultado_caso_algoritmo}, el AE mejora la velocidad promedio tanto de ómnibus como de otros vehículos en los tres tipos de tráfico estudiados. Además, la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original al variar el tráfico. Las mejoras logradas en el \emph{fitness} son de hasta 24\% con respecto al caso base. A continuación se describe el análisis estadístico para comprobar la mejora.
 
 
 \begin{table}[H]
-	\renewcommand{\arraystretch}{1.2}	
-		\centering
-	\caption[Resultados numéricos del AE]{Resultados numéricos del algoritmo evolutivo, mostrando velocidad promedio ómnibus (vpb) y de otros vehículos(vpv) para los distintos tipos de tráfico. }
+	\renewcommand{\arraystretch}{1.05}
+\renewcommand{\tabcolsep}{4pt}
+	\caption[Resultados numéricos del caso base.]{Resultados numéricos del AE: velocidad promedio para ómnibus (\textit{vpb}) y vehículos (\textit{vpv}) para los distintos tipos de tráfico.}
 	\label{table:resultado_caso_algoritmo}
-	\begin{tabular}{ccccccrr}
-		\hline 
-		Tráfico& 
-		$vbp(km/h)$& 
-		$vpv(km/h)$&
-		\multicolumn{2}{c}{\emph{Fitness}}&  & 
-		\multicolumn{2}{c}{Mejora \emph{fitness} (\%)}\\  \cline{4-5} \cline{7-8}&     &     & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} &  & \multicolumn{1}{c}{Promedio} & \multicolumn{1}{c}{Mejor} \\ \hline
-		Bajo & 17.92$\pm$0.18 & 34.30$\pm$0.40 & 14.50$\pm$0.14 & 14.88 & & 8.04 & 10.8  \\
-		Medio& 16.95$\pm$0.32 & 33.29$\pm$0.29 & 13.95$\pm$0.15 & 14.19 & & 15.70& 17.7\\ 
-		Alto & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 14.04 & & 21.40& 24.2\\	
-		\hline	    
+	\begin{tabular}{lrrrrrrr}
+		\toprule
+		\multirow{2}{*}{\textit{instancia}}&
+		\multirow{2}{*}{\textit{vbp}(km/h)}&
+		\multirow{2}{*}{\textit{vpv}(km/h)}&
+		\multicolumn{2}{c}{\emph{fitness}}&  &
+		\multicolumn{2}{c}{mejora \emph{fitness} (\%)}\\  
+		\cline{4-5} \cline{7-8}\\[-9pt]
+		&     &     & \multicolumn{1}{c}{promedio$\pm\sigma$} & \multicolumn{1}{c}{mejor} &  & \multicolumn{1}{c}{promedio} & \multicolumn{1}{c}{mejor} \\ 
+		\midrule
+		\textit{tráfico bajo} & 17.92$\pm$0.18 & 34.30$\pm$0.40 & 14.50$\pm$0.14 & 14.88 & & 8.04 & 10.8  \\
+		\textit{tráfico medio} & 16.95$\pm$0.32 & 33.29$\pm$0.29 & 13.95$\pm$0.15 & 14.19 & & 15.70& 17.7\\
+		\textit{tráfico alto} & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 14.04 & & 21.40& 24.2\\    
+		\bottomrule        
 	\end{tabular}
 \end{table}
 
-Se realizaron 20 ejecuciones independientes del AE para cada tipo de tráfico, comprobando que los valores obtenidos siguieran una distribución normal. Por tanto se puede aplicar el criterio de significancia estadística para validar los resultados. Este criterio indica que el
-algoritmo A es mejor que B si los resultados de A y B cumplen:
 
-\begin{equation}
-\label{eq:funcion_significancia}
-\left |f_{avg}(A) - f_{avg}(B)  \right | > max(std(f_A),std(f_B))
-\end{equation}
+Los resultados reportados en la Tabla \ref{table:resultado_caso_algoritmo} indican que la optimización utilizando AE permite mejorar la velocidad promedio de los ómnibus y de otros vehículos en los tres tipos de tráfico estudiados. Además, las soluciones cuentan con mayor robustez, ya que al variar el tráfico la velocidad media de los vehículos se mantiene en un rango mucho más ajustado que en el caso original. Las mejoras logradas por el AE con respecto al caso base son de hasta \textbf{24\%} en el \emph{fitness} y las mejoras en las velocidades son de hasta \textbf{15.3\%} en la velocidad promedio de ómnibus y \textbf{24.8\%} en la velocidad promedio de otros vehículos, al comparar con la realidad actual.
 
-En este caso, A representa la aplicación del AE, y B el caso base. La Ecuación \ref{eq:funcion_significancia} indica que para tener significancia estadística y poder asegurar que el AE efectivamente mejora al caso base, el resultado promedio obtenido por el AE restado al valor del caso base, debe ser mayor a la máxima desviación standard calculada. Esta ecuación se cumple para todos los casos estudiados, por lo que se puede afirmar que existe evidencia estadística para afirmar que los resultados obtenidos por el AE son mejores a los valores del caso base.
+El análisis estadístico 
+%para validar los porcentajes de mejora 
+indicó que los resultados 
+%obtenidos 
+siguen una distribución normal. Por lo tanto se puede aplicar el criterio de \textit{significancia estadística de comparación de medias} para validar los resultados:
+%, que indica que 
+un método $A$ (en este caso, la optimizacion con AE) es mejor que otro método $B$ (en este caso, el escenario base) si los resultados de $A$ y B cumplen que 
+%\begin{equation}
+%\label{eq:funcion_significancia}
+$
+\left |f_{avg}(A) - f_{avg}(B)  \right | > \max(\sigma(f_A),\sigma(f_B))
+$.
+%\end{equation}
+%
+%En el caso estudiado, A representa la optimización de tráfico utilizando el AE y B el caso base. 
+El análisis numérico de los resultados indica que el criterio de significancia se cumple para todos los casos estudiados, por lo que se puede afirmar que existe evidencia estadística para afirmar que los resultados obtenidos por el AE son mejores a los valores del escenario base para todos los tipos de tráfico.
 
-En la Figura \ref{fig:duracion_viajes} se comparan las duraciones de los viajes obtenidas del caso base y las duraciones luego de aplicar el AE. Se comprueba que las duraciones de los viajes luego de aplicar el AE son menores tanto para ómnibus como para otros vehículos en los tres tipos de tráfico estudiados. 
+En la Figura \ref{fig:duracion_viajes} se comparan las duraciones de los viajes recorriendo el Corredor Garzón en toda su extensión (6.5 km) para el caso base y las duraciones luego de aplicar la optimización con el AE propuesto. Se comprueba que las duraciones de los viajes luego de aplicar el AE son menores tanto para ómnibus como para otros vehículos en los tres tipos de tráfico estudiados.
  
-\begin{figure}[ht]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/duracion_viajes}
-	\caption[Comparación de la duración en minutos de los viajes sobre el escenario base y al aplicar el algoritmo evolutivo.]{Comparación entre la duración en minutos de los viajes sobre el escenario base y al aplicar el AE, de ómnibus y otros vehículos en el recorrido completo del corredor Garzón para los diferentes tipos de tráfico.}
+	\caption[Comparación de la duración de los viajes en el escenario base y al aplicar el AE.]{Comparación de la duración de los viajes (ómnibus y otros vehículos, en minutos) en el recorrido completo del Corredor Garzón para los diferentes tipos de tráfico.
+}
 	\label{fig:duracion_viajes}
 \end{figure}
-
-
-%aprecia un resultado interesante, donde la duración original de los viajes cuando el tráfico es bajo es casi igual a la duración de los viajes con tráfico alto luego de ejecutar el AE. %Para ómnibus se tiene 24.5m y 23.6m y para otros vehículos 12.0m y 11.9m.
-
 
 
 \subsection{Valores numéricos al aplicar los cambios (escenario alternativo)}
