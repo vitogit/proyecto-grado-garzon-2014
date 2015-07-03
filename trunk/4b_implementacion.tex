@@ -24,7 +24,9 @@ Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibil
 
 
 \section{Especificación del Algoritmo Genético utilizado}
-Se utiliza el AG provisto por la biblioteca Malva llamado "NewGA", con las modificaciones detalladas al final de este capítulo. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
+
+Se utiliza un algoritmo genético (AG) tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El codigo del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
+las posibes soluciones del problema, generando un hilo de ejecución por cada simulación. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
@@ -63,19 +65,19 @@ A continuación se realiza un resumen de las características del algoritmo impl
 
 Como se explicó en el marco teórico, el problema de sincronización de semáforos puede ser resuelto optimizando diferentes parámetros. Entre estos parámetros se encuentran la duración de fase, de ciclo y el \emph{offset} de los semáforos. Los parámetros que se seleccionen deberán ser incluidos en la representación del cromosoma.
 
-Para la solución propuesta se contempla tanto la duración de fase como el \emph{offset}. La figura \ref{fig:cromosoma1} muestra la representación del cromosoma donde se puede observar que se agrupa lógicamente en cruces, siendo el valor de cada gen la duración de una fase en un cruce. Además, se agrega para cada cruce el valor del \emph{offset}. Se utiliza un vector de números naturales para favorecer la claridad en el desarrollo y la facilidad a la hora de aplicar los operadores. Por este motivo, el tamaño del cromosoma depende de la cantidad de cruces y de la cantidad de fases que incluya cada cruce. Con esta representación se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
+La solución propuesta contempla dos elementos clave de la planificación de semáforos: la \textit{duración de fase} y el \emph{offset} (en segundos). La Fig.~\ref{fig:cromosoma1} presenta un ejemplo de la representación utilizada para las soluciones del problema: la información se agrupa lógicamente en cruces, el valor de cada \textit{gen} es la duración en segundos de una fase en un cruce (se omiten las fases de  luces amarillas, que no modifican los tiempos reales de paso de vehículos). El largo de una representación depende de la cantidad de cruces y de la cantidad de fases que incluye. Con la representación propuesta se busca una optimización global de todo el sistema y no individualmente para cada cruce, lo cual es fundamental para mejorar la velocidad promedio del Corredor Garzón y del resto de las calles que lo cruzan.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{Figures/cromosoma1}
-	\caption{Vista del Cromosoma para los cruces de Emancipación y Colman}
+	\includegraphics[width=0.85\linewidth]{Figures/mapa_genoma}
+	\caption{Ejemplo de representación de las soluciones para el problema.} 
 	\label{fig:cromosoma1}
 \end{figure}
 
 Toda la información del cromosoma se guarda y carga en el formato \emph{XML} del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases o secuencias de luces de los semáforos de una determinada esquina se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces, por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla y \emph{duration} especifica la duración de la fase, que corresponderá a los alelos de duraciones del cromosoma. En la representación del cromosoma se omiten las fases que contengan luces amarillas ya que no modifican los tiempos reales del paso de vehículos. El tiempo indicado en el \emph{offset} especifica el inicio de la fase y será el correspondiente al del gen de Emancipación.
 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/rep_sumo}
 	\caption{Representación de la configuración de semáforos en Sumo}
@@ -98,7 +100,7 @@ El simulador representa en las esquinas (mediante el uso de flechas blancas) la 
 
 \subsection{Generación de la población inicial}
 
-Para la inicialización de la población se toma como referencia la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
+Para inicializar la población se toma como referencia la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
 
 \subsection{Función de \emph{fitness}}
 
@@ -107,7 +109,8 @@ La función de \emph{fitness} utilizada corresponde a la formulación presentada
 \subsection{Operadores Evolutivos}
 
 \subsubsection{Operador de Cruzamiento}
-Se utiliza cruzamiento de un punto, seleccionando del cromosoma una posición aleatoria entre dos cruces como punto de corte, motivado por el hecho de que si un tramo del corredor tiene un buen comportamiento, se intenta mantener esa propiedad. En el escenario que plantea la Figura \ref{fig:op_cruzamiento}, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces, cortando a los padres e intercambiando los trozos del cromosoma para generar los hijos como se ve en la Figura \ref{fig:op_cruzamiento} .
+Se utiliza cruzamiento de un punto. Se selecciona hasta un determinado cruce que se decide aleatoriamente como punto de corte, y se producen dos hijos seleccionando las soluciones de un individuo, desde el primer cruce hasta el punto de corte y se une con las soluciones del otro individuo desde el punto de corte en adelante; el otro hijo se forma de manera inversa. En el escenario que plantea la Figura \ref{fig:op_cruzamiento}, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces, cortando a los padres e intercambiando los trozos del cromosoma para generar los hijos como se ve en la Figura \ref{fig:op_cruzamiento} . 
+
 
 
 \begin{figure}[H]
@@ -132,9 +135,7 @@ Se implementaron dos tipos de mutación:
 Ambas mutaciones son aplicadas de acuerdo a una tasa de probabilidad prefijada.
 
 \subsubsection{Selección y reemplazo}
-Se  utilizan los operadores y criterios provistos por el AG newGA de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional. 
-
-Malva incluye dos políticas de reemplazo, la primera indica que se reemplazan padres por hijos y la segunda que solamente los nuevos hijos pueden ser padres, para el AE propuesto se utiliza la primera opción por lo que tanto padres como hijos pueden ser parte de la siguiente generación.
+Se utilizan los operadores y criterios provistos por el AG de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional. Respecto a la política de reemplazo, se utiliza un modelo ``+", en el cual los hijos compiten con los padres por la supervivencia en la siguiente generacion.
 
 \subsubsection{Parámetros del algoritmo}
 Los parámetros del algoritmo son: el número de generaciones que se realizan hasta detener el algoritmo, el tamaño de la población que indica la cantidad de individuos incluidos en el AE, la tasa de probabilidad de cruzamiento y de mutación que se utiliza para determinar cuando aplicar los operadores de cruzamiento y mutación. Los valores específicos de los parámetros del AE se ajustan en el capítulo 5 donde se realiza el análisis de configuración paramétrica. 
