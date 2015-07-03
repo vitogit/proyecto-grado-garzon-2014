@@ -102,27 +102,7 @@ Para la inicialización de la población se toma como referencia la configuraci�
 
 \subsection{Función de \emph{fitness}}
 
-La evaluación de un individuo se realiza generando un archivo de texto con la configuración de los semáforos en base a su cromosoma y ejecutando el simulador SUMO para obtener un archivo de salida con los datos necesarios para calcular el \emph{fitness} (como la velocidad promedio de ómnibus y otros vehículos). Se emplea una función multiobjetivo usando combinación lineal de la velocidad de los ómnibus y del resto de los vehículos.
-%ya que es un método sencillo y adecuado cuando el problema de optimización involucra menos de tres objetivos y el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. 
-El \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
-
-\begin{equation}
-\label{eq:funcion_fitness_generica}
-F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
-\end{equation}
-
-Se seleccionan como objetivos la velocidad promedio de los ómnibus (vpb) y la velocidad promedio del resto de los vehículos (vpv). Estos objetivos fueron elegidos por su utilidad a la hora de realizar comparaciones con la realidad, ya que las velocidades promedio se pueden obtener simulando las instancias que representan la realidad. Otros objetivos podrían utilizarse, como la cantidad de vehículos que completan su viaje, la duración promedio del recorrido o el tiempo de simulación pero no son útiles para realizar comparaciones con la realidad ya que son datos que no se pueden medir u obtener con facilidad.
-
-La función de \emph{fitness} utilizada se presenta en la Ecuación \ref{eq:funcion_fitness}, donde \emph{$w_1$} e \emph{$w_1$} indican los pesos que se especifican en la función. En una primera instancia se establece $w_1$ = $w_2$ = 1, más adelante se experimentará con otros pesos.
-
-\begin{equation}
-\label{eq:funcion_fitness}
-f = w_1.vpb + w_2.vpv
-\end{equation}
-
-
-
-Se plantea optimizar la velocidad promedio de los vehículos en toda la red vial (vpv), de manera global, esto quiere decir que se busca una mejor velocidad promedio tanto en autos que van por Garzón como en aquellos que circulan por el resto de las calles del escenario geográfico estudiado. Por este motivo cuando se realicen las simulaciones de las instancias realistas del problema se tendrán en cuenta las velocidades promedio de todos los vehículos participantes, cuyo valor será utilizado en la función de \emph{fitness} (variable vpv). La optimización global es fundamental para lograr una mejora en la velocidad promedio de toda la red vial, ya que si cada cruce se optimiza individualmente podría generar problemas de congestión en otras zonas.
+La función de \emph{fitness} utilizada corresponde a la formulación presentada en el capitulo \ref{ch:4_estrategia_de_resolucion}. Se considera una formulación multiobjetivo del problema, que intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada componente un peso específico en la combinación lineal utilizada para definir la función de \emph{fitness}. 
 
 \subsection{Operadores Evolutivos}
 
