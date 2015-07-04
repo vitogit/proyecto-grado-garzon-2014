@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  4 JUL 2015 13:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.5)  4 JUL 2015 13:45
 entering extended mode
 **index.tex
 
@@ -1426,53 +1426,51 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
  [33 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/sim1.jpg>]
-<Figures/mapa_osm_sumo.jpg, id=689, 1165.35374pt x 1060.96375pt>
-File: Figures/mapa_osm_sumo.jpg Graphic file (type jpg)
+<Figures/mapa_osm_sumo_1.jpg, id=689, 1466.47874pt x 1044.90375pt>
+File: Figures/mapa_osm_sumo_1.jpg Graphic file (type jpg)
 
-<use Figures/mapa_osm_sumo.jpg>
-Package pdftex.def Info: Figures/mapa_osm_sumo.jpg used on input line 65.
-(pdftex.def)             Requested size: 377.99744pt x 344.1292pt.
-LaTeX Info: Redefining \. on input line 73.
-LaTeX Info: Redefining \% on input line 73.
+<use Figures/mapa_osm_sumo_1.jpg>
+Package pdftex.def Info: Figures/mapa_osm_sumo_1.jpg used on input line 65.
+(pdftex.def)             Requested size: 293.99872pt x 209.4713pt.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
  [34 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
-res/mapa_osm_sumo.jpg>]
+res/mapa_osm_sumo_1.jpg>]
 <Figures/conteo_hoja.jpg, id=697, 673.51625pt x 516.93124pt>
 File: Figures/conteo_hoja.jpg Graphic file (type jpg)
 
 <use Figures/conteo_hoja.jpg>
-Package pdftex.def Info: Figures/conteo_hoja.jpg used on input line 87.
+Package pdftex.def Info: Figures/conteo_hoja.jpg used on input line 88.
 (pdftex.def)             Requested size: 377.99744pt x 290.11842pt.
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
- [35]
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
- [36 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+ [35 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/conteo_hoja.jpg>]
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+ [36]
 <Figures/areaflow1.jpg, id=713, 726.715pt x 1166.3575pt>
 File: Figures/areaflow1.jpg Graphic file (type jpg)
 
 <use Figures/areaflow1.jpg>
-Package pdftex.def Info: Figures/areaflow1.jpg used on input line 148.
+Package pdftex.def Info: Figures/areaflow1.jpg used on input line 149.
 (pdftex.def)             Requested size: 210.0pt x 337.0426pt.
-LaTeX Info: Redefining \. on input line 157.
-LaTeX Info: Redefining \% on input line 157.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
  [37]
-Underfull \vbox (badness 3884) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 161.
-LaTeX Info: Redefining \% on input line 161.
+LaTeX Info: Redefining \. on input line 171.
+LaTeX Info: Redefining \% on input line 171.
  [38 <C:/vito/Ing2012/ing2014/Proyecto de Grado/proyecto-grado-garzon-2014/Figu
 res/areaflow1.jpg>]
-LaTeX Info: Redefining \. on input line 187.
-LaTeX Info: Redefining \% on input line 187.
- [39] <Figures/arquitectura1.jpg, id=735, 1508.63625pt x 766.865pt>
+<Figures/arquitectura1.jpg, id=729, 1508.63625pt x 766.865pt>
 File: Figures/arquitectura1.jpg Graphic file (type jpg)
 
 <use Figures/arquitectura1.jpg>
-Package pdftex.def Info: Figures/arquitectura1.jpg used on input line 193.
+Package pdftex.def Info: Figures/arquitectura1.jpg used on input line 194.
 (pdftex.def)             Requested size: 415.8023pt x 211.35074pt.
-)
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
+ [39])
 ("C:\vito\Ing2012\ing2014\Proyecto de Grado\proyecto-grado-garzon-2014\4b_imple
 mentacion.tex"
 LaTeX Info: Redefining \. on input line 1.
@@ -1916,8 +1914,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
  18211 strings out of 493921
- 308324 string characters out of 3144879
- 400353 words of memory out of 3000000
+ 308334 string characters out of 3144879
+ 401353 words of memory out of 3000000
  20876 multiletter control sequences out of 15000+200000
  17402 words of font info for 66 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1939,7 +1937,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
 .9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on index.pdf (82 pages, 4653536 bytes).
+Output written on index.pdf (82 pages, 4380723 bytes).
 PDF statistics:
  1275 PDF objects out of 1440 (max. 8388607)
  315 named destinations out of 1000 (max. 500000)
