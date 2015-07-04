@@ -29,6 +29,9 @@ En el caso de Montevideo el carril \emph{sólo bus} está sobre la derecha, por 
 
 Las ciudades de países en vías de desarrollo, que tengan como objetivo fundamental conseguir mayores velocidades en el sistema vial, deben estudiar la factibilidad de instalar corredores, dado que existen muchas posibilidades de implementación y no todas pueden ser aplicables por el contexto zonal, cultural o de inversión necesaria.
 
+
+BRT es una solución innovadora, de alta capacidad y de menor costo para el transporte público que puede alcanzar el rendimiento y los beneficios de sistemas ferroviarios, con un costo significativamente menor como se puede apreciar en la Figura \ref{fig:Grafica de costos de otros medios de transporte}. Se trata de un sistema integrado de movilidad basado en ómnibus para el transporte de los pasajeros a sus destinos de manera rápida y eficiente. Al mismo tiempo, ofrece la flexibilidad necesaria para satisfacer una variedad de condiciones locales. Los elementos del sistema de BRT pueden ser fácilmente personalizados a las necesidades de la comunidad e incorporan tecnologías de última generación de bajo costo que atraen a más pasajeros y en última instancia ayudan a reducir la congestión de tráfico en general \citep{ITDP}.
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/costo_transporte}
@@ -36,8 +39,6 @@ Las ciudades de países en vías de desarrollo, que tengan como objetivo fundame
 	}
 	\label{fig:Grafica de costos de otros medios de transporte}
 \end{figure}
-
-BRT es una solución innovadora, de alta capacidad y de menor costo para el transporte público que puede alcanzar el rendimiento y los beneficios de sistemas ferroviarios, con un costo significativamente menor como se puede apreciar en la Figura \ref{fig:Grafica de costos de otros medios de transporte}. Se trata de un sistema integrado de movilidad basado en ómnibus para el transporte de los pasajeros a sus destinos de manera rápida y eficiente. Al mismo tiempo, ofrece la flexibilidad necesaria para satisfacer una variedad de condiciones locales. Los elementos del sistema de BRT pueden ser fácilmente personalizados a las necesidades de la comunidad e incorporan tecnologías de última generación de bajo costo que atraen a más pasajeros y en última instancia ayudan a reducir la congestión de tráfico en general \citep{ITDP}.
 
 Un BRT contiene características similares al tren ligero o al sistema de metro, por lo que es mucho más confiable, conveniente y rápido que los servicios regulares de ómnibus. Entre sus características fundamentales se destacan el uso de carriles exclusivos para el ómnibus, un alineamiento central del carril y un largo mínimo de 3 km. Además de estás características, se recomienda incluir el uso de ómnibus de gran capacidad para transportar un número mayor de personas, la compra de pasajes fuera del ómnibus (agilizando la entrada de pasajeros) y que el ómnibus tenga prioridad sobre otros vehículos en las intersecciones viales. Con las especificaciones adecuadas, un BRT es capaz de evitar las causas de los retrasos que suelen tener los servicios regulares de ómnibus (como estar atrapado en el tráfico y hacer cola para pagar a bordo). 
 
@@ -235,12 +236,6 @@ F(x) =  p_i = \frac{f_i}{\sum_{j=1}^{n}{f_j}}
 \subsubsection{Operador de cruzamiento}
 La función del operador de cruzamiento es combinar individuos con el objetivo de preservar las mejores características de los progenitores y así lograr construir mejores soluciones. El operador de cruzamiento se aplica de acuerdo a una tasa de probabilidad prefijada. 
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{Figures/cruzamiento1}
-	\caption{Cruzamiento de un punto}
-	\label{fig:cruzamiento1}
-\end{figure}
 
 En general, los operadores de cruzamiento se pueden clasificar en:
 
@@ -250,7 +245,12 @@ En general, los operadores de cruzamiento se pueden clasificar en:
 	\item Cruzamiento uniforme: Para cada posición en el cromosoma se   intercambian genes según una tasa de probabilidad, este mecanismo se muestra en la Figura \ref{fig:cruzamiento_uniforme} .	
 \end{itemize}
 
-
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/cruzamiento1}
+	\caption{Cruzamiento de un punto}
+	\label{fig:cruzamiento1}
+\end{figure}
 
 \begin{figure}[ht]
 	\centering
@@ -307,6 +307,8 @@ Existen algoritmos evolutivos para resolver problemas de optimización multiobje
 Éstos son los llamados MOEA, por sus siglas en inglés \emph{ MultiObjetive Evolutionary Algorithm}. Sus propósitos son aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir. Para un análisis más detallado de los AE multiobjetivo se recomienda el trabajo de \citet{Deb2001}.
 
 
+El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema básico de un MOEA, donde se aprecia que existen dos operadores característicos: el operador de diversidad y el operador de asignación de \emph{fitness}. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, mientras que el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
+
 \begin{algorithm}[ht]
 	\caption[Algoritmo evolutivo multiobjetivo]{Algoritmo evolutivo multiobjetivo. En negrita se indican las diferencias con el algoritmo evolutivo genérico.}
 	\label{alg:algoritmo_genetico_multiobjetivo}
@@ -330,9 +332,6 @@ Existen algoritmos evolutivos para resolver problemas de optimización multiobje
 	\end{algorithmic}
 \end{algorithm}
 
-
-El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema básico de un MOEA, donde se aprecia que existen dos operadores característicos: el operador de diversidad y el operador de asignación de \emph{fitness}. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, mientras que el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
-
 Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness} y son adecuados cuando el problema tiene no más de tres funciones objetivo. Un mecanismo popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos. Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto al asignar el fitness.
 
 
@@ -343,7 +342,7 @@ Resolver problemas complejos suelen insumir gran cantidad de tiempo, por lo que 
 
 En el caso de los AG, gran parte del tiempo se ocupa en la etapa de evaluación de \emph{fitness}, por esta razón es un buen método distribuir la carga en varios procesadores para que las evaluaciones se realicen en paralelo. 
 
-Un modelo de AE paralelo muy utilizado es el \emph{maestro-esclavo}. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de  fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar con la evaluación, ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que las múltiples ejecuciones de una de las funciones más costosas es distribuida entre varios procesos que ejecutan concurrentemente.
+Un modelo de AE paralelo muy utilizado por su facilidad conceptual y facilidad de implementación es el \emph{maestro-esclavo} que brinda la posibilidad de utilizar racionalmente los recursos computacionales disponibles en todos los computadores modernos. El proceso maestro es el encargado de ejecutar los operadores básicos del algoritmo y distribuir a procesos esclavos la evaluación de  fitness para un conjunto de individuos. El esclavo devuelve el resultado y luego el maestro es el encargado de continuar con la evaluación, ejecutando los operadores. De este modo aumenta la eficiencia computacional del algoritmo ya que las múltiples ejecuciones de una de las funciones más costosas es distribuida entre varios procesos que ejecutan concurrentemente.
 
 \begin{figure}[ht]
 	\centering
