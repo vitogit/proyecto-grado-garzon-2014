@@ -33,10 +33,10 @@
 \contentsline {section}{\numberline {3.3}Dise\IeC {\~n}o del mapa de la zona de estudio}{33}{section.3.3}
 \contentsline {section}{\numberline {3.4}Recolecci\IeC {\'o}n de datos de sem\IeC {\'a}foros y veh\IeC {\'\i }culos en trabajo de campo.}{35}{section.3.4}
 \contentsline {section}{\numberline {3.5}Desarrollo de instancias realistas del problema}{36}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Configuraci\IeC {\'o}n de sem\IeC {\'a}foros}{37}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}Configuraci\IeC {\'o}n de sem\IeC {\'a}foros}{36}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Generaci\IeC {\'o}n de tr\IeC {\'a}fico vehicular}{37}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Generaci\IeC {\'o}n de recorridos de \IeC {\'o}mnibus}{37}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Resumen}{39}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.4}Resumen}{38}{subsection.3.5.4}
 \contentsline {section}{\numberline {3.6}Formulaci\IeC {\'o}n del problema}{39}{section.3.6}
 \contentsline {section}{\numberline {3.7}Arquitectura de la soluci\IeC {\'o}n}{39}{section.3.7}
 \contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n de la soluci\IeC {\'o}n}{41}{chapter.4}
