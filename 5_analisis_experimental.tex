@@ -17,9 +17,9 @@ En el ajuste paramétrico los primeros parámetros que se definen son: el tiempo
 
 %La plataforma Cluster FING donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
-\subsection{Pesos de la función de fitness}
+%\subsection{Pesos de la función de fitness}
 
-Para el análisis experimental la función de \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{$w_1$ = $w_2$ = 1}. Estos valores dan pesos equitativos tanto a ómnibus como a otros vehículos, por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
+%Para el análisis experimental la función de \emph{fitness} del algoritmo (\ref{eq:funcion_fitness}) tendrá los pesos \emph{$w_1$ = $w_2$ = 1}. Estos valores dan pesos equitativos tanto a ómnibus como a otros vehículos, por lo que no existe prioridad para uno u otro. Más adelante se realizarán experimentos con otras variantes.
 
 
 \subsection{Tiempo de simulación}
@@ -45,20 +45,10 @@ Se realizaron 10 ejecuciones del AE para cada tipo de tráfico, y los resultados
 
 \subsection{Tamaño de la población}
 
-Para determinar el número de individuos de la población 
-%se tienen en cuenta tres elementos: 
-se tiene en cuenta
-el valor de \emph{fitness} obtenido por el AE, su tiempo de ejecución y los recursos 
-%disponibles en la plataforma computacional. 
-computacionales. 
-Teniendo en cuenta la distribución de recursos computacionales para realizar las simulaciones de tráfico, el número máximo de individuos (64) queda determinado por la cantidad 
-%máxima 
-de núcleos en un nodo del Cluster FING. Además, se estudian poblaciones de 32 y 48 individuos.
+Para determinar el número de individuos de la población se tiene en cuenta el valor de \emph{fitness} obtenido por el AE, su tiempo de ejecución y los recursos computacionales. Teniendo en cuenta la distribución de recursos computacionales para realizar las simulaciones de tráfico, el número máximo de individuos (64) queda determinado por la cantidad de núcleos en un nodo del Cluster FING. Además, se estudian poblaciones de 32 y 48 individuos.
 %Teniendo en cuenta que la mejor distribución para realizar las simulaciones es de un individuo por núcleo, se determina que la máxima cantidad de individuos en la población será de 64. Luego se establecen dos valores más para completar el análisis, con un tamaño de población de 32 y 48 individuos. Se eligen estos valores ya que no son lo suficientemente bajos y se logra una distribución adecuada de individuos en la infraestructura.
 
-La Tabla \ref{table:parametro_poblacion} reporta los resultados de 10 ejecuciones del AE por cada tipo de tráfico estudiado, con diferente número de individuos en la población. Los resultados 
-%reportados en la Tabla \ref{table:parametro_poblacion} 
-indican que no existen diferencias significativas en los valores de fitness, por lo cual se elige un tamaño de población de 32 individuos, teniendo en cuenta el menor tiempo de ejecución del AE y el menor uso de recursos computacionales.
+La Tabla \ref{table:parametro_poblacion} reporta los resultados de 10 ejecuciones del AE por cada tipo de tráfico estudiado, con diferente número de individuos en la población. Los resultados indican que no existen diferencias significativas en los valores de fitness, por lo cual se elige un tamaño de población de 32 individuos, teniendo en cuenta el menor tiempo de ejecución del AE y el menor uso de recursos computacionales.
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.0}
@@ -130,7 +120,7 @@ Entre las dos mejores combinaciones (0.5--0.1) y (0.5--0.01) no existe una difer
 
 
 \section{Descripción de escenarios}
-Esta sección presenta los escenarios que serán evaluados experimentalmente. El primero es el escenario base que representa la realidad actual y el segundo es un escenario alternativo que presenta modificaciones respecto al caso base, con el objetivo de mejorar los resultados numéricos.
+Esta sección presenta los escenarios que serán evaluados experimentalmente. El primero es el escenario base que representa la realidad actual y el segundo es un escenario alternativo que presenta modificaciones respecto al caso base, con el objetivo de mejorar las velocidades promedio de los vehículos.
 
 \subsection{Caso base o realidad actual del corredor}
 El caso base representa la situación actual en términos de tráfico, red vial y sincronización de semáforos del corredor Garzón. Se simulan las instancias realistas desarrolladas en el capítulo 4 para obtener las velocidades promedio de ómnibus y otros vehículos y poder comparar con los resultados numéricos luego de aplicar el AE propuesto.  
@@ -244,8 +234,8 @@ Se realizaron 20 ejecuciones independientes del AE para cada tipo de tráfico. A
 		&     &     & \multicolumn{1}{c}{promedio$\pm\sigma$} & \multicolumn{1}{c}{mejor} &  & \multicolumn{1}{c}{promedio} & \multicolumn{1}{c}{mejor} \\ 
 		\midrule
 		\textit{tráfico bajo} & 17.92$\pm$0.18 & 34.30$\pm$0.40 & 14.50$\pm$0.14 & 14.88 & & 8.04 & 10.8  \\
-		\textit{tráfico medio} & 16.95$\pm$0.32 & 33.29$\pm$0.29 & 13.95$\pm$0.15 & 14.19 & & 15.70& 17.7\\
-		\textit{tráfico alto} & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 14.04 & & 21.40& 24.2\\    
+		\textit{tráfico medio} & 16.95$\pm$0.32 & 33.29$\pm$0.29 & 13.95$\pm$0.15 & 14.19 & & 15.7& 17.7\\
+		\textit{tráfico alto} & 16.51$\pm$0.61  & 32.90$\pm$0.25& 13.72$\pm$0.17 & 14.04 & & 21.4& 24.2\\    
 		\bottomrule        
 	\end{tabular}
 \end{table}
@@ -259,7 +249,7 @@ indicó que los resultados
 %obtenidos 
 siguen una distribución normal. Por lo tanto se puede aplicar el criterio de \textit{significancia estadística de comparación de medias} para validar los resultados:
 %, que indica que 
-un método $A$ (en este caso, la optimizacion con AE) es mejor que otro método $B$ (en este caso, el escenario base) si los resultados de $A$ y B cumplen que 
+un método $A$ (en este caso, la optimización con AE) es mejor que otro método $B$ (en este caso, el escenario base) si los resultados de $A$ y B cumplen que 
 %\begin{equation}
 %\label{eq:funcion_significancia}
 $
@@ -328,7 +318,7 @@ Una vez que se aplican todos las modificaciones sobre el escenario, se realiza u
 		\midrule
 		tráfico bajo & 20.72  & 33.18 & 14.97 & 11.5\\
 		tráfico medio & 18.50  & 29.70& 13.39 & 11.1 \\
-		tráfico alto  & 18.60  & 27.17& 12.7 & 12.6\\		
+		tráfico alto  & 18.60  & 27.17& 12.70 & 12.4\\		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -359,9 +349,9 @@ Al comparar los resultados obtenidos se aprecia que cuanto mayor es la densidad 
 		\multicolumn{2}{c}{\emph{fitness}}&  & 
 		\multicolumn{2}{c}{mejora \emph{fitness} (\%)}\\  \cline{4-5} \cline{7-8}&     &     & \multicolumn{1}{c}{promedio$\pm\sigma$} & \multicolumn{1}{c}{mejor} &  & \multicolumn{1}{c}{promedio} & \multicolumn{1}{c}{mejor} \\ \hline
 
-	\textit{tráfico bajo} & 23.15$\pm$0.36 & 34.43$\pm$0.33 & 15.99$\pm$0.08 & 16.10 & & 19.1& 19.90 \\
-		\textit{tráfico medio} & 21.83$\pm$0.50  & 33.89$\pm$0.22 & 15.47$\pm$0.09& 15.65 & & 28.3 & 29.87\\
-		\textit{tráfico alto} & 21.46$\pm$0.54  & 33.41$\pm$0.38 & 15.24$\pm$0.19& 15.50 & & 34.8 & 37.10\\	
+	\textit{tráfico bajo} & 23.15$\pm$0.36 & 34.43$\pm$0.33 & 15.99$\pm$0.08 & 16.10 & & 19.1& 19.9 \\
+		\textit{tráfico medio} & 21.83$\pm$0.50  & 33.89$\pm$0.22 & 15.47$\pm$0.09& 15.65 & & 28.3 & 29.8\\
+		\textit{tráfico alto} & 21.46$\pm$0.54  & 33.41$\pm$0.38 & 15.24$\pm$0.19& 15.50 & & 34.8 & 37.1\\	
 		\hline		    
 	\end{tabular}
 \end{table}

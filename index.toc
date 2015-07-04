@@ -18,13 +18,13 @@
 \contentsline {subsubsection}{Funci\IeC {\'o}n de Evaluaci\IeC {\'o}n}{17}{section*.14}
 \contentsline {subsubsection}{Operador de Selecci\IeC {\'o}n}{18}{section*.15}
 \contentsline {subsubsection}{Operador de cruzamiento}{18}{section*.16}
-\contentsline {subsubsection}{Operador de mutaci\IeC {\'o}n}{19}{section*.19}
-\contentsline {subsubsection}{Criterio de reemplazo}{19}{section*.21}
+\contentsline {subsubsection}{Operador de mutaci\IeC {\'o}n}{18}{section*.19}
+\contentsline {subsubsection}{Criterio de reemplazo}{18}{section*.21}
 \contentsline {subsubsection}{Criterio de parada}{19}{section*.22}
-\contentsline {subsection}{\numberline {2.5.2}Algoritmos evolutivos multiobjetivo}{20}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Algoritmos evolutivos multiobjetivo}{19}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Algoritmos evolutivos paralelos}{20}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Implementaci\IeC {\'o}n y entornos de desarrollo}{21}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}Simulaci\IeC {\'o}n de tr\IeC {\'a}fico}{23}{section.2.6}
+\contentsline {section}{\numberline {2.6}Simulaci\IeC {\'o}n de tr\IeC {\'a}fico}{22}{section.2.6}
 \contentsline {section}{\numberline {2.7}Trabajos relacionados}{24}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Resumen}{29}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{31}{chapter.3}
@@ -45,29 +45,28 @@
 \contentsline {subsection}{\numberline {4.2.1}Representaci\IeC {\'o}n de individuos}{43}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Generaci\IeC {\'o}n de la poblaci\IeC {\'o}n inicial}{45}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Funci\IeC {\'o}n de \emph {fitness}}{45}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Operadores Evolutivos}{46}{subsection.4.2.4}
-\contentsline {subsubsection}{Operador de Cruzamiento}{46}{section*.35}
-\contentsline {subsubsection}{Operador de Mutaci\IeC {\'o}n}{46}{section*.37}
+\contentsline {subsection}{\numberline {4.2.4}Operadores evolutivos}{46}{subsection.4.2.4}
+\contentsline {subsubsection}{Operador de cruzamiento}{46}{section*.35}
+\contentsline {subsubsection}{Operador de mutaci\IeC {\'o}n}{46}{section*.37}
 \contentsline {subsubsection}{Selecci\IeC {\'o}n y reemplazo}{47}{section*.38}
 \contentsline {subsubsection}{Par\IeC {\'a}metros del algoritmo}{47}{section*.39}
 \contentsline {section}{\numberline {4.3}Modelo de paralelismo e implementaci\IeC {\'o}n}{47}{section.4.3}
 \contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis experimental}{51}{chapter.5}
 \contentsline {section}{\numberline {5.1}Plataforma de ejecuci\IeC {\'o}n y desarrollo}{51}{section.5.1}
 \contentsline {section}{\numberline {5.2}Experimentos de calibraci\IeC {\'o}n param\IeC {\'e}trica del AE}{51}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Pesos de la funci\IeC {\'o}n de fitness}{52}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Tiempo de simulaci\IeC {\'o}n}{52}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Criterio de parada}{52}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{52}{subsection.5.2.4}
-\contentsline {subsection}{\numberline {5.2.5}Probabilidades de cruzamiento y mutaci\IeC {\'o}n}{53}{subsection.5.2.5}
-\contentsline {section}{\numberline {5.3}Descripci\IeC {\'o}n de escenarios}{54}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.1}Tiempo de simulaci\IeC {\'o}n}{52}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Criterio de parada}{52}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Tama\IeC {\~n}o de la poblaci\IeC {\'o}n}{52}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Probabilidades de cruzamiento y mutaci\IeC {\'o}n}{52}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Descripci\IeC {\'o}n de escenarios}{53}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Caso base o realidad actual del corredor}{54}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Escenario alternativo}{54}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Detalles del escenario alternativo}{54}{subsection.5.3.3}
-\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{55}{section*.46}
+\contentsline {subsubsection}{Eliminaci\IeC {\'o}n de paradas}{54}{section*.46}
 \contentsline {subsubsection}{Eliminaci\IeC {\'o}n de pasajes peatonales}{55}{section*.47}
 \contentsline {subsubsection}{Alternar paradas}{55}{section*.48}
 \contentsline {subsubsection}{Cambio b\IeC {\'a}sico de sem\IeC {\'a}foros}{55}{section*.50}
-\contentsline {section}{\numberline {5.4}Resultados}{57}{section.5.4}
+\contentsline {section}{\numberline {5.4}Resultados}{56}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Resultados de la simulaci\IeC {\'o}n del caso base.}{57}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Resultados num\IeC {\'e}ricos de la evaluaci\IeC {\'o}n }{57}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Valores num\IeC {\'e}ricos al aplicar los cambios (escenario alternativo)}{58}{subsection.5.4.3}

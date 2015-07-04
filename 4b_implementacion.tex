@@ -88,15 +88,16 @@ Toda la información del cromosoma se guarda y carga en el formato \emph{XML} de
 
 \newpage
 
+
+El simulador representa en las esquinas (mediante el uso de flechas blancas) la elección de carriles habilitados para los vehículos que transitan por un determinado carril; en el caso de un giro la flecha apunta hacia donde se encuentra el carril del giro. La Figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador. A la Figura se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la figura \ref{fig:rep_sumo}. Por lo tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
+\textit{i)} \emph{GGGG} se corresponde a 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde a 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde a 8, 9, 10 y 11. y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in situ.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/semaforos_numerado}
 	\caption[Representación de una fase de los semáforos para un cruce.]{Representación de una fase de los semáforos para el cruce de Emancipación y Garzón.}
 	\label{fig:sem_numerados}
 \end{figure}
-El simulador representa en las esquinas (mediante el uso de flechas blancas) la elección de carriles habilitados para los vehículos que transitan por un determinado carril; en el caso de un giro la flecha apunta hacia donde se encuentra el carril del giro. La Figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador. A la Figura se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la figura \ref{fig:rep_sumo}. Por lo tanto para el estado \emph{GGGGrrrGGGGrrr} se tiene que:
-\textit{i)} \emph{GGGG} se corresponde a 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde a 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde a 8, 9, 10 y 11. y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in situ.
-
 
 \subsection{Generación de la población inicial}
 
@@ -106,12 +107,10 @@ Para inicializar la población se toma como referencia la configuración obtenid
 
 La función de \emph{fitness} utilizada corresponde a la formulación presentada en el capítulo 4. Se considera una formulación multiobjetivo del problema, que intenta optimizar tanto la velocidad promedio de vehículos como la de ómnibus, teniendo cada componente un peso específico en la combinación lineal utilizada para definir la función de \emph{fitness}. 
 
-\subsection{Operadores Evolutivos}
+\subsection{Operadores evolutivos}
 
-\subsubsection{Operador de Cruzamiento}
+\subsubsection{Operador de cruzamiento}
 Se utiliza cruzamiento de un punto. Se selecciona hasta un determinado cruce que se decide aleatoriamente como punto de corte, y se producen dos hijos seleccionando las soluciones de un individuo, desde el primer cruce hasta el punto de corte y se une con las soluciones del otro individuo desde el punto de corte en adelante; el otro hijo se forma de manera inversa. En el escenario que plantea la Figura \ref{fig:op_cruzamiento}, los padres cuentan con tres cruces. Se elige un punto de corte aleatoriamente entre dos cruces, cortando a los padres e intercambiando los trozos del cromosoma para generar los hijos como se ve en la Figura \ref{fig:op_cruzamiento} . 
-
-
 
 \begin{figure}[H]
 	\centering
@@ -122,7 +121,7 @@ Se utiliza cruzamiento de un punto. Se selecciona hasta un determinado cruce que
 
 
 
-\subsubsection{Operador de Mutación}
+\subsubsection{Operador de mutación}
 Se implementaron dos tipos de mutación:
 \begin{itemize}
 	
@@ -163,23 +162,18 @@ El código del AG provisto por la biblioteca Malva (newGA.pro.hh) fue modificado
 	\label{fig:codigo1}
 \end{figure}
 
-El parámetro \emph{data} contiene información sobre la población, el individuo a evaluar, su índice y un vector con los valores de \emph{fitness} de la población.
-En la línea 378 se hace un chequeo para saber si el valor de \emph{fitness} ya fue obtenido para el individuo, de esta forma no se repiten evaluaciones, en la línea 380 se ejecuta la función de \emph{fitness} y se aplica el valor de \emph{fitness} al individuo, luego en la línea 381 se incrementa el número de evaluaciones realizadas en la población.
+En el código de la Figura \ref{fig:codigo1} el parámetro \emph{data} contiene información sobre la población, el individuo a evaluar, su índice y un vector con los valores de \emph{fitness} de la población. En la línea 378 se hace un chequeo para saber si el valor de \emph{fitness} ya fue obtenido para el individuo, de esta forma no se repiten evaluaciones, en la línea 380 se ejecuta la función de \emph{fitness} y se aplica el valor de \emph{fitness} al individuo, luego en la línea 381 se incrementa el número de evaluaciones realizadas en la población.
 La función \emph{evaluate{\_}offpring{\_}threads} es análoga a \emph{evaluate{\_}parent{\_}threads} pero específica para los hijos, por lo que no se considera necesario mostrar su código.
 	
+La función \emph{evaluate{\_}parents()} provista por Malva se encarga de iterar sobre los padres de la población y ejecutar la evaluación sobre cada uno de ellos para obtener el valor de \emph{fitness} asociado. Esta función fue modificada para generar un hilo de ejecución por cada evaluación, como se aprecia en la porción de código de la Figura \ref{fig:codigo2}.
+En la línea 434  se genera el hilo llamando a la función agregada anteriormente \emph{evaluate{\_}parent{\_}threads}. Luego en la línea 504 se espera a que todos los hilos finalicen su ejecución. Análogamente se realizan modificaciones similares en la función 	\emph{evaluate{\_}offsprings }que itera sobre los hijos, para que genere un hilo por cada evaluación de los hijos, llamando a la función de  \emph{evaluate{\_}offpring{\_}threads}.
+		
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/codigo2}
 	\caption{Modificaciones de la función evaluate{\_}parents.}
 	\label{fig:codigo2}
-\end{figure}
-
-La función \emph{evaluate{\_}parents()} provista por Malva se encarga de iterar sobre los padres de la población y ejecutar la evaluación sobre cada uno de ellos para obtener el valor de \emph{fitness} asociado. Esta función fue modificada para generar un hilo de ejecución por cada evaluación, como se aprecia en la porción de código de la Figura \ref{fig:codigo2}.
-En la línea 434  se genera el hilo llamando a la función agregada anteriormente \emph{evaluate{\_}parent{\_}threads}. Luego en la línea 504 se espera a que todos los hilos finalicen su ejecución.
-Análogamente se realizan modificaciones similares en la función 	\emph{evaluate{\_}offsprings }que itera sobre los hijos, para que
-genere un hilo por cada evaluación de los hijos, llamando a la función de  \emph{evaluate{\_}offpring{\_}threads}.
-		
-		
+\end{figure}		
 
 Se utilizó el esquema maestro-esclavo para el modelo de paralelismo. El proceso maestro se encarga de la mayoría de las etapas del AE, al comenzar, inicializa la población y se encarga de distribuir la evaluación de los individuos hacia los esclavos, creando un hilo de ejecución por cada esclavo. Luego el proceso maestro espera a que las evaluaciones terminen para obtener los valores de \emph{fitness} de los esclavos. Una vez obtenidos los valores, selecciona a los mejores individuos y le aplica los operadores de cruzamiento y mutación. Para finalizar ejecuta el criterio de reemplazo para generar la siguiente población. Mientras, los esclavos se encargan solamente de obtener el individuo enviado por el maestro y de efectuar la evaluación del individuo, que corresponde a ejecutar el simulador y obtener los datos de salida. 
 
