@@ -26,8 +26,8 @@ Este trabajo presenta un Algoritmo Evolutivo (AE) aplicado al problema de gesti�
 \section{Objetivos}
 
 Los objetivos que se plantearon al inicio del proyecto incluyeron:
-
 \begin{enumerate}
+  \setlength{\itemsep}{0pt}
 	\item Estudio del problema del tráfico y la sincronización de semáforos.
 	\item Relevamiento de información sobre trabajos relacionados en el ámbito de control de tráfico y sincronización de semáforos.
 	\item Diseño e implementación de un algoritmo evolutivo multiobjetivo, capaz de resolver eficientemente el problema de sincronización de semáforos en la zona del Corredor Garzón.
@@ -35,10 +35,8 @@ Los objetivos que se plantearon al inicio del proyecto incluyeron:
 	\item Aplicación de técnicas de computación de alto desempeño para mejorar el rendimiento computacional de la solución implementada.
 
 \end{enumerate}
-
  
 \section{Enfoque}
-
 La metodología de resolución del problema de sincronización de semáforos en el Corredor Garzón propone como primer punto el modelado del problema. En este modelo se incluye: la creación de instancias realistas basadas en datos recabados de la realidad del Corredor Garzón y el uso de un simulador de tráfico para analizar el comportamiento de variables útiles para el modelado, como son la velocidad promedio de ómnibus y de otros vehículos. Se plantea como un objetivo importante recabar datos precisos de la realidad, por lo tanto se incluyen tres fuentes para obtener y validar la información: datos recabados in-situ, reuniones con responsables y técnicos de la Intendencia Municipal de Montevideo (IMM), y finalmente información disponible públicamente.
 Como segundo punto de la metodología, se plantea el diseño y desarrollo de un algoritmo evolutivo multiobjetivo que basado en el modelo mencionado anteriormente y modificando la configuración de los semáforos, sea capaz de mejorar la velocidad promedio de ómnibus y de otros vehículos en la zona del Corredor Garzón. 
 El tercer punto de la metodología propone la aplicación de técnicas de alto desempeño para mejorar la eficiencia computacional de la solución, al considerarse que el problema y las instancias desarrolladas son complejas y requiere un tiempo importante de ejecución.
@@ -60,9 +58,7 @@ El alcance geográfico del presente proyecto comprende la zona del Corredor Garz
 El modelado incluye el relevamiento manual de datos en el Corredor Garzón. Debido a los errores intrínsecos que pueden ocurrir en el relevamiento manual de datos in-situ, no se puede asegurar la exactitud de los mismos. Por este motivo, se realizarán verificaciones con el objetivo de minimizar el impacto que estos errores pudieran tener.
 
 \section{Aportes}
-Los aportes del proyecto incluyen: \textit{i)} el estudio del estado del arte y el marco teórico para el tratamiento del problema del tráfico vehicular;\textit{ii)} la creación de instancias realistas del problema utilizando datos recabados in-situ y \textit{iii)} el diseño e implementación de un algoritmo evolutivo multiobjetivo que resuelve el problema de sincronización de semáforos en el Corredor Garzón. 
-
-El algoritmo evolutivo utiliza técnicas de computación de alto desempeño y se enfoca en hallar configuraciones de semáforos que permitan mejorar la velocidad promedio de ómnibus y otros vehículos para distintas densidades de tráfico (baja, media y alta). 
+Los aportes del proyecto incluyen: \textit{i)} el estudio del estado del arte y el marco teórico para el tratamiento del problema del tráfico vehicular;\textit{ii)} la creación de instancias realistas del problema utilizando datos recabados in-situ y \textit{iii)} el diseño e implementación de un algoritmo evolutivo multiobjetivo que resuelve el problema de sincronización de semáforos en el Corredor Garzón. El algoritmo evolutivo utiliza técnicas de computación de alto desempeño y se enfoca en hallar configuraciones de semáforos que permitan mejorar la velocidad promedio de ómnibus y otros vehículos para distintas densidades de tráfico (baja, media y alta). 
 
 Estos aportes se complementan con el desarrollo de un sitio web que se puede acceder en la siguiente dirección: \url{http://www.fing.edu.uy/inco/grupos/cecal/hpc/AECG}, donde los interesados pueden consultar información sobre el proyecto y sus resultados. 
 
@@ -78,7 +74,6 @@ El capítulo 2 presenta los fundamentos teóricos necesarios para comprender el 
 El capítulo 3 explica la estrategia de resolución del problema de sincronización de semáforos implementada en este trabajo. Se presenta el modelado del problema basado en: la creación de un mapa digital de la zona del Corredor Garzón compatible con el simulador de tráfico SUMO, el trabajo de campo realizado para obtener datos de la realidad actual (que serán usados en las simulaciones) y el uso de técnicas de alto desempeño para mejorar el rendimiento del algoritmo. Adicionalmente el capítulo presenta al simulador de tráfico SUMO y finaliza describiendo la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo.
 
 El capítulo 4 describe la implementación del algoritmo evolutivo, presentando la biblioteca Malva y las especificaciones del algoritmo evolutivo desarrollado. Se detalla la representación del cromosoma utilizado, la inicialización de la población, la función de \emph{fitness} y los operadores evolutivos. Para finalizar, el capítulo explica la implementación del modelo de paralelismo utilizado.
-
 
 El capítulo 5 presenta el análisis experimental del algoritmo evolutivo, describe los escenarios utilizados en su evaluación y los resultados numéricos obtenidos. Se especifica el escenario que modela la situación actual del Corredor Garzón y el escenario alternativo que presenta modificaciones sobre el escenario anterior con el objetivo de mejorar la velocidad promedio de circulación. Se ofrece un análisis de los resultados obtenidos al variar la función de \emph{fitness} y se realiza un breve estudio de la eficiencia computacional del algoritmo evolutivo.
 
