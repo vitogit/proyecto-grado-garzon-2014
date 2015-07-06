@@ -37,7 +37,7 @@ Los objetivos que se plantearon al inicio del proyecto incluyeron:
 \end{enumerate}
  
 \section{Enfoque}
-La metodología de resolución del problema de sincronización de semáforos en el Corredor Garzón propone como primer punto el modelado del problema. En este modelo se incluye: la creación de instancias realistas basadas en datos recabados de la realidad del Corredor Garzón y el uso de un simulador de tráfico para analizar el comportamiento de variables útiles para el modelado, como son la velocidad promedio de ómnibus y de otros vehículos. Se plantea como un objetivo importante recabar datos precisos de la realidad, por lo tanto se incluyen tres fuentes para obtener y validar la información: datos recabados in-situ, reuniones con responsables y técnicos de la Intendencia Municipal de Montevideo (IMM), y finalmente información disponible públicamente.
+La metodología de resolución del problema de sincronización de semáforos en el Corredor Garzón propone como primer punto el modelado del problema. En este modelo se incluye: la creación de instancias realistas basadas en datos recabados de la realidad del Corredor Garzón (tráfico vehicular, configuración de semáforos, etc) y el uso de un simulador de tráfico para analizar el comportamiento de variables útiles para el modelado, como son la velocidad promedio de ómnibus y de otros vehículos. Se plantea como un objetivo importante recabar datos precisos de la realidad, por lo tanto se incluyen tres fuentes para obtener y validar la información: datos recabados in-situ, reuniones con responsables y técnicos de la Intendencia Municipal de Montevideo (IMM), y finalmente información disponible públicamente.
 Como segundo punto de la metodología, se plantea el diseño y desarrollo de un algoritmo evolutivo multiobjetivo que basado en el modelo mencionado anteriormente y modificando la configuración de los semáforos, sea capaz de mejorar la velocidad promedio de ómnibus y de otros vehículos en la zona del Corredor Garzón. 
 El tercer punto de la metodología propone la aplicación de técnicas de alto desempeño para mejorar la eficiencia computacional de la solución, al considerarse que el problema y las instancias desarrolladas son complejas y requiere un tiempo importante de ejecución.
 
@@ -53,7 +53,7 @@ El tercer punto de la metodología propone la aplicación de técnicas de alto d
 
 \section{Limitaciones y alcance}
 
-El alcance geográfico del presente proyecto comprende la zona del Corredor Garzón, que incluye toda la extensión del Corredor y dos caminos paralelos a cada lado del mismo. Se pretende desarrollar un modelo preciso de la realidad pero se tiene en cuenta que algunos de sus elementos serán eliminados o simplificados, por tanto se buscará que estas simplificaciones no afecten los resultados de la solución propuesta. 
+El alcance geográfico del presente proyecto comprende la zona del Corredor Garzón, que incluye toda la extensión del Corredor y dos caminos paralelos a cada lado del mismo. Se pretende desarrollar un modelo preciso de la realidad pero se tiene en cuenta que algunos de sus elementos serán eliminados o simplificados, por lo tanto, se buscará que estas simplificaciones no afecten los resultados de la solución propuesta. 
 
 El modelado incluye el relevamiento manual de datos en el Corredor Garzón. Debido a los errores intrínsecos que pueden ocurrir en el relevamiento manual de datos in-situ, no se puede asegurar la exactitud de los mismos. Por este motivo, se realizarán verificaciones con el objetivo de minimizar el impacto que estos errores pudieran tener.
 
@@ -62,14 +62,14 @@ Los aportes del proyecto incluyen: \textit{i)} el estudio del estado del arte y 
 
 Estos aportes se complementan con el desarrollo de un sitio web que se puede acceder en la siguiente dirección: \url{http://www.fing.edu.uy/inco/grupos/cecal/hpc/AECG}, donde los interesados pueden consultar información sobre el proyecto y sus resultados. 
 
-Adicionalmente, se redactó un artículo de síntesis en idioma inglés de 10 páginas, con el objetivo de tomarlo como base para la redacción de un artículo de investigación para presentar en una conferencia internacional. 
+Adicionalmente, se redactó un artículo en idioma español de 15 paginas para presentar en la conferencia internacional CICos 2015 en México y un artículo de síntesis en idioma inglés de 10 páginas, con el objetivo de tomarlo como base para la redacción de un artículo de investigación para presentar en una conferencia internacional. 
 
 Finalizando, se destaca la participación del proyecto en Ingeniería deMuestra 2014 (https://www.fing.edu.uy/ingenieriademuestra), donde el póster descriptivo del mismo captó la atención y fue bien recibido por parte del publico presente.
 
 
 
 \section{Estructura del documento}
-El capítulo 2 presenta los fundamentos teóricos necesarios para comprender el resto del trabajo. Comienza describiendo el problema del tráfico vehicular y algunas formas de atacarlo, entre las que se encuentra la creación de planes de movilidad y la sincronización de semáforos. El capítulo incluye información sobre corredores urbanos de tránsito y en concreto sobre el Corredor Garzón, así como una descripción acerca de algoritmos evolutivos y simuladores de tráfico. Complementariamente, se ofrece una reseña de los principales trabajos relacionados haciendo especial foco en algoritmos genéticos para la sincronización de semáforos.
+El capítulo 2 presenta los fundamentos teóricos necesarios para comprender el resto del trabajo. Comienza describiendo el problema del tráfico vehicular y algunas formas de atacarlo, entre las que se encuentra la creación de planes de movilidad y la sincronización de semáforos. El capítulo incluye información sobre corredores urbanos de tránsito y en concreto sobre el Corredor Garzón, así como una descripción acerca de algoritmos evolutivos y simuladores de tráfico. Complementariamente, se ofrece una reseña de los principales trabajos relacionados, haciendo especial foco en algoritmos evolutivos para la sincronización de semáforos.
 
 El capítulo 3 explica la estrategia de resolución del problema de sincronización de semáforos implementada en este trabajo. Se presenta el modelado del problema basado en: la creación de un mapa digital de la zona del Corredor Garzón compatible con el simulador de tráfico SUMO, el trabajo de campo realizado para obtener datos de la realidad actual (que serán usados en las simulaciones) y el uso de técnicas de alto desempeño para mejorar el rendimiento del algoritmo. Adicionalmente el capítulo presenta al simulador de tráfico SUMO y finaliza describiendo la arquitectura propuesta para el diseño e implementación del algoritmo evolutivo multiobjetivo.
 
