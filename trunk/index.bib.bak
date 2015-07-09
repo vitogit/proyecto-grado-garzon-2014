@@ -64,7 +64,8 @@
   Author                   = {Bull, Alberto},
   Publisher                = {United Nations Publications},
   Year                     = {2003},
-  Number                   = {87}
+
+  Serie                    = {Cuadernos de la CEPAL}
 }
 
 @Article{Paradiseo,
@@ -81,10 +82,13 @@
 
 @Book{coello2002evolutionary,
   Title                    = {Evolutionary algorithms for solving multi-objective problems},
-  Author                   = {Coello, Carlos A Coello and Van Veldhuizen, David A and Lamont, Gary B},
-  Publisher                = {Springer},
+  Author                   = {Coello, C. and Van~Veldhuizen, D. and Lamont, G.},
+  Publisher                = {Kluwer},
   Year                     = {2002},
-  Volume                   = {242}
+
+  Address                  = {New York},
+
+  ISBN                     = {0306467623}
 }
 
 @InProceedings{cramer1985representation,
@@ -100,13 +104,12 @@
   Author                   = {Kalyanmoy Deb},
   Publisher                = {John Wiley \& Sons},
   Year                     = {2001},
-  Volume                   = {16},
 
   Timestamp                = {2015.03.13}
 }
 
 @InProceedings{DiFebbraro2002,
-  Title                    = {On applying Petri nets to determine optimal offsets for coordinated traffic light timings},
+  Title                    = {On applying {Petri} nets to determine optimal offsets for coordinated traffic light timings},
   Author                   = {Di Febbraro, A and Giglio, D and Sacco, N},
   Booktitle                = {Intelligent Transportation Systems, 2002. Proceedings. The IEEE 5th International Conference on},
   Year                     = {2002},
@@ -117,7 +120,7 @@
 }
 
 @Article{Jmetal,
-  Title                    = {jMetal: A Java framework for multi-objective optimization},
+  Title                    = {{jMetal: A Java} framework for multi-objective optimization},
   Author                   = {Durillo, Juan J and Nebro, Antonio J},
   Journal                  = {Advances in Engineering Software},
   Year                     = {2011},
@@ -129,7 +132,7 @@
 }
 
 @Misc{Olivera2015,
-  Title                    = {{\enquote{Ana Olivera: "No hay justificación, nos equivocamos con Garzón"}}},
+  Title                    = {{{Ana Olivera: “No hay justificación, nos equivocamos con Garzón”}}},
 
   Author                   = {{El País}},
   HowPublished             = {En \url{http://www.elpais.com.uy/}},
@@ -141,7 +144,7 @@
 }
 
 @Misc{Olivera2013,
-  Title                    = {{\enquote{Garzón: Olivera admitió errores}}},
+  Title                    = {{{Garzón: Olivera admitió errores}}},
 
   Author                   = {{El País}},
   HowPublished             = {En \url{http://www.elpais.com.uy/}},
@@ -164,8 +167,8 @@
 }
 
 @Misc{Malva,
-  Title                    = {{The Malva Project: A framework for comutational intelligence in
-C++}},
+  Title                    = {{The Malva Project: A framework for computational intelligence in
+ C++}},
 
   Author                   = {Gabriel Fagúndez},
   HowPublished             = {En \url{http://themalvaproject.github.io/}},
@@ -176,7 +179,7 @@ C++}},
 }
 
 @InProceedings{OpenBeagle,
-  Title                    = {Open BEAGLE: A New Versatile C++ Framework for Evolutionary Computation.},
+  Title                    = {Open BEAGLE: A New Versatile {C++} Framework for Evolutionary Computation.},
   Author                   = {Gagn{\'e}, Christian and Parizeau, Marc},
   Booktitle                = {GECCO Late Breaking Papers},
   Year                     = {2002},
@@ -185,11 +188,9 @@ C++}},
 
 @Book{Goldberg1989,
   Title                    = {{Genetic Algorithms in Search, Optimization, and Machine Learning}},
-  Author                   = {Goldberg, David E.},
-  Publisher                = {Addison-Wesley Professional},
+  Author                   = {Goldberg, David},
+  Publisher                = {Addison-Wesley},
   Year                     = {1989},
-  Edition                  = {1},
-  Month                    = jan,
 
   Day                      = {11},
   HowPublished             = {Hardcover},
@@ -200,7 +201,7 @@ C++}},
 @Article{OSM,
   Title                    = {Openstreetmap: User-generated street maps},
   Author                   = {Haklay, Mordechai and Weber, Patrick},
-  Journal                  = {Pervasive Computing, IEEE},
+  Journal                  = {IEEE Pervasive Computing},
   Year                     = {2008},
   Number                   = {4},
   Pages                    = {12--18},
@@ -373,6 +374,15 @@ C++}},
   Pages                    = {333--338}
 }
 
+@Article{nesmachnow2010computacion,
+  Title                    = {{Computaci{\'o}n cient{\i}fica de alto desempe\~no en la Facultad de Ingenier{\i}a, Universidad de la Rep{\'u}blica}},
+  Author                   = {Nesmachnow, S},
+  Journal                  = {Revista de la Asociaci{\'o}n de Ingenieros del Uruguay},
+  Year                     = {2010},
+  Pages                    = {12--15},
+  Volume                   = {61}
+}
+
 @InProceedings{Nesmachnow2002,
   Title                    = {Evoluci{\'o}n en el dise{\~n}o y la clasificaci{\'o}n de Algoritmos Gen{\'e}ticos Paralelos},
   Author                   = {Nesmachnow, Sergio},
@@ -394,8 +404,8 @@ C++}},
 
 @InProceedings{TrafficModeler,
   Title                    = {Trafficmodeler: A graphical tool for programming microscopic traffic simulators through high-level abstractions},
-  Author                   = {Papaleondiou, Leontios G and Dikaiakos, Marios D},
-  Booktitle                = {Vehicular Technology Conference, 2009. VTC Spring 2009. IEEE 69th},
+  Author                   = {Papaleondiou, Leontios and Dikaiakos, Marios},
+  Booktitle                = {IEEE 69$^{th}$ Vehicular Technology Conference},
   Year                     = {2009},
   Organization             = {IEEE},
   Pages                    = {1--5}
@@ -424,18 +434,17 @@ C++}},
 
 @InProceedings{Rouphail2000,
   Title                    = {Direct signal timing optimization: Strategy development and results},
-  Author                   = {Rouphail, Nagui M and Park, Byungkyu Brian and Sacks, Jerome},
+  Author                   = {Rouphail, Nagui and Park, Byungkyu and Sacks, Jerome},
   Booktitle                = {XI Pan American Conference in Traffic and Transportation Engineering},
   Year                     = {2000},
-  Organization             = {Citeseer}
+  Pages                    = {195--206}
 }
 
-@Article{Sanchez2007,
+@PhdThesis{Sanchez2007,
   Title                    = {Estudio de la optimizaci{\'o}n del tr{\'a}fico rodado mediante el ajuste de los ciclos de sem{\'a}foros por algoritmos gen{\'e}ticos en dispositivos de computaci{\'o}n paralela usando modelizaci{\'o}n discreta: ejemplos de aplicaci{\'o}n},
-  Author                   = {S{\'a}nchez Medina, Javier Jes{\'u}s},
-  Year                     = {2007},
-
-  Publisher                = {ULPGC. Biblioteca Universitaria}
+  Author                   = {S{\'a}nchez, Javier},
+  School                   = {Universidad de Las Palmas de Gran Canaria},
+  Year                     = {2007}
 }
 
 @Article{Sanchez2008,
@@ -475,7 +484,10 @@ C++}},
 @TechReport{ConteoTrafico,
   Title                    = {Handbook of simplified practice for traffic studies},
   Author                   = {Smith, Duane and McIntyre, Jeff},
-  Year                     = {2002}
+  Year                     = {2002},
+  Number                   = {455},
+
+  Intitution               = {State Library of Iowa}
 }
 
 @Book{spears2000evolutionary,
@@ -574,11 +586,12 @@ C++}},
   Publisher                = {Springer}
 }
 
-@Article{yang1996model,
+@InProceedings{yang1996model,
   Title                    = {The model and properties of the traffic light problem},
   Author                   = {Yang, Chang-Biau and Yeh, Yun-Jaw},
+  Booktitle                = {International Conference on Algorithms. Kaohsiung, Taiwan.},
   Year                     = {1996},
-
-  Publisher                = {Citeseer}
+  Organization             = {IEEE},
+  Pages                    = {19--26}
 }
 

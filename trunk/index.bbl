@@ -44,7 +44,7 @@ E.~Bañobre y {\'A}.~Romero.
 A.~Bull.
 \newblock \emph{Congesti{\'o}n de tr{\'a}nsito: el problema y c{\'o}mo
   enfrentarlo}.
-\newblock Number~87. United Nations Publications, 2003.
+\newblock United Nations Publications, 2003.
 
 \bibitem[Cahon et~al.(2004)Cahon, Melab, y Talbi]{Paradiseo}
 S.~Cahon, N.~Melab, y E.-G. Talbi.
@@ -58,37 +58,35 @@ S.~Cahon, N.~Melab, y E.-G. Talbi.
 C.~Coello, D.~Van~Veldhuizen, y G.~Lamont.
 \newblock \emph{Evolutionary algorithms for solving multi-objective problems}.
 \newblock Kluwer, New York, 2002.
-\newblock ISBN 0306467623.
 
 \bibitem[Deb(2001)]{Deb2001}
 K.~Deb.
-\newblock \emph{{Multi-objective optimization using evolutionary algorithms}},
-  volumen~16.
+\newblock \emph{{Multi-objective optimization using evolutionary algorithms}}.
 \newblock John Wiley \& Sons, 2001.
 
 \bibitem[Di~Febbraro et~al.(2002)Di~Febbraro, Giglio, y Sacco]{DiFebbraro2002}
 A.~Di~Febbraro, D.~Giglio, y N.~Sacco.
-\newblock On applying petri nets to determine optimal offsets for coordinated
+\newblock On applying {Petri} nets to determine optimal offsets for coordinated
   traffic light timings.
 \newblock En \emph{Intelligent Transportation Systems, 2002. Proceedings. The
   IEEE 5th International Conference on}, p. 773--778. IEEE, 2002.
 
 \bibitem[Durillo y Nebro(2011)]{Jmetal}
 J.~J. Durillo y A.~J. Nebro.
-\newblock jmetal: A java framework for multi-objective optimization.
+\newblock {jMetal: A Java} framework for multi-objective optimization.
 \newblock \emph{Advances in Engineering Software}, 42\penalty0 (10):\penalty0
   760--771, 2011.
 
 \bibitem[{El País}(2013)]{olivera2013}
 {El País}.
-\newblock {\enquote{Garzón: Olivera admitió errores}}.
+\newblock {{Garzón: Olivera admitió errores}}.
 \newblock En \url{http://www.elpais.com.uy/}, 30 Julio 2013.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[{El País}(2015)]{olivera2015}
 {El País}.
-\newblock {\enquote{Ana Olivera: "No hay justificación, nos equivocamos con
-  Garzón"}}.
+\newblock {{Ana Olivera: “No hay justificación, nos equivocamos con
+  Garzón”}}.
 \newblock En \url{http://www.elpais.com.uy/}, 10 Enero 2015.
 \newblock Disponible online, consultado febrero 2015.
 
@@ -101,14 +99,14 @@ L.~Eshelman.
 
 \bibitem[Fagúndez(2014)]{Malva}
 G.~Fagúndez.
-\newblock {The Malva Project: A framework for comutational intelligence in
+\newblock {The Malva Project: A framework for computational intelligence in
   C++}.
 \newblock En \url{http://themalvaproject.github.io/}, 2014.
 \newblock Disponible online, consultado julio 2014.
 
 \bibitem[Gagn{\'e} y Parizeau(2002)]{OpenBeagle}
 C.~Gagn{\'e} y M.~Parizeau.
-\newblock Open beagle: A new versatile c++ framework for evolutionary
+\newblock Open beagle: A new versatile {C++} framework for evolutionary
   computation.
 \newblock En \emph{GECCO Late Breaking Papers}, p. 161--168, 2002.
 
@@ -117,19 +115,18 @@ D.~Goldberg.
 \newblock \emph{{Genetic Algorithms in Search, Optimization, and Machine
   Learning}}.
 \newblock Addison-Wesley, 1989.
-\newblock ISBN 0201157675.
 
 \bibitem[Haklay y Weber(2008)]{OSM}
 M.~Haklay y P.~Weber.
-\newblock Openstreetmap: User-generated street maps.
+\newblock {OpenStreetMap: User-generated street maps}.
 \newblock \emph{IEEE Pervasive Computing}, 7\penalty0 (4):\penalty0 12--18,
   2008.
 
 \bibitem[Halati et~al.(1997)Halati, Lieu, y Walker]{CORSIM}
 A.~Halati, H.~Lieu, y S.~Walker.
-\newblock Corsim-corridor traffic simulation model.
+\newblock {CORSIM-corridor traffic simulation model}.
 \newblock En \emph{Traffic congestion and traffic safety in the 21st century:
-  Challenges, innovations, and opportunities}, 1997.
+  Challenges, innovations, and opportunities}, p. 570--576, 1997.
 
 \bibitem[IMM(2010)]{PlanMovilidad}
 IMM.
@@ -157,7 +154,7 @@ R.~H. J.~Penner y C.~Jacob.
 \newblock Swarm-based traffic simulation with evolutionary traffic light
   adaptation.
 \newblock En \emph{Proceedings of Artificial Intelligence and Soft Computing},
-  2002.
+  p. 192--197, 2002.
 
 \bibitem[Kotushevski y Hawick(2009)]{review_trafico}
 G.~Kotushevski y K.~A. Hawick.
@@ -169,13 +166,12 @@ G.~Kotushevski y K.~A. Hawick.
 J.~R. Koza.
 \newblock \emph{Genetic Programming: On the Programming of Computers by Means
   of Natural Selection (Complex Adaptive Systems)}.
-\newblock A Bradford Book, 1 edition, 12 1992.
-\newblock ISBN 9780262111706.
+\newblock A Bradford Book, 1992.
 
 \bibitem[Krajzewicz et~al.(2002)Krajzewicz, Hertkorn, R{\"o}ssel, y
   Wagner]{SUMO}
 D.~Krajzewicz, G.~Hertkorn, C.~R{\"o}ssel, y P.~Wagner.
-\newblock Sumo (simulation of urban mobility).
+\newblock {SUMO} (simulation of urban mobility).
 \newblock En \emph{Proc. of the 4th middle east symposium on simulation and
   modelling}, p. 183--187, 2002.
 
@@ -189,7 +185,8 @@ G.~Lim, J.~Kang, y Y.~Hong.
 \bibitem[Litman(2009)]{litman2009transportation}
 T.~Litman.
 \newblock Transportation cost and benefit analysis.
-\newblock 2009.
+\newblock En \url{http://vtpi.org/tca/}, 2009.
+\newblock Disponible online, consultado febrero 2015.
 
 \bibitem[López et~al.(1999)López, Hernández, Hernández, y
   García]{Lopez1999}
@@ -211,8 +208,7 @@ D.~McKenney y T.~White.
 M.~Mitchell.
 \newblock \emph{An Introduction to Genetic Algorithms (Complex Adaptive
   Systems)}.
-\newblock A Bradford Book, reprint edition, 2 1998.
-\newblock ISBN 9780262631853.
+\newblock A Bradford Book, 1998.
 
 \bibitem[Montana(1995)]{Montana1995}
 D.~J. Montana.
@@ -228,8 +224,8 @@ D.~J. Montana y S.~Czerwinski.
 
 \bibitem[Nesmachnow(2010)]{nesmachnow2010computacion}
 S.~Nesmachnow.
-\newblock {Computaci{\'o}n cient{\i}fica de alto desempe\~no en la Facultad de
-  Ingenier{\i}a, Universidad de la Rep{\'u}blica}.
+\newblock {Computaci{\'o}n cient{\'i}fica de alto desempe\~no en la Facultad de
+  Ingenier{\'i}a, Universidad de la Rep{\'u}blica}.
 \newblock \emph{Revista de la Asociaci{\'o}n de Ingenieros del Uruguay},
   61:\penalty0 12--15, 2010.
 
@@ -247,11 +243,10 @@ A.~K. Rathi.
   (6):\penalty0 734--743, November-December 1990.
 
 \bibitem[Rechenberg(1973)]{Ingo1971}
-E.~Rechenberg.
-\newblock \emph{Ingo Rechenberg Evolutionsstrategie Optimierung technischer
-  Systeme nach Prinzipien der biologishen Evolution}.
-\newblock mit einem Nachwort von Manfred Eigen, Friedrich Frommann Verlag,
-  Struttgart-Bad Cannstatt, 1973.
+I.~Rechenberg.
+\newblock \emph{{Evolution strategy: optimization of technical systems
+  according to principles of biological evolution}}.
+\newblock Frommann-Holzboog, 1973.
 
 \bibitem[Rouphail et~al.(2000)Rouphail, Park, y Sacks]{Rouphail2000}
 N.~Rouphail, B.~Park, y J.~Sacks.
@@ -271,7 +266,7 @@ J.~S{\'a}nchez.
 J.~S{\'a}nchez, M.~Gal{\'a}n, y E.~Rubio.
 \newblock Genetic algorithms and cellular automata: a new architecture for
   traffic light cycles optimization.
-\newblock En \emph{Congress on Evolutionary Computation, 2004. CEC2004.},
+\newblock En \emph{Congress on Evolutionary Computation, 2004. CEC2004},
   volumen~2, p. 1668--1674. IEEE, 2004.
 
 \bibitem[S{\'a}nchez et~al.(2008)S{\'a}nchez, Gal{\'a}n, y Rubio]{Sanchez2008}
@@ -293,7 +288,7 @@ J.~J. S{\'a}nchez, M.~J. Gal{\'a}n-Moreno, y E.~Rubio-Royo.
 \bibitem[Smith y McIntyre(2002)]{ConteoTrafico}
 D.~Smith y J.~McIntyre.
 \newblock Handbook of simplified practice for traffic studies.
-\newblock Technical Report 455, 2002.
+\newblock Technical Report 455, Iowa State University, 2002.
 
 \bibitem[Spears(2000)]{spears2000evolutionary}
 W.~M. Spears.
@@ -320,11 +315,11 @@ SUMO.
 \newblock Disponible online, consultado febrero 2015.
 
 \bibitem[Teo et~al.(2010)Teo, Kow, y Chin]{Teo2010}
-K.~T.~K. Teo, W.~Y. Kow, y Y.~Chin.
+K.~T. Teo, W.~Y. Kow, y Y.~Chin.
 \newblock Optimization of traffic flow within an urban traffic light
   intersection with genetic algorithm.
-\newblock En \emph{Second International Conference on Computational
-  Intelligence, Modelling and Simulation (CIMSiM)}, p. 172--177. IEEE, 2010.
+\newblock En \emph{2nd International Conference on Computational Intelligence,
+  Modelling and Simulation (CIMSiM)}, p. 172--177. IEEE, 2010.
 
 \bibitem[{The Institute for Transportation and Development Policy
   (ITDP)}(2014)]{brt_standar}
@@ -337,23 +332,23 @@ K.~T.~K. Teo, W.~Y. Kow, y Y.~Chin.
 A.~Vogel, C.~Goerick, y W.~Von~Seelen.
 \newblock Evolutionary algorithms for optimizing traffic signal operation.
 \newblock En \emph{Proceedings of the European symposium on intelligent
-  techniques (ESIT)}, p. 83--91. Citeseer, 2000.
+  techniques (ESIT)}, p. 83--91, 2000.
 
 \bibitem[Wall(1996)]{Galib}
 M.~Wall.
 \newblock {GAlib: A C++ library of genetic algorithm components}.
-\newblock \emph{Mechanical Engineering Department, Massachusetts Institute of
-  Technology}, 87:\penalty0 54, 1996.
+\newblock En \url{http://lancet.mit.edu/ga/}, 1996.
+\newblock Disponible online, consultado noviembre 2014.
 
-\bibitem[Wallace et~al.(1984)Wallace, Courage, Reaves, Schoene, y
-  Euler]{TRANSYT-7F}
-C.~E. Wallace, K.~Courage, D.~Reaves, G.~Schoene, y G.~Euler.
-\newblock Transyt-7f user's manual.
-\newblock Technical report, 1984.
+\bibitem[Wallace et~al.(1998)Wallace, Courage, Hadi, y Gan]{TRANSYT-7F}
+C.~Wallace, K.~Courage, M.~Hadi, y A.~Gan.
+\newblock {TRANSYT-7F user’s guide}.
+\newblock \emph{University of Florida, Gainesville}, 1998.
 
 \bibitem[Yang y Yeh(1996)]{yang1996model}
-C.-B. Yang y Y.-J. Yeh.
+C.~B. Yang y Y.~J. Yeh.
 \newblock The model and properties of the traffic light problem.
-\newblock 1996.
+\newblock En \emph{International Conference on Algorithms. Kaohsiung, Taiwan.},
+  p. 19--26, 1996.
 
 \end{thebibliography}
