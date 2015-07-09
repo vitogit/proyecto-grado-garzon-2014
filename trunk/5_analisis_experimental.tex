@@ -438,48 +438,48 @@ En general las variaciones en las velocidades no son grandes, pero son lo sufici
 
 \subsection{Eficiencia computacional}
 
-Se realiza un estudio de la eficiencia computacional del AE para analizar los tiempos de ejecución cuando se usan varios procesadores y como se desempeña su capacidad de paralelismo.
+Se llevó a cabo un estudio de la eficiencia computacional del AE implementado, para analizar los tiempos de ejecución cuando se usan varios procesadores y cómo se desempeña su capacidad de paralelismo.
 
-Se evalúan nueve ejecuciones del AE; tres con cada tipo de tráfico: alto, medio y bajo, para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución por lo que se emplea esa cantidad de núcleos.
+Para estudiar la eficiencia en diferentes contextos, se evalúan nueve ejecuciones del AE; tres con cada tipo de tráfico considerado: alto, medio y bajo, para estudiarlo en diferentes contextos. El algoritmo utiliza 32 hilos de ejecución para realizar las simulaciones de tráfico,	 por lo que se emplea esa cantidad de núcleos.
 
 Las pruebas fueron realizadas sobre el equipo node40 del Cluster FING, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
 
-El \emph{speedup} (S) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores comparando con el rendimiento al usar un solo procesador (Ecuacion \ref{eq:funcion_speedup}). Donde ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores.
+Para evaluar la eficiencia se calcula el \emph{speedup} .El \emph{speedup} (${S_N}$) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores, comparando con el rendimiento al usar un solo procesador (Ecuacion \ref{eq:funcion_speedup}). En la definición de ${S_N}$, ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores. El resultado ideal es obtener \emph{speedup} lineal (${S_N}$ = N), pero en la práctica utilizar N procesadores no garantiza una mejora de factor N; lo habitual es obtener un \emph{speedup} menor al ideal o \emph{speedup} sublineal, posibles causas para este comportamiento son: que el procesamiento no sea del todo paralelizable, demoras en las comunicaciones y sincronizaciones, tiempos ociosos, etc.
 
 \begin{equation}
 \label{eq:funcion_speedup}
-S = \frac{T_1}{T_N}
+${S_N}$ = \frac{T_1}{T_N}
 \end{equation}
 
 
 
-La eficiencia computacional (E) corresponde al valor normalizado del \emph{speedup} (entre 0 y 1) respecto a la cantidad de procesadores. Los valores cercanos a uno indican una alta eficiencia computacional.
+La eficiencia computacional (${E_N}$) corresponde al valor normalizado del \emph{speedup} (entre 0 y 1) respecto a la cantidad de procesadores. Los valores cercanos a uno indican una alta eficiencia computacional.
 \begin{equation}
 \label{eq:funcion_eficiencia}
-E = \frac{T_1}{N*T_N} = \frac{S}{N}
+${E_N}$ = \frac{T_1}{N*T_N} = \frac{S}{N}
 \end{equation}
 
- La Tabla \ref{table:analisis_speedup} reporta que algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución con un valor promedio del \emph{speedup} de 25.7  y  eficiencia promedio de 0.8, lo cual puede considerarse como buenas métricas.
+ La Tabla \ref{table:analisis_speedup} reporta los resultados numéricos del análisis de eficiencia computacional. Los resultados indican que el algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución, con un valor promedio del \emph{speedup} de 25.7  y  eficiencia promedio de 0.8 al utilizar 32 recursos de cómputo. Estos valores corresponden a un \emph{speedup} sublineal, pero pueden considerarse como buenos valores de las métricas de eficiencia computacional.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
-	\caption[Análisis de la eficiencia computacional.]{Análisis de la eficiencia computacional comparando los tiempos de ejecución en serial y paralelo en minutos. Se presentan las nueve ejecuciones realizadas, tres por cada tipo de tráfico. }
+	\caption[Análisis de la eficiencia computacional.]{Análisis de la eficiencia computacional comparando los tiempos de ejecución secuencial y paralela (en minutos). Se presentan las nueve ejecuciones realizadas, tres por cada tipo de tráfico. }
 	\label{table:analisis_speedup}
 	\centering
 	\begin{tabular}{ccrrrr}
 		\hline
 		
 		\#&
-		tipo de \newline tráfico& 		 
-		serial (m) & 
-		paralelo (m) &
+		\emph{tipo de \newline tráfico} &
+		\emph{serial (m)} & 
+		\emph{paralelo (m)} &
 		\emph{speedup} &
-		eficiencia
+		\emph{eficiencia}
 		\\ 
 		\hline
 		1& bajo  & 1572 & 59 & 26.64 & 0.83\\
 		2& bajo  & 1571 & 59 & 26.62 & 0.83\\
-		3& bajo  & 1183 & 44 & 26.88 & 0.84\\
+		3& bajo  & 1183 & 44 & \textbf{26.88} & \textbf{0.84}\\
 		
 		4& medio  & 3002 & 119 & 25.22 & 0.78\\
 		5& medio  & 2195 & 82 & 26.76 & 0.83\\
@@ -497,7 +497,7 @@ E = \frac{T_1}{N*T_N} = \frac{S}{N}
 
 
 
-La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico disminuye el \emph{speedup}. Este fenómeno sucede porque está influenciado por los accesos al disco duro, al tener más vehículos circulando en la simulación se tiene que leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo (aunque como se ve no tiene un gran impacto).
+La gráfica de la Figura \ref{fig:speedup1} muestra como al aumentar el tráfico de datos disminuye el \emph{speedup}. Este fenómeno sucede porque el \emph{speedup} está influenciado por los accesos al disco duro: al tener más vehículos circulando en la simulación de tráfico requiere leer y escribir más información en los archivos, lo que aumenta el tiempo de ejecución del algoritmo. El impacto del aumento del tráfico sobre el \emph{speedup}, como se puede apreciar en los resultados reportados en la gráfica de la Figura \ref{fig:speedup1}, no es significativo.
 
 \begin{figure}[ht]
 	\centering
