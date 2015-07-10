@@ -332,10 +332,16 @@ El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema bás
 	\end{algorithmic}
 \end{algorithm}
 
-Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness} y son adecuados cuando el problema tiene no más de tres funciones objetivo. Un mecanismo popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos. Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto al asignar el fitness.
+Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness}. Estos métodos no reflejan la independencia entre los objetivos y tampoco garantizan una resolución correcta del problema. Un método popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos, que es relativamente sencilla de implementar y adecuada para problemas de optimización con no más de tres funciones objetivo y donde el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. En este método, el \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
 
+\begin{equation}
+\label{eq:funcion_fitness_generica}
+F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
+\end{equation}
 
+%El enfoque de agregación ha sido utilizado en otros trabajos de sincronización de semáforos (cuáles?) y también ha sido utilizado en la resolución de problemas de optimización multiobjetivo relacionados con el manejo inteligente de problemas de tránsito en ciudades modernas (smart cities).
 
+Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto al asignar el fitness.  
 
 \subsection{Algoritmos evolutivos paralelos}
 Resolver problemas complejos suelen insumir gran cantidad de tiempo, por lo que paralelizar el AE es útil para lograr tiempos de ejecución menores. Pero éste no es el único objetivo que se puede conseguir con un AE paralelo, entre otros existen: encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio \citep{Alba2002}. 
