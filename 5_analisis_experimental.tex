@@ -387,7 +387,7 @@ Este caso dá más prioridad a los ómnibus, y se justifica por el hecho que uno
 
 \subsubsection{Prioridad a otros vehículos}
 
-Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el caso opuesto al anterior y resulta útil para poder comparar con el caso anterior. No resulta especialmente relevante en el caso de Garzón, ya que la velocidad de los vehiculos es superior a la de los ómnibus en todos los casos, pero podrían existir otros escenarios donde se requiera un tránsito vehicular mas fluido.
+Este caso asigna 70\% del peso a los vehículos y 30\% a los ómnibus. Es el caso opuesto al anterior y resulta útil para poder comparar con el caso anterior. No resulta especialmente relevante en el caso de Garzón, ya que la velocidad promedio de los ómnibus es inferior a la del resto de los  vehículos en todos los casos de tráfico estudiados, pero podrían existir otros escenarios donde se requiera una velocidad promedio superior para el resto de los vehículos.
 
 \subsubsection{Resultados}
 
@@ -444,7 +444,7 @@ Para estudiar la eficiencia en diferentes contextos, se evalúan nueve ejecucion
 
 Las pruebas fueron realizadas sobre el equipo node40 del Cluster FING, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
 
-Para evaluar la eficiencia se calcula el \emph{speedup} .El \emph{speedup} (${S_N}$) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores, comparando con el rendimiento al usar un solo procesador (Ecuacion \ref{eq:funcion_speedup}). En la definición de ${S_N}$, ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores. El resultado ideal es obtener \emph{speedup} lineal (${S_N}$ = N), pero en la práctica utilizar N procesadores no garantiza una mejora de factor N; lo habitual es obtener un \emph{speedup} menor al ideal o \emph{speedup} sublineal, posibles causas para este comportamiento son: que el procesamiento no sea del todo paralelizable, demoras en las comunicaciones y sincronizaciones, tiempos ociosos, etc.
+Para evaluar la eficiencia se calcula el \emph{speedup} .El \emph{speedup} (${S_N}$) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores, comparando con el rendimiento al usar un solo procesador (Ecuación \ref{eq:funcion_speedup}). En la definición de ${S_N}$, ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores. El resultado ideal es obtener \emph{speedup} lineal (${S_N}$ = N), pero en la práctica utilizar N procesadores no garantiza una mejora de factor N; lo habitual es obtener un \emph{speedup} menor al ideal o \emph{speedup} sublineal, posibles causas para este comportamiento son: que el procesamiento no sea del todo paralelizable, demoras en las comunicaciones y sincronizaciones, tiempos ociosos, etc.
 
 \begin{equation}
 \label{eq:funcion_speedup}
@@ -459,7 +459,7 @@ La eficiencia computacional (${E_N}$) corresponde al valor normalizado del \emph
 {E_N} = \frac{T_1}{N*T_N} = \frac{S}{N}
 \end{equation}
 
- La Tabla \ref{table:analisis_speedup} reporta los resultados numéricos del análisis de eficiencia computacional. Los resultados indican que el algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución, con un valor promedio del \emph{speedup} de 25.7  y  eficiencia promedio de 0.8 al utilizar 32 recursos de cómputo. Estos valores corresponden a un \emph{speedup} sublineal, pero pueden considerarse como buenos valores de las métricas de eficiencia computacional.
+ La Tabla \ref{table:analisis_speedup} reporta los resultados numéricos del análisis de eficiencia computacional. Los resultados indican que el algoritmo paralelo logra una mejora sustancial en los tiempos de ejecución, con un valor promedio del \emph{speedup} de 25.7 y eficiencia promedio de 0.8 al utilizar 32 recursos de cómputo. Estos valores corresponden a un \emph{speedup} sublineal, pero pueden considerarse como buenos valores de las métricas de eficiencia computacional.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
