@@ -26,8 +26,8 @@ Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibil
 
 \section{Especificación del Algoritmo Genético utilizado}
 
-Se utiliza un algoritmo genético (AG) tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El codigo del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
-las posibes soluciones del problema, generando un hilo de ejecución por cada simulación. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
+Se utiliza un algoritmo genético (AG) tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El código del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
+las posibles soluciones del problema, generando un hilo de ejecución por cada simulación. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]
 	\caption{Algoritmo Genético de Malva. }
@@ -75,7 +75,7 @@ La solución propuesta contempla dos elementos clave de la planificación de sem
 	\label{fig:cromosoma1}
 \end{figure}
 
-Toda la información del cromosoma se guarda y carga en el formato \emph{XML} del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases de los semáforos de una determinada esquina se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla. La etiequeta \emph{duration} especifica la duración de la fase y corresponde a los valores del cromosoma. El tiempo indicado en la etiqueta \emph{offset} especifica el inicio de la fase y será el correspondiente al valor del gen de \emph{offset} en el cromosoma para el cruce de Garzón y Emancipación.
+Toda la información del cromosoma se guarda y carga en el formato \emph{XML} del archivo de configuración de semáforos, que utiliza el simulador SUMO. La Figura \ref{fig:rep_sumo} muestra como se modela la esquina de Garzón y Emancipación en el formato antes mencionado. Para las distintas fases de los semáforos de una determinada esquina se utiliza la etiqueta \emph{phase}, donde \emph{state} contiene información sobre la secuencia de luces. Por ejemplo, la fase \emph{GGGGrrrGGGGrrr} indica la secuencia de luces, \emph{G} indica la luz verde con preferencia, \emph{g} indica la luz verde sin preferencia, \emph{r} la luz roja, \emph{y} luz amarilla. La etiqueta \emph{duration} especifica la duración de la fase y corresponde a los valores del cromosoma. El tiempo indicado en la etiqueta \emph{offset} especifica el inicio de la fase y será el correspondiente al valor del gen de \emph{offset} en el cromosoma para el cruce de Garzón y Emancipación.
 
 
 \begin{figure}[ht]
@@ -87,7 +87,7 @@ Toda la información del cromosoma se guarda y carga en el formato \emph{XML} de
 
 \newpage
 
-El simulador representa en las esquinas (mediante el uso de flechas blancas) la elección de carriles habilitados para los vehículos que transitan por un determinado carril; en el caso de un giro, la flecha apunta hacia donde se encuentra el carril del giro. La Figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador, a la que se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la reprsentacion en SUMO en la Figura \ref{fig:rep_sumo}. Por lo tanto, para el estado \emph{GGGGrrrGGGGrrr} se tiene que: \textit{i)} \emph{GGGG} se corresponde con las flechas 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde con 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde con 8, 9, 10 y 11 y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in situ.
+El simulador representa en las esquinas (mediante el uso de flechas blancas) la elección de carriles habilitados para los vehículos que transitan por un determinado carril; en el caso de un giro, la flecha apunta hacia donde se encuentra el carril del giro. La Figura \ref{fig:sem_numerados} muestra como se modela la esquina de Garzón y Emancipación en el simulador, a la que se le añadieron los números del 1 al 14 para indicar todas las flechas blancas de la esquina y establecer la correspondencia con la representación en SUMO en la Figura \ref{fig:rep_sumo}. Por lo tanto, para el estado \emph{GGGGrrrGGGGrrr} se tiene que: \textit{i)} \emph{GGGG} se corresponde con las flechas 1, 2, 3 y 4, \textit{ii)} \emph{rrr} se corresponde con 5, 6 y 7, \textit{iii)} \emph{GGGG} se corresponde con 8, 9, 10 y 11 y \textit{iv)}\emph{rrr} se corresponde a 12, 13 y 14. Estableciendo esta correspondencia para cada cruce, se modelan las secuencias y duraciones de luces originales de manera que represente lo relevado in-situ.
 
 \begin{figure}[H]
 	\centering
@@ -131,7 +131,7 @@ Se implementaron dos tipos de mutación:
 Ambas mutaciones son aplicadas de acuerdo a una tasa de probabilidad prefijada.
 
 \subsubsection{Selección y reemplazo}
-Se utilizan los operadores y criterios provistos por el AG de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional. Respecto a la política de reemplazo, se utiliza un modelo ``+", en el cual los hijos compiten con los padres por la supervivencia en la siguiente generacion.
+Se utilizan los operadores y criterios provistos por el AG de Malva. La selección de padres se realiza por el método de torneo de tres individuos y la selección de hijos por el método de selección proporcional. Respecto a la política de reemplazo, se utiliza un modelo ``+", en el cual los hijos compiten con los padres por la supervivencia en la siguiente generación.
 
 \subsubsection{Parámetros del algoritmo}
 Los parámetros del algoritmo son: el número de generaciones que se realizan hasta detener el algoritmo, el tamaño de la población que indica la cantidad de individuos incluidos en el AE, la tasa de probabilidad de cruzamiento y la de mutación que se utiliza para determinar cuando aplicar los operadores de cruzamiento y de mutación. Los valores específicos de los parámetros del AE se ajustan en el capítulo 5 donde se realiza el análisis de configuración paramétrica. 

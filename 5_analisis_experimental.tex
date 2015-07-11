@@ -9,7 +9,7 @@ Dada la complejidad del problema, el análisis experimental se realizó en la pl
 
 
 \section{Experimentos de calibración paramétrica del AE}
-Se llevó a cabo un análisis previo para determinar el mejor valor de los parámetros del AE propuesto. Este análisis tiene como objetivo obtener una mejor calidad de resultados. El análisis consistió en determinar valores adecuados para el \emph{tiempo de simulación} de los escenarios planteados en SUMO, el \emph{criterio de parada} y el \emph{tamaño de la población} del AE. Posterioremente, se realizó un ajuste de las \emph{probabilidades de cruzamiento} y de \emph{mutación} en el AE. 
+Se llevó a cabo un análisis previo para determinar el mejor valor de los parámetros del AE propuesto. Este análisis tiene como objetivo obtener una mejor calidad de resultados. El análisis consistió en determinar valores adecuados para el \emph{tiempo de simulación} de los escenarios planteados en SUMO, el \emph{criterio de parada} y el \emph{tamaño de la población} del AE. Posteriormente, se realizó un ajuste de las \emph{probabilidades de cruzamiento} y de \emph{mutación} en el AE. 
 
 %Los parámetros que se ajustan incluyen el \emph{tiempo de simulación} que se refiere al parámetro del simulador SUMO para determinar la duración de la simulación. También se configura el \emph{criterio de parada} que indica el método usado para detener el algoritmo y el \emph{tamaño de la población} que representa la cantidad de individuos de la población utilizada en el AE. Finalmente se ajustan los parámetros de \emph{probabilidad de mutación y probabilidad de cruzamiento}. Estos parámetros serán descritos en detalle en las siguientes secciones.
 
@@ -180,14 +180,14 @@ Este cambio se aplicó en las siguientes intersecciones: \emph{i}) \emph{Islas C
 %\end{itemize}
 
 \section{Resultados}
-Esta sección muestra los resultados obtenidos en la simulación del caso base, y los resultados númericos del AE. El objetivo es comparar la velocidad promedio de ómnibus y vehículos con la realidad actual 
+Esta sección muestra los resultados obtenidos en la simulación del caso base, y los resultados numéricos del AE. El objetivo es comparar la velocidad promedio de ómnibus y vehículos con la realidad actual 
 
 %. Se presenta la simulación del escenario alternativo y la posterior evaluación. %Además se realizan estudios sobre cambios en la función de \emph{fitness} del AE y un breve análisis de la eficiencia computacional.
 
 
 \subsection{Resultados de la simulación del caso base.}
 
-Los resultados de las simulaciones para los diferentes tráficos en la realidad actual, tomada como caso base para comparar los resultados del AE propuesto, se reportan en la Tabla \ref{table:resultado_caso_base}. Los resultados representan la realidad actual del Corredor Garzón: la velocidad promedio en tráfico medio es de 14.59 km/h para los ómnibus y de 28.81 km/h para los vehiculos. Estos valores se corresponden con los que surgen del análisis de datos reales (trazas de GPS de ómnibus) proporcionados por la IMM(14.5 km/h), verificando que el modelo propuesto se aproxima significativamente a la realidad.
+Los resultados de las simulaciones para los diferentes tráficos en la realidad actual, tomada como caso base para comparar los resultados del AE propuesto, se reportan en la Tabla \ref{table:resultado_caso_base}. Los resultados representan la realidad actual del Corredor Garzón: la velocidad promedio en tráfico medio es de 14.59 km/h para los ómnibus y de 28.81 km/h para los vehículos. Estos valores se corresponden con los que surgen del análisis de datos reales (trazas de GPS de ómnibus) proporcionados por la IMM(14.5 km/h), verificando que el modelo propuesto se aproxima significativamente a la realidad.
 
 %En la tabla \ref{table:resultado_caso_base} se pueden ver los resultados obtenidas para las diferentes instancias de tráfico simulado para el caso base. Estos datos representan la realidad actual del Corredor Garzón. Como se aprecia, la velocidad promedio de los ómnibus en tráfico medio es de 14.59 km/h, siendo 14.5 km/h el valor que se obtuvo de analizar los datos reales proporcionados por la IMM, lo que verifica que el modelo se aproxima significativamente a la realidad. En la tabla  \ref{table:resultado_caso_base} el valor de \emph{fitness} se corresponde con la evaluación de la función de \emph{fitness} (Ecuación \ref{eq:funcion_fitness_generica}) utilizando las velocidades de ómnibus y otros vehículos obtenidas para cada tipo de tráfico.
  
@@ -444,7 +444,7 @@ Para estudiar la eficiencia en diferentes contextos, se evalúan nueve ejecucion
 
 Las pruebas fueron realizadas sobre el equipo node40 del Cluster FING, con un procesador AMD Opteron 6272 2.09GHz, 48 GB RAM y 32 núcleos utilizados.
 
-Para evaluar la eficiencia se calcula el \emph{speedup} .El \emph{speedup} (${S_N}$) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores, comparando con el rendimiento al usar un solo procesador (Ecuación \ref{eq:funcion_speedup}). En la definición de ${S_N}$, ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores. El resultado ideal es obtener \emph{speedup} lineal (${S_N}$ = N), pero en la práctica utilizar N procesadores no garantiza una mejora de factor N; lo habitual es obtener un \emph{speedup} menor al ideal o \emph{speedup} sublineal, posibles causas para este comportamiento son: que el procesamiento no sea del todo paralelizable, demoras en las comunicaciones y sincronizaciones, tiempos ociosos, etc.
+Para evaluar la eficiencia se calcula el \emph{speedup}. El \emph{speedup} (${S_N}$) es una métrica que evalúa la mejora de rendimiento de una aplicación paralela al aumentar la cantidad de procesadores, comparando con el rendimiento al usar un solo procesador (Ecuación \ref{eq:funcion_speedup}). En la definición de ${S_N}$, ${T_1}$ es el tiempo de ejecución del algoritmo serial o secuencial, y ${T_N}$ el tiempo del algoritmo ejecutado sobre N procesadores. El resultado ideal es obtener \emph{speedup} lineal (${S_N}$ = N), pero en la práctica utilizar N procesadores no garantiza una mejora de factor N; lo habitual es obtener un \emph{speedup} menor al ideal o \emph{speedup} sublineal, posibles causas para este comportamiento son: que el procesamiento no sea del todo paralelizable, demoras en las comunicaciones y sincronizaciones, tiempos ociosos, etc.
 
 \begin{equation}
 \label{eq:funcion_speedup}
