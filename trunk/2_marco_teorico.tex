@@ -6,7 +6,7 @@ El constante crecimiento del parque automotor ocasiona problemas relacionados co
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación, con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Este problema repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas; además, se genera una exigencia en las vías de tránsito que produce un deterioro mayor de calles y rutas.
 
-Uruguay, y en particular Montevideo, no escapa a la problematica global de la congestion del tráfico. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos en el país desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
+Uruguay, y en particular Montevideo, no escapa a la problematica global de la congestión del tráfico. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos en el país desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
 
 Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, algunos de los cuales no están coordinados \citep{Subrayado2013}.
 
@@ -303,8 +303,7 @@ El criterio de parada indica cuándo debe terminar la fase iterativa del algorit
 
 Los problemas de optimización multiobjetivo trabajan sobre un espacio multidimensional de funciones y no tienen una única solución. Por este motivo, el significado de óptimo cambia. Una solución es un \emph{óptimo de Pareto} si ninguna de las funciones objetivo puede mejorar su valor sin degradar otro de los valores objetivo. Todas estas soluciones son consideradas igualmente buenas, ya que los vectores no se pueden ordenar completamente y representan diferentes valores de compromiso entre las funciones objetivo. Al conjunto de los valores funcionales de los óptimos de Pareto se les llama frente de Pareto.
 
-Existen algoritmos evolutivos para resolver problemas de optimización multiobjetivo. 
-Éstos son los llamados MOEA, por sus siglas en inglés \emph{ MultiObjetive Evolutionary Algorithm}. Sus propósitos son aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir. Para un análisis más detallado de los AE multiobjetivo se recomienda el trabajo de \citet{Deb2001}.
+Existen algoritmos evolutivos para resolver problemas de optimización multiobjetivo. Éstos son los llamados MOEA, por sus siglas en inglés \emph{ MultiObjetive Evolutionary Algorithm}. Sus propósitos son aproximarse al frente de Pareto y lograr obtener una gama de diferentes compromisos entre las funciones a optimizar para luego poder tomar la decisión de cual elegir. Para un análisis más detallado de los AE multiobjetivo se recomienda el trabajo de \citet{Deb2001}.
 
 
 El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema básico de un MOEA, donde se aprecia que existen dos operadores característicos: el operador de diversidad y el operador de asignación de \emph{fitness}. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, mientras que el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
@@ -332,7 +331,7 @@ El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema bás
 	\end{algorithmic}
 \end{algorithm}
 
-Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness}. Estos métodos no reflejan la independencia entre los objetivos y tampoco garantizan una resolución correcta del problema. Un método popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos, que es relativamente sencilla de implementar y adecuada para problemas de optimización con no más de tres funciones objetivo y donde el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. En este método, el \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
+Los MOEA se pueden clasificar por el método de asignación de \emph{fitness}. Por un lado se tienen los que no son basados en Pareto, que utilizan métodos sencillos de asignación de \emph{fitness}. Estos métodos no reflejan la independencia entre los objetivos y tampoco garantizan una resolución correcta del problema. Un método popular entre los que no utilizan dominancia de Pareto es la combinación lineal de los objetivos, que es relativamente sencilla de implementar y adecuada para problemas de optimización con no más de tres funciones objetivo y donde el frente de Pareto del problema es convexo \citep{coello2002evolutionary}. En este caso el problema es tratado como una optimización monoobjetivo, no reflejando el carácter multiobjetivo.  En este método, el \emph{fitness} se calcula como una suma ponderada, con los pesos fijados a priori, de acuerdo a la expresión en la Ecuación \ref{eq:funcion_fitness_generica}.
 
 \begin{equation}
 \label{eq:funcion_fitness_generica}
@@ -341,7 +340,7 @@ F(x) = \sum_{i=1}^{n}{w_i}{f_i}(x)
 
 %El enfoque de agregación ha sido utilizado en otros trabajos de sincronización de semáforos (cuáles?) y también ha sido utilizado en la resolución de problemas de optimización multiobjetivo relacionados con el manejo inteligente de problemas de tránsito en ciudades modernas (smart cities).
 
-Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto al asignar el fitness.  
+Por otro lado, se encuentran los métodos de asignación de fitness que utilizan explícitamente la dominancia de Pareto y garantizan la  independencia entre los objetivos del problema.   
 
 \subsection{Algoritmos evolutivos paralelos}
 Resolver problemas complejos suelen insumir gran cantidad de tiempo, por lo que paralelizar el AE es útil para lograr tiempos de ejecución menores. Pero éste no es el único objetivo que se puede conseguir con un AE paralelo, entre otros existen: encontrar soluciones alternativas al mismo problema, búsqueda más eficiente aún sin \emph{hardware} paralelo, facilidad en la cooperación con otros métodos y búsqueda paralela de múltiples puntos en el espacio \citep{Alba2002}. 

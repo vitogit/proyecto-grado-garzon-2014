@@ -22,10 +22,10 @@
 \contentsline {subsubsection}{Criterio de reemplazo}{18}{section*.21}
 \contentsline {subsubsection}{Criterio de parada}{19}{section*.22}
 \contentsline {subsection}{\numberline {2.5.2}Algoritmos evolutivos multiobjetivo}{19}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Algoritmos evolutivos paralelos}{20}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.3}Algoritmos evolutivos paralelos}{21}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Implementaci\IeC {\'o}n y entornos de desarrollo}{21}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}Simulaci\IeC {\'o}n de tr\IeC {\'a}fico}{22}{section.2.6}
-\contentsline {section}{\numberline {2.7}Trabajos relacionados}{24}{section.2.7}
+\contentsline {section}{\numberline {2.6}Simulaci\IeC {\'o}n de tr\IeC {\'a}fico}{23}{section.2.6}
+\contentsline {section}{\numberline {2.7}Trabajos relacionados}{25}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Resumen}{29}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}Estrategia de resoluci\IeC {\'o}n}{31}{chapter.3}
 \contentsline {section}{\numberline {3.1}Modelo del problema }{31}{section.3.1}
