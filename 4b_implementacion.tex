@@ -4,11 +4,11 @@ Este capítulo detalla la implementación del AE desarrollado. Comienza describi
 
 \section{Implementación: Biblioteca Malva}
 
-Dada la complejidad del problema, se contempló desde el inicio del proyecto la utilización de un \emph{framework} para el desarrollo del AE. De esta forma, se facilita el desarrollo y la implementación de una solución robusta y flexible. Como se detalló en el marco teórico, existen varias opciones disponibles de \emph{framework} para el desarrollo de AEs. Por las particularidades del problema planteado, existen ciertos requerimientos a la hora de seleccionar un \emph{framework}, entre los que se destacan:
+Dada la complejidad del problema, se contempló desde el inicio del proyecto la utilización de un \emph{framework} para el desarrollo del AE. De esta forma, se facilita el desarrollo y la implementación de una solución robusta y flexible. Como se detalló en el marco teórico, existen varias opciones disponibles de \emph{framework} para el desarrollo de algoritmos evolutivos. Por las particularidades del problema planteado, existen ciertos requerimientos a la hora de seleccionar un \emph{framework}, entre los que se destacan:
 
 \begin{itemize}
 	\item Código abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no existan costos económicos asociados. Además, es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
-	\item AG: El \emph{framework} debe facilitar el desarrollo de un AG ya que es la base en la que se sustenta el proyecto.
+	\item Algoritmo Genético: El \emph{framework} debe facilitar el desarrollo de un AG ya que es la base en la que se sustenta el proyecto.
 	\item Algoritmo paralelo: La complejidad del problema y de las instancias que se estudian, justifican la necesidad de que el \emph{framework} incluya la opción de ejecución en paralelo para reducir los tiempos de ejecución. Si no cuenta con esta funcionalidad nativa, es deseable que al menos exista la posibilidad de modificar el código base para agregarla.
 	\item Plataforma: Es requerido que el \emph{framework} se pueda ejecutar en la plataforma de computación de alto desempeño Cluster FING cuyo sistema operativo es Linux CentOs, ya que es donde se realiza el análisis experimental del trabajo. 
 	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará positivamente que el \emph{framework} cuente con documentación accesible, ejemplos de código desarrollado, y casos de éxito que lo utilicen.
