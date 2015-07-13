@@ -8,7 +8,7 @@ Dada la complejidad del problema, se contempló desde el inicio del proyecto la 
 
 \begin{itemize}
 	\item Código abierto y gratuito: Al ser un proyecto de investigación de índole académico es conveniente que no existan costos económicos asociados. Además, es importante que se cuente con el código abierto con el fin de introducir modificaciones en el código base o corregir errores.
-	\item Algoritmo genético: El \emph{framework} debe facilitar el desarrollo de un algoritmo genético ya que es la base en la que se sustenta el proyecto.
+	\item AG: El \emph{framework} debe facilitar el desarrollo de un AG ya que es la base en la que se sustenta el proyecto.
 	\item Algoritmo paralelo: La complejidad del problema y de las instancias que se estudian, justifican la necesidad de que el \emph{framework} incluya la opción de ejecución en paralelo para reducir los tiempos de ejecución. Si no cuenta con esta funcionalidad nativa, es deseable que al menos exista la posibilidad de modificar el código base para agregarla.
 	\item Plataforma: Es requerido que el \emph{framework} se pueda ejecutar en la plataforma de computación de alto desempeño Cluster FING cuyo sistema operativo es Linux CentOs, ya que es donde se realiza el análisis experimental del trabajo. 
 	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará positivamente que el \emph{framework} cuente con documentación accesible, ejemplos de código desarrollado, y casos de éxito que lo utilicen.
@@ -24,9 +24,9 @@ Como se explicó anteriormente, Malva \citep {Malva} surge como una variante del
 Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases \emph{requeridas} que el usuario deberá modificar para adaptarlo a su problema, y clases \emph{provistas} que incluyen todos los aspectos internos del esqueleto siendo  independientes del problema particular. Entre los algoritmos provistos se encuentran el AG, el algoritmo CHC \citep{CHC} y otros.
 
 
-\section{Especificación del Algoritmo Genético utilizado}
+\section{Especificación del AG utilizado}
 
-Se utiliza un algoritmo genético (AG) tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El código del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
+Se utiliza un AG tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El código del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
 las posibles soluciones del problema, generando un hilo de ejecución por cada simulación. El siguiente esquema describe el funcionamiento del algoritmo utilizado:
 
 \begin{algorithm}[H]

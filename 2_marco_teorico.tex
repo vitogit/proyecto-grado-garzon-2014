@@ -80,7 +80,7 @@ Analizando los puntos presentados en el standard como recomendaciones para la im
 	\item Cobrar el boleto fuera del ómnibus: uno de los factores más importantes para mejorar la experiencia del usuario, así como también la velocidad en zonas de mucha carga, es que existan al menos algunas estaciones (no sólo paradas de ómnibus) donde el boleto se cobre (o se use tarjeta de transporte) al entrar a la estación.
 	\item Ofrecer servicios expresos o limitados: una forma de mejorar las velocidades de operación consiste en crear líneas que no se detengan en todas las paradas (evitando aquellas paradas con menor demanda de pasajeros) y poner más ómnibus en la calle.
 	\item Instrumentar un carril extra para adelantarse en paradas: este carril resulta crítico en sistemas de transporte colectivo de gran porte para poder manejar los servicios expresos. En sistemas de baja demanda es una buena inversión y en el caso del Corredor Garzón podría permitir que los servicios suburbanos funcionaran durante todo el día por el corredor, mejorando así el transporte público y privado.
-	\item Establecer un mínimo de distancia entre paradas e intersecciones: según el standard, la mínima distancia entre la intersección y la parada es de 26 m, pero idealmente deberían ser 40 m para evitar retrasos. En el Corredor Garzón las paradas están sobre las intersecciones y hay varias paradas donde se detiene más de una línea de ómnibus. Esto puede ocasionar problemas, dado que si uno o dos ómnibus sólo esperan por el semáforo en rojo, los demás que lleguen generarán una fila aguardando para detenerse en la parada y así poder levantar o dejar pasajeros y posiblemente al llegar al cruce ya no los habilitará la luz verde que dejo pasar a los primeros coches, debiendo tener que esperar nuevamente.
+	\item Establecer un mínimo de distancia entre paradas e intersecciones: según el standard, la mínima distancia entre la intersección y la parada es de 26 m, pero idealmente deberían ser 40 m para evitar retrasos. En el Corredor Garzón las paradas están sobre las intersecciones y hay varias paradas donde se detiene más de una línea de ómnibus. Esto puede ocasionar problemas, dado que si uno o dos ómnibus sólo esperan por el semáforo en rojo, los demás que lleguen generarán una fila aguardando para detenerse en la parada y así poder levantar o dejar pasajeros y posiblemente al llegar al cruce ya no los habilitará la luz verde que dejó pasar a los primeros coches, debiendo tener que esperar nuevamente.
 	\item Tener estaciones centrales o conexión entre paradas: la ausencia de paradas en el centro de los dos carriles de ómnibus hace que el diseño tenga una construcción más cara (hay que hacer dos paradas). La no existencia de una conexión física para que el pasajero pueda cambiar de recorrido sin tener que cruzar la calle, lo hace menos eficiente y más inseguro.
 	\item Contar con una distancia entre estaciones que cumpla el standard:  las paradas deberían estar a una distancia de entre 300 m y 800 m, siendo 450 m la distancia óptima tanto para el pasajero como para el transporte. Si bien el Corredor Garzón cumple la distancia óptima en promedio (464 m), individualmente existen casos como las cuatro paradas que se encuentran entre Emancipación y Avenida Islas Canarias cuyas distancias son menores al mínimo sugerido por el standard.
 	\item Utilizar varias puertas para el ingreso/egreso de pasajeros en los ómnibus: con el fin de mejorar el flujo y volumen de pasajeros, sería conveniente contar con dos puertas anchas o al menos tres puertas comunes.
@@ -149,12 +149,12 @@ Se han desarrollado enfoques de algoritmos de optimización que aplican estos co
 
 	\item Estrategias de Evolución: Propuesto por \citet{Ingo1971}, fue originalmente presentado como un método de optimización utilizando individuos que codifican números reales en problemas relacionados al diseño de ingeniería. Su característica principal es que utilizan el operador de mutación como motor para la evolución. Sin embargo, modelos más recientes agregan otro tipo de operadores, incluyendo cruzamiento.
 	\item Programación genética: Intenta generar un programa de computación para resolver una tarea específica aplicando técnicas evolutivas. Cada individuo puede ser un programa que es representado en forma de árbol, donde cada nodo del árbol tiene una operación y los nodos terminales un operando, de esta manera se facilita la evaluación de expresiones matemáticas. La función de aptitud se refiere a qué tan cerca de resolver la tarea se encuentra el individuo \citep{Koza1992}.
-	\item Algoritmo Genético: Es considerado el más popular de los AE, dado su versatilidad a la hora de resolver problemas de optimización. El operador de cruzamiento es el principal operador evolutivo, siendo el de mutación un operador secundario. Estos operadores se aplican sobre la población de soluciones potenciales en cada generación. En la siguiente sección, se presentan en detalle las características de los algoritmos genéticos (AG), que es la técnica que se utiliza en este trabajo para resolver el problema de sincronización de semáforos.
+	\item Algoritmo Genético (AG): Es considerado el más popular de los AE, dado su versatilidad a la hora de resolver problemas de optimización. El operador de cruzamiento es el principal operador evolutivo, siendo el de mutación un operador secundario. Estos operadores se aplican sobre la población de soluciones potenciales en cada generación. En la siguiente sección, se presentan en detalle las características de los algoritmos genéticos, que es la técnica que se utiliza en este trabajo para resolver el problema de sincronización de semáforos.
 	
 \end{itemize}
 
 \subsection{Algoritmos Genéticos}
-El Algoritmo \ref{alg:algoritmo_genetico_simple} muestra la formulación básica de un algoritmo genético (AG) que se basa en el esquema general de un AE. Comienza con una población inicial de individuos a los cuales en cada generación se le aplican operadores de cruzamiento y mutación, seleccionando a los mejores en base a su aptitud para resolver el problema. El operador de cruzamiento guía la búsqueda, mientras el operador de mutación se encarga de aportar diversidad a la exploración. Por lo tanto, el objetivo es que con el paso de las generaciones se obtengan mejores soluciones (como se muestra en la Figura \ref{fig:fitness_generaciones}) hasta detenerse usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los AE.
+El Algoritmo \ref{alg:algoritmo_genetico_simple} muestra la formulación básica de un AG que se basa en el esquema general de un AE. Comienza con una población inicial de individuos a los cuales en cada generación se le aplican operadores de cruzamiento y mutación, seleccionando a los mejores en base a su aptitud para resolver el problema. El operador de cruzamiento guía la búsqueda, mientras el operador de mutación se encarga de aportar diversidad a la exploración. Por lo tanto, el objetivo es que con el paso de las generaciones se obtengan mejores soluciones (como se muestra en la Figura \ref{fig:fitness_generaciones}) hasta detenerse usando un criterio de parada, ya sea el número de iteraciones o cuando ya no se puede mejorar más la solución. Los trabajos de \citet{Goldberg1989} y \citet{Mitchell1996} brindan más detalles sobre los AE.
 
 \subsubsection{Esquema del algoritmo}
 
@@ -189,7 +189,7 @@ Un individuo es una codificación de una solución que resuelve el problema. La 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=10cm]{Figures/fitness_generaciones}
-	\caption[Esquema de la evolución del valor del fitness en un algoritmo evolutivo ]{Esquema de la evolución del valor del \emph{fitness} en un algoritmo evolutivo a través de las generaciones.}
+	\caption[Esquema de la evolución del valor del fitness en un algoritmo evolutivo ]{Esquema de la evolución del valor del \emph{fitness} en un AE a través de las generaciones.}
 	\label{fig:fitness_generaciones}
 \end{figure}
 
@@ -216,7 +216,7 @@ En general los AG codifican las soluciones utilizando un vector de números bina
 
 
 \subsubsection{Función de Evaluación} 
-La función de evaluación indica qué tan bueno es un individuo para resolver el problema en cuestión, utilizando un valor conocido como \emph{fitness}, por lo que también es llamada función de \emph{fitness}. Este valor se utiliza para definir cuales son los mejores individuos y de esta forma guiar la exploración hacia la región que incluya las mejores soluciones. En general, la función de \emph{fitness} es la que insume la mayor cantidad de tiempo del algoritmo genético, en comparación con los demás operadores.
+La función de evaluación indica qué tan bueno es un individuo para resolver el problema en cuestión, utilizando un valor conocido como \emph{fitness}, por lo que también es llamada función de \emph{fitness}. Este valor se utiliza para definir cuales son los mejores individuos y de esta forma guiar la exploración hacia la región que incluya las mejores soluciones. En general, la función de \emph{fitness} es la que insume la mayor cantidad de tiempo del AG, en comparación con los demás operadores.
 
 \subsubsection{Operador de Selección}
 Existen diversos operadores de selección, cuya función es mantener las mejores características de los individuos en las siguientes generaciones. Entre ellos se encuentran:
@@ -308,7 +308,7 @@ Existen algoritmos evolutivos para resolver problemas de optimización multiobje
 El Algoritmo \ref{alg:algoritmo_genetico_multiobjetivo} describe el esquema básico de un MOEA, donde se aprecia que existen dos operadores característicos: el operador de diversidad y el operador de asignación de \emph{fitness}. El primero se aplica para evitar la convergencia a un sector en particular del frente de Pareto, mientras que el segundo intenta brindar mayor chance de perpetuar a los individuos con mejores características.
 
 \begin{algorithm}[ht]
-	\caption[Algoritmo evolutivo multiobjetivo]{Algoritmo evolutivo multiobjetivo. En negrita se indican las diferencias con el algoritmo evolutivo genérico.}
+	\caption[Algoritmo Evolutivo multiobjetivo]{AE multiobjetivo. En negrita se indican las diferencias con el AE genérico.}
 	\label{alg:algoritmo_genetico_multiobjetivo}
 	\begin{algorithmic} [1] 
 		{
@@ -394,7 +394,7 @@ Se considera que las simulaciones microscópicas se aproximan más a la realidad
 En la actualidad existe una gran variedad de simuladores disponibles, que se encuentran en las diferentes categorías que fueron mencionadas anteriormente. A continuación se ofrece una breve descripción de algunos de los simuladores presentados en el trabajo de \citet{review_trafico} que presenta una lista detallada de simuladores de tráfico.
 \begin{itemize}
 	\item SUMO: Simulador abierto, portable y microscópico, diseñado para soportar grandes redes de tránsito. Es de los más populares, y utiliza una serie de archivos de configuración para representar las rutas, los vehículos y el tráfico \citep{SUMO}.
-	\item QuadStone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de tránsito y transporte.
+	\item Quadstone Paramics Modeller: Simulador modular y microscópico capaz de modelar un amplio rango de problemas de tránsito y transporte.
 	\item Aimsun: Paquete de simulación que integra varios tipos de modelos de transporte, por ejemplo herramientas para el tráfico estático y un simulador microscópico
 	\item Trafficware SimTraffic: Es un simulador que forma parte del paquete \emph{Trafficware's Syncro Studio}, que cuenta con una herramienta para la sincronización de semáforos.
 	\item Corsim Trafvu: Parte del paquete \emph{Tsis Corsim}, presenta las animaciones y los gráficos estáticos para las redes de tráfico utilizando \emph{Corsim} como entrada.
@@ -405,7 +405,7 @@ Cabe destacar que de los cinco simuladores de tráfico mencionados anteriormente
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figures/simuladores}
-	\caption[]{Algunos simuladores de tráfico. (A) Sumo, (B) QuadStone Paramics, (C) Aimsun, (D) Trafficware SimTraffic}
+	\caption[]{Algunos simuladores de tráfico. (A) Sumo, (B) Quadstone Paramics, (C) Aimsun, (D) Trafficware SimTraffic}
 	\label{fig:simuladores}
 \end{figure}
 
