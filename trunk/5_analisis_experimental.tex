@@ -288,11 +288,11 @@ Para determinar cuales son los cambios que logran mejores rendimientos se elabor
 	\centering
 	\begin{tabular}{lrrrr }
 		\hline
-		\textit{modificación del escenario}&
-		$vbp(km/h)$& 
-		$vvp(km/h)$ & 
+		\textit{modificación del escenario} &
+		\textit{$vpb(km/h)$} & 
+		\textit{$vpv(km/h)$} & 
 		\emph{fitness} &
-		mejora(\%)
+		\textit{mejora(\%)}
 		\\ 
 		\hline
 		caso base & 14.59  & 28.81& 12.05 & -\\
@@ -309,14 +309,14 @@ Una vez que se aplican todos las modificaciones sobre el escenario, se realiza u
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1}
 	\renewcommand{\tabcolsep}{12pt}	
-	\caption[Mejoras del escenario alternativo.]{Mejoras del escenario alternativo  para las velocidades promedio de los ómnibus \textit{(vpb)} y de otros vehiculos \textit{(vpv)} en el escenario alternativo para distintos tipos de tráficos }
+	\caption[Mejoras del escenario alternativo.]{Mejoras del escenario alternativo para las velocidades promedio de los ómnibus \textit{(vpb)} y de otros vehiculos \textit{(vpv)} en el escenario alternativo para distintos tipos de tráficos }
 	\label{table:mejoras_trafico_alternativo}
 	\centering
 	\begin{tabular}{lrrrr }
 		\toprule
 		\textit{escenario}&
-		$vbp(km/h)$& 
-		$vvp(km/h)$ & 
+		\textit{$vpb(km/h)$}& 
+		\textit{$vpv(km/h)$} & 
 		\textit{fitness} &
 		\textit{mejora } \newline \textit{fitness}(\%)
 		\\ 
@@ -348,8 +348,8 @@ Los resultados obtenidos se reportan en la Tabla \ref{table:mejoras_trafico_alte
 	\begin{tabular}{lrrrrrrr}
 		\hline 
 		\textit{instancia}& 
-		$vbp(km/h)$& 
-		$vpv(km/h)$&
+		\textit{$vpb(km/h)$}& 
+		\textit{$vpv(km/h)$}&
 		\multicolumn{2}{c}{\emph{fitness}}&  & 
 		\multicolumn{2}{c}{mejora \emph{fitness} (\%)}\\  \cline{4-5} \cline{7-8}&     &     & \multicolumn{1}{c}{promedio$\pm\sigma$} & \multicolumn{1}{c}{mejor} &  & \multicolumn{1}{c}{promedio} & \multicolumn{1}{c}{mejor} \\ \hline
 
@@ -373,7 +373,7 @@ Al aplicar el criterio de significancia estadística para comprobar que la mejor
 
 \subsection{Variación de la función de \emph{fitness}}
 
-La función de \emph{fitness} propuesta (Ecuación \ref{eq:funcion_fitness}) utiliza los pesos \emph{$w_1$ = $w_2$ = 1}, lo que representa un balance equitativo para ómnibus y vehículos. Estos pesos pueden ser modificados en función de lo que se necesite de acuerdo a la realidad de la zona estudiada, por lo que se realizaron experimentos con dos configuraciones de pesos para comparar como varían las velocidades cuando se da más prioridad a un tipo de vehículo sobre el otro.
+La función de \emph{fitness} propuesta (Ecuación \ref{eq:funcion_fitness}) utiliza los pesos \emph{$w_1$ = $w_2$ = 1}, lo que representa un balance equitativo para ómnibus y vehículos. Estos pesos pueden ser modificados en función de lo que se necesite de acuerdo a la realidad de la zona estudiada, por lo que se realizaron experimentos con dos configuraciones de pesos para comparar como varían las velocidades cuando se otorga más prioridad a un tipo de vehículo sobre el otro.
 
 %Por un cruce de Garzón pasan cada hora:
 %70 ómnibus , si aproximamos con 23 personas= 1610 personas por hora
@@ -382,7 +382,7 @@ La función de \emph{fitness} propuesta (Ecuación \ref{eq:funcion_fitness}) uti
 
 
 \subsubsection{Prioridad para los ómnibus}
-Este caso dá más prioridad a los ómnibus, y se justifica por el hecho que uno de los objetivos buscados por la IMM es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana. La premisa es que al mejorar la duración del viaje en ómnibus en relación al viaje en auto por el corredor, las personas optarán por el transporte colectivo. Se experimentó cambiando los pesos de la función de \emph{fitness} con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
+Este caso brinda más prioridad a los ómnibus, y se justifica por el hecho que uno de los objetivos buscados por la IMM es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana. La premisa es que al mejorar la duración del viaje en ómnibus en relación al viaje en auto por el corredor, las personas optarán por el transporte colectivo. Se experimentó cambiando los pesos de la función de \emph{fitness} con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
 
 \subsubsection{Prioridad a otros vehículos}
