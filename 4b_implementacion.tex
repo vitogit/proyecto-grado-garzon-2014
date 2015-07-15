@@ -11,6 +11,8 @@ Dada la complejidad del problema, se contempló desde el inicio del proyecto la 
 	\item Algoritmo Genético: El \emph{framework} debe facilitar el desarrollo de un AG ya que es la base en la que se sustenta el proyecto.
 	\item Algoritmo paralelo: La complejidad del problema y de las instancias que se estudian, justifican la necesidad de que el \emph{framework} incluya la opción de ejecución en paralelo para reducir los tiempos de ejecución. Si no cuenta con esta funcionalidad nativa, es deseable que al menos exista la posibilidad de modificar el código base para agregarla.
 	\item Plataforma: Es requerido que el \emph{framework} se pueda ejecutar en la plataforma de computación de alto desempeño Cluster FING cuyo sistema operativo es Linux CentOs, ya que es donde se realiza el análisis experimental del trabajo. 
+	\newline
+	\newline
 	\item Confiabilidad: Es deseable que el \emph{framework} sea lo suficientemente estable como para tener confianza de que el algoritmo funcionará de manera correcta. Se valorará positivamente que el \emph{framework} cuente con documentación accesible, ejemplos de código desarrollado, y casos de éxito que lo utilicen.
 	\item Lenguaje: Es deseable que el \emph{framework} esté desarrollado en C++ o Java, por la experiencia que el equipo de desarrollo cuenta en estos lenguajes. 
 	\item Multiobjetivo: Es deseable que el \emph{framework} soporte algoritmos multiobjetivo pero no requerido, ya que la función que se quiere implementar es sencilla y puede usarse una agregación lineal de los objetivos.
@@ -23,7 +25,7 @@ Como se explicó anteriormente, Malva \citep {Malva} surge como una variante del
 
 Malva utiliza el lenguaje C++, con el objetivo de brindar modularidad y flexibilidad. Los esqueletos se ofrecen como un conjunto de clases \emph{requeridas} que el usuario deberá modificar para adaptarlo a su problema, y clases \emph{provistas} que incluyen todos los aspectos internos del esqueleto siendo  independientes del problema particular. Entre los algoritmos provistos se encuentran el AG, el algoritmo CHC \citep{CHC} y otros.
 
-
+\newpage
 \section{Especificación del AG utilizado}
 
 Se utiliza un AG tradicional \citep{Goldberg1989} provisto por la biblioteca de optimización Malva \citep{Malva}, implementada en C++. El código del AG fue modificado para incluir las características del problema a resolver y para proveer la funcionalidad de ejecución en paralelo siguiendo el modelo maestro-esclavo para evaluar
@@ -96,6 +98,10 @@ El simulador representa en las esquinas (mediante el uso de flechas blancas) la 
 	\label{fig:sem_numerados}
 \end{figure}
 
+
+\newpage
+
+
 \subsection{Generación de la población inicial}
 
 Para inicializar la población se toma como referencia la configuración obtenida a partir de los datos de la realidad, recolectadas en el relevamiento realizado. Luego, para cada cruce se varían las duraciones de las fases de manera aleatoria entre un rango de valores configurable. Además, la fase inicial se selecciona aleatoriamente entre la cantidad de fases del cruce.
@@ -135,6 +141,8 @@ Se utilizan los operadores y criterios provistos por el AG de Malva. La selecci�
 
 \subsubsection{Parámetros del algoritmo}
 Los parámetros del algoritmo son: el número de generaciones que se realizan hasta detener el algoritmo, el tamaño de la población que indica la cantidad de individuos incluidos en el AE, la tasa de probabilidad de cruzamiento y la de mutación que se utiliza para determinar cuando aplicar los operadores de cruzamiento y de mutación. Los valores específicos de los parámetros del AE se ajustan en el capítulo 5 donde se realiza el análisis de configuración paramétrica. 
+
+\newpage
 
 \section{Modelo de paralelismo e implementación}
 
