@@ -2,13 +2,11 @@
 Este capítulo aborda el marco teórico necesario para comprender el desarrollo de los capítulos posteriores. Se analiza el problema del tráfico en general y las soluciones propuestas para manejarlo, incluyendo la construcción de corredores exclusivos para el transporte público. En este contexto, se presenta la descripción del Corredor Garzón y sus problemas. Luego, se presentan los simuladores de tráfico y la teoría detrás de los algoritmos evolutivos. Para finalizar, se incluye un relevamiento de trabajos relacionados para mostrar y comentar otras variantes del problema y soluciones propuestas en la literatura del área.
 \section{Problema del tránsito vehicular}
 
-El constante crecimiento del parque automotor ocasiona problemas relacionados con las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas.
+El constante crecimiento del parque automotor ocasiona problemas relacionados con las congestiones vehiculares que afectan la calidad de vida de las personas \citep{Cepal2003}. Este problema tiene un gran impacto en el desarrollo de las ciudades, por lo que es un componente principal en los planes estratégicos para el crecimiento de las mismas. 
 
 La congestión ocasiona una progresiva merma de la velocidad promedio de circulación, con la consecuencia del incremento en la duración de los viajes y del consumo de combustible. Este problema repercute en la contaminación atmosférica y sonora que impacta directamente en la salud de las personas; además, se genera una exigencia en las vías de tránsito que produce un deterioro mayor de calles y rutas.
 
-Uruguay, y en particular Montevideo, no escapa a la problemática global de la congestión del tráfico. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos en el país desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}.
-
-Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, algunos de los cuales no están coordinados \citep{Subrayado2013}.
+Uruguay, y en particular Montevideo, no escapa a la problemática global de la congestión del tráfico. El aumento del parque automotor en la capital del país está en ascenso constante desde el 2005 \citep{INE2014}, y según proyecciones el crecimiento seguiría en un promedio de 4.5\% anual hasta el 2020 \citep{BBVA2013}. Este crecimiento viene de la mano con el sostenido aumento de las ventas de vehículos en el país desde el 2003 como se aprecia en la Figura \ref{fig:ventas_autos}. Los expertos indican que la situación de congestión ya está instalada en la ciudad y la infraestructura vial no acompasó este crecimiento. Montevideo es la ciudad con más semáforos por automóvil en Latinoamérica, con más de 620 cruces semaforizados, algunos de los cuales no están coordinados \citep{Subrayado2013}.
 
 \begin{figure}[ht]
 	\centering
@@ -17,7 +15,7 @@ Los expertos indican que la situación de congestión ya está instalada en la c
 	\label{fig:ventas_autos}
 \end{figure}
 
-En un contexto global, el crecimiento en la circulación de automóviles provoca que disminuya el nivel de aceptación del transporte público, cuyo servicio en general es ineficiente. Para resolver este problema las autoridades suelen optar por instrumentar sistemas de transporte costosos como los \emph{metros}, pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
+En un contexto global, el aumento en la circulación de automóviles provoca que disminuya el nivel de aceptación del transporte público, cuyo servicio en general es ineficiente. Para resolver este problema, las autoridades suelen instrumentar sistemas de transporte costosos como los \emph{metros}, pero se ha demostrado que existen otras opciones viables como el BRT (Bus Rapid Transit / ómnibus de tránsito rápido)\citep{BRT_Dial}.
 
 En el caso de la ciudad de Montevideo, para solucionar este problema se está implementando el Plan de Movilidad Urbana \citep{PlanMovilidad}, con el objetivo de mejorar la eficiencia del transporte público y democratizar el acceso al mismo. El sistema de transporte está inspirado en un BRT, con la construcción de varios corredores exclusivos en la ciudad. En la siguiente sección se presenta más información sobre los BRT, corredores urbanos y en particular el Corredor Garzón.
 
@@ -483,7 +481,7 @@ Para el análisis experimental se obtienen los resultados iniciales simulando 64
 Este trabajo desarrolla un AG que intenta optimizar los tiempos de las luces de los semáforos para lograr mejorar el tráfico vehicular en un escenario simple de una intersección. El cromosoma representa los tiempos de las luces verdes, mientras que la función de \emph{fitness} se calcula teniendo en cuenta el largo de las colas generadas por los vehículos en las intersecciones. La ejecución de la simulación utiliza un tiempo fijo de 600 segundos por generación, sin embargo no se describe el tipo de simulador utilizado. El análisis experimental compara los resultados de la aplicación del AG cuando el escenario tiene en cuenta un flujo continuo de vehículos, y cuando no. Entre las conclusiones del trabajo se indica que la optimización de las luces de los semáforos utilizando un AG es una buena opción para resolver el problema de la congestión del tráfico.	
 \end{item}	
 
-
+\newpage
 \begin{item}
 \bibentry{Montana1996}
 
@@ -507,6 +505,7 @@ El trabajo propone el desarrollo de un AE donde cada individuo representa un sis
 
 \end{item}	
 
+\newpage
 \begin{item}
 \bibentry{Rouphail2000}
 
