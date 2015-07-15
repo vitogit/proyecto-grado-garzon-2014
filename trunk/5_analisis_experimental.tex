@@ -1,5 +1,6 @@
 \chapter{Análisis experimental}
-Este capítulo presenta la evaluación experimental del AE multiobjetivo propuesto para resolver el problema de sincronización de semáforos en el Corredor Garzón. Se describen las instancias del problema y la plataforma de ejecución utilizada en la evaluación experimental. A continuación se estudia la configuración paramétrica del AE con el objetivo de obtener una mejor calidad de resultados, se describen los experimentos de validación y se reportan los resultados numéricos. Finalmente se ofrece un breve análisis de la eficiencia computacional del AE propuesto.
+Este capítulo presenta la evaluación experimental del AE multiobjetivo propuesto para resolver el problema de sincronización de semáforos en el Corredor Garzón. Se describe la plataforma de ejecución utilizada en la evaluación experimental y se estudia la configuración paramétrica del AE con el objetivo de obtener una mejor calidad de resultados, A continuación se describen los escenarios utilizados en la evaluación del AE y  los experimentos de validación, reportando los resultados numéricos. Finalmente se ofrece un breve análisis de la eficiencia computacional del AE propuesto.
+
 
 \section{Plataforma de ejecución y desarrollo}
 
@@ -15,9 +16,12 @@ Se llevó a cabo un análisis previo para determinar el mejor valor de los pará
 
 Los experimentos de ajuste paramétrico se realizaron sobre tres escenarios de tráfico: \emph{i}) \emph{tráfico bajo}, con 30 ómnibus y 500 vehículos; \emph{ii}) \emph{tráfico medio}, con 60 ómnibus y 1000 vehículos; y \emph{iii}) \emph{tráfico alto}, con 120 ómnibus y 2000 vehículos. Estos escenarios no incluyen datos recabados de la realidad (como el tráfico vehicular o la frecuencia de los ómnibus), para no ajustar los parámetros a un caso particular.
 
-En el ajuste paramétrico los primeros parámetros que se definen son: el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan las pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación buscando los valores con los cuales el AE obtiene una mejor calidad de resultados.
 
-%La plataforma Cluster FING donde se desarrolla el análisis experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
+
+En el ajuste paramétrico, los primeros parámetros que se definen son: el tiempo de simulación, el criterio de parada y el tamaño de población. Luego de establecidos los valores para los parámetros mencionados, se realizan pruebas para todas las combinaciones de probabilidad de cruzamiento y mutación, buscando los valores con los cuales el AE obtiene una mejor calidad de resultados.
+
+
+%La plataforma Cluster FING donde se desarrolla el 	experimental permite disponer tanto de la métrica del tiempo real que dura la ejecución, así como también el tiempo secuencial, es decir la suma del tiempo de procesamiento de todos los procesadores involucrados en la evaluación del algoritmo. Cuando se realizan comparaciones en los tiempos de ejecución se utiliza el tiempo secuencial que es independiente de la cantidad de procesadores utilizados en las pruebas. 
 
 %\subsection{Pesos de la función de fitness}
 
@@ -145,6 +149,8 @@ Los cambios propuestos para el escenario alternativo incluyen la eliminación de
 
 \subsubsection{Eliminación de paradas}
 Se consideraron eliminar paradas que cumplieran con las siguientes características: que no estuvieran próximas a una calle principal y que existiera otra parada cercana para no afectar a los pasajeros realizando un traslado excesivo.  Se seleccionaron solamente dos paradas para que su eliminación no tuviera un impacto negativo en el funcionamiento diario del Corredor y que cumplieran los criterios mencionados anteriormente. Las paradas elegidas están ubicadas en las intersecciones de Garzón con las calles Ariel y Casavalle.
+
+\newpage
 
 \subsubsection{Eliminación de pasajes peatonales}
 En la actualidad, existen en el corredor Garzón tres pasajes peatonales con semáforos que detienen el tráfico. El objetivo buscado al proponer su eliminación es aumentar la velocidad promedio de los vehículos circulantes. Dos de los pasajes peatonales controlan el flujo peatonal de las esquinas en la Plaza Vidiella y Camino Besnes e Irigoyen (sin pulsador en funcionamiento). En el escenario alternativo estos dos pasajes fueron cambiados por una señalización de {PARE} en la calle transversal al corredor Garzón. El tercer pasaje es netamente peatonal y se encuentra ubicado frente a la Facultad de Agronomía, entre las calles Millán y Orticochea, el cual fue eliminado en el escenario alternativo. Una opción para no eliminar físicamente los pasajes peatonales y mantener los resultados obtenidos, es implementar el pasaje peatonal mediante puentes por encima del corredor Garzón.
@@ -304,6 +310,8 @@ Para determinar cuales son los cambios que logran mejores rendimientos se elabor
 	\end{tabular}
 \end{table}
 
+\newpage
+
 Una vez que se aplican todos las modificaciones sobre el escenario, se realiza un análisis para los demás tipos de tráfico. Como se reporta en la Tabla \ref{table:mejoras_trafico_alternativo}, se obtienen mejores rendimientos en todos los tipos de tráfico estudiados y el mejor rendimiento se obtiene cuando el tráfico es alto. 
 
 \begin{table}[H]
@@ -384,6 +392,7 @@ La función de \emph{fitness} propuesta (Ecuación \ref{eq:funcion_fitness}) uti
 \subsubsection{Prioridad para los ómnibus}
 Este caso brinda más prioridad a los ómnibus, y se justifica por el hecho que uno de los objetivos buscados por la IMM es que se utilice más el transporte colectivo como parte de su Plan de Movilidad Urbana. La premisa es que al mejorar la duración del viaje en ómnibus en relación al viaje en auto por el corredor, las personas optarán por el transporte colectivo. Se experimentó cambiando los pesos de la función de \emph{fitness} con un peso de 70\% para los ómnibus y 30\% al resto de los vehículos.
 
+\newpage
 
 \subsubsection{Prioridad a otros vehículos}
 
